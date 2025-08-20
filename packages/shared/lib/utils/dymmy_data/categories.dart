@@ -1,0 +1,123 @@
+import 'package:shared/network/api_service.dart';
+import 'package:shared/network/my_collections.dart';
+
+class CategoriesDummyData {
+  final categories = <Map<String, dynamic>>[
+    {
+      "id": "accessories",
+      "nameEn": "Accessories",
+      "nameAr": "اكسسوارات",
+      "thumbnail": "https://via.placeholder.com/300x300.png?text=Accessories",
+      "parentId": "shopping",
+      "published": true,
+      "showOnHome": true,
+      "icon": null,
+      "createdAt": "2025-07-03T11:27:22.948395",
+    },
+    {
+      "id": "bags",
+      "nameEn": "Bags",
+      "nameAr": "حقائب",
+      "thumbnail": "https://via.placeholder.com/300x300.png?text=Bags",
+      "parentId": "shopping",
+      "published": true,
+      "showOnHome": true,
+      "icon": null,
+      "createdAt": "2025-07-03T11:27:22.948405",
+    },
+    {
+      "id": "clothing",
+      "nameEn": "Clothing",
+      "nameAr": "ملابس",
+      "thumbnail": "https://via.placeholder.com/300x300.png?text=Clothing",
+      "parentId": "shopping",
+      "published": true,
+      "showOnHome": true,
+      "icon": null,
+      "createdAt": "2025-07-03T11:27:22.948408",
+    },
+    {
+      "id": "furniture",
+      "nameEn": "Furniture",
+      "nameAr": "أثاث",
+      "thumbnail": "https://via.placeholder.com/300x300.png?text=Furniture",
+      "parentId": "shopping",
+      "published": true,
+      "showOnHome": true,
+      "icon": null,
+      "createdAt": "2025-07-03T11:27:22.948411",
+    },
+    {
+      "id": "headphones",
+      "nameEn": "Headphones",
+      "nameAr": "سماعات",
+      "thumbnail": "https://via.placeholder.com/300x300.png?text=Headphones",
+      "parentId": "shopping",
+      "published": true,
+      "showOnHome": true,
+      "icon": null,
+      "createdAt": "2025-07-03T11:27:22.948413",
+    },
+    {
+      "id": "laptops",
+      "nameEn": "Laptops",
+      "nameAr": "أجهزة لابتوب",
+      "thumbnail": "https://via.placeholder.com/300x300.png?text=Laptops",
+      "parentId": "shopping",
+      "published": true,
+      "showOnHome": true,
+      "icon": null,
+      "createdAt": "2025-07-03T11:27:22.948416",
+    },
+    {
+      "id": "phones",
+      "nameEn": "Phones",
+      "nameAr": "هواتف",
+      "thumbnail": "https://via.placeholder.com/300x300.png?text=Phones",
+      "parentId": "shopping",
+      "published": true,
+      "showOnHome": true,
+      "icon": null,
+      "createdAt": "2025-07-03T11:27:22.948419",
+    },
+    {
+      "id": "shoes",
+      "nameEn": "Shoes",
+      "nameAr": "أحذية",
+      "thumbnail": "https://via.placeholder.com/300x300.png?text=Shoes",
+      "parentId": "shopping",
+      "published": true,
+      "showOnHome": true,
+      "icon": null,
+      "createdAt": "2025-07-03T11:27:22.948424",
+    },
+    {
+      "id": "toys",
+      "nameEn": "Toys",
+      "nameAr": "ألعاب",
+      "thumbnail": "https://via.placeholder.com/300x300.png?text=Toys",
+      "parentId": "shopping",
+      "published": true,
+      "showOnHome": true,
+      "icon": null,
+      "createdAt": "2025-07-03T11:27:22.948427",
+    },
+    {
+      "id": "watches",
+      "nameEn": "Watches",
+      "nameAr": "ساعات",
+      "thumbnail": "https://via.placeholder.com/300x300.png?text=Watches",
+      "parentId": "shopping",
+      "published": true,
+      "showOnHome": true,
+      "icon": null,
+      "createdAt": "2025-07-03T11:27:22.948429",
+    },
+  ];
+
+  void upload() {
+    for (var e in categories) {
+      kFirebaseInstant.collection(MyCollections.categories).doc(e['id']).set(e);
+    }
+  }
+}

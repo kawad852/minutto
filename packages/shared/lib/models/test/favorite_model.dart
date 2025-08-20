@@ -1,0 +1,15 @@
+import '../../shared.dart';
+
+part 'favorite_model.freezed.dart';
+part 'favorite_model.g.dart';
+
+@unfreezed
+class FavoriteModel with _$FavoriteModel {
+  factory FavoriteModel({
+    @TimestampSerializer() DateTime? createdAt,
+    String? id,
+    required String type,
+  }) = _FavoriteModel;
+
+  factory FavoriteModel.fromJson(Map<String, dynamic> json) => _$FavoriteModelFromJson(json);
+}

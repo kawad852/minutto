@@ -1,0 +1,22 @@
+class MyCollections {
+  static const String foodStores = 'foodStores';
+  static const String users = 'users';
+  static const String basket = 'basket';
+  static const String addresses = 'addresses';
+  static const String categories = 'categories';
+  static const String products = 'products';
+  static const String promoCodes = 'promoCodes';
+  static const String reviews = 'reviews';
+  static const String orders = 'orders';
+  static const String settings = 'settings';
+  static const String policies = 'policies';
+  static const String filters = 'filters';
+  static const String menu = 'menu';
+  static const String favorites = 'favorites';
+  static const String posts = 'posts';
+  static const String roles = 'roles';
+  static const String callers = 'callers';
+  static const String deliveryAreas = 'deliveryAreas';
+  static const String drivers = 'drivers';
+  static const String brands = 'brands';
+}

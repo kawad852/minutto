@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "943748837802",
+    "project_id": "minutto-app",
+    "storage_bucket": "minutto-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943748837802:android:570af91347c2257e5d3bd3",
+        "android_client_info": {
+          "package_name": "com.example.minutto_user"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATzFWbCodEmjAOCK3MboZ3vUwfyIDUa4Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
