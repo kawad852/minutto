@@ -51,7 +51,7 @@ export 'package:provider/provider.dart';
 export 'package:rxdart/rxdart.dart';
 export 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 export 'package:sendotp_flutter_sdk/sendotp_flutter_sdk.dart';
-export 'package:share_plus/share_plus.dart';
+// export 'package:share_plus/share_plus.dart';
 export 'package:shared/services/algolia_service.dart';
 export 'package:shared_preferences/shared_preferences.dart';
 export 'package:skeletonizer/skeletonizer.dart';

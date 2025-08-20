@@ -84,6 +84,6 @@ class DeepLinkingService {
 
     final link = await generateLink(context, buo: buo, lp: lp);
 
-    SharePlus.instance.share(ShareParams(uri: Uri.tryParse(link!)));
+    // SharePlus.instance.share(ShareParams(uri: Uri.tryParse(link!)));
   }
 }
