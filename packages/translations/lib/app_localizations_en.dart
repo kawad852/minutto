@@ -142,10 +142,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get deliveryAddress => 'Delivery address';
 
   @override
-  String get firstName => 'First Name';
+  String get firstName => 'First name';
 
   @override
-  String get lastName => 'Last Name';
+  String get lastName => 'Last name';
 
   @override
   String get email => 'Email';
@@ -1006,4 +1006,59 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get bestSeller => 'Best Seller';
+
+  @override
+  String get helloAndWelcome => 'Hello and welcome';
+
+  @override
+  String get dearUser => 'Dear user';
+
+  @override
+  String get haveAccount => 'If you have an account, log in now.';
+
+  @override
+  String get swipeToCreateAccount => 'Swipe up to create an account';
+
+  @override
+  String get swipDownToLogIn => 'Swipe down to log in';
+
+  @override
+  String get wantCreateAccount => 'Do you want to create an account?';
+
+  @override
+  String get followYourInfo =>
+      'To create an account, please fill in the following information';
+
+  @override
+  String get companyCodeWorkFor => 'The company code you work for';
+
+  @override
+  String get register => 'Register';
+
+  @override
+  String get verifyPhoneNumber => 'Verify phone number';
+
+  @override
+  String get sendVerficationCode =>
+      'Please send the verification code sent to your phone number.';
+
+  @override
+  String get verificationCode => 'Verification code';
+
+  @override
+  String get resendCodeAfter => 'Resend code after ';
+
+  @override
+  String get confirmAccount => 'Confirm Account';
+
+  @override
+  String get accountSuccessfullyCreated =>
+      'Congratulations, your account has been successfully created.';
+
+  @override
+  String get waitUntilApproveAccount =>
+      'Please wait until your account is approved by your company administrator, then you can log in to your account.';
+
+  @override
+  String get goToLogIn => 'Go to log in';
 }

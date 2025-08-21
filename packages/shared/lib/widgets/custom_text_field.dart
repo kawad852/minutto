@@ -13,6 +13,7 @@ class CustomTextField extends StatelessWidget {
   final String? labelText;
   final String? hintText;
   final int? maxLines;
+  final TextAlign? textAlign;
 
   const CustomTextField._({
     super.key,
@@ -26,6 +27,7 @@ class CustomTextField extends StatelessWidget {
     this.labelText,
     this.hintText,
     this.maxLines,
+    this.textAlign,
   }) : _onChanged = onChanged,
        _validator = validator;
 
@@ -38,6 +40,7 @@ class CustomTextField extends StatelessWidget {
     String? labelText,
     String? hintText,
     int? maxLines,
+    TextAlign? textAlign,
   }) {
     return CustomTextField._(
       key: key,
@@ -45,6 +48,7 @@ class CustomTextField extends StatelessWidget {
       prefixIcon: prefixIcon,
       keyboardType: TextInputType.text,
       labelText: labelText,
+      textAlign: textAlign,
       hintText: hintText,
       maxLines: maxLines,
       onChanged: (value) => onChanged(value.isEmpty ? null : value),
@@ -102,7 +106,7 @@ class CustomTextField extends StatelessWidget {
     return CustomTextField._(
       key: key,
       initialValue: initialValue,
-      labelText: context.appLocalization.phoneNum,
+      hintText: context.appLocalization.phoneNum,
       prefixIcon: PhoneCodeButton(
         code: code ?? kFallBackCountryCode,
         onCodeSelected: onCodeSelected,
@@ -123,13 +127,15 @@ class CustomTextField extends StatelessWidget {
     String? initialValue,
     Widget? prefixIcon,
     required ValueChanged<String?> onChanged,
+    String? hintText,
     bool required = true,
   }) {
     return CustomTextField._(
       key: key,
       initialValue: initialValue,
       prefixIcon: prefixIcon,
-      labelText: context.appLocalization.email,
+      hintText: hintText,
+      // labelText: context.appLocalization.email,
       keyboardType: TextInputType.emailAddress,
       onChanged: (value) => onChanged(value.isEmpty ? null : value),
       validator: (context, value) => ValidationHelper.email(context, value, required: required),
@@ -161,6 +167,7 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       initialValue: initialValue,
+      textAlign: textAlign ?? TextAlign.start,
       obscureText: obscureText,
       keyboardType: keyboardType,
       inputFormatters: inputFormatters,

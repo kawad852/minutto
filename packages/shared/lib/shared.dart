@@ -62,6 +62,7 @@ export 'package:translations/app_localizations.dart';
 export 'package:url_launcher/url_launcher.dart';
 export 'package:uuid/uuid.dart';
 export 'package:vertex_ai/vertex_ai.dart';
+export 'package:google_fonts/google_fonts.dart';
 
 ///Controllers
 export 'controllers/map_controller.dart';
@@ -247,3 +248,6 @@ export 'widgets/selectors/user_and_basket_consumer.dart';
 export 'widgets/selectors/user_selector.dart';
 export 'widgets/stretch_button.dart';
 export 'widgets/widget_title.dart';
+export 'utils/color_palette.dart';
+export 'utils/my_icons.dart';
+export 'widgets/custom_svg.dart';

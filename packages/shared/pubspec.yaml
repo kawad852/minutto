@@ -76,6 +76,7 @@ dependencies:
   flutter_date_range_picker: ^0.2.1
   get_storage: ^2.1.1
   typesense: ^0.5.2
+  google_fonts: ^6.2.1
 
   #google
   googleapis: ^14.0.0
@@ -119,6 +120,7 @@ flutter:
   # To add assets to your package, add an assets section, like this:
   assets:
     - ../../assets/
+    - ../../assets/icons/
   #
   # For details regarding assets in packages, see
   # https://flutter.dev/to/asset-from-package

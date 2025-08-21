@@ -18,6 +18,7 @@ const kMaxWidth = 600.0;
 const kMaxSmallDeviceWidth = 1000.0;
 
 class MyTheme {
+  static final String fontFamily = GoogleFonts.cairo().fontFamily!;
   // static var kColorScheme = ColorScheme.fromSeed(seedColor: Color(0xFF405f90));
 
   ThemeData materialTheme(BuildContext context, bool isLightTheme) {
@@ -29,20 +30,34 @@ class MyTheme {
       colorScheme: colorScheme,
       brightness: colorScheme.brightness,
       useMaterial3: true,
+      fontFamily: fontFamily,
+      actionIconTheme: ActionIconThemeData(
+        backButtonIconBuilder: (BuildContext context) {
+          return IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back_ios),
+          );
+        },
+      ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: colorScheme.surfaceContainer,
         constraints: BoxConstraints(maxWidth: 600),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10)
+        ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide.none,
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide.none,
         ),
         errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide.none,
         ),
         isDense: true,
@@ -58,6 +73,14 @@ class MyTheme {
       ),
       chipTheme: ChipThemeData(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(kRadiusSecondary)),
+      ),
+      filledButtonTheme: FilledButtonThemeData(
+        style: FilledButton.styleFrom(
+          backgroundColor: Color(0xFFB2DCBC),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
       ),
     );
   }

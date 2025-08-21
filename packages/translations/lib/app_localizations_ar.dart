@@ -142,13 +142,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get deliveryAddress => 'Delivery address';
 
   @override
-  String get firstName => 'First Name';
+  String get firstName => 'الإسم الأول';
 
   @override
-  String get lastName => 'Last Name';
+  String get lastName => 'الإسم الأخير';
 
   @override
-  String get email => 'Email';
+  String get email => 'البريد الإلكتروني';
 
   @override
   String get fullName => 'الاسم الكامل';
@@ -527,7 +527,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get language => 'Language';
 
   @override
-  String get country => 'Country';
+  String get country => 'الدولة';
 
   @override
   String get support => 'Support';
@@ -548,7 +548,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get all => 'All';
 
   @override
-  String get phoneNum => 'Phone number';
+  String get phoneNum => 'رقم الهاتف';
 
   @override
   String emptyOrdersByStatus(Object status) {
@@ -1006,4 +1006,57 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get bestSeller => 'Best Seller';
+
+  @override
+  String get helloAndWelcome => 'أهلا ومرحبا بك';
+
+  @override
+  String get dearUser => 'عزيزي المستخدم';
+
+  @override
+  String get haveAccount => 'اذا كان لديك حساب ، سجل دخولك الآن';
+
+  @override
+  String get swipeToCreateAccount => 'اسحب للأعلى لإنشاء حساب';
+
+  @override
+  String get swipDownToLogIn => 'اسحب للأسفل لتسجيل الدخول';
+
+  @override
+  String get wantCreateAccount => 'هل تريد إنشاء حساب؟';
+
+  @override
+  String get followYourInfo => 'لإنشاء حساب يرجى تعبئة المعلومات التالية';
+
+  @override
+  String get companyCodeWorkFor => 'رمز الشركة التي تعمل بها';
+
+  @override
+  String get register => 'انشاء حساب';
+
+  @override
+  String get verifyPhoneNumber => 'توثيق رقم الهاتف';
+
+  @override
+  String get sendVerficationCode =>
+      'يرجى ارسال رمز التحقق الذي تم ارساله إلى رقم هاتفك';
+
+  @override
+  String get verificationCode => 'رمز التحقق';
+
+  @override
+  String get resendCodeAfter => 'اعادة ارسال الرمز بعد ';
+
+  @override
+  String get confirmAccount => 'تأكيد الحساب';
+
+  @override
+  String get accountSuccessfullyCreated => 'تهانينا ، تم انشاء حسابك بنجاح.';
+
+  @override
+  String get waitUntilApproveAccount =>
+      'يرجى الإنتظار إلى حين الموافقة على حسابك من المسؤول في شركتك ، ثم يمكنك تسجيل الدخول إلى حسابك';
+
+  @override
+  String get goToLogIn => 'الدهاب لتسجيل الدخول';
 }

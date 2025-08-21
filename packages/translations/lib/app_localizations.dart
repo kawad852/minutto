@@ -353,13 +353,13 @@ abstract class AppLocalizations {
   /// No description provided for @firstName.
   ///
   /// In en, this message translates to:
-  /// **'First Name'**
+  /// **'First name'**
   String get firstName;
 
   /// No description provided for @lastName.
   ///
   /// In en, this message translates to:
-  /// **'Last Name'**
+  /// **'Last name'**
   String get lastName;
 
   /// No description provided for @email.
@@ -1999,6 +1999,108 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Best Seller'**
   String get bestSeller;
+
+  /// No description provided for @helloAndWelcome.
+  ///
+  /// In en, this message translates to:
+  /// **'Hello and welcome'**
+  String get helloAndWelcome;
+
+  /// No description provided for @dearUser.
+  ///
+  /// In en, this message translates to:
+  /// **'Dear user'**
+  String get dearUser;
+
+  /// No description provided for @haveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'If you have an account, log in now.'**
+  String get haveAccount;
+
+  /// No description provided for @swipeToCreateAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Swipe up to create an account'**
+  String get swipeToCreateAccount;
+
+  /// No description provided for @swipDownToLogIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Swipe down to log in'**
+  String get swipDownToLogIn;
+
+  /// No description provided for @wantCreateAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Do you want to create an account?'**
+  String get wantCreateAccount;
+
+  /// No description provided for @followYourInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'To create an account, please fill in the following information'**
+  String get followYourInfo;
+
+  /// No description provided for @companyCodeWorkFor.
+  ///
+  /// In en, this message translates to:
+  /// **'The company code you work for'**
+  String get companyCodeWorkFor;
+
+  /// No description provided for @register.
+  ///
+  /// In en, this message translates to:
+  /// **'Register'**
+  String get register;
+
+  /// No description provided for @verifyPhoneNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify phone number'**
+  String get verifyPhoneNumber;
+
+  /// No description provided for @sendVerficationCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Please send the verification code sent to your phone number.'**
+  String get sendVerficationCode;
+
+  /// No description provided for @verificationCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Verification code'**
+  String get verificationCode;
+
+  /// No description provided for @resendCodeAfter.
+  ///
+  /// In en, this message translates to:
+  /// **'Resend code after '**
+  String get resendCodeAfter;
+
+  /// No description provided for @confirmAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Account'**
+  String get confirmAccount;
+
+  /// No description provided for @accountSuccessfullyCreated.
+  ///
+  /// In en, this message translates to:
+  /// **'Congratulations, your account has been successfully created.'**
+  String get accountSuccessfullyCreated;
+
+  /// No description provided for @waitUntilApproveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Please wait until your account is approved by your company administrator, then you can log in to your account.'**
+  String get waitUntilApproveAccount;
+
+  /// No description provided for @goToLogIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Go to log in'**
+  String get goToLogIn;
 }
 
 class _AppLocalizationsDelegate

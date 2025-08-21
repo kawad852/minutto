@@ -1,3 +1,4 @@
+import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
 import 'firebase_options.dart';
@@ -16,7 +17,7 @@ void main() async {
       if (isAuthenticated) {
         return Placeholder();
       } else {
-        return Placeholder();
+        return LoginScreen();
       }
     },
     logoutBuilder: kLogoutBuilder,

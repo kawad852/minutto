@@ -389,5 +389,28 @@
   "user": "User",
   "newKey": "New",
   "trending": "Trending",
-  "bestSeller": "Best Seller"
+  "bestSeller": "Best Seller",
+
+
+
+  "helloAndWelcome":"Hello and welcome",
+  "dearUser":"Dear user",
+  "haveAccount":"If you have an account, log in now.",
+  "swipeToCreateAccount":"Swipe up to create an account",
+  "swipDownToLogIn":"Swipe down to log in",
+  "wantCreateAccount":"Do you want to create an account?",
+  "followYourInfo":"To create an account, please fill in the following information",
+  "firstName":"First name",
+  "lastName":"Last name",
+  "email":"Email",
+  "companyCodeWorkFor":"The company code you work for",
+  "register":"Register",
+  "verifyPhoneNumber":"Verify phone number",
+  "sendVerficationCode":"Please send the verification code sent to your phone number.",
+  "verificationCode":"Verification code",
+  "resendCodeAfter":"Resend code after ",
+  "confirmAccount":"Confirm Account",
+  "accountSuccessfullyCreated":"Congratulations, your account has been successfully created.",
+  "waitUntilApproveAccount":"Please wait until your account is approved by your company administrator, then you can log in to your account.",
+  "goToLogIn":"Go to log in"
 }

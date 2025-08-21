@@ -162,6 +162,7 @@
   "branch":"الفرع",
   "nationalIDNumber":"الرقم الوطني",
   "phoneNumber":"رقم الهاتف",
+  "phoneNum":"رقم الهاتف",
   "salary":"الأجر",
   "startDate":"تاريخ بدأ العمل",
   "address":"العنوان",
@@ -214,5 +215,29 @@
   "successfullyUpdated": "تم التحديث بنجاح",
   "configure": "تهيئة",
   "company": "الشركة",
-  "sentSuccessfully": "تم الإرسال بنجاح"
+  "sentSuccessfully": "تم الإرسال بنجاح",
+
+
+
+  "helloAndWelcome":"أهلا ومرحبا بك",
+  "dearUser":"عزيزي المستخدم",
+  "haveAccount":"اذا كان لديك حساب ، سجل دخولك الآن",
+  "swipeToCreateAccount":"اسحب للأعلى لإنشاء حساب",
+  "swipDownToLogIn":"اسحب للأسفل لتسجيل الدخول",
+  "wantCreateAccount":"هل تريد إنشاء حساب؟",
+  "followYourInfo":"لإنشاء حساب يرجى تعبئة المعلومات التالية",
+  "firstName":"الإسم الأول",
+  "lastName":"الإسم الأخير",
+  "email":"البريد الإلكتروني",
+  "country":"الدولة",
+  "companyCodeWorkFor":"رمز الشركة التي تعمل بها",
+  "register":"انشاء حساب",
+  "verifyPhoneNumber":"توثيق رقم الهاتف",
+  "sendVerficationCode":"يرجى ارسال رمز التحقق الذي تم ارساله إلى رقم هاتفك",
+  "verificationCode":"رمز التحقق",
+  "resendCodeAfter":"اعادة ارسال الرمز بعد ",
+  "confirmAccount":"تأكيد الحساب",
+  "accountSuccessfullyCreated":"تهانينا ، تم انشاء حسابك بنجاح.",
+  "waitUntilApproveAccount":"يرجى الإنتظار إلى حين الموافقة على حسابك من المسؤول في شركتك ، ثم يمكنك تسجيل الدخول إلى حسابك",
+  "goToLogIn":"الذهاب لتسجيل الدخول"
 }

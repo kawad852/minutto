@@ -14,15 +14,14 @@ class StretchedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final height = Theme.of(context).buttonTheme.height + 4;
+    final height = Theme.of(context).buttonTheme.height + 10;
     return Padding(
       padding: margin ?? EdgeInsets.zero,
       child: Center(
         child: FilledButton(
           onPressed: onPressed,
           style: FilledButton.styleFrom(
-            minimumSize: Size(300, height),
-            maximumSize: Size(600, height),
+            minimumSize: Size.fromHeight(height),
           ),
           child: child,
         ),
