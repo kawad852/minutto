@@ -77,6 +77,7 @@ dependencies:
   get_storage: ^2.1.1
   typesense: ^0.5.2
   google_fonts: ^6.2.1
+  flutter_svg_provider: ^1.0.7
 
   #google
   googleapis: ^14.0.0

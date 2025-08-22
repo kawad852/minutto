@@ -16,3 +16,5 @@ class AuthProviders {
 }
 
 enum ActionType { add, edit, delete }
+
+enum CheckingType { qr, location }

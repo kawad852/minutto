@@ -1061,4 +1061,76 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get goToLogIn => 'Go to log in';
+
+  @override
+  String get goodMorning => 'Good morning !';
+
+  @override
+  String get principleLazy =>
+      'Don\'t put off until tomorrow what you can do today, but put it off until the day after tomorrow; that\'s the principle of the lazy.';
+
+  @override
+  String get checkInOut => 'Check-in/out';
+
+  @override
+  String get currentTime => 'Current time: ';
+
+  @override
+  String get submitRequest => 'Submit request';
+
+  @override
+  String get leaving => 'Leaving';
+
+  @override
+  String get leaveAbsence => 'Leave/absence';
+
+  @override
+  String get attendanceAndDepartureReport => 'Attendance and departure report';
+
+  @override
+  String get vacations => 'Vacations';
+
+  @override
+  String get departures => 'Departures';
+
+  @override
+  String get salaries => 'Salaries';
+
+  @override
+  String get alarms => 'Alarms';
+
+  @override
+  String get advances => 'advances';
+
+  @override
+  String get incentivesRequests => 'Incentives/requests';
+
+  @override
+  String get overtime => 'Overtime';
+
+  @override
+  String get workBreak => 'Work break';
+
+  @override
+  String get inMonth => 'In a month';
+
+  @override
+  String get chooseVerfiyMethod =>
+      'Choose the verification method that suits you';
+
+  @override
+  String get confirmLocation => 'Confirm location';
+
+  @override
+  String get scanQRCode => 'Scan QR code';
+
+  @override
+  String get mustPersentAtWork => 'You must be present at the work site.';
+
+  @override
+  String get verifying => 'Verifying';
+
+  @override
+  String get yourLocationVerified =>
+      'Your location is being verified to record your arrival time to work, please wait.';
 }

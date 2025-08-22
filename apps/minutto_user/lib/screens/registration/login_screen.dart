@@ -53,7 +53,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: CustomTextField.email(context, onChanged: (value) {}),
                 ),
                 StretchedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.navigateAndRemoveUntil((context) => const AppNavBar());
+                  },
                   child: Text(
                     context.appLocalization.login,
                     style: TextStyle(

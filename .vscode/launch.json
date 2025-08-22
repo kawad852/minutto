@@ -1,0 +1,105 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "minutto",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "minutto (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "minutto (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "minutto_admin_portal",
+            "cwd": "apps\\minutto_admin_portal",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "minutto_admin_portal (profile mode)",
+            "cwd": "apps\\minutto_admin_portal",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "minutto_admin_portal (release mode)",
+            "cwd": "apps\\minutto_admin_portal",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "minutto_user",
+            "cwd": "apps\\minutto_user",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "minutto_user (profile mode)",
+            "cwd": "apps\\minutto_user",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "minutto_user (release mode)",
+            "cwd": "apps\\minutto_user",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "shared",
+            "cwd": "packages\\shared",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "shared (profile mode)",
+            "cwd": "packages\\shared",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "shared (release mode)",
+            "cwd": "packages\\shared",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "translations",
+            "cwd": "packages\\translations",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "translations (profile mode)",
+            "cwd": "packages\\translations",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "translations (release mode)",
+            "cwd": "packages\\translations",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

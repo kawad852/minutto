@@ -1,0 +1,75 @@
+import 'package:minutto_user/shared.dart';
+import 'package:shared/shared.dart';
+
+class AppNavBar extends StatefulWidget {
+  const AppNavBar({super.key});
+
+  @override
+  State<AppNavBar> createState() => _AppNavBarState();
+}
+
+class _AppNavBarState extends State<AppNavBar> {
+  int _currentIndex = 1;
+  late PageController _pageController;
+
+  final items = [MyIcons.profile, MyIcons.home, MyIcons.calander];
+
+  final screens = [
+    const ProfileScreen(),
+    const HomeScreen(),
+    const ReportsScreen(),
+  ];
+
+  void _onSelect(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+    _pageController.jumpToPage(_currentIndex);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController(initialPage: _currentIndex);
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    bool withNotch = MediaQuery.of(context).viewPadding.bottom > 0.0;
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      bottomNavigationBar: Container(
+        height: withNotch ? 75 : 65,
+        width: context.mediaQuery.width,
+        margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        decoration: BoxDecoration(
+          color: context.colorPalette.blue091,
+          borderRadius: BorderRadius.circular(kRadiusSecondary),
+        ),
+        child: Row(
+          children: screens.map((element) {
+            final index = screens.indexOf(element);
+            return NavBarItem(
+              onTap: () {
+                _onSelect(index);
+              },
+              isSelected: _currentIndex == index,
+              icon: items[index],
+            );
+          }).toList(),
+        ),
+      ),
+      body: PageView(
+        controller: _pageController,
+        physics: const NeverScrollableScrollPhysics(),
+        children: screens,
+      ),
+    );
+  }
+}

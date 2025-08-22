@@ -1,0 +1,191 @@
+import 'package:flutter_svg_provider/flutter_svg_provider.dart' as sv;
+import 'package:minutto_user/shared.dart';
+import 'package:shared/shared.dart';
+
+class HomeHeader extends StatelessWidget {
+  const HomeHeader({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 323,
+      margin: const EdgeInsets.only(bottom: 15),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: sv.Svg(MyIcons.homeBackground),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: Container(
+        padding: const EdgeInsets.only(left: 20, right: 20, top: 40),
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            colors: [Color(0x30FFFFFF), Color(0xFFFFFFFF)],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    context.appLocalization.goodMorning,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      color: context.colorPalette.blue091,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: CustomSvg(MyIcons.notifaction),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 10, bottom: 20),
+              child: Row(
+                children: [
+                  BaseNetworkImage("", width: 60, height: 60, radius: 7),
+                  const SizedBox(width: 15),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "صهيب البكار",
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            color: context.colorPalette.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        const SizedBox(height: 5),
+                        Text(
+                          "مصمم جرافيك",
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            color: context.colorPalette.black,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Text(
+              context.appLocalization.principleLazy,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: context.colorPalette.blue091,
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              height: 95,
+              margin: const EdgeInsets.only(top: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              decoration: BoxDecoration(
+                color: context.colorPalette.blue091,
+                borderRadius: BorderRadius.circular(kRadiusSecondary),
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          context.appLocalization.checkInOut,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            color: context.colorPalette.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 3),
+                          child: Row(
+                            children: [
+                              Text(
+                                "الثلاثاء ",
+                                style: TextStyle(
+                                  color: context.colorPalette.blueB2D,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              Expanded(
+                                child: Text(
+                                  "2023.04.03",
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    color: context.colorPalette.redD42,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              context.appLocalization.currentTime,
+                              style: TextStyle(
+                                color: context.colorPalette.blueB2D,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            Expanded(
+                              child: Text(
+                                "AM 08:31:23",
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  color: context.colorPalette.redD42,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return CheckDialog();
+                        },
+                      );
+                    },
+                    child: CustomSvg(MyIcons.fingerprintScanner),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

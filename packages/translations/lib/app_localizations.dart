@@ -2101,6 +2101,144 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Go to log in'**
   String get goToLogIn;
+
+  /// No description provided for @goodMorning.
+  ///
+  /// In en, this message translates to:
+  /// **'Good morning !'**
+  String get goodMorning;
+
+  /// No description provided for @principleLazy.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t put off until tomorrow what you can do today, but put it off until the day after tomorrow; that\'s the principle of the lazy.'**
+  String get principleLazy;
+
+  /// No description provided for @checkInOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Check-in/out'**
+  String get checkInOut;
+
+  /// No description provided for @currentTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Current time: '**
+  String get currentTime;
+
+  /// No description provided for @submitRequest.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit request'**
+  String get submitRequest;
+
+  /// No description provided for @leaving.
+  ///
+  /// In en, this message translates to:
+  /// **'Leaving'**
+  String get leaving;
+
+  /// No description provided for @leaveAbsence.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave/absence'**
+  String get leaveAbsence;
+
+  /// No description provided for @attendanceAndDepartureReport.
+  ///
+  /// In en, this message translates to:
+  /// **'Attendance and departure report'**
+  String get attendanceAndDepartureReport;
+
+  /// No description provided for @vacations.
+  ///
+  /// In en, this message translates to:
+  /// **'Vacations'**
+  String get vacations;
+
+  /// No description provided for @departures.
+  ///
+  /// In en, this message translates to:
+  /// **'Departures'**
+  String get departures;
+
+  /// No description provided for @salaries.
+  ///
+  /// In en, this message translates to:
+  /// **'Salaries'**
+  String get salaries;
+
+  /// No description provided for @alarms.
+  ///
+  /// In en, this message translates to:
+  /// **'Alarms'**
+  String get alarms;
+
+  /// No description provided for @advances.
+  ///
+  /// In en, this message translates to:
+  /// **'advances'**
+  String get advances;
+
+  /// No description provided for @incentivesRequests.
+  ///
+  /// In en, this message translates to:
+  /// **'Incentives/requests'**
+  String get incentivesRequests;
+
+  /// No description provided for @overtime.
+  ///
+  /// In en, this message translates to:
+  /// **'Overtime'**
+  String get overtime;
+
+  /// No description provided for @workBreak.
+  ///
+  /// In en, this message translates to:
+  /// **'Work break'**
+  String get workBreak;
+
+  /// No description provided for @inMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'In a month'**
+  String get inMonth;
+
+  /// No description provided for @chooseVerfiyMethod.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the verification method that suits you'**
+  String get chooseVerfiyMethod;
+
+  /// No description provided for @confirmLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm location'**
+  String get confirmLocation;
+
+  /// No description provided for @scanQRCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan QR code'**
+  String get scanQRCode;
+
+  /// No description provided for @mustPersentAtWork.
+  ///
+  /// In en, this message translates to:
+  /// **'You must be present at the work site.'**
+  String get mustPersentAtWork;
+
+  /// No description provided for @verifying.
+  ///
+  /// In en, this message translates to:
+  /// **'Verifying'**
+  String get verifying;
+
+  /// No description provided for @yourLocationVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Your location is being verified to record your arrival time to work, please wait.'**
+  String get yourLocationVerified;
 }
 
 class _AppLocalizationsDelegate

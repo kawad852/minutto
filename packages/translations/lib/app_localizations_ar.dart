@@ -123,7 +123,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get confirm => 'Confirm';
 
   @override
-  String get cancel => 'Cancel';
+  String get cancel => 'إلغاء';
 
   @override
   String get itemDeleteTitle => 'Delete Item';
@@ -1058,5 +1058,76 @@ class AppLocalizationsAr extends AppLocalizations {
       'يرجى الإنتظار إلى حين الموافقة على حسابك من المسؤول في شركتك ، ثم يمكنك تسجيل الدخول إلى حسابك';
 
   @override
-  String get goToLogIn => 'الدهاب لتسجيل الدخول';
+  String get goToLogIn => 'الذهاب لتسجيل الدخول';
+
+  @override
+  String get goodMorning => 'صباح الخير !';
+
+  @override
+  String get principleLazy =>
+      'لا تؤجل عمل اليوم إلى الغد ولكن إلى ما بعد الغد؛ هذا هو مبدأ الكسالى.';
+
+  @override
+  String get checkInOut => 'تسجيل حضور / إنصراف';
+
+  @override
+  String get currentTime => 'الساعة الآن : ';
+
+  @override
+  String get submitRequest => 'تقديم طلب';
+
+  @override
+  String get leaving => 'مغادرة';
+
+  @override
+  String get leaveAbsence => 'إجازة / غياب';
+
+  @override
+  String get attendanceAndDepartureReport => 'كشف الحضور والإنصراف';
+
+  @override
+  String get vacations => 'الإجازات';
+
+  @override
+  String get departures => 'المغادرات';
+
+  @override
+  String get salaries => 'الرواتب';
+
+  @override
+  String get alarms => 'الإنذارات';
+
+  @override
+  String get advances => 'السلف';
+
+  @override
+  String get incentivesRequests => 'حوافز / طلبات';
+
+  @override
+  String get overtime => 'العمل الإضافي';
+
+  @override
+  String get workBreak => 'استراحة عمل';
+
+  @override
+  String get inMonth => 'خلال شهر';
+
+  @override
+  String get chooseVerfiyMethod => 'اختر اسلوب التحقق الذي يناسبك';
+
+  @override
+  String get confirmLocation => 'تأكيد الموقع';
+
+  @override
+  String get scanQRCode => 'مسح QR كود';
+
+  @override
+  String get mustPersentAtWork => 'يجب عليك التواجد داخل موقع العمل';
+
+  @override
+  String get verifying => 'جاري التحقق';
+
+  @override
+  String get yourLocationVerified =>
+      'يجري التحقق من مكان تواجدك لتسجيل وقت الوصول إلى العمل ، يرجى الإنتظار';
 }

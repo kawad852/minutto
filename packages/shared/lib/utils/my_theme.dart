@@ -6,9 +6,9 @@ const kBurgerImage =
 const kProviderLogo =
     "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/McDonald%27s_square_2020.svg/1200px-McDonald%27s_square_2020.svg.png";
 
-const kRadiusPrimary = 20.0;
-const kRadiusSecondary = 16.0;
-const kRadiusTertiary = 10.0;
+const kRadiusPrimary = 5.0;
+const kRadiusSecondary = 10.0;
+const kRadiusTertiary = 15.0;
 
 const kMaxWidth = 600.0;
 
@@ -23,7 +23,7 @@ class MyTheme {
 
   ThemeData materialTheme(BuildContext context, bool isLightTheme) {
     final colorScheme = ColorScheme.fromSeed(
-      seedColor: Color(0xFF405f90),
+      seedColor: Color(0xFFFFFFFF),
       brightness: isLightTheme ? Brightness.light : Brightness.dark,
     );
     return ThemeData(
@@ -31,6 +31,14 @@ class MyTheme {
       brightness: colorScheme.brightness,
       useMaterial3: true,
       fontFamily: fontFamily,
+      appBarTheme: AppBarTheme(color: Colors.white),
+      bottomAppBarTheme: BottomAppBarThemeData(
+        color: Colors.white,
+      ),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        backgroundColor: Colors.white,
+      ),
+      scaffoldBackgroundColor: Colors.white,
       actionIconTheme: ActionIconThemeData(
         backButtonIconBuilder: (BuildContext context) {
           return IconButton(
