@@ -23,4 +23,14 @@ class MyIcons {
   static const String location = '${_path}location.svg';
   static const String qrCodeIcon = '${_path}qr_code_icon.svg';
   static const String fingerBackground = '${_path}finger_background.svg';
+  static const String book = '${_path}book.svg';
+  static const String bylaws = '${_path}bylaws.svg';
+  static const String language = '${_path}language.svg';
+  static const String logout = '${_path}logout.svg';
+  static const String moon = '${_path}moon.svg';
+  static const String people = '${_path}people.svg';
+  static const String policy = '${_path}policy.svg';
+  static const String questions = '${_path}questions.svg';
+  static const String edit = '${_path}edit.svg';
+  static const String add = '${_path}add.svg';
 }

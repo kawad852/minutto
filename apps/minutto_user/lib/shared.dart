@@ -19,6 +19,17 @@ export 'screens/home/widgets/dialog_bubble.dart';
 
 //profile
 export 'screens/profile/profile_screen.dart';
+export 'screens/profile/user_detalis_screen.dart';
+export 'screens/profile/widgets/user_card.dart';
+export 'screens/profile/widgets/profile_card.dart';
+export 'screens/profile/widgets/profile_info.dart';
 
 //reports
 export 'screens/reports/reports_screen.dart';
+
+//overtime
+export 'screens/overtime/overtime_detalis_screen.dart';
+export 'screens/overtime/overtime_input_screen.dart';
+export 'screens/overtime/overtime_screen.dart';
+export 'screens/overtime/widgets/overtime_card.dart';
+export 'screens/overtime/widgets/shared_container.dart';

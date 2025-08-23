@@ -559,7 +559,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get password => 'Password';
 
   @override
-  String get newOrder => 'New Order';
+  String get newOrder => 'New order';
 
   @override
   String get accept => 'Accept';
@@ -1133,4 +1133,112 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get yourLocationVerified =>
       'Your location is being verified to record your arrival time to work, please wait.';
+
+  @override
+  String get applicationSettings => 'Application settings';
+
+  @override
+  String get changeLanguage => 'Change language';
+
+  @override
+  String get nightMode => 'Night mode';
+
+  @override
+  String get aboutTheCompany => 'About the company';
+
+  @override
+  String get bylaws => 'Bylaws';
+
+  @override
+  String get leaveDepartureSystem => 'Leave and departure system';
+
+  @override
+  String get faq => 'FAQ';
+
+  @override
+  String get aboutTheApplication => 'About the application';
+
+  @override
+  String get whoAreWe => 'Who are we?';
+
+  @override
+  String get logOut => 'Log out';
+
+  @override
+  String get employeeData => 'Employee data';
+
+  @override
+  String get jobTitle => 'Job title';
+
+  @override
+  String get basicSalary => 'Basic salary';
+
+  @override
+  String get dateOfBirth => 'Date of birth';
+
+  @override
+  String get dateStartWork => 'Date of start of work';
+
+  @override
+  String get contractDuration => 'Contract duration';
+
+  @override
+  String get expirationDateContract =>
+      'Expiration date of the employment contract';
+
+  @override
+  String get nameBankSalary =>
+      'Name of the bank designated for receiving the salary';
+
+  @override
+  String get bankBranch => 'Bank branch';
+
+  @override
+  String get accountNumberIBAN => 'Account number / IBAN';
+
+  @override
+  String get saveModifications => 'Save modifications';
+
+  @override
+  String get overtimeRequests => 'Overtime requests';
+
+  @override
+  String get overtimeRequest => 'Overtime request';
+
+  @override
+  String get overtimeHistory => 'Overtime history';
+
+  @override
+  String get fromHour => 'From hour';
+
+  @override
+  String get toHour => 'To hour';
+
+  @override
+  String get notes => 'Notes';
+
+  @override
+  String get attachDocument => 'Attach a document';
+
+  @override
+  String get medicalCondition =>
+      'If it is a medical condition, please add the medical report.';
+
+  @override
+  String get attachFile => 'Attach a file';
+
+  @override
+  String get workHistory => 'Work history';
+
+  @override
+  String get dateAndTimeRequest => 'Date and time of request';
+
+  @override
+  String get attachedDocuments => 'Attached documents';
+
+  @override
+  String get officialReplied => 'Official replied';
+
+  @override
+  String get officialNotes => 'Official\'s notes';
 }

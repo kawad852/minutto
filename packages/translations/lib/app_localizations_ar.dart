@@ -250,7 +250,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get account => 'الحساب';
 
   @override
-  String get profile => 'Profile';
+  String get profile => 'الملف الشخصي';
 
   @override
   String get deleteAccount => 'Delete account';
@@ -559,7 +559,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get password => 'كلمة المرور';
 
   @override
-  String get newOrder => 'New Order';
+  String get newOrder => 'طلب جديد';
 
   @override
   String get accept => 'Accept';
@@ -1130,4 +1130,109 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get yourLocationVerified =>
       'يجري التحقق من مكان تواجدك لتسجيل وقت الوصول إلى العمل ، يرجى الإنتظار';
+
+  @override
+  String get applicationSettings => 'اعدادات التطبيق';
+
+  @override
+  String get changeLanguage => 'تغيير اللغة';
+
+  @override
+  String get nightMode => 'الوضع الليلي';
+
+  @override
+  String get aboutTheCompany => 'عن الشركة';
+
+  @override
+  String get bylaws => 'النظام الداخلي';
+
+  @override
+  String get leaveDepartureSystem => 'نظام الإجازات والمغادرات';
+
+  @override
+  String get faq => 'الأسئلة الشائعة';
+
+  @override
+  String get aboutTheApplication => 'عن التطبيق';
+
+  @override
+  String get whoAreWe => 'من نحن؟';
+
+  @override
+  String get logOut => 'تسجيل الخروج';
+
+  @override
+  String get employeeData => 'بيانات الموظف';
+
+  @override
+  String get jobTitle => 'المسمى الوظيفي';
+
+  @override
+  String get basicSalary => 'الراتب الأساسي';
+
+  @override
+  String get dateOfBirth => 'تاريخ الميلاد';
+
+  @override
+  String get dateStartWork => 'تاريخ بداية العمل';
+
+  @override
+  String get contractDuration => 'مدة العقد';
+
+  @override
+  String get expirationDateContract => 'تاريخ انتهاء عقد العمل';
+
+  @override
+  String get nameBankSalary => 'اسم البنك المخصص لإستلام الراتب';
+
+  @override
+  String get bankBranch => 'فرع البنك';
+
+  @override
+  String get accountNumberIBAN => 'رقم الحساب /  IBAN';
+
+  @override
+  String get saveModifications => 'حفظ التعديلات';
+
+  @override
+  String get overtimeRequests => 'طلبات العمل الإضافي';
+
+  @override
+  String get overtimeRequest => 'طلب عمل اضافي';
+
+  @override
+  String get overtimeHistory => 'تاريخ العمل الإضافي';
+
+  @override
+  String get fromHour => 'من الساعة';
+
+  @override
+  String get toHour => 'إلى الساعة';
+
+  @override
+  String get notes => 'ملاحظات';
+
+  @override
+  String get attachDocument => 'ارفاق وثيقة';
+
+  @override
+  String get medicalCondition => 'إذا كانت حالة مرضية يرجى إضافة التقرير الطبي';
+
+  @override
+  String get attachFile => 'ارفاق ملف';
+
+  @override
+  String get workHistory => 'تاريخ العمل';
+
+  @override
+  String get dateAndTimeRequest => 'تاريخ ووقت الطلب';
+
+  @override
+  String get attachedDocuments => 'الوثائق المرفقة';
+
+  @override
+  String get officialReplied => 'رد المسؤول';
+
+  @override
+  String get officialNotes => 'ملاحظات المسؤول';
 }

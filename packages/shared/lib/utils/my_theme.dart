@@ -31,7 +31,16 @@ class MyTheme {
       brightness: colorScheme.brightness,
       useMaterial3: true,
       fontFamily: fontFamily,
-      appBarTheme: AppBarTheme(color: Colors.white),
+      appBarTheme: AppBarTheme(
+        color: Colors.white,
+        centerTitle: true,
+        titleTextStyle: TextStyle(
+          color: context.colorPalette.black,
+          fontSize: 18,
+          fontFamily: fontFamily,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
       bottomAppBarTheme: BottomAppBarThemeData(
         color: Colors.white,
       ),
@@ -51,7 +60,7 @@ class MyTheme {
       ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: colorScheme.surfaceContainer,
+        fillColor: context.colorPalette.greyF5F,
         constraints: BoxConstraints(maxWidth: 600),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10)

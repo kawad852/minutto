@@ -251,3 +251,4 @@ export 'widgets/widget_title.dart';
 export 'utils/color_palette.dart';
 export 'utils/my_icons.dart';
 export 'widgets/custom_svg.dart';
+export 'widgets/custom_line.dart';

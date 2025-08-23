@@ -135,7 +135,7 @@ class CustomTextField extends StatelessWidget {
       initialValue: initialValue,
       prefixIcon: prefixIcon,
       hintText: hintText,
-      // labelText: context.appLocalization.email,
+      labelText: hintText == null? context.appLocalization.email: null ,
       keyboardType: TextInputType.emailAddress,
       onChanged: (value) => onChanged(value.isEmpty ? null : value),
       validator: (context, value) => ValidationHelper.email(context, value, required: required),

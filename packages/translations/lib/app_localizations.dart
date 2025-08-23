@@ -1139,7 +1139,7 @@ abstract class AppLocalizations {
   /// No description provided for @newOrder.
   ///
   /// In en, this message translates to:
-  /// **'New Order'**
+  /// **'New order'**
   String get newOrder;
 
   /// No description provided for @accept.
@@ -2239,6 +2239,216 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Your location is being verified to record your arrival time to work, please wait.'**
   String get yourLocationVerified;
+
+  /// No description provided for @applicationSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Application settings'**
+  String get applicationSettings;
+
+  /// No description provided for @changeLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Change language'**
+  String get changeLanguage;
+
+  /// No description provided for @nightMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Night mode'**
+  String get nightMode;
+
+  /// No description provided for @aboutTheCompany.
+  ///
+  /// In en, this message translates to:
+  /// **'About the company'**
+  String get aboutTheCompany;
+
+  /// No description provided for @bylaws.
+  ///
+  /// In en, this message translates to:
+  /// **'Bylaws'**
+  String get bylaws;
+
+  /// No description provided for @leaveDepartureSystem.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave and departure system'**
+  String get leaveDepartureSystem;
+
+  /// No description provided for @faq.
+  ///
+  /// In en, this message translates to:
+  /// **'FAQ'**
+  String get faq;
+
+  /// No description provided for @aboutTheApplication.
+  ///
+  /// In en, this message translates to:
+  /// **'About the application'**
+  String get aboutTheApplication;
+
+  /// No description provided for @whoAreWe.
+  ///
+  /// In en, this message translates to:
+  /// **'Who are we?'**
+  String get whoAreWe;
+
+  /// No description provided for @logOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Log out'**
+  String get logOut;
+
+  /// No description provided for @employeeData.
+  ///
+  /// In en, this message translates to:
+  /// **'Employee data'**
+  String get employeeData;
+
+  /// No description provided for @jobTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Job title'**
+  String get jobTitle;
+
+  /// No description provided for @basicSalary.
+  ///
+  /// In en, this message translates to:
+  /// **'Basic salary'**
+  String get basicSalary;
+
+  /// No description provided for @dateOfBirth.
+  ///
+  /// In en, this message translates to:
+  /// **'Date of birth'**
+  String get dateOfBirth;
+
+  /// No description provided for @dateStartWork.
+  ///
+  /// In en, this message translates to:
+  /// **'Date of start of work'**
+  String get dateStartWork;
+
+  /// No description provided for @contractDuration.
+  ///
+  /// In en, this message translates to:
+  /// **'Contract duration'**
+  String get contractDuration;
+
+  /// No description provided for @expirationDateContract.
+  ///
+  /// In en, this message translates to:
+  /// **'Expiration date of the employment contract'**
+  String get expirationDateContract;
+
+  /// No description provided for @nameBankSalary.
+  ///
+  /// In en, this message translates to:
+  /// **'Name of the bank designated for receiving the salary'**
+  String get nameBankSalary;
+
+  /// No description provided for @bankBranch.
+  ///
+  /// In en, this message translates to:
+  /// **'Bank branch'**
+  String get bankBranch;
+
+  /// No description provided for @accountNumberIBAN.
+  ///
+  /// In en, this message translates to:
+  /// **'Account number / IBAN'**
+  String get accountNumberIBAN;
+
+  /// No description provided for @saveModifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Save modifications'**
+  String get saveModifications;
+
+  /// No description provided for @overtimeRequests.
+  ///
+  /// In en, this message translates to:
+  /// **'Overtime requests'**
+  String get overtimeRequests;
+
+  /// No description provided for @overtimeRequest.
+  ///
+  /// In en, this message translates to:
+  /// **'Overtime request'**
+  String get overtimeRequest;
+
+  /// No description provided for @overtimeHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Overtime history'**
+  String get overtimeHistory;
+
+  /// No description provided for @fromHour.
+  ///
+  /// In en, this message translates to:
+  /// **'From hour'**
+  String get fromHour;
+
+  /// No description provided for @toHour.
+  ///
+  /// In en, this message translates to:
+  /// **'To hour'**
+  String get toHour;
+
+  /// No description provided for @notes.
+  ///
+  /// In en, this message translates to:
+  /// **'Notes'**
+  String get notes;
+
+  /// No description provided for @attachDocument.
+  ///
+  /// In en, this message translates to:
+  /// **'Attach a document'**
+  String get attachDocument;
+
+  /// No description provided for @medicalCondition.
+  ///
+  /// In en, this message translates to:
+  /// **'If it is a medical condition, please add the medical report.'**
+  String get medicalCondition;
+
+  /// No description provided for @attachFile.
+  ///
+  /// In en, this message translates to:
+  /// **'Attach a file'**
+  String get attachFile;
+
+  /// No description provided for @workHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Work history'**
+  String get workHistory;
+
+  /// No description provided for @dateAndTimeRequest.
+  ///
+  /// In en, this message translates to:
+  /// **'Date and time of request'**
+  String get dateAndTimeRequest;
+
+  /// No description provided for @attachedDocuments.
+  ///
+  /// In en, this message translates to:
+  /// **'Attached documents'**
+  String get attachedDocuments;
+
+  /// No description provided for @officialReplied.
+  ///
+  /// In en, this message translates to:
+  /// **'Official replied'**
+  String get officialReplied;
+
+  /// No description provided for @officialNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Official\'s notes'**
+  String get officialNotes;
 }
 
 class _AppLocalizationsDelegate

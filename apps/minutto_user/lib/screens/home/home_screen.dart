@@ -100,7 +100,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Expanded(
                       child: HomeBubble(
-                        onTap: () {},
+                        onTap: () {
+                          context.navigate((context) => const OvertimeScreen());
+                        },
                         icon: MyIcons.money,
                         title: context.appLocalization.overtime,
                       ),

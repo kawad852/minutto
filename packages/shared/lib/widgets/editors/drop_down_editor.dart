@@ -3,7 +3,8 @@ import '../../shared.dart';
 class DropDownEditor<T> extends StatelessWidget {
   final T? value;
   final Function(T?) onChanged;
-  final String title;
+  final String? title;
+  final String? label;
   final List<DropdownMenuItem<T>> items;
   final EdgeInsetsGeometry? padding;
 
@@ -11,9 +12,10 @@ class DropDownEditor<T> extends StatelessWidget {
     super.key,
     required this.value,
     required this.onChanged,
-    required this.title,
+    this.title,
     required this.items,
     this.padding,
+    this.label,
   });
 
   @override
@@ -26,7 +28,7 @@ class DropDownEditor<T> extends StatelessWidget {
           onChanged: onChanged,
           initialValue: value,
           autovalidateMode: AutovalidateMode.onUserInteraction,
-          decoration: InputDecoration(hintText: title),
+          decoration: InputDecoration(hintText: title,label: label != null ? Text(label!): null),
           validator: (value) {
             if (value == null) {
               return context.appLocalization.requiredField;
