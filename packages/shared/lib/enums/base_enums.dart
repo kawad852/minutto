@@ -18,3 +18,5 @@ class AuthProviders {
 enum ActionType { add, edit, delete }
 
 enum CheckingType { qr, location }
+
+enum OrderTypeEnum { vacation, leave, overtime }

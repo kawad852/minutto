@@ -1100,7 +1100,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get alarms => 'Alarms';
 
   @override
-  String get advances => 'advances';
+  String get advances => 'Debts';
 
   @override
   String get incentivesRequests => 'Incentives/requests';
@@ -1241,4 +1241,58 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get officialNotes => 'Official\'s notes';
+
+  @override
+  String get vacationRequest => 'Vacation request';
+
+  @override
+  String get requestType => 'Request type';
+
+  @override
+  String get fromDate => 'From date';
+
+  @override
+  String get toDate => 'To date';
+
+  @override
+  String get leaveRequest => 'Leave request';
+
+  @override
+  String get leaveDate => 'Leave date';
+
+  @override
+  String get myLeave => 'My leave';
+
+  @override
+  String get myVacation => 'My Vacation';
+
+  @override
+  String get debtRequest => 'Debt request';
+
+  @override
+  String get debtValue => 'Debt value';
+
+  @override
+  String get orderDate => 'Order date';
+
+  @override
+  String get debtRequests => 'Debt requests';
+
+  @override
+  String get requests => 'Requests';
+
+  @override
+  String get ceiling => 'Ceiling';
+
+  @override
+  String get monthly => 'Monthly';
+
+  @override
+  String get fromTheBasicSalary => 'From the basic salary';
+
+  @override
+  String get ordersRecord => 'Orders record';
+
+  @override
+  String get valuee => 'Value';
 }

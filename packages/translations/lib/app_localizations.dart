@@ -2177,7 +2177,7 @@ abstract class AppLocalizations {
   /// No description provided for @advances.
   ///
   /// In en, this message translates to:
-  /// **'advances'**
+  /// **'Debts'**
   String get advances;
 
   /// No description provided for @incentivesRequests.
@@ -2449,6 +2449,114 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Official\'s notes'**
   String get officialNotes;
+
+  /// No description provided for @vacationRequest.
+  ///
+  /// In en, this message translates to:
+  /// **'Vacation request'**
+  String get vacationRequest;
+
+  /// No description provided for @requestType.
+  ///
+  /// In en, this message translates to:
+  /// **'Request type'**
+  String get requestType;
+
+  /// No description provided for @fromDate.
+  ///
+  /// In en, this message translates to:
+  /// **'From date'**
+  String get fromDate;
+
+  /// No description provided for @toDate.
+  ///
+  /// In en, this message translates to:
+  /// **'To date'**
+  String get toDate;
+
+  /// No description provided for @leaveRequest.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave request'**
+  String get leaveRequest;
+
+  /// No description provided for @leaveDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave date'**
+  String get leaveDate;
+
+  /// No description provided for @myLeave.
+  ///
+  /// In en, this message translates to:
+  /// **'My leave'**
+  String get myLeave;
+
+  /// No description provided for @myVacation.
+  ///
+  /// In en, this message translates to:
+  /// **'My Vacation'**
+  String get myVacation;
+
+  /// No description provided for @debtRequest.
+  ///
+  /// In en, this message translates to:
+  /// **'Debt request'**
+  String get debtRequest;
+
+  /// No description provided for @debtValue.
+  ///
+  /// In en, this message translates to:
+  /// **'Debt value'**
+  String get debtValue;
+
+  /// No description provided for @orderDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Order date'**
+  String get orderDate;
+
+  /// No description provided for @debtRequests.
+  ///
+  /// In en, this message translates to:
+  /// **'Debt requests'**
+  String get debtRequests;
+
+  /// No description provided for @requests.
+  ///
+  /// In en, this message translates to:
+  /// **'Requests'**
+  String get requests;
+
+  /// No description provided for @ceiling.
+  ///
+  /// In en, this message translates to:
+  /// **'Ceiling'**
+  String get ceiling;
+
+  /// No description provided for @monthly.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly'**
+  String get monthly;
+
+  /// No description provided for @fromTheBasicSalary.
+  ///
+  /// In en, this message translates to:
+  /// **'From the basic salary'**
+  String get fromTheBasicSalary;
+
+  /// No description provided for @ordersRecord.
+  ///
+  /// In en, this message translates to:
+  /// **'Orders record'**
+  String get ordersRecord;
+
+  /// No description provided for @valuee.
+  ///
+  /// In en, this message translates to:
+  /// **'Value'**
+  String get valuee;
 }
 
 class _AppLocalizationsDelegate

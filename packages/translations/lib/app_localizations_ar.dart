@@ -1235,4 +1235,58 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get officialNotes => 'ملاحظات المسؤول';
+
+  @override
+  String get vacationRequest => 'طلب اجازة';
+
+  @override
+  String get requestType => 'نوع الطلب';
+
+  @override
+  String get fromDate => 'من تاريخ';
+
+  @override
+  String get toDate => 'إلى تاريخ';
+
+  @override
+  String get leaveRequest => 'طلب مغادرة';
+
+  @override
+  String get leaveDate => 'تاريخ المغادرة';
+
+  @override
+  String get myLeave => 'مغادراتي';
+
+  @override
+  String get myVacation => 'اجازاتي';
+
+  @override
+  String get debtRequest => 'طلب سلفة';
+
+  @override
+  String get debtValue => 'قيمة السلفة';
+
+  @override
+  String get orderDate => 'تاريخ الطلب';
+
+  @override
+  String get debtRequests => 'طلبات السلف';
+
+  @override
+  String get requests => 'الطلبات';
+
+  @override
+  String get ceiling => 'السقف';
+
+  @override
+  String get monthly => 'شهرياً';
+
+  @override
+  String get fromTheBasicSalary => 'من الراتب الأساسي';
+
+  @override
+  String get ordersRecord => 'سجل الطلبات';
+
+  @override
+  String get valuee => 'القيمة';
 }

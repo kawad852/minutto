@@ -1,14 +1,26 @@
 import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
-class OvertimeCard extends StatelessWidget {
-  const OvertimeCard({super.key});
+class OrderCard extends StatelessWidget {
+  final OrderTypeEnum orderTypeEnum;
+  const OrderCard({super.key, required this.orderTypeEnum});
 
   @override
   Widget build(BuildContext context) {
+    String getIcon() {
+      switch (orderTypeEnum) {
+        case OrderTypeEnum.overtime:
+          return MyIcons.money;
+        case OrderTypeEnum.leave:
+          return MyIcons.clockIcon;
+        case OrderTypeEnum.vacation:
+          return MyIcons.umbrella;
+      }
+    }
+
     return GestureDetector(
       onTap: () {
-        context.navigate((context) => const OvertimeDetalisScreen());
+        context.navigate((context) => OrderDetalisScreen(orderTypeEnum: orderTypeEnum));
       },
       child: Container(
         width: double.infinity,
@@ -20,7 +32,7 @@ class OvertimeCard extends StatelessWidget {
         ),
         child: Row(
           children: [
-            CustomSvg(MyIcons.clockIcon),
+            CustomSvg(getIcon()),
             const SizedBox(width: 12),
             Expanded(
               child: Column(
@@ -49,6 +61,18 @@ class OvertimeCard extends StatelessWidget {
                 ],
               ),
             ),
+            if (orderTypeEnum == OrderTypeEnum.vacation)
+              Expanded(
+                child: Text(
+                  "اجازة مرضية",
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: context.colorPalette.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
             Text(
               "بالإنتظار",
               style: TextStyle(

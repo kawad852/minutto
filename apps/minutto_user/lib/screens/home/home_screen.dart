@@ -41,7 +41,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Expanded(
                       child: HomeBubble(
-                        onTap: () {},
+                        onTap: () {
+                          context.navigate((context) => const OrderScreen(orderTypeEnum: OrderTypeEnum.vacation));
+                        },
                         icon: MyIcons.umbrella,
                         title: context.appLocalization.vacations,
                       ),
@@ -49,7 +51,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     const SizedBox(width: 10),
                     Expanded(
                       child: HomeBubble(
-                        onTap: () {},
+                        onTap: () {
+                          context.navigate((context) => const OrderScreen(orderTypeEnum: OrderTypeEnum.leave));
+                        },
                         icon: MyIcons.clockIcon,
                         title: context.appLocalization.departures,
                       ),
@@ -101,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Expanded(
                       child: HomeBubble(
                         onTap: () {
-                          context.navigate((context) => const OvertimeScreen());
+                          context.navigate((context) => const OrderScreen(orderTypeEnum: OrderTypeEnum.overtime));
                         },
                         icon: MyIcons.money,
                         title: context.appLocalization.overtime,
