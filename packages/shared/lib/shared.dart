@@ -252,3 +252,7 @@ export 'utils/color_palette.dart';
 export 'utils/my_icons.dart';
 export 'widgets/custom_svg.dart';
 export 'widgets/custom_line.dart';
+export 'widgets/order_header.dart';
+export 'widgets/shared_container.dart';
+export 'widgets/order_detalis_card.dart';
+export 'widgets/order_form.dart';

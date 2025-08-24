@@ -492,5 +492,20 @@
   "monthly":"Monthly",
   "fromTheBasicSalary":"From the basic salary",
   "ordersRecord":"Orders record",
-  "valuee":"Value"
+  "valuee":"Value",
+  "attachDoucOrPdf":"You can attach a PDF document or an image.",
+  "alarmType":"Alarm type",
+  "alarmDate":"Alarm date",
+  "alarmPenalty":"Alarm penalty",
+  "alarmText":"Alarm text",
+  "requestForExpenseAllowance":"Request for expense allowance",
+  "incentives":"Incentives",
+  "typeIncentive":"Type incentive",
+  "incentiveDate":"Incentive date",
+  "incentive":"Incentive",
+  "dateRegistrationIncentive":"Date registration incentive",
+  "incentiveText":"Incentive text",
+  "typeExpenseCompensated":"Type of expense to be compensated",
+  "expenseAllowanceDate":"Expense allowance date",
+  "allowanceValue":"Allowance value"
 }

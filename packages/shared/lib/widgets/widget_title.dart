@@ -2,6 +2,7 @@ import 'package:shared/shared.dart';
 
 class WidgetTitle extends StatelessWidget {
   final String title;
+  final String? miniTitle;
   final Widget child;
   final EdgeInsetsGeometry padding;
 
@@ -9,6 +10,7 @@ class WidgetTitle extends StatelessWidget {
     super.key,
     required this.title,
     required this.child,
+    this.miniTitle,
     this.padding = EdgeInsets.zero,
   });
 
@@ -20,9 +22,21 @@ class WidgetTitle extends StatelessWidget {
       children: [
         Padding(
           padding: padding,
-          child: Text(
-            title,
-            style: context.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.w500),
+          child: Row(
+            children: [
+              Text(
+                title,
+                style: context.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.w500),
+              ),
+              if (miniTitle != null)
+               Text(
+                miniTitle!,
+                style: TextStyle(
+                  color: context.colorPalette.grey8F8,
+                  fontSize: 12,
+                ),
+               )
+            ],
           ),
         ),
         const SizedBox(height: 4),

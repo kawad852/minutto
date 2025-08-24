@@ -2557,6 +2557,96 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Value'**
   String get valuee;
+
+  /// No description provided for @attachDoucOrPdf.
+  ///
+  /// In en, this message translates to:
+  /// **'You can attach a PDF document or an image.'**
+  String get attachDoucOrPdf;
+
+  /// No description provided for @alarmType.
+  ///
+  /// In en, this message translates to:
+  /// **'Alarm type'**
+  String get alarmType;
+
+  /// No description provided for @alarmDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Alarm date'**
+  String get alarmDate;
+
+  /// No description provided for @alarmPenalty.
+  ///
+  /// In en, this message translates to:
+  /// **'Alarm penalty'**
+  String get alarmPenalty;
+
+  /// No description provided for @alarmText.
+  ///
+  /// In en, this message translates to:
+  /// **'Alarm text'**
+  String get alarmText;
+
+  /// No description provided for @requestForExpenseAllowance.
+  ///
+  /// In en, this message translates to:
+  /// **'Request for expense allowance'**
+  String get requestForExpenseAllowance;
+
+  /// No description provided for @incentives.
+  ///
+  /// In en, this message translates to:
+  /// **'Incentives'**
+  String get incentives;
+
+  /// No description provided for @typeIncentive.
+  ///
+  /// In en, this message translates to:
+  /// **'Type incentive'**
+  String get typeIncentive;
+
+  /// No description provided for @incentiveDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Incentive date'**
+  String get incentiveDate;
+
+  /// No description provided for @incentive.
+  ///
+  /// In en, this message translates to:
+  /// **'Incentive'**
+  String get incentive;
+
+  /// No description provided for @dateRegistrationIncentive.
+  ///
+  /// In en, this message translates to:
+  /// **'Date registration incentive'**
+  String get dateRegistrationIncentive;
+
+  /// No description provided for @incentiveText.
+  ///
+  /// In en, this message translates to:
+  /// **'Incentive text'**
+  String get incentiveText;
+
+  /// No description provided for @typeExpenseCompensated.
+  ///
+  /// In en, this message translates to:
+  /// **'Type of expense to be compensated'**
+  String get typeExpenseCompensated;
+
+  /// No description provided for @expenseAllowanceDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Expense allowance date'**
+  String get expenseAllowanceDate;
+
+  /// No description provided for @allowanceValue.
+  ///
+  /// In en, this message translates to:
+  /// **'Allowance value'**
+  String get allowanceValue;
 }
 
 class _AppLocalizationsDelegate

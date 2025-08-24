@@ -319,5 +319,20 @@
   "monthly":"شهرياً",
   "fromTheBasicSalary":"من الراتب الأساسي",
   "ordersRecord":"سجل الطلبات",
-  "valuee":"القيمة"
+  "valuee":"القيمة",
+  "attachDoucOrPdf":"يمكنك ارفاق وثيقة pdf او صورة",
+  "alarmType":"نوع الإنذار",
+  "alarmDate":"تاريخ الإنذار",
+  "alarmPenalty":"عقوبة الإنذار",
+  "alarmText":"نص الإنذار",
+  "requestForExpenseAllowance":"طلب بدل مصروفات",
+  "incentives":"حوافز",
+  "typeIncentive":"نوع الحافز",
+  "incentiveDate":"تاريخ الحافز",
+  "incentive":"الحافز",
+  "dateRegistrationIncentive":"تاريخ قيد الحافز",
+  "incentiveText":"نص الحافز",
+  "typeExpenseCompensated":"نوع المصروف المطلوب تعويضه",
+  "expenseAllowanceDate":"تاريخ البدل",
+  "allowanceValue":"قيمة البدل"
 }

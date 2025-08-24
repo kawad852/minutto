@@ -1295,4 +1295,49 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get valuee => 'Value';
+
+  @override
+  String get attachDoucOrPdf => 'You can attach a PDF document or an image.';
+
+  @override
+  String get alarmType => 'Alarm type';
+
+  @override
+  String get alarmDate => 'Alarm date';
+
+  @override
+  String get alarmPenalty => 'Alarm penalty';
+
+  @override
+  String get alarmText => 'Alarm text';
+
+  @override
+  String get requestForExpenseAllowance => 'Request for expense allowance';
+
+  @override
+  String get incentives => 'Incentives';
+
+  @override
+  String get typeIncentive => 'Type incentive';
+
+  @override
+  String get incentiveDate => 'Incentive date';
+
+  @override
+  String get incentive => 'Incentive';
+
+  @override
+  String get dateRegistrationIncentive => 'Date registration incentive';
+
+  @override
+  String get incentiveText => 'Incentive text';
+
+  @override
+  String get typeExpenseCompensated => 'Type of expense to be compensated';
+
+  @override
+  String get expenseAllowanceDate => 'Expense allowance date';
+
+  @override
+  String get allowanceValue => 'Allowance value';
 }

@@ -1289,4 +1289,49 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get valuee => 'القيمة';
+
+  @override
+  String get attachDoucOrPdf => 'يمكنك ارفاق وثيقة pdf او صورة';
+
+  @override
+  String get alarmType => 'نوع الإنذار';
+
+  @override
+  String get alarmDate => 'تاريخ الإنذار';
+
+  @override
+  String get alarmPenalty => 'عقوبة الإنذار';
+
+  @override
+  String get alarmText => 'نص الإنذار';
+
+  @override
+  String get requestForExpenseAllowance => 'طلب بدل مصروفات';
+
+  @override
+  String get incentives => 'حوافز';
+
+  @override
+  String get typeIncentive => 'نوع الحافز';
+
+  @override
+  String get incentiveDate => 'تاريخ الحافز';
+
+  @override
+  String get incentive => 'الحافز';
+
+  @override
+  String get dateRegistrationIncentive => 'تاريخ قيد الحافز';
+
+  @override
+  String get incentiveText => 'نص الحافز';
+
+  @override
+  String get typeExpenseCompensated => 'نوع المصروف المطلوب تعويضه';
+
+  @override
+  String get expenseAllowanceDate => 'تاريخ البدل';
+
+  @override
+  String get allowanceValue => 'قيمة البدل';
 }

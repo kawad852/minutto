@@ -20,3 +20,7 @@ enum ActionType { add, edit, delete }
 enum CheckingType { qr, location }
 
 enum OrderTypeEnum { vacation, leave, overtime }
+
+enum FeedBackType { alarm, rewards }
+
+enum RewardsType { allowance, incentive }

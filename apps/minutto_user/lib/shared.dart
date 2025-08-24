@@ -32,4 +32,19 @@ export 'screens/order/order_detalis_screen.dart';
 export 'screens/order/order_input_screen.dart';
 export 'screens/order/order_screen.dart';
 export 'screens/order/widgets/order_card.dart';
-export 'screens/order/widgets/shared_container.dart';
+
+//debt
+export 'screens/debt/debt_screen.dart';
+export 'screens/debt/debt_input_screen.dart';
+export 'screens/debt/debt_detalis_screen.dart';
+export 'screens/debt/widgets/debt_bubble.dart';
+export 'screens/debt/widgets/debt_card.dart';
+
+//feedback
+export 'screens/feedback/feedback_screen.dart';
+export 'screens/feedback/feedback_input_screen.dart';
+export 'screens/feedback/feedback_detalis_screen.dart';
+export 'screens/feedback/widgets/feedback_card.dart';
+export 'screens/feedback/widgets/alarm_bubble.dart';
+export 'screens/feedback/widgets/allowance_bubble.dart';
+export 'screens/feedback/widgets/incentive_bubble.dart';

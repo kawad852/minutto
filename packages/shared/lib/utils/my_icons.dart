@@ -33,4 +33,10 @@ class MyIcons {
   static const String questions = '${_path}questions.svg';
   static const String edit = '${_path}edit.svg';
   static const String add = '${_path}add.svg';
+  static const String debtYellow = '${_path}debt_yellow.svg';
+  static const String allowance = '${_path}allowance.svg';
+  static const String favIcon = '${_path}fav_icon.svg';
+  static const String allowanceIcon = '${_path}allowance_icon.svg';
+  static const String alarmIcon = '${_path}alarm_icon.svg';
+  static const String alarm = '${_path}alarm.svg';
 }

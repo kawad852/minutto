@@ -72,7 +72,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     const SizedBox(width: 10),
                     Expanded(
                       child: HomeBubble(
-                        onTap: () {},
+                        onTap: () {
+                          context.navigate((context) => const FeedbackScreen(feedBackType: FeedBackType.alarm));
+                        },
                         icon: MyIcons.danger,
                         title: context.appLocalization.alarms,
                       ),
@@ -83,7 +85,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Expanded(
                       child: HomeBubble(
-                        onTap: () {},
+                        onTap: () {
+                          context.navigate((context) => const DebtScreen());
+                        },
                         icon: MyIcons.advance,
                         title: context.appLocalization.advances,
                         backgroundColor: context.colorPalette.yellowFDF,
@@ -92,7 +96,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     const SizedBox(width: 10),
                     Expanded(
                       child: HomeBubble(
-                        onTap: () {},
+                        onTap: () {
+                          context.navigate((context) => const FeedbackScreen(feedBackType: FeedBackType.rewards));
+                        },
                         icon: MyIcons.favorite,
                         title: context.appLocalization.incentivesRequests,
                         backgroundColor: context.colorPalette.greenB2D,
