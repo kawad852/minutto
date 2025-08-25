@@ -507,5 +507,6 @@
   "incentiveText":"Incentive text",
   "typeExpenseCompensated":"Type of expense to be compensated",
   "expenseAllowanceDate":"Expense allowance date",
-  "allowanceValue":"Allowance value"
+  "allowanceValue":"Allowance value",
+  "sentSuccessfully": "Sent Successfully"
 }

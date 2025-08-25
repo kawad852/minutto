@@ -1340,4 +1340,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get allowanceValue => 'Allowance value';
+
+  @override
+  String get sentSuccessfully => 'Sent Successfully';
 }

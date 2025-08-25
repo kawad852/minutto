@@ -2647,6 +2647,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Allowance value'**
   String get allowanceValue;
+
+  /// No description provided for @sentSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Sent Successfully'**
+  String get sentSuccessfully;
 }
 
 class _AppLocalizationsDelegate

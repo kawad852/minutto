@@ -12,6 +12,9 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
   late LeaveModel _leave;
   var _files = <XFile>[];
   final _formKey = GlobalKey<FormState>();
+  final _storageService = StorageService();
+
+  FirebaseFirestore get _firebaseFireStore => getIt<FirebaseFirestore>();
 
   String _getTitle() {
     switch (widget.orderTypeEnum) {
@@ -27,7 +30,23 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
   void _onSubmit(BuildContext context) {
     if (_formKey.currentState!.validate()) {
       context.unFocusKeyboard();
-      //
+      ApiService.fetch(
+        context,
+        callBack: () async {
+          // final user = MySharedPreferences.user!;
+          final docRef = _firebaseFireStore.vacations.doc();
+          _leave.id = docRef.id;
+          // _leave.companyId = user.companyId!;
+          // _leave.userId = user.id!;
+          _leave.createdAt = kNowDate;
+          _leave.attachments = await _storageService.uploadFiles(MyCollections.vacations, _files);
+          await docRef.set(_leave);
+          if (context.mounted) {
+            context.showSnackBar(context.appLocalization.sentSuccessfully);
+            Navigator.pop(context);
+          }
+        },
+      );
     }
   }
 
@@ -66,7 +85,7 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                   padding: const EdgeInsets.symmetric(vertical: 5),
                   child: DropDownEditor(
                     items: LeaveType.values.map((e) {
-                      return DropdownMenuItem(value: 'مرضية', child: Text('مرضية'));
+                      return DropdownMenuItem(value: e.value, child: Text('مرضية'));
                     }).toList(),
                     onChanged: (value) => _leave.requestType = value!,
                     value: _leave.requestType.isNotEmpty ? _leave.requestType : null,

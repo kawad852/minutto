@@ -93,4 +93,9 @@ extension FireConvertors on CollectionReference {
     fromFirestore: (snapshot, _) => BrandModel.fromJson(snapshot.data()!),
     toFirestore: (snapshot, _) => snapshot.toJson(),
   );
+
+  CollectionReference<LeaveModel> get vacationConvertor => withConverter<LeaveModel>(
+    fromFirestore: (snapshot, _) => LeaveModel.fromJson(snapshot.data()!),
+    toFirestore: (snapshot, _) => snapshot.toJson(),
+  );
 }

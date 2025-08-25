@@ -25,9 +25,7 @@ class _AttachmentEditorState extends State<AttachmentEditor> {
         setState(() {
           _files.addAll(files);
         });
-        if (widget.onChanged != null) {
-          widget.onChanged!(files);
-        }
+        widget.onChanged(files);
       }
     } catch (e) {
       debugPrint("pickFileError:: $e");
@@ -47,9 +45,16 @@ class _AttachmentEditorState extends State<AttachmentEditor> {
       spacing: 10,
       children: [
         CustomTextField.clickable(
+          key: ValueKey(_files.length),
           onTap: () => _pickFiles(context),
           labelText: context.appLocalization.attachFile,
           suffixIcon: CustomSvg(MyIcons.add),
+          validator: (context, value) {
+            if (_files.isEmpty) {
+              return context.appLocalization.requiredField;
+            }
+            return null;
+          },
         ),
         SingleChildScrollView(
           child: Row(

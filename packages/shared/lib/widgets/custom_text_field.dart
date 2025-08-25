@@ -176,6 +176,7 @@ class CustomTextField extends StatelessWidget {
     Widget? suffixIcon,
     required VoidCallback onTap,
     bool required = true,
+    String? Function(BuildContext, String?)? validator,
   }) {
     return CustomTextField._(
       key: key,
@@ -184,7 +185,9 @@ class CustomTextField extends StatelessWidget {
       suffixIcon: suffixIcon,
       labelText: labelText,
       canRequestFocus: false,
-      validator: (context, value) => required ? ValidationHelper.required(context, value) : null,
+      validator:
+          validator ??
+          (context, value) => required ? ValidationHelper.required(context, value) : null,
       onChanged: null,
       onTap: onTap,
     );

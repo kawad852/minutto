@@ -183,6 +183,7 @@ export 'services/insights_service.dart';
 export 'services/launcher_service.dart';
 export 'services/recommend_service.dart';
 export 'services/rewards_service.dart';
+export 'services/storage_service.dart';
 export 'services/stripe_service.dart';
 export 'services/vertext_ai_service.dart';
 export 'utils/app_constants.dart';

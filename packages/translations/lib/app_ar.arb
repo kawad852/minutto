@@ -215,7 +215,6 @@
   "successfullyUpdated": "تم التحديث بنجاح",
   "configure": "تهيئة",
   "company": "الشركة",
-  "sentSuccessfully": "تم الإرسال بنجاح",
 
 
 
@@ -334,5 +333,6 @@
   "incentiveText":"نص الحافز",
   "typeExpenseCompensated":"نوع المصروف المطلوب تعويضه",
   "expenseAllowanceDate":"تاريخ البدل",
-  "allowanceValue":"قيمة البدل"
+  "allowanceValue":"قيمة البدل",
+  "sentSuccessfully": "تم الإرسال بنجاح"
 }

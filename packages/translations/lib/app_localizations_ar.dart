@@ -1334,4 +1334,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get allowanceValue => 'قيمة البدل';
+
+  @override
+  String get sentSuccessfully => 'تم الإرسال بنجاح';
 }
