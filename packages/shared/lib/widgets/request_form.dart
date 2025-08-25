@@ -1,11 +1,11 @@
 import 'package:shared/shared.dart';
 
-class OrderForm extends StatelessWidget {
+class RequestForm extends StatelessWidget {
   final ValueChanged<String?> onNotesChanged;
   final List<AttachmentModel> attachments;
   final ValueChanged<List<XFile>> onAttachmentChanged;
 
-  const OrderForm({
+  const RequestForm({
     super.key,
     required this.onNotesChanged,
     required this.attachments,

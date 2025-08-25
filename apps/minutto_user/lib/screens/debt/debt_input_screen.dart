@@ -50,7 +50,7 @@ class _DebtInputScreenState extends State<DebtInputScreen> {
               ),
             ],
           ),
-          OrderForm(
+          RequestForm(
             onNotesChanged: (value) {},
             attachments: [],
             onAttachmentChanged: (List<XFile> value) {},

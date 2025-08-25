@@ -126,7 +126,7 @@ class _LeaveInputScreenState extends State<LeaveInputScreen> {
                     ),
                   ],
                 ),
-              OrderForm(
+              RequestForm(
                 onNotesChanged: (value) => _leave.notes = value,
                 attachments: _leave.attachments,
                 onAttachmentChanged: (List<XFile> value) => _files = value,
