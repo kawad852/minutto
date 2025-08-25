@@ -1334,4 +1334,25 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get allowanceValue => 'قيمة البدل';
+
+  @override
+  String get salariesYear => 'رواتب سنة';
+
+  @override
+  String get salaryReport => 'تقرير راتب';
+
+  @override
+  String get incentivesAndRewards => 'حوافز ومكافئات';
+
+  @override
+  String get fuelAllowance => 'بدل وقود';
+
+  @override
+  String get absenceDiscount => 'خصم غياب';
+
+  @override
+  String get delayDiscount => 'خصم تأخير';
+
+  @override
+  String get total => 'الإجمالي';
 }

@@ -1340,4 +1340,25 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get allowanceValue => 'Allowance value';
+
+  @override
+  String get salariesYear => 'Salaries for the year';
+
+  @override
+  String get salaryReport => 'Salary report';
+
+  @override
+  String get incentivesAndRewards => 'Incentives and rewards';
+
+  @override
+  String get fuelAllowance => 'Fuel allowance';
+
+  @override
+  String get absenceDiscount => 'Absence discount';
+
+  @override
+  String get delayDiscount => 'Delay discount';
+
+  @override
+  String get total => 'Total';
 }

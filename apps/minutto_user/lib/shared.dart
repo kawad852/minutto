@@ -48,3 +48,9 @@ export 'screens/feedback/widgets/feedback_card.dart';
 export 'screens/feedback/widgets/alarm_bubble.dart';
 export 'screens/feedback/widgets/allowance_bubble.dart';
 export 'screens/feedback/widgets/incentive_bubble.dart';
+
+//salaries
+export 'screens/salaries/salaries_screen.dart';
+export 'screens/salaries/widgets/salary_card.dart';
+export 'screens/salaries/widgets/salary_table.dart';
+export 'screens/salaries/widgets/table_text.dart';

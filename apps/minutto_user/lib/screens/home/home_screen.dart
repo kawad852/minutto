@@ -64,7 +64,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Expanded(
                       child: HomeBubble(
-                        onTap: () {},
+                        onTap: () {
+                          context.navigate((context) => const SalariesScreen());
+                        },
                         icon: MyIcons.money,
                         title: context.appLocalization.salaries,
                       ),

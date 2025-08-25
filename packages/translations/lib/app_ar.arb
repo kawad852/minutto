@@ -334,5 +334,12 @@
   "incentiveText":"نص الحافز",
   "typeExpenseCompensated":"نوع المصروف المطلوب تعويضه",
   "expenseAllowanceDate":"تاريخ البدل",
-  "allowanceValue":"قيمة البدل"
+  "allowanceValue":"قيمة البدل",
+  "salariesYear":"رواتب سنة",
+  "salaryReport":"تقرير راتب",
+  "incentivesAndRewards":"حوافز ومكافئات",
+  "fuelAllowance":"بدل وقود",
+  "absenceDiscount":"خصم غياب",
+  "delayDiscount":"خصم تأخير",
+  "total":"الإجمالي"
 }

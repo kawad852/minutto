@@ -507,5 +507,12 @@
   "incentiveText":"Incentive text",
   "typeExpenseCompensated":"Type of expense to be compensated",
   "expenseAllowanceDate":"Expense allowance date",
-  "allowanceValue":"Allowance value"
+  "allowanceValue":"Allowance value",
+  "salariesYear":"Salaries for the year",
+  "salaryReport":"Salary report",
+  "incentivesAndRewards":"Incentives and rewards",
+  "fuelAllowance":"Fuel allowance",
+  "absenceDiscount":"Absence discount",
+  "delayDiscount":"Delay discount",
+  "total":"Total"
 }

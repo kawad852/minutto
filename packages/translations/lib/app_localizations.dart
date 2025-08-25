@@ -2647,6 +2647,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Allowance value'**
   String get allowanceValue;
+
+  /// No description provided for @salariesYear.
+  ///
+  /// In en, this message translates to:
+  /// **'Salaries for the year'**
+  String get salariesYear;
+
+  /// No description provided for @salaryReport.
+  ///
+  /// In en, this message translates to:
+  /// **'Salary report'**
+  String get salaryReport;
+
+  /// No description provided for @incentivesAndRewards.
+  ///
+  /// In en, this message translates to:
+  /// **'Incentives and rewards'**
+  String get incentivesAndRewards;
+
+  /// No description provided for @fuelAllowance.
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel allowance'**
+  String get fuelAllowance;
+
+  /// No description provided for @absenceDiscount.
+  ///
+  /// In en, this message translates to:
+  /// **'Absence discount'**
+  String get absenceDiscount;
+
+  /// No description provided for @delayDiscount.
+  ///
+  /// In en, this message translates to:
+  /// **'Delay discount'**
+  String get delayDiscount;
+
+  /// No description provided for @total.
+  ///
+  /// In en, this message translates to:
+  /// **'Total'**
+  String get total;
 }
 
 class _AppLocalizationsDelegate
