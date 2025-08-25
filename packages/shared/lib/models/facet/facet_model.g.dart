@@ -22,10 +22,10 @@ _$FacetModelImpl _$$FacetModelImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$FacetModelImplToJson(_$FacetModelImpl instance) =>
     <String, dynamic>{
-      'counts': instance.counts.map((e) => e.toJson()).toList(),
+      'counts': instance.counts,
       'field_name': instance.fieldName,
       'sampled': instance.sampled,
-      'stats': instance.stats.toJson(),
+      'stats': instance.stats,
     };
 
 _$FacetCountImpl _$$FacetCountImplFromJson(Map<String, dynamic> json) =>

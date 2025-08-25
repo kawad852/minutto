@@ -1,14 +1,16 @@
 import 'package:shared/shared.dart';
 
-class OrderInputScreen extends StatefulWidget {
+class LeaveInputScreen extends StatefulWidget {
   final OrderTypeEnum orderTypeEnum;
-  const OrderInputScreen({super.key, required this.orderTypeEnum});
+  const LeaveInputScreen({super.key, required this.orderTypeEnum});
 
   @override
-  State<OrderInputScreen> createState() => _OrderInputScreenState();
+  State<LeaveInputScreen> createState() => _LeaveInputScreenState();
 }
 
-class _OrderInputScreenState extends State<OrderInputScreen> {
+class _LeaveInputScreenState extends State<LeaveInputScreen> {
+  late LeaveModel _leave;
+
   String _getTitle() {
     switch (widget.orderTypeEnum) {
       case OrderTypeEnum.overtime:
@@ -18,6 +20,12 @@ class _OrderInputScreenState extends State<OrderInputScreen> {
       case OrderTypeEnum.vacation:
         return context.appLocalization.vacationRequest;
     }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _leave = LeaveModel(createdAt: kNowDate, fromDate: kNowDate, toDate: kNowDate);
   }
 
   @override
@@ -44,16 +52,12 @@ class _OrderInputScreenState extends State<OrderInputScreen> {
             WidgetTitle(
               title: context.appLocalization.requestType,
               padding: const EdgeInsets.symmetric(vertical: 5),
-              child: DropDownEditor<String>(
-                items: [
-                  DropdownMenuItem(value: 'مرضية', child: Text('مرضية')),
-                  DropdownMenuItem(
-                    value: 'حالة وفاة',
-                    child: Text('حالة وفاة'),
-                  ),
-                ],
-                onChanged: (value) {},
-                value: null,
+              child: DropDownEditor(
+                items: LeaveType.values.map((e) {
+                  return DropdownMenuItem(value: 'مرضية', child: Text('مرضية'));
+                }).toList(),
+                onChanged: (value) => _leave.requestType = value!,
+                value: _leave.requestType.isNotEmpty ? _leave.requestType : null,
               ),
             ),
           if (widget.orderTypeEnum == OrderTypeEnum.vacation)
@@ -63,7 +67,10 @@ class _OrderInputScreenState extends State<OrderInputScreen> {
                   child: WidgetTitle(
                     title: context.appLocalization.fromDate,
                     padding: const EdgeInsets.symmetric(vertical: 5),
-                    child: CustomTextField.text(onChanged: (value) {}),
+                    child: DateEditor(
+                      value: _leave.fromDate,
+                      onChanged: (value) => _leave.fromDate = value,
+                    ),
                   ),
                 ),
                 const SizedBox(width: 10),
@@ -71,7 +78,10 @@ class _OrderInputScreenState extends State<OrderInputScreen> {
                   child: WidgetTitle(
                     title: context.appLocalization.toDate,
                     padding: const EdgeInsets.symmetric(vertical: 5),
-                    child: CustomTextField.text(onChanged: (value) {}),
+                    child: DateEditor(
+                      value: _leave.toDate,
+                      onChanged: (value) => _leave.toDate = value,
+                    ),
                   ),
                 ),
               ],
@@ -104,7 +114,7 @@ class _OrderInputScreenState extends State<OrderInputScreen> {
                 ),
               ],
             ),
-          const OrderForm(),
+          OrderForm(onNotesChanged: (value) => _leave.notes = value),
         ],
       ),
     );

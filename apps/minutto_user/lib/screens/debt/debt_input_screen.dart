@@ -50,7 +50,7 @@ class _DebtInputScreenState extends State<DebtInputScreen> {
               ),
             ],
           ),
-          const OrderForm(),
+          OrderForm(onNotesChanged: (value) {}),
         ],
       ),
     );

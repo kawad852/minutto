@@ -118,8 +118,8 @@ Map<String, dynamic> _$$UnifiedFacetImplToJson(_$UnifiedFacetImpl instance) =>
       'name': instance.name,
       'order': instance.order,
       'pinned': instance.pinned,
-      'values': instance.values.map((e) => e.toJson()).toList(),
-      'stats': instance.stats?.toJson(),
+      'values': instance.values,
+      'stats': instance.stats,
     };
 
 _$UnifiedFacetValueImpl _$$UnifiedFacetValueImplFromJson(

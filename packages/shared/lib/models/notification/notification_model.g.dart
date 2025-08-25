@@ -27,11 +27,11 @@ Map<String, dynamic> _$$NotificationModelImplToJson(
   _$NotificationModelImpl instance,
 ) => <String, dynamic>{
   'createdAt': const TimestampSerializer().toJson(instance.createdAt),
-  'data': instance.data?.toJson(),
+  'data': instance.data,
   'topic': instance.topic,
   'token': instance.token,
   'markAsRead': instance.markAsRead,
-  'notification': instance.notification?.toJson(),
+  'notification': instance.notification,
 };
 
 _$NotificationHeaderModelImpl _$$NotificationHeaderModelImplFromJson(

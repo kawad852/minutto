@@ -23,7 +23,7 @@ Map<String, dynamic> _$$QuerySuggestionModelImplToJson(
   'objectID': instance.objectID,
   'query': instance.query,
   'count': instance.count,
-  '_highlightResult': instance.highlightResult.toJson(),
+  '_highlightResult': instance.highlightResult,
 };
 
 _$HighlightResultImpl _$$HighlightResultImplFromJson(
@@ -34,7 +34,7 @@ _$HighlightResultImpl _$$HighlightResultImplFromJson(
 
 Map<String, dynamic> _$$HighlightResultImplToJson(
   _$HighlightResultImpl instance,
-) => <String, dynamic>{'query': instance.query.toJson()};
+) => <String, dynamic>{'query': instance.query};
 
 _$HighlightQueryImpl _$$HighlightQueryImplFromJson(Map<String, dynamic> json) =>
     _$HighlightQueryImpl(

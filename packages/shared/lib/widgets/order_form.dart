@@ -1,7 +1,9 @@
 import 'package:shared/shared.dart';
 
 class OrderForm extends StatelessWidget {
-  const OrderForm({super.key});
+  final ValueChanged<String?> onNotesChanged;
+
+  const OrderForm({super.key, required this.onNotesChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +13,7 @@ class OrderForm extends StatelessWidget {
         WidgetTitle(
           title: context.appLocalization.notes,
           padding: const EdgeInsets.symmetric(vertical: 5),
-          child: CustomTextField.text(onChanged: (value) {}, maxLines: 5),
+          child: CustomTextField.text(onChanged: onNotesChanged, maxLines: 5),
         ),
         const SizedBox(height: 7),
         Text(
@@ -46,10 +48,7 @@ class OrderForm extends StatelessWidget {
                 Expanded(
                   child: Text(
                     context.appLocalization.attachFile,
-                    style: TextStyle(
-                      color: context.colorPalette.black,
-                      fontSize: 16,
-                    ),
+                    style: TextStyle(color: context.colorPalette.black, fontSize: 16),
                   ),
                 ),
                 CustomSvg(MyIcons.add),

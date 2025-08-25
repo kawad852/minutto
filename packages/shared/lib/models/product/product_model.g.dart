@@ -147,7 +147,7 @@ Map<String, dynamic> _$$MealOptionModelImplToJson(
   'type': instance.type,
   'selectedId': instance.selectedId,
   'selectedIds': instance.selectedIds,
-  'items': instance.items.map((e) => e.toJson()).toList(),
+  'items': instance.items,
 };
 
 _$OptionItemModelImpl _$$OptionItemModelImplFromJson(

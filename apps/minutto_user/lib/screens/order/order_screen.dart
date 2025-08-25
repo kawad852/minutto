@@ -13,20 +13,11 @@ class _OrderScreenState extends State<OrderScreen> {
   (String, String) _getOrderInfo(BuildContext context) {
     switch (widget.orderTypeEnum) {
       case OrderTypeEnum.overtime:
-        return (
-          context.appLocalization.overtimeRequests,
-          context.appLocalization.newOrder,
-        );
+        return (context.appLocalization.overtimeRequests, context.appLocalization.newOrder);
       case OrderTypeEnum.leave:
-        return (
-          context.appLocalization.myLeave,
-          context.appLocalization.leaveRequest,
-        );
+        return (context.appLocalization.myLeave, context.appLocalization.leaveRequest);
       case OrderTypeEnum.vacation:
-        return (
-          context.appLocalization.myVacation,
-          context.appLocalization.vacationRequest,
-        );
+        return (context.appLocalization.myVacation, context.appLocalization.vacationRequest);
     }
   }
 
@@ -38,7 +29,7 @@ class _OrderScreenState extends State<OrderScreen> {
       bottomNavigationBar: BottomAppBar(
         child: StretchedButton(
           onPressed: () {
-            context.navigate((context) => OrderInputScreen(orderTypeEnum: widget.orderTypeEnum));
+            context.navigate((context) => LeaveInputScreen(orderTypeEnum: widget.orderTypeEnum));
           },
           child: Text(
             order.$2,

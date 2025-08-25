@@ -21,5 +21,5 @@ Map<String, dynamic> _$$BasketModelImplToJson(_$BasketModelImpl instance) =>
       'createdAt': const TimestampSerializer().toJson(instance.createdAt),
       'id': instance.id,
       'storeId': instance.storeId,
-      'product': instance.product?.toJson(),
+      'product': instance.product,
     };

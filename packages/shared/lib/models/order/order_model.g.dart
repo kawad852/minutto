@@ -57,8 +57,8 @@ Map<String, dynamic> _$$OrderModelImplToJson(_$OrderModelImpl instance) =>
       'id': instance.id,
       'paymentMethod': instance.paymentMethod,
       'type': instance.type,
-      'basket': instance.basket?.map((e) => e.toJson()).toList(),
-      'promoCode': instance.promoCode?.toJson(),
+      'basket': instance.basket,
+      'promoCode': instance.promoCode,
       'status': instance.status,
       'deliveryFee': instance.deliveryFee,
       'rewardsDiscount': instance.rewardsDiscount,
@@ -70,10 +70,10 @@ Map<String, dynamic> _$$OrderModelImplToJson(_$OrderModelImpl instance) =>
       'storeProfit': instance.storeProfit,
       'rated': instance.rated,
       'rewardPoints': instance.rewardPoints,
-      'user': instance.user?.toJson(),
-      'rider': instance.rider?.toJson(),
-      'foodStore': instance.foodStore?.toJson(),
-      'callCenter': instance.callCenter?.toJson(),
+      'user': instance.user,
+      'rider': instance.rider,
+      'foodStore': instance.foodStore,
+      'callCenter': instance.callCenter,
     };
 
 _$RiderModelImpl _$$RiderModelImplFromJson(Map<String, dynamic> json) =>

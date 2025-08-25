@@ -28,7 +28,7 @@ Map<String, dynamic> _$$SearchRequestModelImplToJson(
   'collection': instance.collection,
   'query_by': instance.queryBy,
   'facet_by': instance.facetBy,
-  'filter_by': instance.filters.map((e) => e.toJson()).toList(),
+  'filter_by': instance.filters,
   'vector_query': instance.vectorQuery,
 };
 
