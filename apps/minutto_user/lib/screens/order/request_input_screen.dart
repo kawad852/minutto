@@ -2,7 +2,11 @@ import 'package:shared/shared.dart';
 
 class RequestInputScreen extends StatefulWidget {
   final OrderTypeEnum orderTypeEnum;
-  const RequestInputScreen({super.key, required this.orderTypeEnum});
+
+  const RequestInputScreen({
+    super.key,
+    required this.orderTypeEnum,
+  });
 
   @override
   State<RequestInputScreen> createState() => _RequestInputScreenState();
@@ -59,7 +63,11 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(_getTitle())),
+      appBar: AppBar(
+        title: Text(
+          _getTitle(),
+        ),
+      ),
       bottomNavigationBar: BottomAppBar(
         child: StretchedButton(
           onPressed: () => _onSubmit(context),
@@ -127,6 +135,7 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                 ),
               if (widget.orderTypeEnum != OrderTypeEnum.vacation)
                 Row(
+                  spacing: 10,
                   children: [
                     Expanded(
                       child: WidgetTitle(
@@ -135,7 +144,6 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                         child: CustomTextField.text(onChanged: (value) {}),
                       ),
                     ),
-                    const SizedBox(width: 10),
                     Expanded(
                       child: WidgetTitle(
                         title: context.appLocalization.toHour,

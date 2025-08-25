@@ -42,7 +42,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     Expanded(
                       child: HomeBubble(
                         onTap: () {
-                          context.navigate((context) => const OrderScreen(orderTypeEnum: OrderTypeEnum.vacation));
+                          context.navigate(
+                            (context) => const OrderScreen(orderTypeEnum: OrderTypeEnum.vacation),
+                          );
                         },
                         icon: MyIcons.umbrella,
                         title: context.appLocalization.vacations,
@@ -52,7 +54,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     Expanded(
                       child: HomeBubble(
                         onTap: () {
-                          context.navigate((context) => const OrderScreen(orderTypeEnum: OrderTypeEnum.leave));
+                          context.navigate(
+                            (context) => const OrderScreen(orderTypeEnum: OrderTypeEnum.leave),
+                          );
                         },
                         icon: MyIcons.clockIcon,
                         title: context.appLocalization.departures,
@@ -73,7 +77,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     Expanded(
                       child: HomeBubble(
                         onTap: () {
-                          context.navigate((context) => const FeedbackScreen(feedBackType: FeedBackType.alarm));
+                          context.navigate(
+                            (context) => const FeedbackScreen(feedBackType: FeedBackType.alarm),
+                          );
                         },
                         icon: MyIcons.danger,
                         title: context.appLocalization.alarms,
@@ -97,7 +103,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     Expanded(
                       child: HomeBubble(
                         onTap: () {
-                          context.navigate((context) => const FeedbackScreen(feedBackType: FeedBackType.rewards));
+                          context.navigate(
+                            (context) => const FeedbackScreen(feedBackType: FeedBackType.rewards),
+                          );
                         },
                         icon: MyIcons.favorite,
                         title: context.appLocalization.incentivesRequests,
@@ -111,7 +119,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     Expanded(
                       child: HomeBubble(
                         onTap: () {
-                          context.navigate((context) => const OrderScreen(orderTypeEnum: OrderTypeEnum.overtime));
+                          context.navigate(
+                            (context) => const OrderScreen(orderTypeEnum: OrderTypeEnum.overtime),
+                          );
                         },
                         icon: MyIcons.money,
                         title: context.appLocalization.overtime,
