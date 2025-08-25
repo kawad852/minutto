@@ -1,14 +1,14 @@
 import 'package:shared/shared.dart';
 
-class LeaveInputScreen extends StatefulWidget {
+class RequestInputScreen extends StatefulWidget {
   final OrderTypeEnum orderTypeEnum;
-  const LeaveInputScreen({super.key, required this.orderTypeEnum});
+  const RequestInputScreen({super.key, required this.orderTypeEnum});
 
   @override
-  State<LeaveInputScreen> createState() => _LeaveInputScreenState();
+  State<RequestInputScreen> createState() => _RequestInputScreenState();
 }
 
-class _LeaveInputScreenState extends State<LeaveInputScreen> {
+class _RequestInputScreenState extends State<RequestInputScreen> {
   late LeaveModel _leave;
   var _files = <XFile>[];
   final _formKey = GlobalKey<FormState>();

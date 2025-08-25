@@ -29,7 +29,7 @@ class _OrderScreenState extends State<OrderScreen> {
       bottomNavigationBar: BottomAppBar(
         child: StretchedButton(
           onPressed: () {
-            context.navigate((context) => LeaveInputScreen(orderTypeEnum: widget.orderTypeEnum));
+            context.navigate((context) => RequestInputScreen(orderTypeEnum: widget.orderTypeEnum));
           },
           child: Text(
             order.$2,
