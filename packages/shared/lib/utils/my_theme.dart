@@ -41,12 +41,8 @@ class MyTheme {
           fontWeight: FontWeight.bold,
         ),
       ),
-      bottomAppBarTheme: BottomAppBarThemeData(
-        color: Colors.white,
-      ),
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        backgroundColor: Colors.white,
-      ),
+      bottomAppBarTheme: BottomAppBarThemeData(color: Colors.white),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(backgroundColor: Colors.white),
       scaffoldBackgroundColor: Colors.white,
       actionIconTheme: ActionIconThemeData(
         backButtonIconBuilder: (BuildContext context) {
@@ -62,9 +58,7 @@ class MyTheme {
         filled: true,
         fillColor: context.colorPalette.greyF5F,
         constraints: BoxConstraints(maxWidth: 600),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10)
-        ),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide.none,
@@ -94,9 +88,7 @@ class MyTheme {
       filledButtonTheme: FilledButtonThemeData(
         style: FilledButton.styleFrom(
           backgroundColor: Color(0xFFB2DCBC),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         ),
       ),
     );

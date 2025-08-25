@@ -78,6 +78,10 @@ dependencies:
   typesense: ^0.5.2
   google_fonts: ^6.2.1
   flutter_svg_provider: ^1.0.7
+  file_picker: ^10.3.2
+  open_file: ^3.5.10
+  syncfusion_flutter_pdfviewer: ^30.2.6
+  cross_file: ^0.3.4+2
 
   #google
   googleapis: ^14.0.0

@@ -11,6 +11,7 @@ _$UserModelImpl _$$UserModelImplFromJson(
 ) => _$UserModelImpl(
   createdAt: const TimestampSerializer().fromJson(json['createdAt']),
   id: json['id'] as String?,
+  companyId: json['companyId'] as String?,
   firstName: json['firstName'] as String?,
   lastName: json['lastName'] as String?,
   email: json['email'] as String?,
@@ -51,6 +52,7 @@ Map<String, dynamic> _$$UserModelImplToJson(_$UserModelImpl instance) =>
     <String, dynamic>{
       'createdAt': const TimestampSerializer().toJson(instance.createdAt),
       'id': instance.id,
+      'companyId': instance.companyId,
       'firstName': instance.firstName,
       'lastName': instance.lastName,
       'email': instance.email,

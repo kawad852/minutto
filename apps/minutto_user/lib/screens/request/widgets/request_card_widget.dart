@@ -1,9 +1,9 @@
 import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
-class OrderCard extends StatelessWidget {
+class RequestCardWidget extends StatelessWidget {
   final OrderTypeEnum orderTypeEnum;
-  const OrderCard({super.key, required this.orderTypeEnum});
+  const RequestCardWidget({super.key, required this.orderTypeEnum});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class OrderCard extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {
-        context.navigate((context) => OrderDetalisScreen(orderTypeEnum: orderTypeEnum));
+        context.navigate((context) => RequestDetalisScreen(orderTypeEnum: orderTypeEnum));
       },
       child: Container(
         width: double.infinity,

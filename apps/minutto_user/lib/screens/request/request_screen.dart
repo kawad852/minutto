@@ -1,32 +1,23 @@
 import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
-class OrderScreen extends StatefulWidget {
+class RequestScreen extends StatefulWidget {
   final OrderTypeEnum orderTypeEnum;
-  const OrderScreen({super.key, required this.orderTypeEnum});
+  const RequestScreen({super.key, required this.orderTypeEnum});
 
   @override
-  State<OrderScreen> createState() => _OrderScreenState();
+  State<RequestScreen> createState() => _RequestScreenState();
 }
 
-class _OrderScreenState extends State<OrderScreen> {
+class _RequestScreenState extends State<RequestScreen> {
   (String, String) _getOrderInfo(BuildContext context) {
     switch (widget.orderTypeEnum) {
       case OrderTypeEnum.overtime:
-        return (
-          context.appLocalization.overtimeRequests,
-          context.appLocalization.newOrder,
-        );
+        return (context.appLocalization.overtimeRequests, context.appLocalization.newOrder);
       case OrderTypeEnum.leave:
-        return (
-          context.appLocalization.myLeave,
-          context.appLocalization.leaveRequest,
-        );
+        return (context.appLocalization.myLeave, context.appLocalization.leaveRequest);
       case OrderTypeEnum.vacation:
-        return (
-          context.appLocalization.myVacation,
-          context.appLocalization.vacationRequest,
-        );
+        return (context.appLocalization.myVacation, context.appLocalization.vacationRequest);
     }
   }
 
@@ -38,7 +29,7 @@ class _OrderScreenState extends State<OrderScreen> {
       bottomNavigationBar: BottomAppBar(
         child: StretchedButton(
           onPressed: () {
-            context.navigate((context) => OrderInputScreen(orderTypeEnum: widget.orderTypeEnum));
+            context.navigate((context) => RequestInputScreen(orderTypeEnum: widget.orderTypeEnum));
           },
           child: Text(
             order.$2,
@@ -55,7 +46,7 @@ class _OrderScreenState extends State<OrderScreen> {
         itemCount: 10,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         itemBuilder: (context, index) {
-          return OrderCard(orderTypeEnum: widget.orderTypeEnum);
+          return RequestCardWidget(orderTypeEnum: widget.orderTypeEnum);
         },
       ),
     );

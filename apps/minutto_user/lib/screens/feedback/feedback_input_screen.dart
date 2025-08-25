@@ -11,9 +11,7 @@ class _FeedbackInputScreenState extends State<FeedbackInputScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(context.appLocalization.requestForExpenseAllowance),
-      ),
+      appBar: AppBar(title: Text(context.appLocalization.requestForExpenseAllowance)),
       bottomNavigationBar: BottomAppBar(
         child: StretchedButton(
           onPressed: () {},
@@ -34,12 +32,7 @@ class _FeedbackInputScreenState extends State<FeedbackInputScreen> {
             title: context.appLocalization.typeExpenseCompensated,
             padding: const EdgeInsets.only(bottom: 5),
             child: DropDownEditor<String>(
-              items: [
-                DropdownMenuItem(
-                  value: 'بدل مواصلات',
-                  child: Text('بدل مواصلات'),
-                ),
-              ],
+              items: [DropdownMenuItem(value: 'بدل مواصلات', child: Text('بدل مواصلات'))],
               onChanged: (value) {},
               value: null,
             ),
@@ -66,7 +59,11 @@ class _FeedbackInputScreenState extends State<FeedbackInputScreen> {
               ],
             ),
           ),
-          const OrderForm(),
+          RequestForm(
+            onNotesChanged: (value) {},
+            attachments: [],
+            onAttachmentChanged: (List<XFile> value) {},
+          ),
         ],
       ),
     );

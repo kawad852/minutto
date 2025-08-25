@@ -1,14 +1,16 @@
 import 'package:flutter/services.dart';
 import 'package:shared/shared.dart';
-import 'package:shared/widgets/phone_code_button.dart'; // for context.appLocalization
+import 'package:shared/widgets/phone_code_button.dart';
 
 class CustomTextField extends StatelessWidget {
   final String? initialValue;
-  final Widget? prefixIcon;
+  final Widget? prefixIcon, suffixIcon;
   final bool obscureText;
-  final TextInputType keyboardType;
+  final bool canRequestFocus;
+  final TextInputType? keyboardType;
   final List<TextInputFormatter>? inputFormatters;
   final Function(String)? _onChanged;
+  final Function()? onTap;
   final String? Function(BuildContext context, String?) _validator;
   final String? labelText;
   final String? hintText;
@@ -20,14 +22,17 @@ class CustomTextField extends StatelessWidget {
     this.initialValue,
     this.prefixIcon,
     this.obscureText = false,
-    required this.keyboardType,
+    this.keyboardType,
     this.inputFormatters,
     required Function(String)? onChanged,
+    this.onTap,
     required String? Function(BuildContext, String?) validator,
     this.labelText,
     this.hintText,
     this.maxLines,
     this.textAlign,
+    this.canRequestFocus = true,
+    this.suffixIcon,
   }) : _onChanged = onChanged,
        _validator = validator;
 
@@ -135,7 +140,7 @@ class CustomTextField extends StatelessWidget {
       initialValue: initialValue,
       prefixIcon: prefixIcon,
       hintText: hintText,
-      labelText: hintText == null? context.appLocalization.email: null ,
+      labelText: hintText == null ? context.appLocalization.email : null,
       keyboardType: TextInputType.emailAddress,
       onChanged: (value) => onChanged(value.isEmpty ? null : value),
       validator: (context, value) => ValidationHelper.email(context, value, required: required),
@@ -163,6 +168,31 @@ class CustomTextField extends StatelessWidget {
     );
   }
 
+  factory CustomTextField.clickable({
+    Key? key,
+    String? initialValue,
+    required String labelText,
+    Widget? prefixIcon,
+    Widget? suffixIcon,
+    required VoidCallback onTap,
+    bool required = true,
+    String? Function(BuildContext, String?)? validator,
+  }) {
+    return CustomTextField._(
+      key: key,
+      initialValue: initialValue,
+      prefixIcon: prefixIcon,
+      suffixIcon: suffixIcon,
+      labelText: labelText,
+      canRequestFocus: false,
+      validator:
+          validator ??
+          (context, value) => required ? ValidationHelper.required(context, value) : null,
+      onChanged: null,
+      onTap: onTap,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -175,6 +205,8 @@ class CustomTextField extends StatelessWidget {
       autovalidateMode: AutovalidateMode.onUserInteraction,
       decoration: InputDecoration(
         prefixIcon: prefixIcon,
+        suffixIcon: Center(child: suffixIcon),
+        suffixIconConstraints: BoxConstraints(maxWidth: 40),
         hintText: hintText,
         labelText: labelText,
         alignLabelWithHint: true,
@@ -183,6 +215,8 @@ class CustomTextField extends StatelessWidget {
       onTapOutside: (value) {
         context.unFocusKeyboard();
       },
+      onTap: onTap,
+      canRequestFocus: canRequestFocus,
       validator: (value) => _validator(context, value),
     );
   }

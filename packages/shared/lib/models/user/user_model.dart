@@ -8,6 +8,7 @@ class UserModel with _$UserModel {
   factory UserModel({
     @TimestampSerializer() DateTime? createdAt,
     String? id,
+    String? companyId,
     String? firstName,
     String? lastName,
     String? email,

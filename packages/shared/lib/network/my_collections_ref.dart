@@ -53,4 +53,6 @@ extension CollectionReferenceExtension on FirebaseFirestore {
   CollectionReference<DriverModel> get drivers => collection(MyCollections.drivers).driverConvertor;
 
   CollectionReference<BrandModel> get brands => collection(MyCollections.brands).brandConvertor;
+  CollectionReference<LeaveModel> get vacations =>
+      collection(MyCollections.vacations).vacationConvertor;
 }

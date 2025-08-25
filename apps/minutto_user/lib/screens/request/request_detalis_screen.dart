@@ -1,14 +1,14 @@
 import 'package:shared/shared.dart';
 
-class OrderDetalisScreen extends StatefulWidget {
+class RequestDetalisScreen extends StatefulWidget {
   final OrderTypeEnum orderTypeEnum;
-  const OrderDetalisScreen({super.key, required this.orderTypeEnum});
+  const RequestDetalisScreen({super.key, required this.orderTypeEnum});
 
   @override
-  State<OrderDetalisScreen> createState() => _OrderDetalisScreenState();
+  State<RequestDetalisScreen> createState() => _RequestDetalisScreenState();
 }
 
-class _OrderDetalisScreenState extends State<OrderDetalisScreen> {
+class _RequestDetalisScreenState extends State<RequestDetalisScreen> {
   (String, String, String) _getOrderInfo(BuildContext context) {
     switch (widget.orderTypeEnum) {
       case OrderTypeEnum.overtime:

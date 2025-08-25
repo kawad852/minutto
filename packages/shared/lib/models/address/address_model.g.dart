@@ -47,3 +47,12 @@ Map<String, dynamic> _$$AddressModelImplToJson(_$AddressModelImpl instance) =>
       'buildingType': instance.buildingType,
       'additionalDirections': instance.additionalDirections,
     };
+
+_$TestModelImpl _$$TestModelImplFromJson(Map<String, dynamic> json) =>
+    _$TestModelImpl(
+      id: json['id'] as String?,
+      firstName: json['firstName'] as String?,
+    );
+
+Map<String, dynamic> _$$TestModelImplToJson(_$TestModelImpl instance) =>
+    <String, dynamic>{'id': instance.id, 'firstName': instance.firstName};

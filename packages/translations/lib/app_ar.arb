@@ -215,7 +215,6 @@
   "successfullyUpdated": "تم التحديث بنجاح",
   "configure": "تهيئة",
   "company": "الشركة",
-  "sentSuccessfully": "تم الإرسال بنجاح",
 
 
 
@@ -341,5 +340,6 @@
   "fuelAllowance":"بدل وقود",
   "absenceDiscount":"خصم غياب",
   "delayDiscount":"خصم تأخير",
-  "total":"الإجمالي"
+  "total":"الإجمالي",
+  "sentSuccessfully": "تم الإرسال بنجاح"
 }

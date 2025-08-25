@@ -25,6 +25,15 @@ class AddressModel with _$AddressModel {
     String? additionalDirections,
   }) = _AddressModel;
 
-  factory AddressModel.fromJson(Map<String, dynamic> json) =>
-      _$AddressModelFromJson(json);
+  factory AddressModel.fromJson(Map<String, dynamic> json) => _$AddressModelFromJson(json);
+}
+
+@unfreezed
+class TestModel with _$TestModel {
+  factory TestModel({
+    String? id,
+    String? firstName,
+  }) = _TestModel;
+
+  factory TestModel.fromJson(Map<String, dynamic> json) => _$TestModelFromJson(json);
 }

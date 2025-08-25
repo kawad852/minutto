@@ -16,11 +16,11 @@ class MyAppHelper {
     GoRouter Function(UserModel? user, RoleModel? role)? goRouter,
   }) async {
     WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp(options: firebaseOptions);
     await MySharedPreferences.init();
     // _logout();
     setupLocator();
     await MyStorage.init();
-    await Firebase.initializeApp(options: firebaseOptions);
     await FlutterBranchSdk.init(enableLogging: true);
     TypeSenseService.init();
     setLocaleMessages('en', EnMessages());
