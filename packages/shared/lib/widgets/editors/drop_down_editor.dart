@@ -26,9 +26,9 @@ class DropDownEditor<T> extends StatelessWidget {
         constraints: const BoxConstraints(maxWidth: kMaxWidth),
         child: DropdownButtonFormField(
           onChanged: onChanged,
-          initialValue: value,
+          value: value,
           autovalidateMode: AutovalidateMode.onUserInteraction,
-          decoration: InputDecoration(hintText: title,label: label != null ? Text(label!): null),
+          decoration: InputDecoration(hintText: title, label: label != null ? Text(label!) : null),
           validator: (value) {
             if (value == null) {
               return context.appLocalization.requiredField;
