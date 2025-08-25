@@ -1348,14 +1348,73 @@ class AppLocalizationsAr extends AppLocalizations {
   String get fuelAllowance => 'بدل وقود';
 
   @override
-  String get absenceDiscount => 'خصم غياب';
+  String get absenceDiscount => 'خصم الغياب';
 
   @override
-  String get delayDiscount => 'خصم تأخير';
+  String get delayDiscount => 'خصم التأخير';
 
   @override
   String get total => 'الإجمالي';
 
   @override
   String get sentSuccessfully => 'تم الإرسال بنجاح';
+
+  @override
+  String get reports => 'التقارير';
+
+  @override
+  String get attendance => 'الحضور';
+
+  @override
+  String get delay => 'التأخير';
+
+  @override
+  String get absence => 'الغياب';
+
+  @override
+  String get hour => 'ساعة';
+
+  @override
+  String get day => 'يوم';
+
+  @override
+  String get annualLeaves => 'الإجازات السنوية';
+
+  @override
+  String get taken => 'المأخوذ';
+
+  @override
+  String get residual => 'المتبقي';
+
+  @override
+  String get monthlyLeaves => 'المغادرات الشهرية';
+
+  @override
+  String get attendanceAndDeparture => 'الحضور والإنصراف';
+
+  @override
+  String get disciplined => 'منضبط';
+
+  @override
+  String get delayWithoutDiscount => 'تأخير بدون خصم';
+
+  @override
+  String get attendanceTime => 'وقت الحضور';
+
+  @override
+  String get checkoutTime => 'وقت الإنصراف';
+
+  @override
+  String get clarificationAndExplanations => 'توضيح وشروحات';
+
+  @override
+  String get sendExplanToHrResources =>
+      'يمكنك ارسال توضيح وشروحات لقسم الموارد البشرية عن سبب الغياب او التأخير مع امكانية ارفاق الوثائق';
+
+  @override
+  String get discountValue => 'قيمة الخصم';
+
+  @override
+  String get sendExplanSuccessfully =>
+      'تم ارسال توضيح وشروحات لقسم الموارد البشرية عن سبب الغياب او التأخير ، بأنتظار رد المسؤول';
 }

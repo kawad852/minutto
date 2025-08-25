@@ -2695,6 +2695,120 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sent Successfully'**
   String get sentSuccessfully;
+
+  /// No description provided for @reports.
+  ///
+  /// In en, this message translates to:
+  /// **'Reports'**
+  String get reports;
+
+  /// No description provided for @attendance.
+  ///
+  /// In en, this message translates to:
+  /// **'Attendance'**
+  String get attendance;
+
+  /// No description provided for @delay.
+  ///
+  /// In en, this message translates to:
+  /// **'Delay'**
+  String get delay;
+
+  /// No description provided for @absence.
+  ///
+  /// In en, this message translates to:
+  /// **'Absence'**
+  String get absence;
+
+  /// No description provided for @hour.
+  ///
+  /// In en, this message translates to:
+  /// **'Hour'**
+  String get hour;
+
+  /// No description provided for @day.
+  ///
+  /// In en, this message translates to:
+  /// **'Day'**
+  String get day;
+
+  /// No description provided for @annualLeaves.
+  ///
+  /// In en, this message translates to:
+  /// **'Annual leaves'**
+  String get annualLeaves;
+
+  /// No description provided for @taken.
+  ///
+  /// In en, this message translates to:
+  /// **'Taken'**
+  String get taken;
+
+  /// No description provided for @residual.
+  ///
+  /// In en, this message translates to:
+  /// **'Residual'**
+  String get residual;
+
+  /// No description provided for @monthlyLeaves.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly leaves'**
+  String get monthlyLeaves;
+
+  /// No description provided for @attendanceAndDeparture.
+  ///
+  /// In en, this message translates to:
+  /// **'Attendance and departure'**
+  String get attendanceAndDeparture;
+
+  /// No description provided for @disciplined.
+  ///
+  /// In en, this message translates to:
+  /// **'Disciplined'**
+  String get disciplined;
+
+  /// No description provided for @delayWithoutDiscount.
+  ///
+  /// In en, this message translates to:
+  /// **'Delay without discount'**
+  String get delayWithoutDiscount;
+
+  /// No description provided for @attendanceTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Attendance time'**
+  String get attendanceTime;
+
+  /// No description provided for @checkoutTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Checkout time'**
+  String get checkoutTime;
+
+  /// No description provided for @clarificationAndExplanations.
+  ///
+  /// In en, this message translates to:
+  /// **'Clarification and explanations'**
+  String get clarificationAndExplanations;
+
+  /// No description provided for @sendExplanToHrResources.
+  ///
+  /// In en, this message translates to:
+  /// **'You can send an explanation and clarification to the Human Resources Department about the reason for absence or delay, with the possibility of attaching documents.'**
+  String get sendExplanToHrResources;
+
+  /// No description provided for @discountValue.
+  ///
+  /// In en, this message translates to:
+  /// **'Discount value'**
+  String get discountValue;
+
+  /// No description provided for @sendExplanSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'An explanation and clarification have been sent to the Human Resources Department regarding the reason for absence or delay, awaiting the official’s response.'**
+  String get sendExplanSuccessfully;
 }
 
 class _AppLocalizationsDelegate

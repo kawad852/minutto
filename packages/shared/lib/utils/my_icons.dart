@@ -39,4 +39,5 @@ class MyIcons {
   static const String allowanceIcon = '${_path}allowance_icon.svg';
   static const String alarmIcon = '${_path}alarm_icon.svg';
   static const String alarm = '${_path}alarm.svg';
+  static const String arrowLeft = '${_path}arrow_left.svg';
 }

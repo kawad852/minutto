@@ -41,6 +41,15 @@ export 'screens/registration/register_screen.dart';
 export 'screens/registration/welcome_screen.dart';
 //reports
 export 'screens/reports/reports_screen.dart';
+export 'screens/reports/attendance_screen.dart';
+export 'screens/reports/attendance_input_screen.dart';
+export 'screens/reports/attendance_detalis_screen.dart';
+export 'screens/reports/widgets/report_date.dart';
+export 'screens/reports/widgets/report_tile.dart';
+export 'screens/reports/widgets/leaves_card.dart';
+export 'screens/reports/widgets/custom_circle.dart';
+export 'screens/reports/widgets/attendance_card.dart';
+export 'screens/reports/widgets/attendance_info.dart';
 //salaries
 export 'screens/salaries/salaries_screen.dart';
 export 'screens/salaries/widgets/salary_card.dart';

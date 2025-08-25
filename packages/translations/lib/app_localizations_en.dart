@@ -1364,4 +1364,63 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get sentSuccessfully => 'Sent Successfully';
+
+  @override
+  String get reports => 'Reports';
+
+  @override
+  String get attendance => 'Attendance';
+
+  @override
+  String get delay => 'Delay';
+
+  @override
+  String get absence => 'Absence';
+
+  @override
+  String get hour => 'Hour';
+
+  @override
+  String get day => 'Day';
+
+  @override
+  String get annualLeaves => 'Annual leaves';
+
+  @override
+  String get taken => 'Taken';
+
+  @override
+  String get residual => 'Residual';
+
+  @override
+  String get monthlyLeaves => 'Monthly leaves';
+
+  @override
+  String get attendanceAndDeparture => 'Attendance and departure';
+
+  @override
+  String get disciplined => 'Disciplined';
+
+  @override
+  String get delayWithoutDiscount => 'Delay without discount';
+
+  @override
+  String get attendanceTime => 'Attendance time';
+
+  @override
+  String get checkoutTime => 'Checkout time';
+
+  @override
+  String get clarificationAndExplanations => 'Clarification and explanations';
+
+  @override
+  String get sendExplanToHrResources =>
+      'You can send an explanation and clarification to the Human Resources Department about the reason for absence or delay, with the possibility of attaching documents.';
+
+  @override
+  String get discountValue => 'Discount value';
+
+  @override
+  String get sendExplanSuccessfully =>
+      'An explanation and clarification have been sent to the Human Resources Department regarding the reason for absence or delay, awaiting the official’s response.';
 }
