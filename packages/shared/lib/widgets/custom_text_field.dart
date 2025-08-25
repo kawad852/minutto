@@ -4,7 +4,7 @@ import 'package:shared/widgets/phone_code_button.dart';
 
 class CustomTextField extends StatelessWidget {
   final String? initialValue;
-  final Widget? prefixIcon;
+  final Widget? prefixIcon, suffixIcon;
   final bool obscureText;
   final bool canRequestFocus;
   final TextInputType? keyboardType;
@@ -32,6 +32,7 @@ class CustomTextField extends StatelessWidget {
     this.maxLines,
     this.textAlign,
     this.canRequestFocus = true,
+    this.suffixIcon,
   }) : _onChanged = onChanged,
        _validator = validator;
 
@@ -172,13 +173,16 @@ class CustomTextField extends StatelessWidget {
     String? initialValue,
     required String labelText,
     Widget? prefixIcon,
-    VoidCallback? onTap,
+    Widget? suffixIcon,
+    required VoidCallback onTap,
     bool required = true,
   }) {
     return CustomTextField._(
       key: key,
       initialValue: initialValue,
       prefixIcon: prefixIcon,
+      suffixIcon: suffixIcon,
+      labelText: labelText,
       canRequestFocus: false,
       validator: (context, value) => required ? ValidationHelper.required(context, value) : null,
       onChanged: null,
@@ -198,6 +202,8 @@ class CustomTextField extends StatelessWidget {
       autovalidateMode: AutovalidateMode.onUserInteraction,
       decoration: InputDecoration(
         prefixIcon: prefixIcon,
+        suffixIcon: Center(child: suffixIcon),
+        suffixIconConstraints: BoxConstraints(maxWidth: 40),
         hintText: hintText,
         labelText: labelText,
         alignLabelWithHint: true,

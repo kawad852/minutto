@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shared/helper/time_stamp_serializer.dart';
+import 'package:shared/models/attachment/attachment_model.dart';
 
 part 'leave_model.freezed.dart';
 part 'leave_model.g.dart';
@@ -15,7 +16,7 @@ class LeaveModel with _$LeaveModel {
     @Default('') String companyId,
     @Default('') String requestType,
     String? notes,
-    @Default([]) List<String> attachments, // file URLs or paths
+    @Default([]) List<AttachmentModel> attachments,
   }) = _LeaveModel;
 
   factory LeaveModel.fromJson(Map<String, dynamic> json) => _$LeaveModelFromJson(json);

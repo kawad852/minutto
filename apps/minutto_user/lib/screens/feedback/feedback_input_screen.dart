@@ -59,7 +59,11 @@ class _FeedbackInputScreenState extends State<FeedbackInputScreen> {
               ],
             ),
           ),
-          OrderForm(onNotesChanged: (value) {}),
+          OrderForm(
+            onNotesChanged: (value) {},
+            attachments: [],
+            onAttachmentChanged: (List<XFile> value) {},
+          ),
         ],
       ),
     );

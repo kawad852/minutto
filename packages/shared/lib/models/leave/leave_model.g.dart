@@ -18,7 +18,7 @@ _$LeaveModelImpl _$$LeaveModelImplFromJson(Map<String, dynamic> json) =>
       notes: json['notes'] as String?,
       attachments:
           (json['attachments'] as List<dynamic>?)
-              ?.map((e) => e as String)
+              ?.map((e) => AttachmentModel.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
     );

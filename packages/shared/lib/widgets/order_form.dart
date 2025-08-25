@@ -2,8 +2,15 @@ import 'package:shared/shared.dart';
 
 class OrderForm extends StatelessWidget {
   final ValueChanged<String?> onNotesChanged;
+  final List<AttachmentModel> attachments;
+  final ValueChanged<List<XFile>> onAttachmentChanged;
 
-  const OrderForm({super.key, required this.onNotesChanged});
+  const OrderForm({
+    super.key,
+    required this.onNotesChanged,
+    required this.attachments,
+    required this.onAttachmentChanged,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -33,29 +40,7 @@ class OrderForm extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 10),
-        GestureDetector(
-          onTap: () {},
-          child: Container(
-            width: double.infinity,
-            height: 50,
-            padding: const EdgeInsets.symmetric(horizontal: 12),
-            decoration: BoxDecoration(
-              color: context.colorPalette.greyF5F,
-              borderRadius: BorderRadius.circular(kRadiusSecondary),
-            ),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    context.appLocalization.attachFile,
-                    style: TextStyle(color: context.colorPalette.black, fontSize: 16),
-                  ),
-                ),
-                CustomSvg(MyIcons.add),
-              ],
-            ),
-          ),
-        ),
+        AttachmentEditor(files: attachments, onChanged: onAttachmentChanged),
       ],
     );
   }

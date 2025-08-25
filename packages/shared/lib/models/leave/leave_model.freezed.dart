@@ -43,8 +43,9 @@ mixin _$LeaveModel {
   set requestType(String value) => throw _privateConstructorUsedError;
   String? get notes => throw _privateConstructorUsedError;
   set notes(String? value) => throw _privateConstructorUsedError;
-  List<String> get attachments => throw _privateConstructorUsedError;
-  set attachments(List<String> value) => throw _privateConstructorUsedError;
+  List<AttachmentModel> get attachments => throw _privateConstructorUsedError;
+  set attachments(List<AttachmentModel> value) =>
+      throw _privateConstructorUsedError;
 
   /// Serializes this LeaveModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -72,7 +73,7 @@ abstract class $LeaveModelCopyWith<$Res> {
     String companyId,
     String requestType,
     String? notes,
-    List<String> attachments,
+    List<AttachmentModel> attachments,
   });
 }
 
@@ -138,7 +139,7 @@ class _$LeaveModelCopyWithImpl<$Res, $Val extends LeaveModel>
             attachments: null == attachments
                 ? _value.attachments
                 : attachments // ignore: cast_nullable_to_non_nullable
-                      as List<String>,
+                      as List<AttachmentModel>,
           )
           as $Val,
     );
@@ -163,7 +164,7 @@ abstract class _$$LeaveModelImplCopyWith<$Res>
     String companyId,
     String requestType,
     String? notes,
-    List<String> attachments,
+    List<AttachmentModel> attachments,
   });
 }
 
@@ -228,7 +229,7 @@ class __$$LeaveModelImplCopyWithImpl<$Res>
         attachments: null == attachments
             ? _value.attachments
             : attachments // ignore: cast_nullable_to_non_nullable
-                  as List<String>,
+                  as List<AttachmentModel>,
       ),
     );
   }
@@ -277,7 +278,7 @@ class _$LeaveModelImpl implements _LeaveModel {
   String? notes;
   @override
   @JsonKey()
-  List<String> attachments;
+  List<AttachmentModel> attachments;
 
   @override
   String toString() {
@@ -308,7 +309,7 @@ abstract class _LeaveModel implements LeaveModel {
     String companyId,
     String requestType,
     String? notes,
-    List<String> attachments,
+    List<AttachmentModel> attachments,
   }) = _$LeaveModelImpl;
 
   factory _LeaveModel.fromJson(Map<String, dynamic> json) =
@@ -345,8 +346,8 @@ abstract class _LeaveModel implements LeaveModel {
   String? get notes;
   set notes(String? value);
   @override
-  List<String> get attachments;
-  set attachments(List<String> value);
+  List<AttachmentModel> get attachments;
+  set attachments(List<AttachmentModel> value);
 
   /// Create a copy of LeaveModel
   /// with the given fields replaced by the non-null parameter values.
