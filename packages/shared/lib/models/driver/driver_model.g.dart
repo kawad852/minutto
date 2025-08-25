@@ -29,5 +29,5 @@ Map<String, dynamic> _$$DriverModelImplToJson(_$DriverModelImpl instance) =>
       'lastNameAr': instance.lastNameAr,
       'phoneNum': instance.phoneNum,
       'phoneCountryCode': instance.phoneCountryCode,
-      '_geoloc': instance.geoLoc,
+      '_geoloc': instance.geoLoc.toJson(),
     };

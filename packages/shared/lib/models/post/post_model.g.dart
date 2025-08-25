@@ -54,10 +54,10 @@ Map<String, dynamic> _$$PostModelImplToJson(_$PostModelImpl instance) =>
       'indexName': instance.indexName,
       'order': instance.order,
       'published': instance.published,
-      'layout': instance.layout,
-      'filters': instance.filters,
-      'cta': instance.cta,
-      'items': instance.items,
+      'layout': instance.layout?.toJson(),
+      'filters': instance.filters?.toJson(),
+      'cta': instance.cta?.toJson(),
+      'items': instance.items.map((e) => e.toJson()).toList(),
     };
 
 _$LayoutModelImpl _$$LayoutModelImplFromJson(Map<String, dynamic> json) =>
@@ -121,7 +121,7 @@ Map<String, dynamic> _$$CTAModelImplToJson(_$CTAModelImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
       'target': instance.target,
-      'filters': instance.filters,
+      'filters': instance.filters?.toJson(),
     };
 
 _$PostItemModelImpl _$$PostItemModelImplFromJson(Map<String, dynamic> json) =>
@@ -137,5 +137,5 @@ Map<String, dynamic> _$$PostItemModelImplToJson(_$PostItemModelImpl instance) =>
     <String, dynamic>{
       'imageEn': instance.imageEn,
       'imageAr': instance.imageAr,
-      'filters': instance.filters,
+      'filters': instance.filters?.toJson(),
     };

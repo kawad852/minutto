@@ -509,3 +509,157 @@ abstract class _AddressModel implements AddressModel {
   _$$AddressModelImplCopyWith<_$AddressModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+TestModel _$TestModelFromJson(Map<String, dynamic> json) {
+  return _TestModel.fromJson(json);
+}
+
+/// @nodoc
+mixin _$TestModel {
+  String? get id => throw _privateConstructorUsedError;
+  set id(String? value) => throw _privateConstructorUsedError;
+  String? get firstName => throw _privateConstructorUsedError;
+  set firstName(String? value) => throw _privateConstructorUsedError;
+
+  /// Serializes this TestModel to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of TestModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $TestModelCopyWith<TestModel> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TestModelCopyWith<$Res> {
+  factory $TestModelCopyWith(TestModel value, $Res Function(TestModel) then) =
+      _$TestModelCopyWithImpl<$Res, TestModel>;
+  @useResult
+  $Res call({String? id, String? firstName});
+}
+
+/// @nodoc
+class _$TestModelCopyWithImpl<$Res, $Val extends TestModel>
+    implements $TestModelCopyWith<$Res> {
+  _$TestModelCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of TestModel
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? id = freezed, Object? firstName = freezed}) {
+    return _then(
+      _value.copyWith(
+            id: freezed == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            firstName: freezed == firstName
+                ? _value.firstName
+                : firstName // ignore: cast_nullable_to_non_nullable
+                      as String?,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$TestModelImplCopyWith<$Res>
+    implements $TestModelCopyWith<$Res> {
+  factory _$$TestModelImplCopyWith(
+    _$TestModelImpl value,
+    $Res Function(_$TestModelImpl) then,
+  ) = __$$TestModelImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? id, String? firstName});
+}
+
+/// @nodoc
+class __$$TestModelImplCopyWithImpl<$Res>
+    extends _$TestModelCopyWithImpl<$Res, _$TestModelImpl>
+    implements _$$TestModelImplCopyWith<$Res> {
+  __$$TestModelImplCopyWithImpl(
+    _$TestModelImpl _value,
+    $Res Function(_$TestModelImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of TestModel
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? id = freezed, Object? firstName = freezed}) {
+    return _then(
+      _$TestModelImpl(
+        id: freezed == id
+            ? _value.id
+            : id // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        firstName: freezed == firstName
+            ? _value.firstName
+            : firstName // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$TestModelImpl implements _TestModel {
+  _$TestModelImpl({this.id, this.firstName});
+
+  factory _$TestModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TestModelImplFromJson(json);
+
+  @override
+  String? id;
+  @override
+  String? firstName;
+
+  @override
+  String toString() {
+    return 'TestModel(id: $id, firstName: $firstName)';
+  }
+
+  /// Create a copy of TestModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TestModelImplCopyWith<_$TestModelImpl> get copyWith =>
+      __$$TestModelImplCopyWithImpl<_$TestModelImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TestModelImplToJson(this);
+  }
+}
+
+abstract class _TestModel implements TestModel {
+  factory _TestModel({String? id, String? firstName}) = _$TestModelImpl;
+
+  factory _TestModel.fromJson(Map<String, dynamic> json) =
+      _$TestModelImpl.fromJson;
+
+  @override
+  String? get id;
+  set id(String? value);
+  @override
+  String? get firstName;
+  set firstName(String? value);
+
+  /// Create a copy of TestModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TestModelImplCopyWith<_$TestModelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

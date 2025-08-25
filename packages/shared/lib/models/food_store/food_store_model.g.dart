@@ -79,7 +79,7 @@ Map<String, dynamic> _$$FoodStoreModelImplToJson(
   'deliveryAreasVersion': instance.deliveryAreasVersion,
   'phoneNumber': instance.phoneNumber,
   'images': instance.images,
-  'menuCategories': instance.menuCategories,
+  'menuCategories': instance.menuCategories.map((e) => e.toJson()).toList(),
   'categoryIds': instance.categoryIds,
   'phoneCountryCode': instance.phoneCountryCode,
   'minOrderValue': instance.minOrderValue,
@@ -87,9 +87,9 @@ Map<String, dynamic> _$$FoodStoreModelImplToJson(
   'freeDelivery': instance.freeDelivery,
   'canOrderAnyTime': instance.canOrderAnyTime,
   'isOpened': instance.isOpened,
-  'deliveryFees': instance.deliveryFees,
-  'rating': instance.rating,
-  '_geoloc': instance.geoLoc,
+  'deliveryFees': instance.deliveryFees?.map((e) => e.toJson()).toList(),
+  'rating': instance.rating?.toJson(),
+  '_geoloc': instance.geoLoc.toJson(),
 };
 
 _$MenuCategoryModelImpl _$$MenuCategoryModelImplFromJson(

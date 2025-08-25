@@ -236,7 +236,8 @@ class __$$LeaveModelImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true)
 class _$LeaveModelImpl implements _LeaveModel {
   _$LeaveModelImpl({
     @TimestampSerializer() required this.createdAt,

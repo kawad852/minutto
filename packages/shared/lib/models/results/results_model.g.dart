@@ -18,7 +18,9 @@ _$MultiResultsModelImpl _$$MultiResultsModelImplFromJson(
 
 Map<String, dynamic> _$$MultiResultsModelImplToJson(
   _$MultiResultsModelImpl instance,
-) => <String, dynamic>{'results': instance.results};
+) => <String, dynamic>{
+  'results': instance.results.map((e) => e.toJson()).toList(),
+};
 
 _$ResultsModelImpl _$$ResultsModelImplFromJson(Map<String, dynamic> json) =>
     _$ResultsModelImpl(
@@ -54,12 +56,12 @@ Map<String, dynamic> _$$ResultsModelImplToJson(_$ResultsModelImpl instance) =>
     <String, dynamic>{
       'found': instance.found,
       'nbHits': instance.nbHits,
-      'facet_counts': instance.facetCounts,
-      'hits': instance.hits,
+      'facet_counts': instance.facetCounts.map((e) => e.toJson()).toList(),
+      'hits': instance.hits.map((e) => e.toJson()).toList(),
       'outOf': instance.outOf,
       'page': instance.page,
-      'requestParams': instance.requestParams,
-      'searchRequest': instance.searchRequest,
+      'requestParams': instance.requestParams?.toJson(),
+      'searchRequest': instance.searchRequest?.toJson(),
       'searchCutoff': instance.searchCutoff,
       'searchTimeMs': instance.searchTimeMs,
     };
@@ -86,10 +88,10 @@ _$ResultsHitImpl _$$ResultsHitImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$ResultsHitImplToJson(_$ResultsHitImpl instance) =>
     <String, dynamic>{
       'document': instance.document,
-      'highlight': instance.highlight,
-      'highlights': instance.highlights,
+      'highlight': instance.highlight?.map((k, e) => MapEntry(k, e.toJson())),
+      'highlights': instance.highlights.map((e) => e.toJson()).toList(),
       'textMatch': instance.textMatch,
-      'textMatchInfo': instance.textMatchInfo,
+      'textMatchInfo': instance.textMatchInfo?.toJson(),
     };
 
 _$ResultsDocumentImpl _$$ResultsDocumentImplFromJson(
@@ -190,4 +192,4 @@ _$HighLightSuggestionImpl _$$HighLightSuggestionImplFromJson(
 
 Map<String, dynamic> _$$HighLightSuggestionImplToJson(
   _$HighLightSuggestionImpl instance,
-) => <String, dynamic>{'q': instance.q};
+) => <String, dynamic>{'q': instance.q?.toJson()};

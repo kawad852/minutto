@@ -33,5 +33,5 @@ Map<String, dynamic> _$$LeaveModelImplToJson(_$LeaveModelImpl instance) =>
       'companyId': instance.companyId,
       'requestType': instance.requestType,
       'notes': instance.notes,
-      'attachments': instance.attachments,
+      'attachments': instance.attachments.map((e) => e.toJson()).toList(),
     };

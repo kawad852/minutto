@@ -7,6 +7,7 @@ part 'leave_model.g.dart';
 
 @unfreezed
 class LeaveModel with _$LeaveModel {
+  @JsonSerializable(explicitToJson: true)
   factory LeaveModel({
     @TimestampSerializer() required DateTime createdAt,
     @TimestampSerializer() required DateTime fromDate,
