@@ -42,7 +42,13 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
       ApiService.fetch(
         context,
         callBack: () async {
+          MySharedPreferences.user = UserModel(
+            id: "i7qeK4QAemZnhku5CHbEAZyH9Tt2",
+            companyId: "1",
+            email: "khaled@gmail.com",
+          );
           final user = MySharedPreferences.user!;
+          print("user:: $user");
           final docRef = _firebaseFireStore.collection(_collection).requestConvertor.doc();
           _request.id = docRef.id;
           _request.companyId = user.companyId!;
@@ -76,17 +82,18 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () async {
-      //     final auth = await FirebaseAuth.instance.signInWithEmailAndPassword(
-      //       email: "khaled@gmail.com",
-      //       password: "123456",
-      //     );
-      //     kFirebaseInstant.users.doc(auth.user!.uid).get().then((value) {
-      //       MySharedPreferences.user = value.data()!;
-      //     });
-      //   },
-      // ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          // print("user:: ${MySharedPreferences.user?.toJson()}");
+          // final auth = await FirebaseAuth.instance.signInWithEmailAndPassword(
+          //   email: "khaled@gmail.com",
+          //   password: "123456",
+          // );
+          // kFirebaseInstant.users.doc(auth.user!.uid).get().then((value) {
+          //   MySharedPreferences.user = value.data()!;
+          // });
+        },
+      ),
       appBar: AppBar(
         title: Text(
           _getTitle,
@@ -111,7 +118,7 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
           key: _formKey,
           child: Column(
             children: [
-              if (_collection == MyCollections.overtimes)
+              if (_collection == MyCollections.leaves)
                 WidgetTitle(
                   title: context.appLocalization.requestType,
                   padding: const EdgeInsets.symmetric(vertical: 5),

@@ -1,16 +1,18 @@
 import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
-class RequestScreen extends StatefulWidget {
+class RequestsScreen extends StatefulWidget {
   final String collection;
   final bool isVacation;
-  const RequestScreen({super.key, required this.collection, this.isVacation = false});
+  const RequestsScreen({super.key, required this.collection, this.isVacation = false});
 
   @override
-  State<RequestScreen> createState() => _RequestScreenState();
+  State<RequestsScreen> createState() => _RequestsScreenState();
 }
 
-class _RequestScreenState extends State<RequestScreen> {
+class _RequestsScreenState extends State<RequestsScreen> {
+  late Query<RequestModel> _query;
+
   (String, String) _getOrderInfo(BuildContext context) {
     switch (widget.collection) {
       case MyCollections.overtimes:
@@ -21,6 +23,20 @@ class _RequestScreenState extends State<RequestScreen> {
         }
         return (context.appLocalization.myLeave, context.appLocalization.leaveRequest);
     }
+  }
+
+  void _initialize() {
+    _query = FirebaseFirestore.instance
+        .collection(widget.collection)
+        .requestConvertor
+        .whereUserId
+        .orderByCreatedAtDesc;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _initialize();
   }
 
   @override
@@ -48,14 +64,21 @@ class _RequestScreenState extends State<RequestScreen> {
           ),
         ),
       ),
-      body: ListView.separated(
-        separatorBuilder: (context, index) => const SizedBox(height: 15),
-        itemCount: 10,
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        itemBuilder: (context, index) {
-          return RequestCardWidget(
-            collection: widget.collection,
-            isVacation: widget.isVacation,
+      body: BlitzBuilder.query(
+        query: _query,
+        onComplete: (context, snapshot, _) {
+          return ListView.separated(
+            separatorBuilder: (context, index) => const SizedBox(height: 15),
+            itemCount: snapshot.docs.length,
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            itemBuilder: (context, index) {
+              final request = snapshot.docs[index].data();
+              return RequestCardWidget(
+                collection: widget.collection,
+                isVacation: widget.isVacation,
+                request: request,
+              );
+            },
           );
         },
       ),

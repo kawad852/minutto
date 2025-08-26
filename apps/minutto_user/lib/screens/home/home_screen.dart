@@ -43,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: HomeBubble(
                         onTap: () {
                           context.navigate(
-                            (context) => RequestScreen(
+                            (context) => RequestsScreen(
                               collection: MyCollections.leaves,
                               isVacation: true,
                             ),
@@ -58,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: HomeBubble(
                         onTap: () {
                           context.navigate(
-                            (context) => RequestScreen(
+                            (context) => RequestsScreen(
                               collection: MyCollections.leaves,
                             ),
                           );
@@ -125,7 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: HomeBubble(
                         onTap: () {
                           context.navigate(
-                            (context) => RequestScreen(
+                            (context) => RequestsScreen(
                               collection: MyCollections.overtimes,
                             ),
                           );

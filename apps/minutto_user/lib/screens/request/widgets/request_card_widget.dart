@@ -4,8 +4,14 @@ import 'package:shared/shared.dart';
 class RequestCardWidget extends StatelessWidget {
   final String collection;
   final bool isVacation;
+  final RequestModel request;
 
-  const RequestCardWidget({super.key, required this.collection, required this.isVacation});
+  const RequestCardWidget({
+    super.key,
+    required this.collection,
+    required this.isVacation,
+    required this.request,
+  });
 
   String get _icon {
     switch (collection) {
