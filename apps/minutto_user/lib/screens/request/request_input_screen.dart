@@ -63,6 +63,17 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () async {
+      //     final auth = await FirebaseAuth.instance.signInWithEmailAndPassword(
+      //       email: "khaled@gmail.com",
+      //       password: "123456",
+      //     );
+      //     kFirebaseInstant.users.doc(auth.user!.uid).get().then((value) {
+      //       MySharedPreferences.user = value.data()!;
+      //     });
+      //   },
+      // ),
       appBar: AppBar(
         title: Text(
           _getTitle(),

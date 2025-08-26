@@ -15,7 +15,7 @@ void main() async {
     },
     builder: (bool isAuthenticated) {
       if (isAuthenticated) {
-        return Placeholder();
+        return AppNavBar();
       } else {
         return LoginScreen();
       }
