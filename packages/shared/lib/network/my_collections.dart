@@ -19,5 +19,6 @@ class MyCollections {
   static const String deliveryAreas = 'deliveryAreas';
   static const String drivers = 'drivers';
   static const String brands = 'brands';
-  static const String vacations = 'vacations';
+  static const String leaves = 'leaves';
+  static const String overtimes = 'overtimes';
 }

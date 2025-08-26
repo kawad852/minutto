@@ -2,10 +2,12 @@ import 'package:shared/shared.dart';
 
 class RequestInputScreen extends StatefulWidget {
   final OrderTypeEnum orderTypeEnum;
+  final String collection;
 
   const RequestInputScreen({
     super.key,
     required this.orderTypeEnum,
+    required this.collection,
   });
 
   @override
@@ -13,7 +15,7 @@ class RequestInputScreen extends StatefulWidget {
 }
 
 class _RequestInputScreenState extends State<RequestInputScreen> {
-  late LeaveModel _leave;
+  late RequestModel _request;
   var _files = <XFile>[];
   final _formKey = GlobalKey<FormState>();
   final _storageService = StorageService();
@@ -39,12 +41,15 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
         callBack: () async {
           // final user = MySharedPreferences.user!;
           final docRef = _firebaseFireStore.vacations.doc();
-          _leave.id = docRef.id;
+          _request.id = docRef.id;
           // _leave.companyId = user.companyId!;
           // _leave.userId = user.id!;
-          _leave.createdAt = kNowDate;
-          _leave.attachments = await _storageService.uploadFiles(MyCollections.vacations, _files);
-          await docRef.set(_leave);
+          _request.createdAt = kNowDate;
+          _request.attachments = await _storageService.uploadFiles(
+            widget.collection,
+            _files,
+          );
+          await docRef.set(_request);
           if (context.mounted) {
             context.showSnackBar(context.appLocalization.sentSuccessfully);
             Navigator.pop(context);
@@ -57,7 +62,7 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
   @override
   void initState() {
     super.initState();
-    _leave = LeaveModel(createdAt: kNowDate, fromDate: kNowDate, toDate: kNowDate);
+    _request = RequestModel(createdAt: kNowDate, fromDate: kNowDate, toDate: kNowDate);
   }
 
   @override
@@ -106,8 +111,8 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                     items: LeaveType.values.map((e) {
                       return DropdownMenuItem(value: e.value, child: Text('مرضية'));
                     }).toList(),
-                    onChanged: (value) => _leave.requestType = value!,
-                    value: _leave.requestType.isNotEmpty ? _leave.requestType : null,
+                    onChanged: (value) => _request.requestType = value!,
+                    value: _request.requestType.isNotEmpty ? _request.requestType : null,
                   ),
                 ),
               if (widget.orderTypeEnum == OrderTypeEnum.vacation)
@@ -118,8 +123,8 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                         title: context.appLocalization.fromDate,
                         padding: const EdgeInsets.symmetric(vertical: 5),
                         child: DateEditor(
-                          value: _leave.fromDate,
-                          onChanged: (value) => _leave.fromDate = value,
+                          value: _request.fromDate,
+                          onChanged: (value) => _request.fromDate = value,
                         ),
                       ),
                     ),
@@ -129,8 +134,8 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                         title: context.appLocalization.toDate,
                         padding: const EdgeInsets.symmetric(vertical: 5),
                         child: DateEditor(
-                          value: _leave.toDate,
-                          onChanged: (value) => _leave.toDate = value,
+                          value: _request.toDate,
+                          onChanged: (value) => _request.toDate = value,
                         ),
                       ),
                     ),
@@ -165,8 +170,8 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                   ],
                 ),
               RequestForm(
-                onNotesChanged: (value) => _leave.notes = value,
-                attachments: _leave.attachments,
+                onNotesChanged: (value) => _request.notes = value,
+                attachments: _request.attachments,
                 onAttachmentChanged: (List<XFile> value) => _files = value,
               ),
             ],

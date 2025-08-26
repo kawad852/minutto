@@ -3,7 +3,8 @@ import 'package:shared/shared.dart';
 
 class RequestScreen extends StatefulWidget {
   final OrderTypeEnum orderTypeEnum;
-  const RequestScreen({super.key, required this.orderTypeEnum});
+  final String collection;
+  const RequestScreen({super.key, required this.orderTypeEnum, required this.collection});
 
   @override
   State<RequestScreen> createState() => _RequestScreenState();
@@ -29,7 +30,12 @@ class _RequestScreenState extends State<RequestScreen> {
       bottomNavigationBar: BottomAppBar(
         child: StretchedButton(
           onPressed: () {
-            context.navigate((context) => RequestInputScreen(orderTypeEnum: widget.orderTypeEnum));
+            context.navigate(
+              (context) => RequestInputScreen(
+                orderTypeEnum: widget.orderTypeEnum,
+                collection: widget.collection,
+              ),
+            );
           },
           child: Text(
             order.$2,

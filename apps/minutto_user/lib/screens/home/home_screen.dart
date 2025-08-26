@@ -43,7 +43,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: HomeBubble(
                         onTap: () {
                           context.navigate(
-                            (context) => const RequestScreen(orderTypeEnum: OrderTypeEnum.vacation),
+                            (context) => RequestScreen(
+                              orderTypeEnum: OrderTypeEnum.vacation,
+                              collection: MyCollections.leaves,
+                            ),
                           );
                         },
                         icon: MyIcons.umbrella,
@@ -55,7 +58,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: HomeBubble(
                         onTap: () {
                           context.navigate(
-                            (context) => const RequestScreen(orderTypeEnum: OrderTypeEnum.leave),
+                            (context) => RequestScreen(
+                              orderTypeEnum: OrderTypeEnum.leave,
+                              collection: MyCollections.leaves,
+                            ),
                           );
                         },
                         icon: MyIcons.clockIcon,
@@ -120,7 +126,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: HomeBubble(
                         onTap: () {
                           context.navigate(
-                            (context) => const RequestScreen(orderTypeEnum: OrderTypeEnum.overtime),
+                            (context) => RequestScreen(
+                              orderTypeEnum: OrderTypeEnum.overtime,
+                              collection: MyCollections.overtimes,
+                            ),
                           );
                         },
                         icon: MyIcons.money,

@@ -2,23 +2,24 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shared/helper/time_stamp_serializer.dart';
 import 'package:shared/models/attachment/attachment_model.dart';
 
-part 'leave_model.freezed.dart';
-part 'leave_model.g.dart';
+part 'request_model.freezed.dart';
+part 'request_model.g.dart';
 
 @unfreezed
-class LeaveModel with _$LeaveModel {
+class RequestModel with _$RequestModel {
   @JsonSerializable(explicitToJson: true)
-  factory LeaveModel({
+  factory RequestModel({
     @TimestampSerializer() required DateTime createdAt,
     @TimestampSerializer() required DateTime fromDate,
     @TimestampSerializer() required DateTime toDate,
     @Default('') String id,
     @Default('') String userId,
+    @Default('') String type,
     @Default('') String companyId,
     @Default('') String requestType,
     String? notes,
     @Default([]) List<AttachmentModel> attachments,
-  }) = _LeaveModel;
+  }) = _RequestModel;
 
-  factory LeaveModel.fromJson(Map<String, dynamic> json) => _$LeaveModelFromJson(json);
+  factory RequestModel.fromJson(Map<String, dynamic> json) => _$RequestModelFromJson(json);
 }
