@@ -62,7 +62,12 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
   @override
   void initState() {
     super.initState();
-    _request = RequestModel(createdAt: kNowDate, fromDate: kNowDate, toDate: kNowDate);
+    _request = RequestModel(
+      createdAt: kNowDate,
+      fromDate: kNowDate,
+      toDate: kNowDate,
+      date: kNowDate,
+    );
   }
 
   @override

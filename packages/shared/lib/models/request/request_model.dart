@@ -12,6 +12,7 @@ class RequestModel with _$RequestModel {
     @TimestampSerializer() required DateTime createdAt,
     @TimestampSerializer() required DateTime fromDate,
     @TimestampSerializer() required DateTime toDate,
+    @TimestampSerializer() required DateTime date,
     @Default('') String id,
     @Default('') String userId,
     @Default('') String type,
