@@ -41,7 +41,7 @@ class MyTheme {
           fontWeight: FontWeight.bold,
         ),
       ),
-      bottomAppBarTheme: BottomAppBarThemeData(color: Colors.white),
+      bottomAppBarTheme: BottomAppBarTheme(color: Colors.white),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(backgroundColor: Colors.white),
       scaffoldBackgroundColor: Colors.white,
       actionIconTheme: ActionIconThemeData(
