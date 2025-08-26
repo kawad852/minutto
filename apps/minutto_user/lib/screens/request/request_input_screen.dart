@@ -39,11 +39,11 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
       ApiService.fetch(
         context,
         callBack: () async {
-          // final user = MySharedPreferences.user!;
-          final docRef = _firebaseFireStore.vacations.doc();
+          final user = MySharedPreferences.user!;
+          final docRef = _firebaseFireStore.collection(widget.collection).requestConvertor.doc();
           _request.id = docRef.id;
-          // _leave.companyId = user.companyId!;
-          // _leave.userId = user.id!;
+          _request.companyId = user.companyId!;
+          _request.userId = user.id!;
           _request.createdAt = kNowDate;
           _request.attachments = await _storageService.uploadFiles(
             widget.collection,
