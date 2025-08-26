@@ -60,3 +60,6 @@ export 'screens/facility_management/facility_management_screen.dart';
 export 'screens/facility_management/shift_management_screen.dart';
 export 'screens/facility_management/shift_input_screen.dart';
 export 'screens/facility_management/widgets/facility_card.dart';
+//notification
+export 'screens/notification/notification_screen.dart';
+export 'screens/notification/widgets/notification_card.dart';

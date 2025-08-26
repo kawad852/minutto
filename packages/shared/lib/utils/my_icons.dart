@@ -43,4 +43,5 @@ class MyIcons {
   static const String facility = '${_path}facility.svg';
   static const String clock = '${_path}clock.svg';
   static const String shiftEdit = '${_path}shift_edit.svg';
+  static const String scaffoldBackground = '${_path}scaffold_background.svg';
 }
