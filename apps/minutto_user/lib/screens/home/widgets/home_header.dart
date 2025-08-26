@@ -8,7 +8,7 @@ class HomeHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 323,
+      height: 355,
       margin: const EdgeInsets.only(bottom: 15),
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -51,7 +51,12 @@ class HomeHeader extends StatelessWidget {
               padding: const EdgeInsets.only(top: 10, bottom: 20),
               child: Row(
                 children: [
-                  BaseNetworkImage("", width: 60, height: 60, radius: 7),
+                  BaseNetworkImage(
+                    "",
+                    width: 60,
+                    height: 60,
+                    shape: BoxShape.circle,
+                  ),
                   const SizedBox(width: 15),
                   Expanded(
                     child: Column(
@@ -95,7 +100,7 @@ class HomeHeader extends StatelessWidget {
             ),
             Container(
               width: double.infinity,
-              height: 95,
+              height: 117,
               margin: const EdgeInsets.only(top: 10),
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               decoration: BoxDecoration(
@@ -107,13 +112,14 @@ class HomeHeader extends StatelessWidget {
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           context.appLocalization.checkInOut,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             color: context.colorPalette.white,
-                            fontSize: 16,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -134,7 +140,7 @@ class HomeHeader extends StatelessWidget {
                                   "2023.04.03",
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
-                                    color: context.colorPalette.redD42,
+                                    color: context.colorPalette.white,
                                     fontSize: 16,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -158,7 +164,7 @@ class HomeHeader extends StatelessWidget {
                                 "AM 08:31:23",
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
-                                  color: context.colorPalette.redD42,
+                                  color: context.colorPalette.white,
                                   fontSize: 16,
                                   fontWeight: FontWeight.w500,
                                 ),

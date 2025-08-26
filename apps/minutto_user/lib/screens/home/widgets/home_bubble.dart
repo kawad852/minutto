@@ -22,7 +22,8 @@ class HomeBubble extends StatelessWidget {
         margin: const EdgeInsets.only(top: 10),
         padding: const EdgeInsets.symmetric(horizontal: 10),
         decoration: BoxDecoration(
-          color: backgroundColor ?? context.colorPalette.greyF7F,
+          color: backgroundColor ?? context.colorPalette.greyF9F,
+          border: Border.all(color: context.colorPalette.greyEAE),
           borderRadius: BorderRadius.circular(kRadiusSecondary),
         ),
         child: Row(

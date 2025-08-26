@@ -7,6 +7,7 @@ class DateEditor extends StatefulWidget {
   final bool required;
   final DateTime? fistDate;
   final DateTime? lastDate;
+  final Widget? suffixIcon;
 
   const DateEditor({
     super.key,
@@ -15,6 +16,7 @@ class DateEditor extends StatefulWidget {
     this.required = true,
     this.fistDate,
     this.lastDate,
+    this.suffixIcon,
   });
 
   @override
@@ -51,6 +53,7 @@ class _DateEditorState extends State<DateEditor> {
       key: ValueKey(_value),
       initialValue: _value != null ? DateFormat("MMM d, yyyy").format(_value!) : null,
       labelText: "",
+      suffixIcon: widget.suffixIcon,
       required: widget.required,
       onTap: () {
         _showDatePicker(context);

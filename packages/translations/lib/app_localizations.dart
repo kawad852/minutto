@@ -2809,6 +2809,90 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'An explanation and clarification have been sent to the Human Resources Department regarding the reason for absence or delay, awaiting the official’s response.'**
   String get sendExplanSuccessfully;
+
+  /// No description provided for @facilityManagement.
+  ///
+  /// In en, this message translates to:
+  /// **'Facility management'**
+  String get facilityManagement;
+
+  /// No description provided for @branchManagement.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch management'**
+  String get branchManagement;
+
+  /// No description provided for @shiftManagement.
+  ///
+  /// In en, this message translates to:
+  /// **'Shift management'**
+  String get shiftManagement;
+
+  /// No description provided for @staffManagement.
+  ///
+  /// In en, this message translates to:
+  /// **'Staff management'**
+  String get staffManagement;
+
+  /// No description provided for @shiftTable.
+  ///
+  /// In en, this message translates to:
+  /// **'Shift table'**
+  String get shiftTable;
+
+  /// No description provided for @companySystemSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Company system settings'**
+  String get companySystemSettings;
+
+  /// No description provided for @startsFrom.
+  ///
+  /// In en, this message translates to:
+  /// **'Starts from'**
+  String get startsFrom;
+
+  /// No description provided for @endsIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Ends in'**
+  String get endsIn;
+
+  /// No description provided for @branches.
+  ///
+  /// In en, this message translates to:
+  /// **'Branches'**
+  String get branches;
+
+  /// No description provided for @branchName.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch name'**
+  String get branchName;
+
+  /// No description provided for @addShift.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Shift'**
+  String get addShift;
+
+  /// No description provided for @chooseMoreBranch.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch (you can choose more than one branch)'**
+  String get chooseMoreBranch;
+
+  /// No description provided for @choose.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose'**
+  String get choose;
+
+  /// No description provided for @shiftName.
+  ///
+  /// In en, this message translates to:
+  /// **'Shift Name'**
+  String get shiftName;
 }
 
 class _AppLocalizationsDelegate

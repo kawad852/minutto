@@ -20,12 +20,12 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: [
                 Row(
+                  spacing: 10,
                   children: [
                     RequestCard(
                       title: context.appLocalization.leaving,
                       value: "1/4 ",
                     ),
-                    const SizedBox(width: 10),
                     RequestCard(
                       title: context.appLocalization.leaveAbsence,
                       value: "0/2 ",
@@ -98,7 +98,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         },
                         icon: MyIcons.advance,
                         title: context.appLocalization.advances,
-                        backgroundColor: context.colorPalette.yellowFDF,
                       ),
                     ),
                     const SizedBox(width: 10),
@@ -111,7 +110,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         },
                         icon: MyIcons.favorite,
                         title: context.appLocalization.incentivesRequests,
-                        backgroundColor: context.colorPalette.greenB2D,
                       ),
                     ),
                   ],

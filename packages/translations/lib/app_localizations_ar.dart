@@ -1417,4 +1417,46 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get sendExplanSuccessfully =>
       'تم ارسال توضيح وشروحات لقسم الموارد البشرية عن سبب الغياب او التأخير ، بأنتظار رد المسؤول';
+
+  @override
+  String get facilityManagement => 'إدارة المنشأة';
+
+  @override
+  String get branchManagement => 'إدارة الفروع';
+
+  @override
+  String get shiftManagement => 'إدارة الشفتات';
+
+  @override
+  String get staffManagement => 'إدارة الموظفين';
+
+  @override
+  String get shiftTable => 'جدول الشفتات';
+
+  @override
+  String get companySystemSettings => 'إعدادات نظام الشركة';
+
+  @override
+  String get startsFrom => 'يبدأ من ';
+
+  @override
+  String get endsIn => 'ينتهي في';
+
+  @override
+  String get branches => 'الفروع';
+
+  @override
+  String get branchName => 'اسم الفرع';
+
+  @override
+  String get addShift => 'إضافة شيفت';
+
+  @override
+  String get chooseMoreBranch => 'الفرع(يمكنك اختيار اكثر من فرع)';
+
+  @override
+  String get choose => 'اختر';
+
+  @override
+  String get shiftName => 'اسم الشيفت';
 }

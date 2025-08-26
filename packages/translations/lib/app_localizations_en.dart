@@ -1423,4 +1423,46 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get sendExplanSuccessfully =>
       'An explanation and clarification have been sent to the Human Resources Department regarding the reason for absence or delay, awaiting the official’s response.';
+
+  @override
+  String get facilityManagement => 'Facility management';
+
+  @override
+  String get branchManagement => 'Branch management';
+
+  @override
+  String get shiftManagement => 'Shift management';
+
+  @override
+  String get staffManagement => 'Staff management';
+
+  @override
+  String get shiftTable => 'Shift table';
+
+  @override
+  String get companySystemSettings => 'Company system settings';
+
+  @override
+  String get startsFrom => 'Starts from';
+
+  @override
+  String get endsIn => 'Ends in';
+
+  @override
+  String get branches => 'Branches';
+
+  @override
+  String get branchName => 'Branch name';
+
+  @override
+  String get addShift => 'Add Shift';
+
+  @override
+  String get chooseMoreBranch => 'Branch (you can choose more than one branch)';
+
+  @override
+  String get choose => 'Choose';
+
+  @override
+  String get shiftName => 'Shift Name';
 }

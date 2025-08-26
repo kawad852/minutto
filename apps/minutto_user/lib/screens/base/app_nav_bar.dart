@@ -9,15 +9,21 @@ class AppNavBar extends StatefulWidget {
 }
 
 class _AppNavBarState extends State<AppNavBar> {
-  int _currentIndex = 1;
+  int _currentIndex = 0;
   late PageController _pageController;
 
-  final items = [MyIcons.profile, MyIcons.home, MyIcons.calander];
+  final items = [
+    MyIcons.home,
+    MyIcons.facility,
+    MyIcons.calander,
+    MyIcons.profile,
+  ];
 
   final screens = [
-    const ProfileScreen(),
     const HomeScreen(),
+    const FacilityManagementScreen(),
     const ReportsScreen(),
+    const ProfileScreen(),
   ];
 
   void _onSelect(int index) {
@@ -50,7 +56,7 @@ class _AppNavBarState extends State<AppNavBar> {
         margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         decoration: BoxDecoration(
           color: context.colorPalette.blue091,
-          borderRadius: BorderRadius.circular(kRadiusSecondary),
+          borderRadius: BorderRadius.circular(20),
         ),
         child: Row(
           children: screens.map((element) {

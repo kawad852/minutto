@@ -359,5 +359,19 @@
   "clarificationAndExplanations":"توضيح وشروحات",
   "sendExplanToHrResources":"يمكنك ارسال توضيح وشروحات لقسم الموارد البشرية عن سبب الغياب او التأخير مع امكانية ارفاق الوثائق",
   "discountValue":"قيمة الخصم",
-  "sendExplanSuccessfully":"تم ارسال توضيح وشروحات لقسم الموارد البشرية عن سبب الغياب او التأخير ، بأنتظار رد المسؤول"
+  "sendExplanSuccessfully":"تم ارسال توضيح وشروحات لقسم الموارد البشرية عن سبب الغياب او التأخير ، بأنتظار رد المسؤول",
+  "facilityManagement":"إدارة المنشأة",
+  "branchManagement":"إدارة الفروع",
+  "shiftManagement":"إدارة الشفتات",
+  "staffManagement":"إدارة الموظفين",
+  "shiftTable":"جدول الشفتات",
+  "companySystemSettings":"إعدادات نظام الشركة",
+  "startsFrom":"يبدأ من ",
+  "endsIn":"ينتهي في",
+  "branches":"الفروع",
+  "branchName":"اسم الفرع",
+  "addShift":"إضافة شيفت",
+  "chooseMoreBranch":"الفرع(يمكنك اختيار اكثر من فرع)",
+  "choose":"اختر",
+  "shiftName":"اسم الشيفت"
 }

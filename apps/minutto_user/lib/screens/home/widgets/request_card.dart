@@ -9,54 +9,44 @@ class RequestCard extends StatelessWidget {
     return Expanded(
       child: Container(
         width: double.infinity,
-        height: 93,
-        padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+        height: 90,
+        padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 8),
         decoration: BoxDecoration(
-          color: context.colorPalette.greyF7F,
-          borderRadius: BorderRadius.circular(kRadiusSecondary),
+          color: context.colorPalette.greyF9F,
+          border: Border.all(color: context.colorPalette.greyEAE),
+          borderRadius: BorderRadius.circular(12),
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          spacing: 8,
           children: [
             Text(
-              context.appLocalization.submitRequest,
+              "${context.appLocalization.submitRequest} $title",
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 color: context.colorPalette.black2D2,
-                fontSize: 16,
+                fontSize: 14,
               ),
             ),
             Row(
               children: [
-                Expanded(
-                  child: Text(
-                    value,
-                    textAlign: TextAlign.end,
-                    style: TextStyle(
-                      color: context.colorPalette.blue091,
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                    ),
+                Text(
+                  value,
+                  style: TextStyle(
+                    color: context.colorPalette.blue091,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                Expanded(
-                  child: Text(
-                    context.appLocalization.inMonth,
-                    style: TextStyle(
-                      color: context.colorPalette.grey8F8,
-                      fontSize: 12,
-                    ),
+                Text(
+                  context.appLocalization.inMonth,
+                  style: TextStyle(
+                    color: context.colorPalette.grey8F8,
+                    fontSize: 12,
                   ),
                 ),
               ],
-            ),
-            Text(
-              title,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                color: context.colorPalette.redD42,
-                fontSize: 16,
-              ),
             ),
           ],
         ),

@@ -536,5 +536,19 @@
   "clarificationAndExplanations":"Clarification and explanations",
   "sendExplanToHrResources":"You can send an explanation and clarification to the Human Resources Department about the reason for absence or delay, with the possibility of attaching documents.",
   "discountValue":"Discount value",
-  "sendExplanSuccessfully":"An explanation and clarification have been sent to the Human Resources Department regarding the reason for absence or delay, awaiting the official’s response."
+  "sendExplanSuccessfully":"An explanation and clarification have been sent to the Human Resources Department regarding the reason for absence or delay, awaiting the official’s response.",
+  "facilityManagement":"Facility management",
+  "branchManagement":"Branch management",
+  "shiftManagement":"Shift management",
+  "staffManagement":"Staff management",
+  "shiftTable":"Shift table",
+  "companySystemSettings":"Company system settings",
+  "startsFrom":"Starts from",
+  "endsIn":"Ends in",
+  "branches":"Branches",
+  "branchName":"Branch name",
+  "addShift":"Add Shift",
+  "chooseMoreBranch":"Branch (you can choose more than one branch)",
+  "choose":"Choose",
+  "shiftName":"Shift Name"
 }
