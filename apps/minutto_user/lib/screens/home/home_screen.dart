@@ -44,8 +44,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         onTap: () {
                           context.navigate(
                             (context) => RequestScreen(
-                              orderTypeEnum: OrderTypeEnum.vacation,
                               collection: MyCollections.leaves,
+                              isVacation: true,
                             ),
                           );
                         },
@@ -59,7 +59,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         onTap: () {
                           context.navigate(
                             (context) => RequestScreen(
-                              orderTypeEnum: OrderTypeEnum.leave,
                               collection: MyCollections.leaves,
                             ),
                           );
@@ -127,7 +126,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         onTap: () {
                           context.navigate(
                             (context) => RequestScreen(
-                              orderTypeEnum: OrderTypeEnum.overtime,
                               collection: MyCollections.overtimes,
                             ),
                           );

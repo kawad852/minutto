@@ -2,25 +2,28 @@ import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
 class RequestCardWidget extends StatelessWidget {
-  final OrderTypeEnum orderTypeEnum;
-  const RequestCardWidget({super.key, required this.orderTypeEnum});
+  final String collection;
+  final bool isVacation;
+
+  const RequestCardWidget({super.key, required this.collection, required this.isVacation});
+
+  String get _icon {
+    switch (collection) {
+      case MyCollections.overtimes:
+        return MyIcons.money;
+      default:
+        if (isVacation) {
+          return MyIcons.umbrella;
+        }
+        return MyIcons.clockIcon;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    String getIcon() {
-      switch (orderTypeEnum) {
-        case OrderTypeEnum.overtime:
-          return MyIcons.money;
-        case OrderTypeEnum.leave:
-          return MyIcons.clockIcon;
-        case OrderTypeEnum.vacation:
-          return MyIcons.umbrella;
-      }
-    }
-
     return GestureDetector(
       onTap: () {
-        context.navigate((context) => RequestDetalisScreen(orderTypeEnum: orderTypeEnum));
+        context.navigate((context) => RequestDetalisScreen(orderTypeEnum: OrderTypeEnum.leave));
       },
       child: Container(
         width: double.infinity,
@@ -32,7 +35,7 @@ class RequestCardWidget extends StatelessWidget {
         ),
         child: Row(
           children: [
-            CustomSvg(getIcon()),
+            CustomSvg(_icon),
             const SizedBox(width: 12),
             Expanded(
               child: Column(
@@ -61,7 +64,7 @@ class RequestCardWidget extends StatelessWidget {
                 ],
               ),
             ),
-            if (orderTypeEnum == OrderTypeEnum.vacation)
+            if (isVacation)
               Expanded(
                 child: Text(
                   "اجازة مرضية",

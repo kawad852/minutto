@@ -2,9 +2,9 @@ import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
 class RequestScreen extends StatefulWidget {
-  final OrderTypeEnum orderTypeEnum;
   final String collection;
-  const RequestScreen({super.key, required this.orderTypeEnum, required this.collection});
+  final bool isVacation;
+  const RequestScreen({super.key, required this.collection, this.isVacation = false});
 
   @override
   State<RequestScreen> createState() => _RequestScreenState();
@@ -12,13 +12,14 @@ class RequestScreen extends StatefulWidget {
 
 class _RequestScreenState extends State<RequestScreen> {
   (String, String) _getOrderInfo(BuildContext context) {
-    switch (widget.orderTypeEnum) {
-      case OrderTypeEnum.overtime:
+    switch (widget.collection) {
+      case MyCollections.overtimes:
         return (context.appLocalization.overtimeRequests, context.appLocalization.newOrder);
-      case OrderTypeEnum.leave:
+      default:
+        if (widget.isVacation) {
+          return (context.appLocalization.myVacation, context.appLocalization.vacationRequest);
+        }
         return (context.appLocalization.myLeave, context.appLocalization.leaveRequest);
-      case OrderTypeEnum.vacation:
-        return (context.appLocalization.myVacation, context.appLocalization.vacationRequest);
     }
   }
 
@@ -32,8 +33,8 @@ class _RequestScreenState extends State<RequestScreen> {
           onPressed: () {
             context.navigate(
               (context) => RequestInputScreen(
-                orderTypeEnum: widget.orderTypeEnum,
                 collection: widget.collection,
+                isVacation: widget.isVacation,
               ),
             );
           },
@@ -52,7 +53,10 @@ class _RequestScreenState extends State<RequestScreen> {
         itemCount: 10,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         itemBuilder: (context, index) {
-          return RequestCardWidget(orderTypeEnum: widget.orderTypeEnum);
+          return RequestCardWidget(
+            collection: widget.collection,
+            isVacation: widget.isVacation,
+          );
         },
       ),
     );

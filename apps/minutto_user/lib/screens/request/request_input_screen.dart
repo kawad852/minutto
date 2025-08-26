@@ -1,13 +1,13 @@
 import 'package:shared/shared.dart';
 
 class RequestInputScreen extends StatefulWidget {
-  final OrderTypeEnum orderTypeEnum;
   final String collection;
+  final bool isVacation;
 
   const RequestInputScreen({
     super.key,
-    required this.orderTypeEnum,
     required this.collection,
+    this.isVacation = false,
   });
 
   @override
@@ -20,16 +20,19 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
   final _formKey = GlobalKey<FormState>();
   final _storageService = StorageService();
 
+  String get _collection => widget.collection;
+  bool get _isLeave => _collection == MyCollections.leaves;
   FirebaseFirestore get _firebaseFireStore => getIt<FirebaseFirestore>();
 
-  String _getTitle() {
-    switch (widget.orderTypeEnum) {
-      case OrderTypeEnum.overtime:
+  String get _getTitle {
+    switch (_collection) {
+      case MyCollections.overtimes:
         return context.appLocalization.overtime;
-      case OrderTypeEnum.leave:
+      default:
+        if (widget.isVacation) {
+          return context.appLocalization.vacationRequest;
+        }
         return context.appLocalization.leaveRequest;
-      case OrderTypeEnum.vacation:
-        return context.appLocalization.vacationRequest;
     }
   }
 
@@ -40,13 +43,13 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
         context,
         callBack: () async {
           final user = MySharedPreferences.user!;
-          final docRef = _firebaseFireStore.collection(widget.collection).requestConvertor.doc();
+          final docRef = _firebaseFireStore.collection(_collection).requestConvertor.doc();
           _request.id = docRef.id;
           _request.companyId = user.companyId!;
           _request.userId = user.id!;
           _request.createdAt = kNowDate;
           _request.attachments = await _storageService.uploadFiles(
-            widget.collection,
+            _collection,
             _files,
           );
           await docRef.set(_request);
@@ -86,7 +89,7 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
       // ),
       appBar: AppBar(
         title: Text(
-          _getTitle(),
+          _getTitle,
         ),
       ),
       bottomNavigationBar: BottomAppBar(
@@ -108,7 +111,7 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
           key: _formKey,
           child: Column(
             children: [
-              if (widget.orderTypeEnum != OrderTypeEnum.overtime)
+              if (_collection == MyCollections.overtimes)
                 WidgetTitle(
                   title: context.appLocalization.requestType,
                   padding: const EdgeInsets.symmetric(vertical: 5),
@@ -120,7 +123,7 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                     value: _request.requestType.isNotEmpty ? _request.requestType : null,
                   ),
                 ),
-              if (widget.orderTypeEnum == OrderTypeEnum.vacation)
+              if (_isLeave && widget.isVacation)
                 Row(
                   children: [
                     Expanded(
@@ -146,15 +149,15 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                     ),
                   ],
                 ),
-              if (widget.orderTypeEnum != OrderTypeEnum.vacation)
+              if (!_isLeave)
                 WidgetTitle(
-                  title: widget.orderTypeEnum == OrderTypeEnum.overtime
+                  title: _collection == MyCollections.overtimes
                       ? context.appLocalization.overtimeHistory
                       : context.appLocalization.leaveDate,
                   padding: const EdgeInsets.symmetric(vertical: 5),
                   child: CustomTextField.text(onChanged: (value) {}),
                 ),
-              if (widget.orderTypeEnum != OrderTypeEnum.vacation)
+              if (_isLeave && !widget.isVacation)
                 Row(
                   spacing: 10,
                   children: [
