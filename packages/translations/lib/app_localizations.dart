@@ -2893,6 +2893,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Shift Name'**
   String get shiftName;
+
+  /// No description provided for @introTitle0.
+  ///
+  /// In en, this message translates to:
+  /// **'Employee attendance and departure system'**
+  String get introTitle0;
+
+  /// No description provided for @introTitle1.
+  ///
+  /// In en, this message translates to:
+  /// **'Employee attendance and leaves system'**
+  String get introTitle1;
+
+  /// No description provided for @introTitle2.
+  ///
+  /// In en, this message translates to:
+  /// **'Managing employee requests'**
+  String get introTitle2;
+
+  /// No description provided for @introDisc0.
+  ///
+  /// In en, this message translates to:
+  /// **'We offer you advanced and new solutions to manage employee working hours in the best way.'**
+  String get introDisc0;
+
+  /// No description provided for @introDisc1.
+  ///
+  /// In en, this message translates to:
+  /// **'Advanced and new solutions for recording attendance and departure times from work'**
+  String get introDisc1;
+
+  /// No description provided for @introDisc2.
+  ///
+  /// In en, this message translates to:
+  /// **'All employee requests, including leave, vacation, advances, and allowances, in one place.'**
+  String get introDisc2;
+
+  /// No description provided for @skip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get skip;
 }
 
 class _AppLocalizationsDelegate

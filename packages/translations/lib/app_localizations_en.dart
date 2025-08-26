@@ -1465,4 +1465,28 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get shiftName => 'Shift Name';
+
+  @override
+  String get introTitle0 => 'Employee attendance and departure system';
+
+  @override
+  String get introTitle1 => 'Employee attendance and leaves system';
+
+  @override
+  String get introTitle2 => 'Managing employee requests';
+
+  @override
+  String get introDisc0 =>
+      'We offer you advanced and new solutions to manage employee working hours in the best way.';
+
+  @override
+  String get introDisc1 =>
+      'Advanced and new solutions for recording attendance and departure times from work';
+
+  @override
+  String get introDisc2 =>
+      'All employee requests, including leave, vacation, advances, and allowances, in one place.';
+
+  @override
+  String get skip => 'Skip';
 }

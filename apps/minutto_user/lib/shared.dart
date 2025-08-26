@@ -63,3 +63,10 @@ export 'screens/facility_management/widgets/facility_card.dart';
 //notification
 export 'screens/notification/notification_screen.dart';
 export 'screens/notification/widgets/notification_card.dart';
+//privacy
+export 'screens/privacy/privacy_screen.dart';
+//faq
+export 'screens/faq/faq_screen.dart';
+export 'screens/faq/widgets/faq_card.dart';
+//intro
+export 'screens/intro/intro_screen.dart';

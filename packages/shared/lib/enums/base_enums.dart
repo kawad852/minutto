@@ -24,3 +24,5 @@ enum OrderTypeEnum { vacation, leave, overtime }
 enum FeedBackType { alarm, rewards }
 
 enum RewardsType { allowance, incentive }
+
+enum PrivacyType { policy, app }

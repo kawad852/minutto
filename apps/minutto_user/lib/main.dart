@@ -17,7 +17,8 @@ void main() async {
       if (isAuthenticated) {
         return Placeholder();
       } else {
-        return LoginScreen();
+        return IntroScreen(); 
+        //LoginScreen();
       }
     },
     logoutBuilder: kLogoutBuilder,
