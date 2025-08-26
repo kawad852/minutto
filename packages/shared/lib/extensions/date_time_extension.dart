@@ -5,6 +5,7 @@ import '../shared.dart';
 extension DateTimeExtension on DateTime {
   String get defaultFormat => DateFormat().format(this);
   String get yMMMMd => DateFormat.yMMMd('en_US').format(this);
+  String get dotFormat => DateFormat('19.02.2023').format(this);
 
   Filter get startFilter =>
       Filter(MyFields.createdAt, isGreaterThanOrEqualTo: Timestamp.fromDate(this));

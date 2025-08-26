@@ -24,3 +24,23 @@ enum OrderTypeEnum { vacation, leave, overtime }
 enum FeedBackType { alarm, rewards }
 
 enum RewardsType { allowance, incentive }
+
+enum StatusEnum {
+  pending(defaultValue),
+  rejected("rejected");
+
+  static const defaultValue = "pending";
+  final String value;
+
+  const StatusEnum(this.value);
+
+  String label(String status) {
+    final value = values.firstWhere((e) => e.value == status);
+    switch (value) {
+      case StatusEnum.rejected:
+        return '';
+      default:
+        return '';
+    }
+  }
+}

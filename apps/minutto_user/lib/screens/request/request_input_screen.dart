@@ -76,17 +76,17 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          final auth = await FirebaseAuth.instance.signInWithEmailAndPassword(
-            email: "khaled@gmail.com",
-            password: "123456",
-          );
-          kFirebaseInstant.users.doc(auth.user!.uid).get().then((value) {
-            MySharedPreferences.user = value.data()!;
-          });
-        },
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () async {
+      //     final auth = await FirebaseAuth.instance.signInWithEmailAndPassword(
+      //       email: "khaled@gmail.com",
+      //       password: "123456",
+      //     );
+      //     kFirebaseInstant.users.doc(auth.user!.uid).get().then((value) {
+      //       MySharedPreferences.user = value.data()!;
+      //     });
+      //   },
+      // ),
       appBar: AppBar(
         title: Text(
           _getTitle,
@@ -116,11 +116,11 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                   title: context.appLocalization.requestType,
                   padding: const EdgeInsets.symmetric(vertical: 5),
                   child: DropDownEditor(
-                    items: LeaveType.values.map((e) {
+                    items: LeaveReason.values.map((e) {
                       return DropdownMenuItem(value: e.value, child: Text('مرضية'));
                     }).toList(),
-                    onChanged: (value) => _request.requestType = value!,
-                    value: _request.requestType.isNotEmpty ? _request.requestType : null,
+                    onChanged: (value) => _request.reason = value!,
+                    value: _request.reason.isNotEmpty ? _request.reason : null,
                   ),
                 ),
               if (_isLeave && widget.isVacation)

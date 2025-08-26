@@ -59,7 +59,7 @@ class RequestCardWidget extends StatelessWidget {
                   ),
                   const SizedBox(height: 5),
                   Text(
-                    "19.02.2023",
+                    request.createdAt.dotFormat,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       color: context.colorPalette.black,
@@ -73,7 +73,7 @@ class RequestCardWidget extends StatelessWidget {
             if (isVacation)
               Expanded(
                 child: Text(
-                  "اجازة مرضية",
+                  request.reason,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: context.colorPalette.black,
@@ -83,7 +83,7 @@ class RequestCardWidget extends StatelessWidget {
                 ),
               ),
             Text(
-              "بالإنتظار",
+              request.status,
               style: TextStyle(
                 color: context.colorPalette.yellowF69,
                 fontSize: 16,

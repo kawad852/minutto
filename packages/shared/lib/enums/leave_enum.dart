@@ -7,11 +7,11 @@ enum LeaveRequestType {
   const LeaveRequestType(this.value);
 }
 
-enum LeaveType {
+enum LeaveReason {
   sick('sick'),
   bereavement('bereavement');
 
   final String value;
 
-  const LeaveType(this.value);
+  const LeaveReason(this.value);
 }

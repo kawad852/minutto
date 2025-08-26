@@ -1,6 +1,4 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shared/helper/time_stamp_serializer.dart';
-import 'package:shared/models/attachment/attachment_model.dart';
+import '../../shared.dart';
 
 part 'request_model.freezed.dart';
 part 'request_model.g.dart';
@@ -17,7 +15,8 @@ class RequestModel with _$RequestModel {
     @Default('') String userId,
     @Default('') String type,
     @Default('') String companyId,
-    @Default('') String requestType,
+    @Default('') String reason,
+    @Default(StatusEnum.defaultValue) String status,
     String? notes,
     @Default([]) List<AttachmentModel> attachments,
   }) = _RequestModel;

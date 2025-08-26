@@ -16,7 +16,8 @@ _$RequestModelImpl _$$RequestModelImplFromJson(Map<String, dynamic> json) =>
       userId: json['userId'] as String? ?? '',
       type: json['type'] as String? ?? '',
       companyId: json['companyId'] as String? ?? '',
-      requestType: json['requestType'] as String? ?? '',
+      reason: json['reason'] as String? ?? '',
+      status: json['status'] as String? ?? StatusEnum.defaultValue,
       notes: json['notes'] as String?,
       attachments:
           (json['attachments'] as List<dynamic>?)
@@ -35,7 +36,8 @@ Map<String, dynamic> _$$RequestModelImplToJson(_$RequestModelImpl instance) =>
       'userId': instance.userId,
       'type': instance.type,
       'companyId': instance.companyId,
-      'requestType': instance.requestType,
+      'reason': instance.reason,
+      'status': instance.status,
       'notes': instance.notes,
       'attachments': instance.attachments.map((e) => e.toJson()).toList(),
     };

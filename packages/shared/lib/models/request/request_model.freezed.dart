@@ -45,8 +45,10 @@ mixin _$RequestModel {
   set type(String value) => throw _privateConstructorUsedError;
   String get companyId => throw _privateConstructorUsedError;
   set companyId(String value) => throw _privateConstructorUsedError;
-  String get requestType => throw _privateConstructorUsedError;
-  set requestType(String value) => throw _privateConstructorUsedError;
+  String get reason => throw _privateConstructorUsedError;
+  set reason(String value) => throw _privateConstructorUsedError;
+  String get status => throw _privateConstructorUsedError;
+  set status(String value) => throw _privateConstructorUsedError;
   String? get notes => throw _privateConstructorUsedError;
   set notes(String? value) => throw _privateConstructorUsedError;
   List<AttachmentModel> get attachments => throw _privateConstructorUsedError;
@@ -79,7 +81,8 @@ abstract class $RequestModelCopyWith<$Res> {
     String userId,
     String type,
     String companyId,
-    String requestType,
+    String reason,
+    String status,
     String? notes,
     List<AttachmentModel> attachments,
   });
@@ -108,7 +111,8 @@ class _$RequestModelCopyWithImpl<$Res, $Val extends RequestModel>
     Object? userId = null,
     Object? type = null,
     Object? companyId = null,
-    Object? requestType = null,
+    Object? reason = null,
+    Object? status = null,
     Object? notes = freezed,
     Object? attachments = null,
   }) {
@@ -146,9 +150,13 @@ class _$RequestModelCopyWithImpl<$Res, $Val extends RequestModel>
                 ? _value.companyId
                 : companyId // ignore: cast_nullable_to_non_nullable
                       as String,
-            requestType: null == requestType
-                ? _value.requestType
-                : requestType // ignore: cast_nullable_to_non_nullable
+            reason: null == reason
+                ? _value.reason
+                : reason // ignore: cast_nullable_to_non_nullable
+                      as String,
+            status: null == status
+                ? _value.status
+                : status // ignore: cast_nullable_to_non_nullable
                       as String,
             notes: freezed == notes
                 ? _value.notes
@@ -182,7 +190,8 @@ abstract class _$$RequestModelImplCopyWith<$Res>
     String userId,
     String type,
     String companyId,
-    String requestType,
+    String reason,
+    String status,
     String? notes,
     List<AttachmentModel> attachments,
   });
@@ -210,7 +219,8 @@ class __$$RequestModelImplCopyWithImpl<$Res>
     Object? userId = null,
     Object? type = null,
     Object? companyId = null,
-    Object? requestType = null,
+    Object? reason = null,
+    Object? status = null,
     Object? notes = freezed,
     Object? attachments = null,
   }) {
@@ -248,9 +258,13 @@ class __$$RequestModelImplCopyWithImpl<$Res>
             ? _value.companyId
             : companyId // ignore: cast_nullable_to_non_nullable
                   as String,
-        requestType: null == requestType
-            ? _value.requestType
-            : requestType // ignore: cast_nullable_to_non_nullable
+        reason: null == reason
+            ? _value.reason
+            : reason // ignore: cast_nullable_to_non_nullable
+                  as String,
+        status: null == status
+            ? _value.status
+            : status // ignore: cast_nullable_to_non_nullable
                   as String,
         notes: freezed == notes
             ? _value.notes
@@ -278,7 +292,8 @@ class _$RequestModelImpl implements _RequestModel {
     this.userId = '',
     this.type = '',
     this.companyId = '',
-    this.requestType = '',
+    this.reason = '',
+    this.status = StatusEnum.defaultValue,
     this.notes,
     this.attachments = const [],
   });
@@ -312,7 +327,10 @@ class _$RequestModelImpl implements _RequestModel {
   String companyId;
   @override
   @JsonKey()
-  String requestType;
+  String reason;
+  @override
+  @JsonKey()
+  String status;
   @override
   String? notes;
   @override
@@ -321,7 +339,7 @@ class _$RequestModelImpl implements _RequestModel {
 
   @override
   String toString() {
-    return 'RequestModel(createdAt: $createdAt, fromDate: $fromDate, toDate: $toDate, date: $date, id: $id, userId: $userId, type: $type, companyId: $companyId, requestType: $requestType, notes: $notes, attachments: $attachments)';
+    return 'RequestModel(createdAt: $createdAt, fromDate: $fromDate, toDate: $toDate, date: $date, id: $id, userId: $userId, type: $type, companyId: $companyId, reason: $reason, status: $status, notes: $notes, attachments: $attachments)';
   }
 
   /// Create a copy of RequestModel
@@ -348,7 +366,8 @@ abstract class _RequestModel implements RequestModel {
     String userId,
     String type,
     String companyId,
-    String requestType,
+    String reason,
+    String status,
     String? notes,
     List<AttachmentModel> attachments,
   }) = _$RequestModelImpl;
@@ -389,8 +408,11 @@ abstract class _RequestModel implements RequestModel {
   String get companyId;
   set companyId(String value);
   @override
-  String get requestType;
-  set requestType(String value);
+  String get reason;
+  set reason(String value);
+  @override
+  String get status;
+  set status(String value);
   @override
   String? get notes;
   set notes(String? value);
