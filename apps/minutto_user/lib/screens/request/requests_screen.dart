@@ -26,11 +26,24 @@ class _RequestsScreenState extends State<RequestsScreen> {
   }
 
   void _initialize() {
-    _query = FirebaseFirestore.instance
+    final userIdFilter = Filter(MyFields.userId, isEqualTo: MySharedPreferences.user!.id);
+    var query = FirebaseFirestore.instance
         .collection(widget.collection)
         .requestConvertor
-        .whereUserId
         .orderByCreatedAtDesc;
+    if (widget.collection != MyCollections.overtimes) {
+      final typeFilter = Filter(
+        MyFields.type,
+        isEqualTo: widget.isVacation
+            ? LeaveRequestType.vacation.value
+            : LeaveRequestType.leave.value,
+      );
+      final filter = Filter.and(userIdFilter, typeFilter);
+      query = query.where(filter);
+    } else {
+      query = query.where(userIdFilter);
+    }
+    _query = query;
   }
 
   @override

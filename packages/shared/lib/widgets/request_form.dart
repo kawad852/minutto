@@ -40,7 +40,7 @@ class RequestForm extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 10),
-        AttachmentEditor(files: attachments, onChanged: onAttachmentChanged),
+        // AttachmentEditor(files: attachments, onChanged: onAttachmentChanged),
       ],
     );
   }

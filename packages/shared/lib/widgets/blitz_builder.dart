@@ -132,6 +132,7 @@ class BlitzBuilder<T> extends StatelessWidget {
         pageSize: 10,
         builder: (context, snapshot, child) {
           if (snapshot.hasError) {
+            debugPrint("Error: ${snapshot.error}");
             return const ServerErrorWidget();
           }
 

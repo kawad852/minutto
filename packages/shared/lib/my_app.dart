@@ -43,7 +43,6 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Consumer2<AppProvider, UserProvider>(
       builder: (BuildContext context, appProvider, userProvider, Widget? child) {
-        print("init:::: ${MySharedPreferences.user}");
         final isLight = appProvider.appTheme == ThemeEnum.light;
         return MultiProvider(
           providers: [

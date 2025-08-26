@@ -22,6 +22,12 @@ class MyAppHelper {
     setupLocator();
     await MyStorage.init();
     await FlutterBranchSdk.init(enableLogging: true);
+    await FirebaseAppCheck.instance.activate(
+      // androidProvider: AndroidProvider.playIntegrity,
+      // appleProvider: AppleProvider.appAttest,
+      androidProvider: AndroidProvider.debug,
+      appleProvider: AppleProvider.debug,
+    );
     TypeSenseService.init();
     setLocaleMessages('en', EnMessages());
     setLocaleMessages('ar', ArMessages());
