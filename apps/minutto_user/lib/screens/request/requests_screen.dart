@@ -80,6 +80,9 @@ class _RequestsScreenState extends State<RequestsScreen> {
       body: BlitzBuilder.query(
         query: _query,
         onComplete: (context, snapshot, _) {
+          if (snapshot.docs.isEmpty) {
+            return EmptyWidget();
+          }
           return ListView.separated(
             separatorBuilder: (context, index) => const SizedBox(height: 15),
             itemCount: snapshot.docs.length,
