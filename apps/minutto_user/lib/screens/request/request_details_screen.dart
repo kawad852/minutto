@@ -98,7 +98,6 @@ class _RequestDetailsScreenState extends State<RequestDetailsScreen> {
                         ),
                       ),
                     ],
-
                     if (_request.fromDate != null && _request.toDate != null) ...[
                       Text(
                         "${context.appLocalization.fromDate} : ${_request.fromDate!.defaultFormat}",
