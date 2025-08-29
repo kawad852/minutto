@@ -67,7 +67,7 @@ class _RequestDetailsScreenState extends State<RequestDetailsScreen> {
                   ),
                 if (_request.date != null)
                   Text(
-                    "${order.$3} : ${_request.date!.dotFormat}",
+                    "${order.$3} : ${_request.date!.defaultFormat}",
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       color: context.colorPalette.black,
@@ -82,7 +82,7 @@ class _RequestDetailsScreenState extends State<RequestDetailsScreen> {
                         child: ListBody(
                           children: [
                             Text(
-                              "${context.appLocalization.fromHour} : ${_request.fromDate!.hour}",
+                              "${context.appLocalization.fromHour} : ${_request.fromDate!.hourFormat}",
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                 color: context.colorPalette.black,
@@ -91,7 +91,7 @@ class _RequestDetailsScreenState extends State<RequestDetailsScreen> {
                             ),
                             const SizedBox(height: 8),
                             Text(
-                              "${context.appLocalization.toHour} : ${_request.toDate!.hour}",
+                              "${context.appLocalization.toHour} : ${_request.toDate!.hourFormat}",
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                 color: context.colorPalette.black,
@@ -100,7 +100,7 @@ class _RequestDetailsScreenState extends State<RequestDetailsScreen> {
                             ),
                             const SizedBox(height: 8),
                             Text(
-                              "${context.appLocalization.fromDate} : ${_request.fromDate!.dotFormat}",
+                              "${context.appLocalization.fromDate} : ${_request.fromDate!.defaultFormat}",
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                 color: context.colorPalette.black,
@@ -109,7 +109,7 @@ class _RequestDetailsScreenState extends State<RequestDetailsScreen> {
                             ),
                             const SizedBox(height: 8),
                             Text(
-                              "${context.appLocalization.toDate} : ${_request.toDate!.dotFormat}",
+                              "${context.appLocalization.toDate} : ${_request.toDate!.defaultFormat}",
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                 color: context.colorPalette.black,
@@ -123,7 +123,7 @@ class _RequestDetailsScreenState extends State<RequestDetailsScreen> {
                   ),
                 ],
                 Text(
-                  "${context.appLocalization.dateAndTimeRequest} : ${_request.createdAt.dotFormat}  - ${_request.createdAt.hour}",
+                  "${context.appLocalization.dateAndTimeRequest} : ${_request.createdAt.defaultFormat} - ${_request.createdAt.hourFormat}",
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: context.colorPalette.black,

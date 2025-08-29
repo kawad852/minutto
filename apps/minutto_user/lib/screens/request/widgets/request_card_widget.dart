@@ -66,7 +66,7 @@ class RequestCardWidget extends StatelessWidget {
                   ),
                   const SizedBox(height: 5),
                   Text(
-                    request.createdAt.dotFormat,
+                    request.createdAt.defaultFormat,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       color: context.colorPalette.black,
