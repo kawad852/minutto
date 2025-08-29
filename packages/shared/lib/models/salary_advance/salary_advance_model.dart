@@ -8,6 +8,7 @@ class SalaryAdvanceModel with _$SalaryAdvanceModel {
   @JsonSerializable(explicitToJson: true)
   factory SalaryAdvanceModel({
     @TimestampSerializer() required DateTime createdAt,
+    @TimestampSerializer() required DateTime date,
     @Default("") String id,
     @Default(StatusEnum.defaultValue) String status,
     @Default("") String userId,

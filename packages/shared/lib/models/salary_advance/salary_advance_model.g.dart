@@ -10,6 +10,7 @@ _$SalaryAdvanceModelImpl _$$SalaryAdvanceModelImplFromJson(
   Map<String, dynamic> json,
 ) => _$SalaryAdvanceModelImpl(
   createdAt: DateTime.parse(json['createdAt'] as String),
+  date: DateTime.parse(json['date'] as String),
   id: json['id'] as String? ?? "",
   status: json['status'] as String? ?? StatusEnum.defaultValue,
   userId: json['userId'] as String? ?? "",
@@ -27,6 +28,7 @@ Map<String, dynamic> _$$SalaryAdvanceModelImplToJson(
   _$SalaryAdvanceModelImpl instance,
 ) => <String, dynamic>{
   'createdAt': instance.createdAt.toIso8601String(),
+  'date': instance.date.toIso8601String(),
   'id': instance.id,
   'status': instance.status,
   'userId': instance.userId,

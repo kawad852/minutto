@@ -39,7 +39,7 @@ class _DebtDetalisScreenState extends State<DebtDetalisScreen> {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8),
                   child: Text(
-                    "${context.appLocalization.orderDate} : ${_salaryAdvance.createdAt.defaultFormat}",
+                    "${context.appLocalization.orderDate} : ${_salaryAdvance.date.defaultFormat}",
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       color: context.colorPalette.black,
@@ -60,7 +60,10 @@ class _DebtDetalisScreenState extends State<DebtDetalisScreen> {
           ),
           OrderDetailsCard(
             request: RequestModel(
-              createdAt: DateTime.now(),
+              createdAt: _salaryAdvance.createdAt,
+              notes: _salaryAdvance.notes,
+              date: _salaryAdvance.date,
+              attachments: _salaryAdvance.attachments,
             ),
           ),
         ],

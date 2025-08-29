@@ -44,7 +44,10 @@ class _DebtInputScreenState extends State<DebtInputScreen> {
   @override
   void initState() {
     super.initState();
-    _salaryAdvance = SalaryAdvanceModel(createdAt: kNowDate);
+    _salaryAdvance = SalaryAdvanceModel(
+      createdAt: kNowDate,
+      date: kNowDate,
+    );
   }
 
   @override
@@ -79,13 +82,16 @@ class _DebtInputScreenState extends State<DebtInputScreen> {
               DebtBubble(),
               Row(
                 children: [
-                  // Expanded(
-                  //   child: WidgetTitle(
-                  //     title: context.appLocalization.orderDate,
-                  //     padding: const EdgeInsets.symmetric(vertical: 5),
-                  //     child: CustomTextField.text(onChanged: (value) {}),
-                  //   ),
-                  // ),
+                  Expanded(
+                    child: WidgetTitle(
+                      title: context.appLocalization.orderDate,
+                      padding: const EdgeInsets.symmetric(vertical: 5),
+                      child: DateEditor(
+                        value: _salaryAdvance.date,
+                        onChanged: (value) => _salaryAdvance.date = value,
+                      ),
+                    ),
+                  ),
                   const SizedBox(width: 10),
                   Expanded(
                     child: WidgetTitle(

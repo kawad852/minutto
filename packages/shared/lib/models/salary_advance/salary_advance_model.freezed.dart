@@ -25,6 +25,10 @@ mixin _$SalaryAdvanceModel {
   DateTime get createdAt => throw _privateConstructorUsedError;
   @TimestampSerializer()
   set createdAt(DateTime value) => throw _privateConstructorUsedError;
+  @TimestampSerializer()
+  DateTime get date => throw _privateConstructorUsedError;
+  @TimestampSerializer()
+  set date(DateTime value) => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   set id(String value) => throw _privateConstructorUsedError;
   String get status => throw _privateConstructorUsedError;
@@ -60,6 +64,7 @@ abstract class $SalaryAdvanceModelCopyWith<$Res> {
   @useResult
   $Res call({
     @TimestampSerializer() DateTime createdAt,
+    @TimestampSerializer() DateTime date,
     String id,
     String status,
     String userId,
@@ -86,6 +91,7 @@ class _$SalaryAdvanceModelCopyWithImpl<$Res, $Val extends SalaryAdvanceModel>
   @override
   $Res call({
     Object? createdAt = null,
+    Object? date = null,
     Object? id = null,
     Object? status = null,
     Object? userId = null,
@@ -99,6 +105,10 @@ class _$SalaryAdvanceModelCopyWithImpl<$Res, $Val extends SalaryAdvanceModel>
             createdAt: null == createdAt
                 ? _value.createdAt
                 : createdAt // ignore: cast_nullable_to_non_nullable
+                      as DateTime,
+            date: null == date
+                ? _value.date
+                : date // ignore: cast_nullable_to_non_nullable
                       as DateTime,
             id: null == id
                 ? _value.id
@@ -145,6 +155,7 @@ abstract class _$$SalaryAdvanceModelImplCopyWith<$Res>
   @useResult
   $Res call({
     @TimestampSerializer() DateTime createdAt,
+    @TimestampSerializer() DateTime date,
     String id,
     String status,
     String userId,
@@ -170,6 +181,7 @@ class __$$SalaryAdvanceModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? createdAt = null,
+    Object? date = null,
     Object? id = null,
     Object? status = null,
     Object? userId = null,
@@ -183,6 +195,10 @@ class __$$SalaryAdvanceModelImplCopyWithImpl<$Res>
         createdAt: null == createdAt
             ? _value.createdAt
             : createdAt // ignore: cast_nullable_to_non_nullable
+                  as DateTime,
+        date: null == date
+            ? _value.date
+            : date // ignore: cast_nullable_to_non_nullable
                   as DateTime,
         id: null == id
             ? _value.id
@@ -223,6 +239,7 @@ class __$$SalaryAdvanceModelImplCopyWithImpl<$Res>
 class _$SalaryAdvanceModelImpl implements _SalaryAdvanceModel {
   _$SalaryAdvanceModelImpl({
     @TimestampSerializer() required this.createdAt,
+    @TimestampSerializer() required this.date,
     this.id = "",
     this.status = StatusEnum.defaultValue,
     this.userId = "",
@@ -238,6 +255,9 @@ class _$SalaryAdvanceModelImpl implements _SalaryAdvanceModel {
   @override
   @TimestampSerializer()
   DateTime createdAt;
+  @override
+  @TimestampSerializer()
+  DateTime date;
   @override
   @JsonKey()
   String id;
@@ -261,7 +281,7 @@ class _$SalaryAdvanceModelImpl implements _SalaryAdvanceModel {
 
   @override
   String toString() {
-    return 'SalaryAdvanceModel(createdAt: $createdAt, id: $id, status: $status, userId: $userId, companyId: $companyId, notes: $notes, amount: $amount, attachments: $attachments)';
+    return 'SalaryAdvanceModel(createdAt: $createdAt, date: $date, id: $id, status: $status, userId: $userId, companyId: $companyId, notes: $notes, amount: $amount, attachments: $attachments)';
   }
 
   /// Create a copy of SalaryAdvanceModel
@@ -284,6 +304,7 @@ class _$SalaryAdvanceModelImpl implements _SalaryAdvanceModel {
 abstract class _SalaryAdvanceModel implements SalaryAdvanceModel {
   factory _SalaryAdvanceModel({
     @TimestampSerializer() required DateTime createdAt,
+    @TimestampSerializer() required DateTime date,
     String id,
     String status,
     String userId,
@@ -301,6 +322,11 @@ abstract class _SalaryAdvanceModel implements SalaryAdvanceModel {
   DateTime get createdAt;
   @TimestampSerializer()
   set createdAt(DateTime value);
+  @override
+  @TimestampSerializer()
+  DateTime get date;
+  @TimestampSerializer()
+  set date(DateTime value);
   @override
   String get id;
   set id(String value);
