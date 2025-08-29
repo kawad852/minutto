@@ -1516,4 +1516,37 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get addEmployee => 'Add an employee';
+
+  @override
+  String get totalVacations => 'Total vacations';
+
+  @override
+  String get available => 'Available';
+
+  @override
+  String get obtained => 'Obtained';
+
+  @override
+  String get vacationDate => 'Vacation date';
+
+  @override
+  String get totalDays => 'Total days';
+
+  @override
+  String get waiting => 'Waiting';
+
+  @override
+  String get startDate => 'Start date';
+
+  @override
+  String get endDate => 'End date';
+
+  @override
+  String get vacationType => 'Vacation type';
+
+  @override
+  String get attachFilehere => 'Attach the file here';
+
+  @override
+  String get max => 'max';
 }

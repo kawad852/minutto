@@ -34,6 +34,8 @@ class MyTheme {
       appBarTheme: AppBarTheme(
         color: Colors.white,
         centerTitle: true,
+        leadingWidth: 60,
+        toolbarHeight: 60,
         titleTextStyle: TextStyle(
           color: context.colorPalette.black,
           fontSize: 18,
@@ -41,27 +43,44 @@ class MyTheme {
           fontWeight: FontWeight.bold,
         ),
       ),
-      bottomAppBarTheme: BottomAppBarTheme(color: Colors.white),
+      bottomAppBarTheme: BottomAppBarThemeData(color: Colors.white),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(backgroundColor: Colors.white),
       scaffoldBackgroundColor: Colors.white,
       actionIconTheme: ActionIconThemeData(
         backButtonIconBuilder: (BuildContext context) {
-          return IconButton(
-            onPressed: () {
+          return InkWell(
+            onTap: () {
               Navigator.pop(context);
             },
-            icon: Icon(Icons.arrow_back_ios),
+            child: Container(
+              width: 60,
+              height: 60,
+              padding: const EdgeInsetsDirectional.only(start: 5),
+              decoration: BoxDecoration(
+                color: Colors.transparent,
+                border: Border.all(color: context.colorPalette.greyE8E),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Center(child: Icon(Icons.arrow_back_ios)),
+            ),
           );
         },
       ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: context.colorPalette.greyF5F,
+        fillColor: context.colorPalette.greyF9F,
+        hintStyle: TextStyle(
+          color: context.colorPalette.grey8C8,
+          fontSize: 13,
+        ),
         constraints: BoxConstraints(maxWidth: 600),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+        border: OutlineInputBorder(
+          borderSide: BorderSide(color: context.colorPalette.greyEAE),
+          borderRadius: BorderRadius.circular(10),
+        ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide.none,
+          borderSide: BorderSide(color: context.colorPalette.greyEAE),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),

@@ -22,11 +22,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 Row(
                   spacing: 10,
                   children: [
-                    RequestCard(
+                    RequestBubble(
                       title: context.appLocalization.leaving,
                       value: "1/4 ",
                     ),
-                    RequestCard(
+                    RequestBubble(
                       title: context.appLocalization.leaveAbsence,
                       value: "0/2 ",
                     ),
@@ -43,10 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: HomeBubble(
                         onTap: () {
                           context.navigate(
-                            (context) => OldRequestsScreen(
-                              collection: MyCollections.leaves,
-                              isVacation: true,
-                            ),
+                            (context) => RequestScreen(),
                           );
                         },
                         icon: MyIcons.umbrella,
@@ -58,9 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: HomeBubble(
                         onTap: () {
                           context.navigate(
-                            (context) => OldRequestsScreen(
-                              collection: MyCollections.leaves,
-                            ),
+                            (context) => RequestScreen(),
                           );
                         },
                         icon: MyIcons.clockIcon,
@@ -125,9 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: HomeBubble(
                         onTap: () {
                           context.navigate(
-                            (context) => OldRequestsScreen(
-                              collection: MyCollections.overtimes,
-                            ),
+                            (context) => RequestScreen(),
                           );
                         },
                         icon: MyIcons.money,

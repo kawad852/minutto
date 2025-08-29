@@ -2989,6 +2989,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Add an employee'**
   String get addEmployee;
+
+  /// No description provided for @totalVacations.
+  ///
+  /// In en, this message translates to:
+  /// **'Total vacations'**
+  String get totalVacations;
+
+  /// No description provided for @available.
+  ///
+  /// In en, this message translates to:
+  /// **'Available'**
+  String get available;
+
+  /// No description provided for @obtained.
+  ///
+  /// In en, this message translates to:
+  /// **'Obtained'**
+  String get obtained;
+
+  /// No description provided for @vacationDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Vacation date'**
+  String get vacationDate;
+
+  /// No description provided for @totalDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Total days'**
+  String get totalDays;
+
+  /// No description provided for @waiting.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting'**
+  String get waiting;
+
+  /// No description provided for @startDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Start date'**
+  String get startDate;
+
+  /// No description provided for @endDate.
+  ///
+  /// In en, this message translates to:
+  /// **'End date'**
+  String get endDate;
+
+  /// No description provided for @vacationType.
+  ///
+  /// In en, this message translates to:
+  /// **'Vacation type'**
+  String get vacationType;
+
+  /// No description provided for @attachFilehere.
+  ///
+  /// In en, this message translates to:
+  /// **'Attach the file here'**
+  String get attachFilehere;
+
+  /// No description provided for @max.
+  ///
+  /// In en, this message translates to:
+  /// **'max'**
+  String get max;
 }
 
 class _AppLocalizationsDelegate

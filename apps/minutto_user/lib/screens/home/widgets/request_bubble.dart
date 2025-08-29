@@ -1,8 +1,8 @@
 import 'package:shared/shared.dart';
 
-class RequestCard extends StatelessWidget {
+class RequestBubble extends StatelessWidget {
   final String title, value;
-  const RequestCard({super.key, required this.title, required this.value});
+  const RequestBubble({super.key, required this.title, required this.value});
 
   @override
   Widget build(BuildContext context) {

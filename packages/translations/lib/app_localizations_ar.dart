@@ -1074,7 +1074,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get currentTime => 'الساعة الآن : ';
 
   @override
-  String get submitRequest => 'تقديم طلب';
+  String get submitRequest => 'تقديم الطلب';
 
   @override
   String get leaving => 'مغادرة';
@@ -1494,7 +1494,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get pending => 'بالإنتظار';
 
   @override
-  String get rejected => 'مرفوضة';
+  String get rejected => 'تم الرفض';
 
   @override
   String get accepted => 'مقبولة';
@@ -1510,4 +1510,37 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get addEmployee => 'إضافة للموظف';
+
+  @override
+  String get totalVacations => 'مجموع الاجازات';
+
+  @override
+  String get available => 'المتاح';
+
+  @override
+  String get obtained => 'تم الحصول عليها';
+
+  @override
+  String get vacationDate => 'تاريخ الاجازة';
+
+  @override
+  String get totalDays => 'مجموع الايام';
+
+  @override
+  String get waiting => 'بالانتظار';
+
+  @override
+  String get startDate => 'تاريخ البداية';
+
+  @override
+  String get endDate => 'تاريخ الانتهاء';
+
+  @override
+  String get vacationType => 'نوع الاجازة';
+
+  @override
+  String get attachFilehere => 'ارفاق الملف هنا';
+
+  @override
+  String get max => 'حد أقصى';
 }

@@ -23,7 +23,7 @@ export 'screens/home/widgets/check_dialog.dart';
 export 'screens/home/widgets/dialog_bubble.dart';
 export 'screens/home/widgets/home_bubble.dart';
 export 'screens/home/widgets/home_header.dart';
-export 'screens/home/widgets/request_card.dart';
+export 'screens/home/widgets/request_bubble.dart';
 //intro
 export 'screens/intro/intro_screen.dart';
 //notification
@@ -72,3 +72,12 @@ export 'screens/salary_advance/salary_advance_input_screen.dart';
 export 'screens/salary_advance/salary_advance_screen.dart';
 export 'screens/salary_advance/widgets/advance_bubble.dart';
 export 'screens/salary_advance/widgets/advance_card.dart';
+//request
+export 'screens/request/request_screen.dart';
+export 'screens/request/request_input_screen.dart';
+export 'screens/request/widgets/request_head.dart';
+export 'screens/request/widgets/info_bubble.dart';
+export 'screens/request/widgets/request_tab_bar.dart';
+export 'screens/request/widgets/request_card.dart';
+export 'screens/request/widgets/request_info.dart';
+export 'screens/request/widgets/attach_card.dart';

@@ -241,7 +241,7 @@
   "principleLazy":"لا تؤجل عمل اليوم إلى الغد ولكن إلى ما بعد الغد؛ هذا هو مبدأ الكسالى.",
   "checkInOut":"تسجيل حضور / إنصراف",
   "currentTime":"الساعة الآن : ",
-  "submitRequest":"تقديم طلب",
+  "submitRequest":"تقديم الطلب",
   "leaving":"مغادرة",
   "leaveAbsence":"إجازة / غياب",
   "attendanceAndDepartureReport":"كشف الحضور والإنصراف",
@@ -389,5 +389,18 @@
   "employee":"الموظف",
   "note":"ملاحظة",
   "writeNote":"كتابة ملاحظة",
-  "addEmployee":"إضافة للموظف"
+  "addEmployee":"إضافة للموظف",
+  "totalVacations":"مجموع الاجازات",
+  "available":"المتاح",
+  "obtained":"تم الحصول عليها",
+  "vacationDate":"تاريخ الاجازة",
+  "totalDays":"مجموع الايام",
+  "waiting":"بالانتظار",
+  "accepted":"مقبولة",
+  "rejected":"تم الرفض",
+  "startDate":"تاريخ البداية",
+  "endDate":"تاريخ الانتهاء",
+  "vacationType":"نوع الاجازة",
+  "attachFilehere":"ارفاق الملف هنا",
+  "max":"حد أقصى"
 }

@@ -47,4 +47,7 @@ class MyIcons {
   static const String intro0 = '${_path}intro0.svg';
   static const String intro1 = '${_path}intro1.svg';
   static const String intro2 = '${_path}intro2.svg';
+  static const String note = '${_path}note.svg';
+  static const String checkIcon = '${_path}check_icon.svg';
+  static const String attachIcon = '${_path}attach_icon.svg';
 }

@@ -567,5 +567,18 @@
   "employee":"Employee",
   "note":"Note",
   "writeNote":"Write a note",
-  "addEmployee":"Add an employee"
+  "addEmployee":"Add an employee",
+  "totalVacations":"Total vacations",
+  "available":"Available",
+  "obtained":"Obtained",
+  "vacationDate":"Vacation date",
+  "totalDays":"Total days",
+  "waiting":"Waiting",
+  "accepted":"Accepted",
+  "rejected":"Rejected",
+  "startDate":"Start date",
+  "endDate":"End date",
+  "vacationType":"Vacation type",
+  "attachFilehere":"Attach the file here",
+  "max":"max"
 }
