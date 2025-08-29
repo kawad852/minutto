@@ -69,12 +69,15 @@ class _RequestDetailsScreenState extends State<RequestDetailsScreen> {
                     ),
                   ),
                 if (_request.date != null)
-                  Text(
-                    "${order.$3} : ${_request.date!.defaultFormat}",
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      color: context.colorPalette.black,
-                      fontSize: 16,
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 8),
+                    child: Text(
+                      "${order.$3} : ${_request.date!.defaultFormat}",
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        color: context.colorPalette.black,
+                        fontSize: 16,
+                      ),
                     ),
                   ),
                 ListBody(

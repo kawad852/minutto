@@ -161,9 +161,12 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                       ? context.appLocalization.overtimeHistory
                       : context.appLocalization.leaveDate,
                   padding: const EdgeInsets.symmetric(vertical: 5),
-                  child: CustomTextField.text(onChanged: (value) {}),
+                  child: DateEditor(
+                    value: _request.date,
+                    onChanged: (value) => _request.date = value,
+                  ),
                 ),
-              if (_isLeave && !widget.isVacation)
+              if (_isLeave || _collection == MyCollections.overtimes)
                 Row(
                   spacing: 10,
                   children: [
