@@ -2,13 +2,22 @@ import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
 class DebtCard extends StatelessWidget {
-  const DebtCard({super.key});
+  final SalaryAdvanceModel salaryAdvance;
+
+  const DebtCard({
+    super.key,
+    required this.salaryAdvance,
+  });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.navigate((context) => const DebtDetalisScreen());
+        context.navigate(
+          (context) => DebtDetalisScreen(
+            salaryAdvance: salaryAdvance,
+          ),
+        );
       },
       child: Container(
         width: double.infinity,
@@ -28,7 +37,7 @@ class DebtCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "50.00 د.أ",
+                    "${salaryAdvance.amount} ${context.currency}",
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       color: context.colorPalette.black,
@@ -38,7 +47,7 @@ class DebtCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 5),
                   Text(
-                    "19.02.2023",
+                    salaryAdvance.createdAt.defaultFormat,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       color: context.colorPalette.black,
@@ -50,7 +59,7 @@ class DebtCard extends StatelessWidget {
               ),
             ),
             Text(
-              "بالإنتظار",
+              StatusEnum.label(context, salaryAdvance.status),
               style: TextStyle(
                 color: context.colorPalette.yellowF69,
                 fontSize: 16,

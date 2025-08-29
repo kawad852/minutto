@@ -21,4 +21,5 @@ class MyCollections {
   static const String brands = 'brands';
   static const String leaves = 'leaves';
   static const String overtimes = 'overtimes';
+  static const String salaryAdvances = 'salaryAdvances';
 }

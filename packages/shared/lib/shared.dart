@@ -145,6 +145,7 @@ export 'models/request/request_model.dart';
 export 'models/results/results_model.dart';
 export 'models/review/review_model.dart';
 export 'models/role/role_model.dart';
+export 'models/salary_advance/salary_advance_model.dart';
 export 'models/test/favorite_model.dart';
 export 'models/typesense/typesense_model.dart';
 export 'models/user/user_model.dart';

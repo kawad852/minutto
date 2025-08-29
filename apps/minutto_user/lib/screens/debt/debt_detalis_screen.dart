@@ -1,13 +1,20 @@
 import 'package:shared/shared.dart';
 
 class DebtDetalisScreen extends StatefulWidget {
-  const DebtDetalisScreen({super.key});
+  final SalaryAdvanceModel salaryAdvance;
+
+  const DebtDetalisScreen({
+    super.key,
+    required this.salaryAdvance,
+  });
 
   @override
   State<DebtDetalisScreen> createState() => _DebtDetalisScreenState();
 }
 
 class _DebtDetalisScreenState extends State<DebtDetalisScreen> {
+  SalaryAdvanceModel get _salaryAdvance => widget.salaryAdvance;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +29,7 @@ class _DebtDetalisScreenState extends State<DebtDetalisScreen> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
-                  "${context.appLocalization.debtValue} : 50.00د.أ",
+                  "${context.appLocalization.debtValue} : ${_salaryAdvance.amount} ${context.currency}",
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: context.colorPalette.black,
@@ -32,7 +39,7 @@ class _DebtDetalisScreenState extends State<DebtDetalisScreen> {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8),
                   child: Text(
-                    "${context.appLocalization.orderDate} : 03.03.2023",
+                    "${context.appLocalization.orderDate} : ${_salaryAdvance.createdAt.defaultFormat}",
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       color: context.colorPalette.black,
@@ -41,7 +48,7 @@ class _DebtDetalisScreenState extends State<DebtDetalisScreen> {
                   ),
                 ),
                 Text(
-                  "${context.appLocalization.dateAndTimeRequest} : 04.04.2023  - 12:33 PM",
+                  "${context.appLocalization.dateAndTimeRequest} : ${_salaryAdvance.createdAt.defaultFormat}  - ${_salaryAdvance.createdAt.hourFormat}",
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: context.colorPalette.black,

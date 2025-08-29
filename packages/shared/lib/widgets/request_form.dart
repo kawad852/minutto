@@ -20,7 +20,10 @@ class RequestForm extends StatelessWidget {
         WidgetTitle(
           title: context.appLocalization.notes,
           padding: const EdgeInsets.symmetric(vertical: 5),
-          child: CustomTextField.text(onChanged: onNotesChanged, maxLines: 5),
+          child: CustomTextField.text(
+            onChanged: onNotesChanged,
+            maxLines: 5,
+          ),
         ),
         const SizedBox(height: 7),
         Text(

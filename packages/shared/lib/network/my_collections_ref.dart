@@ -55,4 +55,7 @@ extension CollectionReferenceExtension on FirebaseFirestore {
   CollectionReference<BrandModel> get brands => collection(MyCollections.brands).brandConvertor;
   CollectionReference<RequestModel> get vacations =>
       collection(MyCollections.leaves).requestConvertor;
+
+  CollectionReference<SalaryAdvanceModel> get salaryAdvances =>
+      collection(MyCollections.salaryAdvances).salaryAdvanceConvertor;
 }

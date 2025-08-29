@@ -9,10 +9,26 @@ class DebtScreen extends StatefulWidget {
 }
 
 class _DebtScreenState extends State<DebtScreen> {
+  late Query<SalaryAdvanceModel> _query;
+
+  void _initialize() {
+    _query = FirebaseFirestore.instance.salaryAdvances.orderByCreatedAtDesc.whereUserId;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _initialize();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(context.appLocalization.debtRequests)),
+      appBar: AppBar(
+        title: Text(
+          context.appLocalization.debtRequests,
+        ),
+      ),
       bottomNavigationBar: BottomAppBar(
         child: StretchedButton(
           onPressed: () {
@@ -43,12 +59,26 @@ class _DebtScreenState extends State<DebtScreen> {
               ),
             ),
             Expanded(
-              child: ListView.separated(
-                separatorBuilder: (context, index) => const SizedBox(height: 15),
-                itemCount: 5,
-                padding: const EdgeInsets.symmetric(vertical: 10),
-                itemBuilder: (context, index) {
-                  return const DebtCard();
+              child: BlitzBuilder.query(
+                query: _query,
+                onComplete: (context, snapshot, _) {
+                  if (snapshot.docs.isEmpty) {
+                    return const EmptyWidget();
+                  }
+                  return ListView.separated(
+                    separatorBuilder: (context, index) => const SizedBox(height: 15),
+                    itemCount: snapshot.docs.length,
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    itemBuilder: (context, index) {
+                      if (snapshot.isLoadingMore(index)) {
+                        return const BaseLoader();
+                      }
+                      final salaryAdvance = snapshot.docs[index].data();
+                      return DebtCard(
+                        salaryAdvance: salaryAdvance,
+                      );
+                    },
+                  );
                 },
               ),
             ),

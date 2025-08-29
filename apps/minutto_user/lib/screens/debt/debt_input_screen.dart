@@ -9,13 +9,57 @@ class DebtInputScreen extends StatefulWidget {
 }
 
 class _DebtInputScreenState extends State<DebtInputScreen> {
+  late SalaryAdvanceModel _salaryAdvance;
+  final _formKey = GlobalKey<FormState>();
+  List<XFile> _files = [];
+
+  FirebaseFirestore get _firebaseFirestore => getIt<FirebaseFirestore>();
+
+  void _onSubmit(BuildContext context) {
+    if (_formKey.currentState!.validate()) {
+      context.unFocusKeyboard();
+      ApiService.fetch(
+        context,
+        callBack: () async {
+          final user = MySharedPreferences.user!;
+          final docRef = _firebaseFirestore.salaryAdvances.doc();
+          _salaryAdvance.id = docRef.id;
+          _salaryAdvance.companyId = user.companyId!;
+          _salaryAdvance.userId = user.id!;
+          _salaryAdvance.createdAt = kNowDate;
+          _salaryAdvance.attachments = await StorageService().uploadFiles(
+            MyCollections.salaryAdvances,
+            _files,
+          );
+          await docRef.set(_salaryAdvance);
+          if (context.mounted) {
+            context.showSnackBar(context.appLocalization.sentSuccessfully);
+            Navigator.pop(context);
+          }
+        },
+      );
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _salaryAdvance = SalaryAdvanceModel(createdAt: kNowDate);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(context.appLocalization.debtRequest)),
+      appBar: AppBar(
+        title: Text(
+          context.appLocalization.debtRequest,
+        ),
+      ),
       bottomNavigationBar: BottomAppBar(
         child: StretchedButton(
-          onPressed: () {},
+          onPressed: () {
+            _onSubmit(context);
+          },
           child: Text(
             context.appLocalization.send,
             style: TextStyle(
@@ -26,36 +70,43 @@ class _DebtInputScreenState extends State<DebtInputScreen> {
           ),
         ),
       ),
-      body: ListView(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        children: [
-          DebtBubble(),
-          Row(
+        child: Form(
+          key: _formKey,
+          child: Column(
             children: [
-              Expanded(
-                child: WidgetTitle(
-                  title: context.appLocalization.orderDate,
-                  padding: const EdgeInsets.symmetric(vertical: 5),
-                  child: CustomTextField.text(onChanged: (value) {}),
-                ),
+              DebtBubble(),
+              Row(
+                children: [
+                  // Expanded(
+                  //   child: WidgetTitle(
+                  //     title: context.appLocalization.orderDate,
+                  //     padding: const EdgeInsets.symmetric(vertical: 5),
+                  //     child: CustomTextField.text(onChanged: (value) {}),
+                  //   ),
+                  // ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: WidgetTitle(
+                      title: context.appLocalization.valuee,
+                      miniTitle: " (${context.appLocalization.ceiling} = 90د.أ)",
+                      padding: const EdgeInsets.symmetric(vertical: 5),
+                      child: CustomTextField.double(
+                        onChanged: (value) => _salaryAdvance.amount = value!,
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              const SizedBox(width: 10),
-              Expanded(
-                child: WidgetTitle(
-                  title: context.appLocalization.valuee,
-                  miniTitle: " (${context.appLocalization.ceiling} = 90د.أ)",
-                  padding: const EdgeInsets.symmetric(vertical: 5),
-                  child: CustomTextField.text(onChanged: (value) {}),
-                ),
+              RequestForm(
+                onNotesChanged: (value) => _salaryAdvance.notes = value,
+                attachments: _salaryAdvance.attachments,
+                onAttachmentChanged: (List<XFile> value) => _files = value,
               ),
             ],
           ),
-          RequestForm(
-            onNotesChanged: (value) {},
-            attachments: [],
-            onAttachmentChanged: (List<XFile> value) {},
-          ),
-        ],
+        ),
       ),
     );
   }
