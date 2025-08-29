@@ -16,8 +16,6 @@ class _DebtDetalisScreenState extends State<DebtDetalisScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         children: [
           OrderHeader(
-            headerHeight: 160,
-            containerHeight: 129,
             icon: MyIcons.debtYellow,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

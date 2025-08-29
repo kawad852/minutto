@@ -46,8 +46,6 @@ class _RequestDetailsScreenState extends State<RequestDetailsScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         children: [
           OrderHeader(
-            headerHeight: 230,
-            containerHeight: 194,
             icon: order.$2,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,

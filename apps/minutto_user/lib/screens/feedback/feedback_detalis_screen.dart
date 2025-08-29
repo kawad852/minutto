@@ -52,8 +52,6 @@ class _FeedbackDetalisScreenState extends State<FeedbackDetalisScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         children: [
           OrderHeader(
-            headerHeight: 205,
-            containerHeight: 175,
             icon: feedback.$2,
             child: feedback.$4,
           ),
