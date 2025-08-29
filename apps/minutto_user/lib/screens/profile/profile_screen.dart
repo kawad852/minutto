@@ -53,7 +53,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
                 CustomLine(),
                 ProfileInfo(
-                  onTap: () {},
+                  onTap: () {
+                    context.navigate((context) => const FAQScreen());
+                  },
                   icon: MyIcons.questions,
                   title: context.appLocalization.faq,
                 ),
@@ -65,13 +67,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
             child: Column(
               children: [
                 ProfileInfo(
-                  onTap: () {},
+                  onTap: () {
+                    context.navigate((context) => const PrivacyScreen(privacyType: PrivacyType.policy));
+                  },
                   icon: MyIcons.policy,
                   title: context.appLocalization.privacyPolicy,
                 ),
                 CustomLine(),
                 ProfileInfo(
-                  onTap: () {},
+                  onTap: () {
+                    context.navigate((context) => const PrivacyScreen(privacyType: PrivacyType.app));
+                  },
                   icon: MyIcons.book,
                   title: context.appLocalization.whoAreWe,
                 ),

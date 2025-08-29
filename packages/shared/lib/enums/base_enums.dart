@@ -44,3 +44,5 @@ enum StatusEnum {
     }
   }
 }
+
+enum PrivacyType { policy, app }

@@ -542,7 +542,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get displayName => 'الاسم الظاهر';
 
   @override
-  String get search => 'Search';
+  String get search => 'البحث';
 
   @override
   String get all => 'All';
@@ -1459,4 +1459,28 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get shiftName => 'اسم الشيفت';
+
+  @override
+  String get introTitle0 => 'نظام حظور وانصراف الموظفين';
+
+  @override
+  String get introTitle1 => 'نظام حضور والمغادرة الموظفين';
+
+  @override
+  String get introTitle2 => 'ادارة طلبات الموظفين';
+
+  @override
+  String get introDisc0 =>
+      'حلول متطورة وجديدة نقدمها لكم لإدارة اوقات دوام الموظفين بأفضل شكل';
+
+  @override
+  String get introDisc1 =>
+      'حلول متطورة وجديدة لتسجيل اوقات الحضور والمغادرة من العمل';
+
+  @override
+  String get introDisc2 =>
+      'جميع طلبات الموظفين من مغادرات ، اجازات ، سلف وبدلات في مكان واحد';
+
+  @override
+  String get skip => 'تخطي';
 }

@@ -42,7 +42,9 @@ class HomeHeader extends StatelessWidget {
                   ),
                 ),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.navigate((context) => const NotificationScreen());
+                  },
                   icon: CustomSvg(MyIcons.notifaction),
                 ),
               ],

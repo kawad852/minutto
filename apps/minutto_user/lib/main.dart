@@ -17,7 +17,8 @@ void main() async {
       if (isAuthenticated) {
         return AppNavBar();
       } else {
-        return LoginScreen();
+        return IntroScreen(); 
+        //LoginScreen();
       }
     },
     logoutBuilder: kLogoutBuilder,

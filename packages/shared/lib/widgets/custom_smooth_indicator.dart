@@ -11,11 +11,11 @@ class CustomSmoothIndicator extends StatelessWidget {
       activeIndex: index,
       count: count,
       effect: WormEffect(
-        dotWidth: 10,
-        dotHeight: 10,
+        dotWidth: 15,
+        dotHeight: 15,
         type: WormType.thin,
         dotColor: context.colorScheme.surfaceContainerHigh,
-        activeDotColor: context.colorScheme.primary,
+        activeDotColor: context.colorPalette.black,
       ),
     );
   }
