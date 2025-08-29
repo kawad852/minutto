@@ -1504,4 +1504,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get accepted => 'Accepted';
+
+  @override
+  String get shift => 'Shift';
+
+  @override
+  String get employee => 'Employee';
+
+  @override
+  String get writeNote => 'Write a note';
+
+  @override
+  String get addEmployee => 'Add an employee';
 }

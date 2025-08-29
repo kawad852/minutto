@@ -2965,6 +2965,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Accepted'**
   String get accepted;
+
+  /// No description provided for @shift.
+  ///
+  /// In en, this message translates to:
+  /// **'Shift'**
+  String get shift;
+
+  /// No description provided for @employee.
+  ///
+  /// In en, this message translates to:
+  /// **'Employee'**
+  String get employee;
+
+  /// No description provided for @writeNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Write a note'**
+  String get writeNote;
+
+  /// No description provided for @addEmployee.
+  ///
+  /// In en, this message translates to:
+  /// **'Add an employee'**
+  String get addEmployee;
 }
 
 class _AppLocalizationsDelegate

@@ -1,19 +1,19 @@
 import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
-class ShiftManagementScreen extends StatefulWidget {
-  const ShiftManagementScreen({super.key});
+class ShiftTableScreen extends StatefulWidget {
+  const ShiftTableScreen({super.key});
 
   @override
-  State<ShiftManagementScreen> createState() => _ShiftManagementScreenState();
+  State<ShiftTableScreen> createState() => _ShiftTableScreenState();
 }
 
-class _ShiftManagementScreenState extends State<ShiftManagementScreen> {
+class _ShiftTableScreenState extends State<ShiftTableScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(context.appLocalization.shiftManagement),
+        title: Text(context.appLocalization.shiftTable),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -148,10 +148,11 @@ class _ShiftManagementScreenState extends State<ShiftManagementScreen> {
                 context.navigate((context) => const ShiftInputScreen());
               },
               margin: const EdgeInsets.symmetric(horizontal: 70),
+              backgroundColor: context.colorPalette.blue091,
               child: Text(
                 context.appLocalization.addShift,
                 style: TextStyle(
-                  color: context.colorPalette.black,
+                  color: context.colorPalette.white,
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),

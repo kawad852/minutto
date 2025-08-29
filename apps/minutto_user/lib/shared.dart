@@ -10,8 +10,6 @@ export 'screens/salary_advance/widgets/advance_bubble.dart';
 export 'screens/salary_advance/widgets/advance_card.dart';
 //FacilityManagement
 export 'screens/facility_management/facility_management_screen.dart';
-export 'screens/facility_management/shift_input_screen.dart';
-export 'screens/facility_management/shift_management_screen.dart';
 export 'screens/facility_management/widgets/facility_card.dart';
 //faq
 export 'screens/faq/faq_screen.dart';
@@ -70,3 +68,7 @@ export 'screens/salaries/salaries_screen.dart';
 export 'screens/salaries/widgets/salary_card.dart';
 export 'screens/salaries/widgets/salary_table.dart';
 export 'screens/salaries/widgets/table_text.dart';
+//shift
+export 'screens/shift/shift_input_screen.dart';
+export 'screens/shift/shift_table_screen.dart';
+export 'screens/shift/shift_management_screen.dart';

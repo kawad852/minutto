@@ -117,7 +117,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get itemNotAvailableMsg => 'Item no longer available';
 
   @override
-  String get note => 'Note';
+  String get note => 'ملاحظة';
 
   @override
   String get confirm => 'Confirm';
@@ -1498,4 +1498,16 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get accepted => 'مقبولة';
+
+  @override
+  String get shift => 'الشيفت';
+
+  @override
+  String get employee => 'الموظف';
+
+  @override
+  String get writeNote => 'كتابة ملاحظة';
+
+  @override
+  String get addEmployee => 'إضافة للموظف';
 }

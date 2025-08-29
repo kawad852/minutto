@@ -41,7 +41,9 @@ class _FacilityManagementScreenState extends State<FacilityManagementScreen> {
                   title: context.appLocalization.staffManagement,
                 ),
                 FacilityCard(
-                  onTap: () {},
+                  onTap: () {
+                    context.navigate((context) => const ShiftTableScreen());
+                  },
                   title: context.appLocalization.shiftTable,
                 ),
               ],

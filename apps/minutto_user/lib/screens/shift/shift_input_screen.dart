@@ -11,7 +11,9 @@ class _ShiftInputScreenState extends State<ShiftInputScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text(context.appLocalization.addShift),
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         child: Column(
@@ -62,10 +64,11 @@ class _ShiftInputScreenState extends State<ShiftInputScreen> {
             StretchedButton(
               onPressed: () {},
               margin: const EdgeInsets.only(top: 40),
+              backgroundColor: context.colorPalette.blue091,
               child: Text(
                 context.appLocalization.add,
                 style: TextStyle(
-                  color: context.colorPalette.black,
+                  color: context.colorPalette.white,
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),

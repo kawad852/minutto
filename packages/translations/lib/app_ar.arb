@@ -384,5 +384,10 @@
   "bereavementLeave": "حالة وفاة",
   "pending": "بالإنتظار",
   "rejected": "مرفوضة",
-  "accepted": "مقبولة"
+  "accepted": "مقبولة",
+  "shift":"الشيفت",
+  "employee":"الموظف",
+  "note":"ملاحظة",
+  "writeNote":"كتابة ملاحظة",
+  "addEmployee":"إضافة للموظف"
 }

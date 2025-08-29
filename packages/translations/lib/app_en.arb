@@ -562,5 +562,10 @@
   "bereavementLeave": "Bereavement Leave",
   "pending": "Pending",
   "rejected": "Rejected",
-  "accepted": "Accepted"
+  "accepted": "Accepted",
+  "shift":"Shift",
+  "employee":"Employee",
+  "note":"Note",
+  "writeNote":"Write a note",
+  "addEmployee":"Add an employee"
 }
