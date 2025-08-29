@@ -61,7 +61,7 @@ export 'screens/reports/widgets/leaves_card.dart';
 export 'screens/reports/widgets/report_date.dart';
 export 'screens/reports/widgets/report_tile.dart';
 //order
-export 'screens/request/request_detalis_screen.dart';
+export 'screens/request/request_details_screen.dart';
 export 'screens/request/request_input_screen.dart';
 export 'screens/request/requests_screen.dart';
 export 'screens/request/widgets/request_card_widget.dart';

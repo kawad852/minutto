@@ -1,36 +1,46 @@
 import 'package:shared/shared.dart';
 
-class OrderDetalisCard extends StatelessWidget {
-  const OrderDetalisCard({super.key});
+class OrderDetailsCard extends StatelessWidget {
+  final RequestModel request;
+
+  const OrderDetailsCard({
+    super.key,
+    required this.request,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 12),
-          child: WidgetTitle(
-            title: context.appLocalization.notes,
-            child: SharedContainer(
-              child: Text(
-                "هذا النص مثال لنص يمكن ان يستبدل",
-                style: TextStyle(
-                  color: context.colorPalette.black,
-                  fontSize: 15,
+        if (request.notes != null)
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 12),
+            child: WidgetTitle(
+              title: context.appLocalization.notes,
+              child: SharedContainer(
+                child: Text(
+                  request.notes!,
+                  style: TextStyle(
+                    color: context.colorPalette.black,
+                    fontSize: 15,
+                  ),
                 ),
               ),
             ),
           ),
-        ),
-        WidgetTitle(
-          title: context.appLocalization.attachedDocuments,
-          child: SharedContainer(
-            child: Text(
-              "لا يوجد",
-              style: TextStyle(color: context.colorPalette.black, fontSize: 15),
+        if (request.attachments.isNotEmpty)
+          WidgetTitle(
+            title: context.appLocalization.attachedDocuments,
+            child: SharedContainer(
+              child: SingleChildScrollView(
+                child: Row(
+                  children: request.attachments.map((e) {
+                    return AttachmentBubble(file: e);
+                  }).toList(),
+                ),
+              ),
             ),
           ),
-        ),
         CustomLine(
           isEnd: true,
           color: context.colorPalette.black,
@@ -42,7 +52,7 @@ class OrderDetalisCard extends StatelessWidget {
             title: context.appLocalization.officialReplied,
             child: SharedContainer(
               child: Text(
-                "مقبول",
+                StatusEnum.label(context, request.status),
                 style: TextStyle(
                   color: context.colorPalette.green47A,
                   fontSize: 15,
@@ -51,15 +61,16 @@ class OrderDetalisCard extends StatelessWidget {
             ),
           ),
         ),
-        WidgetTitle(
-          title: context.appLocalization.officialNotes,
-          child: SharedContainer(
-            child: Text(
-              "لا يوجد",
-              style: TextStyle(color: context.colorPalette.black, fontSize: 15),
+        if (request.adminNotes != null)
+          WidgetTitle(
+            title: context.appLocalization.officialNotes,
+            child: SharedContainer(
+              child: Text(
+                request.adminNotes!,
+                style: TextStyle(color: context.colorPalette.black, fontSize: 15),
+              ),
             ),
           ),
-        ),
       ],
     );
   }

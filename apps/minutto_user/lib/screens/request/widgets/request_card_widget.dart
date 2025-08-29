@@ -30,7 +30,12 @@ class RequestCardWidget extends StatelessWidget {
     final info = _info(context);
     return GestureDetector(
       onTap: () {
-        context.navigate((context) => RequestDetalisScreen(orderTypeEnum: OrderTypeEnum.leave));
+        context.navigate(
+          (context) => RequestDetailsScreen(
+            request: request,
+            collection: collection,
+          ),
+        );
       },
       child: Container(
         width: double.infinity,
@@ -72,10 +77,10 @@ class RequestCardWidget extends StatelessWidget {
                 ],
               ),
             ),
-            if (isVacation)
+            if (request.reason != null)
               Expanded(
                 child: Text(
-                  LeaveReason.label(context, request.reason),
+                  LeaveReason.label(context, request.reason!),
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: context.colorPalette.black,

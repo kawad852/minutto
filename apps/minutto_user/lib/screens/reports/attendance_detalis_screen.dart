@@ -5,8 +5,7 @@ class AttendanceDetalisScreen extends StatefulWidget {
   const AttendanceDetalisScreen({super.key});
 
   @override
-  State<AttendanceDetalisScreen> createState() =>
-      _AttendanceDetalisScreenState();
+  State<AttendanceDetalisScreen> createState() => _AttendanceDetalisScreenState();
 }
 
 class _AttendanceDetalisScreenState extends State<AttendanceDetalisScreen> {
@@ -28,7 +27,9 @@ class _AttendanceDetalisScreenState extends State<AttendanceDetalisScreen> {
             ),
           ),
           const AttendanceInfo(),
-          const OrderDetalisCard(),
+          OrderDetailsCard(
+            request: RequestModel(createdAt: DateTime.now()),
+          ),
         ],
       ),
     );

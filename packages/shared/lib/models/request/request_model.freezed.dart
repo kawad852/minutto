@@ -26,17 +26,17 @@ mixin _$RequestModel {
   @TimestampSerializer()
   set createdAt(DateTime value) => throw _privateConstructorUsedError;
   @TimestampSerializer()
-  DateTime get fromDate => throw _privateConstructorUsedError;
+  DateTime? get fromDate => throw _privateConstructorUsedError;
   @TimestampSerializer()
-  set fromDate(DateTime value) => throw _privateConstructorUsedError;
+  set fromDate(DateTime? value) => throw _privateConstructorUsedError;
   @TimestampSerializer()
-  DateTime get toDate => throw _privateConstructorUsedError;
+  DateTime? get toDate => throw _privateConstructorUsedError;
   @TimestampSerializer()
-  set toDate(DateTime value) => throw _privateConstructorUsedError;
+  set toDate(DateTime? value) => throw _privateConstructorUsedError;
   @TimestampSerializer()
-  DateTime get date => throw _privateConstructorUsedError;
+  DateTime? get date => throw _privateConstructorUsedError;
   @TimestampSerializer()
-  set date(DateTime value) => throw _privateConstructorUsedError;
+  set date(DateTime? value) => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   set id(String value) => throw _privateConstructorUsedError;
   String get userId => throw _privateConstructorUsedError;
@@ -45,12 +45,14 @@ mixin _$RequestModel {
   set type(String value) => throw _privateConstructorUsedError;
   String get companyId => throw _privateConstructorUsedError;
   set companyId(String value) => throw _privateConstructorUsedError;
-  String get reason => throw _privateConstructorUsedError;
-  set reason(String value) => throw _privateConstructorUsedError;
+  String? get reason => throw _privateConstructorUsedError;
+  set reason(String? value) => throw _privateConstructorUsedError;
   String get status => throw _privateConstructorUsedError;
   set status(String value) => throw _privateConstructorUsedError;
   String? get notes => throw _privateConstructorUsedError;
   set notes(String? value) => throw _privateConstructorUsedError;
+  String? get adminNotes => throw _privateConstructorUsedError;
+  set adminNotes(String? value) => throw _privateConstructorUsedError;
   List<AttachmentModel> get attachments => throw _privateConstructorUsedError;
   set attachments(List<AttachmentModel> value) =>
       throw _privateConstructorUsedError;
@@ -74,16 +76,17 @@ abstract class $RequestModelCopyWith<$Res> {
   @useResult
   $Res call({
     @TimestampSerializer() DateTime createdAt,
-    @TimestampSerializer() DateTime fromDate,
-    @TimestampSerializer() DateTime toDate,
-    @TimestampSerializer() DateTime date,
+    @TimestampSerializer() DateTime? fromDate,
+    @TimestampSerializer() DateTime? toDate,
+    @TimestampSerializer() DateTime? date,
     String id,
     String userId,
     String type,
     String companyId,
-    String reason,
+    String? reason,
     String status,
     String? notes,
+    String? adminNotes,
     List<AttachmentModel> attachments,
   });
 }
@@ -104,16 +107,17 @@ class _$RequestModelCopyWithImpl<$Res, $Val extends RequestModel>
   @override
   $Res call({
     Object? createdAt = null,
-    Object? fromDate = null,
-    Object? toDate = null,
-    Object? date = null,
+    Object? fromDate = freezed,
+    Object? toDate = freezed,
+    Object? date = freezed,
     Object? id = null,
     Object? userId = null,
     Object? type = null,
     Object? companyId = null,
-    Object? reason = null,
+    Object? reason = freezed,
     Object? status = null,
     Object? notes = freezed,
+    Object? adminNotes = freezed,
     Object? attachments = null,
   }) {
     return _then(
@@ -122,18 +126,18 @@ class _$RequestModelCopyWithImpl<$Res, $Val extends RequestModel>
                 ? _value.createdAt
                 : createdAt // ignore: cast_nullable_to_non_nullable
                       as DateTime,
-            fromDate: null == fromDate
+            fromDate: freezed == fromDate
                 ? _value.fromDate
                 : fromDate // ignore: cast_nullable_to_non_nullable
-                      as DateTime,
-            toDate: null == toDate
+                      as DateTime?,
+            toDate: freezed == toDate
                 ? _value.toDate
                 : toDate // ignore: cast_nullable_to_non_nullable
-                      as DateTime,
-            date: null == date
+                      as DateTime?,
+            date: freezed == date
                 ? _value.date
                 : date // ignore: cast_nullable_to_non_nullable
-                      as DateTime,
+                      as DateTime?,
             id: null == id
                 ? _value.id
                 : id // ignore: cast_nullable_to_non_nullable
@@ -150,10 +154,10 @@ class _$RequestModelCopyWithImpl<$Res, $Val extends RequestModel>
                 ? _value.companyId
                 : companyId // ignore: cast_nullable_to_non_nullable
                       as String,
-            reason: null == reason
+            reason: freezed == reason
                 ? _value.reason
                 : reason // ignore: cast_nullable_to_non_nullable
-                      as String,
+                      as String?,
             status: null == status
                 ? _value.status
                 : status // ignore: cast_nullable_to_non_nullable
@@ -161,6 +165,10 @@ class _$RequestModelCopyWithImpl<$Res, $Val extends RequestModel>
             notes: freezed == notes
                 ? _value.notes
                 : notes // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            adminNotes: freezed == adminNotes
+                ? _value.adminNotes
+                : adminNotes // ignore: cast_nullable_to_non_nullable
                       as String?,
             attachments: null == attachments
                 ? _value.attachments
@@ -183,16 +191,17 @@ abstract class _$$RequestModelImplCopyWith<$Res>
   @useResult
   $Res call({
     @TimestampSerializer() DateTime createdAt,
-    @TimestampSerializer() DateTime fromDate,
-    @TimestampSerializer() DateTime toDate,
-    @TimestampSerializer() DateTime date,
+    @TimestampSerializer() DateTime? fromDate,
+    @TimestampSerializer() DateTime? toDate,
+    @TimestampSerializer() DateTime? date,
     String id,
     String userId,
     String type,
     String companyId,
-    String reason,
+    String? reason,
     String status,
     String? notes,
+    String? adminNotes,
     List<AttachmentModel> attachments,
   });
 }
@@ -212,16 +221,17 @@ class __$$RequestModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? createdAt = null,
-    Object? fromDate = null,
-    Object? toDate = null,
-    Object? date = null,
+    Object? fromDate = freezed,
+    Object? toDate = freezed,
+    Object? date = freezed,
     Object? id = null,
     Object? userId = null,
     Object? type = null,
     Object? companyId = null,
-    Object? reason = null,
+    Object? reason = freezed,
     Object? status = null,
     Object? notes = freezed,
+    Object? adminNotes = freezed,
     Object? attachments = null,
   }) {
     return _then(
@@ -230,18 +240,18 @@ class __$$RequestModelImplCopyWithImpl<$Res>
             ? _value.createdAt
             : createdAt // ignore: cast_nullable_to_non_nullable
                   as DateTime,
-        fromDate: null == fromDate
+        fromDate: freezed == fromDate
             ? _value.fromDate
             : fromDate // ignore: cast_nullable_to_non_nullable
-                  as DateTime,
-        toDate: null == toDate
+                  as DateTime?,
+        toDate: freezed == toDate
             ? _value.toDate
             : toDate // ignore: cast_nullable_to_non_nullable
-                  as DateTime,
-        date: null == date
+                  as DateTime?,
+        date: freezed == date
             ? _value.date
             : date // ignore: cast_nullable_to_non_nullable
-                  as DateTime,
+                  as DateTime?,
         id: null == id
             ? _value.id
             : id // ignore: cast_nullable_to_non_nullable
@@ -258,10 +268,10 @@ class __$$RequestModelImplCopyWithImpl<$Res>
             ? _value.companyId
             : companyId // ignore: cast_nullable_to_non_nullable
                   as String,
-        reason: null == reason
+        reason: freezed == reason
             ? _value.reason
             : reason // ignore: cast_nullable_to_non_nullable
-                  as String,
+                  as String?,
         status: null == status
             ? _value.status
             : status // ignore: cast_nullable_to_non_nullable
@@ -269,6 +279,10 @@ class __$$RequestModelImplCopyWithImpl<$Res>
         notes: freezed == notes
             ? _value.notes
             : notes // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        adminNotes: freezed == adminNotes
+            ? _value.adminNotes
+            : adminNotes // ignore: cast_nullable_to_non_nullable
                   as String?,
         attachments: null == attachments
             ? _value.attachments
@@ -285,16 +299,17 @@ class __$$RequestModelImplCopyWithImpl<$Res>
 class _$RequestModelImpl implements _RequestModel {
   _$RequestModelImpl({
     @TimestampSerializer() required this.createdAt,
-    @TimestampSerializer() required this.fromDate,
-    @TimestampSerializer() required this.toDate,
-    @TimestampSerializer() required this.date,
+    @TimestampSerializer() this.fromDate,
+    @TimestampSerializer() this.toDate,
+    @TimestampSerializer() this.date,
     this.id = '',
     this.userId = '',
     this.type = '',
     this.companyId = '',
-    this.reason = '',
+    this.reason,
     this.status = StatusEnum.defaultValue,
     this.notes,
+    this.adminNotes,
     this.attachments = const [],
   });
 
@@ -306,13 +321,13 @@ class _$RequestModelImpl implements _RequestModel {
   DateTime createdAt;
   @override
   @TimestampSerializer()
-  DateTime fromDate;
+  DateTime? fromDate;
   @override
   @TimestampSerializer()
-  DateTime toDate;
+  DateTime? toDate;
   @override
   @TimestampSerializer()
-  DateTime date;
+  DateTime? date;
   @override
   @JsonKey()
   String id;
@@ -326,20 +341,21 @@ class _$RequestModelImpl implements _RequestModel {
   @JsonKey()
   String companyId;
   @override
-  @JsonKey()
-  String reason;
+  String? reason;
   @override
   @JsonKey()
   String status;
   @override
   String? notes;
   @override
+  String? adminNotes;
+  @override
   @JsonKey()
   List<AttachmentModel> attachments;
 
   @override
   String toString() {
-    return 'RequestModel(createdAt: $createdAt, fromDate: $fromDate, toDate: $toDate, date: $date, id: $id, userId: $userId, type: $type, companyId: $companyId, reason: $reason, status: $status, notes: $notes, attachments: $attachments)';
+    return 'RequestModel(createdAt: $createdAt, fromDate: $fromDate, toDate: $toDate, date: $date, id: $id, userId: $userId, type: $type, companyId: $companyId, reason: $reason, status: $status, notes: $notes, adminNotes: $adminNotes, attachments: $attachments)';
   }
 
   /// Create a copy of RequestModel
@@ -359,16 +375,17 @@ class _$RequestModelImpl implements _RequestModel {
 abstract class _RequestModel implements RequestModel {
   factory _RequestModel({
     @TimestampSerializer() required DateTime createdAt,
-    @TimestampSerializer() required DateTime fromDate,
-    @TimestampSerializer() required DateTime toDate,
-    @TimestampSerializer() required DateTime date,
+    @TimestampSerializer() DateTime? fromDate,
+    @TimestampSerializer() DateTime? toDate,
+    @TimestampSerializer() DateTime? date,
     String id,
     String userId,
     String type,
     String companyId,
-    String reason,
+    String? reason,
     String status,
     String? notes,
+    String? adminNotes,
     List<AttachmentModel> attachments,
   }) = _$RequestModelImpl;
 
@@ -382,19 +399,19 @@ abstract class _RequestModel implements RequestModel {
   set createdAt(DateTime value);
   @override
   @TimestampSerializer()
-  DateTime get fromDate;
+  DateTime? get fromDate;
   @TimestampSerializer()
-  set fromDate(DateTime value);
+  set fromDate(DateTime? value);
   @override
   @TimestampSerializer()
-  DateTime get toDate;
+  DateTime? get toDate;
   @TimestampSerializer()
-  set toDate(DateTime value);
+  set toDate(DateTime? value);
   @override
   @TimestampSerializer()
-  DateTime get date;
+  DateTime? get date;
   @TimestampSerializer()
-  set date(DateTime value);
+  set date(DateTime? value);
   @override
   String get id;
   set id(String value);
@@ -408,14 +425,17 @@ abstract class _RequestModel implements RequestModel {
   String get companyId;
   set companyId(String value);
   @override
-  String get reason;
-  set reason(String value);
+  String? get reason;
+  set reason(String? value);
   @override
   String get status;
   set status(String value);
   @override
   String? get notes;
   set notes(String? value);
+  @override
+  String? get adminNotes;
+  set adminNotes(String? value);
   @override
   List<AttachmentModel> get attachments;
   set attachments(List<AttachmentModel> value);

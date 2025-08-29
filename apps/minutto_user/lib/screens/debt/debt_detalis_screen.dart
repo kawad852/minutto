@@ -53,7 +53,11 @@ class _DebtDetalisScreenState extends State<DebtDetalisScreen> {
               ],
             ),
           ),
-          const OrderDetalisCard(),
+          OrderDetailsCard(
+            request: RequestModel(
+              createdAt: DateTime.now(),
+            ),
+          ),
         ],
       ),
     );

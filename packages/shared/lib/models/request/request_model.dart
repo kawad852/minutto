@@ -8,16 +8,17 @@ class RequestModel with _$RequestModel {
   @JsonSerializable(explicitToJson: true)
   factory RequestModel({
     @TimestampSerializer() required DateTime createdAt,
-    @TimestampSerializer() required DateTime fromDate,
-    @TimestampSerializer() required DateTime toDate,
-    @TimestampSerializer() required DateTime date,
+    @TimestampSerializer() DateTime? fromDate,
+    @TimestampSerializer() DateTime? toDate,
+    @TimestampSerializer() DateTime? date,
     @Default('') String id,
     @Default('') String userId,
     @Default('') String type,
     @Default('') String companyId,
-    @Default('') String reason,
+    String? reason,
     @Default(StatusEnum.defaultValue) String status,
     String? notes,
+    String? adminNotes,
     @Default([]) List<AttachmentModel> attachments,
   }) = _RequestModel;
 

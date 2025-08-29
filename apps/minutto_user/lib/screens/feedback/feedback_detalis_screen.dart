@@ -57,9 +57,13 @@ class _FeedbackDetalisScreenState extends State<FeedbackDetalisScreen> {
             icon: feedback.$2,
             child: feedback.$4,
           ),
-          if (widget.feedBackType == FeedBackType.rewards && widget.rewardsType == RewardsType.allowance)
-            const OrderDetalisCard(),
-          if (widget.rewardsType == RewardsType.incentive || widget.feedBackType == FeedBackType.alarm)
+          if (widget.feedBackType == FeedBackType.rewards &&
+              widget.rewardsType == RewardsType.allowance)
+            OrderDetailsCard(
+              request: RequestModel(createdAt: DateTime.now()),
+            ),
+          if (widget.rewardsType == RewardsType.incentive ||
+              widget.feedBackType == FeedBackType.alarm)
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

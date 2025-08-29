@@ -67,9 +67,6 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
     super.initState();
     _request = RequestModel(
       createdAt: kNowDate,
-      fromDate: kNowDate,
-      toDate: kNowDate,
-      date: kNowDate,
     );
   }
 
@@ -124,7 +121,7 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                       );
                     }).toList(),
                     onChanged: (value) => _request.reason = value!,
-                    value: _request.reason.isNotEmpty ? _request.reason : null,
+                    value: _request.reason,
                   ),
                 ),
               if (_isLeave && widget.isVacation)
