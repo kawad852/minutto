@@ -22,19 +22,10 @@ class _CheckingScreenState extends State<CheckingScreen> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-        child: StretchedButton(
-          onPressed: () {},
-          backgroundColor: context.colorPalette.redD42,
-          child: Text(
-            context.appLocalization.cancel,
-            style: TextStyle(
-              color: context.colorPalette.white,
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
+      bottomNavigationBar: BottomButton(
+        onPressed: () {},
+        title: context.appLocalization.cancel,
+        backgroundColor: context.colorPalette.redD42,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 25),

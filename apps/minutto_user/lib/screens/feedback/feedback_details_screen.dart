@@ -1,20 +1,20 @@
 import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
-class FeedbackDetalisScreen extends StatefulWidget {
+class FeedbackDetailsScreen extends StatefulWidget {
   final FeedBackType feedBackType;
   final RewardsType? rewardsType;
-  const FeedbackDetalisScreen({
+  const FeedbackDetailsScreen({
     super.key,
     required this.feedBackType,
     this.rewardsType,
   });
 
   @override
-  State<FeedbackDetalisScreen> createState() => _FeedbackDetalisScreenState();
+  State<FeedbackDetailsScreen> createState() => _FeedbackDetailsScreenState();
 }
 
-class _FeedbackDetalisScreenState extends State<FeedbackDetalisScreen> {
+class _FeedbackDetailsScreenState extends State<FeedbackDetailsScreen> {
   (String, String, String, Widget) _getFeedbackInfo(BuildContext context) {
     switch (widget.feedBackType) {
       case FeedBackType.alarm:
@@ -51,13 +51,13 @@ class _FeedbackDetalisScreenState extends State<FeedbackDetalisScreen> {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         children: [
-          OrderHeader(
+          RequestHeader(
             icon: feedback.$2,
             child: feedback.$4,
           ),
           if (widget.feedBackType == FeedBackType.rewards &&
               widget.rewardsType == RewardsType.allowance)
-            OrderDetailsCard(
+            RequestDetailsCard(
               request: RequestModel(createdAt: DateTime.now()),
             ),
           if (widget.rewardsType == RewardsType.incentive ||

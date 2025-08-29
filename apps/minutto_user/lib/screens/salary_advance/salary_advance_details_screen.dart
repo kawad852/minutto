@@ -1,18 +1,18 @@
 import 'package:shared/shared.dart';
 
-class DebtDetalisScreen extends StatefulWidget {
+class SalaryAdvanceDetailsScreen extends StatefulWidget {
   final SalaryAdvanceModel salaryAdvance;
 
-  const DebtDetalisScreen({
+  const SalaryAdvanceDetailsScreen({
     super.key,
     required this.salaryAdvance,
   });
 
   @override
-  State<DebtDetalisScreen> createState() => _DebtDetalisScreenState();
+  State<SalaryAdvanceDetailsScreen> createState() => _SalaryAdvanceDetailsScreenState();
 }
 
-class _DebtDetalisScreenState extends State<DebtDetalisScreen> {
+class _SalaryAdvanceDetailsScreenState extends State<SalaryAdvanceDetailsScreen> {
   SalaryAdvanceModel get _salaryAdvance => widget.salaryAdvance;
 
   @override
@@ -22,7 +22,7 @@ class _DebtDetalisScreenState extends State<DebtDetalisScreen> {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         children: [
-          OrderHeader(
+          RequestHeader(
             icon: MyIcons.debtYellow,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,7 +58,7 @@ class _DebtDetalisScreenState extends State<DebtDetalisScreen> {
               ],
             ),
           ),
-          OrderDetailsCard(
+          RequestDetailsCard(
             request: RequestModel(
               createdAt: _salaryAdvance.createdAt,
               notes: _salaryAdvance.notes,

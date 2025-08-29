@@ -13,7 +13,7 @@ class RequestsScreen extends StatefulWidget {
 class _RequestsScreenState extends State<RequestsScreen> {
   late Query<RequestModel> _query;
 
-  (String, String) _getOrderInfo(BuildContext context) {
+  (String, String) _getRequestInfo(BuildContext context) {
     switch (widget.collection) {
       case MyCollections.overtimes:
         return (context.appLocalization.overtimeRequests, context.appLocalization.newOrder);
@@ -54,32 +54,23 @@ class _RequestsScreenState extends State<RequestsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final order = _getOrderInfo(context);
+    final request = _getRequestInfo(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          order.$1,
+          request.$1,
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-        child: StretchedButton(
-          onPressed: () {
-            context.navigate(
+      bottomNavigationBar: BottomButton(
+        onPressed: () {
+          context.navigate(
               (context) => RequestInputScreen(
                 collection: widget.collection,
                 isVacation: widget.isVacation,
               ),
             );
-          },
-          child: Text(
-            order.$2,
-            style: TextStyle(
-              color: context.colorPalette.black,
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
+        },
+        title: request.$2,
       ),
       body: BlitzBuilder.query(
         query: _query,

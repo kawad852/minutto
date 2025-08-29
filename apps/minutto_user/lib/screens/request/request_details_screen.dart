@@ -18,7 +18,12 @@ class _RequestDetailsScreenState extends State<RequestDetailsScreen> {
   RequestModel get _request => widget.request;
   String get _collection => widget.collection;
 
-  (String, String, String) _getOrderInfo(BuildContext context) {
+  TextStyle get style => TextStyle(
+    color: context.colorPalette.black,
+    fontSize: 16,
+  );
+
+  (String, String, String) _getRequestInfo(BuildContext context) {
     switch (_collection) {
       case MyCollections.overtimes:
         return (
@@ -40,18 +45,18 @@ class _RequestDetailsScreenState extends State<RequestDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final order = _getOrderInfo(context);
+    final request = _getRequestInfo(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          order.$1,
+          request.$1,
         ),
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         children: [
-          OrderHeader(
-            icon: order.$2,
+          RequestHeader(
+            icon: request.$2,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,22 +67,16 @@ class _RequestDetailsScreenState extends State<RequestDetailsScreen> {
                     child: Text(
                       "${context.appLocalization.requestType} : ${LeaveReason.label(context, _request.reason!)}",
                       overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        color: context.colorPalette.black,
-                        fontSize: 16,
-                      ),
+                      style: style,
                     ),
                   ),
                 if (_request.date != null)
                   Padding(
                     padding: const EdgeInsets.only(bottom: 8),
                     child: Text(
-                      "${order.$3} : ${_request.date!.defaultFormat}",
+                      "${request.$3} : ${_request.date!.defaultFormat}",
                       overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        color: context.colorPalette.black,
-                        fontSize: 16,
-                      ),
+                      style: style,
                     ),
                   ),
                 ListBody(
@@ -86,38 +85,26 @@ class _RequestDetailsScreenState extends State<RequestDetailsScreen> {
                       Text(
                         "${context.appLocalization.fromHour} : ${_request.fromHour ?? _request.fromDate!.hourFormat}",
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          color: context.colorPalette.black,
-                          fontSize: 16,
-                        ),
+                        style: style,
                       ),
                       const SizedBox(height: 8),
                       Text(
                         "${context.appLocalization.toHour} : ${_request.toHour ?? _request.toDate!.hourFormat}",
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          color: context.colorPalette.black,
-                          fontSize: 16,
-                        ),
+                        style: style,
                       ),
                     ],
                     if (_request.fromDate != null && _request.toDate != null) ...[
                       Text(
                         "${context.appLocalization.fromDate} : ${_request.fromDate!.defaultFormat}",
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          color: context.colorPalette.black,
-                          fontSize: 16,
-                        ),
+                        style: style,
                       ),
                       const SizedBox(height: 8),
                       Text(
                         "${context.appLocalization.toDate} : ${_request.toDate!.defaultFormat}",
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          color: context.colorPalette.black,
-                          fontSize: 16,
-                        ),
+                        style: style,
                       ),
                     ],
                   ],
@@ -126,15 +113,12 @@ class _RequestDetailsScreenState extends State<RequestDetailsScreen> {
                 Text(
                   "${context.appLocalization.dateAndTimeRequest} : ${_request.createdAt.defaultFormat} - ${_request.createdAt.hourFormat}",
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    color: context.colorPalette.black,
-                    fontSize: 16,
-                  ),
+                  style: style,
                 ),
               ],
             ),
           ),
-          OrderDetailsCard(
+          RequestDetailsCard(
             request: _request,
           ),
         ],

@@ -1,29 +1,20 @@
 import 'package:shared/shared.dart';
 
-class UserDetalisScreen extends StatefulWidget {
-  const UserDetalisScreen({super.key});
+class UserDetailsScreen extends StatefulWidget {
+  const UserDetailsScreen({super.key});
 
   @override
-  State<UserDetalisScreen> createState() => _UserDetalisScreenState();
+  State<UserDetailsScreen> createState() => _UserDetailsScreenState();
 }
 
-class _UserDetalisScreenState extends State<UserDetalisScreen> {
+class _UserDetailsScreenState extends State<UserDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(context.appLocalization.employeeData)),
-      bottomNavigationBar: BottomAppBar(
-        child: StretchedButton(
-          onPressed: () {},
-          child: Text(
-            context.appLocalization.saveModifications,
-            style: TextStyle(
-              color: context.colorPalette.black,
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
+      bottomNavigationBar: BottomButton(
+        onPressed: () {},
+        title: context.appLocalization.saveModifications,
       ),
       body: ListView(
         children: [

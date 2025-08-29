@@ -1,7 +1,7 @@
 import 'package:shared/shared.dart';
 
-class DebtBubble extends StatelessWidget {
-  const DebtBubble({super.key});
+class AdvanceBubble extends StatelessWidget {
+  const AdvanceBubble({super.key});
 
   @override
   Widget build(BuildContext context) {

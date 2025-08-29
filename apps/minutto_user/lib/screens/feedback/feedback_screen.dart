@@ -21,21 +21,12 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
         ),
       ),
       bottomNavigationBar: widget.feedBackType == FeedBackType.rewards
-          ? BottomAppBar(
-              child: StretchedButton(
-                onPressed: () {
-                  context.navigate((context) => const FeedbackInputScreen());
-                },
-                child: Text(
-                  context.appLocalization.requestForExpenseAllowance,
-                  style: TextStyle(
-                    color: context.colorPalette.black,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            )
+          ? BottomButton(
+             onPressed: () {
+              context.navigate((context) => const FeedbackInputScreen());
+            },
+            title: context.appLocalization.requestForExpenseAllowance,
+          )
           : null,
       body: ListView.separated(
         separatorBuilder: (context, index) => const SizedBox(height: 15),

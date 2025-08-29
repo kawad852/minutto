@@ -37,7 +37,7 @@ class UserCard extends StatelessWidget {
         ),
         InkWell(
           onTap: () {
-            context.navigate((context) => const UserDetalisScreen());
+            context.navigate((context) => const UserDetailsScreen());
           },
           child: Icon(Icons.arrow_forward_ios_rounded),
         ),

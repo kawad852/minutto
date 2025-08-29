@@ -15,20 +15,11 @@ class _AttendanceInputScreenState extends State<AttendanceInputScreen> {
       appBar: AppBar(
         title: Text(context.appLocalization.clarificationAndExplanations),
       ),
-      bottomNavigationBar: BottomAppBar(
-        child: StretchedButton(
-          onPressed: () {
-            context.navigate((context) => const AttendanceDetalisScreen());
-          },
-          child: Text(
-            context.appLocalization.send,
-            style: TextStyle(
-              color: context.colorPalette.black,
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
+      bottomNavigationBar: BottomButton(
+        onPressed: () {
+          context.navigate((context) => const AttendanceDetailsScreen());
+        },
+        title: context.appLocalization.send,
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),

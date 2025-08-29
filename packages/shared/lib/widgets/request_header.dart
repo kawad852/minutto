@@ -1,10 +1,10 @@
 import 'package:shared/shared.dart';
 
-class OrderHeader extends StatelessWidget {
+class RequestHeader extends StatelessWidget {
   final Widget child;
   final String icon;
 
-  const OrderHeader({
+  const RequestHeader({
     super.key,
     required this.child,
     required this.icon,

@@ -99,7 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Expanded(
                       child: HomeBubble(
                         onTap: () {
-                          context.navigate((context) => const DebtScreen());
+                          context.navigate((context) => const SalaryAdvanceScreen());
                         },
                         icon: MyIcons.advance,
                         title: context.appLocalization.advances,

@@ -1,10 +1,10 @@
 import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
-class DebtCard extends StatelessWidget {
+class AdvanceCard extends StatelessWidget {
   final SalaryAdvanceModel salaryAdvance;
 
-  const DebtCard({
+  const AdvanceCard({
     super.key,
     required this.salaryAdvance,
   });
@@ -14,7 +14,7 @@ class DebtCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         context.navigate(
-          (context) => DebtDetalisScreen(
+          (context) => SalaryAdvanceDetailsScreen(
             salaryAdvance: salaryAdvance,
           ),
         );

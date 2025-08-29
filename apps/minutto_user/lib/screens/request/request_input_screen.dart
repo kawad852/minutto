@@ -94,18 +94,9 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
           _getTitle,
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-        child: StretchedButton(
-          onPressed: () => _onSubmit(context),
-          child: Text(
-            context.appLocalization.send,
-            style: TextStyle(
-              color: context.colorPalette.black,
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
+      bottomNavigationBar: BottomButton(
+        onPressed: () => _onSubmit(context),
+        title: context.appLocalization.send,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),

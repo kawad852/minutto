@@ -1,14 +1,14 @@
 import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
-class AttendanceDetalisScreen extends StatefulWidget {
-  const AttendanceDetalisScreen({super.key});
+class AttendanceDetailsScreen extends StatefulWidget {
+  const AttendanceDetailsScreen({super.key});
 
   @override
-  State<AttendanceDetalisScreen> createState() => _AttendanceDetalisScreenState();
+  State<AttendanceDetailsScreen> createState() => _AttendanceDetailsScreenState();
 }
 
-class _AttendanceDetalisScreenState extends State<AttendanceDetalisScreen> {
+class _AttendanceDetailsScreenState extends State<AttendanceDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +27,7 @@ class _AttendanceDetalisScreenState extends State<AttendanceDetalisScreen> {
             ),
           ),
           const AttendanceInfo(),
-          OrderDetailsCard(
+          RequestDetailsCard(
             request: RequestModel(createdAt: DateTime.now()),
           ),
         ],

@@ -1,9 +1,9 @@
 import 'package:shared/shared.dart';
 
-class OrderDetailsCard extends StatelessWidget {
+class RequestDetailsCard extends StatelessWidget {
   final RequestModel request;
 
-  const OrderDetailsCard({
+  const RequestDetailsCard({
     super.key,
     required this.request,
   });

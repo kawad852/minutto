@@ -2,12 +2,12 @@
 //base
 export 'screens/base/app_nav_bar.dart';
 export 'screens/base/widgets/nav_bar_item.dart';
-export 'screens/debt/debt_detalis_screen.dart';
-export 'screens/debt/debt_input_screen.dart';
-//debt
-export 'screens/debt/debt_screen.dart';
-export 'screens/debt/widgets/debt_bubble.dart';
-export 'screens/debt/widgets/debt_card.dart';
+export 'screens/salary_advance/salary_advance_details_screen.dart';
+export 'screens/salary_advance/salary_advance_input_screen.dart';
+//SalaryAdvance
+export 'screens/salary_advance/salary_advance_screen.dart';
+export 'screens/salary_advance/widgets/advance_bubble.dart';
+export 'screens/salary_advance/widgets/advance_card.dart';
 //FacilityManagement
 export 'screens/facility_management/facility_management_screen.dart';
 export 'screens/facility_management/shift_input_screen.dart';
@@ -16,7 +16,7 @@ export 'screens/facility_management/widgets/facility_card.dart';
 //faq
 export 'screens/faq/faq_screen.dart';
 export 'screens/faq/widgets/faq_card.dart';
-export 'screens/feedback/feedback_detalis_screen.dart';
+export 'screens/feedback/feedback_details_screen.dart';
 export 'screens/feedback/feedback_input_screen.dart';
 //feedback
 export 'screens/feedback/feedback_screen.dart';
@@ -41,7 +41,7 @@ export 'screens/notification/widgets/notification_card.dart';
 export 'screens/privacy/privacy_screen.dart';
 //profile
 export 'screens/profile/profile_screen.dart';
-export 'screens/profile/user_detalis_screen.dart';
+export 'screens/profile/user_details_screen.dart';
 export 'screens/profile/widgets/profile_card.dart';
 export 'screens/profile/widgets/profile_info.dart';
 export 'screens/profile/widgets/user_card.dart';
@@ -49,7 +49,7 @@ export 'screens/registration/login_screen.dart';
 export 'screens/registration/phone_verfiy_screen.dart';
 export 'screens/registration/register_screen.dart';
 export 'screens/registration/welcome_screen.dart';
-export 'screens/reports/attendance_detalis_screen.dart';
+export 'screens/reports/attendance_details_screen.dart';
 export 'screens/reports/attendance_input_screen.dart';
 export 'screens/reports/attendance_screen.dart';
 //reports
@@ -60,7 +60,7 @@ export 'screens/reports/widgets/custom_circle.dart';
 export 'screens/reports/widgets/leaves_card.dart';
 export 'screens/reports/widgets/report_date.dart';
 export 'screens/reports/widgets/report_tile.dart';
-//order
+//request
 export 'screens/request/request_details_screen.dart';
 export 'screens/request/request_input_screen.dart';
 export 'screens/request/requests_screen.dart';

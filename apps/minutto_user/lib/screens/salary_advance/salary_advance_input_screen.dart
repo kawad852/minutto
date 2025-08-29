@@ -1,14 +1,14 @@
 import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
-class DebtInputScreen extends StatefulWidget {
-  const DebtInputScreen({super.key});
+class SalaryAdvanceInputScreen extends StatefulWidget {
+  const SalaryAdvanceInputScreen({super.key});
 
   @override
-  State<DebtInputScreen> createState() => _DebtInputScreenState();
+  State<SalaryAdvanceInputScreen> createState() => _SalaryAdvanceInputScreenState();
 }
 
-class _DebtInputScreenState extends State<DebtInputScreen> {
+class _SalaryAdvanceInputScreenState extends State<SalaryAdvanceInputScreen> {
   late SalaryAdvanceModel _salaryAdvance;
   final _formKey = GlobalKey<FormState>();
   List<XFile> _files = [];
@@ -58,28 +58,19 @@ class _DebtInputScreenState extends State<DebtInputScreen> {
           context.appLocalization.debtRequest,
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-        child: StretchedButton(
-          onPressed: () {
-            _onSubmit(context);
-          },
-          child: Text(
-            context.appLocalization.send,
-            style: TextStyle(
-              color: context.colorPalette.black,
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-      ),
+      bottomNavigationBar: BottomButton(
+        onPressed: () {
+          _onSubmit(context);
+        },
+        title: context.appLocalization.send,
+      ), 
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: Form(
           key: _formKey,
           child: Column(
             children: [
-              DebtBubble(),
+              AdvanceBubble(),
               Row(
                 children: [
                   Expanded(

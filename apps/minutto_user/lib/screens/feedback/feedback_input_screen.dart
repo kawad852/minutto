@@ -12,18 +12,9 @@ class _FeedbackInputScreenState extends State<FeedbackInputScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(context.appLocalization.requestForExpenseAllowance)),
-      bottomNavigationBar: BottomAppBar(
-        child: StretchedButton(
-          onPressed: () {},
-          child: Text(
-            context.appLocalization.send,
-            style: TextStyle(
-              color: context.colorPalette.black,
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
+      bottomNavigationBar: BottomButton(
+        onPressed: () {},
+        title: context.appLocalization.send,
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),

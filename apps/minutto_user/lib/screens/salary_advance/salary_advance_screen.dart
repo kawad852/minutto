@@ -1,14 +1,14 @@
 import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
-class DebtScreen extends StatefulWidget {
-  const DebtScreen({super.key});
+class SalaryAdvanceScreen extends StatefulWidget {
+  const SalaryAdvanceScreen({super.key});
 
   @override
-  State<DebtScreen> createState() => _DebtScreenState();
+  State<SalaryAdvanceScreen> createState() => _SalaryAdvanceScreenState();
 }
 
-class _DebtScreenState extends State<DebtScreen> {
+class _SalaryAdvanceScreenState extends State<SalaryAdvanceScreen> {
   late Query<SalaryAdvanceModel> _query;
 
   void _initialize() {
@@ -29,27 +29,18 @@ class _DebtScreenState extends State<DebtScreen> {
           context.appLocalization.debtRequests,
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-        child: StretchedButton(
-          onPressed: () {
-            context.navigate((context) => const DebtInputScreen());
-          },
-          child: Text(
-            context.appLocalization.debtRequest,
-            style: TextStyle(
-              color: context.colorPalette.black,
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
+      bottomNavigationBar: BottomButton(
+        onPressed: () {
+          context.navigate((context) => const SalaryAdvanceInputScreen());
+        },
+        title: context.appLocalization.debtRequest,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            DebtBubble(),
+            AdvanceBubble(),
             Text(
               context.appLocalization.ordersRecord,
               style: TextStyle(
@@ -74,7 +65,7 @@ class _DebtScreenState extends State<DebtScreen> {
                         return const BaseLoader();
                       }
                       final salaryAdvance = snapshot.docs[index].data();
-                      return DebtCard(
+                      return AdvanceCard(
                         salaryAdvance: salaryAdvance,
                       );
                     },

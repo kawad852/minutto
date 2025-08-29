@@ -22,7 +22,7 @@ class FeedBackCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         context.navigate(
-          (context) => FeedbackDetalisScreen(
+          (context) => FeedbackDetailsScreen(
             feedBackType: feedBackType,
             rewardsType: rewardsType,
           ),
