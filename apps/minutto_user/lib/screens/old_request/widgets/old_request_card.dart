@@ -1,12 +1,12 @@
 import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
-class RequestCardWidget extends StatelessWidget {
+class OldRequestCard extends StatelessWidget {
   final String collection;
   final bool isVacation;
   final RequestModel request;
 
-  const RequestCardWidget({
+  const OldRequestCard({
     super.key,
     required this.collection,
     required this.isVacation,
@@ -31,7 +31,7 @@ class RequestCardWidget extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         context.navigate(
-          (context) => RequestDetailsScreen(
+          (context) => OldRequestDetailsScreen(
             request: request,
             collection: collection,
           ),

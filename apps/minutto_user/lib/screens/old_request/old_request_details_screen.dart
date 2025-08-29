@@ -1,20 +1,20 @@
 import 'package:shared/shared.dart';
 
-class RequestDetailsScreen extends StatefulWidget {
+class OldRequestDetailsScreen extends StatefulWidget {
   final String collection;
   final RequestModel request;
 
-  const RequestDetailsScreen({
+  const OldRequestDetailsScreen({
     super.key,
     required this.request,
     required this.collection,
   });
 
   @override
-  State<RequestDetailsScreen> createState() => _RequestDetailsScreenState();
+  State<OldRequestDetailsScreen> createState() => _OldRequestDetailsScreenState();
 }
 
-class _RequestDetailsScreenState extends State<RequestDetailsScreen> {
+class _OldRequestDetailsScreenState extends State<OldRequestDetailsScreen> {
   RequestModel get _request => widget.request;
   String get _collection => widget.collection;
 
