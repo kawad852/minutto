@@ -26,13 +26,14 @@ class _RequestDetailsScreenState extends State<RequestDetailsScreen> {
           MyIcons.money,
           context.appLocalization.workHistory,
         );
-      case MyCollections.leaves:
-        return (
-          context.appLocalization.leaveRequest,
-          MyIcons.clockIcon,
-          context.appLocalization.leaveDate,
-        );
       default:
+        if (_request.type == LeaveRequestType.leave.value) {
+          return (
+            context.appLocalization.leaveRequest,
+            MyIcons.clockIcon,
+            context.appLocalization.leaveDate,
+          );
+        }
         return (context.appLocalization.vacationRequest, MyIcons.umbrella, "");
     }
   }
@@ -41,7 +42,11 @@ class _RequestDetailsScreenState extends State<RequestDetailsScreen> {
   Widget build(BuildContext context) {
     final order = _getOrderInfo(context);
     return Scaffold(
-      appBar: AppBar(title: Text(order.$1)),
+      appBar: AppBar(
+        title: Text(
+          order.$1,
+        ),
+      ),
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         children: [

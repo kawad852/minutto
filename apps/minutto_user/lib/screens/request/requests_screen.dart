@@ -56,7 +56,11 @@ class _RequestsScreenState extends State<RequestsScreen> {
   Widget build(BuildContext context) {
     final order = _getOrderInfo(context);
     return Scaffold(
-      appBar: AppBar(title: Text(order.$1)),
+      appBar: AppBar(
+        title: Text(
+          order.$1,
+        ),
+      ),
       bottomNavigationBar: BottomAppBar(
         child: StretchedButton(
           onPressed: () {
