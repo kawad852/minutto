@@ -80,10 +80,10 @@ class _RequestDetailsScreenState extends State<RequestDetailsScreen> {
                 if (_request.fromDate != null && _request.toDate != null) ...[
                   Builder(
                     builder: (context) {
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 8),
-                        child: ListBody(
-                          children: [
+                      return ListBody(
+                        children: [
+                          if (_collection == MyCollections.overtimes ||
+                              _request.type == LeaveRequestType.leave.value) ...[
                             Text(
                               "${context.appLocalization.fromHour} : ${_request.fromDate!.hourFormat}",
                               overflow: TextOverflow.ellipsis,
@@ -102,29 +102,31 @@ class _RequestDetailsScreenState extends State<RequestDetailsScreen> {
                               ),
                             ),
                             const SizedBox(height: 8),
-                            Text(
-                              "${context.appLocalization.fromDate} : ${_request.fromDate!.defaultFormat}",
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                color: context.colorPalette.black,
-                                fontSize: 16,
-                              ),
-                            ),
-                            const SizedBox(height: 8),
-                            Text(
-                              "${context.appLocalization.toDate} : ${_request.toDate!.defaultFormat}",
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                color: context.colorPalette.black,
-                                fontSize: 16,
-                              ),
-                            ),
                           ],
-                        ),
+
+                          Text(
+                            "${context.appLocalization.fromDate} : ${_request.fromDate!.defaultFormat}",
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              color: context.colorPalette.black,
+                              fontSize: 16,
+                            ),
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            "${context.appLocalization.toDate} : ${_request.toDate!.defaultFormat}",
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              color: context.colorPalette.black,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ],
                       );
                     },
                   ),
                 ],
+                const SizedBox(height: 8),
                 Text(
                   "${context.appLocalization.dateAndTimeRequest} : ${_request.createdAt.defaultFormat} - ${_request.createdAt.hourFormat}",
                   overflow: TextOverflow.ellipsis,

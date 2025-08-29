@@ -52,6 +52,11 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
             _collection,
             _files,
           );
+          if (_collection != MyCollections.overtimes) {
+            _request.type = widget.isVacation
+                ? LeaveRequestType.vacation.value
+                : LeaveRequestType.leave.value;
+          }
           await docRef.set(_request);
           if (context.mounted) {
             context.showSnackBar(context.appLocalization.sentSuccessfully);
