@@ -221,6 +221,7 @@ export 'widgets/custom_svg.dart';
 export 'widgets/custom_text_field.dart';
 export 'widgets/editors/base_editor.dart';
 export 'widgets/editors/date_editor.dart';
+export 'widgets/editors/day_time_editor.dart';
 export 'widgets/editors/drop_down_editor.dart';
 export 'widgets/editors/email_editor.dart';
 export 'widgets/editors/password_editor.dart';

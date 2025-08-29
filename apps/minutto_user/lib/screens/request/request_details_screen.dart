@@ -77,55 +77,49 @@ class _RequestDetailsScreenState extends State<RequestDetailsScreen> {
                       fontSize: 16,
                     ),
                   ),
-                if (_request.fromDate != null && _request.toDate != null) ...[
-                  Builder(
-                    builder: (context) {
-                      return ListBody(
-                        children: [
-                          if (_collection == MyCollections.overtimes ||
-                              _request.type == LeaveRequestType.leave.value) ...[
-                            Text(
-                              "${context.appLocalization.fromHour} : ${_request.fromDate!.hourFormat}",
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                color: context.colorPalette.black,
-                                fontSize: 16,
-                              ),
-                            ),
-                            const SizedBox(height: 8),
-                            Text(
-                              "${context.appLocalization.toHour} : ${_request.toDate!.hourFormat}",
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                color: context.colorPalette.black,
-                                fontSize: 16,
-                              ),
-                            ),
-                            const SizedBox(height: 8),
-                          ],
+                ListBody(
+                  children: [
+                    if (_request.fromHour != null || _request.toHour != null) ...[
+                      Text(
+                        "${context.appLocalization.fromHour} : ${_request.fromHour ?? _request.fromDate!.hourFormat}",
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          color: context.colorPalette.black,
+                          fontSize: 16,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        "${context.appLocalization.toHour} : ${_request.toHour ?? _request.toDate!.hourFormat}",
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          color: context.colorPalette.black,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ],
 
-                          Text(
-                            "${context.appLocalization.fromDate} : ${_request.fromDate!.defaultFormat}",
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                              color: context.colorPalette.black,
-                              fontSize: 16,
-                            ),
-                          ),
-                          const SizedBox(height: 8),
-                          Text(
-                            "${context.appLocalization.toDate} : ${_request.toDate!.defaultFormat}",
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                              color: context.colorPalette.black,
-                              fontSize: 16,
-                            ),
-                          ),
-                        ],
-                      );
-                    },
-                  ),
-                ],
+                    if (_request.fromDate != null && _request.toDate != null) ...[
+                      Text(
+                        "${context.appLocalization.fromDate} : ${_request.fromDate!.defaultFormat}",
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          color: context.colorPalette.black,
+                          fontSize: 16,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        "${context.appLocalization.toDate} : ${_request.toDate!.defaultFormat}",
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          color: context.colorPalette.black,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
                 const SizedBox(height: 8),
                 Text(
                   "${context.appLocalization.dateAndTimeRequest} : ${_request.createdAt.defaultFormat} - ${_request.createdAt.hourFormat}",

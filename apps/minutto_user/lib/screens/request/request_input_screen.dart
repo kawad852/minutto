@@ -171,14 +171,20 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                       child: WidgetTitle(
                         title: context.appLocalization.fromHour,
                         padding: const EdgeInsets.symmetric(vertical: 5),
-                        child: CustomTextField.text(onChanged: (value) {}),
+                        child: DayTimeEditor(
+                          initialValue: _request.fromHour,
+                          onChanged: (value) => _request.fromHour = value,
+                        ),
                       ),
                     ),
                     Expanded(
                       child: WidgetTitle(
                         title: context.appLocalization.toHour,
                         padding: const EdgeInsets.symmetric(vertical: 5),
-                        child: CustomTextField.text(onChanged: (value) {}),
+                        child: DayTimeEditor(
+                          initialValue: _request.toHour,
+                          onChanged: (value) => _request.toHour = value,
+                        ),
                       ),
                     ),
                   ],

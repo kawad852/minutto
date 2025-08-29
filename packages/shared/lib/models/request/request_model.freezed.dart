@@ -47,6 +47,10 @@ mixin _$RequestModel {
   set companyId(String value) => throw _privateConstructorUsedError;
   String? get reason => throw _privateConstructorUsedError;
   set reason(String? value) => throw _privateConstructorUsedError;
+  String? get fromHour => throw _privateConstructorUsedError;
+  set fromHour(String? value) => throw _privateConstructorUsedError;
+  String? get toHour => throw _privateConstructorUsedError;
+  set toHour(String? value) => throw _privateConstructorUsedError;
   String get status => throw _privateConstructorUsedError;
   set status(String value) => throw _privateConstructorUsedError;
   String? get notes => throw _privateConstructorUsedError;
@@ -84,6 +88,8 @@ abstract class $RequestModelCopyWith<$Res> {
     String type,
     String companyId,
     String? reason,
+    String? fromHour,
+    String? toHour,
     String status,
     String? notes,
     String? adminNotes,
@@ -115,6 +121,8 @@ class _$RequestModelCopyWithImpl<$Res, $Val extends RequestModel>
     Object? type = null,
     Object? companyId = null,
     Object? reason = freezed,
+    Object? fromHour = freezed,
+    Object? toHour = freezed,
     Object? status = null,
     Object? notes = freezed,
     Object? adminNotes = freezed,
@@ -158,6 +166,14 @@ class _$RequestModelCopyWithImpl<$Res, $Val extends RequestModel>
                 ? _value.reason
                 : reason // ignore: cast_nullable_to_non_nullable
                       as String?,
+            fromHour: freezed == fromHour
+                ? _value.fromHour
+                : fromHour // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            toHour: freezed == toHour
+                ? _value.toHour
+                : toHour // ignore: cast_nullable_to_non_nullable
+                      as String?,
             status: null == status
                 ? _value.status
                 : status // ignore: cast_nullable_to_non_nullable
@@ -199,6 +215,8 @@ abstract class _$$RequestModelImplCopyWith<$Res>
     String type,
     String companyId,
     String? reason,
+    String? fromHour,
+    String? toHour,
     String status,
     String? notes,
     String? adminNotes,
@@ -229,6 +247,8 @@ class __$$RequestModelImplCopyWithImpl<$Res>
     Object? type = null,
     Object? companyId = null,
     Object? reason = freezed,
+    Object? fromHour = freezed,
+    Object? toHour = freezed,
     Object? status = null,
     Object? notes = freezed,
     Object? adminNotes = freezed,
@@ -272,6 +292,14 @@ class __$$RequestModelImplCopyWithImpl<$Res>
             ? _value.reason
             : reason // ignore: cast_nullable_to_non_nullable
                   as String?,
+        fromHour: freezed == fromHour
+            ? _value.fromHour
+            : fromHour // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        toHour: freezed == toHour
+            ? _value.toHour
+            : toHour // ignore: cast_nullable_to_non_nullable
+                  as String?,
         status: null == status
             ? _value.status
             : status // ignore: cast_nullable_to_non_nullable
@@ -307,6 +335,8 @@ class _$RequestModelImpl implements _RequestModel {
     this.type = '',
     this.companyId = '',
     this.reason,
+    this.fromHour,
+    this.toHour,
     this.status = StatusEnum.defaultValue,
     this.notes,
     this.adminNotes,
@@ -343,6 +373,10 @@ class _$RequestModelImpl implements _RequestModel {
   @override
   String? reason;
   @override
+  String? fromHour;
+  @override
+  String? toHour;
+  @override
   @JsonKey()
   String status;
   @override
@@ -355,7 +389,7 @@ class _$RequestModelImpl implements _RequestModel {
 
   @override
   String toString() {
-    return 'RequestModel(createdAt: $createdAt, fromDate: $fromDate, toDate: $toDate, date: $date, id: $id, userId: $userId, type: $type, companyId: $companyId, reason: $reason, status: $status, notes: $notes, adminNotes: $adminNotes, attachments: $attachments)';
+    return 'RequestModel(createdAt: $createdAt, fromDate: $fromDate, toDate: $toDate, date: $date, id: $id, userId: $userId, type: $type, companyId: $companyId, reason: $reason, fromHour: $fromHour, toHour: $toHour, status: $status, notes: $notes, adminNotes: $adminNotes, attachments: $attachments)';
   }
 
   /// Create a copy of RequestModel
@@ -383,6 +417,8 @@ abstract class _RequestModel implements RequestModel {
     String type,
     String companyId,
     String? reason,
+    String? fromHour,
+    String? toHour,
     String status,
     String? notes,
     String? adminNotes,
@@ -427,6 +463,12 @@ abstract class _RequestModel implements RequestModel {
   @override
   String? get reason;
   set reason(String? value);
+  @override
+  String? get fromHour;
+  set fromHour(String? value);
+  @override
+  String? get toHour;
+  set toHour(String? value);
   @override
   String get status;
   set status(String value);

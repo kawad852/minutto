@@ -16,6 +16,8 @@ class RequestModel with _$RequestModel {
     @Default('') String type,
     @Default('') String companyId,
     String? reason,
+    String? fromHour,
+    String? toHour,
     @Default(StatusEnum.defaultValue) String status,
     String? notes,
     String? adminNotes,
