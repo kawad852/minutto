@@ -128,7 +128,6 @@
   "violationDetectedInTask":"رصد مخالفة في مهمة",
   "typeOfViolation":"نوع المخالفة",
   "nonCompliance":"عدم امتثال",
-  "rejected":"مرفوضة",
   "complianceOfficerNotesExplanations":"ملاحظات وشروحات موظف الأمتثال",
   "violationObservedInTask":"مخالفة مرصودة في مهمة",
   "theViolationWasDetectedAgainst":"تم رصد المخالفة بحق",
@@ -185,7 +184,6 @@
   "generalViolation":"رصد مخالفة عامة",
   "confirmed": "تم التأكيد",
   "canceled": "تم الإلغاء",
-  "pending": "بالإنتظار",
   "displayName": "الاسم الظاهر",
   "build": "البناء",
   "manage": "إدارة",
@@ -381,5 +379,10 @@
   "introDisc0":"حلول متطورة وجديدة نقدمها لكم لإدارة اوقات دوام الموظفين بأفضل شكل",
   "introDisc1":"حلول متطورة وجديدة لتسجيل اوقات الحضور والمغادرة من العمل",
   "introDisc2":"جميع طلبات الموظفين من مغادرات ، اجازات ، سلف وبدلات في مكان واحد",
-  "skip":"تخطي"
+  "skip":"تخطي",
+  "sickLeave": "مرضية",
+  "bereavementLeave": "حالة وفاة",
+  "pending": "بالإنتظار",
+  "rejected": "مرفوضة",
+  "accepted": "مقبولة"
 }

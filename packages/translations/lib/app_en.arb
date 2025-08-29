@@ -557,5 +557,10 @@
   "introDisc0":"We offer you advanced and new solutions to manage employee working hours in the best way.",
   "introDisc1":"Advanced and new solutions for recording attendance and departure times from work",
   "introDisc2":"All employee requests, including leave, vacation, advances, and allowances, in one place.",
-  "skip":"Skip"
+  "skip":"Skip",
+  "sickLeave": "Sick Leave",
+  "bereavementLeave": "Bereavement Leave",
+  "pending": "Pending",
+  "rejected": "Rejected",
+  "accepted": "Accepted"
 }

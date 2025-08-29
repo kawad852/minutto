@@ -13,6 +13,9 @@ export 'screens/facility_management/facility_management_screen.dart';
 export 'screens/facility_management/shift_input_screen.dart';
 export 'screens/facility_management/shift_management_screen.dart';
 export 'screens/facility_management/widgets/facility_card.dart';
+//faq
+export 'screens/faq/faq_screen.dart';
+export 'screens/faq/widgets/faq_card.dart';
 export 'screens/feedback/feedback_detalis_screen.dart';
 export 'screens/feedback/feedback_input_screen.dart';
 //feedback
@@ -29,6 +32,13 @@ export 'screens/home/widgets/dialog_bubble.dart';
 export 'screens/home/widgets/home_bubble.dart';
 export 'screens/home/widgets/home_header.dart';
 export 'screens/home/widgets/request_card.dart';
+//intro
+export 'screens/intro/intro_screen.dart';
+//notification
+export 'screens/notification/notification_screen.dart';
+export 'screens/notification/widgets/notification_card.dart';
+//privacy
+export 'screens/privacy/privacy_screen.dart';
 //profile
 export 'screens/profile/profile_screen.dart';
 export 'screens/profile/user_detalis_screen.dart';
@@ -60,18 +70,3 @@ export 'screens/salaries/salaries_screen.dart';
 export 'screens/salaries/widgets/salary_card.dart';
 export 'screens/salaries/widgets/salary_table.dart';
 export 'screens/salaries/widgets/table_text.dart';
-//FacilityManagement
-export 'screens/facility_management/facility_management_screen.dart';
-export 'screens/facility_management/shift_management_screen.dart';
-export 'screens/facility_management/shift_input_screen.dart';
-export 'screens/facility_management/widgets/facility_card.dart';
-//notification
-export 'screens/notification/notification_screen.dart';
-export 'screens/notification/widgets/notification_card.dart';
-//privacy
-export 'screens/privacy/privacy_screen.dart';
-//faq
-export 'screens/faq/faq_screen.dart';
-export 'screens/faq/widgets/faq_card.dart';
-//intro
-export 'screens/intro/intro_screen.dart';

@@ -1483,4 +1483,19 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get skip => 'تخطي';
+
+  @override
+  String get sickLeave => 'مرضية';
+
+  @override
+  String get bereavementLeave => 'حالة وفاة';
+
+  @override
+  String get pending => 'بالإنتظار';
+
+  @override
+  String get rejected => 'مرفوضة';
+
+  @override
+  String get accepted => 'مقبولة';
 }

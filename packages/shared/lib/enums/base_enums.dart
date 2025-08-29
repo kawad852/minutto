@@ -1,3 +1,6 @@
+import 'package:flutter/cupertino.dart';
+import 'package:shared/helper/translation_extension.dart';
+
 class LanguageEnum {
   static const String english = 'en';
   static const String arabic = 'ar';
@@ -27,6 +30,7 @@ enum RewardsType { allowance, incentive }
 
 enum StatusEnum {
   pending(defaultValue),
+  accepted("accepted"),
   rejected("rejected");
 
   static const defaultValue = "pending";
@@ -34,13 +38,15 @@ enum StatusEnum {
 
   const StatusEnum(this.value);
 
-  String label(String status) {
+  static String label(BuildContext context, String status) {
     final value = values.firstWhere((e) => e.value == status);
     switch (value) {
       case StatusEnum.rejected:
-        return '';
+        return context.appLocalization.rejected;
+      case StatusEnum.accepted:
+        return context.appLocalization.accepted;
       default:
-        return '';
+        return context.appLocalization.pending;
     }
   }
 }

@@ -1489,4 +1489,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get skip => 'Skip';
+
+  @override
+  String get sickLeave => 'Sick Leave';
+
+  @override
+  String get bereavementLeave => 'Bereavement Leave';
+
+  @override
+  String get pending => 'Pending';
+
+  @override
+  String get rejected => 'Rejected';
+
+  @override
+  String get accepted => 'Accepted';
 }

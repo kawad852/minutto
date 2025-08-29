@@ -13,20 +13,21 @@ class RequestCardWidget extends StatelessWidget {
     required this.request,
   });
 
-  String get _icon {
+  (String label, String icon) _info(BuildContext context) {
     switch (collection) {
       case MyCollections.overtimes:
-        return MyIcons.money;
+        return (context.appLocalization.overtimeRequest, MyIcons.money);
       default:
         if (isVacation) {
-          return MyIcons.umbrella;
+          return (context.appLocalization.vacationRequest, MyIcons.umbrella);
         }
-        return MyIcons.clockIcon;
+        return (context.appLocalization.leaveRequest, MyIcons.clockIcon);
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    final info = _info(context);
     return GestureDetector(
       onTap: () {
         context.navigate((context) => RequestDetalisScreen(orderTypeEnum: OrderTypeEnum.leave));
@@ -41,7 +42,7 @@ class RequestCardWidget extends StatelessWidget {
         ),
         child: Row(
           children: [
-            CustomSvg(_icon),
+            CustomSvg(info.$2),
             const SizedBox(width: 12),
             Expanded(
               child: Column(
@@ -49,7 +50,8 @@ class RequestCardWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "طلب مغادرة",
+                    info.$1,
+
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       color: context.colorPalette.black,
@@ -73,7 +75,7 @@ class RequestCardWidget extends StatelessWidget {
             if (isVacation)
               Expanded(
                 child: Text(
-                  request.reason,
+                  LeaveReason.label(context, request.reason),
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: context.colorPalette.black,
@@ -83,7 +85,7 @@ class RequestCardWidget extends StatelessWidget {
                 ),
               ),
             Text(
-              request.status,
+              StatusEnum.label(context, request.status),
               style: TextStyle(
                 color: context.colorPalette.yellowF69,
                 fontSize: 16,

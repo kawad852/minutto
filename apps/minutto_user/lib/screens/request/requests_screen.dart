@@ -85,6 +85,9 @@ class _RequestsScreenState extends State<RequestsScreen> {
             itemCount: snapshot.docs.length,
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             itemBuilder: (context, index) {
+              if (snapshot.isLoadingMore(index)) {
+                return BaseLoader();
+              }
               final request = snapshot.docs[index].data();
               return RequestCardWidget(
                 collection: widget.collection,

@@ -117,7 +117,11 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                   padding: const EdgeInsets.symmetric(vertical: 5),
                   child: DropDownEditor(
                     items: LeaveReason.values.map((e) {
-                      return DropdownMenuItem(value: e.value, child: Text('مرضية'));
+                      final label = LeaveReason.label(context, e.value);
+                      return DropdownMenuItem(
+                        value: e.value,
+                        child: Text(label),
+                      );
                     }).toList(),
                     onChanged: (value) => _request.reason = value!,
                     value: _request.reason.isNotEmpty ? _request.reason : null,
