@@ -1,16 +1,16 @@
 import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
-class RequestsScreen extends StatefulWidget {
+class OldRequestsScreen extends StatefulWidget {
   final String collection;
   final bool isVacation;
-  const RequestsScreen({super.key, required this.collection, this.isVacation = false});
+  const OldRequestsScreen({super.key, required this.collection, this.isVacation = false});
 
   @override
-  State<RequestsScreen> createState() => _RequestsScreenState();
+  State<OldRequestsScreen> createState() => _OldRequestsScreenState();
 }
 
-class _RequestsScreenState extends State<RequestsScreen> {
+class _OldRequestsScreenState extends State<OldRequestsScreen> {
   late Query<RequestModel> _query;
 
   (String, String) _getRequestInfo(BuildContext context) {
@@ -64,11 +64,11 @@ class _RequestsScreenState extends State<RequestsScreen> {
       bottomNavigationBar: BottomButton(
         onPressed: () {
           context.navigate(
-              (context) => RequestInputScreen(
-                collection: widget.collection,
-                isVacation: widget.isVacation,
-              ),
-            );
+            (context) => OldRequestInputScreen(
+              collection: widget.collection,
+              isVacation: widget.isVacation,
+            ),
+          );
         },
         title: request.$2,
       ),
@@ -87,7 +87,7 @@ class _RequestsScreenState extends State<RequestsScreen> {
                 return BaseLoader();
               }
               final request = snapshot.docs[index].data();
-              return RequestCardWidget(
+              return OldRequestCard(
                 collection: widget.collection,
                 isVacation: widget.isVacation,
                 request: request,

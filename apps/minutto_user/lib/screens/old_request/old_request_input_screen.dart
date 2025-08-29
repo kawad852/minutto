@@ -1,20 +1,20 @@
 import 'package:shared/shared.dart';
 
-class RequestInputScreen extends StatefulWidget {
+class OldRequestInputScreen extends StatefulWidget {
   final String collection;
   final bool isVacation;
 
-  const RequestInputScreen({
+  const OldRequestInputScreen({
     super.key,
     required this.collection,
     this.isVacation = false,
   });
 
   @override
-  State<RequestInputScreen> createState() => _RequestInputScreenState();
+  State<OldRequestInputScreen> createState() => _OldRequestInputScreenState();
 }
 
-class _RequestInputScreenState extends State<RequestInputScreen> {
+class _OldRequestInputScreenState extends State<OldRequestInputScreen> {
   late RequestModel _request;
   var _files = <XFile>[];
   final _formKey = GlobalKey<FormState>();
