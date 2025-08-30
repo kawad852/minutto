@@ -402,5 +402,9 @@
   "endDate":"تاريخ الانتهاء",
   "vacationType":"نوع الاجازة",
   "attachFilehere":"ارفاق الملف هنا",
-  "max":"حد أقصى"
+  "max":"حد أقصى",
+  "addBranch":"إضافة فرع",
+  "city":"المدينة",
+  "workingHours":"أوقات العمل",
+  "determineLocationOnMap":" تحديد الموقع على الخريطة"
 }

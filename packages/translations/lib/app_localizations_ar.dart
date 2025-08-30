@@ -175,7 +175,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get streetName => 'Street name';
 
   @override
-  String get city => 'City';
+  String get city => 'المدينة';
 
   @override
   String get floorNo => 'Floor No.';
@@ -1543,4 +1543,16 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get max => 'حد أقصى';
+
+  @override
+  String get addBranch => 'إضافة فرع';
+
+  @override
+  String get responsibleManager => 'المدير المسؤول';
+
+  @override
+  String get workingHours => 'أوقات العمل';
+
+  @override
+  String get determineLocationOnMap => ' تحديد الموقع على الخريطة';
 }

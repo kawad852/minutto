@@ -1549,4 +1549,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get max => 'max';
+
+  @override
+  String get addBranch => 'Add branch';
+
+  @override
+  String get responsibleManager => 'Responsible manager';
+
+  @override
+  String get workingHours => 'Working hours';
+
+  @override
+  String get determineLocationOnMap => 'Determine the location on the map';
 }

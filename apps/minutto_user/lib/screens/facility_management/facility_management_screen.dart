@@ -22,7 +22,9 @@ class _FacilityManagementScreenState extends State<FacilityManagementScreen> {
               spacing: 10,
               children: [
                 FacilityCard(
-                  onTap: () {},
+                  onTap: () {
+                    context.navigate((context) => const BranchesScreen());
+                  },
                   title: context.appLocalization.branchManagement,
                 ),
                 FacilityCard(

@@ -3055,6 +3055,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'max'**
   String get max;
+
+  /// No description provided for @addBranch.
+  ///
+  /// In en, this message translates to:
+  /// **'Add branch'**
+  String get addBranch;
+
+  /// No description provided for @responsibleManager.
+  ///
+  /// In en, this message translates to:
+  /// **'Responsible manager'**
+  String get responsibleManager;
+
+  /// No description provided for @workingHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Working hours'**
+  String get workingHours;
+
+  /// No description provided for @determineLocationOnMap.
+  ///
+  /// In en, this message translates to:
+  /// **'Determine the location on the map'**
+  String get determineLocationOnMap;
 }
 
 class _AppLocalizationsDelegate

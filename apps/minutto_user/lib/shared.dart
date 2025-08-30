@@ -84,3 +84,7 @@ export 'screens/request/widgets/request_info.dart';
 export 'screens/request/widgets/attach_card.dart';
 export 'screens/request/widgets/details_card.dart';
 export 'screens/request/widgets/details_info.dart';
+//branches
+export 'screens/branches/branches_screen.dart';
+export 'screens/branches/branch_input_screen.dart';
+export 'screens/branches/widgets/branch_card.dart';

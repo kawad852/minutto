@@ -50,4 +50,7 @@ class MyIcons {
   static const String note = '${_path}note.svg';
   static const String checkIcon = '${_path}check_icon.svg';
   static const String attachIcon = '${_path}attach_icon.svg';
+  static const String call = '${_path}call.svg';
+  static const String sms = '${_path}sms.svg';
+  static const String loc = '${_path}loc.svg';
 }

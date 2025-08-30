@@ -45,6 +45,9 @@ class ColorPalette {
   Color get greyD0D => const Color(0xFFD0D5DD);
   Color get grey667 => const Color(0xFF667085);
   Color get grey8C8 => const Color(0xFF8C8C8C);
+  Color get grey718 => const Color(0xFF718096);
+  Color get greyABB => const Color(0x0DABBED1);
+  Color get greyE9E => const Color(0xFFE9EAF0);
 
 
   //yellow

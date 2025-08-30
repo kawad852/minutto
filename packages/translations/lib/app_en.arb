@@ -580,5 +580,10 @@
   "endDate":"End date",
   "vacationType":"Vacation type",
   "attachFilehere":"Attach the file here",
-  "max":"max"
+  "max":"max",
+  "addBranch":"Add branch",
+  "responsibleManager":"Responsible manager",
+  "city":"City",
+  "workingHours":"Working hours",
+  "determineLocationOnMap":"Determine the location on the map"
 }
