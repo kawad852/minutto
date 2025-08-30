@@ -33,7 +33,9 @@ class RequestCard extends StatelessWidget {
                 ),
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  context.navigate((context) => const RequestDetailsScreen());
+                },
                 child: Icon(Icons.arrow_forward_ios_rounded),
               ),
             ],

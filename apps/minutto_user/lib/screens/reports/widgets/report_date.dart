@@ -12,7 +12,7 @@ class ReportDate extends StatelessWidget {
           width: 200,
           height: 45,
           decoration: BoxDecoration(
-            color: context.colorPalette.blueB2D,
+            color: context.colorPalette.blue26,
             borderRadius: BorderRadius.circular(kRadiusSecondary),
           ),
           child: Row(

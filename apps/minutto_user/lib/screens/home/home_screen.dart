@@ -80,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: HomeBubble(
                         onTap: () {
                           context.navigate(
-                            (context) => const FeedbackScreen(feedBackType: FeedBackType.alarm),
+                            (context) => RequestScreen(),
                           );
                         },
                         icon: MyIcons.danger,
@@ -94,7 +94,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     Expanded(
                       child: HomeBubble(
                         onTap: () {
-                          context.navigate((context) => const SalaryAdvanceScreen());
+                          context.navigate(
+                            (context) => RequestScreen(),
+                          );
                         },
                         icon: MyIcons.advance,
                         title: context.appLocalization.advances,
@@ -105,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: HomeBubble(
                         onTap: () {
                           context.navigate(
-                            (context) => const FeedbackScreen(feedBackType: FeedBackType.rewards),
+                            (context) => RequestScreen(),
                           );
                         },
                         icon: MyIcons.favorite,
@@ -130,7 +132,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     const SizedBox(width: 10),
                     Expanded(
                       child: HomeBubble(
-                        onTap: () {},
+                        onTap: () {
+                          context.navigate(
+                            (context) => RequestScreen(),
+                          );
+                        },
                         icon: MyIcons.danger,
                         title: context.appLocalization.workBreak,
                       ),

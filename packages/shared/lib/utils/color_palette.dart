@@ -55,5 +55,6 @@ class ColorPalette {
   Color get greenB2D => const Color(0xFFB2DCBC);
   Color get green47A=> const Color(0xFF47A269);
   Color get green64B=> const Color(0xFF64B276);
+  Color get green19B=> const Color(0xFF19B36E);
 
 }

@@ -6,6 +6,11 @@ class AttendanceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final style = TextStyle(
+      color: context.colorPalette.blue091,
+      fontSize: 15,
+    );
+
     return GestureDetector(
       onTap: () {
         context.navigate((context) => const AttendanceInputScreen());
@@ -21,7 +26,7 @@ class AttendanceCard extends StatelessWidget {
           children: [
             Container(
               width: 8,
-              height: 85,
+              height: 90,
               margin: const EdgeInsetsDirectional.only(end: 12),
               decoration: BoxDecoration(
                 color: context.colorPalette.yellowF69,
@@ -37,31 +42,20 @@ class AttendanceCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "الثلاثاء ، 04 إبريل",
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      color: context.colorPalette.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  Text(
                     "${context.appLocalization.attendanceTime} : 09:18 AM",
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      color: context.colorPalette.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    style: style,
                   ),
                   Text(
                     "${context.appLocalization.checkoutTime} : 09:18 AM",
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      color: context.colorPalette.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    style: style,
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    "الثلاثاء ، 04 إبريل",
+                    overflow: TextOverflow.ellipsis,
+                    style: style,
                   ),
                 ],
               ),

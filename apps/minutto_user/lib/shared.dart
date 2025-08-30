@@ -75,9 +75,12 @@ export 'screens/salary_advance/widgets/advance_card.dart';
 //request
 export 'screens/request/request_screen.dart';
 export 'screens/request/request_input_screen.dart';
+export 'screens/request/request_details_screen.dart';
 export 'screens/request/widgets/request_head.dart';
 export 'screens/request/widgets/info_bubble.dart';
 export 'screens/request/widgets/request_tab_bar.dart';
 export 'screens/request/widgets/request_card.dart';
 export 'screens/request/widgets/request_info.dart';
 export 'screens/request/widgets/attach_card.dart';
+export 'screens/request/widgets/details_card.dart';
+export 'screens/request/widgets/details_info.dart';

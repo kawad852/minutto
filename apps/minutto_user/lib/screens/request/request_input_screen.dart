@@ -23,6 +23,11 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         children: [
           WidgetTitle(
+            title: context.appLocalization.debtValue,
+            child: CustomTextField.text(onChanged: (value) {}),
+          ),
+          const SizedBox(height: 15),
+          WidgetTitle(
             title: context.appLocalization.overtimeHistory,
             child: DateEditor(
               value: DateTime.now(),
