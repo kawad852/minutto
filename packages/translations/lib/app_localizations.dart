@@ -3079,6 +3079,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Determine the location on the map'**
   String get determineLocationOnMap;
+
+  /// No description provided for @departments.
+  ///
+  /// In en, this message translates to:
+  /// **'Departments'**
+  String get departments;
+
+  /// No description provided for @addDepartment.
+  ///
+  /// In en, this message translates to:
+  /// **'Add department'**
+  String get addDepartment;
+
+  /// No description provided for @departmentName.
+  ///
+  /// In en, this message translates to:
+  /// **'Department name'**
+  String get departmentName;
+
+  /// No description provided for @departmentManager.
+  ///
+  /// In en, this message translates to:
+  /// **'Department Manager (if any)'**
+  String get departmentManager;
+
+  /// No description provided for @condition.
+  ///
+  /// In en, this message translates to:
+  /// **'The condition'**
+  String get condition;
+
+  /// No description provided for @searchByEmployeeName.
+  ///
+  /// In en, this message translates to:
+  /// **'Search by employee name'**
+  String get searchByEmployeeName;
+
+  /// No description provided for @from.
+  ///
+  /// In en, this message translates to:
+  /// **'From'**
+  String get from;
+
+  /// No description provided for @to.
+  ///
+  /// In en, this message translates to:
+  /// **'To'**
+  String get to;
 }
 
 class _AppLocalizationsDelegate

@@ -55,7 +55,6 @@ export 'screens/reports/widgets/attendance_card.dart';
 export 'screens/reports/widgets/attendance_info.dart';
 export 'screens/reports/widgets/custom_circle.dart';
 export 'screens/reports/widgets/leaves_card.dart';
-export 'screens/reports/widgets/report_date.dart';
 export 'screens/reports/widgets/report_tile.dart';
 //salaries
 export 'screens/salaries/salaries_screen.dart';
@@ -88,3 +87,13 @@ export 'screens/request/widgets/details_info.dart';
 export 'screens/branches/branches_screen.dart';
 export 'screens/branches/branch_input_screen.dart';
 export 'screens/branches/widgets/branch_card.dart';
+//department
+export 'screens/department/department_screen.dart';
+export 'screens/department/department_input_screen.dart';
+export 'screens/department/widgets/department_card.dart';
+//salary management
+export 'screens/salary_management/salary_management_screen.dart';
+export 'screens/salary_management/salaries_employee_screen.dart';
+export 'screens/salary_management/widgets/employee_card.dart';
+export 'screens/salary_management/widgets/employee_salary_card.dart';
+export 'screens/salary_management/widgets/salary_info.dart';

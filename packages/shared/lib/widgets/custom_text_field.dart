@@ -40,17 +40,20 @@ class CustomTextField extends StatelessWidget {
     Key? key,
     String? initialValue,
     Widget? prefixIcon,
+    Widget? suffixIcon,
     required ValueChanged<String?> onChanged,
     bool required = true,
     String? labelText,
     String? hintText,
     int? maxLines,
     TextAlign? textAlign,
+    
   }) {
     return CustomTextField._(
       key: key,
       initialValue: initialValue,
       prefixIcon: prefixIcon,
+      suffixIcon: suffixIcon,
       keyboardType: TextInputType.text,
       labelText: labelText,
       textAlign: textAlign,

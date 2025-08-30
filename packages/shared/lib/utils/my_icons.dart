@@ -53,4 +53,6 @@ class MyIcons {
   static const String call = '${_path}call.svg';
   static const String sms = '${_path}sms.svg';
   static const String loc = '${_path}loc.svg';
+  static const String search = '${_path}search.svg';
+  static const String filter = '${_path}filter.svg';
 }

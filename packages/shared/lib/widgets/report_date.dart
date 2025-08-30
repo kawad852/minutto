@@ -9,7 +9,7 @@ class ReportDate extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          width: 200,
+          width: 230,
           height: 45,
           decoration: BoxDecoration(
             color: context.colorPalette.blue26,

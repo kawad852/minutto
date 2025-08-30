@@ -585,5 +585,13 @@
   "responsibleManager":"Responsible manager",
   "city":"City",
   "workingHours":"Working hours",
-  "determineLocationOnMap":"Determine the location on the map"
+  "determineLocationOnMap":"Determine the location on the map",
+  "departments":"Departments",
+  "addDepartment":"Add department",
+  "departmentName":"Department name",
+  "departmentManager":"Department Manager (if any)",
+  "condition":"The condition",
+  "searchByEmployeeName":"Search by employee name",
+  "from":"From",
+  "to":"To"
 }

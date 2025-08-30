@@ -1561,4 +1561,28 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get determineLocationOnMap => 'Determine the location on the map';
+
+  @override
+  String get departments => 'Departments';
+
+  @override
+  String get addDepartment => 'Add department';
+
+  @override
+  String get departmentName => 'Department name';
+
+  @override
+  String get departmentManager => 'Department Manager (if any)';
+
+  @override
+  String get condition => 'The condition';
+
+  @override
+  String get searchByEmployeeName => 'Search by employee name';
+
+  @override
+  String get from => 'From';
+
+  @override
+  String get to => 'To';
 }

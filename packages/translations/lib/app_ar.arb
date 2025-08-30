@@ -406,5 +406,13 @@
   "addBranch":"إضافة فرع",
   "city":"المدينة",
   "workingHours":"أوقات العمل",
-  "determineLocationOnMap":" تحديد الموقع على الخريطة"
+  "determineLocationOnMap":" تحديد الموقع على الخريطة",
+  "departments":"الأقسام",
+  "addDepartment":"إضافة قسم",
+  "departmentName":"اسم القسم",
+  "departmentManager":"مدير القسم(إن وجد)",
+  "condition":"الحالة",
+  "searchByEmployeeName":"بحث باسم الموظف",
+  "from":"من",
+  "to":"الى"
 }

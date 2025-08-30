@@ -54,7 +54,9 @@ class _FacilityManagementScreenState extends State<FacilityManagementScreen> {
               spacing: 10,
               children: [
                 FacilityCard(
-                  onTap: () {},
+                  onTap: () {
+                    context.navigate((context) => const SalaryManagementScreen());
+                  },
                   title: context.appLocalization.salaries,
                 ),
                 FacilityCard(
@@ -73,6 +75,21 @@ class _FacilityManagementScreenState extends State<FacilityManagementScreen> {
                 FacilityCard(
                   onTap: () {},
                   title: context.appLocalization.companySystemSettings,
+                ),
+              ],
+            ),
+            Row(
+              spacing: 10,
+              children: [
+                FacilityCard(
+                  onTap: () {
+                    context.navigate((context) => const DepartmentScreen());
+                  },
+                  title: context.appLocalization.departments,
+                ),
+                FacilityCard(
+                  onTap: () {},
+                  title: context.appLocalization.requests,
                 ),
               ],
             ),

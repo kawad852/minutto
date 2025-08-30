@@ -78,14 +78,8 @@ class BranchCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 20,
-                  child: Switch(
-                    value: true,
-                    activeThumbColor: context.colorPalette.white,
-                    activeTrackColor: context.colorPalette.blueB2D,
-                    onChanged: (value) {},
-                  ),
+                CustomSwitch(
+                  onChanged: (value) {},
                 ),
               ],
             ),

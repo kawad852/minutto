@@ -1555,4 +1555,28 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get determineLocationOnMap => ' تحديد الموقع على الخريطة';
+
+  @override
+  String get departments => 'الأقسام';
+
+  @override
+  String get addDepartment => 'إضافة قسم';
+
+  @override
+  String get departmentName => 'اسم القسم';
+
+  @override
+  String get departmentManager => 'مدير القسم(إن وجد)';
+
+  @override
+  String get condition => 'الحالة';
+
+  @override
+  String get searchByEmployeeName => 'بحث باسم الموظف';
+
+  @override
+  String get from => 'من';
+
+  @override
+  String get to => 'الى';
 }

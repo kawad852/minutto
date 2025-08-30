@@ -273,3 +273,5 @@ export 'widgets/shared_container.dart';
 export 'widgets/stretch_button.dart';
 export 'widgets/widget_title.dart';
 export 'widgets/bottom_button.dart';
+export 'widgets/custom_switch.dart';
+export 'widgets/report_date.dart';
