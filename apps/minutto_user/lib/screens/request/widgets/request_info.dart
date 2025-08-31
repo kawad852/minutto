@@ -2,7 +2,14 @@ import 'package:shared/shared.dart';
 
 class RequestInfo extends StatelessWidget {
   final String title, value;
-  const RequestInfo({super.key, required this.title, required this.value});
+  final bool ltrOnly;
+
+  const RequestInfo({
+    super.key,
+    required this.title,
+    required this.value,
+    this.ltrOnly = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +32,7 @@ class RequestInfo extends StatelessWidget {
             color: context.colorPalette.blue091,
             fontSize: 16,
           ),
+          textDirection: ltrOnly ? TextDirection.ltr : null,
         ),
       ],
     );

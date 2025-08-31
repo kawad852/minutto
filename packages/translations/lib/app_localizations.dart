@@ -3145,6 +3145,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Request Date'**
   String get requestDate;
+
+  /// No description provided for @leaveTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave Time'**
+  String get leaveTime;
 }
 
 class _AppLocalizationsDelegate

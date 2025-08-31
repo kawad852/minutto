@@ -596,5 +596,6 @@
   "to":"To",
   "leaves": "Leaves",
   "leaveType": "Leave Type",
-  "requestDate": "Request Date"
+  "requestDate": "Request Date",
+  "leaveTime": "Leave Time"
 }

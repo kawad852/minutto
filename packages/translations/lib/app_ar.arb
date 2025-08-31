@@ -417,5 +417,6 @@
   "to":"الى",
   "leaves": "المغادرات",
   "leaveType": "نوع المغادرة",
-  "requestDate": "تاريخ الطلب"
+  "requestDate": "تاريخ الطلب",
+  "leaveTime": "وقت المغادرة"
 }

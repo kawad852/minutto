@@ -114,31 +114,31 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                     onChanged: (value) => _request.date = value,
                   ),
                 ),
-              // if (_isLeaves)
-              Row(
-                spacing: 10,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: WidgetTitle(
-                      title: context.appLocalization.fromHour,
-                      child: DayTimeEditor(
-                        initialValue: _request.fromHour,
-                        onChanged: (value) => _request.fromHour = value,
+              if (_isLeaves)
+                Row(
+                  spacing: 10,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: WidgetTitle(
+                        title: context.appLocalization.fromHour,
+                        child: DayTimeEditor(
+                          initialValue: _request.fromHour,
+                          onChanged: (value) => _request.fromHour = value,
+                        ),
                       ),
                     ),
-                  ),
-                  Expanded(
-                    child: WidgetTitle(
-                      title: context.appLocalization.toHour,
-                      child: DayTimeEditor(
-                        initialValue: _request.toHour,
-                        onChanged: (value) => _request.toHour = value,
+                    Expanded(
+                      child: WidgetTitle(
+                        title: context.appLocalization.toHour,
+                        child: DayTimeEditor(
+                          initialValue: _request.toHour,
+                          onChanged: (value) => _request.toHour = value,
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
+                  ],
+                ),
               // if (_isLeaves)
               //   Row(
               // crossAxisAlignment: CrossAxisAlignment.start,

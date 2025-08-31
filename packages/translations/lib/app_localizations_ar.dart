@@ -1588,4 +1588,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get requestDate => 'تاريخ الطلب';
+
+  @override
+  String get leaveTime => 'وقت المغادرة';
 }
