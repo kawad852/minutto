@@ -7,8 +7,7 @@ class NotificationManagementScreen extends StatefulWidget {
   State<NotificationManagementScreen> createState() => _NotificationManagementScreenState();
 }
 
-class _NotificationManagementScreenState
-    extends State<NotificationManagementScreen> {
+class _NotificationManagementScreenState extends State<NotificationManagementScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,6 +16,8 @@ class _NotificationManagementScreenState
       ),
       bottomNavigationBar: BottomButton(
         onPressed: () {},
+        backgroundColor: context.colorPalette.blue091,
+        textColor: context.colorPalette.white,
         title: context.appLocalization.send,
       ),
       body: ListView(
