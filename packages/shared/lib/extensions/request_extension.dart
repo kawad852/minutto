@@ -15,6 +15,12 @@ extension RequestExtension on String {
           inputTitle: context.appLocalization.leaveRequest,
           dateTitle: context.appLocalization.leaveDate,
         );
+      case MyCollections.overtimes:
+        return RequestInfoModel(
+          title: context.appLocalization.overtime,
+          inputTitle: context.appLocalization.overtimeRequest,
+          dateTitle: context.appLocalization.orderDate,
+        );
       default:
         throw Exception('Collection not implemented');
     }

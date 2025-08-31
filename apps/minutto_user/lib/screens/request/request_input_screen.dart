@@ -63,9 +63,10 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final info = _collection.info(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text(context.appLocalization.vacationRequest),
+        title: Text(info.inputTitle),
       ),
       bottomNavigationBar: BottomButton(
         onPressed: () {
@@ -114,30 +115,31 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                   ),
                 ),
               // if (_isLeaves)
-              //   Row(
-              //     spacing: 10,
-              // crossAxisAlignment: CrossAxisAlignment.start,
-              //     children: [
-              //       Expanded(
-              //         child: WidgetTitle(
-              //           title: context.appLocalization.fromHour,
-              //           child: DayTimeEditor(
-              //             initialValue: "2:00",
-              //             onChanged: (value) => {},
-              //           ),
-              //         ),
-              //       ),
-              //       Expanded(
-              //         child: WidgetTitle(
-              //           title: context.appLocalization.toHour,
-              //           child: DayTimeEditor(
-              //             initialValue: "2:00",
-              //             onChanged: (value) {},
-              //           ),
-              //         ),
-              //       ),
-              //     ],
-              //   ),  // if (_isLeaves)
+              Row(
+                spacing: 10,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: WidgetTitle(
+                      title: context.appLocalization.fromHour,
+                      child: DayTimeEditor(
+                        initialValue: _request.fromHour,
+                        onChanged: (value) => _request.fromHour = value,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: WidgetTitle(
+                      title: context.appLocalization.toHour,
+                      child: DayTimeEditor(
+                        initialValue: _request.toHour,
+                        onChanged: (value) => _request.toHour = value,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              // if (_isLeaves)
               //   Row(
               // crossAxisAlignment: CrossAxisAlignment.start,
               //     spacing: 10,
@@ -162,30 +164,31 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
               //       ),
               //     ],
               //   ),
-              Row(
-                spacing: 10,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: WidgetTitle(
-                      title: context.appLocalization.startDate,
-                      child: DateEditor(
-                        onChanged: (value) => _request.fromDate = value,
-                        value: _request.fromDate,
+              if (_isVacations)
+                Row(
+                  spacing: 10,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: WidgetTitle(
+                        title: context.appLocalization.startDate,
+                        child: DateEditor(
+                          onChanged: (value) => _request.fromDate = value,
+                          value: _request.fromDate,
+                        ),
                       ),
                     ),
-                  ),
-                  Expanded(
-                    child: WidgetTitle(
-                      title: context.appLocalization.endDate,
-                      child: DateEditor(
-                        onChanged: (value) => _request.toDate = value,
-                        value: _request.toDate,
+                    Expanded(
+                      child: WidgetTitle(
+                        title: context.appLocalization.endDate,
+                        child: DateEditor(
+                          onChanged: (value) => _request.toDate = value,
+                          value: _request.toDate,
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
+                  ],
+                ),
               WidgetTitle(
                 title: context.appLocalization.note,
                 child: CustomTextField.text(
