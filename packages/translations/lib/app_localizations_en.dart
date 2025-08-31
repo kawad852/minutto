@@ -1597,4 +1597,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get leaveTime => 'Leave Time';
+
+  @override
+  String get date => 'Date';
+
+  @override
+  String get time => 'Time';
 }

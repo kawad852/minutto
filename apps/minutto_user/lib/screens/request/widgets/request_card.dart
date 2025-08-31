@@ -76,18 +76,18 @@ class RequestCard extends StatelessWidget {
                     ),
                   if (request.date != null)
                     RequestInfo(
-                      title: context.appLocalization.leaveDate,
+                      title: context.appLocalization.date,
                       value: request.date!.defaultFormat,
                     ),
                   if (request.fromHour != null && request.toHour != null)
                     RequestInfo(
-                      title: context.appLocalization.leaveTime,
+                      title: context.appLocalization.time,
                       value: "${request.fromHour!} - ${request.toHour!}",
                       ltrOnly: true,
                     ),
                   if (request.fromDate != null && request.toDate != null)
                     RequestInfo(
-                      title: context.appLocalization.vacationDate,
+                      title: context.appLocalization.date,
                       value:
                           "${request.fromDate!.defaultFormat} - ${request.toDate!.defaultFormat}",
                     ),

@@ -114,7 +114,7 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                     onChanged: (value) => _request.date = value,
                   ),
                 ),
-              if (_isLeaves)
+              if (_isLeaves || _isOvertimes)
                 Row(
                   spacing: 10,
                   crossAxisAlignment: CrossAxisAlignment.start,
