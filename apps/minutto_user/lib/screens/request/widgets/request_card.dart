@@ -11,6 +11,7 @@ class RequestCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final statusInfo = StatusEnum.info(context, request.status);
     return GestureDetector(
       onTap: () {
         context.navigate((context) => const RequestDetailsScreen());
@@ -47,40 +48,43 @@ class RequestCard extends StatelessWidget {
                 ),
               ],
             ),
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-              decoration: BoxDecoration(
-                color: context.colorPalette.greyF9F,
-                border: Border.all(color: context.colorPalette.greyEAE),
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Row(
-                children: [
-                  Expanded(
-                    flex: 2,
-                    child: RequestInfo(
-                      title: context.appLocalization.vacationDate,
-                      value: "25 -27 أغسطس",
+            if (request.fromDate != null && request.toDate != null)
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                decoration: BoxDecoration(
+                  color: context.colorPalette.greyF9F,
+                  border: Border.all(color: context.colorPalette.greyEAE),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Row(
+                  children: [
+                    Expanded(
+                      flex: 2,
+                      child: RequestInfo(
+                        title: context.appLocalization.vacationDate,
+                        value:
+                            "${request.fromDate!.defaultFormat} - ${request.toDate!.defaultFormat}",
+                      ),
                     ),
-                  ),
-                  Expanded(
-                    child: RequestInfo(
-                      title: context.appLocalization.totalDays,
-                      value: "يومين",
+                    Expanded(
+                      child: RequestInfo(
+                        title: context.appLocalization.totalDays,
+                        value:
+                            "${request.toDate!.difference(request.fromDate!).inDays} ${context.appLocalization.day}",
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
             Row(
               spacing: 10,
               children: [
                 const CustomSvg(MyIcons.checkIcon),
                 Text(
-                  "جاري انتظار الرد",
+                  statusInfo.$1,
                   style: TextStyle(
-                    color: context.colorPalette.yellowF69,
+                    color: statusInfo.$2,
                     fontSize: 14,
                   ),
                 ),

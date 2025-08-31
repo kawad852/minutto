@@ -59,7 +59,7 @@ class AdvanceCard extends StatelessWidget {
               ),
             ),
             Text(
-              StatusEnum.label(context, salaryAdvance.status),
+              StatusEnum.info(context, salaryAdvance.status).$1,
               style: TextStyle(
                 color: context.colorPalette.yellowF69,
                 fontSize: 16,

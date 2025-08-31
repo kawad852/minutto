@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:shared/extensions/base_extension.dart';
 import 'package:shared/helper/translation_extension.dart';
 
 class LanguageEnum {
@@ -38,15 +39,15 @@ enum StatusEnum {
 
   const StatusEnum(this.value);
 
-  static String label(BuildContext context, String status) {
+  static (String label, Color color) info(BuildContext context, String status) {
     final value = values.firstWhere((e) => e.value == status);
     switch (value) {
       case StatusEnum.rejected:
-        return context.appLocalization.rejected;
+        return (context.appLocalization.rejected, context.colorPalette.redDF0);
       case StatusEnum.accepted:
-        return context.appLocalization.accepted;
+        return (context.appLocalization.accepted, context.colorPalette.green19B);
       default:
-        return context.appLocalization.pending;
+        return (context.appLocalization.pending, context.colorPalette.yellowF69);
     }
   }
 }

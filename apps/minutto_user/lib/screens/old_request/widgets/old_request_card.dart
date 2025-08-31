@@ -90,7 +90,7 @@ class OldRequestCard extends StatelessWidget {
                 ),
               ),
             Text(
-              StatusEnum.label(context, request.status),
+              StatusEnum.info(context, request.status).$1,
               style: TextStyle(
                 color: context.colorPalette.yellowF69,
                 fontSize: 16,

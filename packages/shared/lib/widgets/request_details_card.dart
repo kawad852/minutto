@@ -52,7 +52,7 @@ class RequestDetailsCard extends StatelessWidget {
             title: context.appLocalization.officialReplied,
             child: SharedContainer(
               child: Text(
-                StatusEnum.label(context, request.status),
+                StatusEnum.info(context, request.status).$1,
                 style: TextStyle(
                   color: context.colorPalette.green47A,
                   fontSize: 15,
