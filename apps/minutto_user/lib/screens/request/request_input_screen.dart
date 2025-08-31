@@ -75,99 +75,102 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-        child: Column(
-          spacing: 15,
-          children: [
-            if (_isSalaryAdvances)
-              WidgetTitle(
-                title: context.appLocalization.debtValue,
-                child: CustomTextField.text(onChanged: (value) {}),
-              ),
-            if (_isOvertimes)
-              WidgetTitle(
-                title: context.appLocalization.overtimeHistory,
-                child: DateEditor(
-                  value: DateTime.now(),
-                  onChanged: (value) => {},
+        child: Form(
+          key: _formKey,
+          child: Column(
+            spacing: 15,
+            children: [
+              if (_isSalaryAdvances)
+                WidgetTitle(
+                  title: context.appLocalization.debtValue,
+                  child: CustomTextField.text(onChanged: (value) {}),
                 ),
-              ),
-            if (_isVacations)
-              WidgetTitle(
-                title: context.appLocalization.vacationType,
-                child: DropDownEditor<String>(
-                  value: _request.reason,
-                  onChanged: (value) => _request.reason = value,
-                  title: context.appLocalization.choose,
-                  items: LeaveReason.values.map((e) {
-                    final label = LeaveReason.label(context, e.value);
-                    return DropdownMenuItem(
-                      value: e.value,
-                      child: Text(label),
-                    );
-                  }).toList(),
+              if (_isOvertimes)
+                WidgetTitle(
+                  title: context.appLocalization.overtimeHistory,
+                  child: DateEditor(
+                    value: DateTime.now(),
+                    onChanged: (value) => {},
+                  ),
                 ),
-              ),
-            if (_isLeaves)
+              if (_isVacations)
+                WidgetTitle(
+                  title: context.appLocalization.vacationType,
+                  child: DropDownEditor<String>(
+                    value: _request.reason,
+                    onChanged: (value) => _request.reason = value,
+                    title: context.appLocalization.choose,
+                    items: LeaveReason.values.map((e) {
+                      final label = LeaveReason.label(context, e.value);
+                      return DropdownMenuItem(
+                        value: e.value,
+                        child: Text(label),
+                      );
+                    }).toList(),
+                  ),
+                ),
+              if (_isLeaves)
+                Row(
+                  spacing: 10,
+                  children: [
+                    Expanded(
+                      child: WidgetTitle(
+                        title: context.appLocalization.fromHour,
+                        child: DayTimeEditor(
+                          initialValue: "2:00",
+                          onChanged: (value) => {},
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: WidgetTitle(
+                        title: context.appLocalization.toHour,
+                        child: DayTimeEditor(
+                          initialValue: "2:00",
+                          onChanged: (value) {},
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               Row(
                 spacing: 10,
                 children: [
                   Expanded(
                     child: WidgetTitle(
-                      title: context.appLocalization.fromHour,
-                      child: DayTimeEditor(
-                        initialValue: "2:00",
-                        onChanged: (value) => {},
+                      title: context.appLocalization.startDate,
+                      child: DateEditor(
+                        onChanged: (value) => _request.fromDate = value,
+                        value: _request.fromDate,
                       ),
                     ),
                   ),
                   Expanded(
                     child: WidgetTitle(
-                      title: context.appLocalization.toHour,
-                      child: DayTimeEditor(
-                        initialValue: "2:00",
-                        onChanged: (value) {},
+                      title: context.appLocalization.endDate,
+                      child: DateEditor(
+                        onChanged: (value) => _request.toDate = value,
+                        value: _request.toDate,
                       ),
                     ),
                   ),
                 ],
               ),
-            Row(
-              spacing: 10,
-              children: [
-                Expanded(
-                  child: WidgetTitle(
-                    title: context.appLocalization.startDate,
-                    child: DateEditor(
-                      onChanged: (value) {},
-                      value: DateTime.now(),
-                    ),
-                  ),
+              WidgetTitle(
+                title: context.appLocalization.note,
+                child: CustomTextField.text(
+                  onChanged: (value) => _request.notes = value,
+                  hintText: context.appLocalization.writeNote,
+                  maxLines: 4,
                 ),
-                Expanded(
-                  child: WidgetTitle(
-                    title: context.appLocalization.endDate,
-                    child: DateEditor(
-                      onChanged: (value) {},
-                      value: DateTime.now(),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            WidgetTitle(
-              title: context.appLocalization.note,
-              child: CustomTextField.text(
-                onChanged: (value) => _request.notes = value,
-                hintText: context.appLocalization.writeNote,
-                maxLines: 4,
               ),
-            ),
-            WidgetTitle(
-              title: context.appLocalization.attachDocument,
-              miniTitle: " (${context.appLocalization.attachDoucOrPdf})",
-              child: AttachCard(),
-            ),
-          ],
+              WidgetTitle(
+                title: context.appLocalization.attachDocument,
+                miniTitle: " (${context.appLocalization.attachDoucOrPdf})",
+                child: AttachCard(),
+              ),
+            ],
+          ),
         ),
       ),
     );
