@@ -363,7 +363,7 @@
   "shiftManagement":"إدارة الشفتات",
   "staffManagement":"إدارة الموظفين",
   "shiftTable":"جدول الشفتات",
-  "companySystemSettings":"إعدادات نظام الشركة",
+  "companySystemSettings":"اعدادات النظام",
   "startsFrom":"يبدأ من ",
   "endsIn":"ينتهي في",
   "branches":"الفروع",
@@ -420,5 +420,10 @@
   "requestDate": "تاريخ الطلب",
   "leaveTime": "وقت المغادرة",
   "date": "التاريخ",
-  "time": "الوقت"
+  "time": "الوقت",
+  "department":"القسم",
+  "employeesNumber":"عدد الموظفين",
+  "vacationTabel":"جدول الاجازات",
+  "workTabel":"جدول الدوام",
+  "socialSecurity":"ضمان إجتماعي"
 }

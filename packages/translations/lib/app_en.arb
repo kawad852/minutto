@@ -542,7 +542,7 @@
   "shiftManagement":"Shift management",
   "staffManagement":"Staff management",
   "shiftTable":"Shift table",
-  "companySystemSettings":"Company system settings",
+  "companySystemSettings":"System settings",
   "startsFrom":"Starts from",
   "endsIn":"Ends in",
   "branches":"Branches",
@@ -599,5 +599,11 @@
   "requestDate": "Request Date",
   "leaveTime": "Leave Time",
   "date": "Date",
-  "time": "Time"
+  "time": "Time",
+  "department":"Department",
+  "employeesNumber":"Employees number",
+  "vacationTabel":"Vacation tabel",
+  "workTabel":"Work tabel",
+  "employees":"Employees",
+  "socialSecurity":"Social security"
 }

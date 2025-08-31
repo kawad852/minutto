@@ -20,12 +20,25 @@ class _ShiftManagementScreenState extends State<ShiftManagementScreen> {
         textColor: context.colorPalette.white,
         title: context.appLocalization.addEmployee,
       ),
-      body: Padding(
+      body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-        child: Column(
-          children: [
-            WidgetTitle(
-              title: context.appLocalization.shift,
+        children: [
+          WidgetTitle(
+            title: context.appLocalization.shift,
+            child: DropDownEditor<String>(
+              items: [
+                DropdownMenuItem(value: 'سوريا', child: Text('سوريا')),
+                DropdownMenuItem(value: 'الاردن', child: Text('الاردن')),
+              ],
+              onChanged: (value) {},
+              title: context.appLocalization.choose,
+              value: null,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20),
+            child: WidgetTitle(
+              title: context.appLocalization.employee,
               child: DropDownEditor<String>(
                 items: [
                   DropdownMenuItem(value: 'سوريا', child: Text('سوريا')),
@@ -36,31 +49,43 @@ class _ShiftManagementScreenState extends State<ShiftManagementScreen> {
                 value: null,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20),
-              child: WidgetTitle(
-                title: context.appLocalization.employee,
-                child: DropDownEditor<String>(
-                  items: [
-                    DropdownMenuItem(value: 'سوريا', child: Text('سوريا')),
-                    DropdownMenuItem(value: 'الاردن', child: Text('الاردن')),
-                  ],
-                  onChanged: (value) {},
-                  title: context.appLocalization.choose,
-                  value: null,
-                ),
-              ),
+          ),
+          WidgetTitle(
+            title: context.appLocalization.branch,
+            child: DropDownEditor<String>(
+              items: [
+                DropdownMenuItem(value: 'سوريا', child: Text('سوريا')),
+                DropdownMenuItem(value: 'الاردن', child: Text('الاردن')),
+              ],
+              onChanged: (value) {},
+              title: context.appLocalization.choose,
+              value: null,
             ),
-            WidgetTitle(
-              title: context.appLocalization.note,
-              child: CustomTextField.text(
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20),
+            child: WidgetTitle(
+              title: context.appLocalization.department,
+              child: DropDownEditor<String>(
+                items: [
+                  DropdownMenuItem(value: 'سوريا', child: Text('سوريا')),
+                  DropdownMenuItem(value: 'الاردن', child: Text('الاردن')),
+                ],
                 onChanged: (value) {},
-                hintText: context.appLocalization.writeNote,
-                maxLines: 4,
+                title: context.appLocalization.choose,
+                value: null,
               ),
             ),
-          ],
-        ),
+          ),
+          WidgetTitle(
+            title: context.appLocalization.note,
+            child: CustomTextField.text(
+              onChanged: (value) {},
+              hintText: context.appLocalization.writeNote,
+              maxLines: 4,
+            ),
+          ),
+        ],
       ),
     );
   }

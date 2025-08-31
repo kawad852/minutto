@@ -8,7 +8,7 @@ class SalaryTable extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 250,
+      height: 290,
       margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
       padding: const EdgeInsetsDirectional.symmetric(vertical: 6),
       decoration: BoxDecoration(
@@ -26,6 +26,7 @@ class SalaryTable extends StatelessWidget {
                 TableText(context.appLocalization.incentivesAndRewards),
                 TableText(context.appLocalization.fuelAllowance),
                 TableText(context.appLocalization.absenceDiscount),
+                TableText(context.appLocalization.socialSecurity),
                 TableText(context.appLocalization.delayDiscount),
                 TableText(context.appLocalization.advances),
                 TableText(
@@ -44,6 +45,11 @@ class SalaryTable extends StatelessWidget {
                 TableText("300.00 د.أ", isValue: true),
                 TableText("20.00 د.أ", isValue: true),
                 TableText("20.00 د.أ", isValue: true),
+                TableText(
+                  "20.00 د.أ",
+                  color: context.colorPalette.redDF0,
+                  isValue: true,
+                ),
                 TableText(
                   "20.00 د.أ",
                   color: context.colorPalette.redDF0,

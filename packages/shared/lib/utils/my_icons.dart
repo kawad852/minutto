@@ -55,4 +55,15 @@ class MyIcons {
   static const String loc = '${_path}loc.svg';
   static const String search = '${_path}search.svg';
   static const String filter = '${_path}filter.svg';
+  static const String menu = '${_path}menu.svg';
+  static const String rankIcon = '${_path}rank_icon.svg';
+  static const String manage = '${_path}manage.svg';
+  static const String staff = '${_path}staff.svg';
+  static const String staffIcon = '${_path}staff_icon.svg';
+  static const String bag = '${_path}bag.svg';
+  static const String bagIcon = '${_path}bag_icon.svg';
+  static const String settings = '${_path}settings.svg';
+  static const String bookIcon = '${_path}book_icon.svg';
+  static const String umbrellaIcon = '${_path}umbrella_icon.svg';
+  static const String notificationIcon = '${_path}notification_icon.svg';
 }

@@ -79,6 +79,11 @@ class EmployeeSalaryCard extends StatelessWidget {
             valueColor: context.colorPalette.redF95,
           ),
           SalaryInfo(
+            title: context.appLocalization.socialSecurity,
+            value: "300.00 د.أ",
+            valueColor: context.colorPalette.redF95,
+          ),
+          SalaryInfo(
             title: context.appLocalization.delayDiscount,
             value: "300.00 د.أ",
             valueColor: context.colorPalette.redF95,

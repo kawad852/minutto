@@ -2843,7 +2843,7 @@ abstract class AppLocalizations {
   /// No description provided for @companySystemSettings.
   ///
   /// In en, this message translates to:
-  /// **'Company system settings'**
+  /// **'System settings'**
   String get companySystemSettings;
 
   /// No description provided for @startsFrom.
@@ -3163,6 +3163,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Time'**
   String get time;
+
+  /// No description provided for @department.
+  ///
+  /// In en, this message translates to:
+  /// **'Department'**
+  String get department;
+
+  /// No description provided for @employeesNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Employees number'**
+  String get employeesNumber;
+
+  /// No description provided for @vacationTabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Vacation tabel'**
+  String get vacationTabel;
+
+  /// No description provided for @workTabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Work tabel'**
+  String get workTabel;
+
+  /// No description provided for @employees.
+  ///
+  /// In en, this message translates to:
+  /// **'Employees'**
+  String get employees;
+
+  /// No description provided for @socialSecurity.
+  ///
+  /// In en, this message translates to:
+  /// **'Social security'**
+  String get socialSecurity;
 }
 
 class _AppLocalizationsDelegate

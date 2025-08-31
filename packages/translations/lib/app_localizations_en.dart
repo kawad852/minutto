@@ -1440,7 +1440,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get shiftTable => 'Shift table';
 
   @override
-  String get companySystemSettings => 'Company system settings';
+  String get companySystemSettings => 'System settings';
 
   @override
   String get startsFrom => 'Starts from';
@@ -1603,4 +1603,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get time => 'Time';
+
+  @override
+  String get department => 'Department';
+
+  @override
+  String get employeesNumber => 'Employees number';
+
+  @override
+  String get vacationTabel => 'Vacation tabel';
+
+  @override
+  String get workTabel => 'Work tabel';
+
+  @override
+  String get employees => 'Employees';
+
+  @override
+  String get socialSecurity => 'Social security';
 }

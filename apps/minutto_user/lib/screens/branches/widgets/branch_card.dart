@@ -21,9 +21,20 @@ class BranchCard extends StatelessWidget {
         spacing: 8,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "فرع عمان",
-            style: style,
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  "فرع عمان",
+                  overflow: TextOverflow.ellipsis,
+                  style: style,
+                ),
+              ),
+              InkWell(
+                onTap: () {},
+                child: const CustomSvg(MyIcons.menu),
+              ),
+            ],
           ),
           Row(
             spacing: 6,
@@ -54,35 +65,6 @@ class BranchCard extends StatelessWidget {
                 style: style,
               ),
             ],
-          ),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-            margin: const EdgeInsets.only(top: 15),
-            decoration: BoxDecoration(
-              color: context.colorPalette.greyABB,
-              border: Border.all(color: context.colorPalette.greyE9E),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Row(
-              spacing: 10,
-              children: [
-                const CustomSvg(MyIcons.clock),
-                Expanded(
-                  child: Text(
-                    "9:00 ص : 06:00 ص",
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      color: context.colorPalette.black,
-                      fontSize: 14,
-                    ),
-                  ),
-                ),
-                CustomSwitch(
-                  onChanged: (value) {},
-                ),
-              ],
-            ),
           ),
         ],
       ),

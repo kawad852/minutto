@@ -30,19 +30,40 @@ class _ShiftInputScreenState extends State<ShiftInputScreen> {
                 Expanded(
                   child: WidgetTitle(
                     title: context.appLocalization.startsFrom,
-                    child: DateEditor(
+                    child: DayTimeEditor(
+                      initialValue: null,
                       onChanged: (value) {},
-                      suffixIcon: CustomSvg(MyIcons.clock),
-                      value: DateTime.now(),
                     ),
                   ),
                 ),
                 Expanded(
                   child: WidgetTitle(
                     title: context.appLocalization.endsIn,
+                    child: DayTimeEditor(
+                      onChanged: (value) {},
+                      initialValue: null,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              spacing: 10,
+              children: [
+                Expanded(
+                  child: WidgetTitle(
+                    title: context.appLocalization.startDate,
                     child: DateEditor(
                       onChanged: (value) {},
-                      suffixIcon: CustomSvg(MyIcons.clock),
+                      value: DateTime.now(),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: WidgetTitle(
+                    title: context.appLocalization.endDate,
+                    child: DateEditor(
+                      onChanged: (value) {},
                       value: DateTime.now(),
                     ),
                   ),

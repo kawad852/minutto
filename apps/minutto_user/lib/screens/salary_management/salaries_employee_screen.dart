@@ -27,7 +27,7 @@ class _SalariesEmployeeScreenState extends State<SalariesEmployeeScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               margin: const EdgeInsets.symmetric(horizontal: 20),
               decoration: BoxDecoration(
-                color: Colors.transparent,
+                color: Colors.transparent,  
                 border: Border.all(color: context.colorPalette.grey919),
                 borderRadius: BorderRadius.circular(kRadiusSecondary),
               ),

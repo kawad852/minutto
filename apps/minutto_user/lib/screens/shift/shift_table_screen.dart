@@ -15,6 +15,14 @@ class _ShiftTableScreenState extends State<ShiftTableScreen> {
       appBar: AppBar(
         title: Text(context.appLocalization.shiftTable),
       ),
+      bottomNavigationBar: BottomButton(
+        onPressed: () {
+          context.navigate((context) => const ShiftInputScreen());
+        },
+        backgroundColor: context.colorPalette.blue091,
+        textColor: context.colorPalette.white,
+        title: context.appLocalization.addShift,
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         child: Column(
@@ -67,14 +75,15 @@ class _ShiftTableScreenState extends State<ShiftTableScreen> {
                                 context.appLocalization.startsFrom,
                                 style: TextStyle(
                                   color: context.colorPalette.blue475,
-                                  fontSize: 12,
+                                  fontSize: 14,
                                 ),
                               ),
                               Text(
                                 "08:00 AM",
                                 style: TextStyle(
                                   color: context.colorPalette.blue475,
-                                  fontSize: 16,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
                             ],
@@ -90,14 +99,15 @@ class _ShiftTableScreenState extends State<ShiftTableScreen> {
                                 context.appLocalization.endsIn,
                                 style: TextStyle(
                                   color: context.colorPalette.blue475,
-                                  fontSize: 12,
+                                  fontSize: 14,
                                 ),
                               ),
                               Text(
                                 "08:00 AM",
                                 style: TextStyle(
                                   color: context.colorPalette.blue475,
-                                  fontSize: 16,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
                             ],
@@ -110,30 +120,55 @@ class _ShiftTableScreenState extends State<ShiftTableScreen> {
                     title: context.appLocalization.branches,
                     child: Container(
                       width: double.infinity,
-                      height: 73,
-                      padding: const EdgeInsets.symmetric(horizontal: 13),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 13,
+                        vertical: 10,
+                      ),
                       decoration: BoxDecoration(
                         color: Colors.transparent,
                         border: Border.all(color: context.colorPalette.greyEAE),
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
+                      child: Row(
                         spacing: 5,
                         children: [
-                          Text(
-                            context.appLocalization.branchName,
-                            style: TextStyle(
-                              color: context.colorPalette.blue475,
-                              fontSize: 12,
+                          Expanded(
+                            child: Text(
+                              context.appLocalization.branchName,
+                              style: TextStyle(
+                                color: context.colorPalette.blue475,
+                                fontSize: 14,
+                              ),
                             ),
                           ),
-                          Text(
-                            "الفرع الرئيسي ",
-                            style: TextStyle(
-                              color: context.colorPalette.blue475,
-                              fontSize: 16,
+                          Expanded(
+                            child: Text(
+                              "الفرع الرئيسي ",
+                              style: TextStyle(
+                                color: context.colorPalette.blue475,
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 20,
+                            child: ListView.builder(
+                              itemCount: 7,
+                              shrinkWrap: true,
+                              scrollDirection: Axis.horizontal,
+                              physics: const NeverScrollableScrollPhysics(),
+                              padding: EdgeInsets.zero,
+                              itemBuilder: (context, index) {
+                                return const Align(
+                                  widthFactor: 0.5,
+                                  child: BaseNetworkImage(
+                                    "",
+                                    width: 24,
+                                    height: 24,
+                                    shape: BoxShape.circle,
+                                  ),
+                                );
+                              },
                             ),
                           ),
                         ],
@@ -141,21 +176,6 @@ class _ShiftTableScreenState extends State<ShiftTableScreen> {
                     ),
                   ),
                 ],
-              ),
-            ),
-            StretchedButton(
-              onPressed: () {
-                context.navigate((context) => const ShiftInputScreen());
-              },
-              margin: const EdgeInsets.symmetric(horizontal: 70),
-              backgroundColor: context.colorPalette.blue091,
-              child: Text(
-                context.appLocalization.addShift,
-                style: TextStyle(
-                  color: context.colorPalette.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
               ),
             ),
           ],

@@ -13,6 +13,7 @@ export 'screens/department/widgets/department_card.dart';
 //FacilityManagement
 export 'screens/facility_management/facility_management_screen.dart';
 export 'screens/facility_management/widgets/facility_card.dart';
+export 'screens/facility_management/widgets/facility_bubble.dart';
 //faq
 export 'screens/faq/faq_screen.dart';
 export 'screens/faq/widgets/faq_card.dart';

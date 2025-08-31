@@ -16,39 +16,31 @@ class _BranchesScreenState extends State<BranchesScreen> {
         surfaceTintColor: Colors.transparent,
         title: Text(context.appLocalization.branches),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-        child: Column(
-          spacing: 20,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            SizedBox(
-              width: 130,
-              child: StretchedButton(
-                onPressed: () {
-                  context.navigate((context) => const BranchInputScreen());
-                },
-                child: Text(
-                  context.appLocalization.addBranch,
-                  style: TextStyle(
-                    color: context.colorPalette.black,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
+      floatingActionButton: Align(
+        alignment: AlignmentDirectional.bottomStart,
+        child: FloatingActionButton.extended(
+          onPressed: () {
+            context.navigate((context) => const BranchInputScreen());
+          },
+          backgroundColor: context.colorPalette.blueB2D,
+          label: Text(
+            context.appLocalization.addBranch,
+            style: TextStyle(
+              color: context.colorPalette.black,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
             ),
-            Expanded(
-              child: ListView.separated(
-                separatorBuilder: (context, index) => const SizedBox(height: 20),
-                itemCount: 6,
-                itemBuilder: (context, index) {
-                  return BranchCard();
-                },
-              ),
-            ),
-          ],
+          ),
         ),
+      ),
+      body: ListView.separated(
+        separatorBuilder: (context, index) => const SizedBox(height: 20),
+        itemCount: 6,
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        itemBuilder: (context, index) {
+          return BranchCard();
+        },
       ),
     );
   }

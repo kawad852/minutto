@@ -1434,7 +1434,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get shiftTable => 'جدول الشفتات';
 
   @override
-  String get companySystemSettings => 'إعدادات نظام الشركة';
+  String get companySystemSettings => 'اعدادات النظام';
 
   @override
   String get startsFrom => 'يبدأ من ';
@@ -1597,4 +1597,22 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get time => 'الوقت';
+
+  @override
+  String get department => 'القسم';
+
+  @override
+  String get employeesNumber => 'عدد الموظفين';
+
+  @override
+  String get vacationTabel => 'جدول الاجازات';
+
+  @override
+  String get workTabel => 'جدول الدوام';
+
+  @override
+  String get employees => 'الموظفين';
+
+  @override
+  String get socialSecurity => 'ضمان إجتماعي';
 }

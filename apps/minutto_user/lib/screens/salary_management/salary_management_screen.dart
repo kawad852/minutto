@@ -30,10 +30,23 @@ class _SalaryManagementScreenState extends State<SalaryManagementScreen> {
               suffixIcon: const CustomSvg(MyIcons.filter),
               hintText: context.appLocalization.searchByEmployeeName,
             ),
+            WidgetTitle(
+              title: context.appLocalization.branch,
+              child: DropDownEditor<String>(
+                items: [
+                  DropdownMenuItem(value: 'سوريا', child: Text('سوريا')),
+                  DropdownMenuItem(value: 'الاردن', child: Text('الاردن')),
+                ],
+                onChanged: (value) {},
+                title: context.appLocalization.choose,
+                value: null,
+              ),
+            ),
             ReportDate(),
             Expanded(
               child: ListView.separated(
-                separatorBuilder: (context, index) => const SizedBox(height: 10),
+                separatorBuilder: (context, index) =>
+                    const SizedBox(height: 10),
                 itemCount: 3,
                 itemBuilder: (context, index) {
                   return EmployeeCard();
