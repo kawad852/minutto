@@ -3139,6 +3139,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Leave Type'**
   String get leaveType;
+
+  /// No description provided for @requestDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Request Date'**
+  String get requestDate;
 }
 
 class _AppLocalizationsDelegate

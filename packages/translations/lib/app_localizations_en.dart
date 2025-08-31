@@ -1591,4 +1591,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get leaveType => 'Leave Type';
+
+  @override
+  String get requestDate => 'Request Date';
 }

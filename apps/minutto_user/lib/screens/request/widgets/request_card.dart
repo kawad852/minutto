@@ -41,11 +41,12 @@ class RequestCard extends StatelessWidget {
                 const SizedBox(width: 7),
                 Expanded(
                   child: Text(
-                    LeaveReason.label(context, request.reason!),
+                    "${context.appLocalization.requestDate}: ${request.createdAt.defaultFormat}",
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       color: context.colorPalette.blue091,
                       fontSize: 15,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
@@ -55,35 +56,39 @@ class RequestCard extends StatelessWidget {
                 ),
               ],
             ),
-            if (request.fromDate != null && request.toDate != null)
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-                decoration: BoxDecoration(
-                  color: context.colorPalette.greyF9F,
-                  border: Border.all(color: context.colorPalette.greyEAE),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Row(
-                  children: [
-                    Expanded(
-                      flex: 2,
-                      child: RequestInfo(
-                        title: context.appLocalization.vacationDate,
-                        value:
-                            "${request.fromDate!.defaultFormat} - ${request.toDate!.defaultFormat}",
-                      ),
-                    ),
-                    Expanded(
-                      child: RequestInfo(
-                        title: context.appLocalization.totalDays,
-                        value:
-                            "${request.toDate!.difference(request.fromDate!).inDays} ${context.appLocalization.day}",
-                      ),
-                    ),
-                  ],
-                ),
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+              decoration: BoxDecoration(
+                color: context.colorPalette.greyF9F,
+                border: Border.all(color: context.colorPalette.greyEAE),
+                borderRadius: BorderRadius.circular(8),
               ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                spacing: 10,
+                children: [
+                  if (request.reason != null)
+                    RequestInfo(
+                      title: context.appLocalization.requestType,
+                      value: LeaveReason.label(context, request.reason!),
+                    ),
+                  if (request.fromDate != null && request.toDate != null)
+                    RequestInfo(
+                      title: context.appLocalization.vacationDate,
+                      value:
+                          "${request.fromDate!.defaultFormat} - ${request.toDate!.defaultFormat}",
+                    ),
+                  if (request.fromDate != null && request.toDate != null)
+                    RequestInfo(
+                      title: context.appLocalization.totalDays,
+                      value:
+                          "${request.toDate!.difference(request.fromDate!).inDays} ${context.appLocalization.day}",
+                    ),
+                ],
+              ),
+            ),
             Row(
               spacing: 10,
               children: [
