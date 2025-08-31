@@ -3199,6 +3199,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Social security'**
   String get socialSecurity;
+
+  /// No description provided for @rest.
+  ///
+  /// In en, this message translates to:
+  /// **'Rest'**
+  String get rest;
+
+  /// No description provided for @sendNewNotification.
+  ///
+  /// In en, this message translates to:
+  /// **'Send a new notification'**
+  String get sendNewNotification;
+
+  /// No description provided for @notificationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification title'**
+  String get notificationTitle;
+
+  /// No description provided for @notificationText.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification text'**
+  String get notificationText;
+
+  /// No description provided for @sendingDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Sending date'**
+  String get sendingDate;
 }
 
 class _AppLocalizationsDelegate

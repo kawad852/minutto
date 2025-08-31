@@ -1615,4 +1615,19 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get socialSecurity => 'ضمان إجتماعي';
+
+  @override
+  String get rest => 'الاستراحة';
+
+  @override
+  String get sendNewNotification => 'إرسال إشعار جديد';
+
+  @override
+  String get notificationTitle => 'عنوان الاشعار';
+
+  @override
+  String get notificationText => 'نص الاشعار';
+
+  @override
+  String get sendingDate => 'تاريخ الارسال';
 }

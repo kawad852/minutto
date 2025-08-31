@@ -105,7 +105,9 @@ class _FacilityManagementScreenState extends State<FacilityManagementScreen> {
             child: Row(
               children: [
                 FacilityBubble(
-                  onTap: () {},
+                  onTap: () {
+                    context.navigate((context) => const AttendanceManagementScreen());
+                  },
                   title: context.appLocalization.attendanceAndDeparture,
                   icon: MyIcons.bag,
                 ),
@@ -125,7 +127,9 @@ class _FacilityManagementScreenState extends State<FacilityManagementScreen> {
           Row(
             children: [
               FacilityBubble(
-                onTap: () {},
+                onTap: () {
+                  context.navigate((context) => const NotificationManagementScreen());
+                },
                 title: context.appLocalization.notifications,
                 icon: MyIcons.notificationIcon,
               ),

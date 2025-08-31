@@ -1,8 +1,8 @@
-import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
 class AttendanceCard extends StatelessWidget {
-  const AttendanceCard({super.key});
+  final void Function() onTap;
+  const AttendanceCard({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -12,9 +12,7 @@ class AttendanceCard extends StatelessWidget {
     );
 
     return GestureDetector(
-      onTap: () {
-        context.navigate((context) => const AttendanceInputScreen());
-      },
+      onTap: onTap,
       child: Container(
         width: double.infinity,
         height: 85,

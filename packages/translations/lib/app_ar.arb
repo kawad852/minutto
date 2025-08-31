@@ -425,5 +425,10 @@
   "employeesNumber":"عدد الموظفين",
   "vacationTabel":"جدول الاجازات",
   "workTabel":"جدول الدوام",
-  "socialSecurity":"ضمان إجتماعي"
+  "socialSecurity":"ضمان إجتماعي",
+  "rest":"الاستراحة",
+  "sendNewNotification":"إرسال إشعار جديد",
+  "notificationTitle":"عنوان الاشعار",
+  "notificationText":"نص الاشعار",
+  "sendingDate":"تاريخ الارسال"
 }

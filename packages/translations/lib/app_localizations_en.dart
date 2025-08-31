@@ -1621,4 +1621,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get socialSecurity => 'Social security';
+
+  @override
+  String get rest => 'Rest';
+
+  @override
+  String get sendNewNotification => 'Send a new notification';
+
+  @override
+  String get notificationTitle => 'Notification title';
+
+  @override
+  String get notificationText => 'Notification text';
+
+  @override
+  String get sendingDate => 'Sending date';
 }

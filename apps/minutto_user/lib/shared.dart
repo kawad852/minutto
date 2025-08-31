@@ -37,6 +37,7 @@ export 'screens/home/widgets/request_bubble.dart';
 export 'screens/intro/intro_screen.dart';
 //notification
 export 'screens/notification/notification_screen.dart';
+export 'screens/notification/notification_management_screen.dart';
 export 'screens/notification/widgets/notification_card.dart';
 //request
 export 'screens/old_request/old_request_details_screen.dart';
@@ -60,7 +61,6 @@ export 'screens/reports/attendance_input_screen.dart';
 export 'screens/reports/attendance_screen.dart';
 //reports
 export 'screens/reports/reports_screen.dart';
-export 'screens/reports/widgets/attendance_card.dart';
 export 'screens/reports/widgets/attendance_info.dart';
 export 'screens/reports/widgets/custom_circle.dart';
 export 'screens/reports/widgets/leaves_card.dart';
@@ -98,3 +98,7 @@ export 'screens/salary_management/widgets/salary_info.dart';
 export 'screens/shift/shift_input_screen.dart';
 export 'screens/shift/shift_management_screen.dart';
 export 'screens/shift/shift_table_screen.dart';
+//attendance_management
+export 'screens/attendance_management/attendance_management_screen.dart';
+export 'screens/attendance_management/employee_attendance_screen.dart';
+export 'screens/attendance_management/widgets/employee_attendance_card.dart';

@@ -26,7 +26,11 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
-              return AttendanceCard();
+              return AttendanceCard(
+                onTap: () {
+                  context.navigate((context) => const AttendanceInputScreen());
+                },
+              );
             },
           ),
         ],

@@ -66,4 +66,7 @@ class MyIcons {
   static const String bookIcon = '${_path}book_icon.svg';
   static const String umbrellaIcon = '${_path}umbrella_icon.svg';
   static const String notificationIcon = '${_path}notification_icon.svg';
+  static const String enter = '${_path}enter.svg';
+  static const String searchIcon = '${_path}search_icon.svg';
+  static const String out = '${_path}out.svg';
 }

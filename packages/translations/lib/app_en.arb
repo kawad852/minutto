@@ -605,5 +605,10 @@
   "vacationTabel":"Vacation tabel",
   "workTabel":"Work tabel",
   "employees":"Employees",
-  "socialSecurity":"Social security"
+  "socialSecurity":"Social security",
+  "rest":"Rest",
+  "sendNewNotification":"Send a new notification",
+  "notificationTitle":"Notification title",
+  "notificationText":"Notification text",
+  "sendingDate":"Sending date"
 }
