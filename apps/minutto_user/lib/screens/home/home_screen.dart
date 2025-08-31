@@ -43,7 +43,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: HomeBubble(
                         onTap: () {
                           context.navigate(
-                            (context) => RequestScreen(),
+                            (context) => RequestScreen(
+                              collection: MyCollections.vacations,
+                            ),
                           );
                         },
                         icon: MyIcons.umbrella,
@@ -55,7 +57,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: HomeBubble(
                         onTap: () {
                           context.navigate(
-                            (context) => RequestScreen(),
+                            (context) => RequestScreen(
+                              collection: MyCollections.leaves,
+                            ),
                           );
                         },
                         icon: MyIcons.clockIcon,
@@ -80,7 +84,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: HomeBubble(
                         onTap: () {
                           context.navigate(
-                            (context) => RequestScreen(),
+                            (context) => RequestScreen(
+                              collection: "",
+                            ),
                           );
                         },
                         icon: MyIcons.danger,
@@ -95,7 +101,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: HomeBubble(
                         onTap: () {
                           context.navigate(
-                            (context) => RequestScreen(),
+                            (context) => RequestScreen(
+                              collection: MyCollections.salaryAdvances,
+                            ),
                           );
                         },
                         icon: MyIcons.advance,
@@ -107,7 +115,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: HomeBubble(
                         onTap: () {
                           context.navigate(
-                            (context) => RequestScreen(),
+                            (context) => RequestScreen(
+                              collection: "",
+                            ),
                           );
                         },
                         icon: MyIcons.favorite,
@@ -122,7 +132,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: HomeBubble(
                         onTap: () {
                           context.navigate(
-                            (context) => RequestScreen(),
+                            (context) => RequestScreen(
+                              collection: MyCollections.overtimes,
+                            ),
                           );
                         },
                         icon: MyIcons.money,
@@ -134,7 +146,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: HomeBubble(
                         onTap: () {
                           context.navigate(
-                            (context) => RequestScreen(),
+                            (context) => RequestScreen(
+                              collection: "",
+                            ),
                           );
                         },
                         icon: MyIcons.danger,

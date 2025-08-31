@@ -2,7 +2,12 @@ import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
 class RequestCard extends StatelessWidget {
-  const RequestCard({super.key});
+  final RequestModel request;
+
+  const RequestCard({
+    super.key,
+    required this.request,
+  });
 
   @override
   Widget build(BuildContext context) {

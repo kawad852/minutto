@@ -414,5 +414,6 @@
   "condition":"الحالة",
   "searchByEmployeeName":"بحث باسم الموظف",
   "from":"من",
-  "to":"الى"
+  "to":"الى",
+  "leaves": "المغادرات"
 }

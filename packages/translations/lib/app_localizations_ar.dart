@@ -1579,4 +1579,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get to => 'الى';
+
+  @override
+  String get leaves => 'المغادرات';
 }

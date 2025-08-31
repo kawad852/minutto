@@ -1585,4 +1585,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get to => 'To';
+
+  @override
+  String get leaves => 'Leaves';
 }

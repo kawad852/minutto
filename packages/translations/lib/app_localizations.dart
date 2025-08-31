@@ -3127,6 +3127,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'To'**
   String get to;
+
+  /// No description provided for @leaves.
+  ///
+  /// In en, this message translates to:
+  /// **'Leaves'**
+  String get leaves;
 }
 
 class _AppLocalizationsDelegate

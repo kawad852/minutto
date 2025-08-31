@@ -22,4 +22,5 @@ class MyCollections {
   static const String leaves = 'leaves';
   static const String overtimes = 'overtimes';
   static const String salaryAdvances = 'salaryAdvances';
+  static const String vacations = 'vacations';
 }

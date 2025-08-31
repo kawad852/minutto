@@ -593,5 +593,6 @@
   "condition":"The condition",
   "searchByEmployeeName":"Search by employee name",
   "from":"From",
-  "to":"To"
+  "to":"To",
+  "leaves": "Leaves"
 }

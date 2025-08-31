@@ -2,42 +2,79 @@ import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
 class RequestScreen extends StatefulWidget {
-  const RequestScreen({super.key});
+  final String collection;
+
+  const RequestScreen({
+    super.key,
+    required this.collection,
+  });
 
   @override
   State<RequestScreen> createState() => _RequestScreenState();
 }
 
 class _RequestScreenState extends State<RequestScreen> {
+  late Query<RequestModel> _query;
+
+  String get _collection => widget.collection;
+
+  void _initialize() {
+    _query = FirebaseFirestore.instance
+        .collection(_collection)
+        .requestConvertor
+        .whereUserId
+        .orderByCreatedAtDesc;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _initialize();
+  }
+
   @override
   Widget build(BuildContext context) {
+    final info = _collection.info(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          context.appLocalization.vacations,
+          info.title,
         ),
       ),
       bottomNavigationBar: BottomButton(
         onPressed: () {
           context.navigate((context) => const RequestInputScreen());
         },
-        title: context.appLocalization.vacationRequest,
+        title: info.inputTitle,
       ),
-      body: ListView(
+      body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-        children: [
-          RequestHead(),
-          RequestTabBar(),
-          ListView.separated(
-            separatorBuilder: (context, index) => const SizedBox(height: 12),
-            itemCount: 3,
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemBuilder: (context, index) {
-              return RequestCard();
-            },
-          ),
-        ],
+        child: Column(
+          children: [
+            RequestHead(),
+            RequestTabBar(),
+            Expanded(
+              child: BlitzBuilder.query(
+                query: _query,
+                onComplete: (context, snapshot, _) {
+                  if (snapshot.docs.isEmpty) {
+                    return const EmptyWidget();
+                  }
+                  return ListView.separated(
+                    separatorBuilder: (context, index) => const SizedBox(height: 12),
+                    itemCount: snapshot.docs.length,
+                    itemBuilder: (context, index) {
+                      final request = snapshot.docs[index].data();
+                      return RequestCard(
+                        request: request,
+                      );
+                    },
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
