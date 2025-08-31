@@ -1,19 +1,19 @@
 import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
-class RequestScreen extends StatefulWidget {
+class RequestsScreen extends StatefulWidget {
   final String collection;
 
-  const RequestScreen({
+  const RequestsScreen({
     super.key,
     required this.collection,
   });
 
   @override
-  State<RequestScreen> createState() => _RequestScreenState();
+  State<RequestsScreen> createState() => _RequestsScreenState();
 }
 
-class _RequestScreenState extends State<RequestScreen> {
+class _RequestsScreenState extends State<RequestsScreen> {
   late Query<RequestModel> _query;
 
   String get _collection => widget.collection;
