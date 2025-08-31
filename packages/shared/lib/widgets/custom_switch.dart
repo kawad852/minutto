@@ -10,7 +10,7 @@ class CustomSwitch extends StatelessWidget {
       height: 20,
       child: Switch(
         value: true,
-        activeThumbColor: context.colorPalette.white,
+        // activeThumbColor: context.colorPalette.white,
         activeTrackColor: context.colorPalette.blueB2D,
         onChanged: onChanged,
       ),
