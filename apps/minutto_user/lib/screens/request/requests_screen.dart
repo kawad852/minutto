@@ -43,7 +43,11 @@ class _RequestsScreenState extends State<RequestsScreen> {
       ),
       bottomNavigationBar: BottomButton(
         onPressed: () {
-          context.navigate((context) => const RequestInputScreen());
+          context.navigate(
+            (context) => RequestInputScreen(
+              collection: _collection,
+            ),
+          );
         },
         title: info.inputTitle,
       ),

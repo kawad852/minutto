@@ -53,7 +53,10 @@ class _DateEditorState extends State<DateEditor> {
       key: ValueKey(_value),
       initialValue: _value != null ? DateFormat("MMM d, yyyy").format(_value!) : null,
       labelText: "",
-      suffixIcon: widget.suffixIcon,
+      suffixIcon: CustomSvg(
+        MyIcons.calander,
+        color: context.colorPalette.blue091,
+      ),
       required: widget.required,
       onTap: () {
         _showDatePicker(context);
