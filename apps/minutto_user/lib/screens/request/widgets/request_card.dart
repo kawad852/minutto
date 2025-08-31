@@ -3,10 +3,12 @@ import 'package:shared/shared.dart';
 
 class RequestCard extends StatelessWidget {
   final RequestModel request;
+  final String collection;
 
   const RequestCard({
     super.key,
     required this.request,
+    required this.collection,
   });
 
   @override
@@ -14,7 +16,12 @@ class RequestCard extends StatelessWidget {
     final statusInfo = StatusEnum.info(context, request.status);
     return GestureDetector(
       onTap: () {
-        context.navigate((context) => const RequestDetailsScreen());
+        context.navigate(
+          (context) => RequestDetailsScreen(
+            collection: collection,
+            request: request,
+          ),
+        );
       },
       child: Container(
         width: double.infinity,

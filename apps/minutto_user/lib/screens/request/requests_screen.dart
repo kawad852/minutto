@@ -71,6 +71,7 @@ class _RequestsScreenState extends State<RequestsScreen> {
                       final request = snapshot.docs[index].data();
                       return RequestCard(
                         request: request,
+                        collection: _collection,
                       );
                     },
                   );

@@ -2,18 +2,29 @@ import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
 class RequestDetailsScreen extends StatefulWidget {
-  const RequestDetailsScreen({super.key});
+  final String collection;
+  final RequestModel request;
+
+  const RequestDetailsScreen({
+    super.key,
+    required this.collection,
+    required this.request,
+  });
 
   @override
   State<RequestDetailsScreen> createState() => _RequestDetailsScreenState();
 }
 
 class _RequestDetailsScreenState extends State<RequestDetailsScreen> {
+  RequestModel get request => widget.request;
+  String get _collection => widget.collection;
+
   @override
   Widget build(BuildContext context) {
+    final info = _collection.info(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text(context.appLocalization.leaveRequest),
+        title: Text(info.inputTitle),
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
