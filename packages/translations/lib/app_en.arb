@@ -594,5 +594,6 @@
   "searchByEmployeeName":"Search by employee name",
   "from":"From",
   "to":"To",
-  "leaves": "Leaves"
+  "leaves": "Leaves",
+  "leaveType": "Leave Type"
 }

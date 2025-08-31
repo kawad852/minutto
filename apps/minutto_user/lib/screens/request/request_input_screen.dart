@@ -85,17 +85,11 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                   title: context.appLocalization.debtValue,
                   child: CustomTextField.text(onChanged: (value) {}),
                 ),
-              if (_isOvertimes)
+              if (_isVacations || _isLeaves)
                 WidgetTitle(
-                  title: context.appLocalization.overtimeHistory,
-                  child: DateEditor(
-                    value: DateTime.now(),
-                    onChanged: (value) => {},
-                  ),
-                ),
-              if (_isVacations)
-                WidgetTitle(
-                  title: context.appLocalization.vacationType,
+                  title: _isVacations
+                      ? context.appLocalization.vacationType
+                      : context.appLocalization.leaveType,
                   child: DropDownEditor<String>(
                     value: _request.reason,
                     onChanged: (value) => _request.reason = value,
@@ -109,32 +103,68 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                     }).toList(),
                   ),
                 ),
-              if (_isLeaves)
-                Row(
-                  spacing: 10,
-                  children: [
-                    Expanded(
-                      child: WidgetTitle(
-                        title: context.appLocalization.fromHour,
-                        child: DayTimeEditor(
-                          initialValue: "2:00",
-                          onChanged: (value) => {},
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: WidgetTitle(
-                        title: context.appLocalization.toHour,
-                        child: DayTimeEditor(
-                          initialValue: "2:00",
-                          onChanged: (value) {},
-                        ),
-                      ),
-                    ),
-                  ],
+              if (_isLeaves || _isOvertimes)
+                WidgetTitle(
+                  title: _isLeaves
+                      ? context.appLocalization.leaveDate
+                      : context.appLocalization.overtimeHistory,
+                  child: DateEditor(
+                    value: _request.date,
+                    onChanged: (value) => _request.date = value,
+                  ),
                 ),
+              // if (_isLeaves)
+              //   Row(
+              //     spacing: 10,
+              // crossAxisAlignment: CrossAxisAlignment.start,
+              //     children: [
+              //       Expanded(
+              //         child: WidgetTitle(
+              //           title: context.appLocalization.fromHour,
+              //           child: DayTimeEditor(
+              //             initialValue: "2:00",
+              //             onChanged: (value) => {},
+              //           ),
+              //         ),
+              //       ),
+              //       Expanded(
+              //         child: WidgetTitle(
+              //           title: context.appLocalization.toHour,
+              //           child: DayTimeEditor(
+              //             initialValue: "2:00",
+              //             onChanged: (value) {},
+              //           ),
+              //         ),
+              //       ),
+              //     ],
+              //   ),  // if (_isLeaves)
+              //   Row(
+              // crossAxisAlignment: CrossAxisAlignment.start,
+              //     spacing: 10,
+              //     children: [
+              //       Expanded(
+              //         child: WidgetTitle(
+              //           title: context.appLocalization.fromHour,
+              //           child: DayTimeEditor(
+              //             initialValue: "2:00",
+              //             onChanged: (value) => {},
+              //           ),
+              //         ),
+              //       ),
+              //       Expanded(
+              //         child: WidgetTitle(
+              //           title: context.appLocalization.toHour,
+              //           child: DayTimeEditor(
+              //             initialValue: "2:00",
+              //             onChanged: (value) {},
+              //           ),
+              //         ),
+              //       ),
+              //     ],
+              //   ),
               Row(
                 spacing: 10,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Expanded(
                     child: WidgetTitle(

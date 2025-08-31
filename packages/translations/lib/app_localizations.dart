@@ -3133,6 +3133,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Leaves'**
   String get leaves;
+
+  /// No description provided for @leaveType.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave Type'**
+  String get leaveType;
 }
 
 class _AppLocalizationsDelegate

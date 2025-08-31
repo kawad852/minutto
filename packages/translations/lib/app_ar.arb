@@ -415,5 +415,6 @@
   "searchByEmployeeName":"بحث باسم الموظف",
   "from":"من",
   "to":"الى",
-  "leaves": "المغادرات"
+  "leaves": "المغادرات",
+  "leaveType": "نوع المغادرة"
 }

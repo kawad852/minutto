@@ -1582,4 +1582,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get leaves => 'المغادرات';
+
+  @override
+  String get leaveType => 'نوع المغادرة';
 }
