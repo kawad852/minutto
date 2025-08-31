@@ -324,7 +324,7 @@ class __$$RequestModelImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(explicitToJson: true)
-class _$RequestModelImpl implements _RequestModel {
+class _$RequestModelImpl extends _RequestModel {
   _$RequestModelImpl({
     @TimestampSerializer() required this.createdAt,
     @TimestampSerializer() this.fromDate,
@@ -341,7 +341,7 @@ class _$RequestModelImpl implements _RequestModel {
     this.notes,
     this.adminNotes,
     this.attachments = const [],
-  });
+  }) : super._();
 
   factory _$RequestModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$RequestModelImplFromJson(json);
@@ -406,7 +406,7 @@ class _$RequestModelImpl implements _RequestModel {
   }
 }
 
-abstract class _RequestModel implements RequestModel {
+abstract class _RequestModel extends RequestModel {
   factory _RequestModel({
     @TimestampSerializer() required DateTime createdAt,
     @TimestampSerializer() DateTime? fromDate,
@@ -424,6 +424,7 @@ abstract class _RequestModel implements RequestModel {
     String? adminNotes,
     List<AttachmentModel> attachments,
   }) = _$RequestModelImpl;
+  _RequestModel._() : super._();
 
   factory _RequestModel.fromJson(Map<String, dynamic> json) =
       _$RequestModelImpl.fromJson;

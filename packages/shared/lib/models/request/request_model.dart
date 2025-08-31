@@ -25,4 +25,14 @@ class RequestModel with _$RequestModel {
   }) = _RequestModel;
 
   factory RequestModel.fromJson(Map<String, dynamic> json) => _$RequestModelFromJson(json);
+
+  RequestModel._();
+
+  (String, Color) statusInfo(BuildContext context) {
+    return StatusEnum.info(context, status);
+  }
+
+  String reasonLabel(BuildContext context) {
+    return LeaveReason.label(context, reason!);
+  }
 }
