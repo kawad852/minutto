@@ -14,7 +14,13 @@ class _ShiftInputScreenState extends State<ShiftInputScreen> {
       appBar: AppBar(
         title: Text(context.appLocalization.addShift),
       ),
-      body: Padding(
+      bottomNavigationBar: BottomButton(
+        onPressed: () {},
+        title: context.appLocalization.add,
+        backgroundColor: context.colorPalette.blue091,
+        textColor: context.colorPalette.white,
+      ),
+      body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,6 +53,31 @@ class _ShiftInputScreenState extends State<ShiftInputScreen> {
                 ),
               ],
             ),
+            WidgetTitle(
+              title: context.appLocalization.chooseMoreBranch,
+              child: DropDownEditor<String>(
+                items: [
+                  DropdownMenuItem(value: 'سوريا', child: Text('سوريا')),
+                  DropdownMenuItem(value: 'الاردن', child: Text('الاردن')),
+                ],
+                onChanged: (value) {},
+                title: context.appLocalization.choose,
+                value: null,
+              ),
+            ),
+            Row(
+              spacing: 10,
+              children: [
+                CustomSwitch(onChanged: (value) {}),
+                Text(
+                  context.appLocalization.saturday,
+                  style: TextStyle(
+                    color: context.colorPalette.grey718,
+                    fontSize: 16,
+                  ),
+                ),
+              ],
+            ),
             Row(
               spacing: 10,
               children: [
@@ -70,30 +101,41 @@ class _ShiftInputScreenState extends State<ShiftInputScreen> {
                 ),
               ],
             ),
-            WidgetTitle(
-              title: context.appLocalization.chooseMoreBranch,
-              child: DropDownEditor<String>(
-                items: [
-                  DropdownMenuItem(value: 'سوريا', child: Text('سوريا')),
-                  DropdownMenuItem(value: 'الاردن', child: Text('الاردن')),
-                ],
-                onChanged: (value) {},
-                title: context.appLocalization.choose,
-                value: null,
-              ),
-            ),
-            StretchedButton(
-              onPressed: () {},
-              margin: const EdgeInsets.only(top: 40),
-              backgroundColor: context.colorPalette.blue091,
-              child: Text(
-                context.appLocalization.add,
-                style: TextStyle(
-                  color: context.colorPalette.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
+            Row(
+              spacing: 10,
+              children: [
+                CustomSwitch(onChanged: (value) {}),
+                Text(
+                  context.appLocalization.sunday,
+                  style: TextStyle(
+                    color: context.colorPalette.grey718,
+                    fontSize: 16,
+                  ),
                 ),
-              ),
+              ],
+            ),
+            Row(
+              spacing: 10,
+              children: [
+                Expanded(
+                  child: WidgetTitle(
+                    title: context.appLocalization.startDate,
+                    child: DateEditor(
+                      onChanged: (value) {},
+                      value: DateTime.now(),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: WidgetTitle(
+                    title: context.appLocalization.endDate,
+                    child: DateEditor(
+                      onChanged: (value) {},
+                      value: DateTime.now(),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),

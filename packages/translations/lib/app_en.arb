@@ -642,5 +642,12 @@
   "confirmRejection":"Confirm rejection",
   "confirmAcceptance":"Confirm acceptance",
   "no":"No",
-  "requestDetails":"Request details"
+  "requestDetails":"Request details",
+  "saturday":"Saturday",
+  "sunday":"Sunday",
+  "monday":"Monday",
+  "tuesday":"Tuesday",
+  "wednesday":"Wednesday",
+  "thursday":"Thursday",
+  "friday":"Friday"
 }

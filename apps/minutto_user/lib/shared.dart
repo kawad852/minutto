@@ -97,6 +97,7 @@ export 'screens/salary_management/widgets/salary_info.dart';
 export 'screens/shift/shift_input_screen.dart';
 export 'screens/shift/shift_management_screen.dart';
 export 'screens/shift/shift_table_screen.dart';
+export 'screens/shift/widgets/shift_card.dart';
 //attendance_management
 export 'screens/attendance_management/attendance_management_screen.dart';
 export 'screens/attendance_management/employee_attendance_screen.dart';
