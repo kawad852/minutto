@@ -41,6 +41,11 @@ class _FacilityManagementScreenState extends State<FacilityManagementScreen> {
             spacing: 10,
             children: [
               FacilityCard(
+                onTap: () {
+                  context.navigate(
+                    (context) => const RequestManagementScreen(),
+                  );
+                },
                 title: context.appLocalization.requests,
                 value: "200",
                 rank: "12",

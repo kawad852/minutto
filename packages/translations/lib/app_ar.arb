@@ -448,5 +448,21 @@
   "morePersonCanSelected":"يمكن اختيار أكثر من شخص",
   "discountType":"نوع الخصم",
   "branchEmployeeBelongs":"الفرع التابع له الموظف",
-  "incentiveValue":"قيمة الحافز"
+  "incentiveValue":"قيمة الحافز",
+  "leaveRequests":"طلبات المغادرة",
+  "vacationRequests":"طلبات الاجازة",
+  "breakRequests":"طلبات الاستراحة",
+  "incentiveRequests":"طلبات الحوافز",
+  "overtimeRequests":"طلبات عمل اضافي",
+  "remainingBalanceAdvance":"الرصيد المتبقى من السلف",
+  "accept":"قبول",
+  "reject":"رفض",
+  "sureAcceptFile":"هل أنت متأكد من قبول الملف؟",
+  "sureRejectFile":"هل أنت متأكد من رفض الملف؟",
+  "leaveResponse":"يمكنك ترك رد على الموظف",
+  "reasonRejection":"سبب الرفض",
+  "confirmRejection":"تأكيد الرفض",
+  "confirmAcceptance":"تأكيد القبول",
+  "no":"لا",
+  "requestDetails":"تفاصيل الطلب"
 }

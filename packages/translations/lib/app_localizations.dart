@@ -3337,6 +3337,84 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Incentive value'**
   String get incentiveValue;
+
+  /// No description provided for @leaveRequests.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave requests'**
+  String get leaveRequests;
+
+  /// No description provided for @vacationRequests.
+  ///
+  /// In en, this message translates to:
+  /// **'Vacation requests'**
+  String get vacationRequests;
+
+  /// No description provided for @breakRequests.
+  ///
+  /// In en, this message translates to:
+  /// **'Break requests'**
+  String get breakRequests;
+
+  /// No description provided for @incentiveRequests.
+  ///
+  /// In en, this message translates to:
+  /// **'Incentive requests'**
+  String get incentiveRequests;
+
+  /// No description provided for @remainingBalanceAdvance.
+  ///
+  /// In en, this message translates to:
+  /// **'Remaining balance of advance'**
+  String get remainingBalanceAdvance;
+
+  /// No description provided for @sureAcceptFile.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure to accept the file?'**
+  String get sureAcceptFile;
+
+  /// No description provided for @sureRejectFile.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure to reject the file?'**
+  String get sureRejectFile;
+
+  /// No description provided for @leaveResponse.
+  ///
+  /// In en, this message translates to:
+  /// **'You can leave a response to the employee.'**
+  String get leaveResponse;
+
+  /// No description provided for @reasonRejection.
+  ///
+  /// In en, this message translates to:
+  /// **'Reason for rejection'**
+  String get reasonRejection;
+
+  /// No description provided for @confirmRejection.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm rejection'**
+  String get confirmRejection;
+
+  /// No description provided for @confirmAcceptance.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm acceptance'**
+  String get confirmAcceptance;
+
+  /// No description provided for @no.
+  ///
+  /// In en, this message translates to:
+  /// **'No'**
+  String get no;
+
+  /// No description provided for @requestDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Request details'**
+  String get requestDetails;
 }
 
 class _AppLocalizationsDelegate

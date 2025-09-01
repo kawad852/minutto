@@ -1691,4 +1691,43 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get incentiveValue => 'Incentive value';
+
+  @override
+  String get leaveRequests => 'Leave requests';
+
+  @override
+  String get vacationRequests => 'Vacation requests';
+
+  @override
+  String get breakRequests => 'Break requests';
+
+  @override
+  String get incentiveRequests => 'Incentive requests';
+
+  @override
+  String get remainingBalanceAdvance => 'Remaining balance of advance';
+
+  @override
+  String get sureAcceptFile => 'Are you sure to accept the file?';
+
+  @override
+  String get sureRejectFile => 'Are you sure to reject the file?';
+
+  @override
+  String get leaveResponse => 'You can leave a response to the employee.';
+
+  @override
+  String get reasonRejection => 'Reason for rejection';
+
+  @override
+  String get confirmRejection => 'Confirm rejection';
+
+  @override
+  String get confirmAcceptance => 'Confirm acceptance';
+
+  @override
+  String get no => 'No';
+
+  @override
+  String get requestDetails => 'Request details';
 }

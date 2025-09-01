@@ -562,10 +562,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get newOrder => 'طلب جديد';
 
   @override
-  String get accept => 'Accept';
+  String get accept => 'قبول';
 
   @override
-  String get reject => 'Reject';
+  String get reject => 'رفض';
 
   @override
   String get buildingType => 'Building Type';
@@ -1195,7 +1195,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get saveModifications => 'حفظ التعديلات';
 
   @override
-  String get overtimeRequests => 'طلبات العمل الإضافي';
+  String get overtimeRequests => 'طلبات عمل اضافي';
 
   @override
   String get overtimeRequest => 'طلب عمل اضافي';
@@ -1684,4 +1684,43 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get incentiveValue => 'قيمة الحافز';
+
+  @override
+  String get leaveRequests => 'طلبات المغادرة';
+
+  @override
+  String get vacationRequests => 'طلبات الاجازة';
+
+  @override
+  String get breakRequests => 'طلبات الاستراحة';
+
+  @override
+  String get incentiveRequests => 'طلبات الحوافز';
+
+  @override
+  String get remainingBalanceAdvance => 'الرصيد المتبقى من السلف';
+
+  @override
+  String get sureAcceptFile => 'هل أنت متأكد من قبول الملف؟';
+
+  @override
+  String get sureRejectFile => 'هل أنت متأكد من رفض الملف؟';
+
+  @override
+  String get leaveResponse => 'يمكنك ترك رد على الموظف';
+
+  @override
+  String get reasonRejection => 'سبب الرفض';
+
+  @override
+  String get confirmRejection => 'تأكيد الرفض';
+
+  @override
+  String get confirmAcceptance => 'تأكيد القبول';
+
+  @override
+  String get no => 'لا';
+
+  @override
+  String get requestDetails => 'تفاصيل الطلب';
 }
