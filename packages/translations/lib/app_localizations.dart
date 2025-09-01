@@ -3229,6 +3229,114 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sending date'**
   String get sendingDate;
+
+  /// No description provided for @employmentContracts.
+  ///
+  /// In en, this message translates to:
+  /// **'Employment contracts'**
+  String get employmentContracts;
+
+  /// No description provided for @addNewEmployee.
+  ///
+  /// In en, this message translates to:
+  /// **'Add new employee'**
+  String get addNewEmployee;
+
+  /// No description provided for @addStaff.
+  ///
+  /// In en, this message translates to:
+  /// **'Add employee'**
+  String get addStaff;
+
+  /// No description provided for @personalData.
+  ///
+  /// In en, this message translates to:
+  /// **'Personal data'**
+  String get personalData;
+
+  /// No description provided for @employeeName.
+  ///
+  /// In en, this message translates to:
+  /// **'Employee name'**
+  String get employeeName;
+
+  /// No description provided for @gender.
+  ///
+  /// In en, this message translates to:
+  /// **'Gender'**
+  String get gender;
+
+  /// No description provided for @maritalStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Marital status'**
+  String get maritalStatus;
+
+  /// No description provided for @next.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get next;
+
+  /// No description provided for @workData.
+  ///
+  /// In en, this message translates to:
+  /// **'Work data'**
+  String get workData;
+
+  /// No description provided for @financialStatements.
+  ///
+  /// In en, this message translates to:
+  /// **'Financial statements'**
+  String get financialStatements;
+
+  /// No description provided for @confirmAddition.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm addition'**
+  String get confirmAddition;
+
+  /// No description provided for @addAlarm.
+  ///
+  /// In en, this message translates to:
+  /// **'Add alarm'**
+  String get addAlarm;
+
+  /// No description provided for @addDiscount.
+  ///
+  /// In en, this message translates to:
+  /// **'Add discount'**
+  String get addDiscount;
+
+  /// No description provided for @addIncentive.
+  ///
+  /// In en, this message translates to:
+  /// **'Add incentive'**
+  String get addIncentive;
+
+  /// No description provided for @morePersonCanSelected.
+  ///
+  /// In en, this message translates to:
+  /// **'More than one person can be selected.'**
+  String get morePersonCanSelected;
+
+  /// No description provided for @discountType.
+  ///
+  /// In en, this message translates to:
+  /// **'Discount type'**
+  String get discountType;
+
+  /// No description provided for @branchEmployeeBelongs.
+  ///
+  /// In en, this message translates to:
+  /// **'The branch to which the employee belongs'**
+  String get branchEmployeeBelongs;
+
+  /// No description provided for @incentiveValue.
+  ///
+  /// In en, this message translates to:
+  /// **'Incentive value'**
+  String get incentiveValue;
 }
 
 class _AppLocalizationsDelegate

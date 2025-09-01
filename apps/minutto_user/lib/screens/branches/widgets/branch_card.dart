@@ -30,10 +30,7 @@ class BranchCard extends StatelessWidget {
                   style: style,
                 ),
               ),
-              InkWell(
-                onTap: () {},
-                child: const CustomSvg(MyIcons.menu),
-              ),
+              CustomMenu(),
             ],
           ),
           Row(

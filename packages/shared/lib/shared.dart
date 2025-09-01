@@ -279,3 +279,5 @@ export 'widgets/stretch_button.dart';
 export 'widgets/widget_title.dart';
 export 'widgets/custom_calender.dart';
 export 'widgets/attendance_card.dart';
+export 'widgets/custom_menu.dart';
+export 'widgets/attach_card.dart';

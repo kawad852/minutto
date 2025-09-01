@@ -69,4 +69,13 @@ class MyIcons {
   static const String enter = '${_path}enter.svg';
   static const String searchIcon = '${_path}search_icon.svg';
   static const String out = '${_path}out.svg';
+  static const String advancesManage = '${_path}advances_manage.svg';
+  static const String shiftTabel = '${_path}shift_tabel.svg';
+  static const String work = '${_path}work.svg';
+  static const String branchManage = '${_path}branch_manage.svg';
+  static const String shiftManage = '${_path}shift_manage.svg';
+  static const String salaryManage = '${_path}salary_manage.svg';
+  static const String trash = '${_path}trash.svg';
+  static const String editIcon = '${_path}edit_icon.svg';
+  static const String addIcon = '${_path}add_icon.svg';
 }

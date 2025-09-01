@@ -65,15 +65,23 @@ class _FacilityManagementScreenState extends State<FacilityManagementScreen> {
                     context.navigate((context) => const BranchesScreen());
                   },
                   title: context.appLocalization.branchManagement,
+                  icon: MyIcons.branchManage,
                 ),
                 FacilityBubble(
                   onTap: () {
-                    context.navigate((context) => const ShiftManagementScreen());
+                    context.navigate(
+                      (context) => const ShiftManagementScreen(),
+                    );
                   },
                   title: context.appLocalization.shiftManagement,
+                  icon: MyIcons.shiftManage,
                 ),
                 FacilityBubble(
-                  onTap: () {},
+                  onTap: () {
+                    context.navigate(
+                      (context) => const StaffManagementScreen(),
+                    );
+                  },
                   title: context.appLocalization.employees,
                   icon: MyIcons.staff,
                 ),
@@ -87,16 +95,19 @@ class _FacilityManagementScreenState extends State<FacilityManagementScreen> {
                   context.navigate((context) => const SalaryManagementScreen());
                 },
                 title: context.appLocalization.salaries,
+                icon: MyIcons.salaryManage,
               ),
               FacilityBubble(
                 onTap: () {},
                 title: context.appLocalization.advances,
+                icon: MyIcons.advancesManage,
               ),
               FacilityBubble(
                 onTap: () {
                   context.navigate((context) => const ShiftTableScreen());
                 },
                 title: context.appLocalization.shiftTable,
+                icon: MyIcons.shiftTabel,
               ),
             ],
           ),
@@ -106,20 +117,22 @@ class _FacilityManagementScreenState extends State<FacilityManagementScreen> {
               children: [
                 FacilityBubble(
                   onTap: () {
-                    context.navigate((context) => const AttendanceManagementScreen());
+                    context.navigate(
+                      (context) => const AttendanceManagementScreen(),
+                    );
                   },
                   title: context.appLocalization.attendanceAndDeparture,
                   icon: MyIcons.bag,
                 ),
                 FacilityBubble(
                   onTap: () {},
-                  title: context.appLocalization.companySystemSettings,
-                  icon: MyIcons.settings,
+                  title: context.appLocalization.vacationTabel,
+                  icon: MyIcons.umbrellaIcon,
                 ),
                 FacilityBubble(
                   onTap: () {},
-                  title: context.appLocalization.vacationTabel,
-                  icon: MyIcons.umbrellaIcon,
+                  title: context.appLocalization.workTabel,
+                  icon: MyIcons.work,
                 ),
               ],
             ),
@@ -127,18 +140,24 @@ class _FacilityManagementScreenState extends State<FacilityManagementScreen> {
           Row(
             children: [
               FacilityBubble(
+                onTap: () {},
+                title: context.appLocalization.employmentContracts,
+                icon: MyIcons.work,
+              ),
+              FacilityBubble(
                 onTap: () {
-                  context.navigate((context) => const NotificationManagementScreen());
+                  context.navigate(
+                    (context) => const NotificationManagementScreen(),
+                  );
                 },
                 title: context.appLocalization.notifications,
                 icon: MyIcons.notificationIcon,
               ),
               FacilityBubble(
                 onTap: () {},
-                title: context.appLocalization.workTabel,
-                icon: MyIcons.umbrellaIcon,
+                title: context.appLocalization.companySystemSettings,
+                icon: MyIcons.settings,
               ),
-              Expanded(child: SizedBox.shrink()),
             ],
           ),
         ],

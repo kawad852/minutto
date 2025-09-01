@@ -1636,4 +1636,59 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get sendingDate => 'Sending date';
+
+  @override
+  String get employmentContracts => 'Employment contracts';
+
+  @override
+  String get addNewEmployee => 'Add new employee';
+
+  @override
+  String get addStaff => 'Add employee';
+
+  @override
+  String get personalData => 'Personal data';
+
+  @override
+  String get employeeName => 'Employee name';
+
+  @override
+  String get gender => 'Gender';
+
+  @override
+  String get maritalStatus => 'Marital status';
+
+  @override
+  String get next => 'Next';
+
+  @override
+  String get workData => 'Work data';
+
+  @override
+  String get financialStatements => 'Financial statements';
+
+  @override
+  String get confirmAddition => 'Confirm addition';
+
+  @override
+  String get addAlarm => 'Add alarm';
+
+  @override
+  String get addDiscount => 'Add discount';
+
+  @override
+  String get addIncentive => 'Add incentive';
+
+  @override
+  String get morePersonCanSelected => 'More than one person can be selected.';
+
+  @override
+  String get discountType => 'Discount type';
+
+  @override
+  String get branchEmployeeBelongs =>
+      'The branch to which the employee belongs';
+
+  @override
+  String get incentiveValue => 'Incentive value';
 }

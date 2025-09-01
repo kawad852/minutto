@@ -69,7 +69,6 @@ export 'screens/request/request_details_screen.dart';
 export 'screens/request/request_input_screen.dart';
 //request
 export 'screens/request/requests_screen.dart';
-export 'screens/request/widgets/attach_card.dart';
 export 'screens/request/widgets/details_card.dart';
 export 'screens/request/widgets/details_info.dart';
 export 'screens/request/widgets/info_bubble.dart';
@@ -102,3 +101,12 @@ export 'screens/shift/shift_table_screen.dart';
 export 'screens/attendance_management/attendance_management_screen.dart';
 export 'screens/attendance_management/employee_attendance_screen.dart';
 export 'screens/attendance_management/widgets/employee_attendance_card.dart';
+//staff _management
+export 'screens/staff_management/staff_management_screen.dart';
+export 'screens/staff_management/staff_input_screen.dart';
+export 'screens/staff_management/additions_input_screen.dart';
+export 'screens/staff_management/widgets/staff_card.dart';
+export 'screens/staff_management/widgets/personal_data.dart';
+export 'screens/staff_management/widgets/work_data.dart';
+export 'screens/staff_management/widgets/finance_date.dart';
+export 'screens/staff_management/widgets/staff_dialog.dart';

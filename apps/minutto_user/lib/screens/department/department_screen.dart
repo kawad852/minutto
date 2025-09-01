@@ -15,39 +15,31 @@ class _DepartmentScreenState extends State<DepartmentScreen> {
       appBar: AppBar(
         title: Text(context.appLocalization.departments),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-        child: Column(
-          spacing: 20,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            SizedBox(
-              width: 150,
-              child: StretchedButton(
-                onPressed: () {
-                  context.navigate((context) => const DepartmentInputScreen());
-                },
-                child: Text(
-                  context.appLocalization.addDepartment,
-                  style: TextStyle(
-                    color: context.colorPalette.black,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
+      floatingActionButton: Align(
+        alignment: AlignmentDirectional.bottomStart,
+        child: FloatingActionButton.extended(
+          onPressed: () {
+            context.navigate((context) => const DepartmentInputScreen());
+          },
+          backgroundColor: context.colorPalette.blueB2D,
+          label: Text(
+            context.appLocalization.addDepartment,
+            style: TextStyle(
+              color: context.colorPalette.black,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
             ),
-            Expanded(
-              child: ListView.separated(
-                separatorBuilder: (context, index) => const SizedBox(height: 20),
-                itemCount: 3,
-                itemBuilder: (context, index) {
-                  return DepartmentCard();
-                },
-              ),
-            ),
-          ],
+          ),
         ),
+      ),
+      body: ListView.separated(
+        separatorBuilder: (context, index) => const SizedBox(height: 20),
+        itemCount: 3,
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        itemBuilder: (context, index) {
+          return DepartmentCard();
+        },
       ),
     );
   }

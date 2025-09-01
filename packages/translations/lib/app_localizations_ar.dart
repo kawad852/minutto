@@ -1630,4 +1630,58 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get sendingDate => 'تاريخ الارسال';
+
+  @override
+  String get employmentContracts => 'عقود العمل';
+
+  @override
+  String get addNewEmployee => 'إضافة موظف جديد';
+
+  @override
+  String get addStaff => 'إضافة موظف';
+
+  @override
+  String get personalData => 'البيانات الشخصية';
+
+  @override
+  String get employeeName => 'اسم الموظف';
+
+  @override
+  String get gender => 'الجنس';
+
+  @override
+  String get maritalStatus => 'الحالة الاجتماعية';
+
+  @override
+  String get next => 'التالي';
+
+  @override
+  String get workData => 'بيانات العمل';
+
+  @override
+  String get financialStatements => 'البيانات المالية';
+
+  @override
+  String get confirmAddition => 'تأكيد الإضافة';
+
+  @override
+  String get addAlarm => 'إضافة إنذار';
+
+  @override
+  String get addDiscount => 'إضافة خصم';
+
+  @override
+  String get addIncentive => 'إضافة حافز';
+
+  @override
+  String get morePersonCanSelected => 'يمكن اختيار أكثر من شخص';
+
+  @override
+  String get discountType => 'نوع الخصم';
+
+  @override
+  String get branchEmployeeBelongs => 'الفرع التابع له الموظف';
+
+  @override
+  String get incentiveValue => 'قيمة الحافز';
 }

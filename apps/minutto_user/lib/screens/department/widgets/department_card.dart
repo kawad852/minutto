@@ -21,9 +21,17 @@ class DepartmentCard extends StatelessWidget {
         spacing: 8,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "قسم الجرافيك والتصميم",
-            style: style,
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  "قسم الجرافيك والتصميم",
+                  overflow: TextOverflow.ellipsis,
+                  style: style,
+                ),
+              ),
+              CustomMenu(),
+            ],
           ),
           Text(
             "فرع عمان",
