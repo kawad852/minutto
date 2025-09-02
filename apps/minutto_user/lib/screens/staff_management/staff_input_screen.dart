@@ -11,6 +11,9 @@ class StaffInputScreen extends StatefulWidget {
 class _StaffInputScreenState extends State<StaffInputScreen> {
   int _currentIndex = 0;
   late PageController _pageController;
+  final _formKey = GlobalKey<FormState>();
+  final _storageService = StorageService();
+
   @override
   void initState() {
     super.initState();
