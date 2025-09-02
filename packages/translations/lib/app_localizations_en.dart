@@ -1751,4 +1751,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get friday => 'Friday';
+
+  @override
+  String get male => 'Male';
+
+  @override
+  String get female => 'Female';
+
+  @override
+  String get single => 'Single';
+
+  @override
+  String get married => 'Married';
+
+  @override
+  String get divorced => 'Divorced';
+
+  @override
+  String get widowed => 'Widowed';
 }

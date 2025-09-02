@@ -3457,6 +3457,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Friday'**
   String get friday;
+
+  /// No description provided for @male.
+  ///
+  /// In en, this message translates to:
+  /// **'Male'**
+  String get male;
+
+  /// No description provided for @female.
+  ///
+  /// In en, this message translates to:
+  /// **'Female'**
+  String get female;
+
+  /// No description provided for @single.
+  ///
+  /// In en, this message translates to:
+  /// **'Single'**
+  String get single;
+
+  /// No description provided for @married.
+  ///
+  /// In en, this message translates to:
+  /// **'Married'**
+  String get married;
+
+  /// No description provided for @divorced.
+  ///
+  /// In en, this message translates to:
+  /// **'Divorced'**
+  String get divorced;
+
+  /// No description provided for @widowed.
+  ///
+  /// In en, this message translates to:
+  /// **'Widowed'**
+  String get widowed;
 }
 
 class _AppLocalizationsDelegate

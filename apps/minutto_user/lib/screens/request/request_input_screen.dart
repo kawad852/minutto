@@ -1,4 +1,3 @@
-import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
 class RequestInputScreen extends StatefulWidget {
@@ -15,7 +14,7 @@ class RequestInputScreen extends StatefulWidget {
 
 class _RequestInputScreenState extends State<RequestInputScreen> {
   late RequestModel _request;
-  var _files = <XFile>[];
+  final _files = <XFile>[];
   final _formKey = GlobalKey<FormState>();
   final _storageService = StorageService();
 

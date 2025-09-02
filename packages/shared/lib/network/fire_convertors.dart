@@ -99,4 +99,14 @@ extension FireConvertors on CollectionReference {
         fromFirestore: (snapshot, _) => SalaryAdvanceModel.fromJson(snapshot.data()!),
         toFirestore: (snapshot, _) => snapshot.toJson(),
       );
+
+  CollectionReference<DepartmentModel> get departmentConvertor => withConverter<DepartmentModel>(
+    fromFirestore: (snapshot, _) => DepartmentModel.fromJson(snapshot.data()!),
+    toFirestore: (snapshot, _) => snapshot.toJson(),
+  );
+
+  CollectionReference<BranchModel> get branchConvertor => withConverter<BranchModel>(
+    fromFirestore: (snapshot, _) => BranchModel.fromJson(snapshot.data()!),
+    toFirestore: (snapshot, _) => snapshot.toJson(),
+  );
 }

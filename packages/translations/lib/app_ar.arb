@@ -464,5 +464,11 @@
   "confirmRejection":"تأكيد الرفض",
   "confirmAcceptance":"تأكيد القبول",
   "no":"لا",
-  "requestDetails":"تفاصيل الطلب"
+  "requestDetails":"تفاصيل الطلب",
+  "male": "ذكر",
+  "female": "أنثى",
+  "single": "أعزب",
+  "married": "متزوج",
+  "divorced": "مطلق",
+  "widowed": "أرمل"
 }

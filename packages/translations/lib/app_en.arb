@@ -649,5 +649,11 @@
   "tuesday":"Tuesday",
   "wednesday":"Wednesday",
   "thursday":"Thursday",
-  "friday":"Friday"
+  "friday":"Friday",
+  "male": "Male",
+  "female": "Female",
+  "single": "Single",
+  "married": "Married",
+  "divorced": "Divorced",
+  "widowed": "Widowed"
 }

@@ -1744,4 +1744,22 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get friday => 'الجمعة';
+
+  @override
+  String get male => 'ذكر';
+
+  @override
+  String get female => 'أنثى';
+
+  @override
+  String get single => 'أعزب';
+
+  @override
+  String get married => 'متزوج';
+
+  @override
+  String get divorced => 'مطلق';
+
+  @override
+  String get widowed => 'أرمل';
 }

@@ -55,4 +55,10 @@ extension CollectionReferenceExtension on FirebaseFirestore {
 
   CollectionReference<SalaryAdvanceModel> get salaryAdvances =>
       collection(MyCollections.salaryAdvances).salaryAdvanceConvertor;
+
+  CollectionReference<DepartmentModel> get departments =>
+      collection(MyCollections.departments).departmentConvertor;
+
+  CollectionReference<BranchModel> get branches =>
+      collection(MyCollections.branches).branchConvertor;
 }

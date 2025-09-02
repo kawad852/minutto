@@ -45,4 +45,5 @@ class MyFields {
   static const String comment = 'comment';
   static const String brand = 'brand';
   static const String brand_id = 'brand.id';
+  static const String companyId = 'companyId';
 }
