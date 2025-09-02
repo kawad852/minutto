@@ -2,7 +2,13 @@ import 'package:shared/shared.dart';
 
 class RequestBubble extends StatelessWidget {
   final String title, value;
-  const RequestBubble({super.key, required this.title, required this.value});
+  final bool isProfle;
+  const RequestBubble({
+    super.key,
+    required this.title,
+    required this.value,
+    this.isProfle = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +28,9 @@ class RequestBubble extends StatelessWidget {
           spacing: 8,
           children: [
             Text(
-              "${context.appLocalization.submitRequest} $title",
+              isProfle
+                  ? title
+                  : "${context.appLocalization.submitRequest} $title",
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 color: context.colorPalette.black2D2,

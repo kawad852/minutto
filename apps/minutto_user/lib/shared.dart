@@ -131,3 +131,7 @@ export 'screens/schedule/vacation_schedule_screen.dart';
 export 'screens/schedule/vacation_input_screen.dart';
 export 'screens/schedule/widgets/advance_info_card.dart';
 export 'screens/schedule/widgets/schedule_card.dart';
+//EmploymentContracts
+export 'screens/employment_contracts/employment_contracts_screen.dart';
+export 'screens/employment_contracts/employee_profile_screen.dart';
+export 'screens/employment_contracts/widgets/tabel_bubble.dart';

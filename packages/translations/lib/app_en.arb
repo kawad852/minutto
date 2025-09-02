@@ -652,5 +652,6 @@
   "friday":"Friday",
   "acceptanceDate":"Acceptance date",
   "addVacation":"Add vacation",
-  "vacationName":"Vacation name"
+  "vacationName":"Vacation name",
+  "numberDaysRemaining":"Number days remaining"
 }

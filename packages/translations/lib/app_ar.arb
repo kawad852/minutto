@@ -467,5 +467,6 @@
   "requestDetails":"تفاصيل الطلب",
   "acceptanceDate":"تاريخ القبول",
   "addVacation":"إضافة أجازة",
-  "vacationName":"اسم الاجازة"
+  "vacationName":"اسم الاجازة",
+  "numberDaysRemaining":"عدد الايام المتبقية"
 }

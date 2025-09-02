@@ -81,4 +81,9 @@ class MyIcons {
   static const String house = '${_path}house.svg';
   static const String smallClock = '${_path}small_clock.svg';
   static const String smallCalendar = '${_path}small_calendar.svg';
+  static const String breakIcon = '${_path}break_icon.svg';
+  static const String fingerBlue = '${_path}finger_blue.svg';
+  static const String incentiveIcon = '${_path}incentive_icon.svg';
+  static const String overtime = '${_path}overtime.svg';
+  static const String workIcon = '${_path}work_icon.svg';
 }

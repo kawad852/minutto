@@ -157,7 +157,11 @@ class _FacilityManagementScreenState extends State<FacilityManagementScreen> {
           Row(
             children: [
               FacilityBubble(
-                onTap: () {},
+                onTap: () {
+                  context.navigate(
+                    (context) => const EmploymentContractsScreen(),
+                  );
+                },
                 title: context.appLocalization.employmentContracts,
                 icon: MyIcons.work,
               ),

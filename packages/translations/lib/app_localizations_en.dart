@@ -1760,4 +1760,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get vacationName => 'Vacation name';
+
+  @override
+  String get numberDaysRemaining => 'Number days remaining';
 }

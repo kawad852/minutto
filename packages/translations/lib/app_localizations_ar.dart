@@ -1753,4 +1753,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get vacationName => 'اسم الاجازة';
+
+  @override
+  String get numberDaysRemaining => 'عدد الايام المتبقية';
 }

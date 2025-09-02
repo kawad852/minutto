@@ -3475,6 +3475,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Vacation name'**
   String get vacationName;
+
+  /// No description provided for @numberDaysRemaining.
+  ///
+  /// In en, this message translates to:
+  /// **'Number days remaining'**
+  String get numberDaysRemaining;
 }
 
 class _AppLocalizationsDelegate
