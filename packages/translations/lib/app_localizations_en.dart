@@ -1751,4 +1751,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get friday => 'Friday';
+
+  @override
+  String get acceptanceDate => 'Acceptance date';
+
+  @override
+  String get addVacation => 'Add vacation';
+
+  @override
+  String get vacationName => 'Vacation name';
 }

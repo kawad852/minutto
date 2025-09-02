@@ -282,3 +282,4 @@ export 'widgets/attendance_card.dart';
 export 'widgets/custom_menu.dart';
 export 'widgets/attach_card.dart';
 export 'widgets/custom_radio.dart';
+export 'widgets/date_range_card.dart';

@@ -649,5 +649,8 @@
   "tuesday":"Tuesday",
   "wednesday":"Wednesday",
   "thursday":"Thursday",
-  "friday":"Friday"
+  "friday":"Friday",
+  "acceptanceDate":"Acceptance date",
+  "addVacation":"Add vacation",
+  "vacationName":"Vacation name"
 }

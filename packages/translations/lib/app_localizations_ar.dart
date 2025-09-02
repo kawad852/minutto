@@ -1744,4 +1744,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get friday => 'الجمعة';
+
+  @override
+  String get acceptanceDate => 'تاريخ القبول';
+
+  @override
+  String get addVacation => 'إضافة أجازة';
+
+  @override
+  String get vacationName => 'اسم الاجازة';
 }

@@ -1,20 +1,20 @@
 import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
-class SalariesEmployeeScreen extends StatefulWidget {
-  const SalariesEmployeeScreen({super.key});
+class WorkScheduleScreen extends StatefulWidget {
+  const WorkScheduleScreen({super.key});
 
   @override
-  State<SalariesEmployeeScreen> createState() => _SalariesEmployeeScreenState();
+  State<WorkScheduleScreen> createState() => _WorkScheduleScreenState();
 }
 
-class _SalariesEmployeeScreenState extends State<SalariesEmployeeScreen> {
+class _WorkScheduleScreenState extends State<WorkScheduleScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         surfaceTintColor: Colors.transparent,
-        title: Text("صهيب البكار"),
+        title: Text(context.appLocalization.workTabel),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
@@ -22,12 +22,17 @@ class _SalariesEmployeeScreenState extends State<SalariesEmployeeScreen> {
           spacing: 15,
           children: [
             DateRangeCard(),
+            CustomCalender(warpContainer: true),
             Expanded(
               child: ListView.separated(
-                separatorBuilder: (context, index) => const SizedBox(height: 20),
+                separatorBuilder: (context, index) => const SizedBox(height: 12),
                 itemCount: 10,
                 itemBuilder: (context, index) {
-                  return EmployeeSalaryCard();
+                  return ScheduleCard(
+                    title: "شيقت صباحي",
+                    time: "9:00 ص : 03:00 م",
+                    branch: "فرع عمان",
+                  );
                 },
               ),
             ),

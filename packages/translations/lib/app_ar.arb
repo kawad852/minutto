@@ -464,5 +464,8 @@
   "confirmRejection":"تأكيد الرفض",
   "confirmAcceptance":"تأكيد القبول",
   "no":"لا",
-  "requestDetails":"تفاصيل الطلب"
+  "requestDetails":"تفاصيل الطلب",
+  "acceptanceDate":"تاريخ القبول",
+  "addVacation":"إضافة أجازة",
+  "vacationName":"اسم الاجازة"
 }

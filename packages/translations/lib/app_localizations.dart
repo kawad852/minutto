@@ -3457,6 +3457,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Friday'**
   String get friday;
+
+  /// No description provided for @acceptanceDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Acceptance date'**
+  String get acceptanceDate;
+
+  /// No description provided for @addVacation.
+  ///
+  /// In en, this message translates to:
+  /// **'Add vacation'**
+  String get addVacation;
+
+  /// No description provided for @vacationName.
+  ///
+  /// In en, this message translates to:
+  /// **'Vacation name'**
+  String get vacationName;
 }
 
 class _AppLocalizationsDelegate

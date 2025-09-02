@@ -78,4 +78,7 @@ class MyIcons {
   static const String trash = '${_path}trash.svg';
   static const String editIcon = '${_path}edit_icon.svg';
   static const String addIcon = '${_path}add_icon.svg';
+  static const String house = '${_path}house.svg';
+  static const String smallClock = '${_path}small_clock.svg';
+  static const String smallCalendar = '${_path}small_calendar.svg';
 }
