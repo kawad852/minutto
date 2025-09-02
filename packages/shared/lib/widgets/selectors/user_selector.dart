@@ -19,27 +19,11 @@ class UserSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (deliveryAddressBuilder != null) {
-      return Selector<UserModel, AddressModel?>(
-        selector: (context, provider) => provider.deliveryAddress,
-        builder: (context, deliveryAddress, _) {
-          return deliveryAddressBuilder!(context, deliveryAddress);
-        },
-      );
-    } else if (recentSearchesBuilder != null) {
-      return Selector<UserModel, List<String>>(
-        selector: (context, provider) => provider.recentSearches,
-        builder: (context, value, _) {
-          return recentSearchesBuilder!(context, value);
-        },
-      );
-    } else {
-      return Selector<UserModel, UserModel>(
-        selector: (context, provider) => provider,
-        builder: (context, user, _) {
-          return builder!(context, user);
-        },
-      );
-    }
+    return Selector<UserModel, UserModel>(
+      selector: (context, provider) => provider,
+      builder: (context, user, _) {
+        return builder!(context, user);
+      },
+    );
   }
 }

@@ -5,39 +5,44 @@ part 'user_model.g.dart';
 
 @unfreezed
 class UserModel with _$UserModel {
+  @JsonSerializable(explicitToJson: true)
   factory UserModel({
-    @TimestampSerializer() DateTime? createdAt,
-    String? id,
-    String? companyId,
-    String? firstName,
-    String? lastName,
-    String? email,
-    @Default([]) List<String> deviceTokens,
-    String? username,
-    String? languageCode,
-    @Default(false) bool blocked,
-    AddressModel? deliveryAddress,
-    PickUpInfoModel? pickupInfo,
-    String? phoneCountryCode,
-    String? phoneNum,
+    @Default('') String id,
     String? roleId,
-    String? storeId,
-    String? userToken,
-    String? password,
-    @Default(0) int rewardPoints,
-    @Default([]) List<String> favoriteIds,
-    @Default([]) List<String> recentSearches,
+    @Default('') String companyId,
+    @TimestampSerializer() DateTime? createdAt,
+    @TimestampSerializer() DateTime? updatedAt,
+    @TimestampSerializer() DateTime? workStartDate,
+    @TimestampSerializer() DateTime? contractEndDate,
+    @Default('') String fullName,
+    @Default('') String phone,
+    @Default('') String email,
+    @TimestampSerializer() DateTime? birthDate,
+    @Default('') String countryCode,
+    @Default("") String gender,
+    @Default("") String maritalStatus,
+    @Default('') String departmentId,
+    @Default('') String branchId,
+    @Default('') String jobTitle,
+    @Default(0.0) double basicSalary,
+    @Default(0) int contractDurationMonths,
+    @Default('') String nationalId,
+    BankModel? bank,
+    @Default(true) bool active,
+    @Default(false) bool archived,
   }) = _UserModel;
 
   factory UserModel.fromJson(Map<String, dynamic> json) => _$UserModelFromJson(json);
+}
 
-  UserModel._();
+@unfreezed
+class BankModel with _$BankModel {
+  @JsonSerializable(explicitToJson: true)
+  factory BankModel({
+    @Default('') String name,
+    @Default('') String branch,
+    @Default('') String iban,
+  }) = _BankModel;
 
-  String? getPhoneNumber(BuildContext context) {
-    return UiHelper.getPhoneNumber(context, phoneCountryCode, phoneNum);
-  }
-
-  String get displayName {
-    return UiHelper.getDisplayName(firstName, lastName);
-  }
+  factory BankModel.fromJson(Map<String, dynamic> json) => _$BankModelFromJson(json);
 }

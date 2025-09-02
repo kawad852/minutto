@@ -6,69 +6,80 @@ part of 'user_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UserModelImpl _$$UserModelImplFromJson(
-  Map<String, dynamic> json,
-) => _$UserModelImpl(
-  createdAt: const TimestampSerializer().fromJson(json['createdAt']),
-  id: json['id'] as String?,
-  companyId: json['companyId'] as String?,
-  firstName: json['firstName'] as String?,
-  lastName: json['lastName'] as String?,
-  email: json['email'] as String?,
-  deviceTokens:
-      (json['deviceTokens'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList() ??
-      const [],
-  username: json['username'] as String?,
-  languageCode: json['languageCode'] as String?,
-  blocked: json['blocked'] as bool? ?? false,
-  deliveryAddress: json['deliveryAddress'] == null
-      ? null
-      : AddressModel.fromJson(json['deliveryAddress'] as Map<String, dynamic>),
-  pickupInfo: json['pickupInfo'] == null
-      ? null
-      : PickUpInfoModel.fromJson(json['pickupInfo'] as Map<String, dynamic>),
-  phoneCountryCode: json['phoneCountryCode'] as String?,
-  phoneNum: json['phoneNum'] as String?,
-  roleId: json['roleId'] as String?,
-  storeId: json['storeId'] as String?,
-  userToken: json['userToken'] as String?,
-  password: json['password'] as String?,
-  rewardPoints: (json['rewardPoints'] as num?)?.toInt() ?? 0,
-  favoriteIds:
-      (json['favoriteIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList() ??
-      const [],
-  recentSearches:
-      (json['recentSearches'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList() ??
-      const [],
-);
+_$UserModelImpl _$$UserModelImplFromJson(Map<String, dynamic> json) =>
+    _$UserModelImpl(
+      id: json['id'] as String? ?? '',
+      roleId: json['roleId'] as String?,
+      companyId: json['companyId'] as String? ?? '',
+      createdAt: const TimestampSerializer().fromJson(json['createdAt']),
+      updatedAt: const TimestampSerializer().fromJson(json['updatedAt']),
+      workStartDate: const TimestampSerializer().fromJson(
+        json['workStartDate'],
+      ),
+      contractEndDate: const TimestampSerializer().fromJson(
+        json['contractEndDate'],
+      ),
+      fullName: json['fullName'] as String? ?? '',
+      phone: json['phone'] as String? ?? '',
+      email: json['email'] as String? ?? '',
+      birthDate: const TimestampSerializer().fromJson(json['birthDate']),
+      countryCode: json['countryCode'] as String? ?? '',
+      gender: json['gender'] as String? ?? "",
+      maritalStatus: json['maritalStatus'] as String? ?? "",
+      departmentId: json['departmentId'] as String? ?? '',
+      branchId: json['branchId'] as String? ?? '',
+      jobTitle: json['jobTitle'] as String? ?? '',
+      basicSalary: (json['basicSalary'] as num?)?.toDouble() ?? 0.0,
+      contractDurationMonths:
+          (json['contractDurationMonths'] as num?)?.toInt() ?? 0,
+      nationalId: json['nationalId'] as String? ?? '',
+      bank: json['bank'] == null
+          ? null
+          : BankModel.fromJson(json['bank'] as Map<String, dynamic>),
+      active: json['active'] as bool? ?? true,
+      archived: json['archived'] as bool? ?? false,
+    );
 
-Map<String, dynamic> _$$UserModelImplToJson(_$UserModelImpl instance) =>
+Map<String, dynamic> _$$UserModelImplToJson(
+  _$UserModelImpl instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'roleId': instance.roleId,
+  'companyId': instance.companyId,
+  'createdAt': const TimestampSerializer().toJson(instance.createdAt),
+  'updatedAt': const TimestampSerializer().toJson(instance.updatedAt),
+  'workStartDate': const TimestampSerializer().toJson(instance.workStartDate),
+  'contractEndDate': const TimestampSerializer().toJson(
+    instance.contractEndDate,
+  ),
+  'fullName': instance.fullName,
+  'phone': instance.phone,
+  'email': instance.email,
+  'birthDate': const TimestampSerializer().toJson(instance.birthDate),
+  'countryCode': instance.countryCode,
+  'gender': instance.gender,
+  'maritalStatus': instance.maritalStatus,
+  'departmentId': instance.departmentId,
+  'branchId': instance.branchId,
+  'jobTitle': instance.jobTitle,
+  'basicSalary': instance.basicSalary,
+  'contractDurationMonths': instance.contractDurationMonths,
+  'nationalId': instance.nationalId,
+  'bank': instance.bank?.toJson(),
+  'active': instance.active,
+  'archived': instance.archived,
+};
+
+_$BankModelImpl _$$BankModelImplFromJson(Map<String, dynamic> json) =>
+    _$BankModelImpl(
+      name: json['name'] as String? ?? '',
+      branch: json['branch'] as String? ?? '',
+      iban: json['iban'] as String? ?? '',
+    );
+
+Map<String, dynamic> _$$BankModelImplToJson(_$BankModelImpl instance) =>
     <String, dynamic>{
-      'createdAt': const TimestampSerializer().toJson(instance.createdAt),
-      'id': instance.id,
-      'companyId': instance.companyId,
-      'firstName': instance.firstName,
-      'lastName': instance.lastName,
-      'email': instance.email,
-      'deviceTokens': instance.deviceTokens,
-      'username': instance.username,
-      'languageCode': instance.languageCode,
-      'blocked': instance.blocked,
-      'deliveryAddress': instance.deliveryAddress?.toJson(),
-      'pickupInfo': instance.pickupInfo?.toJson(),
-      'phoneCountryCode': instance.phoneCountryCode,
-      'phoneNum': instance.phoneNum,
-      'roleId': instance.roleId,
-      'storeId': instance.storeId,
-      'userToken': instance.userToken,
-      'password': instance.password,
-      'rewardPoints': instance.rewardPoints,
-      'favoriteIds': instance.favoriteIds,
-      'recentSearches': instance.recentSearches,
+      'name': instance.name,
+      'branch': instance.branch,
+      'iban': instance.iban,
     };

@@ -48,15 +48,14 @@ class _MyAppState extends State<MyApp> {
           providers: [
             StreamProvider<UserModel>.value(
               value: userProvider.userDocRef.snapshots().map(
-                (event) => event.data() ?? UserModel(userToken: MySharedPreferences.userToken),
+                (event) => event.data() ?? UserModel(),
               ),
-              initialData:
-                  MySharedPreferences.user ?? UserModel(userToken: MySharedPreferences.userToken),
+              initialData: MySharedPreferences.user ?? UserModel(),
               lazy: false,
               updateShouldNotify: (initialValue, value) {
                 MySharedPreferences.user = value;
                 Future.microtask(() {
-                  if (userProvider.isAuthenticated && (value.id == null || value.blocked)) {
+                  if (userProvider.isAuthenticated && (value.id.isEmpty || !value.active)) {
                     Fluttertoast.showToast(msg: "Authorization Failed");
                     // ignore: use_build_context_synchronously
                     userProvider.logout(

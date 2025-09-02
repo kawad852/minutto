@@ -81,6 +81,6 @@ class AlgoliaService {
   MultiSearcher get getMultiSearcher => MultiSearcher(
     applicationID: kAlgoliaApplicationId,
     apiKey: kAlgoliaApiKey,
-    eventTracker: InsightsService.insights,
+    // eventTracker: InsightsService.insights,
   );
 }

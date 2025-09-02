@@ -21,51 +21,62 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserModel {
+  String get id => throw _privateConstructorUsedError;
+  set id(String value) => throw _privateConstructorUsedError;
+  String? get roleId => throw _privateConstructorUsedError;
+  set roleId(String? value) => throw _privateConstructorUsedError;
+  String get companyId => throw _privateConstructorUsedError;
+  set companyId(String value) => throw _privateConstructorUsedError;
   @TimestampSerializer()
   DateTime? get createdAt => throw _privateConstructorUsedError;
   @TimestampSerializer()
   set createdAt(DateTime? value) => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  set id(String? value) => throw _privateConstructorUsedError;
-  String? get companyId => throw _privateConstructorUsedError;
-  set companyId(String? value) => throw _privateConstructorUsedError;
-  String? get firstName => throw _privateConstructorUsedError;
-  set firstName(String? value) => throw _privateConstructorUsedError;
-  String? get lastName => throw _privateConstructorUsedError;
-  set lastName(String? value) => throw _privateConstructorUsedError;
-  String? get email => throw _privateConstructorUsedError;
-  set email(String? value) => throw _privateConstructorUsedError;
-  List<String> get deviceTokens => throw _privateConstructorUsedError;
-  set deviceTokens(List<String> value) => throw _privateConstructorUsedError;
-  String? get username => throw _privateConstructorUsedError;
-  set username(String? value) => throw _privateConstructorUsedError;
-  String? get languageCode => throw _privateConstructorUsedError;
-  set languageCode(String? value) => throw _privateConstructorUsedError;
-  bool get blocked => throw _privateConstructorUsedError;
-  set blocked(bool value) => throw _privateConstructorUsedError;
-  AddressModel? get deliveryAddress => throw _privateConstructorUsedError;
-  set deliveryAddress(AddressModel? value) =>
-      throw _privateConstructorUsedError;
-  PickUpInfoModel? get pickupInfo => throw _privateConstructorUsedError;
-  set pickupInfo(PickUpInfoModel? value) => throw _privateConstructorUsedError;
-  String? get phoneCountryCode => throw _privateConstructorUsedError;
-  set phoneCountryCode(String? value) => throw _privateConstructorUsedError;
-  String? get phoneNum => throw _privateConstructorUsedError;
-  set phoneNum(String? value) => throw _privateConstructorUsedError;
-  String? get roleId => throw _privateConstructorUsedError;
-  set roleId(String? value) => throw _privateConstructorUsedError;
-  String? get storeId => throw _privateConstructorUsedError;
-  set storeId(String? value) => throw _privateConstructorUsedError;
-  String? get userToken => throw _privateConstructorUsedError;
-  set userToken(String? value) => throw _privateConstructorUsedError;
-  String? get password => throw _privateConstructorUsedError;
-  set password(String? value) => throw _privateConstructorUsedError;
-  int get rewardPoints => throw _privateConstructorUsedError;
-  set rewardPoints(int value) => throw _privateConstructorUsedError;
-  List<String> get favoriteIds => throw _privateConstructorUsedError;
-  set favoriteIds(List<String> value) => throw _privateConstructorUsedError;
-  List<String> get recentSearches => throw _privateConstructorUsedError;
-  set recentSearches(List<String> value) => throw _privateConstructorUsedError;
+  @TimestampSerializer()
+  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  @TimestampSerializer()
+  set updatedAt(DateTime? value) => throw _privateConstructorUsedError;
+  @TimestampSerializer()
+  DateTime? get workStartDate => throw _privateConstructorUsedError;
+  @TimestampSerializer()
+  set workStartDate(DateTime? value) => throw _privateConstructorUsedError;
+  @TimestampSerializer()
+  DateTime? get contractEndDate => throw _privateConstructorUsedError;
+  @TimestampSerializer()
+  set contractEndDate(DateTime? value) => throw _privateConstructorUsedError;
+  String get fullName => throw _privateConstructorUsedError;
+  set fullName(String value) => throw _privateConstructorUsedError;
+  String get phone => throw _privateConstructorUsedError;
+  set phone(String value) => throw _privateConstructorUsedError;
+  String get email => throw _privateConstructorUsedError;
+  set email(String value) => throw _privateConstructorUsedError;
+  @TimestampSerializer()
+  DateTime? get birthDate => throw _privateConstructorUsedError;
+  @TimestampSerializer()
+  set birthDate(DateTime? value) => throw _privateConstructorUsedError;
+  String get countryCode => throw _privateConstructorUsedError;
+  set countryCode(String value) => throw _privateConstructorUsedError;
+  String get gender => throw _privateConstructorUsedError;
+  set gender(String value) => throw _privateConstructorUsedError;
+  String get maritalStatus => throw _privateConstructorUsedError;
+  set maritalStatus(String value) => throw _privateConstructorUsedError;
+  String get departmentId => throw _privateConstructorUsedError;
+  set departmentId(String value) => throw _privateConstructorUsedError;
+  String get branchId => throw _privateConstructorUsedError;
+  set branchId(String value) => throw _privateConstructorUsedError;
+  String get jobTitle => throw _privateConstructorUsedError;
+  set jobTitle(String value) => throw _privateConstructorUsedError;
+  double get basicSalary => throw _privateConstructorUsedError;
+  set basicSalary(double value) => throw _privateConstructorUsedError;
+  int get contractDurationMonths => throw _privateConstructorUsedError;
+  set contractDurationMonths(int value) => throw _privateConstructorUsedError;
+  String get nationalId => throw _privateConstructorUsedError;
+  set nationalId(String value) => throw _privateConstructorUsedError;
+  BankModel? get bank => throw _privateConstructorUsedError;
+  set bank(BankModel? value) => throw _privateConstructorUsedError;
+  bool get active => throw _privateConstructorUsedError;
+  set active(bool value) => throw _privateConstructorUsedError;
+  bool get archived => throw _privateConstructorUsedError;
+  set archived(bool value) => throw _privateConstructorUsedError;
 
   /// Serializes this UserModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -83,31 +94,32 @@ abstract class $UserModelCopyWith<$Res> {
       _$UserModelCopyWithImpl<$Res, UserModel>;
   @useResult
   $Res call({
-    @TimestampSerializer() DateTime? createdAt,
-    String? id,
-    String? companyId,
-    String? firstName,
-    String? lastName,
-    String? email,
-    List<String> deviceTokens,
-    String? username,
-    String? languageCode,
-    bool blocked,
-    AddressModel? deliveryAddress,
-    PickUpInfoModel? pickupInfo,
-    String? phoneCountryCode,
-    String? phoneNum,
+    String id,
     String? roleId,
-    String? storeId,
-    String? userToken,
-    String? password,
-    int rewardPoints,
-    List<String> favoriteIds,
-    List<String> recentSearches,
+    String companyId,
+    @TimestampSerializer() DateTime? createdAt,
+    @TimestampSerializer() DateTime? updatedAt,
+    @TimestampSerializer() DateTime? workStartDate,
+    @TimestampSerializer() DateTime? contractEndDate,
+    String fullName,
+    String phone,
+    String email,
+    @TimestampSerializer() DateTime? birthDate,
+    String countryCode,
+    String gender,
+    String maritalStatus,
+    String departmentId,
+    String branchId,
+    String jobTitle,
+    double basicSalary,
+    int contractDurationMonths,
+    String nationalId,
+    BankModel? bank,
+    bool active,
+    bool archived,
   });
 
-  $AddressModelCopyWith<$Res>? get deliveryAddress;
-  $PickUpInfoModelCopyWith<$Res>? get pickupInfo;
+  $BankModelCopyWith<$Res>? get bank;
 }
 
 /// @nodoc
@@ -125,114 +137,124 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
-    Object? id = freezed,
-    Object? companyId = freezed,
-    Object? firstName = freezed,
-    Object? lastName = freezed,
-    Object? email = freezed,
-    Object? deviceTokens = null,
-    Object? username = freezed,
-    Object? languageCode = freezed,
-    Object? blocked = null,
-    Object? deliveryAddress = freezed,
-    Object? pickupInfo = freezed,
-    Object? phoneCountryCode = freezed,
-    Object? phoneNum = freezed,
+    Object? id = null,
     Object? roleId = freezed,
-    Object? storeId = freezed,
-    Object? userToken = freezed,
-    Object? password = freezed,
-    Object? rewardPoints = null,
-    Object? favoriteIds = null,
-    Object? recentSearches = null,
+    Object? companyId = null,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
+    Object? workStartDate = freezed,
+    Object? contractEndDate = freezed,
+    Object? fullName = null,
+    Object? phone = null,
+    Object? email = null,
+    Object? birthDate = freezed,
+    Object? countryCode = null,
+    Object? gender = null,
+    Object? maritalStatus = null,
+    Object? departmentId = null,
+    Object? branchId = null,
+    Object? jobTitle = null,
+    Object? basicSalary = null,
+    Object? contractDurationMonths = null,
+    Object? nationalId = null,
+    Object? bank = freezed,
+    Object? active = null,
+    Object? archived = null,
   }) {
     return _then(
       _value.copyWith(
-            createdAt: freezed == createdAt
-                ? _value.createdAt
-                : createdAt // ignore: cast_nullable_to_non_nullable
-                      as DateTime?,
-            id: freezed == id
+            id: null == id
                 ? _value.id
                 : id // ignore: cast_nullable_to_non_nullable
-                      as String?,
-            companyId: freezed == companyId
-                ? _value.companyId
-                : companyId // ignore: cast_nullable_to_non_nullable
-                      as String?,
-            firstName: freezed == firstName
-                ? _value.firstName
-                : firstName // ignore: cast_nullable_to_non_nullable
-                      as String?,
-            lastName: freezed == lastName
-                ? _value.lastName
-                : lastName // ignore: cast_nullable_to_non_nullable
-                      as String?,
-            email: freezed == email
-                ? _value.email
-                : email // ignore: cast_nullable_to_non_nullable
-                      as String?,
-            deviceTokens: null == deviceTokens
-                ? _value.deviceTokens
-                : deviceTokens // ignore: cast_nullable_to_non_nullable
-                      as List<String>,
-            username: freezed == username
-                ? _value.username
-                : username // ignore: cast_nullable_to_non_nullable
-                      as String?,
-            languageCode: freezed == languageCode
-                ? _value.languageCode
-                : languageCode // ignore: cast_nullable_to_non_nullable
-                      as String?,
-            blocked: null == blocked
-                ? _value.blocked
-                : blocked // ignore: cast_nullable_to_non_nullable
-                      as bool,
-            deliveryAddress: freezed == deliveryAddress
-                ? _value.deliveryAddress
-                : deliveryAddress // ignore: cast_nullable_to_non_nullable
-                      as AddressModel?,
-            pickupInfo: freezed == pickupInfo
-                ? _value.pickupInfo
-                : pickupInfo // ignore: cast_nullable_to_non_nullable
-                      as PickUpInfoModel?,
-            phoneCountryCode: freezed == phoneCountryCode
-                ? _value.phoneCountryCode
-                : phoneCountryCode // ignore: cast_nullable_to_non_nullable
-                      as String?,
-            phoneNum: freezed == phoneNum
-                ? _value.phoneNum
-                : phoneNum // ignore: cast_nullable_to_non_nullable
-                      as String?,
+                      as String,
             roleId: freezed == roleId
                 ? _value.roleId
                 : roleId // ignore: cast_nullable_to_non_nullable
                       as String?,
-            storeId: freezed == storeId
-                ? _value.storeId
-                : storeId // ignore: cast_nullable_to_non_nullable
-                      as String?,
-            userToken: freezed == userToken
-                ? _value.userToken
-                : userToken // ignore: cast_nullable_to_non_nullable
-                      as String?,
-            password: freezed == password
-                ? _value.password
-                : password // ignore: cast_nullable_to_non_nullable
-                      as String?,
-            rewardPoints: null == rewardPoints
-                ? _value.rewardPoints
-                : rewardPoints // ignore: cast_nullable_to_non_nullable
+            companyId: null == companyId
+                ? _value.companyId
+                : companyId // ignore: cast_nullable_to_non_nullable
+                      as String,
+            createdAt: freezed == createdAt
+                ? _value.createdAt
+                : createdAt // ignore: cast_nullable_to_non_nullable
+                      as DateTime?,
+            updatedAt: freezed == updatedAt
+                ? _value.updatedAt
+                : updatedAt // ignore: cast_nullable_to_non_nullable
+                      as DateTime?,
+            workStartDate: freezed == workStartDate
+                ? _value.workStartDate
+                : workStartDate // ignore: cast_nullable_to_non_nullable
+                      as DateTime?,
+            contractEndDate: freezed == contractEndDate
+                ? _value.contractEndDate
+                : contractEndDate // ignore: cast_nullable_to_non_nullable
+                      as DateTime?,
+            fullName: null == fullName
+                ? _value.fullName
+                : fullName // ignore: cast_nullable_to_non_nullable
+                      as String,
+            phone: null == phone
+                ? _value.phone
+                : phone // ignore: cast_nullable_to_non_nullable
+                      as String,
+            email: null == email
+                ? _value.email
+                : email // ignore: cast_nullable_to_non_nullable
+                      as String,
+            birthDate: freezed == birthDate
+                ? _value.birthDate
+                : birthDate // ignore: cast_nullable_to_non_nullable
+                      as DateTime?,
+            countryCode: null == countryCode
+                ? _value.countryCode
+                : countryCode // ignore: cast_nullable_to_non_nullable
+                      as String,
+            gender: null == gender
+                ? _value.gender
+                : gender // ignore: cast_nullable_to_non_nullable
+                      as String,
+            maritalStatus: null == maritalStatus
+                ? _value.maritalStatus
+                : maritalStatus // ignore: cast_nullable_to_non_nullable
+                      as String,
+            departmentId: null == departmentId
+                ? _value.departmentId
+                : departmentId // ignore: cast_nullable_to_non_nullable
+                      as String,
+            branchId: null == branchId
+                ? _value.branchId
+                : branchId // ignore: cast_nullable_to_non_nullable
+                      as String,
+            jobTitle: null == jobTitle
+                ? _value.jobTitle
+                : jobTitle // ignore: cast_nullable_to_non_nullable
+                      as String,
+            basicSalary: null == basicSalary
+                ? _value.basicSalary
+                : basicSalary // ignore: cast_nullable_to_non_nullable
+                      as double,
+            contractDurationMonths: null == contractDurationMonths
+                ? _value.contractDurationMonths
+                : contractDurationMonths // ignore: cast_nullable_to_non_nullable
                       as int,
-            favoriteIds: null == favoriteIds
-                ? _value.favoriteIds
-                : favoriteIds // ignore: cast_nullable_to_non_nullable
-                      as List<String>,
-            recentSearches: null == recentSearches
-                ? _value.recentSearches
-                : recentSearches // ignore: cast_nullable_to_non_nullable
-                      as List<String>,
+            nationalId: null == nationalId
+                ? _value.nationalId
+                : nationalId // ignore: cast_nullable_to_non_nullable
+                      as String,
+            bank: freezed == bank
+                ? _value.bank
+                : bank // ignore: cast_nullable_to_non_nullable
+                      as BankModel?,
+            active: null == active
+                ? _value.active
+                : active // ignore: cast_nullable_to_non_nullable
+                      as bool,
+            archived: null == archived
+                ? _value.archived
+                : archived // ignore: cast_nullable_to_non_nullable
+                      as bool,
           )
           as $Val,
     );
@@ -242,27 +264,13 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $AddressModelCopyWith<$Res>? get deliveryAddress {
-    if (_value.deliveryAddress == null) {
+  $BankModelCopyWith<$Res>? get bank {
+    if (_value.bank == null) {
       return null;
     }
 
-    return $AddressModelCopyWith<$Res>(_value.deliveryAddress!, (value) {
-      return _then(_value.copyWith(deliveryAddress: value) as $Val);
-    });
-  }
-
-  /// Create a copy of UserModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $PickUpInfoModelCopyWith<$Res>? get pickupInfo {
-    if (_value.pickupInfo == null) {
-      return null;
-    }
-
-    return $PickUpInfoModelCopyWith<$Res>(_value.pickupInfo!, (value) {
-      return _then(_value.copyWith(pickupInfo: value) as $Val);
+    return $BankModelCopyWith<$Res>(_value.bank!, (value) {
+      return _then(_value.copyWith(bank: value) as $Val);
     });
   }
 }
@@ -277,33 +285,33 @@ abstract class _$$UserModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call({
-    @TimestampSerializer() DateTime? createdAt,
-    String? id,
-    String? companyId,
-    String? firstName,
-    String? lastName,
-    String? email,
-    List<String> deviceTokens,
-    String? username,
-    String? languageCode,
-    bool blocked,
-    AddressModel? deliveryAddress,
-    PickUpInfoModel? pickupInfo,
-    String? phoneCountryCode,
-    String? phoneNum,
+    String id,
     String? roleId,
-    String? storeId,
-    String? userToken,
-    String? password,
-    int rewardPoints,
-    List<String> favoriteIds,
-    List<String> recentSearches,
+    String companyId,
+    @TimestampSerializer() DateTime? createdAt,
+    @TimestampSerializer() DateTime? updatedAt,
+    @TimestampSerializer() DateTime? workStartDate,
+    @TimestampSerializer() DateTime? contractEndDate,
+    String fullName,
+    String phone,
+    String email,
+    @TimestampSerializer() DateTime? birthDate,
+    String countryCode,
+    String gender,
+    String maritalStatus,
+    String departmentId,
+    String branchId,
+    String jobTitle,
+    double basicSalary,
+    int contractDurationMonths,
+    String nationalId,
+    BankModel? bank,
+    bool active,
+    bool archived,
   });
 
   @override
-  $AddressModelCopyWith<$Res>? get deliveryAddress;
-  @override
-  $PickUpInfoModelCopyWith<$Res>? get pickupInfo;
+  $BankModelCopyWith<$Res>? get bank;
 }
 
 /// @nodoc
@@ -320,201 +328,233 @@ class __$$UserModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
-    Object? id = freezed,
-    Object? companyId = freezed,
-    Object? firstName = freezed,
-    Object? lastName = freezed,
-    Object? email = freezed,
-    Object? deviceTokens = null,
-    Object? username = freezed,
-    Object? languageCode = freezed,
-    Object? blocked = null,
-    Object? deliveryAddress = freezed,
-    Object? pickupInfo = freezed,
-    Object? phoneCountryCode = freezed,
-    Object? phoneNum = freezed,
+    Object? id = null,
     Object? roleId = freezed,
-    Object? storeId = freezed,
-    Object? userToken = freezed,
-    Object? password = freezed,
-    Object? rewardPoints = null,
-    Object? favoriteIds = null,
-    Object? recentSearches = null,
+    Object? companyId = null,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
+    Object? workStartDate = freezed,
+    Object? contractEndDate = freezed,
+    Object? fullName = null,
+    Object? phone = null,
+    Object? email = null,
+    Object? birthDate = freezed,
+    Object? countryCode = null,
+    Object? gender = null,
+    Object? maritalStatus = null,
+    Object? departmentId = null,
+    Object? branchId = null,
+    Object? jobTitle = null,
+    Object? basicSalary = null,
+    Object? contractDurationMonths = null,
+    Object? nationalId = null,
+    Object? bank = freezed,
+    Object? active = null,
+    Object? archived = null,
   }) {
     return _then(
       _$UserModelImpl(
-        createdAt: freezed == createdAt
-            ? _value.createdAt
-            : createdAt // ignore: cast_nullable_to_non_nullable
-                  as DateTime?,
-        id: freezed == id
+        id: null == id
             ? _value.id
             : id // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        companyId: freezed == companyId
-            ? _value.companyId
-            : companyId // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        firstName: freezed == firstName
-            ? _value.firstName
-            : firstName // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        lastName: freezed == lastName
-            ? _value.lastName
-            : lastName // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        email: freezed == email
-            ? _value.email
-            : email // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        deviceTokens: null == deviceTokens
-            ? _value.deviceTokens
-            : deviceTokens // ignore: cast_nullable_to_non_nullable
-                  as List<String>,
-        username: freezed == username
-            ? _value.username
-            : username // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        languageCode: freezed == languageCode
-            ? _value.languageCode
-            : languageCode // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        blocked: null == blocked
-            ? _value.blocked
-            : blocked // ignore: cast_nullable_to_non_nullable
-                  as bool,
-        deliveryAddress: freezed == deliveryAddress
-            ? _value.deliveryAddress
-            : deliveryAddress // ignore: cast_nullable_to_non_nullable
-                  as AddressModel?,
-        pickupInfo: freezed == pickupInfo
-            ? _value.pickupInfo
-            : pickupInfo // ignore: cast_nullable_to_non_nullable
-                  as PickUpInfoModel?,
-        phoneCountryCode: freezed == phoneCountryCode
-            ? _value.phoneCountryCode
-            : phoneCountryCode // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        phoneNum: freezed == phoneNum
-            ? _value.phoneNum
-            : phoneNum // ignore: cast_nullable_to_non_nullable
-                  as String?,
+                  as String,
         roleId: freezed == roleId
             ? _value.roleId
             : roleId // ignore: cast_nullable_to_non_nullable
                   as String?,
-        storeId: freezed == storeId
-            ? _value.storeId
-            : storeId // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        userToken: freezed == userToken
-            ? _value.userToken
-            : userToken // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        password: freezed == password
-            ? _value.password
-            : password // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        rewardPoints: null == rewardPoints
-            ? _value.rewardPoints
-            : rewardPoints // ignore: cast_nullable_to_non_nullable
+        companyId: null == companyId
+            ? _value.companyId
+            : companyId // ignore: cast_nullable_to_non_nullable
+                  as String,
+        createdAt: freezed == createdAt
+            ? _value.createdAt
+            : createdAt // ignore: cast_nullable_to_non_nullable
+                  as DateTime?,
+        updatedAt: freezed == updatedAt
+            ? _value.updatedAt
+            : updatedAt // ignore: cast_nullable_to_non_nullable
+                  as DateTime?,
+        workStartDate: freezed == workStartDate
+            ? _value.workStartDate
+            : workStartDate // ignore: cast_nullable_to_non_nullable
+                  as DateTime?,
+        contractEndDate: freezed == contractEndDate
+            ? _value.contractEndDate
+            : contractEndDate // ignore: cast_nullable_to_non_nullable
+                  as DateTime?,
+        fullName: null == fullName
+            ? _value.fullName
+            : fullName // ignore: cast_nullable_to_non_nullable
+                  as String,
+        phone: null == phone
+            ? _value.phone
+            : phone // ignore: cast_nullable_to_non_nullable
+                  as String,
+        email: null == email
+            ? _value.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String,
+        birthDate: freezed == birthDate
+            ? _value.birthDate
+            : birthDate // ignore: cast_nullable_to_non_nullable
+                  as DateTime?,
+        countryCode: null == countryCode
+            ? _value.countryCode
+            : countryCode // ignore: cast_nullable_to_non_nullable
+                  as String,
+        gender: null == gender
+            ? _value.gender
+            : gender // ignore: cast_nullable_to_non_nullable
+                  as String,
+        maritalStatus: null == maritalStatus
+            ? _value.maritalStatus
+            : maritalStatus // ignore: cast_nullable_to_non_nullable
+                  as String,
+        departmentId: null == departmentId
+            ? _value.departmentId
+            : departmentId // ignore: cast_nullable_to_non_nullable
+                  as String,
+        branchId: null == branchId
+            ? _value.branchId
+            : branchId // ignore: cast_nullable_to_non_nullable
+                  as String,
+        jobTitle: null == jobTitle
+            ? _value.jobTitle
+            : jobTitle // ignore: cast_nullable_to_non_nullable
+                  as String,
+        basicSalary: null == basicSalary
+            ? _value.basicSalary
+            : basicSalary // ignore: cast_nullable_to_non_nullable
+                  as double,
+        contractDurationMonths: null == contractDurationMonths
+            ? _value.contractDurationMonths
+            : contractDurationMonths // ignore: cast_nullable_to_non_nullable
                   as int,
-        favoriteIds: null == favoriteIds
-            ? _value.favoriteIds
-            : favoriteIds // ignore: cast_nullable_to_non_nullable
-                  as List<String>,
-        recentSearches: null == recentSearches
-            ? _value.recentSearches
-            : recentSearches // ignore: cast_nullable_to_non_nullable
-                  as List<String>,
+        nationalId: null == nationalId
+            ? _value.nationalId
+            : nationalId // ignore: cast_nullable_to_non_nullable
+                  as String,
+        bank: freezed == bank
+            ? _value.bank
+            : bank // ignore: cast_nullable_to_non_nullable
+                  as BankModel?,
+        active: null == active
+            ? _value.active
+            : active // ignore: cast_nullable_to_non_nullable
+                  as bool,
+        archived: null == archived
+            ? _value.archived
+            : archived // ignore: cast_nullable_to_non_nullable
+                  as bool,
       ),
     );
   }
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$UserModelImpl extends _UserModel {
+
+@JsonSerializable(explicitToJson: true)
+class _$UserModelImpl implements _UserModel {
   _$UserModelImpl({
-    @TimestampSerializer() this.createdAt,
-    this.id,
-    this.companyId,
-    this.firstName,
-    this.lastName,
-    this.email,
-    this.deviceTokens = const [],
-    this.username,
-    this.languageCode,
-    this.blocked = false,
-    this.deliveryAddress,
-    this.pickupInfo,
-    this.phoneCountryCode,
-    this.phoneNum,
+    this.id = '',
     this.roleId,
-    this.storeId,
-    this.userToken,
-    this.password,
-    this.rewardPoints = 0,
-    this.favoriteIds = const [],
-    this.recentSearches = const [],
-  }) : super._();
+    this.companyId = '',
+    @TimestampSerializer() this.createdAt,
+    @TimestampSerializer() this.updatedAt,
+    @TimestampSerializer() this.workStartDate,
+    @TimestampSerializer() this.contractEndDate,
+    this.fullName = '',
+    this.phone = '',
+    this.email = '',
+    @TimestampSerializer() this.birthDate,
+    this.countryCode = '',
+    this.gender = "",
+    this.maritalStatus = "",
+    this.departmentId = '',
+    this.branchId = '',
+    this.jobTitle = '',
+    this.basicSalary = 0.0,
+    this.contractDurationMonths = 0,
+    this.nationalId = '',
+    this.bank,
+    this.active = true,
+    this.archived = false,
+  });
 
   factory _$UserModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserModelImplFromJson(json);
 
   @override
-  @TimestampSerializer()
-  DateTime? createdAt;
-  @override
-  String? id;
-  @override
-  String? companyId;
-  @override
-  String? firstName;
-  @override
-  String? lastName;
-  @override
-  String? email;
-  @override
   @JsonKey()
-  List<String> deviceTokens;
-  @override
-  String? username;
-  @override
-  String? languageCode;
-  @override
-  @JsonKey()
-  bool blocked;
-  @override
-  AddressModel? deliveryAddress;
-  @override
-  PickUpInfoModel? pickupInfo;
-  @override
-  String? phoneCountryCode;
-  @override
-  String? phoneNum;
+  String id;
   @override
   String? roleId;
   @override
-  String? storeId;
+  @JsonKey()
+  String companyId;
   @override
-  String? userToken;
+  @TimestampSerializer()
+  DateTime? createdAt;
   @override
-  String? password;
+  @TimestampSerializer()
+  DateTime? updatedAt;
+  @override
+  @TimestampSerializer()
+  DateTime? workStartDate;
+  @override
+  @TimestampSerializer()
+  DateTime? contractEndDate;
   @override
   @JsonKey()
-  int rewardPoints;
+  String fullName;
   @override
   @JsonKey()
-  List<String> favoriteIds;
+  String phone;
   @override
   @JsonKey()
-  List<String> recentSearches;
+  String email;
+  @override
+  @TimestampSerializer()
+  DateTime? birthDate;
+  @override
+  @JsonKey()
+  String countryCode;
+  @override
+  @JsonKey()
+  String gender;
+  @override
+  @JsonKey()
+  String maritalStatus;
+  @override
+  @JsonKey()
+  String departmentId;
+  @override
+  @JsonKey()
+  String branchId;
+  @override
+  @JsonKey()
+  String jobTitle;
+  @override
+  @JsonKey()
+  double basicSalary;
+  @override
+  @JsonKey()
+  int contractDurationMonths;
+  @override
+  @JsonKey()
+  String nationalId;
+  @override
+  BankModel? bank;
+  @override
+  @JsonKey()
+  bool active;
+  @override
+  @JsonKey()
+  bool archived;
 
   @override
   String toString() {
-    return 'UserModel(createdAt: $createdAt, id: $id, companyId: $companyId, firstName: $firstName, lastName: $lastName, email: $email, deviceTokens: $deviceTokens, username: $username, languageCode: $languageCode, blocked: $blocked, deliveryAddress: $deliveryAddress, pickupInfo: $pickupInfo, phoneCountryCode: $phoneCountryCode, phoneNum: $phoneNum, roleId: $roleId, storeId: $storeId, userToken: $userToken, password: $password, rewardPoints: $rewardPoints, favoriteIds: $favoriteIds, recentSearches: $recentSearches)';
+    return 'UserModel(id: $id, roleId: $roleId, companyId: $companyId, createdAt: $createdAt, updatedAt: $updatedAt, workStartDate: $workStartDate, contractEndDate: $contractEndDate, fullName: $fullName, phone: $phone, email: $email, birthDate: $birthDate, countryCode: $countryCode, gender: $gender, maritalStatus: $maritalStatus, departmentId: $departmentId, branchId: $branchId, jobTitle: $jobTitle, basicSalary: $basicSalary, contractDurationMonths: $contractDurationMonths, nationalId: $nationalId, bank: $bank, active: $active, archived: $archived)';
   }
 
   /// Create a copy of UserModel
@@ -531,105 +571,294 @@ class _$UserModelImpl extends _UserModel {
   }
 }
 
-abstract class _UserModel extends UserModel {
+abstract class _UserModel implements UserModel {
   factory _UserModel({
-    @TimestampSerializer() DateTime? createdAt,
-    String? id,
-    String? companyId,
-    String? firstName,
-    String? lastName,
-    String? email,
-    List<String> deviceTokens,
-    String? username,
-    String? languageCode,
-    bool blocked,
-    AddressModel? deliveryAddress,
-    PickUpInfoModel? pickupInfo,
-    String? phoneCountryCode,
-    String? phoneNum,
+    String id,
     String? roleId,
-    String? storeId,
-    String? userToken,
-    String? password,
-    int rewardPoints,
-    List<String> favoriteIds,
-    List<String> recentSearches,
+    String companyId,
+    @TimestampSerializer() DateTime? createdAt,
+    @TimestampSerializer() DateTime? updatedAt,
+    @TimestampSerializer() DateTime? workStartDate,
+    @TimestampSerializer() DateTime? contractEndDate,
+    String fullName,
+    String phone,
+    String email,
+    @TimestampSerializer() DateTime? birthDate,
+    String countryCode,
+    String gender,
+    String maritalStatus,
+    String departmentId,
+    String branchId,
+    String jobTitle,
+    double basicSalary,
+    int contractDurationMonths,
+    String nationalId,
+    BankModel? bank,
+    bool active,
+    bool archived,
   }) = _$UserModelImpl;
-  _UserModel._() : super._();
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
       _$UserModelImpl.fromJson;
 
+  @override
+  String get id;
+  set id(String value);
+  @override
+  String? get roleId;
+  set roleId(String? value);
+  @override
+  String get companyId;
+  set companyId(String value);
   @override
   @TimestampSerializer()
   DateTime? get createdAt;
   @TimestampSerializer()
   set createdAt(DateTime? value);
   @override
-  String? get id;
-  set id(String? value);
+  @TimestampSerializer()
+  DateTime? get updatedAt;
+  @TimestampSerializer()
+  set updatedAt(DateTime? value);
   @override
-  String? get companyId;
-  set companyId(String? value);
+  @TimestampSerializer()
+  DateTime? get workStartDate;
+  @TimestampSerializer()
+  set workStartDate(DateTime? value);
   @override
-  String? get firstName;
-  set firstName(String? value);
+  @TimestampSerializer()
+  DateTime? get contractEndDate;
+  @TimestampSerializer()
+  set contractEndDate(DateTime? value);
   @override
-  String? get lastName;
-  set lastName(String? value);
+  String get fullName;
+  set fullName(String value);
   @override
-  String? get email;
-  set email(String? value);
+  String get phone;
+  set phone(String value);
   @override
-  List<String> get deviceTokens;
-  set deviceTokens(List<String> value);
+  String get email;
+  set email(String value);
   @override
-  String? get username;
-  set username(String? value);
+  @TimestampSerializer()
+  DateTime? get birthDate;
+  @TimestampSerializer()
+  set birthDate(DateTime? value);
   @override
-  String? get languageCode;
-  set languageCode(String? value);
+  String get countryCode;
+  set countryCode(String value);
   @override
-  bool get blocked;
-  set blocked(bool value);
+  String get gender;
+  set gender(String value);
   @override
-  AddressModel? get deliveryAddress;
-  set deliveryAddress(AddressModel? value);
+  String get maritalStatus;
+  set maritalStatus(String value);
   @override
-  PickUpInfoModel? get pickupInfo;
-  set pickupInfo(PickUpInfoModel? value);
+  String get departmentId;
+  set departmentId(String value);
   @override
-  String? get phoneCountryCode;
-  set phoneCountryCode(String? value);
+  String get branchId;
+  set branchId(String value);
   @override
-  String? get phoneNum;
-  set phoneNum(String? value);
+  String get jobTitle;
+  set jobTitle(String value);
   @override
-  String? get roleId;
-  set roleId(String? value);
+  double get basicSalary;
+  set basicSalary(double value);
   @override
-  String? get storeId;
-  set storeId(String? value);
+  int get contractDurationMonths;
+  set contractDurationMonths(int value);
   @override
-  String? get userToken;
-  set userToken(String? value);
+  String get nationalId;
+  set nationalId(String value);
   @override
-  String? get password;
-  set password(String? value);
+  BankModel? get bank;
+  set bank(BankModel? value);
   @override
-  int get rewardPoints;
-  set rewardPoints(int value);
+  bool get active;
+  set active(bool value);
   @override
-  List<String> get favoriteIds;
-  set favoriteIds(List<String> value);
-  @override
-  List<String> get recentSearches;
-  set recentSearches(List<String> value);
+  bool get archived;
+  set archived(bool value);
 
   /// Create a copy of UserModel
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UserModelImplCopyWith<_$UserModelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+BankModel _$BankModelFromJson(Map<String, dynamic> json) {
+  return _BankModel.fromJson(json);
+}
+
+/// @nodoc
+mixin _$BankModel {
+  String get name => throw _privateConstructorUsedError;
+  set name(String value) => throw _privateConstructorUsedError;
+  String get branch => throw _privateConstructorUsedError;
+  set branch(String value) => throw _privateConstructorUsedError;
+  String get iban => throw _privateConstructorUsedError;
+  set iban(String value) => throw _privateConstructorUsedError;
+
+  /// Serializes this BankModel to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of BankModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $BankModelCopyWith<BankModel> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BankModelCopyWith<$Res> {
+  factory $BankModelCopyWith(BankModel value, $Res Function(BankModel) then) =
+      _$BankModelCopyWithImpl<$Res, BankModel>;
+  @useResult
+  $Res call({String name, String branch, String iban});
+}
+
+/// @nodoc
+class _$BankModelCopyWithImpl<$Res, $Val extends BankModel>
+    implements $BankModelCopyWith<$Res> {
+  _$BankModelCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of BankModel
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? name = null, Object? branch = null, Object? iban = null}) {
+    return _then(
+      _value.copyWith(
+            name: null == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                      as String,
+            branch: null == branch
+                ? _value.branch
+                : branch // ignore: cast_nullable_to_non_nullable
+                      as String,
+            iban: null == iban
+                ? _value.iban
+                : iban // ignore: cast_nullable_to_non_nullable
+                      as String,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$BankModelImplCopyWith<$Res>
+    implements $BankModelCopyWith<$Res> {
+  factory _$$BankModelImplCopyWith(
+    _$BankModelImpl value,
+    $Res Function(_$BankModelImpl) then,
+  ) = __$$BankModelImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String name, String branch, String iban});
+}
+
+/// @nodoc
+class __$$BankModelImplCopyWithImpl<$Res>
+    extends _$BankModelCopyWithImpl<$Res, _$BankModelImpl>
+    implements _$$BankModelImplCopyWith<$Res> {
+  __$$BankModelImplCopyWithImpl(
+    _$BankModelImpl _value,
+    $Res Function(_$BankModelImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of BankModel
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? name = null, Object? branch = null, Object? iban = null}) {
+    return _then(
+      _$BankModelImpl(
+        name: null == name
+            ? _value.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String,
+        branch: null == branch
+            ? _value.branch
+            : branch // ignore: cast_nullable_to_non_nullable
+                  as String,
+        iban: null == iban
+            ? _value.iban
+            : iban // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(explicitToJson: true)
+class _$BankModelImpl implements _BankModel {
+  _$BankModelImpl({this.name = '', this.branch = '', this.iban = ''});
+
+  factory _$BankModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BankModelImplFromJson(json);
+
+  @override
+  @JsonKey()
+  String name;
+  @override
+  @JsonKey()
+  String branch;
+  @override
+  @JsonKey()
+  String iban;
+
+  @override
+  String toString() {
+    return 'BankModel(name: $name, branch: $branch, iban: $iban)';
+  }
+
+  /// Create a copy of BankModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BankModelImplCopyWith<_$BankModelImpl> get copyWith =>
+      __$$BankModelImplCopyWithImpl<_$BankModelImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$BankModelImplToJson(this);
+  }
+}
+
+abstract class _BankModel implements BankModel {
+  factory _BankModel({String name, String branch, String iban}) =
+      _$BankModelImpl;
+
+  factory _BankModel.fromJson(Map<String, dynamic> json) =
+      _$BankModelImpl.fromJson;
+
+  @override
+  String get name;
+  set name(String value);
+  @override
+  String get branch;
+  set branch(String value);
+  @override
+  String get iban;
+  set iban(String value);
+
+  /// Create a copy of BankModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$BankModelImplCopyWith<_$BankModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -39,7 +39,6 @@ class MyAppHelper {
           ChangeNotifierProvider(create: (context) => LocationProvider()),
           ChangeNotifierProvider(create: (context) => DrawerProvider()),
           ChangeNotifierProvider(create: (context) => PortalProvider()),
-          ChangeNotifierProvider(create: (context) => OrdersProvider()),
         ],
         child: MyApp(
           builder: builder,

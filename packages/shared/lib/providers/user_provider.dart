@@ -17,8 +17,7 @@ class UserProvider extends ChangeNotifier {
         fromFirestore: (snapshot, _) => BasketModel.fromJson(snapshot.data()!),
         toFirestore: (snapshot, _) => snapshot.toJson(),
       );
-  DocumentReference<FoodStoreModel> get storeDocRef =>
-      _firebaseFirestore.foodStores.doc(user?.storeId);
+  DocumentReference<FoodStoreModel> get storeDocRef => _firebaseFirestore.foodStores.doc(user?.id);
   Stream<QuerySnapshot<BasketModel>> get userBasketStream => userBasketCollectionRef.snapshots();
   CollectionReference<Map<String, dynamic>> get addressesCollectionRef =>
       userDocRef.collection(MyCollections.addresses);
@@ -62,17 +61,17 @@ class UserProvider extends ChangeNotifier {
           );
         }
         final user = UserModel();
-        user.id = auth.user?.uid;
-        user.email = auth.user?.email;
-        user.languageCode = MySharedPreferences.language;
-        user.userToken = MySharedPreferences.userToken;
-        user.phoneCountryCode = phoneAuthValues?.$1;
-        user.phoneNum = phoneAuthValues?.$2;
+        // user.id = auth.user?.uid;
+        // user.email = auth.user?.email;
+        // user.languageCode = MySharedPreferences.language;
+        // user.userToken = MySharedPreferences.userToken;
+        // user.phoneCountryCode = phoneAuthValues?.$1;
+        // user.phoneNum = phoneAuthValues?.$2;
 
         final userDocument = await _firebaseFirestore.users.doc(user.id).get();
 
         if (userDocument.exists) {
-          if (context.mounted && userDocument.data()!.blocked) {
+          if (context.mounted && !userDocument.data()!.active) {
             context.showSnackBar(context.appLocalization.authFailed);
             return;
           }
@@ -192,15 +191,5 @@ class UserProvider extends ChangeNotifier {
       });
     }
     batch.commit();
-  }
-
-  void updateRecentSearches(String value) {
-    List<String> recent = user!.recentSearches;
-    recent.remove(value);
-    recent.insert(0, value);
-    if (recent.length > 10) {
-      recent = recent.sublist(0, 10);
-    }
-    userDocRef.update({MyFields.recentSearches: recent});
   }
 }

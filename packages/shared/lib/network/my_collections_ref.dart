@@ -14,8 +14,7 @@ extension CollectionReferenceExtension on FirebaseFirestore {
   CollectionReference<ProductModel> menu(String storeId) =>
       foodStores.doc(storeId).collection(MyCollections.menu).productConvertor;
 
-  DocumentReference<FoodStoreModel> get myFoodStore =>
-      foodStores.doc(MySharedPreferences.user?.storeId);
+  DocumentReference<FoodStoreModel> get myFoodStore => foodStores.doc(MySharedPreferences.user?.id);
 
   CollectionReference<DeliveryAreaModel> get deliveryAreas => foodStores
       .doc(MySharedPreferences.foodStore.id)
@@ -29,8 +28,6 @@ extension CollectionReferenceExtension on FirebaseFirestore {
 
   CollectionReference<PromoCodeModel> get promoCodes =>
       collection(MyCollections.promoCodes).promoCodeConvertor;
-
-  CollectionReference<OrderModel> get orders => collection(MyCollections.orders).orderConvertor;
 
   CollectionReference<ProductModel> get products =>
       collection(MyCollections.products).productConvertor;

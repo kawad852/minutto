@@ -28,11 +28,6 @@ extension FireConvertors on CollectionReference {
     toFirestore: (snapshot, _) => snapshot.toJson(),
   );
 
-  CollectionReference<OrderModel> get orderConvertor => withConverter<OrderModel>(
-    fromFirestore: (snapshot, _) => OrderModel.fromJson(snapshot.data()!),
-    toFirestore: (snapshot, _) => snapshot.toJson(),
-  );
-
   CollectionReference<ProductModel> get productConvertor => withConverter<ProductModel>(
     fromFirestore: (snapshot, _) => ProductModel.fromJson(snapshot.data()!),
     toFirestore: (snapshot, _) => snapshot.toJson(),
