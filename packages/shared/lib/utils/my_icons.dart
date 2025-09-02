@@ -86,4 +86,12 @@ class MyIcons {
   static const String incentiveIcon = '${_path}incentive_icon.svg';
   static const String overtime = '${_path}overtime.svg';
   static const String workIcon = '${_path}work_icon.svg';
+  static const String bookSharp = '${_path}book_sharp.svg';
+  static const String coffeSharp = '${_path}coffe_sharp.svg';
+  static const String deparatment = '${_path}deparatment.svg';
+  static const String faqSharp = '${_path}faq_sharp.svg';
+  static const String fingerSharp = '${_path}finger_sharp.svg';
+  static const String policySharp = '${_path}policy_sharp.svg';
+  static const String tax = '${_path}tax.svg';
+  static const String umbrellaSharp = '${_path}umbrella_sharp.svg';
 }

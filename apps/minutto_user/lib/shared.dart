@@ -16,7 +16,10 @@ export 'screens/facility_management/widgets/facility_card.dart';
 export 'screens/facility_management/widgets/facility_bubble.dart';
 //faq
 export 'screens/faq/faq_screen.dart';
+export 'screens/faq/faq_management_screen.dart';
+export 'screens/faq/faq_input_screen.dart';
 export 'screens/faq/widgets/faq_card.dart';
+export 'screens/faq/widgets/faq_manage_card.dart';
 export 'screens/feedback/feedback_details_screen.dart';
 export 'screens/feedback/feedback_input_screen.dart';
 //feedback
@@ -135,3 +138,10 @@ export 'screens/schedule/widgets/schedule_card.dart';
 export 'screens/employment_contracts/employment_contracts_screen.dart';
 export 'screens/employment_contracts/employee_profile_screen.dart';
 export 'screens/employment_contracts/widgets/tabel_bubble.dart';
+//System settings
+export 'screens/system_settings/system_settings_screen.dart';
+export 'screens/system_settings/attendance_settings_screen.dart';
+export 'screens/system_settings/leaves_settings_screen.dart';
+export 'screens/system_settings/deduction_settings_screen.dart';
+export 'screens/system_settings/widgets/settings_card.dart';
+export 'screens/system_settings/widgets/settings_bubble.dart';

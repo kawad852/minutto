@@ -24,9 +24,11 @@ class WidgetTitle extends StatelessWidget {
           padding: padding,
           child: Row(
             children: [
-              Text(
-                title,
-                style: context.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.w500),
+              Expanded(
+                child: Text(
+                  title,
+                  style: context.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.w500),
+                ),
               ),
               if (miniTitle != null)
                Text(

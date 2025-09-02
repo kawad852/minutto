@@ -175,7 +175,11 @@ class _FacilityManagementScreenState extends State<FacilityManagementScreen> {
                 icon: MyIcons.notificationIcon,
               ),
               FacilityBubble(
-                onTap: () {},
+                onTap: () {
+                  context.navigate(
+                    (context) => const SystemSettingsScreen(),
+                  );
+                },
                 title: context.appLocalization.companySystemSettings,
                 icon: MyIcons.settings,
               ),

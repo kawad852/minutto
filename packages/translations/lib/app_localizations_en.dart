@@ -1763,4 +1763,73 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get numberDaysRemaining => 'Number days remaining';
+
+  @override
+  String get vacationsAndLeaves => 'Vacations and leaves';
+
+  @override
+  String get breakDuration => 'Break duration';
+
+  @override
+  String get deductionRates => 'Deduction rates';
+
+  @override
+  String get companyDepartments => 'Company departments';
+
+  @override
+  String get gracePeriodShift => 'Grace period per shift (in minutes)';
+
+  @override
+  String get afterGracePeriod =>
+      'After the grace period, the employee is considered late.';
+
+  @override
+  String get deductionInCaseDelay =>
+      'Deduction in case of delay is a percentage or number of hours from the wages for one day';
+
+  @override
+  String get fromMinutes => 'From (minutes)';
+
+  @override
+  String get toMinutes => 'To (minutes)';
+
+  @override
+  String get numberDiscountHours => 'Number discount hours';
+
+  @override
+  String get addAnotherDiscount => 'Add another discount';
+
+  @override
+  String get numberAnnualLeaveDays => 'Number of annual leave days';
+
+  @override
+  String get numberSickLeaveDays => 'Number of sick leave days';
+
+  @override
+  String get maxDaysRequestedOnetime =>
+      'Max number of days that can be requested at one time';
+
+  @override
+  String get possibilityCarryingDays =>
+      'Possibility of carrying over unused days to the new year';
+
+  @override
+  String get maximumCarryover => 'Maximum carryover';
+
+  @override
+  String get facilitySocialSecurity =>
+      'The facility is subject to social security';
+
+  @override
+  String get socialSecurityDeductionSalary =>
+      'Social security deduction rate from monthly salary';
+
+  @override
+  String get addNewQuestion => 'Add new question';
+
+  @override
+  String get question => 'Question';
+
+  @override
+  String get answer => 'Answer';
 }

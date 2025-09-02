@@ -3481,6 +3481,132 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Number days remaining'**
   String get numberDaysRemaining;
+
+  /// No description provided for @vacationsAndLeaves.
+  ///
+  /// In en, this message translates to:
+  /// **'Vacations and leaves'**
+  String get vacationsAndLeaves;
+
+  /// No description provided for @breakDuration.
+  ///
+  /// In en, this message translates to:
+  /// **'Break duration'**
+  String get breakDuration;
+
+  /// No description provided for @deductionRates.
+  ///
+  /// In en, this message translates to:
+  /// **'Deduction rates'**
+  String get deductionRates;
+
+  /// No description provided for @companyDepartments.
+  ///
+  /// In en, this message translates to:
+  /// **'Company departments'**
+  String get companyDepartments;
+
+  /// No description provided for @gracePeriodShift.
+  ///
+  /// In en, this message translates to:
+  /// **'Grace period per shift (in minutes)'**
+  String get gracePeriodShift;
+
+  /// No description provided for @afterGracePeriod.
+  ///
+  /// In en, this message translates to:
+  /// **'After the grace period, the employee is considered late.'**
+  String get afterGracePeriod;
+
+  /// No description provided for @deductionInCaseDelay.
+  ///
+  /// In en, this message translates to:
+  /// **'Deduction in case of delay is a percentage or number of hours from the wages for one day'**
+  String get deductionInCaseDelay;
+
+  /// No description provided for @fromMinutes.
+  ///
+  /// In en, this message translates to:
+  /// **'From (minutes)'**
+  String get fromMinutes;
+
+  /// No description provided for @toMinutes.
+  ///
+  /// In en, this message translates to:
+  /// **'To (minutes)'**
+  String get toMinutes;
+
+  /// No description provided for @numberDiscountHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Number discount hours'**
+  String get numberDiscountHours;
+
+  /// No description provided for @addAnotherDiscount.
+  ///
+  /// In en, this message translates to:
+  /// **'Add another discount'**
+  String get addAnotherDiscount;
+
+  /// No description provided for @numberAnnualLeaveDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Number of annual leave days'**
+  String get numberAnnualLeaveDays;
+
+  /// No description provided for @numberSickLeaveDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Number of sick leave days'**
+  String get numberSickLeaveDays;
+
+  /// No description provided for @maxDaysRequestedOnetime.
+  ///
+  /// In en, this message translates to:
+  /// **'Max number of days that can be requested at one time'**
+  String get maxDaysRequestedOnetime;
+
+  /// No description provided for @possibilityCarryingDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Possibility of carrying over unused days to the new year'**
+  String get possibilityCarryingDays;
+
+  /// No description provided for @maximumCarryover.
+  ///
+  /// In en, this message translates to:
+  /// **'Maximum carryover'**
+  String get maximumCarryover;
+
+  /// No description provided for @facilitySocialSecurity.
+  ///
+  /// In en, this message translates to:
+  /// **'The facility is subject to social security'**
+  String get facilitySocialSecurity;
+
+  /// No description provided for @socialSecurityDeductionSalary.
+  ///
+  /// In en, this message translates to:
+  /// **'Social security deduction rate from monthly salary'**
+  String get socialSecurityDeductionSalary;
+
+  /// No description provided for @addNewQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'Add new question'**
+  String get addNewQuestion;
+
+  /// No description provided for @question.
+  ///
+  /// In en, this message translates to:
+  /// **'Question'**
+  String get question;
+
+  /// No description provided for @answer.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer'**
+  String get answer;
 }
 
 class _AppLocalizationsDelegate
