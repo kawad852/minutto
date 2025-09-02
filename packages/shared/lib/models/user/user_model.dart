@@ -11,7 +11,6 @@ class UserModel with _$UserModel {
     String? roleId,
     @Default('') String companyId,
     @TimestampSerializer() DateTime? createdAt,
-    @TimestampSerializer() DateTime? updatedAt,
     @TimestampSerializer() DateTime? workStartDate,
     @TimestampSerializer() DateTime? contractEndDate,
     @Default('') String fullName,

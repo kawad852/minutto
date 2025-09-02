@@ -13,6 +13,7 @@ class _StaffInputScreenState extends State<StaffInputScreen> {
   final _formKey = GlobalKey<FormState>();
   final _storageService = StorageService();
   late Future<List<dynamic>> _futures;
+  late UserModel _user;
 
   FirebaseFirestore get _firebaseFirestore => FirebaseFirestore.instance;
 
@@ -33,6 +34,9 @@ class _StaffInputScreenState extends State<StaffInputScreen> {
   @override
   void initState() {
     super.initState();
+    _user = UserModel(
+      bank: BankModel(),
+    );
     _pageController = PageController(initialPage: 0);
     _initialize();
   }
