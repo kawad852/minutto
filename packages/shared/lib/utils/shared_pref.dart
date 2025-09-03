@@ -117,18 +117,4 @@ class MySharedPreferences {
     value.createdAt = null;
     _sharedPreferences.setString('foodStore', jsonEncode(value.toJson()));
   }
-
-  static CallCenterModel? get callCenter {
-    String? value = _sharedPreferences.getString('callCenter');
-    CallCenterModel? callCenter;
-    if (value != null && value.isNotEmpty && value != 'null') {
-      callCenter = CallCenterModel.fromJson(jsonDecode(value));
-    }
-    return callCenter;
-  }
-
-  static set callCenter(CallCenterModel? value) {
-    value?.createdAt = null;
-    _sharedPreferences.setString('callCenter', jsonEncode(value?.toJson()));
-  }
 }

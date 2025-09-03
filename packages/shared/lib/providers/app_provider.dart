@@ -42,13 +42,4 @@ class AppProvider extends ChangeNotifier {
       debugPrint('countryCode:: $countryCode');
     }
   }
-
-  void updateDeliveryAreas(String version) {
-    if (MySharedPreferences.deliveryAreasVersion != version) {
-      MySharedPreferences.deliveryAreasVersion = version;
-      getIt<FirebaseFirestore>().deliveryAreas.get().then((value) {
-        MyStorage.deliveryAreas = value.docs.map((e) => e.data()).toList();
-      });
-    }
-  }
 }

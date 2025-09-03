@@ -26,4 +26,5 @@ class MyCollections {
   static const String departments = 'departments';
   static const String branches = 'branches';
   static const String cities = 'cities';
+  static const String companies = 'companies';
 }

@@ -14,6 +14,7 @@ class UserModel with _$UserModel {
     @TimestampSerializer() DateTime? workStartDate,
     @TimestampSerializer() DateTime? contractEndDate,
     @Default('') String name,
+    @Default('') String image,
     @Default(kFallBackCountryCode) String phoneNumberCountryCode,
     @Default('') String phoneNumber,
     @Default('') String email,

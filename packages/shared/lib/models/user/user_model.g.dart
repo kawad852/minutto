@@ -19,6 +19,7 @@ _$UserModelImpl _$$UserModelImplFromJson(Map<String, dynamic> json) =>
         json['contractEndDate'],
       ),
       name: json['name'] as String? ?? '',
+      image: json['image'] as String? ?? '',
       phoneNumberCountryCode:
           json['phoneNumberCountryCode'] as String? ?? kFallBackCountryCode,
       phoneNumber: json['phoneNumber'] as String? ?? '',
@@ -52,6 +53,7 @@ Map<String, dynamic> _$$UserModelImplToJson(
     instance.contractEndDate,
   ),
   'name': instance.name,
+  'image': instance.image,
   'phoneNumberCountryCode': instance.phoneNumberCountryCode,
   'phoneNumber': instance.phoneNumber,
   'email': instance.email,

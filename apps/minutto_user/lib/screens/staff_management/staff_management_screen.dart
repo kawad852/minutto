@@ -9,6 +9,18 @@ class StaffManagementScreen extends StatefulWidget {
 }
 
 class _StaffManagementScreenState extends State<StaffManagementScreen> {
+  late Query<UserModel> _query;
+
+  void _initialize() {
+    _query = FirebaseFirestore.instance.users.whereCompanyId.orderByCreatedAtDesc;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _initialize();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,12 +75,22 @@ class _StaffManagementScreenState extends State<StaffManagementScreen> {
               hintText: context.appLocalization.searchByEmployeeName,
             ),
             Expanded(
-              child: ListView.separated(
-                separatorBuilder: (context, index) =>
-                    const SizedBox(height: 15),
-                itemCount: 5,
-                itemBuilder: (context, index) {
-                  return StaffCard();
+              child: BlitzBuilder.query(
+                query: _query,
+                onComplete: (context, snapshot, _) {
+                  if (snapshot.docs.isEmpty) {
+                    return const EmptyWidget();
+                  }
+                  return ListView.separated(
+                    separatorBuilder: (context, index) => const SizedBox(height: 15),
+                    itemCount: snapshot.docs.length,
+                    itemBuilder: (context, index) {
+                      final user = snapshot.docs[index].data();
+                      return StaffCard(
+                        user: user,
+                      );
+                    },
+                  );
                 },
               ),
             ),

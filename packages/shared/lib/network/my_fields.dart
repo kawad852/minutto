@@ -46,4 +46,8 @@ class MyFields {
   static const String brand = 'brand';
   static const String brand_id = 'brand.id';
   static const String companyId = 'companyId';
+  static const String citiesVersion = 'citiesVersion';
+  static const String branchesVersion = 'branchesVersion';
+  static const String usersVersion = 'usersVersion';
+  static const String departmentsVersion = 'departmentsVersion';
 }

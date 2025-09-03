@@ -1,7 +1,12 @@
 import 'package:shared/shared.dart';
 
 class StaffCard extends StatelessWidget {
-  const StaffCard({super.key});
+  final UserModel user;
+
+  const StaffCard({
+    super.key,
+    required this.user,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +26,7 @@ class StaffCard extends StatelessWidget {
         spacing: 10,
         children: [
           BaseNetworkImage(
-            "",
+            user.image,
             width: 50,
             height: 50,
             shape: BoxShape.circle,
@@ -33,7 +38,7 @@ class StaffCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "صهيب البكار",
+                  user.name,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: context.colorPalette.black,
@@ -41,12 +46,12 @@ class StaffCard extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "مصمم جرافيك",
+                  user.jobTitle,
                   overflow: TextOverflow.ellipsis,
                   style: style,
                 ),
                 Text(
-                  "قسم التصميم والجرافيك",
+                  user.departmentId,
                   overflow: TextOverflow.ellipsis,
                   style: style,
                 ),
@@ -63,7 +68,7 @@ class StaffCard extends StatelessWidget {
                   style: style,
                 ),
                 Text(
-                  "عمان",
+                  user.branchId,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: context.colorPalette.green19B,

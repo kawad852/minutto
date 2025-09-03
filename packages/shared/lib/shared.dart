@@ -100,7 +100,6 @@ export 'helper/basket_helper.dart';
 export 'helper/bill_clipper.dart';
 export 'helper/filter_helper.dart';
 export 'helper/guest_helper.dart';
-export 'helper/home_cache_helper.dart';
 export 'helper/my_app_helper.dart';
 export 'helper/my_header_delegate.dart';
 export 'helper/objects_comparer.dart';
@@ -119,7 +118,6 @@ export 'models/analytics/analytics_model.dart';
 export 'models/attachment/attachment_model.dart';
 export 'models/basket/basket_model.dart';
 export 'models/branch/branch_model.dart';
-export 'models/call_center/call_center_model.dart';
 export 'models/cancel/cancel_model.dart';
 export 'models/category/category_model.dart';
 export 'models/chart_model.dart';
@@ -155,6 +153,7 @@ export 'models/salary_advance/salary_advance_model.dart';
 export 'models/test/favorite_model.dart';
 export 'models/typesense/typesense_model.dart';
 export 'models/user/user_model.dart';
+export 'models/version/version_model.dart';
 export 'my_app.dart';
 
 ///Models

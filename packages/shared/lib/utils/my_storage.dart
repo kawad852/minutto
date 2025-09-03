@@ -8,9 +8,9 @@ class MyStorage {
     _box = GetStorage();
   }
 
-  // === Countries ===
-  static List<CountryModel> get countries {
-    final data = _box.read('countries');
+  // === cities ===
+  static List<CountryModel> get cities {
+    final data = _box.read('cities');
     if (data != null) {
       final List<Map<String, dynamic>> list = List<Map<String, dynamic>>.from(jsonDecode(data));
       return list.map((e) => CountryModel.fromJson(e)).toList();
@@ -18,46 +18,49 @@ class MyStorage {
     return [];
   }
 
-  static set countries(List<CountryModel> value) {
-    _box.write('countries', jsonEncode(value));
+  static set cities(List<CountryModel> value) {
+    _box.write('cities', jsonEncode(value));
   }
 
-  // === Home Queries ===
-  static HomeCachedHelper? get homeQueries {
-    try {
-      final data = _box.read('homeQueries');
-      if (data != null) {
-        return HomeCachedHelper.fromJson(jsonDecode(data));
-      }
-    } catch (e) {
-      debugPrint("homeQueriesError: $e");
-    }
-    return null;
-  }
-
-  static set homeQueries(HomeCachedHelper? value) {
-    try {
-      if (value == null) {
-        _box.remove('homeQueries');
-      } else {
-        _box.write('homeQueries', jsonEncode(value));
-      }
-    } catch (e) {
-      debugPrint("homeQueriesWriteError: $e");
-    }
-  }
-
-  // === Delivery Areas ===
-  static List<DeliveryAreaModel> get deliveryAreas {
-    final data = _box.read('deliveryAreas');
+  // === users ===
+  static List<UserModel> get users {
+    final data = _box.read('users');
     if (data != null) {
       final List<Map<String, dynamic>> list = List<Map<String, dynamic>>.from(jsonDecode(data));
-      return list.map((e) => DeliveryAreaModel.fromJson(e)).toList();
+      return list.map((e) => UserModel.fromJson(e)).toList();
     }
     return [];
   }
 
-  static set deliveryAreas(List<DeliveryAreaModel> value) {
-    _box.write('deliveryAreas', jsonEncode(value));
+  static set users(List<UserModel> value) {
+    _box.write('users', jsonEncode(value));
+  }
+
+  // === departments ===
+  static List<DepartmentModel> get departments {
+    final data = _box.read('departments');
+    if (data != null) {
+      final List<Map<String, dynamic>> list = List<Map<String, dynamic>>.from(jsonDecode(data));
+      return list.map((e) => DepartmentModel.fromJson(e)).toList();
+    }
+    return [];
+  }
+
+  static set departments(List<DepartmentModel> value) {
+    _box.write('departments', jsonEncode(value));
+  }
+
+  // === branches ===
+  static List<BranchModel> get branches {
+    final data = _box.read('branches');
+    if (data != null) {
+      final List<Map<String, dynamic>> list = List<Map<String, dynamic>>.from(jsonDecode(data));
+      return list.map((e) => BranchModel.fromJson(e)).toList();
+    }
+    return [];
+  }
+
+  static set branches(List<BranchModel> value) {
+    _box.write('branches', jsonEncode(value));
   }
 }

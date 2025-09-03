@@ -16,11 +16,6 @@ extension CollectionReferenceExtension on FirebaseFirestore {
 
   DocumentReference<FoodStoreModel> get myFoodStore => foodStores.doc(MySharedPreferences.user?.id);
 
-  CollectionReference<DeliveryAreaModel> get deliveryAreas => foodStores
-      .doc(MySharedPreferences.foodStore.id)
-      .collection(MyCollections.deliveryAreas)
-      .deliveryAreaConvertor;
-
   CollectionReference<CountryModel> get countries => collection("countries").countryConvertor;
 
   CollectionReference<CategoryModel> get categories =>
@@ -45,8 +40,6 @@ extension CollectionReferenceExtension on FirebaseFirestore {
       foodStores.doc(storeId).collection(MyCollections.reviews).reviewConvertor;
   CollectionReference<ReviewModel> productsReviews(String id) =>
       products.doc(id).collection(MyCollections.reviews).reviewConvertor;
-  CollectionReference<CallCenterModel> get callers =>
-      collection(MyCollections.callers).callCenterConvertor;
   CollectionReference<DriverModel> get drivers => collection(MyCollections.drivers).driverConvertor;
 
   CollectionReference<BrandModel> get brands => collection(MyCollections.brands).brandConvertor;
@@ -63,4 +56,13 @@ extension CollectionReferenceExtension on FirebaseFirestore {
       collection(MyCollections.branches).branchConvertor;
 
   CollectionReference<CityModel> get cities => collection(MyCollections.cities).cityConvertor;
+  CollectionReference<CompanyModel> get companies =>
+      collection(MyCollections.companies).companyConvertor;
+
+  CollectionReference<VersionModel> get settingsCollectionRef => companies
+      .doc(MySharedPreferences.user!.companyId)
+      .collection(MyCollections.settings)
+      .versionConvertor;
+
+  DocumentReference<VersionModel> get versionsDoc => settingsCollectionRef.doc(kVersionsDocId);
 }

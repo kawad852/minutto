@@ -63,17 +63,6 @@ extension FireConvertors on CollectionReference {
     toFirestore: (snapshot, _) => snapshot.toJson(),
   );
 
-  CollectionReference<CallCenterModel> get callCenterConvertor => withConverter<CallCenterModel>(
-    fromFirestore: (snapshot, _) => CallCenterModel.fromJson(snapshot.data()!),
-    toFirestore: (snapshot, _) => snapshot.toJson(),
-  );
-
-  CollectionReference<DeliveryAreaModel> get deliveryAreaConvertor =>
-      withConverter<DeliveryAreaModel>(
-        fromFirestore: (snapshot, _) => DeliveryAreaModel.fromJson(snapshot.data()!),
-        toFirestore: (snapshot, _) => snapshot.toJson(),
-      );
-
   CollectionReference<DriverModel> get driverConvertor => withConverter<DriverModel>(
     fromFirestore: (snapshot, _) => DriverModel.fromJson(snapshot.data()!),
     toFirestore: (snapshot, _) => snapshot.toJson(),
@@ -112,6 +101,16 @@ extension FireConvertors on CollectionReference {
 
   CollectionReference<CityModel> get cityConvertor => withConverter<CityModel>(
     fromFirestore: (snapshot, _) => CityModel.fromJson(snapshot.data()!),
+    toFirestore: (snapshot, _) => snapshot.toJson(),
+  );
+
+  CollectionReference<CompanyModel> get companyConvertor => withConverter<CompanyModel>(
+    fromFirestore: (snapshot, _) => CompanyModel.fromJson(snapshot.data()!),
+    toFirestore: (snapshot, _) => snapshot.toJson(),
+  );
+
+  CollectionReference<VersionModel> get versionConvertor => withConverter<VersionModel>(
+    fromFirestore: (snapshot, _) => VersionModel.fromJson(snapshot.data()!),
     toFirestore: (snapshot, _) => snapshot.toJson(),
   );
 }
