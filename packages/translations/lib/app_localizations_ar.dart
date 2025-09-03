@@ -518,7 +518,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get addresses => 'Addresses';
 
   @override
-  String get settings => 'Settings';
+  String get settings => 'اعدادات';
 
   @override
   String get preferences => 'Preferences';
@@ -1744,6 +1744,85 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get friday => 'الجمعة';
+
+  @override
+  String get acceptanceDate => 'تاريخ القبول';
+
+  @override
+  String get addVacation => 'إضافة أجازة';
+
+  @override
+  String get vacationName => 'اسم الاجازة';
+
+  @override
+  String get numberDaysRemaining => 'عدد الايام المتبقية';
+
+  @override
+  String get vacationsAndLeaves => 'الإجازات والمغادرات';
+
+  @override
+  String get breakDuration => 'مدة الاستراحة';
+
+  @override
+  String get deductionRates => 'نسب الاقتطاع';
+
+  @override
+  String get companyDepartments => 'اقسام الشركة';
+
+  @override
+  String get gracePeriodShift => 'فترة السماح لكل شيفت (بالدقائق)';
+
+  @override
+  String get afterGracePeriod => 'بعد فترة السماح يُعتبر الموظف متأخر';
+
+  @override
+  String get deductionInCaseDelay =>
+      'الخصم عند التأخير نسبة او عدد ساعات من اجور اليوم الواحد';
+
+  @override
+  String get fromMinutes => 'من (دقائق)';
+
+  @override
+  String get toMinutes => 'إلى(دقائق)';
+
+  @override
+  String get numberDiscountHours => 'عدد ساعات الخصم';
+
+  @override
+  String get addAnotherDiscount => 'إضافة خصم آخر';
+
+  @override
+  String get numberAnnualLeaveDays => 'عدد ايام الاجازة السنوية';
+
+  @override
+  String get numberSickLeaveDays => 'عدد ايام الاجازة المرضية';
+
+  @override
+  String get maxDaysRequestedOnetime =>
+      'أقصى عدد من الأيام يمكن طلبها في المرة الواحدة';
+
+  @override
+  String get possibilityCarryingDays =>
+      'إمكانية ترحيل الأيام غير المستخدمة للسنة الجديدة';
+
+  @override
+  String get maximumCarryover => 'الحد الأقصى للترحيل';
+
+  @override
+  String get facilitySocialSecurity => 'المنشأة خاضعة للضمان الإجتماعي';
+
+  @override
+  String get socialSecurityDeductionSalary =>
+      'نسبة اقتطاع الضمان من الراتب الشهري';
+
+  @override
+  String get addNewQuestion => 'إضافة سؤال جديد';
+
+  @override
+  String get question => 'السؤال';
+
+  @override
+  String get answer => 'الاجابة';
 
   @override
   String get male => 'ذكر';
