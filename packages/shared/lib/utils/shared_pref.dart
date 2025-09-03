@@ -117,4 +117,17 @@ class MySharedPreferences {
     value.createdAt = null;
     _sharedPreferences.setString('foodStore', jsonEncode(value.toJson()));
   }
+
+  static VersionModel? get versions {
+    String? value = _sharedPreferences.getString('versions');
+    VersionModel? versionModel;
+    if (value != null && value.isNotEmpty && value != 'null') {
+      versionModel = VersionModel.fromJson(jsonDecode(value));
+    }
+    return versionModel;
+  }
+
+  static set versions(VersionModel? value) {
+    _sharedPreferences.setString('versions', jsonEncode(value?.toJson()));
+  }
 }

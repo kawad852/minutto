@@ -9,16 +9,16 @@ class MyStorage {
   }
 
   // === cities ===
-  static List<CountryModel> get cities {
+  static List<CityModel> get cities {
     final data = _box.read('cities');
     if (data != null) {
       final List<Map<String, dynamic>> list = List<Map<String, dynamic>>.from(jsonDecode(data));
-      return list.map((e) => CountryModel.fromJson(e)).toList();
+      return list.map((e) => CityModel.fromJson(e)).toList();
     }
     return [];
   }
 
-  static set cities(List<CountryModel> value) {
+  static set cities(List<CityModel> value) {
     _box.write('cities', jsonEncode(value));
   }
 
