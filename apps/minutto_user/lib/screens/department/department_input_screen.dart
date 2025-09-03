@@ -136,20 +136,20 @@ class _DepartmentInputScreenState extends State<DepartmentInputScreen> {
                       value: _department.managerId.isNotEmpty ? _department.managerId : null,
                     ),
                   ),
-                  const SizedBox(height: 25),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Text(
-                          context.appLocalization.condition,
-                          style: context.textTheme.titleMedium!.copyWith(
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                      // CustomSwitch(onChanged: (value) {}),
-                    ],
-                  ),
+                  // const SizedBox(height: 25),
+                  // Row(
+                  //   children: [
+                  //     Expanded(
+                  //       child: Text(
+                  //         context.appLocalization.condition,
+                  //         style: context.textTheme.titleMedium!.copyWith(
+                  //           fontWeight: FontWeight.w500,
+                  //         ),
+                  //       ),
+                  //     ),
+                  //     // CustomSwitch(onChanged: (value) {}),
+                  //   ],
+                  // ),
                 ],
               ),
             ),
