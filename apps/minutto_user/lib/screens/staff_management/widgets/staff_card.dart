@@ -10,6 +10,8 @@ class StaffCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final branch = user.branch;
+    final department = user.department;
     final style = TextStyle(
       color: context.colorPalette.blue475,
       fontSize: 12,
@@ -51,7 +53,7 @@ class StaffCard extends StatelessWidget {
                   style: style,
                 ),
                 Text(
-                  user.departmentId,
+                  department.name,
                   overflow: TextOverflow.ellipsis,
                   style: style,
                 ),
@@ -68,7 +70,7 @@ class StaffCard extends StatelessWidget {
                   style: style,
                 ),
                 Text(
-                  user.branchId,
+                  branch.name,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: context.colorPalette.green19B,

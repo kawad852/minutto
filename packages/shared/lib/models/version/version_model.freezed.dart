@@ -21,14 +21,14 @@ VersionModel _$VersionModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$VersionModel {
-  String get branchesVersion => throw _privateConstructorUsedError;
-  set branchesVersion(String value) => throw _privateConstructorUsedError;
-  String get departmentsVersion => throw _privateConstructorUsedError;
-  set departmentsVersion(String value) => throw _privateConstructorUsedError;
-  String get usersVersion => throw _privateConstructorUsedError;
-  set usersVersion(String value) => throw _privateConstructorUsedError;
-  String get citiesVersion => throw _privateConstructorUsedError;
-  set citiesVersion(String value) => throw _privateConstructorUsedError;
+  int get branchesVersion => throw _privateConstructorUsedError;
+  set branchesVersion(int value) => throw _privateConstructorUsedError;
+  int get departmentsVersion => throw _privateConstructorUsedError;
+  set departmentsVersion(int value) => throw _privateConstructorUsedError;
+  int get usersVersion => throw _privateConstructorUsedError;
+  set usersVersion(int value) => throw _privateConstructorUsedError;
+  int get citiesVersion => throw _privateConstructorUsedError;
+  set citiesVersion(int value) => throw _privateConstructorUsedError;
 
   /// Serializes this VersionModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -48,10 +48,10 @@ abstract class $VersionModelCopyWith<$Res> {
   ) = _$VersionModelCopyWithImpl<$Res, VersionModel>;
   @useResult
   $Res call({
-    String branchesVersion,
-    String departmentsVersion,
-    String usersVersion,
-    String citiesVersion,
+    int branchesVersion,
+    int departmentsVersion,
+    int usersVersion,
+    int citiesVersion,
   });
 }
 
@@ -80,19 +80,19 @@ class _$VersionModelCopyWithImpl<$Res, $Val extends VersionModel>
             branchesVersion: null == branchesVersion
                 ? _value.branchesVersion
                 : branchesVersion // ignore: cast_nullable_to_non_nullable
-                      as String,
+                      as int,
             departmentsVersion: null == departmentsVersion
                 ? _value.departmentsVersion
                 : departmentsVersion // ignore: cast_nullable_to_non_nullable
-                      as String,
+                      as int,
             usersVersion: null == usersVersion
                 ? _value.usersVersion
                 : usersVersion // ignore: cast_nullable_to_non_nullable
-                      as String,
+                      as int,
             citiesVersion: null == citiesVersion
                 ? _value.citiesVersion
                 : citiesVersion // ignore: cast_nullable_to_non_nullable
-                      as String,
+                      as int,
           )
           as $Val,
     );
@@ -109,10 +109,10 @@ abstract class _$$VersionModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call({
-    String branchesVersion,
-    String departmentsVersion,
-    String usersVersion,
-    String citiesVersion,
+    int branchesVersion,
+    int departmentsVersion,
+    int usersVersion,
+    int citiesVersion,
   });
 }
 
@@ -140,19 +140,19 @@ class __$$VersionModelImplCopyWithImpl<$Res>
         branchesVersion: null == branchesVersion
             ? _value.branchesVersion
             : branchesVersion // ignore: cast_nullable_to_non_nullable
-                  as String,
+                  as int,
         departmentsVersion: null == departmentsVersion
             ? _value.departmentsVersion
             : departmentsVersion // ignore: cast_nullable_to_non_nullable
-                  as String,
+                  as int,
         usersVersion: null == usersVersion
             ? _value.usersVersion
             : usersVersion // ignore: cast_nullable_to_non_nullable
-                  as String,
+                  as int,
         citiesVersion: null == citiesVersion
             ? _value.citiesVersion
             : citiesVersion // ignore: cast_nullable_to_non_nullable
-                  as String,
+                  as int,
       ),
     );
   }
@@ -163,10 +163,10 @@ class __$$VersionModelImplCopyWithImpl<$Res>
 @JsonSerializable(explicitToJson: true)
 class _$VersionModelImpl implements _VersionModel {
   _$VersionModelImpl({
-    this.branchesVersion = "0",
-    this.departmentsVersion = "0",
-    this.usersVersion = "0",
-    this.citiesVersion = "0",
+    this.branchesVersion = 0,
+    this.departmentsVersion = 0,
+    this.usersVersion = 0,
+    this.citiesVersion = 0,
   });
 
   factory _$VersionModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -174,16 +174,16 @@ class _$VersionModelImpl implements _VersionModel {
 
   @override
   @JsonKey()
-  String branchesVersion;
+  int branchesVersion;
   @override
   @JsonKey()
-  String departmentsVersion;
+  int departmentsVersion;
   @override
   @JsonKey()
-  String usersVersion;
+  int usersVersion;
   @override
   @JsonKey()
-  String citiesVersion;
+  int citiesVersion;
 
   @override
   String toString() {
@@ -206,27 +206,27 @@ class _$VersionModelImpl implements _VersionModel {
 
 abstract class _VersionModel implements VersionModel {
   factory _VersionModel({
-    String branchesVersion,
-    String departmentsVersion,
-    String usersVersion,
-    String citiesVersion,
+    int branchesVersion,
+    int departmentsVersion,
+    int usersVersion,
+    int citiesVersion,
   }) = _$VersionModelImpl;
 
   factory _VersionModel.fromJson(Map<String, dynamic> json) =
       _$VersionModelImpl.fromJson;
 
   @override
-  String get branchesVersion;
-  set branchesVersion(String value);
+  int get branchesVersion;
+  set branchesVersion(int value);
   @override
-  String get departmentsVersion;
-  set departmentsVersion(String value);
+  int get departmentsVersion;
+  set departmentsVersion(int value);
   @override
-  String get usersVersion;
-  set usersVersion(String value);
+  int get usersVersion;
+  set usersVersion(int value);
   @override
-  String get citiesVersion;
-  set citiesVersion(String value);
+  int get citiesVersion;
+  set citiesVersion(int value);
 
   /// Create a copy of VersionModel
   /// with the given fields replaced by the non-null parameter values.

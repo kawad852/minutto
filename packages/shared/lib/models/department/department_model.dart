@@ -7,7 +7,7 @@ part 'department_model.g.dart';
 class DepartmentModel with _$DepartmentModel {
   @JsonSerializable(explicitToJson: true)
   factory DepartmentModel({
-    @TimestampSerializer() required DateTime createdAt,
+    @TimestampSerializer() DateTime? createdAt,
     @Default('') String id,
     @Default('') String name,
     @Default('') String companyId,
@@ -16,4 +16,10 @@ class DepartmentModel with _$DepartmentModel {
   }) = _DepartmentModel;
 
   factory DepartmentModel.fromJson(Map<String, dynamic> json) => _$DepartmentModelFromJson(json);
+
+  DepartmentModel._();
+
+  BranchModel get branch {
+    return CacheService.instance.getBranch(branchId);
+  }
 }

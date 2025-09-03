@@ -8,10 +8,10 @@ part of 'version_model.dart';
 
 _$VersionModelImpl _$$VersionModelImplFromJson(Map<String, dynamic> json) =>
     _$VersionModelImpl(
-      branchesVersion: json['branchesVersion'] as String? ?? "0",
-      departmentsVersion: json['departmentsVersion'] as String? ?? "0",
-      usersVersion: json['usersVersion'] as String? ?? "0",
-      citiesVersion: json['citiesVersion'] as String? ?? "0",
+      branchesVersion: (json['branchesVersion'] as num?)?.toInt() ?? 0,
+      departmentsVersion: (json['departmentsVersion'] as num?)?.toInt() ?? 0,
+      usersVersion: (json['usersVersion'] as num?)?.toInt() ?? 0,
+      citiesVersion: (json['citiesVersion'] as num?)?.toInt() ?? 0,
     );
 
 Map<String, dynamic> _$$VersionModelImplToJson(_$VersionModelImpl instance) =>

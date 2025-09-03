@@ -8,7 +8,7 @@ part of 'city_model.dart';
 
 _$CityModelImpl _$$CityModelImplFromJson(Map<String, dynamic> json) =>
     _$CityModelImpl(
-      createdAt: DateTime.parse(json['createdAt'] as String),
+      createdAt: const TimestampSerializer().fromJson(json['createdAt']),
       id: json['id'] as String? ?? '',
       companyId: json['companyId'] as String? ?? '',
       name: json['name'] as String? ?? '',
@@ -16,7 +16,7 @@ _$CityModelImpl _$$CityModelImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$CityModelImplToJson(_$CityModelImpl instance) =>
     <String, dynamic>{
-      'createdAt': instance.createdAt.toIso8601String(),
+      'createdAt': const TimestampSerializer().toJson(instance.createdAt),
       'id': instance.id,
       'companyId': instance.companyId,
       'name': instance.name,

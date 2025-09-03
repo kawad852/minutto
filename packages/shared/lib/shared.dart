@@ -178,6 +178,7 @@ export 'providers/portal_provider.dart';
 export 'providers/user_provider.dart';
 export 'screens/review/reviews_screen.dart';
 export 'screens/review/widgets/review_card.dart';
+export 'services/cache_service.dart';
 export 'services/deep_linking_service.dart';
 export 'services/firebase_analytics_service.dart';
 export 'services/launcher_service.dart';

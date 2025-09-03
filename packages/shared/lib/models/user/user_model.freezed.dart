@@ -453,7 +453,7 @@ class __$$UserModelImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(explicitToJson: true)
-class _$UserModelImpl implements _UserModel {
+class _$UserModelImpl extends _UserModel {
   _$UserModelImpl({
     this.id = '',
     this.roleId,
@@ -478,7 +478,7 @@ class _$UserModelImpl implements _UserModel {
     this.bank,
     this.active = true,
     this.archived = false,
-  });
+  }) : super._();
 
   factory _$UserModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserModelImplFromJson(json);
@@ -570,7 +570,7 @@ class _$UserModelImpl implements _UserModel {
   }
 }
 
-abstract class _UserModel implements UserModel {
+abstract class _UserModel extends UserModel {
   factory _UserModel({
     String id,
     String? roleId,
@@ -596,6 +596,7 @@ abstract class _UserModel implements UserModel {
     bool active,
     bool archived,
   }) = _$UserModelImpl;
+  _UserModel._() : super._();
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
       _$UserModelImpl.fromJson;

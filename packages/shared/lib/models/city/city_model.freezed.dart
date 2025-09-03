@@ -22,9 +22,9 @@ CityModel _$CityModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$CityModel {
   @TimestampSerializer()
-  DateTime get createdAt => throw _privateConstructorUsedError;
+  DateTime? get createdAt => throw _privateConstructorUsedError;
   @TimestampSerializer()
-  set createdAt(DateTime value) => throw _privateConstructorUsedError;
+  set createdAt(DateTime? value) => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   set id(String value) => throw _privateConstructorUsedError;
   String get companyId => throw _privateConstructorUsedError;
@@ -48,7 +48,7 @@ abstract class $CityModelCopyWith<$Res> {
       _$CityModelCopyWithImpl<$Res, CityModel>;
   @useResult
   $Res call({
-    @TimestampSerializer() DateTime createdAt,
+    @TimestampSerializer() DateTime? createdAt,
     String id,
     String companyId,
     String name,
@@ -70,17 +70,17 @@ class _$CityModelCopyWithImpl<$Res, $Val extends CityModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = null,
+    Object? createdAt = freezed,
     Object? id = null,
     Object? companyId = null,
     Object? name = null,
   }) {
     return _then(
       _value.copyWith(
-            createdAt: null == createdAt
+            createdAt: freezed == createdAt
                 ? _value.createdAt
                 : createdAt // ignore: cast_nullable_to_non_nullable
-                      as DateTime,
+                      as DateTime?,
             id: null == id
                 ? _value.id
                 : id // ignore: cast_nullable_to_non_nullable
@@ -109,7 +109,7 @@ abstract class _$$CityModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call({
-    @TimestampSerializer() DateTime createdAt,
+    @TimestampSerializer() DateTime? createdAt,
     String id,
     String companyId,
     String name,
@@ -130,17 +130,17 @@ class __$$CityModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = null,
+    Object? createdAt = freezed,
     Object? id = null,
     Object? companyId = null,
     Object? name = null,
   }) {
     return _then(
       _$CityModelImpl(
-        createdAt: null == createdAt
+        createdAt: freezed == createdAt
             ? _value.createdAt
             : createdAt // ignore: cast_nullable_to_non_nullable
-                  as DateTime,
+                  as DateTime?,
         id: null == id
             ? _value.id
             : id // ignore: cast_nullable_to_non_nullable
@@ -163,7 +163,7 @@ class __$$CityModelImplCopyWithImpl<$Res>
 @JsonSerializable(explicitToJson: true)
 class _$CityModelImpl implements _CityModel {
   _$CityModelImpl({
-    @TimestampSerializer() required this.createdAt,
+    @TimestampSerializer() this.createdAt,
     this.id = '',
     this.companyId = '',
     this.name = '',
@@ -174,7 +174,7 @@ class _$CityModelImpl implements _CityModel {
 
   @override
   @TimestampSerializer()
-  DateTime createdAt;
+  DateTime? createdAt;
   @override
   @JsonKey()
   String id;
@@ -206,7 +206,7 @@ class _$CityModelImpl implements _CityModel {
 
 abstract class _CityModel implements CityModel {
   factory _CityModel({
-    @TimestampSerializer() required DateTime createdAt,
+    @TimestampSerializer() DateTime? createdAt,
     String id,
     String companyId,
     String name,
@@ -217,9 +217,9 @@ abstract class _CityModel implements CityModel {
 
   @override
   @TimestampSerializer()
-  DateTime get createdAt;
+  DateTime? get createdAt;
   @TimestampSerializer()
-  set createdAt(DateTime value);
+  set createdAt(DateTime? value);
   @override
   String get id;
   set id(String value);

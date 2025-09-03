@@ -33,6 +33,16 @@ class UserModel with _$UserModel {
   }) = _UserModel;
 
   factory UserModel.fromJson(Map<String, dynamic> json) => _$UserModelFromJson(json);
+
+  UserModel._();
+
+  BranchModel get branch {
+    return CacheService.instance.getBranch(branchId);
+  }
+
+  DepartmentModel get department {
+    return CacheService.instance.getDepartment(departmentId);
+  }
 }
 
 @unfreezed

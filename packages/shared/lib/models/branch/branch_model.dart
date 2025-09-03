@@ -7,7 +7,7 @@ part 'branch_model.g.dart';
 class BranchModel with _$BranchModel {
   @JsonSerializable(explicitToJson: true)
   factory BranchModel({
-    @TimestampSerializer() required DateTime createdAt,
+    @TimestampSerializer() DateTime? createdAt,
     @Default('') String id,
     @Default('') String name,
     @Default('') String companyId,
@@ -25,5 +25,9 @@ class BranchModel with _$BranchModel {
 
   String? getPhoneNumber(BuildContext context) {
     return UiHelper.getPhoneNumber(context, phoneNumberCountryCode, phoneNumber);
+  }
+
+  CityModel get city {
+    return CacheService.instance.getCity(cityId);
   }
 }

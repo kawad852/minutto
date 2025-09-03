@@ -19,6 +19,9 @@ class MyStorage {
   }
 
   static set cities(List<CityModel> value) {
+    for (var e in value) {
+      e.createdAt = null;
+    }
     _box.write('cities', jsonEncode(value));
   }
 
@@ -33,6 +36,12 @@ class MyStorage {
   }
 
   static set users(List<UserModel> value) {
+    for (var e in value) {
+      e.createdAt = null;
+      e.workStartDate = null;
+      e.contractEndDate = null;
+      e.birthDate = null;
+    }
     _box.write('users', jsonEncode(value));
   }
 
@@ -47,6 +56,9 @@ class MyStorage {
   }
 
   static set departments(List<DepartmentModel> value) {
+    for (var e in value) {
+      e.createdAt = null;
+    }
     _box.write('departments', jsonEncode(value));
   }
 
@@ -61,6 +73,9 @@ class MyStorage {
   }
 
   static set branches(List<BranchModel> value) {
+    for (var e in value) {
+      e.createdAt = null;
+    }
     _box.write('branches', jsonEncode(value));
   }
 }

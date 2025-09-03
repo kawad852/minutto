@@ -9,7 +9,7 @@ part of 'department_model.dart';
 _$DepartmentModelImpl _$$DepartmentModelImplFromJson(
   Map<String, dynamic> json,
 ) => _$DepartmentModelImpl(
-  createdAt: DateTime.parse(json['createdAt'] as String),
+  createdAt: const TimestampSerializer().fromJson(json['createdAt']),
   id: json['id'] as String? ?? '',
   name: json['name'] as String? ?? '',
   companyId: json['companyId'] as String? ?? '',
@@ -20,7 +20,7 @@ _$DepartmentModelImpl _$$DepartmentModelImplFromJson(
 Map<String, dynamic> _$$DepartmentModelImplToJson(
   _$DepartmentModelImpl instance,
 ) => <String, dynamic>{
-  'createdAt': instance.createdAt.toIso8601String(),
+  'createdAt': const TimestampSerializer().toJson(instance.createdAt),
   'id': instance.id,
   'name': instance.name,
   'companyId': instance.companyId,

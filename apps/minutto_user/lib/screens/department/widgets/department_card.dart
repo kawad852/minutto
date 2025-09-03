@@ -11,6 +11,7 @@ class DepartmentCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final branch = department.branch;
     final style = TextStyle(
       color: context.colorPalette.grey718,
       fontSize: 16,
@@ -48,7 +49,7 @@ class DepartmentCard extends StatelessWidget {
             ],
           ),
           Text(
-            department.branchId,
+            branch.name,
             style: style,
           ),
           // Container(

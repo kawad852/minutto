@@ -10,6 +10,7 @@ class BranchCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final city = branch.city;
     final style = TextStyle(
       color: context.colorPalette.grey718,
       fontSize: 16,
@@ -56,7 +57,7 @@ class BranchCard extends StatelessWidget {
             children: [
               const CustomSvg(MyIcons.loc),
               Text(
-                branch.cityId,
+                city.name,
                 style: style,
               ),
             ],

@@ -22,9 +22,9 @@ DepartmentModel _$DepartmentModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$DepartmentModel {
   @TimestampSerializer()
-  DateTime get createdAt => throw _privateConstructorUsedError;
+  DateTime? get createdAt => throw _privateConstructorUsedError;
   @TimestampSerializer()
-  set createdAt(DateTime value) => throw _privateConstructorUsedError;
+  set createdAt(DateTime? value) => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   set id(String value) => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
@@ -54,7 +54,7 @@ abstract class $DepartmentModelCopyWith<$Res> {
   ) = _$DepartmentModelCopyWithImpl<$Res, DepartmentModel>;
   @useResult
   $Res call({
-    @TimestampSerializer() DateTime createdAt,
+    @TimestampSerializer() DateTime? createdAt,
     String id,
     String name,
     String companyId,
@@ -78,7 +78,7 @@ class _$DepartmentModelCopyWithImpl<$Res, $Val extends DepartmentModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = null,
+    Object? createdAt = freezed,
     Object? id = null,
     Object? name = null,
     Object? companyId = null,
@@ -87,10 +87,10 @@ class _$DepartmentModelCopyWithImpl<$Res, $Val extends DepartmentModel>
   }) {
     return _then(
       _value.copyWith(
-            createdAt: null == createdAt
+            createdAt: freezed == createdAt
                 ? _value.createdAt
                 : createdAt // ignore: cast_nullable_to_non_nullable
-                      as DateTime,
+                      as DateTime?,
             id: null == id
                 ? _value.id
                 : id // ignore: cast_nullable_to_non_nullable
@@ -127,7 +127,7 @@ abstract class _$$DepartmentModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call({
-    @TimestampSerializer() DateTime createdAt,
+    @TimestampSerializer() DateTime? createdAt,
     String id,
     String name,
     String companyId,
@@ -150,7 +150,7 @@ class __$$DepartmentModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = null,
+    Object? createdAt = freezed,
     Object? id = null,
     Object? name = null,
     Object? companyId = null,
@@ -159,10 +159,10 @@ class __$$DepartmentModelImplCopyWithImpl<$Res>
   }) {
     return _then(
       _$DepartmentModelImpl(
-        createdAt: null == createdAt
+        createdAt: freezed == createdAt
             ? _value.createdAt
             : createdAt // ignore: cast_nullable_to_non_nullable
-                  as DateTime,
+                  as DateTime?,
         id: null == id
             ? _value.id
             : id // ignore: cast_nullable_to_non_nullable
@@ -191,22 +191,22 @@ class __$$DepartmentModelImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(explicitToJson: true)
-class _$DepartmentModelImpl implements _DepartmentModel {
+class _$DepartmentModelImpl extends _DepartmentModel {
   _$DepartmentModelImpl({
-    @TimestampSerializer() required this.createdAt,
+    @TimestampSerializer() this.createdAt,
     this.id = '',
     this.name = '',
     this.companyId = '',
     this.branchId = '',
     this.managerId = '',
-  });
+  }) : super._();
 
   factory _$DepartmentModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$DepartmentModelImplFromJson(json);
 
   @override
   @TimestampSerializer()
-  DateTime createdAt;
+  DateTime? createdAt;
   @override
   @JsonKey()
   String id;
@@ -245,24 +245,25 @@ class _$DepartmentModelImpl implements _DepartmentModel {
   }
 }
 
-abstract class _DepartmentModel implements DepartmentModel {
+abstract class _DepartmentModel extends DepartmentModel {
   factory _DepartmentModel({
-    @TimestampSerializer() required DateTime createdAt,
+    @TimestampSerializer() DateTime? createdAt,
     String id,
     String name,
     String companyId,
     String branchId,
     String managerId,
   }) = _$DepartmentModelImpl;
+  _DepartmentModel._() : super._();
 
   factory _DepartmentModel.fromJson(Map<String, dynamic> json) =
       _$DepartmentModelImpl.fromJson;
 
   @override
   @TimestampSerializer()
-  DateTime get createdAt;
+  DateTime? get createdAt;
   @TimestampSerializer()
-  set createdAt(DateTime value);
+  set createdAt(DateTime? value);
   @override
   String get id;
   set id(String value);

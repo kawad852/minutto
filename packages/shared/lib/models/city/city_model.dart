@@ -7,7 +7,7 @@ part 'city_model.g.dart';
 class CityModel with _$CityModel {
   @JsonSerializable(explicitToJson: true)
   factory CityModel({
-    @TimestampSerializer() required DateTime createdAt,
+    @TimestampSerializer() DateTime? createdAt,
     @Default('') String id,
     @Default('') String companyId,
     @Default('') String name,

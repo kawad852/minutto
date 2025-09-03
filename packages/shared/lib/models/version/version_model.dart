@@ -9,10 +9,10 @@ part 'version_model.g.dart';
 class VersionModel with _$VersionModel {
   @JsonSerializable(explicitToJson: true)
   factory VersionModel({
-    @Default("0") String branchesVersion,
-    @Default("0") String departmentsVersion,
-    @Default("0") String usersVersion,
-    @Default("0") String citiesVersion,
+    @Default(0) int branchesVersion,
+    @Default(0) int departmentsVersion,
+    @Default(0) int usersVersion,
+    @Default(0) int citiesVersion,
   }) = _VersionModel;
 
   factory VersionModel.fromJson(Map<String, dynamic> json) => _$VersionModelFromJson(json);

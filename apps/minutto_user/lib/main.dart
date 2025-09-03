@@ -1,4 +1,5 @@
 import 'package:minutto_user/shared.dart';
+import 'package:shared/services/cache_service.dart';
 import 'package:shared/shared.dart';
 
 import 'firebase_options.dart';
@@ -17,19 +18,20 @@ void main() async {
       if (isAuthenticated) {
         return AppNavBar();
       } else {
-        return IntroScreen(); 
+        return IntroScreen();
         //LoginScreen();
       }
     },
     logoutBuilder: kLogoutBuilder,
     providers: (context) => [
-      StreamProvider<List<BasketModel>>.value(
-        value: context.userProvider.userBasketStream.map(
-          (event) => event.docs.map((e) => e.data()).toList(),
+      StreamProvider<VersionModel>.value(
+        value: FirebaseFirestore.instance.versionsDoc.snapshots().map(
+          (event) => event.data() ?? VersionModel(),
         ),
-        initialData: MySharedPreferences.basket,
+        initialData: MySharedPreferences.versions ?? VersionModel(),
+        lazy: false,
         updateShouldNotify: (initialValue, value) {
-          MySharedPreferences.basket = value;
+          CacheService.instance.fetchVersions();
           return true;
         },
       ),

@@ -10,17 +10,12 @@ class CacheService {
   FirebaseFirestore get _firebaseFirestore => getIt<FirebaseFirestore>();
 
   void fetchVersions() {
-    _firebaseFirestore
-        .collection(MyCollections.settings)
-        .versionConvertor
-        .doc(kVersionsDocId)
-        .get()
-        .then((value) {
-          final data = value.data();
-          if (data != null) {
-            _toggle(data);
-          }
-        });
+    _firebaseFirestore.versionsDoc.get().then((value) {
+      final data = value.data();
+      if (data != null) {
+        _toggle(data);
+      }
+    });
   }
 
   void _toggle(VersionModel data) {

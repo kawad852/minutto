@@ -13,18 +13,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.only(bottom: 0),
-            child: FloatingActionButton(
-              onPressed: () {
-                FirebaseFirestore.instance.versionsDoc.update({
-                  MyFields.branchesVersion: FieldValue.increment(1),
-                });
-              },
-            ),
-          ),
-        ),
         HomeHeader(),
         Expanded(
           child: SingleChildScrollView(
