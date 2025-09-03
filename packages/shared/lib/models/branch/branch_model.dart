@@ -11,7 +11,19 @@ class BranchModel with _$BranchModel {
     @Default('') String id,
     @Default('') String name,
     @Default('') String companyId,
+    @Default('') String email,
+    @Default('') String cityId,
+    @Default(kFallBackCountryCode) String phoneNumberCountryCode,
+    @Default('') String phoneNumber,
+    @Default('') String startWorkingHour,
+    @Default('') String endWorkingHour,
   }) = _BranchModel;
 
   factory BranchModel.fromJson(Map<String, dynamic> json) => _$BranchModelFromJson(json);
+
+  BranchModel._();
+
+  String? getPhoneNumber(BuildContext context) {
+    return UiHelper.getPhoneNumber(context, phoneNumberCountryCode, phoneNumber);
+  }
 }

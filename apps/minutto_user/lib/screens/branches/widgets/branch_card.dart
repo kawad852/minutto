@@ -1,7 +1,12 @@
 import 'package:shared/shared.dart';
 
 class BranchCard extends StatelessWidget {
-  const BranchCard({super.key});
+  final BranchModel branch;
+
+  const BranchCard({
+    super.key,
+    required this.branch,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,24 +26,17 @@ class BranchCard extends StatelessWidget {
         spacing: 8,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              Expanded(
-                child: Text(
-                  "فرع عمان",
-                  overflow: TextOverflow.ellipsis,
-                  style: style,
-                ),
-              ),
-              CustomMenu(),
-            ],
+          Text(
+            branch.name,
+            overflow: TextOverflow.ellipsis,
+            style: style,
           ),
           Row(
             spacing: 6,
             children: [
               const CustomSvg(MyIcons.call),
               Text(
-                "0765555555",
+                branch.getPhoneNumber(context)!,
                 style: style,
               ),
             ],
@@ -48,7 +46,7 @@ class BranchCard extends StatelessWidget {
             children: [
               const CustomSvg(MyIcons.sms),
               Text(
-                "Example@gmail.com",
+                branch.email,
                 style: style,
               ),
             ],
@@ -58,7 +56,7 @@ class BranchCard extends StatelessWidget {
             children: [
               const CustomSvg(MyIcons.loc),
               Text(
-                "السعودية",
+                branch.cityId,
                 style: style,
               ),
             ],

@@ -12,6 +12,13 @@ _$BranchModelImpl _$$BranchModelImplFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String? ?? '',
       name: json['name'] as String? ?? '',
       companyId: json['companyId'] as String? ?? '',
+      email: json['email'] as String? ?? '',
+      cityId: json['cityId'] as String? ?? '',
+      phoneNumberCountryCode:
+          json['phoneNumberCountryCode'] as String? ?? kFallBackCountryCode,
+      phoneNumber: json['phoneNumber'] as String? ?? '',
+      startWorkingHour: json['startWorkingHour'] as String? ?? '',
+      endWorkingHour: json['endWorkingHour'] as String? ?? '',
     );
 
 Map<String, dynamic> _$$BranchModelImplToJson(_$BranchModelImpl instance) =>
@@ -20,4 +27,10 @@ Map<String, dynamic> _$$BranchModelImplToJson(_$BranchModelImpl instance) =>
       'id': instance.id,
       'name': instance.name,
       'companyId': instance.companyId,
+      'email': instance.email,
+      'cityId': instance.cityId,
+      'phoneNumberCountryCode': instance.phoneNumberCountryCode,
+      'phoneNumber': instance.phoneNumber,
+      'startWorkingHour': instance.startWorkingHour,
+      'endWorkingHour': instance.endWorkingHour,
     };

@@ -14,7 +14,10 @@ extension DateTimeExtension on DateTime {
 }
 
 extension DayTimeExtension on String {
-  TimeOfDay get convertStringToTimeOfDay {
+  TimeOfDay? get convertStringToTimeOfDay {
+    if (isEmpty) {
+      return null;
+    }
     final arabicPM = contains('م');
     // final arabicAM = contains('ص');
     final isPm = contains('PM') || arabicPM;

@@ -12,7 +12,7 @@ class _CitiesScreenState extends State<CitiesScreen> {
   late Query<CityModel> _query;
 
   void _initialize() {
-    _query = FirebaseFirestore.instance.cities.orderByCreatedAtDesc;
+    _query = FirebaseFirestore.instance.cities.orderByCreatedAtDesc.whereCompanyId;
   }
 
   @override

@@ -9,6 +9,20 @@ class BranchesScreen extends StatefulWidget {
 }
 
 class _BranchesScreenState extends State<BranchesScreen> {
+  late Query<BranchModel> _query;
+
+  FirebaseFirestore get _firebaseFirestore => FirebaseFirestore.instance;
+
+  void _initialize() {
+    _query = _firebaseFirestore.branches.orderByCreatedAtDesc.whereCompanyId;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _initialize();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,12 +48,23 @@ class _BranchesScreenState extends State<BranchesScreen> {
           ),
         ),
       ),
-      body: ListView.separated(
-        separatorBuilder: (context, index) => const SizedBox(height: 20),
-        itemCount: 6,
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-        itemBuilder: (context, index) {
-          return BranchCard();
+      body: BlitzBuilder.query(
+        query: _query,
+        onComplete: (context, snapshot, _) {
+          if (snapshot.docs.isEmpty) {
+            return const EmptyWidget();
+          }
+          return ListView.separated(
+            separatorBuilder: (context, index) => const SizedBox(height: 20),
+            itemCount: snapshot.docs.length,
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+            itemBuilder: (context, index) {
+              final branch = snapshot.docs[index].data();
+              return BranchCard(
+                branch: branch,
+              );
+            },
+          );
         },
       ),
     );

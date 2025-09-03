@@ -31,6 +31,19 @@ mixin _$BranchModel {
   set name(String value) => throw _privateConstructorUsedError;
   String get companyId => throw _privateConstructorUsedError;
   set companyId(String value) => throw _privateConstructorUsedError;
+  String get email => throw _privateConstructorUsedError;
+  set email(String value) => throw _privateConstructorUsedError;
+  String get cityId => throw _privateConstructorUsedError;
+  set cityId(String value) => throw _privateConstructorUsedError;
+  String get phoneNumberCountryCode => throw _privateConstructorUsedError;
+  set phoneNumberCountryCode(String value) =>
+      throw _privateConstructorUsedError;
+  String get phoneNumber => throw _privateConstructorUsedError;
+  set phoneNumber(String value) => throw _privateConstructorUsedError;
+  String get startWorkingHour => throw _privateConstructorUsedError;
+  set startWorkingHour(String value) => throw _privateConstructorUsedError;
+  String get endWorkingHour => throw _privateConstructorUsedError;
+  set endWorkingHour(String value) => throw _privateConstructorUsedError;
 
   /// Serializes this BranchModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -54,6 +67,12 @@ abstract class $BranchModelCopyWith<$Res> {
     String id,
     String name,
     String companyId,
+    String email,
+    String cityId,
+    String phoneNumberCountryCode,
+    String phoneNumber,
+    String startWorkingHour,
+    String endWorkingHour,
   });
 }
 
@@ -76,6 +95,12 @@ class _$BranchModelCopyWithImpl<$Res, $Val extends BranchModel>
     Object? id = null,
     Object? name = null,
     Object? companyId = null,
+    Object? email = null,
+    Object? cityId = null,
+    Object? phoneNumberCountryCode = null,
+    Object? phoneNumber = null,
+    Object? startWorkingHour = null,
+    Object? endWorkingHour = null,
   }) {
     return _then(
       _value.copyWith(
@@ -94,6 +119,30 @@ class _$BranchModelCopyWithImpl<$Res, $Val extends BranchModel>
             companyId: null == companyId
                 ? _value.companyId
                 : companyId // ignore: cast_nullable_to_non_nullable
+                      as String,
+            email: null == email
+                ? _value.email
+                : email // ignore: cast_nullable_to_non_nullable
+                      as String,
+            cityId: null == cityId
+                ? _value.cityId
+                : cityId // ignore: cast_nullable_to_non_nullable
+                      as String,
+            phoneNumberCountryCode: null == phoneNumberCountryCode
+                ? _value.phoneNumberCountryCode
+                : phoneNumberCountryCode // ignore: cast_nullable_to_non_nullable
+                      as String,
+            phoneNumber: null == phoneNumber
+                ? _value.phoneNumber
+                : phoneNumber // ignore: cast_nullable_to_non_nullable
+                      as String,
+            startWorkingHour: null == startWorkingHour
+                ? _value.startWorkingHour
+                : startWorkingHour // ignore: cast_nullable_to_non_nullable
+                      as String,
+            endWorkingHour: null == endWorkingHour
+                ? _value.endWorkingHour
+                : endWorkingHour // ignore: cast_nullable_to_non_nullable
                       as String,
           )
           as $Val,
@@ -115,6 +164,12 @@ abstract class _$$BranchModelImplCopyWith<$Res>
     String id,
     String name,
     String companyId,
+    String email,
+    String cityId,
+    String phoneNumberCountryCode,
+    String phoneNumber,
+    String startWorkingHour,
+    String endWorkingHour,
   });
 }
 
@@ -136,6 +191,12 @@ class __$$BranchModelImplCopyWithImpl<$Res>
     Object? id = null,
     Object? name = null,
     Object? companyId = null,
+    Object? email = null,
+    Object? cityId = null,
+    Object? phoneNumberCountryCode = null,
+    Object? phoneNumber = null,
+    Object? startWorkingHour = null,
+    Object? endWorkingHour = null,
   }) {
     return _then(
       _$BranchModelImpl(
@@ -155,6 +216,30 @@ class __$$BranchModelImplCopyWithImpl<$Res>
             ? _value.companyId
             : companyId // ignore: cast_nullable_to_non_nullable
                   as String,
+        email: null == email
+            ? _value.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String,
+        cityId: null == cityId
+            ? _value.cityId
+            : cityId // ignore: cast_nullable_to_non_nullable
+                  as String,
+        phoneNumberCountryCode: null == phoneNumberCountryCode
+            ? _value.phoneNumberCountryCode
+            : phoneNumberCountryCode // ignore: cast_nullable_to_non_nullable
+                  as String,
+        phoneNumber: null == phoneNumber
+            ? _value.phoneNumber
+            : phoneNumber // ignore: cast_nullable_to_non_nullable
+                  as String,
+        startWorkingHour: null == startWorkingHour
+            ? _value.startWorkingHour
+            : startWorkingHour // ignore: cast_nullable_to_non_nullable
+                  as String,
+        endWorkingHour: null == endWorkingHour
+            ? _value.endWorkingHour
+            : endWorkingHour // ignore: cast_nullable_to_non_nullable
+                  as String,
       ),
     );
   }
@@ -163,13 +248,19 @@ class __$$BranchModelImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(explicitToJson: true)
-class _$BranchModelImpl implements _BranchModel {
+class _$BranchModelImpl extends _BranchModel {
   _$BranchModelImpl({
     @TimestampSerializer() required this.createdAt,
     this.id = '',
     this.name = '',
     this.companyId = '',
-  });
+    this.email = '',
+    this.cityId = '',
+    this.phoneNumberCountryCode = kFallBackCountryCode,
+    this.phoneNumber = '',
+    this.startWorkingHour = '',
+    this.endWorkingHour = '',
+  }) : super._();
 
   factory _$BranchModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$BranchModelImplFromJson(json);
@@ -186,10 +277,28 @@ class _$BranchModelImpl implements _BranchModel {
   @override
   @JsonKey()
   String companyId;
+  @override
+  @JsonKey()
+  String email;
+  @override
+  @JsonKey()
+  String cityId;
+  @override
+  @JsonKey()
+  String phoneNumberCountryCode;
+  @override
+  @JsonKey()
+  String phoneNumber;
+  @override
+  @JsonKey()
+  String startWorkingHour;
+  @override
+  @JsonKey()
+  String endWorkingHour;
 
   @override
   String toString() {
-    return 'BranchModel(createdAt: $createdAt, id: $id, name: $name, companyId: $companyId)';
+    return 'BranchModel(createdAt: $createdAt, id: $id, name: $name, companyId: $companyId, email: $email, cityId: $cityId, phoneNumberCountryCode: $phoneNumberCountryCode, phoneNumber: $phoneNumber, startWorkingHour: $startWorkingHour, endWorkingHour: $endWorkingHour)';
   }
 
   /// Create a copy of BranchModel
@@ -206,13 +315,20 @@ class _$BranchModelImpl implements _BranchModel {
   }
 }
 
-abstract class _BranchModel implements BranchModel {
+abstract class _BranchModel extends BranchModel {
   factory _BranchModel({
     @TimestampSerializer() required DateTime createdAt,
     String id,
     String name,
     String companyId,
+    String email,
+    String cityId,
+    String phoneNumberCountryCode,
+    String phoneNumber,
+    String startWorkingHour,
+    String endWorkingHour,
   }) = _$BranchModelImpl;
+  _BranchModel._() : super._();
 
   factory _BranchModel.fromJson(Map<String, dynamic> json) =
       _$BranchModelImpl.fromJson;
@@ -231,6 +347,24 @@ abstract class _BranchModel implements BranchModel {
   @override
   String get companyId;
   set companyId(String value);
+  @override
+  String get email;
+  set email(String value);
+  @override
+  String get cityId;
+  set cityId(String value);
+  @override
+  String get phoneNumberCountryCode;
+  set phoneNumberCountryCode(String value);
+  @override
+  String get phoneNumber;
+  set phoneNumber(String value);
+  @override
+  String get startWorkingHour;
+  set startWorkingHour(String value);
+  @override
+  String get endWorkingHour;
+  set endWorkingHour(String value);
 
   /// Create a copy of BranchModel
   /// with the given fields replaced by the non-null parameter values.
