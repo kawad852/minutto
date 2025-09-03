@@ -16,7 +16,7 @@ export 'screens/branches/branches_screen.dart';
 export 'screens/branches/widgets/branch_card.dart';
 export 'screens/department/department_input_screen.dart';
 //department
-export 'screens/department/department_screen.dart';
+export 'screens/department/departments_screen.dart';
 export 'screens/department/widgets/department_card.dart';
 export 'screens/employment_contracts/employee_profile_screen.dart';
 //EmploymentContracts

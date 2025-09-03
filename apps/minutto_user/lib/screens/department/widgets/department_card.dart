@@ -1,7 +1,13 @@
+import 'package:minutto_user/screens/department/department_input_screen.dart';
 import 'package:shared/shared.dart';
 
 class DepartmentCard extends StatelessWidget {
-  const DepartmentCard({super.key});
+  final DepartmentModel department;
+
+  const DepartmentCard({
+    super.key,
+    required this.department,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,32 +31,40 @@ class DepartmentCard extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(
-                  "قسم الجرافيك والتصميم",
+                  department.name,
                   overflow: TextOverflow.ellipsis,
                   style: style,
                 ),
               ),
-              CustomMenu(),
+              CustomMenu(
+                onEdit: () {
+                  context.navigate((context) {
+                    return DepartmentInputScreen(
+                      department: department,
+                    );
+                  });
+                },
+              ),
             ],
           ),
           Text(
-            "فرع عمان",
+            department.branchId,
             style: style,
           ),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-            margin: const EdgeInsets.only(top: 15),
-            alignment: AlignmentDirectional.centerEnd,
-            decoration: BoxDecoration(
-              color: context.colorPalette.greyABB,
-              border: Border.all(color: context.colorPalette.greyE9E),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: CustomSwitch(
-              onChanged: (value) {},
-            ),
-          ),
+          // Container(
+          //   width: double.infinity,
+          //   padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+          //   margin: const EdgeInsets.only(top: 15),
+          //   alignment: AlignmentDirectional.centerEnd,
+          //   decoration: BoxDecoration(
+          //     color: context.colorPalette.greyABB,
+          //     border: Border.all(color: context.colorPalette.greyE9E),
+          //     borderRadius: BorderRadius.circular(8),
+          //   ),
+          //   child: CustomSwitch(
+          //     onChanged: (value) {},
+          //   ),
+          // ),
         ],
       ),
     );

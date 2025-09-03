@@ -1850,4 +1850,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get addCity => 'إضافة مدينة';
+
+  @override
+  String get updatedSuccessfully => 'تم التحديث بنجاح';
 }

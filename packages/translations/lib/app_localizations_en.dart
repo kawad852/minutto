@@ -1859,4 +1859,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get addCity => 'Add City';
+
+  @override
+  String get updatedSuccessfully => 'Updated Successfully';
 }

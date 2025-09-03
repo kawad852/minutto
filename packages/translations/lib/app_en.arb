@@ -684,5 +684,6 @@
   "widowed": "Widowed",
   "citiesManagement": "Cities Management",
   "cities": "Cities",
-  "addCity": "Add City"
+  "addCity": "Add City",
+  "updatedSuccessfully": "Updated Successfully"
 }

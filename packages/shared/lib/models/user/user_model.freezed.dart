@@ -39,8 +39,8 @@ mixin _$UserModel {
   DateTime? get contractEndDate => throw _privateConstructorUsedError;
   @TimestampSerializer()
   set contractEndDate(DateTime? value) => throw _privateConstructorUsedError;
-  String get fullName => throw _privateConstructorUsedError;
-  set fullName(String value) => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  set name(String value) => throw _privateConstructorUsedError;
   String get phoneNumberCountryCode => throw _privateConstructorUsedError;
   set phoneNumberCountryCode(String value) =>
       throw _privateConstructorUsedError;
@@ -97,7 +97,7 @@ abstract class $UserModelCopyWith<$Res> {
     @TimestampSerializer() DateTime? createdAt,
     @TimestampSerializer() DateTime? workStartDate,
     @TimestampSerializer() DateTime? contractEndDate,
-    String fullName,
+    String name,
     String phoneNumberCountryCode,
     String phoneNumber,
     String email,
@@ -139,7 +139,7 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? createdAt = freezed,
     Object? workStartDate = freezed,
     Object? contractEndDate = freezed,
-    Object? fullName = null,
+    Object? name = null,
     Object? phoneNumberCountryCode = null,
     Object? phoneNumber = null,
     Object? email = null,
@@ -182,9 +182,9 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
                 ? _value.contractEndDate
                 : contractEndDate // ignore: cast_nullable_to_non_nullable
                       as DateTime?,
-            fullName: null == fullName
-                ? _value.fullName
-                : fullName // ignore: cast_nullable_to_non_nullable
+            name: null == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
                       as String,
             phoneNumberCountryCode: null == phoneNumberCountryCode
                 ? _value.phoneNumberCountryCode
@@ -282,7 +282,7 @@ abstract class _$$UserModelImplCopyWith<$Res>
     @TimestampSerializer() DateTime? createdAt,
     @TimestampSerializer() DateTime? workStartDate,
     @TimestampSerializer() DateTime? contractEndDate,
-    String fullName,
+    String name,
     String phoneNumberCountryCode,
     String phoneNumber,
     String email,
@@ -324,7 +324,7 @@ class __$$UserModelImplCopyWithImpl<$Res>
     Object? createdAt = freezed,
     Object? workStartDate = freezed,
     Object? contractEndDate = freezed,
-    Object? fullName = null,
+    Object? name = null,
     Object? phoneNumberCountryCode = null,
     Object? phoneNumber = null,
     Object? email = null,
@@ -367,9 +367,9 @@ class __$$UserModelImplCopyWithImpl<$Res>
             ? _value.contractEndDate
             : contractEndDate // ignore: cast_nullable_to_non_nullable
                   as DateTime?,
-        fullName: null == fullName
-            ? _value.fullName
-            : fullName // ignore: cast_nullable_to_non_nullable
+        name: null == name
+            ? _value.name
+            : name // ignore: cast_nullable_to_non_nullable
                   as String,
         phoneNumberCountryCode: null == phoneNumberCountryCode
             ? _value.phoneNumberCountryCode
@@ -447,7 +447,7 @@ class _$UserModelImpl implements _UserModel {
     @TimestampSerializer() this.createdAt,
     @TimestampSerializer() this.workStartDate,
     @TimestampSerializer() this.contractEndDate,
-    this.fullName = '',
+    this.name = '',
     this.phoneNumberCountryCode = kFallBackCountryCode,
     this.phoneNumber = '',
     this.email = '',
@@ -487,7 +487,7 @@ class _$UserModelImpl implements _UserModel {
   DateTime? contractEndDate;
   @override
   @JsonKey()
-  String fullName;
+  String name;
   @override
   @JsonKey()
   String phoneNumberCountryCode;
@@ -535,7 +535,7 @@ class _$UserModelImpl implements _UserModel {
 
   @override
   String toString() {
-    return 'UserModel(id: $id, roleId: $roleId, companyId: $companyId, createdAt: $createdAt, workStartDate: $workStartDate, contractEndDate: $contractEndDate, fullName: $fullName, phoneNumberCountryCode: $phoneNumberCountryCode, phoneNumber: $phoneNumber, email: $email, birthDate: $birthDate, gender: $gender, maritalStatus: $maritalStatus, departmentId: $departmentId, branchId: $branchId, jobTitle: $jobTitle, basicSalary: $basicSalary, contractDurationMonths: $contractDurationMonths, nationalId: $nationalId, bank: $bank, active: $active, archived: $archived)';
+    return 'UserModel(id: $id, roleId: $roleId, companyId: $companyId, createdAt: $createdAt, workStartDate: $workStartDate, contractEndDate: $contractEndDate, name: $name, phoneNumberCountryCode: $phoneNumberCountryCode, phoneNumber: $phoneNumber, email: $email, birthDate: $birthDate, gender: $gender, maritalStatus: $maritalStatus, departmentId: $departmentId, branchId: $branchId, jobTitle: $jobTitle, basicSalary: $basicSalary, contractDurationMonths: $contractDurationMonths, nationalId: $nationalId, bank: $bank, active: $active, archived: $archived)';
   }
 
   /// Create a copy of UserModel
@@ -560,7 +560,7 @@ abstract class _UserModel implements UserModel {
     @TimestampSerializer() DateTime? createdAt,
     @TimestampSerializer() DateTime? workStartDate,
     @TimestampSerializer() DateTime? contractEndDate,
-    String fullName,
+    String name,
     String phoneNumberCountryCode,
     String phoneNumber,
     String email,
@@ -606,8 +606,8 @@ abstract class _UserModel implements UserModel {
   @TimestampSerializer()
   set contractEndDate(DateTime? value);
   @override
-  String get fullName;
-  set fullName(String value);
+  String get name;
+  set name(String value);
   @override
   String get phoneNumberCountryCode;
   set phoneNumberCountryCode(String value);

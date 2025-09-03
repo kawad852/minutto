@@ -1,7 +1,12 @@
 import 'package:shared/shared.dart';
 
 class CustomMenu extends StatelessWidget {
-  const CustomMenu({super.key});
+  final VoidCallback? onEdit;
+
+  const CustomMenu({
+    super.key,
+    this.onEdit,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +24,7 @@ class CustomMenu extends StatelessWidget {
           items: [
             PopupMenuItem(
               value: 1,
-              onTap: () {},
+              onTap: onEdit,
               child: Row(
                 spacing: 5,
                 children: [
@@ -34,23 +39,23 @@ class CustomMenu extends StatelessWidget {
                 ],
               ),
             ),
-            PopupMenuItem(
-              value: 2,
-              onTap: () {},
-              child: Row(
-                spacing: 5,
-                children: [
-                  CustomSvg(MyIcons.trash),
-                  Text(
-                    context.appLocalization.delete,
-                    style: TextStyle(
-                      color: context.colorPalette.black,
-                      fontSize: 16,
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            // PopupMenuItem(
+            //   value: 2,
+            //   onTap: () {},
+            //   child: Row(
+            //     spacing: 5,
+            //     children: [
+            //       CustomSvg(MyIcons.trash),
+            //       Text(
+            //         context.appLocalization.delete,
+            //         style: TextStyle(
+            //           color: context.colorPalette.black,
+            //           fontSize: 16,
+            //         ),
+            //       ),
+            //     ],
+            //   ),
+            // ),
           ],
         );
       },

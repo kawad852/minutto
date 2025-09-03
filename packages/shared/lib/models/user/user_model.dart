@@ -13,7 +13,7 @@ class UserModel with _$UserModel {
     @TimestampSerializer() DateTime? createdAt,
     @TimestampSerializer() DateTime? workStartDate,
     @TimestampSerializer() DateTime? contractEndDate,
-    @Default('') String fullName,
+    @Default('') String name,
     @Default(kFallBackCountryCode) String phoneNumberCountryCode,
     @Default('') String phoneNumber,
     @Default('') String email,

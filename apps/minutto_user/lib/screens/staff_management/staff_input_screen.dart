@@ -136,8 +136,8 @@ class _StaffInputScreenState extends State<StaffInputScreen> {
                               WidgetTitle(
                                 title: context.appLocalization.employeeName,
                                 child: CustomTextField.text(
-                                  initialValue: _user.fullName,
-                                  onChanged: (value) => _user.fullName = value!,
+                                  initialValue: _user.name,
+                                  onChanged: (value) => _user.name = value!,
                                 ),
                               ),
                               WidgetTitle(

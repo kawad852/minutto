@@ -500,5 +500,6 @@
   "answer":"الاجابة",
   "citiesManagement": "إدارة المدن",
   "cities": "المدن",
-  "addCity": "إضافة مدينة"
+  "addCity": "إضافة مدينة",
+  "updatedSuccessfully": "تم التحديث بنجاح"
 }

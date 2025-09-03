@@ -3661,6 +3661,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Add City'**
   String get addCity;
+
+  /// No description provided for @updatedSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Updated Successfully'**
+  String get updatedSuccessfully;
 }
 
 class _AppLocalizationsDelegate

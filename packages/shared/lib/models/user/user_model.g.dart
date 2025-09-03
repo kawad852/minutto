@@ -18,7 +18,7 @@ _$UserModelImpl _$$UserModelImplFromJson(Map<String, dynamic> json) =>
       contractEndDate: const TimestampSerializer().fromJson(
         json['contractEndDate'],
       ),
-      fullName: json['fullName'] as String? ?? '',
+      name: json['name'] as String? ?? '',
       phoneNumberCountryCode:
           json['phoneNumberCountryCode'] as String? ?? kFallBackCountryCode,
       phoneNumber: json['phoneNumber'] as String? ?? '',
@@ -51,7 +51,7 @@ Map<String, dynamic> _$$UserModelImplToJson(
   'contractEndDate': const TimestampSerializer().toJson(
     instance.contractEndDate,
   ),
-  'fullName': instance.fullName,
+  'name': instance.name,
   'phoneNumberCountryCode': instance.phoneNumberCountryCode,
   'phoneNumber': instance.phoneNumber,
   'email': instance.email,

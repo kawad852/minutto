@@ -67,7 +67,7 @@ class _SystemSettingsScreenState extends State<SystemSettingsScreen> {
                 SettingsBubble(
                   onTap: () {
                     context.navigate(
-                      (context) => const DepartmentScreen(),
+                      (context) => const DepartmentsScreen(),
                     );
                   },
                   title: context.appLocalization.companyDepartments,
