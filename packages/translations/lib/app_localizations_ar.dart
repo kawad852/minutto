@@ -1853,4 +1853,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get updatedSuccessfully => 'تم التحديث بنجاح';
+
+  @override
+  String get year => 'سنة';
 }

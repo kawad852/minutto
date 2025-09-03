@@ -501,5 +501,6 @@
   "citiesManagement": "إدارة المدن",
   "cities": "المدن",
   "addCity": "إضافة مدينة",
-  "updatedSuccessfully": "تم التحديث بنجاح"
+  "updatedSuccessfully": "تم التحديث بنجاح",
+  "year": "سنة"
 }

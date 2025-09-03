@@ -1,7 +1,12 @@
 import 'package:shared/shared.dart';
 
 class StaffInputScreen extends StatefulWidget {
-  const StaffInputScreen({super.key});
+  final UserModel? user;
+
+  const StaffInputScreen({
+    super.key,
+    this.user,
+  });
 
   @override
   State<StaffInputScreen> createState() => _StaffInputScreenState();
@@ -16,6 +21,7 @@ class _StaffInputScreenState extends State<StaffInputScreen> {
   late UserModel _user;
 
   FirebaseFirestore get _firebaseFirestore => FirebaseFirestore.instance;
+  bool get _isAdd => widget.user == null;
 
   void _initialize() {
     _futures = ApiService.build(
@@ -36,13 +42,19 @@ class _StaffInputScreenState extends State<StaffInputScreen> {
       context,
       callBack: () async {
         final user = MySharedPreferences.user!;
-        final docRef = _firebaseFirestore.users.doc();
-        _user.id = docRef.id;
-        _user.companyId = user.companyId;
-        _user.createdAt = kNowDate;
+        final docRef = _firebaseFirestore.users.doc(_user.id.isNotEmpty ? _user.id : null);
+        if (_isAdd) {
+          _user.id = docRef.id;
+          _user.companyId = user.companyId;
+          _user.createdAt = kNowDate;
+        }
         await docRef.set(_user);
         if (context.mounted) {
-          context.showSnackBar(context.appLocalization.addedSuccessfully);
+          context.showSnackBar(
+            _isAdd
+                ? context.appLocalization.addedSuccessfully
+                : context.appLocalization.updatedSuccessfully,
+          );
           Navigator.pop(context);
         }
       },
@@ -52,8 +64,11 @@ class _StaffInputScreenState extends State<StaffInputScreen> {
   @override
   void initState() {
     super.initState();
-    _user = UserModel(
-      bank: BankModel(),
+    _user = UserModel.fromJson(
+      widget.user?.toJson() ??
+          UserModel(
+            bank: BankModel(),
+          ).toJson(),
     );
     _pageController = PageController(initialPage: 0);
     _initialize();
@@ -82,8 +97,8 @@ class _StaffInputScreenState extends State<StaffInputScreen> {
                 context.unFocusKeyboard();
                 if (_currentIndex != 2) {
                   _pageController.nextPage(
-                    duration: const Duration(milliseconds: 400),
-                    curve: Curves.easeInExpo,
+                    duration: const Duration(milliseconds: 200),
+                    curve: Curves.linear,
                   );
                 } else {
                   _onSubmit(context);
@@ -248,16 +263,18 @@ class _StaffInputScreenState extends State<StaffInputScreen> {
                               WidgetTitle(
                                 title: context.appLocalization.basicSalary,
                                 child: CustomTextField.double(
-                                  initialValue: _user.basicSalary,
+                                  initialValue: _user.basicSalary != 0 ? _user.basicSalary : null,
                                   onChanged: (value) => _user.basicSalary = value!,
                                 ),
                               ),
                               WidgetTitle(
                                 title: context.appLocalization.contractDuration,
-                                child: CustomTextField.double(
-                                  initialValue: _user.contractDurationMonths.toDouble(),
-                                  onChanged: (value) =>
-                                      _user.contractDurationMonths = value!.toInt(),
+                                child: CustomTextField.int(
+                                  initialValue: _user.contractDurationMonths != 0
+                                      ? _user.contractDurationMonths
+                                      : null,
+                                  suffixText: context.appLocalization.year,
+                                  onChanged: (value) => _user.contractDurationMonths = value!,
                                 ),
                               ),
                               WidgetTitle(
@@ -301,6 +318,7 @@ class _StaffInputScreenState extends State<StaffInputScreen> {
                                 title: context.appLocalization.nameBankSalary,
                                 child: CustomTextField.text(
                                   initialValue: _user.bank?.name ?? '',
+                                  required: false,
                                   onChanged: (value) => _user.bank!.name = value!,
                                 ),
                               ),
@@ -308,6 +326,7 @@ class _StaffInputScreenState extends State<StaffInputScreen> {
                                 title: context.appLocalization.accountNumberIBAN,
                                 child: CustomTextField.text(
                                   initialValue: _user.bank?.iban ?? '',
+                                  required: false,
                                   onChanged: (value) => _user.bank!.iban = value!,
                                 ),
                               ),

@@ -5,7 +5,7 @@ extension SnackbarExtension on BuildContext {
     String msg, {
     int duration = 4,
     SnackBarAction? action,
-    bool floating = false,
+    bool floating = true,
     Widget? contentWidget,
   }) {
     ScaffoldMessenger.of(this)

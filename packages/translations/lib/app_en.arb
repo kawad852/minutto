@@ -685,5 +685,6 @@
   "citiesManagement": "Cities Management",
   "cities": "Cities",
   "addCity": "Add City",
-  "updatedSuccessfully": "Updated Successfully"
+  "updatedSuccessfully": "Updated Successfully",
+  "year": "Year"
 }

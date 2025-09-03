@@ -14,6 +14,7 @@ class CustomTextField extends StatelessWidget {
   final String? Function(BuildContext context, String?) _validator;
   final String? labelText;
   final String? hintText;
+  final String? suffixText;
   final int? maxLines;
   final TextAlign? textAlign;
 
@@ -33,6 +34,7 @@ class CustomTextField extends StatelessWidget {
     this.textAlign,
     this.canRequestFocus = true,
     this.suffixIcon,
+    this.suffixText,
   }) : _onChanged = onChanged,
        _validator = validator;
 
@@ -67,6 +69,7 @@ class CustomTextField extends StatelessWidget {
     Key? key,
     int? initialValue,
     Widget? prefixIcon,
+    String? suffixText,
     required ValueChanged<int?> onChanged,
     bool required = true,
     String? labelText,
@@ -76,6 +79,7 @@ class CustomTextField extends StatelessWidget {
       initialValue: initialValue?.toString(),
       prefixIcon: prefixIcon,
       labelText: labelText,
+      suffixText: suffixText,
       keyboardType: TextInputType.number,
       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
       onChanged: (value) => onChanged(int.tryParse(value)),
@@ -207,6 +211,7 @@ class CustomTextField extends StatelessWidget {
       autovalidateMode: AutovalidateMode.onUserInteraction,
       decoration: InputDecoration(
         prefixIcon: prefixIcon,
+        suffixText: suffixText,
         suffixIcon: Center(child: suffixIcon),
         suffixIconConstraints: BoxConstraints(maxWidth: 40),
         hintText: hintText,

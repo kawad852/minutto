@@ -1862,4 +1862,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get updatedSuccessfully => 'Updated Successfully';
+
+  @override
+  String get year => 'Year';
 }
