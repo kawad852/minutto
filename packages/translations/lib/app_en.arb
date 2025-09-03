@@ -681,5 +681,8 @@
   "single": "Single",
   "married": "Married",
   "divorced": "Divorced",
-  "widowed": "Widowed"
+  "widowed": "Widowed",
+  "citiesManagement": "Cities Management",
+  "cities": "Cities",
+  "addCity": "Add City"
 }

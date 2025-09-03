@@ -1850,4 +1850,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get widowed => 'Widowed';
+
+  @override
+  String get citiesManagement => 'Cities Management';
+
+  @override
+  String get cities => 'Cities';
+
+  @override
+  String get addCity => 'Add City';
 }

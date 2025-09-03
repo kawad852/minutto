@@ -61,4 +61,6 @@ extension CollectionReferenceExtension on FirebaseFirestore {
 
   CollectionReference<BranchModel> get branches =>
       collection(MyCollections.branches).branchConvertor;
+
+  CollectionReference<CityModel> get cities => collection(MyCollections.cities).cityConvertor;
 }

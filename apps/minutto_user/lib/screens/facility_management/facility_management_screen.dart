@@ -67,6 +67,13 @@ class _FacilityManagementScreenState extends State<FacilityManagementScreen> {
               children: [
                 FacilityBubble(
                   onTap: () {
+                    context.navigate((context) => const CitiesScreen());
+                  },
+                  title: context.appLocalization.citiesManagement,
+                  icon: MyIcons.branchManage,
+                ),
+                FacilityBubble(
+                  onTap: () {
                     context.navigate((context) => const BranchesScreen());
                   },
                   title: context.appLocalization.branchManagement,

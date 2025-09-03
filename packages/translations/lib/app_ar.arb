@@ -497,5 +497,8 @@
   "socialSecurityDeductionSalary":"نسبة اقتطاع الضمان من الراتب الشهري",
   "addNewQuestion":"إضافة سؤال جديد",
   "question":"السؤال",
-  "answer":"الاجابة"
+  "answer":"الاجابة",
+  "citiesManagement": "إدارة المدن",
+  "cities": "المدن",
+  "addCity": "إضافة مدينة"
 }

@@ -47,7 +47,6 @@ class CustomTextField extends StatelessWidget {
     String? hintText,
     int? maxLines,
     TextAlign? textAlign,
-    
   }) {
     return CustomTextField._(
       key: key,
@@ -59,7 +58,7 @@ class CustomTextField extends StatelessWidget {
       textAlign: textAlign,
       hintText: hintText,
       maxLines: maxLines,
-      onChanged: (value) => onChanged(value.isEmpty ? null : value),
+      onChanged: (value) => onChanged(value),
       validator: (context, value) => required ? ValidationHelper.required(context, value) : null,
     );
   }
@@ -79,7 +78,7 @@ class CustomTextField extends StatelessWidget {
       labelText: labelText,
       keyboardType: TextInputType.number,
       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-      onChanged: (value) => onChanged(value.isEmpty ? null : int.tryParse(value)),
+      onChanged: (value) => onChanged(int.tryParse(value)),
       validator: (context, value) => required ? ValidationHelper.required(context, value) : null,
     );
   }
@@ -97,7 +96,7 @@ class CustomTextField extends StatelessWidget {
       prefixIcon: prefixIcon,
       keyboardType: const TextInputType.numberWithOptions(decimal: true),
       inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'^\d+\.?\d{0,2}'))],
-      onChanged: (value) => onChanged(value.isEmpty ? null : double.tryParse(value)),
+      onChanged: (value) => onChanged(double.tryParse(value)),
       validator: (context, value) => required ? ValidationHelper.required(context, value) : null,
     );
   }
@@ -124,7 +123,7 @@ class CustomTextField extends StatelessWidget {
         FilteringTextInputFormatter.digitsOnly,
         LengthLimitingTextInputFormatter(11),
       ],
-      onChanged: (value) => onChanged(value.isEmpty ? null : value),
+      onChanged: (value) => onChanged(value),
       validator: (context, value) => required ? ValidationHelper.phone(context, value) : null,
     );
   }
@@ -145,7 +144,7 @@ class CustomTextField extends StatelessWidget {
       hintText: hintText,
       labelText: hintText == null ? context.appLocalization.email : null,
       keyboardType: TextInputType.emailAddress,
-      onChanged: (value) => onChanged(value.isEmpty ? null : value),
+      onChanged: (value) => onChanged(value),
       validator: (context, value) => ValidationHelper.email(context, value, required: required),
     );
   }
@@ -166,7 +165,7 @@ class CustomTextField extends StatelessWidget {
       keyboardType: TextInputType.text,
       maxLines: 1,
       labelText: context.appLocalization.email,
-      onChanged: (value) => onChanged(value.isEmpty ? null : value),
+      onChanged: (value) => onChanged(value),
       validator: (context, value) => ValidationHelper.password(context, value, required: required),
     );
   }

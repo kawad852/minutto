@@ -109,4 +109,9 @@ extension FireConvertors on CollectionReference {
     fromFirestore: (snapshot, _) => BranchModel.fromJson(snapshot.data()!),
     toFirestore: (snapshot, _) => snapshot.toJson(),
   );
+
+  CollectionReference<CityModel> get cityConvertor => withConverter<CityModel>(
+    fromFirestore: (snapshot, _) => CityModel.fromJson(snapshot.data()!),
+    toFirestore: (snapshot, _) => snapshot.toJson(),
+  );
 }

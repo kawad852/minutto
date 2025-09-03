@@ -123,6 +123,7 @@ export 'models/call_center/call_center_model.dart';
 export 'models/cancel/cancel_model.dart';
 export 'models/category/category_model.dart';
 export 'models/chart_model.dart';
+export 'models/city/city_model.dart';
 export 'models/company/company_model.dart';
 export 'models/country/country_model.dart';
 export 'models/country_code_model.dart';

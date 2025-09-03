@@ -1841,4 +1841,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get widowed => 'أرمل';
+
+  @override
+  String get citiesManagement => 'إدارة المدن';
+
+  @override
+  String get cities => 'المدن';
+
+  @override
+  String get addCity => 'إضافة مدينة';
 }

@@ -3643,6 +3643,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Widowed'**
   String get widowed;
+
+  /// No description provided for @citiesManagement.
+  ///
+  /// In en, this message translates to:
+  /// **'Cities Management'**
+  String get citiesManagement;
+
+  /// No description provided for @cities.
+  ///
+  /// In en, this message translates to:
+  /// **'Cities'**
+  String get cities;
+
+  /// No description provided for @addCity.
+  ///
+  /// In en, this message translates to:
+  /// **'Add City'**
+  String get addCity;
 }
 
 class _AppLocalizationsDelegate

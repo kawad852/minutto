@@ -1,6 +1,10 @@
 //registration
 //base
 //attendance_management
+export 'package:minutto_user/screens/city/cities_screen.dart';
+//city
+export 'package:minutto_user/screens/city/city_input_screen.dart';
+
 export 'screens/attendance_management/attendance_management_screen.dart';
 export 'screens/attendance_management/employee_attendance_screen.dart';
 export 'screens/attendance_management/widgets/employee_attendance_card.dart';
