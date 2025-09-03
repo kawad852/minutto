@@ -78,4 +78,20 @@ class MyIcons {
   static const String trash = '${_path}trash.svg';
   static const String editIcon = '${_path}edit_icon.svg';
   static const String addIcon = '${_path}add_icon.svg';
+  static const String house = '${_path}house.svg';
+  static const String smallClock = '${_path}small_clock.svg';
+  static const String smallCalendar = '${_path}small_calendar.svg';
+  static const String breakIcon = '${_path}break_icon.svg';
+  static const String fingerBlue = '${_path}finger_blue.svg';
+  static const String incentiveIcon = '${_path}incentive_icon.svg';
+  static const String overtime = '${_path}overtime.svg';
+  static const String workIcon = '${_path}work_icon.svg';
+  static const String bookSharp = '${_path}book_sharp.svg';
+  static const String coffeSharp = '${_path}coffe_sharp.svg';
+  static const String deparatment = '${_path}deparatment.svg';
+  static const String faqSharp = '${_path}faq_sharp.svg';
+  static const String fingerSharp = '${_path}finger_sharp.svg';
+  static const String policySharp = '${_path}policy_sharp.svg';
+  static const String tax = '${_path}tax.svg';
+  static const String umbrellaSharp = '${_path}umbrella_sharp.svg';
 }

@@ -45,37 +45,8 @@ class _ShiftManagementScreenState extends State<ShiftManagementScreen> {
                 value: null,
               ),
             ),
-            Container(
-              width: double.infinity,
-              height: 55,
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              margin: const EdgeInsets.symmetric(horizontal: 20),
-              decoration: BoxDecoration(
-                color: Colors.transparent,
-                border: Border.all(color: context.colorPalette.grey919),
-                borderRadius: BorderRadius.circular(kRadiusSecondary),
-              ),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Text(
-                      "12 مارس 2023 - 12 يوليو 2025",
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        color: context.colorPalette.blue475,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                  CustomSvg(
-                    MyIcons.calander,
-                    color: context.colorPalette.black,
-                  ),
-                ],
-              ),
-            ),
-            CustomCalender(),
+            DateRangeCard(),
+            CustomCalender(warpContainer: true),
             Expanded(
               child: ListView.separated(
                 separatorBuilder: (context, index) => const SizedBox(height: 12),

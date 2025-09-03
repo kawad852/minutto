@@ -103,7 +103,11 @@ class _FacilityManagementScreenState extends State<FacilityManagementScreen> {
                 icon: MyIcons.salaryManage,
               ),
               FacilityBubble(
-                onTap: () {},
+                onTap: () {
+                  context.navigate(
+                    (context) => const AdvancesScheduleScreen(),
+                  );
+                },
                 title: context.appLocalization.advances,
                 icon: MyIcons.advancesManage,
               ),
@@ -130,12 +134,20 @@ class _FacilityManagementScreenState extends State<FacilityManagementScreen> {
                   icon: MyIcons.bag,
                 ),
                 FacilityBubble(
-                  onTap: () {},
+                  onTap: () {
+                    context.navigate(
+                      (context) => const VacationScheduleScreen(),
+                    );
+                  },
                   title: context.appLocalization.vacationTabel,
                   icon: MyIcons.umbrellaIcon,
                 ),
                 FacilityBubble(
-                  onTap: () {},
+                  onTap: () {
+                    context.navigate(
+                      (context) => const WorkScheduleScreen(),
+                    );
+                  },
                   title: context.appLocalization.workTabel,
                   icon: MyIcons.work,
                 ),
@@ -145,7 +157,11 @@ class _FacilityManagementScreenState extends State<FacilityManagementScreen> {
           Row(
             children: [
               FacilityBubble(
-                onTap: () {},
+                onTap: () {
+                  context.navigate(
+                    (context) => const EmploymentContractsScreen(),
+                  );
+                },
                 title: context.appLocalization.employmentContracts,
                 icon: MyIcons.work,
               ),
@@ -159,7 +175,11 @@ class _FacilityManagementScreenState extends State<FacilityManagementScreen> {
                 icon: MyIcons.notificationIcon,
               ),
               FacilityBubble(
-                onTap: () {},
+                onTap: () {
+                  context.navigate(
+                    (context) => const SystemSettingsScreen(),
+                  );
+                },
                 title: context.appLocalization.companySystemSettings,
                 icon: MyIcons.settings,
               ),

@@ -1,7 +1,8 @@
 import 'package:shared/shared.dart';
 
 class CustomCalender extends StatefulWidget {
-  const CustomCalender({super.key});
+  final bool warpContainer;
+  const CustomCalender({super.key, this.warpContainer = false});
 
   @override
   State<CustomCalender> createState() => _CustomCalenderState();
@@ -11,8 +12,13 @@ class _CustomCalenderState extends State<CustomCalender> {
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: 55,
+      decoration: BoxDecoration(
+        color: widget.warpContainer
+            ? context.colorPalette.greyF9F
+            : Colors.transparent,
+      ),
       child: ListView.separated(
         separatorBuilder: (context, index) => const SizedBox(width: 13),
         itemCount: 10,
@@ -27,9 +33,11 @@ class _CustomCalenderState extends State<CustomCalender> {
             child: Container(
               width: 50,
               decoration: BoxDecoration(
-                color: _currentIndex == index
-                    ? context.colorPalette.blueB2D
-                    : Colors.transparent,
+                color: _currentIndex != index
+                    ? Colors.transparent
+                    : _currentIndex == index && widget.warpContainer
+                    ? context.colorPalette.blue091
+                    : context.colorPalette.blueB2D,
                 border: Border.all(color: context.colorPalette.greyF9F),
                 borderRadius: BorderRadius.circular(16),
               ),
@@ -40,14 +48,18 @@ class _CustomCalenderState extends State<CustomCalender> {
                   Text(
                     "الاربعاء",
                     style: TextStyle(
-                      color: context.colorPalette.blue091,
+                      color: _currentIndex == index && widget.warpContainer
+                          ? context.colorPalette.white
+                          : context.colorPalette.blue091,
                       fontSize: 13,
                     ),
                   ),
                   Text(
                     "15",
                     style: TextStyle(
-                      color: context.colorPalette.blue091,
+                      color: _currentIndex == index && widget.warpContainer
+                          ? context.colorPalette.white
+                          : context.colorPalette.blue091,
                       fontSize: 13,
                     ),
                   ),
