@@ -13,6 +13,7 @@ class ShiftModel with _$ShiftModel {
     @Default('') String startHour,
     @Default('') String endHour,
     @Default([]) List<int> days,
+    @Default([]) List<String> branchIds,
   }) = _ShiftModel;
 
   factory ShiftModel.fromJson(Map<String, dynamic> json) => _$ShiftModelFromJson(json);

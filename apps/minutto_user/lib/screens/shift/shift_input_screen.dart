@@ -72,37 +72,79 @@ class _ShiftInputScreenState extends State<ShiftInputScreen> {
             ),
             WidgetTitle(
               title: context.appLocalization.chooseMoreBranch,
-              child: DropDownEditor<String>(
-                items: MyStorage.branches.map((e) {
-                  return DropdownMenuItem(
-                    value: e.id,
-                    child: Text(e.name),
-                  );
-                }).toList(),
-                onChanged: (value) {},
-                title: context.appLocalization.choose,
-                value: null,
+              child: ListBody(
+                children: [
+                  MenuAnchor(
+                    // childFocusNode: _buttonFocusNode,
+                    crossAxisUnconstrained: false,
+                    onClose: () {
+                      setState(() {});
+                    },
+                    menuChildren: MyStorage.branches.map((e) {
+                      final id = e.id;
+                      return CheckboxMenuButton(
+                        // closeOnActivate: false,
+                        value: _shift.branchIds.contains(id),
+                        onChanged: (bool? value) {
+                          setState(() {
+                            if (value!) {
+                              _shift.branchIds.add(id);
+                            } else {
+                              _shift.branchIds.remove(id);
+                            }
+                          });
+                        },
+                        child: Text(e.name),
+                      );
+                    }).toList(),
+                    builder: (BuildContext context, MenuController controller, Widget? child) {
+                      return CustomTextField.clickable(
+                        labelText: context.appLocalization.choose,
+                        onTap: () {
+                          controller.open();
+                        },
+                      );
+                    },
+                  ),
+                  Wrap(
+                    spacing: 5,
+                    children: _shift.branchIds.map((e) {
+                      final name = CacheService.instance.getBranch(e).name;
+                      return InputChip(
+                        label: Text(name),
+                        onDeleted: () {
+                          setState(() {
+                            _shift.branchIds.remove(e);
+                          });
+                        },
+                      );
+                    }).toList(),
+                  ),
+                ],
               ),
             ),
-            Wrap(
-              spacing: 5,
-              children: WeekDayEnum.values.map((e) {
-                final value = e.value;
-                final label = e.label();
-                return FilterChip(
-                  label: Text(label),
-                  selected: _shift.days.contains(value),
-                  onSelected: (selected) {
-                    setState(() {
-                      if (selected) {
-                        _shift.days.add(value);
-                      } else {
-                        _shift.days.remove(value);
-                      }
-                    });
-                  },
-                );
-              }).toList(),
+            WidgetTitle(
+              title: context.appLocalization.day,
+              child: Wrap(
+                spacing: 5,
+                children: WeekDayEnum.values.map((e) {
+                  final value = e.value;
+                  final label = e.label();
+                  return FilterChip(
+                    label: Text(label),
+                    selected: _shift.days.contains(value),
+                    onSelected: (selected) {
+                      setState(() {
+                        if (selected) {
+                          _shift.days.add(value);
+                        } else {
+                          _shift.days.remove(value);
+                        }
+                      });
+                    },
+                  );
+                }).toList(),
+              ),
             ),
           ],
         ),

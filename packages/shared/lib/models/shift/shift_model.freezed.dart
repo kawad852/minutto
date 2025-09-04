@@ -35,6 +35,8 @@ mixin _$ShiftModel {
   set endHour(String value) => throw _privateConstructorUsedError;
   List<int> get days => throw _privateConstructorUsedError;
   set days(List<int> value) => throw _privateConstructorUsedError;
+  List<String> get branchIds => throw _privateConstructorUsedError;
+  set branchIds(List<String> value) => throw _privateConstructorUsedError;
 
   /// Serializes this ShiftModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -60,6 +62,7 @@ abstract class $ShiftModelCopyWith<$Res> {
     String startHour,
     String endHour,
     List<int> days,
+    List<String> branchIds,
   });
 }
 
@@ -84,6 +87,7 @@ class _$ShiftModelCopyWithImpl<$Res, $Val extends ShiftModel>
     Object? startHour = null,
     Object? endHour = null,
     Object? days = null,
+    Object? branchIds = null,
   }) {
     return _then(
       _value.copyWith(
@@ -111,6 +115,10 @@ class _$ShiftModelCopyWithImpl<$Res, $Val extends ShiftModel>
                 ? _value.days
                 : days // ignore: cast_nullable_to_non_nullable
                       as List<int>,
+            branchIds: null == branchIds
+                ? _value.branchIds
+                : branchIds // ignore: cast_nullable_to_non_nullable
+                      as List<String>,
           )
           as $Val,
     );
@@ -133,6 +141,7 @@ abstract class _$$ShiftModelImplCopyWith<$Res>
     String startHour,
     String endHour,
     List<int> days,
+    List<String> branchIds,
   });
 }
 
@@ -156,6 +165,7 @@ class __$$ShiftModelImplCopyWithImpl<$Res>
     Object? startHour = null,
     Object? endHour = null,
     Object? days = null,
+    Object? branchIds = null,
   }) {
     return _then(
       _$ShiftModelImpl(
@@ -183,6 +193,10 @@ class __$$ShiftModelImplCopyWithImpl<$Res>
             ? _value.days
             : days // ignore: cast_nullable_to_non_nullable
                   as List<int>,
+        branchIds: null == branchIds
+            ? _value.branchIds
+            : branchIds // ignore: cast_nullable_to_non_nullable
+                  as List<String>,
       ),
     );
   }
@@ -199,6 +213,7 @@ class _$ShiftModelImpl implements _ShiftModel {
     this.startHour = '',
     this.endHour = '',
     this.days = const [],
+    this.branchIds = const [],
   });
 
   factory _$ShiftModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -222,10 +237,13 @@ class _$ShiftModelImpl implements _ShiftModel {
   @override
   @JsonKey()
   List<int> days;
+  @override
+  @JsonKey()
+  List<String> branchIds;
 
   @override
   String toString() {
-    return 'ShiftModel(createdAt: $createdAt, id: $id, name: $name, startHour: $startHour, endHour: $endHour, days: $days)';
+    return 'ShiftModel(createdAt: $createdAt, id: $id, name: $name, startHour: $startHour, endHour: $endHour, days: $days, branchIds: $branchIds)';
   }
 
   /// Create a copy of ShiftModel
@@ -250,6 +268,7 @@ abstract class _ShiftModel implements ShiftModel {
     String startHour,
     String endHour,
     List<int> days,
+    List<String> branchIds,
   }) = _$ShiftModelImpl;
 
   factory _ShiftModel.fromJson(Map<String, dynamic> json) =
@@ -275,6 +294,9 @@ abstract class _ShiftModel implements ShiftModel {
   @override
   List<int> get days;
   set days(List<int> value);
+  @override
+  List<String> get branchIds;
+  set branchIds(List<String> value);
 
   /// Create a copy of ShiftModel
   /// with the given fields replaced by the non-null parameter values.

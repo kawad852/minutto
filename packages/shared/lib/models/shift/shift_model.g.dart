@@ -18,6 +18,11 @@ _$ShiftModelImpl _$$ShiftModelImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => (e as num).toInt())
               .toList() ??
           const [],
+      branchIds:
+          (json['branchIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$$ShiftModelImplToJson(_$ShiftModelImpl instance) =>
@@ -28,4 +33,5 @@ Map<String, dynamic> _$$ShiftModelImplToJson(_$ShiftModelImpl instance) =>
       'startHour': instance.startHour,
       'endHour': instance.endHour,
       'days': instance.days,
+      'branchIds': instance.branchIds,
     };
