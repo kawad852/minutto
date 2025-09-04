@@ -76,6 +76,8 @@ mixin _$UserModel {
   set active(bool value) => throw _privateConstructorUsedError;
   bool get archived => throw _privateConstructorUsedError;
   set archived(bool value) => throw _privateConstructorUsedError;
+  List<String> get deviceTokens => throw _privateConstructorUsedError;
+  set deviceTokens(List<String> value) => throw _privateConstructorUsedError;
 
   /// Serializes this UserModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -116,6 +118,7 @@ abstract class $UserModelCopyWith<$Res> {
     BankModel? bank,
     bool active,
     bool archived,
+    List<String> deviceTokens,
   });
 
   $BankModelCopyWith<$Res>? get bank;
@@ -159,6 +162,7 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? bank = freezed,
     Object? active = null,
     Object? archived = null,
+    Object? deviceTokens = null,
   }) {
     return _then(
       _value.copyWith(
@@ -254,6 +258,10 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
                 ? _value.archived
                 : archived // ignore: cast_nullable_to_non_nullable
                       as bool,
+            deviceTokens: null == deviceTokens
+                ? _value.deviceTokens
+                : deviceTokens // ignore: cast_nullable_to_non_nullable
+                      as List<String>,
           )
           as $Val,
     );
@@ -307,6 +315,7 @@ abstract class _$$UserModelImplCopyWith<$Res>
     BankModel? bank,
     bool active,
     bool archived,
+    List<String> deviceTokens,
   });
 
   @override
@@ -350,6 +359,7 @@ class __$$UserModelImplCopyWithImpl<$Res>
     Object? bank = freezed,
     Object? active = null,
     Object? archived = null,
+    Object? deviceTokens = null,
   }) {
     return _then(
       _$UserModelImpl(
@@ -445,6 +455,10 @@ class __$$UserModelImplCopyWithImpl<$Res>
             ? _value.archived
             : archived // ignore: cast_nullable_to_non_nullable
                   as bool,
+        deviceTokens: null == deviceTokens
+            ? _value.deviceTokens
+            : deviceTokens // ignore: cast_nullable_to_non_nullable
+                  as List<String>,
       ),
     );
   }
@@ -478,6 +492,7 @@ class _$UserModelImpl extends _UserModel {
     this.bank,
     this.active = true,
     this.archived = false,
+    this.deviceTokens = const [],
   }) : super._();
 
   factory _$UserModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -550,10 +565,13 @@ class _$UserModelImpl extends _UserModel {
   @override
   @JsonKey()
   bool archived;
+  @override
+  @JsonKey()
+  List<String> deviceTokens;
 
   @override
   String toString() {
-    return 'UserModel(id: $id, roleId: $roleId, companyId: $companyId, createdAt: $createdAt, workStartDate: $workStartDate, contractEndDate: $contractEndDate, name: $name, image: $image, phoneNumberCountryCode: $phoneNumberCountryCode, phoneNumber: $phoneNumber, email: $email, birthDate: $birthDate, gender: $gender, maritalStatus: $maritalStatus, departmentId: $departmentId, branchId: $branchId, jobTitle: $jobTitle, basicSalary: $basicSalary, contractDurationMonths: $contractDurationMonths, nationalId: $nationalId, bank: $bank, active: $active, archived: $archived)';
+    return 'UserModel(id: $id, roleId: $roleId, companyId: $companyId, createdAt: $createdAt, workStartDate: $workStartDate, contractEndDate: $contractEndDate, name: $name, image: $image, phoneNumberCountryCode: $phoneNumberCountryCode, phoneNumber: $phoneNumber, email: $email, birthDate: $birthDate, gender: $gender, maritalStatus: $maritalStatus, departmentId: $departmentId, branchId: $branchId, jobTitle: $jobTitle, basicSalary: $basicSalary, contractDurationMonths: $contractDurationMonths, nationalId: $nationalId, bank: $bank, active: $active, archived: $archived, deviceTokens: $deviceTokens)';
   }
 
   /// Create a copy of UserModel
@@ -595,6 +613,7 @@ abstract class _UserModel extends UserModel {
     BankModel? bank,
     bool active,
     bool archived,
+    List<String> deviceTokens,
   }) = _$UserModelImpl;
   _UserModel._() : super._();
 
@@ -678,6 +697,9 @@ abstract class _UserModel extends UserModel {
   @override
   bool get archived;
   set archived(bool value);
+  @override
+  List<String> get deviceTokens;
+  set deviceTokens(List<String> value);
 
   /// Create a copy of UserModel
   /// with the given fields replaced by the non-null parameter values.

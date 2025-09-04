@@ -30,6 +30,7 @@ class UserModel with _$UserModel {
     BankModel? bank,
     @Default(true) bool active,
     @Default(false) bool archived,
+    @Default([]) List<String> deviceTokens,
   }) = _UserModel;
 
   factory UserModel.fromJson(Map<String, dynamic> json) => _$UserModelFromJson(json);

@@ -11,6 +11,7 @@ class AppNavBar extends StatefulWidget {
 class _AppNavBarState extends State<AppNavBar> {
   int _currentIndex = 0;
   late PageController _pageController;
+  late CloudMessagingService _cloudMessagingService;
 
   final items = [
     MyIcons.home,
@@ -36,6 +37,8 @@ class _AppNavBarState extends State<AppNavBar> {
   @override
   void initState() {
     super.initState();
+    _cloudMessagingService = CloudMessagingService(rootNavigatorKey.currentContext!);
+    _cloudMessagingService.requestPermission(context);
     _pageController = PageController(initialPage: _currentIndex);
   }
 

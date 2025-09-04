@@ -39,6 +39,11 @@ _$UserModelImpl _$$UserModelImplFromJson(Map<String, dynamic> json) =>
           : BankModel.fromJson(json['bank'] as Map<String, dynamic>),
       active: json['active'] as bool? ?? true,
       archived: json['archived'] as bool? ?? false,
+      deviceTokens:
+          (json['deviceTokens'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$$UserModelImplToJson(
@@ -69,6 +74,7 @@ Map<String, dynamic> _$$UserModelImplToJson(
   'bank': instance.bank?.toJson(),
   'active': instance.active,
   'archived': instance.archived,
+  'deviceTokens': instance.deviceTokens,
 };
 
 _$BankModelImpl _$$BankModelImplFromJson(Map<String, dynamic> json) =>
