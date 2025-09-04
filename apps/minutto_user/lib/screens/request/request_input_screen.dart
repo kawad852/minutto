@@ -88,7 +88,7 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                 WidgetTitle(
                   title: context.appLocalization.debtValue,
                   child: CustomTextField.double(
-                    initialValue: _request.amount,
+                    initialValue: _request.amount != 0 ? _request.amount : null,
                     onChanged: (value) => _request.amount = value!,
                   ),
                 ),
