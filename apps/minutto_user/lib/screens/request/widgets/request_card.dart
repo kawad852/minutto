@@ -74,6 +74,11 @@ class RequestCard extends StatelessWidget {
                       title: context.appLocalization.requestType,
                       value: LeaveReason.label(context, request.reason!),
                     ),
+                  if (request.amount != 0)
+                    RequestInfo(
+                      title: context.appLocalization.amount,
+                      value: request.amount.toStringAsFixed(2),
+                    ),
                   if (request.date != null)
                     RequestInfo(
                       title: context.appLocalization.date,

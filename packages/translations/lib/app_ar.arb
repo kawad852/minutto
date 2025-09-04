@@ -502,5 +502,7 @@
   "cities": "المدن",
   "addCity": "إضافة مدينة",
   "updatedSuccessfully": "تم التحديث بنجاح",
-  "year": "سنة"
+  "year": "سنة",
+  "salaryAdvanceRequest": "طلب سلفة",
+  "amount": "المبلغ"
 }

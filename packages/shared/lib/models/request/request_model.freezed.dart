@@ -57,6 +57,8 @@ mixin _$RequestModel {
   set notes(String? value) => throw _privateConstructorUsedError;
   String? get adminNotes => throw _privateConstructorUsedError;
   set adminNotes(String? value) => throw _privateConstructorUsedError;
+  double get amount => throw _privateConstructorUsedError;
+  set amount(double value) => throw _privateConstructorUsedError;
   List<AttachmentModel> get attachments => throw _privateConstructorUsedError;
   set attachments(List<AttachmentModel> value) =>
       throw _privateConstructorUsedError;
@@ -93,6 +95,7 @@ abstract class $RequestModelCopyWith<$Res> {
     String status,
     String? notes,
     String? adminNotes,
+    double amount,
     List<AttachmentModel> attachments,
   });
 }
@@ -126,6 +129,7 @@ class _$RequestModelCopyWithImpl<$Res, $Val extends RequestModel>
     Object? status = null,
     Object? notes = freezed,
     Object? adminNotes = freezed,
+    Object? amount = null,
     Object? attachments = null,
   }) {
     return _then(
@@ -186,6 +190,10 @@ class _$RequestModelCopyWithImpl<$Res, $Val extends RequestModel>
                 ? _value.adminNotes
                 : adminNotes // ignore: cast_nullable_to_non_nullable
                       as String?,
+            amount: null == amount
+                ? _value.amount
+                : amount // ignore: cast_nullable_to_non_nullable
+                      as double,
             attachments: null == attachments
                 ? _value.attachments
                 : attachments // ignore: cast_nullable_to_non_nullable
@@ -220,6 +228,7 @@ abstract class _$$RequestModelImplCopyWith<$Res>
     String status,
     String? notes,
     String? adminNotes,
+    double amount,
     List<AttachmentModel> attachments,
   });
 }
@@ -252,6 +261,7 @@ class __$$RequestModelImplCopyWithImpl<$Res>
     Object? status = null,
     Object? notes = freezed,
     Object? adminNotes = freezed,
+    Object? amount = null,
     Object? attachments = null,
   }) {
     return _then(
@@ -312,6 +322,10 @@ class __$$RequestModelImplCopyWithImpl<$Res>
             ? _value.adminNotes
             : adminNotes // ignore: cast_nullable_to_non_nullable
                   as String?,
+        amount: null == amount
+            ? _value.amount
+            : amount // ignore: cast_nullable_to_non_nullable
+                  as double,
         attachments: null == attachments
             ? _value.attachments
             : attachments // ignore: cast_nullable_to_non_nullable
@@ -340,6 +354,7 @@ class _$RequestModelImpl extends _RequestModel {
     this.status = StatusEnum.defaultValue,
     this.notes,
     this.adminNotes,
+    this.amount = 0.0,
     this.attachments = const [],
   }) : super._();
 
@@ -385,11 +400,14 @@ class _$RequestModelImpl extends _RequestModel {
   String? adminNotes;
   @override
   @JsonKey()
+  double amount;
+  @override
+  @JsonKey()
   List<AttachmentModel> attachments;
 
   @override
   String toString() {
-    return 'RequestModel(createdAt: $createdAt, fromDate: $fromDate, toDate: $toDate, date: $date, id: $id, userId: $userId, type: $type, companyId: $companyId, reason: $reason, fromHour: $fromHour, toHour: $toHour, status: $status, notes: $notes, adminNotes: $adminNotes, attachments: $attachments)';
+    return 'RequestModel(createdAt: $createdAt, fromDate: $fromDate, toDate: $toDate, date: $date, id: $id, userId: $userId, type: $type, companyId: $companyId, reason: $reason, fromHour: $fromHour, toHour: $toHour, status: $status, notes: $notes, adminNotes: $adminNotes, amount: $amount, attachments: $attachments)';
   }
 
   /// Create a copy of RequestModel
@@ -422,6 +440,7 @@ abstract class _RequestModel extends RequestModel {
     String status,
     String? notes,
     String? adminNotes,
+    double amount,
     List<AttachmentModel> attachments,
   }) = _$RequestModelImpl;
   _RequestModel._() : super._();
@@ -479,6 +498,9 @@ abstract class _RequestModel extends RequestModel {
   @override
   String? get adminNotes;
   set adminNotes(String? value);
+  @override
+  double get amount;
+  set amount(double value);
   @override
   List<AttachmentModel> get attachments;
   set attachments(List<AttachmentModel> value);

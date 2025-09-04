@@ -3673,6 +3673,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Year'**
   String get year;
+
+  /// No description provided for @salaryAdvanceRequest.
+  ///
+  /// In en, this message translates to:
+  /// **'Salary Advance Request'**
+  String get salaryAdvanceRequest;
+
+  /// No description provided for @amount.
+  ///
+  /// In en, this message translates to:
+  /// **'Amount'**
+  String get amount;
 }
 
 class _AppLocalizationsDelegate

@@ -21,6 +21,12 @@ extension RequestExtension on String {
           inputTitle: context.appLocalization.overtimeRequest,
           dateTitle: context.appLocalization.orderDate,
         );
+      case MyCollections.salaryAdvances:
+        return RequestInfoModel(
+          title: context.appLocalization.advances,
+          inputTitle: context.appLocalization.salaryAdvanceRequest,
+          dateTitle: context.appLocalization.orderDate,
+        );
       default:
         throw Exception('Collection not implemented');
     }

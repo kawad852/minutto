@@ -686,5 +686,7 @@
   "cities": "Cities",
   "addCity": "Add City",
   "updatedSuccessfully": "Updated Successfully",
-  "year": "Year"
+  "year": "Year",
+  "salaryAdvanceRequest": "Salary Advance Request",
+  "amount": "Amount"
 }

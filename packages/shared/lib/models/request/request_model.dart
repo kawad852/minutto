@@ -21,6 +21,7 @@ class RequestModel with _$RequestModel {
     @Default(StatusEnum.defaultValue) String status,
     String? notes,
     String? adminNotes,
+    @Default(0.0) double amount,
     @Default([]) List<AttachmentModel> attachments,
   }) = _RequestModel;
 

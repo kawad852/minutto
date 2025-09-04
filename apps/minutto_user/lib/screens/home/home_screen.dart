@@ -110,6 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         title: context.appLocalization.advances,
                       ),
                     ),
+
                     const SizedBox(width: 10),
                     Expanded(
                       child: HomeBubble(

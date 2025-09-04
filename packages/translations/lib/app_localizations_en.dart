@@ -1865,4 +1865,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get year => 'Year';
+
+  @override
+  String get salaryAdvanceRequest => 'Salary Advance Request';
+
+  @override
+  String get amount => 'Amount';
 }

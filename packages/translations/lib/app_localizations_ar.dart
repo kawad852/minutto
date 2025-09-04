@@ -1856,4 +1856,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get year => 'سنة';
+
+  @override
+  String get salaryAdvanceRequest => 'طلب سلفة';
+
+  @override
+  String get amount => 'المبلغ';
 }
