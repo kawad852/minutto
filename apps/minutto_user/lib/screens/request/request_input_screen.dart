@@ -84,9 +84,9 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
           child: Column(
             spacing: 15,
             children: [
-              if (_isSalaryAdvances)
+              if (_isSalaryAdvances || _isIncentives)
                 WidgetTitle(
-                  title: context.appLocalization.debtValue,
+                  title: context.appLocalization.amount,
                   child: CustomTextField.double(
                     initialValue: _request.amount != 0 ? _request.amount : null,
                     onChanged: (value) => _request.amount = value!,
@@ -110,11 +110,9 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                     }).toList(),
                   ),
                 ),
-              if (_isLeaves || _isOvertimes)
+              if (_isLeaves || _isOvertimes || _isIncentives)
                 WidgetTitle(
-                  title: _isLeaves
-                      ? context.appLocalization.leaveDate
-                      : context.appLocalization.overtimeHistory,
+                  title: context.appLocalization.date,
                   child: DateEditor(
                     value: _request.date,
                     onChanged: (value) => _request.date = value,
