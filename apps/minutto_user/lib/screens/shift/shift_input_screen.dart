@@ -84,77 +84,25 @@ class _ShiftInputScreenState extends State<ShiftInputScreen> {
                 value: null,
               ),
             ),
-            Row(
-              spacing: 10,
-              children: [
-                CustomSwitch(onChanged: (value) {}),
-                Text(
-                  context.appLocalization.saturday,
-                  style: TextStyle(
-                    color: context.colorPalette.grey718,
-                    fontSize: 16,
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              spacing: 10,
-              children: [
-                Expanded(
-                  child: WidgetTitle(
-                    title: context.appLocalization.startDate,
-                    child: DateEditor(
-                      onChanged: (value) {},
-                      value: DateTime.now(),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: WidgetTitle(
-                    title: context.appLocalization.endDate,
-                    child: DateEditor(
-                      onChanged: (value) {},
-                      value: DateTime.now(),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              spacing: 10,
-              children: [
-                CustomSwitch(onChanged: (value) {}),
-                Text(
-                  context.appLocalization.sunday,
-                  style: TextStyle(
-                    color: context.colorPalette.grey718,
-                    fontSize: 16,
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              spacing: 10,
-              children: [
-                Expanded(
-                  child: WidgetTitle(
-                    title: context.appLocalization.startDate,
-                    child: DateEditor(
-                      onChanged: (value) {},
-                      value: DateTime.now(),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: WidgetTitle(
-                    title: context.appLocalization.endDate,
-                    child: DateEditor(
-                      onChanged: (value) {},
-                      value: DateTime.now(),
-                    ),
-                  ),
-                ),
-              ],
+            Wrap(
+              spacing: 5,
+              children: WeekDayEnum.values.map((e) {
+                final value = e.value;
+                final label = e.label();
+                return FilterChip(
+                  label: Text(label),
+                  selected: _shift.days.contains(value),
+                  onSelected: (selected) {
+                    setState(() {
+                      if (selected) {
+                        _shift.days.add(value);
+                      } else {
+                        _shift.days.remove(value);
+                      }
+                    });
+                  },
+                );
+              }).toList(),
             ),
           ],
         ),

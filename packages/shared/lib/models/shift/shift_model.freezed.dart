@@ -33,8 +33,8 @@ mixin _$ShiftModel {
   set startHour(String value) => throw _privateConstructorUsedError;
   String get endHour => throw _privateConstructorUsedError;
   set endHour(String value) => throw _privateConstructorUsedError;
-  List<ShiftDayModel> get days => throw _privateConstructorUsedError;
-  set days(List<ShiftDayModel> value) => throw _privateConstructorUsedError;
+  List<int> get days => throw _privateConstructorUsedError;
+  set days(List<int> value) => throw _privateConstructorUsedError;
 
   /// Serializes this ShiftModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -59,7 +59,7 @@ abstract class $ShiftModelCopyWith<$Res> {
     String name,
     String startHour,
     String endHour,
-    List<ShiftDayModel> days,
+    List<int> days,
   });
 }
 
@@ -110,7 +110,7 @@ class _$ShiftModelCopyWithImpl<$Res, $Val extends ShiftModel>
             days: null == days
                 ? _value.days
                 : days // ignore: cast_nullable_to_non_nullable
-                      as List<ShiftDayModel>,
+                      as List<int>,
           )
           as $Val,
     );
@@ -132,7 +132,7 @@ abstract class _$$ShiftModelImplCopyWith<$Res>
     String name,
     String startHour,
     String endHour,
-    List<ShiftDayModel> days,
+    List<int> days,
   });
 }
 
@@ -182,7 +182,7 @@ class __$$ShiftModelImplCopyWithImpl<$Res>
         days: null == days
             ? _value.days
             : days // ignore: cast_nullable_to_non_nullable
-                  as List<ShiftDayModel>,
+                  as List<int>,
       ),
     );
   }
@@ -221,7 +221,7 @@ class _$ShiftModelImpl implements _ShiftModel {
   String endHour;
   @override
   @JsonKey()
-  List<ShiftDayModel> days;
+  List<int> days;
 
   @override
   String toString() {
@@ -249,7 +249,7 @@ abstract class _ShiftModel implements ShiftModel {
     String name,
     String startHour,
     String endHour,
-    List<ShiftDayModel> days,
+    List<int> days,
   }) = _$ShiftModelImpl;
 
   factory _ShiftModel.fromJson(Map<String, dynamic> json) =
@@ -273,202 +273,13 @@ abstract class _ShiftModel implements ShiftModel {
   String get endHour;
   set endHour(String value);
   @override
-  List<ShiftDayModel> get days;
-  set days(List<ShiftDayModel> value);
+  List<int> get days;
+  set days(List<int> value);
 
   /// Create a copy of ShiftModel
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ShiftModelImplCopyWith<_$ShiftModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-ShiftDayModel _$ShiftDayModelFromJson(Map<String, dynamic> json) {
-  return _ShiftDayModel.fromJson(json);
-}
-
-/// @nodoc
-mixin _$ShiftDayModel {
-  String get day => throw _privateConstructorUsedError;
-  set day(String value) => throw _privateConstructorUsedError;
-  DateTime get startDate => throw _privateConstructorUsedError;
-  set startDate(DateTime value) => throw _privateConstructorUsedError;
-  DateTime get endHour => throw _privateConstructorUsedError;
-  set endHour(DateTime value) => throw _privateConstructorUsedError;
-
-  /// Serializes this ShiftDayModel to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ShiftDayModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ShiftDayModelCopyWith<ShiftDayModel> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ShiftDayModelCopyWith<$Res> {
-  factory $ShiftDayModelCopyWith(
-    ShiftDayModel value,
-    $Res Function(ShiftDayModel) then,
-  ) = _$ShiftDayModelCopyWithImpl<$Res, ShiftDayModel>;
-  @useResult
-  $Res call({String day, DateTime startDate, DateTime endHour});
-}
-
-/// @nodoc
-class _$ShiftDayModelCopyWithImpl<$Res, $Val extends ShiftDayModel>
-    implements $ShiftDayModelCopyWith<$Res> {
-  _$ShiftDayModelCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ShiftDayModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? day = null,
-    Object? startDate = null,
-    Object? endHour = null,
-  }) {
-    return _then(
-      _value.copyWith(
-            day: null == day
-                ? _value.day
-                : day // ignore: cast_nullable_to_non_nullable
-                      as String,
-            startDate: null == startDate
-                ? _value.startDate
-                : startDate // ignore: cast_nullable_to_non_nullable
-                      as DateTime,
-            endHour: null == endHour
-                ? _value.endHour
-                : endHour // ignore: cast_nullable_to_non_nullable
-                      as DateTime,
-          )
-          as $Val,
-    );
-  }
-}
-
-/// @nodoc
-abstract class _$$ShiftDayModelImplCopyWith<$Res>
-    implements $ShiftDayModelCopyWith<$Res> {
-  factory _$$ShiftDayModelImplCopyWith(
-    _$ShiftDayModelImpl value,
-    $Res Function(_$ShiftDayModelImpl) then,
-  ) = __$$ShiftDayModelImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String day, DateTime startDate, DateTime endHour});
-}
-
-/// @nodoc
-class __$$ShiftDayModelImplCopyWithImpl<$Res>
-    extends _$ShiftDayModelCopyWithImpl<$Res, _$ShiftDayModelImpl>
-    implements _$$ShiftDayModelImplCopyWith<$Res> {
-  __$$ShiftDayModelImplCopyWithImpl(
-    _$ShiftDayModelImpl _value,
-    $Res Function(_$ShiftDayModelImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of ShiftDayModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? day = null,
-    Object? startDate = null,
-    Object? endHour = null,
-  }) {
-    return _then(
-      _$ShiftDayModelImpl(
-        day: null == day
-            ? _value.day
-            : day // ignore: cast_nullable_to_non_nullable
-                  as String,
-        startDate: null == startDate
-            ? _value.startDate
-            : startDate // ignore: cast_nullable_to_non_nullable
-                  as DateTime,
-        endHour: null == endHour
-            ? _value.endHour
-            : endHour // ignore: cast_nullable_to_non_nullable
-                  as DateTime,
-      ),
-    );
-  }
-}
-
-/// @nodoc
-
-@JsonSerializable(explicitToJson: true)
-class _$ShiftDayModelImpl implements _ShiftDayModel {
-  _$ShiftDayModelImpl({
-    this.day = '',
-    required this.startDate,
-    required this.endHour,
-  });
-
-  factory _$ShiftDayModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ShiftDayModelImplFromJson(json);
-
-  @override
-  @JsonKey()
-  String day;
-  @override
-  DateTime startDate;
-  @override
-  DateTime endHour;
-
-  @override
-  String toString() {
-    return 'ShiftDayModel(day: $day, startDate: $startDate, endHour: $endHour)';
-  }
-
-  /// Create a copy of ShiftDayModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ShiftDayModelImplCopyWith<_$ShiftDayModelImpl> get copyWith =>
-      __$$ShiftDayModelImplCopyWithImpl<_$ShiftDayModelImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ShiftDayModelImplToJson(this);
-  }
-}
-
-abstract class _ShiftDayModel implements ShiftDayModel {
-  factory _ShiftDayModel({
-    String day,
-    required DateTime startDate,
-    required DateTime endHour,
-  }) = _$ShiftDayModelImpl;
-
-  factory _ShiftDayModel.fromJson(Map<String, dynamic> json) =
-      _$ShiftDayModelImpl.fromJson;
-
-  @override
-  String get day;
-  set day(String value);
-  @override
-  DateTime get startDate;
-  set startDate(DateTime value);
-  @override
-  DateTime get endHour;
-  set endHour(DateTime value);
-
-  /// Create a copy of ShiftDayModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ShiftDayModelImplCopyWith<_$ShiftDayModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

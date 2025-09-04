@@ -15,7 +15,7 @@ _$ShiftModelImpl _$$ShiftModelImplFromJson(Map<String, dynamic> json) =>
       endHour: json['endHour'] as String? ?? '',
       days:
           (json['days'] as List<dynamic>?)
-              ?.map((e) => ShiftDayModel.fromJson(e as Map<String, dynamic>))
+              ?.map((e) => (e as num).toInt())
               .toList() ??
           const [],
     );
@@ -27,19 +27,5 @@ Map<String, dynamic> _$$ShiftModelImplToJson(_$ShiftModelImpl instance) =>
       'name': instance.name,
       'startHour': instance.startHour,
       'endHour': instance.endHour,
-      'days': instance.days.map((e) => e.toJson()).toList(),
-    };
-
-_$ShiftDayModelImpl _$$ShiftDayModelImplFromJson(Map<String, dynamic> json) =>
-    _$ShiftDayModelImpl(
-      day: json['day'] as String? ?? '',
-      startDate: DateTime.parse(json['startDate'] as String),
-      endHour: DateTime.parse(json['endHour'] as String),
-    );
-
-Map<String, dynamic> _$$ShiftDayModelImplToJson(_$ShiftDayModelImpl instance) =>
-    <String, dynamic>{
-      'day': instance.day,
-      'startDate': instance.startDate.toIso8601String(),
-      'endHour': instance.endHour.toIso8601String(),
+      'days': instance.days,
     };

@@ -1,3 +1,5 @@
+import 'package:shared/shared.dart';
+
 import '../exports/algolia_exports.dart';
 
 enum WeekDayEnum {
@@ -12,8 +14,8 @@ enum WeekDayEnum {
   final int value;
   const WeekDayEnum(this.value);
 
-  String label(String locale) {
+  String label() {
     final date = DateTime.utc(2025, 1, value); // fixed week
-    return DateFormat('EEEE', locale).format(date);
+    return DateFormat('EEEE', MySharedPreferences.language).format(date);
   }
 }

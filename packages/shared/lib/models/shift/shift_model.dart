@@ -12,20 +12,8 @@ class ShiftModel with _$ShiftModel {
     @Default('') String name,
     @Default('') String startHour,
     @Default('') String endHour,
-    @Default([]) List<ShiftDayModel> days,
+    @Default([]) List<int> days,
   }) = _ShiftModel;
 
   factory ShiftModel.fromJson(Map<String, dynamic> json) => _$ShiftModelFromJson(json);
-}
-
-@unfreezed
-class ShiftDayModel with _$ShiftDayModel {
-  @JsonSerializable(explicitToJson: true)
-  factory ShiftDayModel({
-    @Default('') String day,
-    required DateTime startDate,
-    required DateTime endHour,
-  }) = _ShiftDayModel;
-
-  factory ShiftDayModel.fromJson(Map<String, dynamic> json) => _$ShiftDayModelFromJson(json);
 }
