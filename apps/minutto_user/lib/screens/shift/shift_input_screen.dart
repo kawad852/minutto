@@ -1,13 +1,28 @@
 import 'package:shared/shared.dart';
 
 class ShiftInputScreen extends StatefulWidget {
-  const ShiftInputScreen({super.key});
+  final ShiftModel? shift;
+
+  const ShiftInputScreen({
+    super.key,
+    this.shift,
+  });
 
   @override
   State<ShiftInputScreen> createState() => _ShiftInputScreenState();
 }
 
 class _ShiftInputScreenState extends State<ShiftInputScreen> {
+  late ShiftModel _shift;
+
+  @override
+  void initState() {
+    super.initState();
+    _shift = ShiftModel.fromJson(
+      widget.shift?.toJson() ?? ShiftModel().toJson(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +43,9 @@ class _ShiftInputScreenState extends State<ShiftInputScreen> {
           children: [
             WidgetTitle(
               title: context.appLocalization.shiftName,
-              child: CustomTextField.text(onChanged: (value) {}),
+              child: CustomTextField.text(
+                onChanged: (value) => _shift.name = value!,
+              ),
             ),
             Row(
               spacing: 10,
@@ -37,8 +54,8 @@ class _ShiftInputScreenState extends State<ShiftInputScreen> {
                   child: WidgetTitle(
                     title: context.appLocalization.startsFrom,
                     child: DayTimeEditor(
-                      initialValue: null,
-                      onChanged: (value) {},
+                      initialValue: _shift.startHour,
+                      onChanged: (value) => _shift.startHour = value,
                     ),
                   ),
                 ),
@@ -46,8 +63,8 @@ class _ShiftInputScreenState extends State<ShiftInputScreen> {
                   child: WidgetTitle(
                     title: context.appLocalization.endsIn,
                     child: DayTimeEditor(
-                      onChanged: (value) {},
-                      initialValue: null,
+                      initialValue: _shift.endHour,
+                      onChanged: (value) => _shift.endHour = value,
                     ),
                   ),
                 ),
@@ -56,11 +73,13 @@ class _ShiftInputScreenState extends State<ShiftInputScreen> {
             WidgetTitle(
               title: context.appLocalization.chooseMoreBranch,
               child: DropDownEditor<String>(
-                items: [
-                  DropdownMenuItem(value: 'سوريا', child: Text('سوريا')),
-                  DropdownMenuItem(value: 'الاردن', child: Text('الاردن')),
-                ],
-                onChanged: (value) {},
+                items: MyStorage.branches.map((e) {
+                  return DropdownMenuItem(
+                    value: e.id,
+                    child: Text(e.name),
+                  );
+                }).toList(),
+                onChanged: (value) => _shift.branchId,
                 title: context.appLocalization.choose,
                 value: null,
               ),
