@@ -1862,4 +1862,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get amount => 'المبلغ';
+
+  @override
+  String get breaks => 'الإستراحات';
 }

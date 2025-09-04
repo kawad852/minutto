@@ -689,5 +689,6 @@
   "year": "Year",
   "salaryAdvanceRequest": "Salary Advance Request",
   "amount": "Amount",
-  "submit": "Submit"
+  "submit": "Submit",
+  "breaks": "Breaks"
 }

@@ -3685,6 +3685,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Amount'**
   String get amount;
+
+  /// No description provided for @breaks.
+  ///
+  /// In en, this message translates to:
+  /// **'Breaks'**
+  String get breaks;
 }
 
 class _AppLocalizationsDelegate

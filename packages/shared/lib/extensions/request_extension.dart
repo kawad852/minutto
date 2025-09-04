@@ -27,6 +27,18 @@ extension RequestExtension on String {
           inputTitle: context.appLocalization.salaryAdvanceRequest,
           dateTitle: context.appLocalization.orderDate,
         );
+      case MyCollections.incentives:
+        return RequestInfoModel(
+          title: context.appLocalization.incentives,
+          inputTitle: context.appLocalization.submitRequest,
+          dateTitle: context.appLocalization.orderDate,
+        );
+      case MyCollections.breaks:
+        return RequestInfoModel(
+          title: context.appLocalization.breaks,
+          inputTitle: context.appLocalization.submitRequest,
+          dateTitle: context.appLocalization.orderDate,
+        );
       default:
         throw Exception('Collection not implemented');
     }

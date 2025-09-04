@@ -1871,4 +1871,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get amount => 'Amount';
+
+  @override
+  String get breaks => 'Breaks';
 }
