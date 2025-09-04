@@ -29,7 +29,7 @@ class _RequestDetailsScreenState extends State<RequestDetailsScreen> {
     final statusInfo = request.statusInfo(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text(info.inputTitle),
+        title: Text(context.appLocalization.requestDetails),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -50,7 +50,7 @@ class _RequestDetailsScreenState extends State<RequestDetailsScreen> {
                   const CustomSvg(MyIcons.note),
                   Expanded(
                     child: Text(
-                      "${info.dateTitle}: ${"${request.fromDate!.defaultFormat} - ${request.toDate!.defaultFormat}"}",
+                      "${context.appLocalization.requestDate}: ${request.createdAt.defaultFormat}",
                       style: TextStyle(
                         color: context.colorPalette.black,
                         fontSize: 14,
@@ -65,20 +65,33 @@ class _RequestDetailsScreenState extends State<RequestDetailsScreen> {
                   spacing: 15,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    DetailsInfo(
-                      title: context.appLocalization.requestType,
-                      value: request.reasonLabel(context),
-                    ),
+                    if (request.fromDate != null && request.toDate != null)
+                      DetailsInfo(
+                        title: context.appLocalization.date,
+                        value:
+                            "${request.fromDate!.defaultFormat} - ${request.toDate!.defaultFormat}",
+                      ),
+
+                    if (request.reason != null)
+                      DetailsInfo(
+                        title: context.appLocalization.requestType,
+                        value: request.reasonLabel(context),
+                      ),
                     if (request.fromHour != null && request.toHour != null) ...[
                       DetailsInfo(
                         title: context.appLocalization.fromHour,
-                        value: "05:00 PM",
+                        value: request.fromHour!,
                       ),
                       DetailsInfo(
                         title: context.appLocalization.toHour,
-                        value: "05:00 PM",
+                        value: request.toHour!,
                       ),
                     ],
+                    if (request.amount != 0)
+                      DetailsInfo(
+                        title: context.appLocalization.amount,
+                        value: request.amount.toStringAsFixed(2),
+                      ),
                     DetailsInfo(
                       title: context.appLocalization.officialReplied,
                       value: statusInfo.$1,
@@ -87,28 +100,31 @@ class _RequestDetailsScreenState extends State<RequestDetailsScreen> {
                   ],
                 ),
               ),
-              // DetailsCard(
-              //   child: Column(
-              //     spacing: 15,
-              //     crossAxisAlignment: CrossAxisAlignment.start,
-              //     children: [
-              //       Text(
-              //         context.appLocalization.requestType,
-              //         style: TextStyle(
-              //           color: context.colorPalette.grey667,
-              //           fontSize: 15,
-              //         ),
-              //       ),
-              //       Text(
-              //         "وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف ",
-              //         style: TextStyle(
-              //           color: context.colorPalette.blue091,
-              //           fontSize: 15,
-              //         ),
-              //       ),
-              //     ],
-              //   ),
-              // ),
+
+              ///Notes
+              if (request.notes != null)
+                DetailsCard(
+                  child: Column(
+                    spacing: 15,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        context.appLocalization.notes,
+                        style: TextStyle(
+                          color: context.colorPalette.grey667,
+                          fontSize: 15,
+                        ),
+                      ),
+                      Text(
+                        request.notes!,
+                        style: TextStyle(
+                          color: context.colorPalette.blue091,
+                          fontSize: 15,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               if (request.attachments.isNotEmpty)
                 WidgetTitle(
                   title: context.appLocalization.attachedDocuments,

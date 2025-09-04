@@ -50,9 +50,15 @@ class RequestCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                Icon(
-                  Icons.arrow_forward_ios_rounded,
-                  size: 17,
+                EditButton(
+                  onPressed: () {
+                    context.navigate((context) {
+                      return RequestInputScreen(
+                        collection: collection,
+                        request: request,
+                      );
+                    });
+                  },
                 ),
               ],
             ),

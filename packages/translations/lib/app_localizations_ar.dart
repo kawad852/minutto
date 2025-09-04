@@ -342,7 +342,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get reviews => 'Reviews';
 
   @override
-  String get submit => 'Submit';
+  String get submit => 'تقديم';
 
   @override
   String get appName => 'iBear';

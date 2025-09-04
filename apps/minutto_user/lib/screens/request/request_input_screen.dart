@@ -2,10 +2,12 @@ import 'package:shared/shared.dart';
 
 class RequestInputScreen extends StatefulWidget {
   final String collection;
+  final RequestModel? request;
 
   const RequestInputScreen({
     super.key,
     required this.collection,
+    this.request,
   });
 
   @override
@@ -18,6 +20,7 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
   final _formKey = GlobalKey<FormState>();
   final _storageService = StorageService();
 
+  bool get _isAdd => widget.request == null;
   String get _collection => widget.collection;
   bool get _isVacations => _collection == MyCollections.vacations;
   bool get _isLeaves => _collection == MyCollections.leaves;
@@ -27,36 +30,35 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
   FirebaseFirestore get _firebaseFireStore => getIt<FirebaseFirestore>();
 
   void _onSubmit(BuildContext context) {
-    if (_formKey.currentState!.validate()) {
-      context.unFocusKeyboard();
-      ApiService.fetch(
-        context,
-        callBack: () async {
-          final user = MySharedPreferences.user!;
-          final docRef = _firebaseFireStore.collection(_collection).requestConvertor.doc();
-          _request.id = docRef.id;
-          _request.companyId = user.companyId!;
-          _request.userId = user.id!;
-          _request.createdAt = kNowDate;
-          _request.attachments = await _storageService.uploadFiles(
-            _collection,
-            _files,
-          );
-          await docRef.set(_request);
-          if (context.mounted) {
-            context.showSnackBar(context.appLocalization.sentSuccessfully);
-            Navigator.pop(context);
-          }
-        },
-      );
-    }
+    _formKey.onSubmit(
+      context,
+      isAdd: _isAdd,
+      onCall: (user) async {
+        final docRef = _firebaseFireStore
+            .collection(_collection)
+            .requestConvertor
+            .doc(_isAdd ? null : _request.id);
+        _request.id = docRef.id;
+        _request.companyId = user.companyId;
+        _request.userId = user.id;
+        _request.createdAt = kNowDate;
+        _request.attachments = await _storageService.uploadFiles(
+          _collection,
+          _files,
+        );
+        await docRef.set(_request);
+      },
+    );
   }
 
   @override
   void initState() {
     super.initState();
-    _request = RequestModel(
-      createdAt: kNowDate,
+    _request = RequestModel.fromJson(
+      widget.request?.toJson() ??
+          RequestModel(
+            createdAt: kNowDate,
+          ).toJson(),
     );
   }
 
@@ -71,7 +73,7 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
         onPressed: () {
           _onSubmit(context);
         },
-        title: context.appLocalization.submitRequest,
+        title: context.appLocalization.submit,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
@@ -83,7 +85,10 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
               if (_isSalaryAdvances)
                 WidgetTitle(
                   title: context.appLocalization.debtValue,
-                  child: CustomTextField.text(onChanged: (value) {}),
+                  child: CustomTextField.double(
+                    initialValue: _request.amount,
+                    onChanged: (value) => _request.amount = value!,
+                  ),
                 ),
               if (_isVacations || _isLeaves)
                 WidgetTitle(
@@ -191,6 +196,7 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
               WidgetTitle(
                 title: context.appLocalization.note,
                 child: CustomTextField.text(
+                  initialValue: _request.notes,
                   onChanged: (value) => _request.notes = value,
                   hintText: context.appLocalization.writeNote,
                   maxLines: 4,

@@ -504,5 +504,6 @@
   "updatedSuccessfully": "تم التحديث بنجاح",
   "year": "سنة",
   "salaryAdvanceRequest": "طلب سلفة",
-  "amount": "المبلغ"
+  "amount": "المبلغ",
+  "submit": "تقديم"
 }

@@ -688,5 +688,6 @@
   "updatedSuccessfully": "Updated Successfully",
   "year": "Year",
   "salaryAdvanceRequest": "Salary Advance Request",
-  "amount": "Amount"
+  "amount": "Amount",
+  "submit": "Submit"
 }
