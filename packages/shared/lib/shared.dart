@@ -216,6 +216,7 @@ export 'widgets/base_search_bar.dart';
 export 'widgets/blitz_builder.dart';
 export 'widgets/bottom_button.dart';
 export 'widgets/buttons/custom_icon_button.dart';
+export 'widgets/buttons/edit_button.dart';
 export 'widgets/buttons/rectangular_button.dart';
 export 'widgets/buttons/share_button.dart';
 export 'widgets/color_avatar.dart';

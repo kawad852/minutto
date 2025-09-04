@@ -51,7 +51,7 @@ class _ShiftInputScreenState extends State<ShiftInputScreen> {
       ),
       bottomNavigationBar: BottomButton(
         onPressed: () => _onSubmit(context),
-        title: context.appLocalization.add,
+        title: context.appLocalization.submit,
         backgroundColor: context.colorPalette.blue091,
         textColor: context.colorPalette.white,
       ),
@@ -66,6 +66,7 @@ class _ShiftInputScreenState extends State<ShiftInputScreen> {
               WidgetTitle(
                 title: context.appLocalization.shiftName,
                 child: CustomTextField.text(
+                  initialValue: _shift.name,
                   onChanged: (value) => _shift.name = value!,
                 ),
               ),

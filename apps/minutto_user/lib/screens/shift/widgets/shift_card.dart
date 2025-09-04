@@ -1,65 +1,177 @@
+import 'package:minutto_user/screens/shift/shift_input_screen.dart';
 import 'package:shared/shared.dart';
 
 class ShiftCard extends StatelessWidget {
-  const ShiftCard({super.key});
+  final ShiftModel shift;
+
+  const ShiftCard({
+    super.key,
+    required this.shift,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final branches = MyStorage.branches.where((e) => shift.branchIds.contains(e.id)).toList();
     return Container(
       width: double.infinity,
+      height: 247,
+      margin: const EdgeInsets.only(bottom: 30),
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       decoration: BoxDecoration(
         color: context.colorPalette.greyF9F,
-        border: Border.all(color: context.colorPalette.greyEAE),
         borderRadius: BorderRadius.circular(8),
       ),
-      child: Row(
-        spacing: 5,
+      child: Column(
         children: [
-          BaseNetworkImage(
-            "",
-            width: 50,
-            height: 50,
-            shape: BoxShape.circle,
-          ),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "صهيب البكار",
-                  overflow: TextOverflow.ellipsis,
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  shift.name,
                   style: TextStyle(
-                    color: context.colorPalette.black,
-                    fontSize: 18,
+                    color: context.colorPalette.blue091,
+                    fontSize: 16,
                   ),
                 ),
-                Text(
-                  "مصمم جرافيك",
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    color: context.colorPalette.blue475,
-                    fontSize: 14,
+              ),
+              EditButton(
+                onPressed: () {
+                  context.navigate((context) {
+                    return ShiftInputScreen(
+                      shift: shift,
+                    );
+                  });
+                },
+              ),
+            ],
+          ),
+          Container(
+            width: double.infinity,
+            height: 61,
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            margin: const EdgeInsets.symmetric(vertical: 10),
+            decoration: BoxDecoration(
+              color: Colors.transparent,
+              border: Border.all(color: context.colorPalette.greyEAE),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Column(
+                    spacing: 3,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        context.appLocalization.startsFrom,
+                        style: TextStyle(
+                          color: context.colorPalette.blue475,
+                          fontSize: 14,
+                        ),
+                      ),
+                      Text(
+                        shift.startHour,
+                        style: TextStyle(
+                          color: context.colorPalette.blue475,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Column(
+                    spacing: 3,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        context.appLocalization.endsIn,
+                        style: TextStyle(
+                          color: context.colorPalette.blue475,
+                          fontSize: 14,
+                        ),
+                      ),
+                      Text(
+                        shift.endHour,
+                        style: TextStyle(
+                          color: context.colorPalette.blue475,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
             ),
           ),
-          Expanded(
-            child: ListView.separated(
-              separatorBuilder: (context, index) => const SizedBox(height: 0),
-              itemCount: 4,
-              shrinkWrap: true,
-              padding: EdgeInsets.zero,
-              physics: const NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) {
-                return CustomRadio<bool>(
-                  value: true,
-                  groupValue: true,
-                  title: "شفت اساسي",
-                  onChanged: (value) {},
+          WidgetTitle(
+            title: context.appLocalization.branches,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+
+              children: branches.map((branch) {
+                return Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 13,
+                    vertical: 10,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.transparent,
+                    border: Border.all(color: context.colorPalette.greyEAE),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Row(
+                    spacing: 5,
+                    children: [
+                      Expanded(
+                        child: Text(
+                          context.appLocalization.branchName,
+                          style: TextStyle(
+                            color: context.colorPalette.blue475,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Text(
+                          branch.name,
+                          style: TextStyle(
+                            color: context.colorPalette.blue475,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ),
+                      // SizedBox(
+                      //   height: 20,
+                      //   child: ListView.builder(
+                      //     itemCount: 7,
+                      //     shrinkWrap: true,
+                      //     scrollDirection: Axis.horizontal,
+                      //     physics: const NeverScrollableScrollPhysics(),
+                      //     padding: EdgeInsets.zero,
+                      //     itemBuilder: (context, index) {
+                      //       return const Align(
+                      //         widthFactor: 0.5,
+                      //         child: BaseNetworkImage(
+                      //           "",
+                      //           width: 24,
+                      //           height: 24,
+                      //           shape: BoxShape.circle,
+                      //         ),
+                      //       );
+                      //     },
+                      //   ),
+                      // ),
+                    ],
+                  ),
                 );
-              },
+              }).toList(),
             ),
           ),
         ],

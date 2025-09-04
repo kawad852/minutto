@@ -52,7 +52,7 @@ class _ShiftManagementScreenState extends State<ShiftManagementScreen> {
                 separatorBuilder: (context, index) => const SizedBox(height: 12),
                 itemCount: 5,
                 itemBuilder: (context, index) {
-                  return ShiftCard();
+                  return UserShiftCard();
                 },
               ),
             ),
