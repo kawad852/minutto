@@ -9,6 +9,7 @@ class ShiftModel with _$ShiftModel {
   factory ShiftModel({
     @TimestampSerializer() DateTime? createdAt,
     @Default('') String id,
+    @Default('') String companyId,
     @Default('') String name,
     @Default('') String startHour,
     @Default('') String endHour,

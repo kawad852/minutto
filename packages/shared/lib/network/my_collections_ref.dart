@@ -65,4 +65,6 @@ extension CollectionReferenceExtension on FirebaseFirestore {
       .versionConvertor;
 
   DocumentReference<VersionModel> get versionsDoc => settingsCollectionRef.doc(kVersionsDocId);
+
+  CollectionReference<ShiftModel> get shifts => collection(MyCollections.shifts).shiftConvertor;
 }

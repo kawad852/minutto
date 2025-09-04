@@ -27,6 +27,8 @@ mixin _$ShiftModel {
   set createdAt(DateTime? value) => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   set id(String value) => throw _privateConstructorUsedError;
+  String get companyId => throw _privateConstructorUsedError;
+  set companyId(String value) => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   set name(String value) => throw _privateConstructorUsedError;
   String get startHour => throw _privateConstructorUsedError;
@@ -58,6 +60,7 @@ abstract class $ShiftModelCopyWith<$Res> {
   $Res call({
     @TimestampSerializer() DateTime? createdAt,
     String id,
+    String companyId,
     String name,
     String startHour,
     String endHour,
@@ -83,6 +86,7 @@ class _$ShiftModelCopyWithImpl<$Res, $Val extends ShiftModel>
   $Res call({
     Object? createdAt = freezed,
     Object? id = null,
+    Object? companyId = null,
     Object? name = null,
     Object? startHour = null,
     Object? endHour = null,
@@ -98,6 +102,10 @@ class _$ShiftModelCopyWithImpl<$Res, $Val extends ShiftModel>
             id: null == id
                 ? _value.id
                 : id // ignore: cast_nullable_to_non_nullable
+                      as String,
+            companyId: null == companyId
+                ? _value.companyId
+                : companyId // ignore: cast_nullable_to_non_nullable
                       as String,
             name: null == name
                 ? _value.name
@@ -137,6 +145,7 @@ abstract class _$$ShiftModelImplCopyWith<$Res>
   $Res call({
     @TimestampSerializer() DateTime? createdAt,
     String id,
+    String companyId,
     String name,
     String startHour,
     String endHour,
@@ -161,6 +170,7 @@ class __$$ShiftModelImplCopyWithImpl<$Res>
   $Res call({
     Object? createdAt = freezed,
     Object? id = null,
+    Object? companyId = null,
     Object? name = null,
     Object? startHour = null,
     Object? endHour = null,
@@ -176,6 +186,10 @@ class __$$ShiftModelImplCopyWithImpl<$Res>
         id: null == id
             ? _value.id
             : id // ignore: cast_nullable_to_non_nullable
+                  as String,
+        companyId: null == companyId
+            ? _value.companyId
+            : companyId // ignore: cast_nullable_to_non_nullable
                   as String,
         name: null == name
             ? _value.name
@@ -209,6 +223,7 @@ class _$ShiftModelImpl implements _ShiftModel {
   _$ShiftModelImpl({
     @TimestampSerializer() this.createdAt,
     this.id = '',
+    this.companyId = '',
     this.name = '',
     this.startHour = '',
     this.endHour = '',
@@ -227,6 +242,9 @@ class _$ShiftModelImpl implements _ShiftModel {
   String id;
   @override
   @JsonKey()
+  String companyId;
+  @override
+  @JsonKey()
   String name;
   @override
   @JsonKey()
@@ -243,7 +261,7 @@ class _$ShiftModelImpl implements _ShiftModel {
 
   @override
   String toString() {
-    return 'ShiftModel(createdAt: $createdAt, id: $id, name: $name, startHour: $startHour, endHour: $endHour, days: $days, branchIds: $branchIds)';
+    return 'ShiftModel(createdAt: $createdAt, id: $id, companyId: $companyId, name: $name, startHour: $startHour, endHour: $endHour, days: $days, branchIds: $branchIds)';
   }
 
   /// Create a copy of ShiftModel
@@ -264,6 +282,7 @@ abstract class _ShiftModel implements ShiftModel {
   factory _ShiftModel({
     @TimestampSerializer() DateTime? createdAt,
     String id,
+    String companyId,
     String name,
     String startHour,
     String endHour,
@@ -282,6 +301,9 @@ abstract class _ShiftModel implements ShiftModel {
   @override
   String get id;
   set id(String value);
+  @override
+  String get companyId;
+  set companyId(String value);
   @override
   String get name;
   set name(String value);

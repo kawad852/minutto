@@ -10,6 +10,7 @@ _$ShiftModelImpl _$$ShiftModelImplFromJson(Map<String, dynamic> json) =>
     _$ShiftModelImpl(
       createdAt: const TimestampSerializer().fromJson(json['createdAt']),
       id: json['id'] as String? ?? '',
+      companyId: json['companyId'] as String? ?? '',
       name: json['name'] as String? ?? '',
       startHour: json['startHour'] as String? ?? '',
       endHour: json['endHour'] as String? ?? '',
@@ -29,6 +30,7 @@ Map<String, dynamic> _$$ShiftModelImplToJson(_$ShiftModelImpl instance) =>
     <String, dynamic>{
       'createdAt': const TimestampSerializer().toJson(instance.createdAt),
       'id': instance.id,
+      'companyId': instance.companyId,
       'name': instance.name,
       'startHour': instance.startHour,
       'endHour': instance.endHour,
