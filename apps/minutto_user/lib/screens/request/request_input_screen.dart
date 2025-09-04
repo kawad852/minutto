@@ -26,6 +26,8 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
   bool get _isLeaves => _collection == MyCollections.leaves;
   bool get _isSalaryAdvances => _collection == MyCollections.salaryAdvances;
   bool get _isOvertimes => _collection == MyCollections.overtimes;
+  bool get _isIncentives => _collection == MyCollections.incentives;
+  bool get _isBreak => _collection == MyCollections.breaks;
 
   FirebaseFirestore get _firebaseFireStore => getIt<FirebaseFirestore>();
 
@@ -202,11 +204,12 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                   maxLines: 4,
                 ),
               ),
-              WidgetTitle(
-                title: context.appLocalization.attachDocument,
-                miniTitle: " (${context.appLocalization.attachDoucOrPdf})",
-                child: AttachCard(),
-              ),
+              if (!_isBreak)
+                WidgetTitle(
+                  title: context.appLocalization.attachDocument,
+                  miniTitle: " (${context.appLocalization.attachDoucOrPdf})",
+                  child: AttachCard(),
+                ),
             ],
           ),
         ),
