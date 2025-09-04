@@ -1,8 +1,18 @@
 import 'package:shared/shared.dart';
 
-class ReplyDialog extends StatelessWidget {
-  final ReplyType replyType;
-  const ReplyDialog({super.key, required this.replyType});
+class ReplyDialog extends StatefulWidget {
+  final String status;
+
+  const ReplyDialog({super.key, required this.status});
+
+  @override
+  State<ReplyDialog> createState() => _ReplyDialogState();
+}
+
+class _ReplyDialogState extends State<ReplyDialog> {
+  var _notes = '';
+
+  bool get _isAccept => widget.status == StatusEnum.accepted.value;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +27,7 @@ class ReplyDialog extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              replyType == ReplyType.accept
+              _isAccept
                   ? context.appLocalization.sureAcceptFile
                   : context.appLocalization.sureRejectFile,
               style: TextStyle(
@@ -36,8 +46,8 @@ class ReplyDialog extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 12, bottom: 30),
               child: CustomTextField.text(
-                onChanged: (value) {},
-                hintText: replyType == ReplyType.accept
+                onChanged: (value) => _notes = value!,
+                hintText: _isAccept
                     ? context.appLocalization.writeNote
                     : context.appLocalization.reasonRejection,
                 maxLines: 3,
@@ -48,19 +58,21 @@ class ReplyDialog extends StatelessWidget {
               children: [
                 Expanded(
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pop(context, (widget.status, _notes));
+                    },
                     child: Container(
                       width: double.infinity,
                       height: 48,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                        color: replyType == ReplyType.accept
+                        color: _isAccept
                             ? context.colorPalette.green19B
                             : context.colorPalette.redF95,
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Text(
-                        replyType == ReplyType.accept
+                        _isAccept
                             ? context.appLocalization.confirmAcceptance
                             : context.appLocalization.confirmRejection,
                         style: TextStyle(
@@ -73,7 +85,9 @@ class ReplyDialog extends StatelessWidget {
                 ),
                 Expanded(
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
                     child: Container(
                       width: double.infinity,
                       height: 48,

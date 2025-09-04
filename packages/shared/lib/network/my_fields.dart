@@ -50,4 +50,6 @@ class MyFields {
   static const String branchesVersion = 'branchesVersion';
   static const String usersVersion = 'usersVersion';
   static const String departmentsVersion = 'departmentsVersion';
+  static const String notes = 'notes';
+  static const String adminNotes = 'adminNotes';
 }

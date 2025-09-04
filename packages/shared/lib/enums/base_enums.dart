@@ -54,6 +54,4 @@ enum StatusEnum {
 
 enum PrivacyType { policy, app }
 
-enum AdditionsType { alarm, discount, incentive}
-
-enum ReplyType { accept, reject}
+enum AdditionsType { alarm, discount, incentive }

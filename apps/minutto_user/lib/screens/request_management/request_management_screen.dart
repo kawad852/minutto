@@ -27,8 +27,9 @@ class _RequestManagementScreenState extends State<RequestManagementScreen> {
                 RequestManageInfo(
                   onTap: () {
                     context.navigate(
-                      (context) => const RequestsListScreen(
+                      (context) => const RequestsScreen(
                         collection: MyCollections.leaves,
+                        showActions: true,
                       ),
                     );
                   },
@@ -38,8 +39,9 @@ class _RequestManagementScreenState extends State<RequestManagementScreen> {
                 RequestManageInfo(
                   onTap: () {
                     context.navigate(
-                      (context) => const RequestsListScreen(
+                      (context) => const RequestsScreen(
                         collection: MyCollections.vacations,
+                        showActions: true,
                       ),
                     );
                   },
@@ -54,8 +56,9 @@ class _RequestManagementScreenState extends State<RequestManagementScreen> {
                 RequestManageInfo(
                   onTap: () {
                     context.navigate(
-                      (context) => const RequestsListScreen(
+                      (context) => const RequestsScreen(
                         collection: MyCollections.salaryAdvances,
+                        showActions: true,
                       ),
                     );
                   },
@@ -65,8 +68,9 @@ class _RequestManagementScreenState extends State<RequestManagementScreen> {
                 RequestManageInfo(
                   onTap: () {
                     context.navigate(
-                      (context) => const RequestsListScreen(
+                      (context) => const RequestsScreen(
                         collection: MyCollections.breaks,
+                        showActions: true,
                       ),
                     );
                   },
@@ -81,8 +85,9 @@ class _RequestManagementScreenState extends State<RequestManagementScreen> {
                 RequestManageInfo(
                   onTap: () {
                     context.navigate(
-                      (context) => const RequestsListScreen(
+                      (context) => const RequestsScreen(
                         collection: MyCollections.incentives,
+                        showActions: true,
                       ),
                     );
                   },
@@ -92,8 +97,9 @@ class _RequestManagementScreenState extends State<RequestManagementScreen> {
                 RequestManageInfo(
                   onTap: () {
                     context.navigate(
-                      (context) => const RequestsListScreen(
+                      (context) => const RequestsScreen(
                         collection: MyCollections.overtimes,
+                        showActions: true,
                       ),
                     );
                   },

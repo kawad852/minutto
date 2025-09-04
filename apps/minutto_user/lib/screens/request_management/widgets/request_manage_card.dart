@@ -85,7 +85,7 @@ class RequestManageCard extends StatelessWidget {
                       context: context,
                       builder: (context) {
                         return ReplyDialog(
-                          replyType: ReplyType.accept,
+                          status: StatusEnum.accepted.value,
                         );
                       },
                     );
@@ -99,7 +99,7 @@ class RequestManageCard extends StatelessWidget {
                       context: context,
                       builder: (context) {
                         return ReplyDialog(
-                          replyType: ReplyType.reject,
+                          status: StatusEnum.rejected.value,
                         );
                       },
                     );

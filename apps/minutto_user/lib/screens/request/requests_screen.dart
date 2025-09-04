@@ -3,10 +3,12 @@ import 'package:shared/shared.dart';
 
 class RequestsScreen extends StatefulWidget {
   final String collection;
+  final bool showActions;
 
   const RequestsScreen({
     super.key,
     required this.collection,
+    this.showActions = false,
   });
 
   @override
@@ -19,10 +21,19 @@ class _RequestsScreenState extends State<RequestsScreen> {
   String get _collection => widget.collection;
 
   void _initialize() {
+    late Filter userFilter;
+    final statusFilter = Filter(MyFields.status, isEqualTo: StatusEnum.pending.value);
+    final user = MySharedPreferences.user!;
+    if (widget.showActions) {
+      userFilter = Filter(MyFields.companyId, isEqualTo: user.companyId);
+    } else {
+      userFilter = Filter(MyFields.userId, isEqualTo: user.id);
+    }
+    final filter = Filter.and(userFilter, statusFilter);
     _query = FirebaseFirestore.instance
         .collection(_collection)
         .requestConvertor
-        .whereUserId
+        .where(filter)
         .orderByCreatedAtDesc;
   }
 
@@ -41,16 +52,18 @@ class _RequestsScreenState extends State<RequestsScreen> {
           info.title,
         ),
       ),
-      bottomNavigationBar: BottomButton(
-        onPressed: () {
-          context.navigate(
-            (context) => RequestInputScreen(
-              collection: _collection,
-            ),
-          );
-        },
-        title: info.inputTitle,
-      ),
+      bottomNavigationBar: !widget.showActions
+          ? BottomButton(
+              onPressed: () {
+                context.navigate(
+                  (context) => RequestInputScreen(
+                    collection: _collection,
+                  ),
+                );
+              },
+              title: info.inputTitle,
+            )
+          : null,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         child: Column(
@@ -68,10 +81,21 @@ class _RequestsScreenState extends State<RequestsScreen> {
                     separatorBuilder: (context, index) => const SizedBox(height: 12),
                     itemCount: snapshot.docs.length,
                     itemBuilder: (context, index) {
-                      final request = snapshot.docs[index].data();
+                      final doc = snapshot.docs[index];
+                      final request = doc.data();
+                      final reference = doc.reference;
                       return RequestCard(
                         request: request,
                         collection: _collection,
+                        showActions: widget.showActions,
+                        onAccept: (value) {
+                          final status = value.$1;
+                          final notes = value.$2;
+                          reference.update({
+                            MyFields.status: status,
+                            if (notes.isNotEmpty) MyFields.adminNotes: notes,
+                          });
+                        },
                       );
                     },
                   );

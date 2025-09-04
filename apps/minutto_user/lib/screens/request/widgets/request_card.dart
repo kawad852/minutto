@@ -4,12 +4,31 @@ import 'package:shared/shared.dart';
 class RequestCard extends StatelessWidget {
   final RequestModel request;
   final String collection;
+  final bool showActions;
+  final ValueChanged<(String, String)> onAccept;
 
   const RequestCard({
     super.key,
     required this.request,
     required this.collection,
+    this.showActions = false,
+    required this.onAccept,
   });
+
+  void _showActionDialog(BuildContext context, String status) {
+    showDialog<(String, String)?>(
+      context: context,
+      builder: (context) {
+        return ReplyDialog(
+          status: status,
+        );
+      },
+    ).then((value) {
+      if (value != null) {
+        onAccept(value);
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +54,42 @@ class RequestCard extends StatelessWidget {
           spacing: 13,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            if (showActions)
+              Row(
+                spacing: 15,
+                children: [
+                  BaseNetworkImage(
+                    "",
+                    width: 32,
+                    height: 32,
+                    shape: BoxShape.circle,
+                  ),
+                  Expanded(
+                    child: Column(
+                      spacing: 4,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "صهيب البكار",
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            color: context.colorPalette.black,
+                            fontSize: 14,
+                          ),
+                        ),
+                        Text(
+                          "مصمم جرافيك",
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            color: context.colorPalette.blue475,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             Row(
               children: [
                 const CustomSvg(MyIcons.note),
@@ -50,16 +105,17 @@ class RequestCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                EditButton(
-                  onPressed: () {
-                    context.navigate((context) {
-                      return RequestInputScreen(
-                        collection: collection,
-                        request: request,
-                      );
-                    });
-                  },
-                ),
+                if (!showActions)
+                  EditButton(
+                    onPressed: () {
+                      context.navigate((context) {
+                        return RequestInputScreen(
+                          collection: collection,
+                          request: request,
+                        );
+                      });
+                    },
+                  ),
               ],
             ),
             Container(
@@ -111,19 +167,41 @@ class RequestCard extends StatelessWidget {
                 ],
               ),
             ),
-            Row(
-              spacing: 10,
-              children: [
-                const CustomSvg(MyIcons.checkIcon),
-                Text(
-                  statusInfo.$1,
-                  style: TextStyle(
-                    color: statusInfo.$2,
-                    fontSize: 14,
+            if (!showActions)
+              Row(
+                spacing: 10,
+                children: [
+                  const CustomSvg(MyIcons.checkIcon),
+                  Text(
+                    statusInfo.$1,
+                    style: TextStyle(
+                      color: statusInfo.$2,
+                      fontSize: 14,
+                    ),
                   ),
-                ),
-              ],
-            ),
+                ],
+              ),
+            if (showActions) ...[
+              Row(
+                spacing: 20,
+                children: [
+                  RequestButton(
+                    onPressed: () {
+                      _showActionDialog(context, StatusEnum.accepted.value);
+                    },
+                    backgroundColor: context.colorPalette.green19B,
+                    title: context.appLocalization.accept,
+                  ),
+                  RequestButton(
+                    onPressed: () {
+                      _showActionDialog(context, StatusEnum.rejected.value);
+                    },
+                    backgroundColor: context.colorPalette.redF95,
+                    title: context.appLocalization.reject,
+                  ),
+                ],
+              ),
+            ],
           ],
         ),
       ),
