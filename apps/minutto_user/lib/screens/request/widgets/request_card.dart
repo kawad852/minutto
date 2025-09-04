@@ -105,7 +105,7 @@ class RequestCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                if (!showActions)
+                if (!showActions && request.status == StatusEnum.pending.value)
                   EditButton(
                     onPressed: () {
                       context.navigate((context) {

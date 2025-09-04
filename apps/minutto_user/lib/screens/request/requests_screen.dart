@@ -17,12 +17,16 @@ class RequestsScreen extends StatefulWidget {
 
 class _RequestsScreenState extends State<RequestsScreen> {
   late Query<RequestModel> _query;
+  var _status = StatusEnum.pending.value;
+
+  late (Query<RequestModel> pending, Query<RequestModel> accepted, Query<RequestModel> rejected)
+  _countQueries;
 
   String get _collection => widget.collection;
 
-  void _initialize() {
+  Query<RequestModel> _fetchQuery(String status) {
     late Filter userFilter;
-    final statusFilter = Filter(MyFields.status, isEqualTo: StatusEnum.pending.value);
+    final statusFilter = Filter(MyFields.status, isEqualTo: status);
     final user = MySharedPreferences.user!;
     if (widget.showActions) {
       userFilter = Filter(MyFields.companyId, isEqualTo: user.companyId);
@@ -30,17 +34,26 @@ class _RequestsScreenState extends State<RequestsScreen> {
       userFilter = Filter(MyFields.userId, isEqualTo: user.id);
     }
     final filter = Filter.and(userFilter, statusFilter);
-    _query = FirebaseFirestore.instance
+    return FirebaseFirestore.instance
         .collection(_collection)
         .requestConvertor
         .where(filter)
         .orderByCreatedAtDesc;
   }
 
+  void _initialize() {
+    _query = _fetchQuery(_status);
+  }
+
   @override
   void initState() {
     super.initState();
     _initialize();
+    _countQueries = (
+      _fetchQuery(StatusEnum.pending.value),
+      _fetchQuery(StatusEnum.accepted.value),
+      _fetchQuery(StatusEnum.rejected.value),
+    );
   }
 
   @override
@@ -69,7 +82,16 @@ class _RequestsScreenState extends State<RequestsScreen> {
         child: Column(
           children: [
             RequestHead(),
-            RequestTabBar(),
+            RequestTabBar(
+              queries: _countQueries,
+              status: _status,
+              onChanged: (value) {
+                _status = value;
+                setState(() {
+                  _initialize();
+                });
+              },
+            ),
             Expanded(
               child: BlitzBuilder.query(
                 query: _query,
