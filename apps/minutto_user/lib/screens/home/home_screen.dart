@@ -117,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         onTap: () {
                           context.navigate(
                             (context) => RequestsScreen(
-                              collection: "",
+                              collection: MyCollections.incentives,
                             ),
                           );
                         },
@@ -148,7 +148,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         onTap: () {
                           context.navigate(
                             (context) => RequestsScreen(
-                              collection: "",
+                              collection: MyCollections.breaks,
                             ),
                           );
                         },

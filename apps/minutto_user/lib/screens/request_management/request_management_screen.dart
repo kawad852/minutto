@@ -27,7 +27,9 @@ class _RequestManagementScreenState extends State<RequestManagementScreen> {
                 RequestManageInfo(
                   onTap: () {
                     context.navigate(
-                      (context) => const RequestsListScreen(),
+                      (context) => const RequestsListScreen(
+                        collection: MyCollections.leaves,
+                      ),
                     );
                   },
                   title: context.appLocalization.leaveRequests,
@@ -36,7 +38,9 @@ class _RequestManagementScreenState extends State<RequestManagementScreen> {
                 RequestManageInfo(
                   onTap: () {
                     context.navigate(
-                      (context) => const RequestsListScreen(),
+                      (context) => const RequestsListScreen(
+                        collection: MyCollections.vacations,
+                      ),
                     );
                   },
                   title: context.appLocalization.vacationRequests,
@@ -50,7 +54,9 @@ class _RequestManagementScreenState extends State<RequestManagementScreen> {
                 RequestManageInfo(
                   onTap: () {
                     context.navigate(
-                      (context) => const AdvancesManagementScreen(),
+                      (context) => const RequestsListScreen(
+                        collection: MyCollections.salaryAdvances,
+                      ),
                     );
                   },
                   title: context.appLocalization.advances,
@@ -59,7 +65,9 @@ class _RequestManagementScreenState extends State<RequestManagementScreen> {
                 RequestManageInfo(
                   onTap: () {
                     context.navigate(
-                      (context) => const RequestsListScreen(),
+                      (context) => const RequestsListScreen(
+                        collection: MyCollections.breaks,
+                      ),
                     );
                   },
                   title: context.appLocalization.breakRequests,
@@ -73,7 +81,9 @@ class _RequestManagementScreenState extends State<RequestManagementScreen> {
                 RequestManageInfo(
                   onTap: () {
                     context.navigate(
-                      (context) => const RequestsListScreen(),
+                      (context) => const RequestsListScreen(
+                        collection: MyCollections.incentives,
+                      ),
                     );
                   },
                   title: context.appLocalization.incentiveRequests,
@@ -82,7 +92,9 @@ class _RequestManagementScreenState extends State<RequestManagementScreen> {
                 RequestManageInfo(
                   onTap: () {
                     context.navigate(
-                      (context) => const RequestsListScreen(),
+                      (context) => const RequestsListScreen(
+                        collection: MyCollections.overtimes,
+                      ),
                     );
                   },
                   title: context.appLocalization.overtimeRequests,

@@ -28,4 +28,6 @@ class MyCollections {
   static const String cities = 'cities';
   static const String companies = 'companies';
   static const String shifts = 'shifts';
+  static const String breaks = 'breaks';
+  static const String incentives = 'incentives';
 }

@@ -2,13 +2,36 @@ import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
 class RequestsListScreen extends StatefulWidget {
-  const RequestsListScreen({super.key});
+  final String collection;
+
+  const RequestsListScreen({
+    super.key,
+    required this.collection,
+  });
 
   @override
   State<RequestsListScreen> createState() => _RequestsListScreenState();
 }
 
 class _RequestsListScreenState extends State<RequestsListScreen> {
+  late Query<RequestModel> _query;
+
+  String get _collection => widget.collection;
+
+  void _initialize() {
+    _query = FirebaseFirestore.instance
+        .collection(_collection)
+        .requestConvertor
+        .whereUserId
+        .orderByCreatedAtDesc;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _initialize();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
