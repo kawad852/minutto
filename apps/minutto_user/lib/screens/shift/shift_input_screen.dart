@@ -79,7 +79,7 @@ class _ShiftInputScreenState extends State<ShiftInputScreen> {
                     child: Text(e.name),
                   );
                 }).toList(),
-                onChanged: (value) => _shift.branchId,
+                onChanged: (value) {},
                 title: context.appLocalization.choose,
                 value: null,
               ),
