@@ -32,7 +32,9 @@ class RequestCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final statusInfo = StatusEnum.info(context, request.status);
+    final status = request.status;
+    final isPending = status == StatusEnum.pending.value;
+    final statusInfo = StatusEnum.info(context, status);
     return GestureDetector(
       onTap: () {
         context.navigate(
@@ -105,7 +107,7 @@ class RequestCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                if (!showActions && request.status == StatusEnum.pending.value)
+                if (!showActions && isPending)
                   EditButton(
                     onPressed: () {
                       context.navigate((context) {
@@ -181,7 +183,7 @@ class RequestCard extends StatelessWidget {
                   ),
                 ],
               ),
-            if (showActions) ...[
+            if (showActions && isPending) ...[
               Row(
                 spacing: 20,
                 children: [
