@@ -1874,4 +1874,20 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get breaks => 'Breaks';
+
+  @override
+  String get companyCodeError => 'Company code is not valid';
+
+  @override
+  String get otpResendMsg => 'OTP code has been resent';
+
+  @override
+  String get didntReceiveCode =>
+      'Didn\'t receive the code? You can resend the code again after ';
+
+  @override
+  String get resend => 'Resend';
+
+  @override
+  String get codeResent => 'Code has been resent.';
 }

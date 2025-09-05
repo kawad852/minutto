@@ -690,5 +690,10 @@
   "salaryAdvanceRequest": "Salary Advance Request",
   "amount": "Amount",
   "submit": "Submit",
-  "breaks": "Breaks"
+  "breaks": "Breaks",
+  "companyCodeError": "Company code is not valid",
+  "otpResendMsg": "OTP code has been resent",
+  "didntReceiveCode":"Didn't receive the code? You can resend the code again after ",
+  "resend": "Resend",
+  "codeResent": "Code has been resent."
 }

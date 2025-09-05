@@ -1,3 +1,4 @@
+import 'package:minutto_user/main.dart';
 import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
@@ -68,7 +69,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
               children: [
                 ProfileInfo(
                   onTap: () {
-                    context.navigate((context) => const PrivacyScreen(privacyType: PrivacyType.policy));
+                    context.navigate(
+                      (context) => const PrivacyScreen(privacyType: PrivacyType.policy),
+                    );
                   },
                   icon: MyIcons.policy,
                   title: context.appLocalization.privacyPolicy,
@@ -76,14 +79,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 CustomLine(),
                 ProfileInfo(
                   onTap: () {
-                    context.navigate((context) => const PrivacyScreen(privacyType: PrivacyType.app));
+                    context.navigate(
+                      (context) => const PrivacyScreen(privacyType: PrivacyType.app),
+                    );
                   },
                   icon: MyIcons.book,
                   title: context.appLocalization.whoAreWe,
                 ),
                 CustomLine(),
                 ProfileInfo(
-                  onTap: () {},
+                  onTap: () {
+                    context.userProvider.logout(context, builder: kLogoutBuilder);
+                  },
                   icon: MyIcons.logout,
                   title: context.appLocalization.logOut,
                   color: context.colorPalette.redD42,

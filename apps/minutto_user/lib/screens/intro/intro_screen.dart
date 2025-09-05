@@ -1,5 +1,5 @@
 import 'package:flutter_svg_provider/flutter_svg_provider.dart' as sv;
-import 'package:minutto_user/screens/base/app_nav_bar.dart';
+import 'package:minutto_user/screens/registration/login_screen.dart';
 import 'package:shared/shared.dart';
 
 class IntroScreen extends StatefulWidget {
@@ -52,7 +52,11 @@ class _IntroScreenState extends State<IntroScreen> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              context.navigateAndRemoveUntil(
+                (context) => const LoginScreen(),
+              );
+            },
             icon: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
@@ -70,7 +74,7 @@ class _IntroScreenState extends State<IntroScreen> {
         onTap: () {
           if (_pageController.page == 2) {
             context.navigateAndRemoveUntil(
-              (context) => const AppNavBar(),
+              (context) => const LoginScreen(),
             );
           } else {
             _pageController.nextPage(

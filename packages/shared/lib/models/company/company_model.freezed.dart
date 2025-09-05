@@ -25,16 +25,12 @@ mixin _$CompanyModel {
   DateTime? get createdAt => throw _privateConstructorUsedError;
   @TimestampSerializer()
   set createdAt(DateTime? value) => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  set id(String? value) => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  set name(String? value) => throw _privateConstructorUsedError;
-  Subscription? get subscription => throw _privateConstructorUsedError;
-  set subscription(Subscription? value) => throw _privateConstructorUsedError;
-  String? get intermediaryId => throw _privateConstructorUsedError;
-  set intermediaryId(String? value) => throw _privateConstructorUsedError;
-  ServiceData? get serviceData => throw _privateConstructorUsedError;
-  set serviceData(ServiceData? value) => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  set id(String value) => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  set name(String value) => throw _privateConstructorUsedError;
+  String get code => throw _privateConstructorUsedError;
+  set code(String value) => throw _privateConstructorUsedError;
 
   /// Serializes this CompanyModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -55,15 +51,10 @@ abstract class $CompanyModelCopyWith<$Res> {
   @useResult
   $Res call({
     @TimestampSerializer() DateTime? createdAt,
-    String? id,
-    String? name,
-    Subscription? subscription,
-    String? intermediaryId,
-    ServiceData? serviceData,
+    String id,
+    String name,
+    String code,
   });
-
-  $SubscriptionCopyWith<$Res>? get subscription;
-  $ServiceDataCopyWith<$Res>? get serviceData;
 }
 
 /// @nodoc
@@ -82,11 +73,9 @@ class _$CompanyModelCopyWithImpl<$Res, $Val extends CompanyModel>
   @override
   $Res call({
     Object? createdAt = freezed,
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? subscription = freezed,
-    Object? intermediaryId = freezed,
-    Object? serviceData = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? code = null,
   }) {
     return _then(
       _value.copyWith(
@@ -94,57 +83,21 @@ class _$CompanyModelCopyWithImpl<$Res, $Val extends CompanyModel>
                 ? _value.createdAt
                 : createdAt // ignore: cast_nullable_to_non_nullable
                       as DateTime?,
-            id: freezed == id
+            id: null == id
                 ? _value.id
                 : id // ignore: cast_nullable_to_non_nullable
-                      as String?,
-            name: freezed == name
+                      as String,
+            name: null == name
                 ? _value.name
                 : name // ignore: cast_nullable_to_non_nullable
-                      as String?,
-            subscription: freezed == subscription
-                ? _value.subscription
-                : subscription // ignore: cast_nullable_to_non_nullable
-                      as Subscription?,
-            intermediaryId: freezed == intermediaryId
-                ? _value.intermediaryId
-                : intermediaryId // ignore: cast_nullable_to_non_nullable
-                      as String?,
-            serviceData: freezed == serviceData
-                ? _value.serviceData
-                : serviceData // ignore: cast_nullable_to_non_nullable
-                      as ServiceData?,
+                      as String,
+            code: null == code
+                ? _value.code
+                : code // ignore: cast_nullable_to_non_nullable
+                      as String,
           )
           as $Val,
     );
-  }
-
-  /// Create a copy of CompanyModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $SubscriptionCopyWith<$Res>? get subscription {
-    if (_value.subscription == null) {
-      return null;
-    }
-
-    return $SubscriptionCopyWith<$Res>(_value.subscription!, (value) {
-      return _then(_value.copyWith(subscription: value) as $Val);
-    });
-  }
-
-  /// Create a copy of CompanyModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ServiceDataCopyWith<$Res>? get serviceData {
-    if (_value.serviceData == null) {
-      return null;
-    }
-
-    return $ServiceDataCopyWith<$Res>(_value.serviceData!, (value) {
-      return _then(_value.copyWith(serviceData: value) as $Val);
-    });
   }
 }
 
@@ -159,17 +112,10 @@ abstract class _$$CompanyModelImplCopyWith<$Res>
   @useResult
   $Res call({
     @TimestampSerializer() DateTime? createdAt,
-    String? id,
-    String? name,
-    Subscription? subscription,
-    String? intermediaryId,
-    ServiceData? serviceData,
+    String id,
+    String name,
+    String code,
   });
-
-  @override
-  $SubscriptionCopyWith<$Res>? get subscription;
-  @override
-  $ServiceDataCopyWith<$Res>? get serviceData;
 }
 
 /// @nodoc
@@ -187,11 +133,9 @@ class __$$CompanyModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? createdAt = freezed,
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? subscription = freezed,
-    Object? intermediaryId = freezed,
-    Object? serviceData = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? code = null,
   }) {
     return _then(
       _$CompanyModelImpl(
@@ -199,26 +143,18 @@ class __$$CompanyModelImplCopyWithImpl<$Res>
             ? _value.createdAt
             : createdAt // ignore: cast_nullable_to_non_nullable
                   as DateTime?,
-        id: freezed == id
+        id: null == id
             ? _value.id
             : id // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        name: freezed == name
+                  as String,
+        name: null == name
             ? _value.name
             : name // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        subscription: freezed == subscription
-            ? _value.subscription
-            : subscription // ignore: cast_nullable_to_non_nullable
-                  as Subscription?,
-        intermediaryId: freezed == intermediaryId
-            ? _value.intermediaryId
-            : intermediaryId // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        serviceData: freezed == serviceData
-            ? _value.serviceData
-            : serviceData // ignore: cast_nullable_to_non_nullable
-                  as ServiceData?,
+                  as String,
+        code: null == code
+            ? _value.code
+            : code // ignore: cast_nullable_to_non_nullable
+                  as String,
       ),
     );
   }
@@ -229,11 +165,9 @@ class __$$CompanyModelImplCopyWithImpl<$Res>
 class _$CompanyModelImpl implements _CompanyModel {
   _$CompanyModelImpl({
     @TimestampSerializer() this.createdAt,
-    this.id,
-    this.name,
-    this.subscription,
-    this.intermediaryId,
-    this.serviceData,
+    this.id = '',
+    this.name = '',
+    this.code = '',
   });
 
   factory _$CompanyModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -243,19 +177,18 @@ class _$CompanyModelImpl implements _CompanyModel {
   @TimestampSerializer()
   DateTime? createdAt;
   @override
-  String? id;
+  @JsonKey()
+  String id;
   @override
-  String? name;
+  @JsonKey()
+  String name;
   @override
-  Subscription? subscription;
-  @override
-  String? intermediaryId;
-  @override
-  ServiceData? serviceData;
+  @JsonKey()
+  String code;
 
   @override
   String toString() {
-    return 'CompanyModel(createdAt: $createdAt, id: $id, name: $name, subscription: $subscription, intermediaryId: $intermediaryId, serviceData: $serviceData)';
+    return 'CompanyModel(createdAt: $createdAt, id: $id, name: $name, code: $code)';
   }
 
   /// Create a copy of CompanyModel
@@ -275,11 +208,9 @@ class _$CompanyModelImpl implements _CompanyModel {
 abstract class _CompanyModel implements CompanyModel {
   factory _CompanyModel({
     @TimestampSerializer() DateTime? createdAt,
-    String? id,
-    String? name,
-    Subscription? subscription,
-    String? intermediaryId,
-    ServiceData? serviceData,
+    String id,
+    String name,
+    String code,
   }) = _$CompanyModelImpl;
 
   factory _CompanyModel.fromJson(Map<String, dynamic> json) =
@@ -291,20 +222,14 @@ abstract class _CompanyModel implements CompanyModel {
   @TimestampSerializer()
   set createdAt(DateTime? value);
   @override
-  String? get id;
-  set id(String? value);
+  String get id;
+  set id(String value);
   @override
-  String? get name;
-  set name(String? value);
+  String get name;
+  set name(String value);
   @override
-  Subscription? get subscription;
-  set subscription(Subscription? value);
-  @override
-  String? get intermediaryId;
-  set intermediaryId(String? value);
-  @override
-  ServiceData? get serviceData;
-  set serviceData(ServiceData? value);
+  String get code;
+  set code(String value);
 
   /// Create a copy of CompanyModel
   /// with the given fields replaced by the non-null parameter values.

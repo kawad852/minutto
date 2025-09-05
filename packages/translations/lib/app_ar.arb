@@ -506,5 +506,10 @@
   "salaryAdvanceRequest": "طلب سلفة",
   "amount": "المبلغ",
   "submit": "تقديم",
-  "breaks": "الإستراحات"
+  "breaks": "الإستراحات",
+  "companyCodeError": "رمز الشركة غير صحيح",
+  "otpResendMsg": "تم إعادة إرسال الرمز",
+  "didntReceiveCode":"لم تستلم الرمز ؟ يمكنك اعادة ارسال الرمز مجدداً بعد ",
+  "resend": "إعادة إرسال",
+  "codeResent": "تم إعادة إرسال الرمز"
 }

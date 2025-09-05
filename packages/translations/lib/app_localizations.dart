@@ -3691,6 +3691,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Breaks'**
   String get breaks;
+
+  /// No description provided for @companyCodeError.
+  ///
+  /// In en, this message translates to:
+  /// **'Company code is not valid'**
+  String get companyCodeError;
+
+  /// No description provided for @otpResendMsg.
+  ///
+  /// In en, this message translates to:
+  /// **'OTP code has been resent'**
+  String get otpResendMsg;
+
+  /// No description provided for @didntReceiveCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Didn\'t receive the code? You can resend the code again after '**
+  String get didntReceiveCode;
+
+  /// No description provided for @resend.
+  ///
+  /// In en, this message translates to:
+  /// **'Resend'**
+  String get resend;
+
+  /// No description provided for @codeResent.
+  ///
+  /// In en, this message translates to:
+  /// **'Code has been resent.'**
+  String get codeResent;
 }
 
 class _AppLocalizationsDelegate

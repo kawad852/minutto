@@ -1,14 +1,42 @@
+import 'package:minutto_user/screens/registration/widgets/otp_timer.dart';
 import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
-class PhoneVerfiyScreen extends StatefulWidget {
-  const PhoneVerfiyScreen({super.key});
+class PhoneVerifyScreen extends StatefulWidget {
+  final UserModel user;
+
+  const PhoneVerifyScreen({
+    super.key,
+    required this.user,
+  });
 
   @override
-  State<PhoneVerfiyScreen> createState() => _PhoneVerfiyScreenState();
+  State<PhoneVerifyScreen> createState() => _PhoneVerifyScreenState();
 }
 
-class _PhoneVerfiyScreenState extends State<PhoneVerfiyScreen> {
+class _PhoneVerifyScreenState extends State<PhoneVerifyScreen> {
+  String? _code;
+
+  UserModel get _user => widget.user;
+
+  void _onSubmit(BuildContext context) {
+    WeCanAuth.instance.verifyCode(
+      context,
+      countryCode: _user.phoneNumberCountryCode,
+      phoneNumber: _user.phoneNumber,
+      otp: _code!,
+      onSuccess: () {
+        context.userProvider.register(
+          context,
+          user: _user,
+          onSuccess: () {
+            context.navigateAndRemoveUntil((context) => AppNavBar());
+          },
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,37 +67,32 @@ class _PhoneVerfiyScreenState extends State<PhoneVerfiyScreen> {
               ),
             ),
             CustomTextField.text(
-              onChanged: (value) {},
+              onChanged: (value) => _code = value,
               hintText: context.appLocalization.verificationCode,
               textAlign: TextAlign.center,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    context.appLocalization.resendCodeAfter,
-                    style: TextStyle(
-                      color: context.colorPalette.blue091,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  Text(
-                    "59 ${context.appLocalization.second}",
-                    style: TextStyle(
-                      color: context.colorPalette.blueB2D,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ],
+              child: OtpTimer(
+                onResend: () {
+                  WeCanAuth.instance.sendPinCode(
+                    context,
+                    countryCode: _user.phoneNumberCountryCode,
+                    phoneNumber: _user.phoneNumber,
+                    onSuccess: () {
+                      setState(() {
+                        _code = '';
+                      });
+                      context.showSnackBar(context.appLocalization.codeResent);
+                    },
+                    isResend: true,
+                  );
+                },
               ),
             ),
             StretchedButton(
               onPressed: () {
-                context.navigateReplacement((context) => const WelcomeScreen());
+                _onSubmit(context);
               },
               child: Text(
                 context.appLocalization.confirmAccount,

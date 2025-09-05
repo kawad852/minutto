@@ -70,7 +70,7 @@ export 'screens/profile/widgets/profile_card.dart';
 export 'screens/profile/widgets/profile_info.dart';
 export 'screens/profile/widgets/user_card.dart';
 export 'screens/registration/login_screen.dart';
-export 'screens/registration/phone_verfiy_screen.dart';
+export 'screens/registration/phone_verify_screen.dart';
 export 'screens/registration/register_screen.dart';
 export 'screens/registration/welcome_screen.dart';
 export 'screens/reports/attendance_details_screen.dart';

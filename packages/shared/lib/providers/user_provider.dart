@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-
 import '../../shared.dart';
 
 class UserProvider extends ChangeNotifier {
@@ -34,73 +32,42 @@ class UserProvider extends ChangeNotifier {
         },
       );
 
+  String getToken(String code, String phone) => "minutto-$code-$phone";
+
   Future<void> register(
     BuildContext context, {
-    required String? provider,
-    AuthCredential? credential,
-    (String email, String password)? emailAndPassword,
-    required Function(BuildContext context) onSuccess,
-    bool canRegister = true,
-    required bool isGuest,
-    UserCredential? userCredential,
-    (String countryCode, String phoneNum)? phoneAuthValues,
+    required UserModel user,
+    required Function() onSuccess,
   }) async {
-    await ApiService.fetch(
-      context,
-      withOverlayLoader: phoneAuthValues == null,
-      callBack: () async {
-        late UserCredential auth;
-        if (userCredential != null) {
-          auth = userCredential;
-        } else if (credential != null) {
-          auth = await _firebaseAuth.signInWithCredential(credential);
-        } else if (emailAndPassword != null) {
-          auth = await FirebaseAuth.instance.signInWithEmailAndPassword(
-            email: emailAndPassword.$1,
-            password: emailAndPassword.$2,
-          );
-        }
-        final user = UserModel();
-        // user.id = auth.user?.uid;
-        // user.email = auth.user?.email;
-        // user.languageCode = MySharedPreferences.language;
-        // user.userToken = MySharedPreferences.userToken;
-        // user.phoneCountryCode = phoneAuthValues?.$1;
-        // user.phoneNum = phoneAuthValues?.$2;
+    final uid = getToken(user.phoneNumber, user.phoneNumberCountryCode);
+    var callable = FirebaseFunctions.instanceFor(
+      region: "europe-west3",
+    ).httpsCallable('generateCustomToken');
+    final results = await callable.call(<String, dynamic>{
+      'uid': uid,
+    });
+    final customToken = results.data as String;
+    await FirebaseAuth.instance.signInWithCustomToken(customToken);
 
-        final userDocument = await _firebaseFirestore.users.doc(user.id).get();
+    final userDocument = await _firebaseFirestore.users.doc(user.id).get();
 
-        if (userDocument.exists) {
-          if (context.mounted && !userDocument.data()!.active) {
-            context.showSnackBar(context.appLocalization.authFailed);
-            return;
-          }
-          MySharedPreferences.user = userDocument.data()!;
-        } else if (canRegister) {
-          MySharedPreferences.user = user;
-          final json = {...user.toJson(), MyFields.createdAt: FieldValue.serverTimestamp()};
-          await FirebaseFirestore.instance.collection(MyCollections.users).doc(user.id).set(json);
-        }
+    if (userDocument.exists) {
+      if (context.mounted && !userDocument.data()!.active) {
+        context.showSnackBar(context.appLocalization.authFailed);
+        return;
+      }
+      MySharedPreferences.user = userDocument.data()!;
+    } else {
+      MySharedPreferences.user = user;
+      final json = {...user.toJson(), MyFields.createdAt: FieldValue.serverTimestamp()};
+      await FirebaseFirestore.instance.collection(MyCollections.users).doc(user.id).set(json);
+    }
 
-        notifyListeners();
+    notifyListeners();
 
-        if (context.mounted) {
-          if (isGuest) {
-            CupertinoSheetRoute.popSheet(context);
-          } else {
-            onSuccess(context);
-          }
-          // if (guestRoute == null) {
-          //   onSuccess(context);
-          // } else {
-          //   Navigator.popUntil(
-          //     context,
-          //     (route) => guestRoute == '/' ? route.isFirst : route.settings.name == guestRoute,
-          //   );
-          // }
-        }
-      },
-    );
+    if (context.mounted) {
+      onSuccess();
+    }
   }
 
   Future<String?> _getDeviceToken() async {

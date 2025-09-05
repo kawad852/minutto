@@ -1865,4 +1865,20 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get breaks => 'الإستراحات';
+
+  @override
+  String get companyCodeError => 'رمز الشركة غير صحيح';
+
+  @override
+  String get otpResendMsg => 'تم إعادة إرسال الرمز';
+
+  @override
+  String get didntReceiveCode =>
+      'لم تستلم الرمز ؟ يمكنك اعادة ارسال الرمز مجدداً بعد ';
+
+  @override
+  String get resend => 'إعادة إرسال';
+
+  @override
+  String get codeResent => 'تم إعادة إرسال الرمز';
 }

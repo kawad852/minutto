@@ -9,15 +9,9 @@ part of 'company_model.dart';
 _$CompanyModelImpl _$$CompanyModelImplFromJson(Map<String, dynamic> json) =>
     _$CompanyModelImpl(
       createdAt: const TimestampSerializer().fromJson(json['createdAt']),
-      id: json['id'] as String?,
-      name: json['name'] as String?,
-      subscription: json['subscription'] == null
-          ? null
-          : Subscription.fromJson(json['subscription'] as Map<String, dynamic>),
-      intermediaryId: json['intermediaryId'] as String?,
-      serviceData: json['serviceData'] == null
-          ? null
-          : ServiceData.fromJson(json['serviceData'] as Map<String, dynamic>),
+      id: json['id'] as String? ?? '',
+      name: json['name'] as String? ?? '',
+      code: json['code'] as String? ?? '',
     );
 
 Map<String, dynamic> _$$CompanyModelImplToJson(_$CompanyModelImpl instance) =>
@@ -25,9 +19,7 @@ Map<String, dynamic> _$$CompanyModelImplToJson(_$CompanyModelImpl instance) =>
       'createdAt': const TimestampSerializer().toJson(instance.createdAt),
       'id': instance.id,
       'name': instance.name,
-      'subscription': instance.subscription?.toJson(),
-      'intermediaryId': instance.intermediaryId,
-      'serviceData': instance.serviceData?.toJson(),
+      'code': instance.code,
     };
 
 _$SubscriptionImpl _$$SubscriptionImplFromJson(Map<String, dynamic> json) =>
