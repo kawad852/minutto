@@ -40,6 +40,8 @@ export 'screens/feedback/widgets/alarm_bubble.dart';
 export 'screens/feedback/widgets/allowance_bubble.dart';
 export 'screens/feedback/widgets/feedback_card.dart';
 export 'screens/feedback/widgets/incentive_bubble.dart';
+export 'screens/holiday/holidays_screen.dart';
+export 'screens/holiday/vacation_input_screen.dart';
 export 'screens/home/checking_screen.dart';
 //home
 export 'screens/home/home_screen.dart';
@@ -123,8 +125,6 @@ export 'screens/salary_management/widgets/employee_salary_card.dart';
 export 'screens/salary_management/widgets/salary_info.dart';
 //schedule
 export 'screens/schedule/advances_salaries_screen.dart';
-export 'screens/schedule/vacation_input_screen.dart';
-export 'screens/schedule/vacation_schedule_screen.dart';
 export 'screens/schedule/widgets/salary_advance_card.dart';
 export 'screens/schedule/widgets/schedule_card.dart';
 export 'screens/schedule/work_schedule_screen.dart';

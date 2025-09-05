@@ -9,6 +9,18 @@ class VacationScheduleScreen extends StatefulWidget {
 }
 
 class _VacationScheduleScreenState extends State<VacationScheduleScreen> {
+  late Query<HolidayModel> _query;
+
+  void _initialize() {
+    _query = FirebaseFirestore.instance.holidays.whereCompanyId.orderByCreatedAtDesc;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _initialize();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +34,7 @@ class _VacationScheduleScreenState extends State<VacationScheduleScreen> {
         child: FloatingActionButton.extended(
           onPressed: () {
             context.navigate(
-              (context) => const VacationInputScreen(),
+              (context) => const HolidayInputScreen(),
             );
           },
           backgroundColor: context.colorPalette.blueB2D,
@@ -73,15 +85,25 @@ class _VacationScheduleScreenState extends State<VacationScheduleScreen> {
               ],
             ),
             Expanded(
-              child: ListView.separated(
-                separatorBuilder: (context, index) => const SizedBox(height: 12),
-                itemCount: 10,
-                itemBuilder: (context, index) {
-                  return ScheduleCard(
-                    isVacation: true,
-                    title: "إجازة عيد الفطر",
-                    branch: "كل الفروع",
-                    time: "24 يوليو",
+              child: BlitzBuilder.query(
+                query: _query,
+                onComplete: (context, snapshot, _) {
+                  if (snapshot.docs.isEmpty) {
+                    return const EmptyWidget();
+                  }
+                  return ListView.separated(
+                    separatorBuilder: (context, index) => const SizedBox(height: 12),
+                    itemCount: snapshot.docs.length,
+                    itemBuilder: (context, index) {
+                      final holiday = snapshot.docs[index].data();
+                      final branches = holiday.branches;
+                      return ScheduleCard(
+                        isVacation: true,
+                        title: holiday.name,
+                        branch: branches.map((e) => e.name).join(', '),
+                        time: holiday.fromDate!.yMMMMd,
+                      );
+                    },
                   );
                 },
               ),

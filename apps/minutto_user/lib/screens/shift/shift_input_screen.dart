@@ -93,64 +93,20 @@ class _ShiftInputScreenState extends State<ShiftInputScreen> {
                   ),
                 ],
               ),
-              WidgetTitle(
-                title: context.appLocalization.chooseMoreBranch,
-                child: ListBody(
-                  children: [
-                    MenuAnchor(
-                      // childFocusNode: _buttonFocusNode,
-                      crossAxisUnconstrained: false,
-                      onClose: () {
-                        setState(() {});
-                      },
-                      menuChildren: MyStorage.branches.map((e) {
-                        final id = e.id;
-                        return CheckboxMenuButton(
-                          // closeOnActivate: false,
-                          value: _shift.branchIds.contains(id),
-                          onChanged: (bool? value) {
-                            setState(() {
-                              if (value!) {
-                                _shift.branchIds.add(id);
-                              } else {
-                                _shift.branchIds.remove(id);
-                              }
-                            });
-                          },
-                          child: Text(e.name),
-                        );
-                      }).toList(),
-                      builder: (BuildContext context, MenuController controller, Widget? child) {
-                        return CustomTextField.clickable(
-                          validator: (context, value) {
-                            if (_shift.branchIds.isEmpty) {
-                              return context.appLocalization.requiredField;
-                            }
-                            return null;
-                          },
-                          labelText: context.appLocalization.choose,
-                          onTap: () {
-                            controller.open();
-                          },
-                        );
-                      },
-                    ),
-                    Wrap(
-                      spacing: 5,
-                      children: _shift.branchIds.map((e) {
-                        final name = CacheService.instance.getBranch(e).name;
-                        return InputChip(
-                          label: Text(name),
-                          onDeleted: () {
-                            setState(() {
-                              _shift.branchIds.remove(e);
-                            });
-                          },
-                        );
-                      }).toList(),
-                    ),
-                  ],
-                ),
+              BranchesEditor(
+                branchIds: _shift.branchIds,
+                onChanged: (id) {
+                  setState(() {
+                    if (_shift.branchIds.contains(id)) {
+                      _shift.branchIds.remove(id);
+                    } else {
+                      _shift.branchIds.add(id);
+                    }
+                  });
+                },
+                onClosed: () {
+                  setState(() {});
+                },
               ),
               WidgetTitle(
                 title: context.appLocalization.day,
