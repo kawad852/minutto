@@ -59,7 +59,10 @@ class UserProvider extends ChangeNotifier {
       MySharedPreferences.user = userDocument.data()!;
     } else {
       MySharedPreferences.user = user;
-      final json = {...user.toJson(), MyFields.createdAt: FieldValue.serverTimestamp()};
+      final json = {
+        ...user.toJson(),
+        MyFields.createdAt: FieldValue.serverTimestamp(),
+      };
       await FirebaseFirestore.instance.collection(MyCollections.users).doc(user.id).set(json);
     }
 
