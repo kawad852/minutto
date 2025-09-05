@@ -105,6 +105,7 @@ export 'helper/my_app_helper.dart';
 export 'helper/my_header_delegate.dart';
 export 'helper/objects_comparer.dart';
 export 'helper/pagination_handler.dart';
+export 'helper/request_helper.dart';
 export 'helper/scroll_extension.dart';
 export 'helper/separator.dart';
 export 'helper/tab_bar_delegate.dart';

@@ -35,6 +35,7 @@ class RequestCard extends StatelessWidget {
     final status = request.status;
     final isPending = status == StatusEnum.pending.value;
     final statusInfo = StatusEnum.info(context, status);
+    final user = CacheService.instance.getUser(request.userId);
     return GestureDetector(
       onTap: () {
         context.navigate(
@@ -61,7 +62,7 @@ class RequestCard extends StatelessWidget {
                 spacing: 15,
                 children: [
                   BaseNetworkImage(
-                    "",
+                    user.profileImage,
                     width: 32,
                     height: 32,
                     shape: BoxShape.circle,
@@ -72,7 +73,7 @@ class RequestCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "صهيب البكار",
+                          user.name,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             color: context.colorPalette.black,
@@ -80,7 +81,7 @@ class RequestCard extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          "مصمم جرافيك",
+                          user.jobTitle,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             color: context.colorPalette.blue475,

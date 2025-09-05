@@ -24,25 +24,16 @@ class _RequestsScreenState extends State<RequestsScreen> {
 
   String get _collection => widget.collection;
 
-  Query<RequestModel> _fetchQuery(String status) {
-    late Filter userFilter;
-    final statusFilter = Filter(MyFields.status, isEqualTo: status);
-    final user = MySharedPreferences.user!;
-    if (widget.showActions) {
-      userFilter = Filter(MyFields.companyId, isEqualTo: user.companyId);
-    } else {
-      userFilter = Filter(MyFields.userId, isEqualTo: user.id);
-    }
-    final filter = Filter.and(userFilter, statusFilter);
-    return FirebaseFirestore.instance
-        .collection(_collection)
-        .requestConvertor
-        .where(filter)
-        .orderByCreatedAtDesc;
+  Query<RequestModel> _getQuery(String status) {
+    return RequestHelper.instance.fetchQuery(
+      status: status,
+      collectionPath: _collection,
+      showActions: widget.showActions,
+    );
   }
 
   void _initialize() {
-    _query = _fetchQuery(_status);
+    _query = _getQuery(_status);
   }
 
   @override
@@ -50,9 +41,9 @@ class _RequestsScreenState extends State<RequestsScreen> {
     super.initState();
     _initialize();
     _countQueries = (
-      _fetchQuery(StatusEnum.pending.value),
-      _fetchQuery(StatusEnum.accepted.value),
-      _fetchQuery(StatusEnum.rejected.value),
+      _getQuery(StatusEnum.pending.value),
+      _getQuery(StatusEnum.accepted.value),
+      _getQuery(StatusEnum.rejected.value),
     );
   }
 
@@ -115,6 +106,7 @@ class _RequestsScreenState extends State<RequestsScreen> {
                           final notes = value.$2;
                           reference.update({
                             MyFields.status: status,
+                            MyFields.statusChangedAt: FieldValue.serverTimestamp(),
                             if (notes.isNotEmpty) MyFields.adminNotes: notes,
                           });
                         },

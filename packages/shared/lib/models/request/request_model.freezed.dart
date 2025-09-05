@@ -26,6 +26,10 @@ mixin _$RequestModel {
   @TimestampSerializer()
   set createdAt(DateTime value) => throw _privateConstructorUsedError;
   @TimestampSerializer()
+  DateTime? get statusChangedAt => throw _privateConstructorUsedError;
+  @TimestampSerializer()
+  set statusChangedAt(DateTime? value) => throw _privateConstructorUsedError;
+  @TimestampSerializer()
   DateTime? get fromDate => throw _privateConstructorUsedError;
   @TimestampSerializer()
   set fromDate(DateTime? value) => throw _privateConstructorUsedError;
@@ -82,6 +86,7 @@ abstract class $RequestModelCopyWith<$Res> {
   @useResult
   $Res call({
     @TimestampSerializer() DateTime createdAt,
+    @TimestampSerializer() DateTime? statusChangedAt,
     @TimestampSerializer() DateTime? fromDate,
     @TimestampSerializer() DateTime? toDate,
     @TimestampSerializer() DateTime? date,
@@ -116,6 +121,7 @@ class _$RequestModelCopyWithImpl<$Res, $Val extends RequestModel>
   @override
   $Res call({
     Object? createdAt = null,
+    Object? statusChangedAt = freezed,
     Object? fromDate = freezed,
     Object? toDate = freezed,
     Object? date = freezed,
@@ -138,6 +144,10 @@ class _$RequestModelCopyWithImpl<$Res, $Val extends RequestModel>
                 ? _value.createdAt
                 : createdAt // ignore: cast_nullable_to_non_nullable
                       as DateTime,
+            statusChangedAt: freezed == statusChangedAt
+                ? _value.statusChangedAt
+                : statusChangedAt // ignore: cast_nullable_to_non_nullable
+                      as DateTime?,
             fromDate: freezed == fromDate
                 ? _value.fromDate
                 : fromDate // ignore: cast_nullable_to_non_nullable
@@ -215,6 +225,7 @@ abstract class _$$RequestModelImplCopyWith<$Res>
   @useResult
   $Res call({
     @TimestampSerializer() DateTime createdAt,
+    @TimestampSerializer() DateTime? statusChangedAt,
     @TimestampSerializer() DateTime? fromDate,
     @TimestampSerializer() DateTime? toDate,
     @TimestampSerializer() DateTime? date,
@@ -248,6 +259,7 @@ class __$$RequestModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? createdAt = null,
+    Object? statusChangedAt = freezed,
     Object? fromDate = freezed,
     Object? toDate = freezed,
     Object? date = freezed,
@@ -270,6 +282,10 @@ class __$$RequestModelImplCopyWithImpl<$Res>
             ? _value.createdAt
             : createdAt // ignore: cast_nullable_to_non_nullable
                   as DateTime,
+        statusChangedAt: freezed == statusChangedAt
+            ? _value.statusChangedAt
+            : statusChangedAt // ignore: cast_nullable_to_non_nullable
+                  as DateTime?,
         fromDate: freezed == fromDate
             ? _value.fromDate
             : fromDate // ignore: cast_nullable_to_non_nullable
@@ -341,6 +357,7 @@ class __$$RequestModelImplCopyWithImpl<$Res>
 class _$RequestModelImpl extends _RequestModel {
   _$RequestModelImpl({
     @TimestampSerializer() required this.createdAt,
+    @TimestampSerializer() this.statusChangedAt,
     @TimestampSerializer() this.fromDate,
     @TimestampSerializer() this.toDate,
     @TimestampSerializer() this.date,
@@ -364,6 +381,9 @@ class _$RequestModelImpl extends _RequestModel {
   @override
   @TimestampSerializer()
   DateTime createdAt;
+  @override
+  @TimestampSerializer()
+  DateTime? statusChangedAt;
   @override
   @TimestampSerializer()
   DateTime? fromDate;
@@ -407,7 +427,7 @@ class _$RequestModelImpl extends _RequestModel {
 
   @override
   String toString() {
-    return 'RequestModel(createdAt: $createdAt, fromDate: $fromDate, toDate: $toDate, date: $date, id: $id, userId: $userId, type: $type, companyId: $companyId, reason: $reason, fromHour: $fromHour, toHour: $toHour, status: $status, notes: $notes, adminNotes: $adminNotes, amount: $amount, attachments: $attachments)';
+    return 'RequestModel(createdAt: $createdAt, statusChangedAt: $statusChangedAt, fromDate: $fromDate, toDate: $toDate, date: $date, id: $id, userId: $userId, type: $type, companyId: $companyId, reason: $reason, fromHour: $fromHour, toHour: $toHour, status: $status, notes: $notes, adminNotes: $adminNotes, amount: $amount, attachments: $attachments)';
   }
 
   /// Create a copy of RequestModel
@@ -427,6 +447,7 @@ class _$RequestModelImpl extends _RequestModel {
 abstract class _RequestModel extends RequestModel {
   factory _RequestModel({
     @TimestampSerializer() required DateTime createdAt,
+    @TimestampSerializer() DateTime? statusChangedAt,
     @TimestampSerializer() DateTime? fromDate,
     @TimestampSerializer() DateTime? toDate,
     @TimestampSerializer() DateTime? date,
@@ -453,6 +474,11 @@ abstract class _RequestModel extends RequestModel {
   DateTime get createdAt;
   @TimestampSerializer()
   set createdAt(DateTime value);
+  @override
+  @TimestampSerializer()
+  DateTime? get statusChangedAt;
+  @TimestampSerializer()
+  set statusChangedAt(DateTime? value);
   @override
   @TimestampSerializer()
   DateTime? get fromDate;

@@ -52,4 +52,5 @@ class MyFields {
   static const String departmentsVersion = 'departmentsVersion';
   static const String notes = 'notes';
   static const String adminNotes = 'adminNotes';
+  static const String statusChangedAt = 'statusChangedAt';
 }

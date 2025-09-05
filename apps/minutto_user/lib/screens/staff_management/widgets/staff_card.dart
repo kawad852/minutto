@@ -28,7 +28,7 @@ class StaffCard extends StatelessWidget {
         spacing: 10,
         children: [
           BaseNetworkImage(
-            user.image,
+            user.profileImage,
             width: 50,
             height: 50,
             shape: BoxShape.circle,

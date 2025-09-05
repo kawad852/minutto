@@ -9,6 +9,9 @@ part of 'request_model.dart';
 _$RequestModelImpl _$$RequestModelImplFromJson(Map<String, dynamic> json) =>
     _$RequestModelImpl(
       createdAt: DateTime.parse(json['createdAt'] as String),
+      statusChangedAt: const TimestampSerializer().fromJson(
+        json['statusChangedAt'],
+      ),
       fromDate: const TimestampSerializer().fromJson(json['fromDate']),
       toDate: const TimestampSerializer().fromJson(json['toDate']),
       date: const TimestampSerializer().fromJson(json['date']),
@@ -33,6 +36,9 @@ _$RequestModelImpl _$$RequestModelImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$RequestModelImplToJson(_$RequestModelImpl instance) =>
     <String, dynamic>{
       'createdAt': instance.createdAt.toIso8601String(),
+      'statusChangedAt': const TimestampSerializer().toJson(
+        instance.statusChangedAt,
+      ),
       'fromDate': const TimestampSerializer().toJson(instance.fromDate),
       'toDate': const TimestampSerializer().toJson(instance.toDate),
       'date': const TimestampSerializer().toJson(instance.date),

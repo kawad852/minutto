@@ -8,6 +8,7 @@ class RequestModel with _$RequestModel {
   @JsonSerializable(explicitToJson: true)
   factory RequestModel({
     @TimestampSerializer() required DateTime createdAt,
+    @TimestampSerializer() DateTime? statusChangedAt,
     @TimestampSerializer() DateTime? fromDate,
     @TimestampSerializer() DateTime? toDate,
     @TimestampSerializer() DateTime? date,
@@ -36,4 +37,6 @@ class RequestModel with _$RequestModel {
   String reasonLabel(BuildContext context) {
     return LeaveReason.label(context, reason!);
   }
+
+  UserModel get user => CacheService.instance.getUser(userId);
 }

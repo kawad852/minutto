@@ -122,10 +122,10 @@ export 'screens/salary_management/widgets/employee_card.dart';
 export 'screens/salary_management/widgets/employee_salary_card.dart';
 export 'screens/salary_management/widgets/salary_info.dart';
 //schedule
-export 'screens/schedule/advances_schedule_screen.dart';
+export 'screens/schedule/advances_salaries_screen.dart';
 export 'screens/schedule/vacation_input_screen.dart';
 export 'screens/schedule/vacation_schedule_screen.dart';
-export 'screens/schedule/widgets/advance_info_card.dart';
+export 'screens/schedule/widgets/salary_advance_card.dart';
 export 'screens/schedule/widgets/schedule_card.dart';
 export 'screens/schedule/work_schedule_screen.dart';
 //shift
