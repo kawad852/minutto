@@ -35,8 +35,6 @@ class NotificationDataModel with _$NotificationDataModel {
   factory NotificationDataModel({
     String? id,
     String? type,
-    String? tradeStatus,
-    String? tradeType,
   }) = _NotificationDataModel;
 
   factory NotificationDataModel.fromJson(Map<String, dynamic> json) =>

@@ -529,10 +529,6 @@ mixin _$NotificationDataModel {
   set id(String? value) => throw _privateConstructorUsedError;
   String? get type => throw _privateConstructorUsedError;
   set type(String? value) => throw _privateConstructorUsedError;
-  String? get tradeStatus => throw _privateConstructorUsedError;
-  set tradeStatus(String? value) => throw _privateConstructorUsedError;
-  String? get tradeType => throw _privateConstructorUsedError;
-  set tradeType(String? value) => throw _privateConstructorUsedError;
 
   /// Serializes this NotificationDataModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -551,7 +547,7 @@ abstract class $NotificationDataModelCopyWith<$Res> {
     $Res Function(NotificationDataModel) then,
   ) = _$NotificationDataModelCopyWithImpl<$Res, NotificationDataModel>;
   @useResult
-  $Res call({String? id, String? type, String? tradeStatus, String? tradeType});
+  $Res call({String? id, String? type});
 }
 
 /// @nodoc
@@ -571,12 +567,7 @@ class _$NotificationDataModelCopyWithImpl<
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? id = freezed,
-    Object? type = freezed,
-    Object? tradeStatus = freezed,
-    Object? tradeType = freezed,
-  }) {
+  $Res call({Object? id = freezed, Object? type = freezed}) {
     return _then(
       _value.copyWith(
             id: freezed == id
@@ -586,14 +577,6 @@ class _$NotificationDataModelCopyWithImpl<
             type: freezed == type
                 ? _value.type
                 : type // ignore: cast_nullable_to_non_nullable
-                      as String?,
-            tradeStatus: freezed == tradeStatus
-                ? _value.tradeStatus
-                : tradeStatus // ignore: cast_nullable_to_non_nullable
-                      as String?,
-            tradeType: freezed == tradeType
-                ? _value.tradeType
-                : tradeType // ignore: cast_nullable_to_non_nullable
                       as String?,
           )
           as $Val,
@@ -610,7 +593,7 @@ abstract class _$$NotificationDataModelImplCopyWith<$Res>
   ) = __$$NotificationDataModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? id, String? type, String? tradeStatus, String? tradeType});
+  $Res call({String? id, String? type});
 }
 
 /// @nodoc
@@ -627,12 +610,7 @@ class __$$NotificationDataModelImplCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? id = freezed,
-    Object? type = freezed,
-    Object? tradeStatus = freezed,
-    Object? tradeType = freezed,
-  }) {
+  $Res call({Object? id = freezed, Object? type = freezed}) {
     return _then(
       _$NotificationDataModelImpl(
         id: freezed == id
@@ -643,14 +621,6 @@ class __$$NotificationDataModelImplCopyWithImpl<$Res>
             ? _value.type
             : type // ignore: cast_nullable_to_non_nullable
                   as String?,
-        tradeStatus: freezed == tradeStatus
-            ? _value.tradeStatus
-            : tradeStatus // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        tradeType: freezed == tradeType
-            ? _value.tradeType
-            : tradeType // ignore: cast_nullable_to_non_nullable
-                  as String?,
       ),
     );
   }
@@ -659,12 +629,7 @@ class __$$NotificationDataModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$NotificationDataModelImpl implements _NotificationDataModel {
-  _$NotificationDataModelImpl({
-    this.id,
-    this.type,
-    this.tradeStatus,
-    this.tradeType,
-  });
+  _$NotificationDataModelImpl({this.id, this.type});
 
   factory _$NotificationDataModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$NotificationDataModelImplFromJson(json);
@@ -673,14 +638,10 @@ class _$NotificationDataModelImpl implements _NotificationDataModel {
   String? id;
   @override
   String? type;
-  @override
-  String? tradeStatus;
-  @override
-  String? tradeType;
 
   @override
   String toString() {
-    return 'NotificationDataModel(id: $id, type: $type, tradeStatus: $tradeStatus, tradeType: $tradeType)';
+    return 'NotificationDataModel(id: $id, type: $type)';
   }
 
   /// Create a copy of NotificationDataModel
@@ -702,12 +663,8 @@ class _$NotificationDataModelImpl implements _NotificationDataModel {
 }
 
 abstract class _NotificationDataModel implements NotificationDataModel {
-  factory _NotificationDataModel({
-    String? id,
-    String? type,
-    String? tradeStatus,
-    String? tradeType,
-  }) = _$NotificationDataModelImpl;
+  factory _NotificationDataModel({String? id, String? type}) =
+      _$NotificationDataModelImpl;
 
   factory _NotificationDataModel.fromJson(Map<String, dynamic> json) =
       _$NotificationDataModelImpl.fromJson;
@@ -718,12 +675,6 @@ abstract class _NotificationDataModel implements NotificationDataModel {
   @override
   String? get type;
   set type(String? value);
-  @override
-  String? get tradeStatus;
-  set tradeStatus(String? value);
-  @override
-  String? get tradeType;
-  set tradeType(String? value);
 
   /// Create a copy of NotificationDataModel
   /// with the given fields replaced by the non-null parameter values.
