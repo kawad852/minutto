@@ -66,6 +66,10 @@ mixin _$RequestModel {
   List<AttachmentModel> get attachments => throw _privateConstructorUsedError;
   set attachments(List<AttachmentModel> value) =>
       throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  UserModel? get userModel => throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  set userModel(UserModel? value) => throw _privateConstructorUsedError;
 
   /// Serializes this RequestModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -102,7 +106,10 @@ abstract class $RequestModelCopyWith<$Res> {
     String? adminNotes,
     double amount,
     List<AttachmentModel> attachments,
+    @JsonKey(includeFromJson: false, includeToJson: false) UserModel? userModel,
   });
+
+  $UserModelCopyWith<$Res>? get userModel;
 }
 
 /// @nodoc
@@ -137,6 +144,7 @@ class _$RequestModelCopyWithImpl<$Res, $Val extends RequestModel>
     Object? adminNotes = freezed,
     Object? amount = null,
     Object? attachments = null,
+    Object? userModel = freezed,
   }) {
     return _then(
       _value.copyWith(
@@ -208,9 +216,27 @@ class _$RequestModelCopyWithImpl<$Res, $Val extends RequestModel>
                 ? _value.attachments
                 : attachments // ignore: cast_nullable_to_non_nullable
                       as List<AttachmentModel>,
+            userModel: freezed == userModel
+                ? _value.userModel
+                : userModel // ignore: cast_nullable_to_non_nullable
+                      as UserModel?,
           )
           as $Val,
     );
+  }
+
+  /// Create a copy of RequestModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserModelCopyWith<$Res>? get userModel {
+    if (_value.userModel == null) {
+      return null;
+    }
+
+    return $UserModelCopyWith<$Res>(_value.userModel!, (value) {
+      return _then(_value.copyWith(userModel: value) as $Val);
+    });
   }
 }
 
@@ -241,7 +267,11 @@ abstract class _$$RequestModelImplCopyWith<$Res>
     String? adminNotes,
     double amount,
     List<AttachmentModel> attachments,
+    @JsonKey(includeFromJson: false, includeToJson: false) UserModel? userModel,
   });
+
+  @override
+  $UserModelCopyWith<$Res>? get userModel;
 }
 
 /// @nodoc
@@ -275,6 +305,7 @@ class __$$RequestModelImplCopyWithImpl<$Res>
     Object? adminNotes = freezed,
     Object? amount = null,
     Object? attachments = null,
+    Object? userModel = freezed,
   }) {
     return _then(
       _$RequestModelImpl(
@@ -346,6 +377,10 @@ class __$$RequestModelImplCopyWithImpl<$Res>
             ? _value.attachments
             : attachments // ignore: cast_nullable_to_non_nullable
                   as List<AttachmentModel>,
+        userModel: freezed == userModel
+            ? _value.userModel
+            : userModel // ignore: cast_nullable_to_non_nullable
+                  as UserModel?,
       ),
     );
   }
@@ -373,6 +408,7 @@ class _$RequestModelImpl extends _RequestModel {
     this.adminNotes,
     this.amount = 0.0,
     this.attachments = const [],
+    @JsonKey(includeFromJson: false, includeToJson: false) this.userModel,
   }) : super._();
 
   factory _$RequestModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -424,10 +460,13 @@ class _$RequestModelImpl extends _RequestModel {
   @override
   @JsonKey()
   List<AttachmentModel> attachments;
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  UserModel? userModel;
 
   @override
   String toString() {
-    return 'RequestModel(createdAt: $createdAt, statusChangedAt: $statusChangedAt, fromDate: $fromDate, toDate: $toDate, date: $date, id: $id, userId: $userId, type: $type, companyId: $companyId, reason: $reason, fromHour: $fromHour, toHour: $toHour, status: $status, notes: $notes, adminNotes: $adminNotes, amount: $amount, attachments: $attachments)';
+    return 'RequestModel(createdAt: $createdAt, statusChangedAt: $statusChangedAt, fromDate: $fromDate, toDate: $toDate, date: $date, id: $id, userId: $userId, type: $type, companyId: $companyId, reason: $reason, fromHour: $fromHour, toHour: $toHour, status: $status, notes: $notes, adminNotes: $adminNotes, amount: $amount, attachments: $attachments, userModel: $userModel)';
   }
 
   /// Create a copy of RequestModel
@@ -463,6 +502,7 @@ abstract class _RequestModel extends RequestModel {
     String? adminNotes,
     double amount,
     List<AttachmentModel> attachments,
+    @JsonKey(includeFromJson: false, includeToJson: false) UserModel? userModel,
   }) = _$RequestModelImpl;
   _RequestModel._() : super._();
 
@@ -530,6 +570,11 @@ abstract class _RequestModel extends RequestModel {
   @override
   List<AttachmentModel> get attachments;
   set attachments(List<AttachmentModel> value);
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  UserModel? get userModel;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  set userModel(UserModel? value);
 
   /// Create a copy of RequestModel
   /// with the given fields replaced by the non-null parameter values.

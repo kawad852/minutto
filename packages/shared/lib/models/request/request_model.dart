@@ -24,6 +24,7 @@ class RequestModel with _$RequestModel {
     String? adminNotes,
     @Default(0.0) double amount,
     @Default([]) List<AttachmentModel> attachments,
+    @JsonKey(includeFromJson: false, includeToJson: false) UserModel? userModel,
   }) = _RequestModel;
 
   factory RequestModel.fromJson(Map<String, dynamic> json) => _$RequestModelFromJson(json);
@@ -38,5 +39,5 @@ class RequestModel with _$RequestModel {
     return LeaveReason.label(context, reason!);
   }
 
-  UserModel get user => CacheService.instance.getUser(userId);
+  UserModel get user => userModel ??= CacheService.instance.getUser(userId);
 }

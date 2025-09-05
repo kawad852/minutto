@@ -30,4 +30,5 @@ class MyCollections {
   static const String shifts = 'shifts';
   static const String breaks = 'breaks';
   static const String incentives = 'incentives';
+  static const String holidays = 'holidays';
 }
