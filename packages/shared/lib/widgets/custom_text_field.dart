@@ -76,7 +76,7 @@ class CustomTextField extends StatelessWidget {
   }) {
     return CustomTextField._(
       key: key,
-      initialValue: initialValue?.toString(),
+      initialValue: initialValue == 0 ? null : initialValue?.toString(),
       prefixIcon: prefixIcon,
       labelText: labelText,
       suffixText: suffixText,

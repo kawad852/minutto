@@ -18,7 +18,9 @@ class _AttendanceSettingsScreenState extends State<AttendanceSettingsScreen> {
       context,
       isAdd: false,
       onCall: (user) async {
-        _firebaseFirestore.companies.doc(_company.id).update(_company.toJson());
+        _firebaseFirestore.companies.doc(_company.id).update(_company.toJson()).then((value) {
+          MySharedPreferences.company = _company;
+        });
       },
     );
   }
