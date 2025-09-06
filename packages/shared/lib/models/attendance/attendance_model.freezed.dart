@@ -22,11 +22,13 @@ AttendanceModel _$AttendanceModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AttendanceModel {
   @TimestampSerializer()
-  DateTime? get date => throw _privateConstructorUsedError;
+  DateTime? get createdAt => throw _privateConstructorUsedError;
   @TimestampSerializer()
-  set date(DateTime? value) => throw _privateConstructorUsedError;
+  set createdAt(DateTime? value) => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   set id(String value) => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
+  set type(String value) => throw _privateConstructorUsedError;
 
   /// Serializes this AttendanceModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -45,7 +47,11 @@ abstract class $AttendanceModelCopyWith<$Res> {
     $Res Function(AttendanceModel) then,
   ) = _$AttendanceModelCopyWithImpl<$Res, AttendanceModel>;
   @useResult
-  $Res call({@TimestampSerializer() DateTime? date, String id});
+  $Res call({
+    @TimestampSerializer() DateTime? createdAt,
+    String id,
+    String type,
+  });
 }
 
 /// @nodoc
@@ -62,16 +68,24 @@ class _$AttendanceModelCopyWithImpl<$Res, $Val extends AttendanceModel>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? date = freezed, Object? id = null}) {
+  $Res call({
+    Object? createdAt = freezed,
+    Object? id = null,
+    Object? type = null,
+  }) {
     return _then(
       _value.copyWith(
-            date: freezed == date
-                ? _value.date
-                : date // ignore: cast_nullable_to_non_nullable
+            createdAt: freezed == createdAt
+                ? _value.createdAt
+                : createdAt // ignore: cast_nullable_to_non_nullable
                       as DateTime?,
             id: null == id
                 ? _value.id
                 : id // ignore: cast_nullable_to_non_nullable
+                      as String,
+            type: null == type
+                ? _value.type
+                : type // ignore: cast_nullable_to_non_nullable
                       as String,
           )
           as $Val,
@@ -88,7 +102,11 @@ abstract class _$$AttendanceModelImplCopyWith<$Res>
   ) = __$$AttendanceModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@TimestampSerializer() DateTime? date, String id});
+  $Res call({
+    @TimestampSerializer() DateTime? createdAt,
+    String id,
+    String type,
+  });
 }
 
 /// @nodoc
@@ -104,16 +122,24 @@ class __$$AttendanceModelImplCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? date = freezed, Object? id = null}) {
+  $Res call({
+    Object? createdAt = freezed,
+    Object? id = null,
+    Object? type = null,
+  }) {
     return _then(
       _$AttendanceModelImpl(
-        date: freezed == date
-            ? _value.date
-            : date // ignore: cast_nullable_to_non_nullable
+        createdAt: freezed == createdAt
+            ? _value.createdAt
+            : createdAt // ignore: cast_nullable_to_non_nullable
                   as DateTime?,
         id: null == id
             ? _value.id
             : id // ignore: cast_nullable_to_non_nullable
+                  as String,
+        type: null == type
+            ? _value.type
+            : type // ignore: cast_nullable_to_non_nullable
                   as String,
       ),
     );
@@ -124,21 +150,28 @@ class __$$AttendanceModelImplCopyWithImpl<$Res>
 
 @JsonSerializable(explicitToJson: true)
 class _$AttendanceModelImpl implements _AttendanceModel {
-  _$AttendanceModelImpl({@TimestampSerializer() this.date, this.id = ''});
+  _$AttendanceModelImpl({
+    @TimestampSerializer() this.createdAt,
+    this.id = '',
+    this.type = '',
+  });
 
   factory _$AttendanceModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$AttendanceModelImplFromJson(json);
 
   @override
   @TimestampSerializer()
-  DateTime? date;
+  DateTime? createdAt;
   @override
   @JsonKey()
   String id;
+  @override
+  @JsonKey()
+  String type;
 
   @override
   String toString() {
-    return 'AttendanceModel(date: $date, id: $id)';
+    return 'AttendanceModel(createdAt: $createdAt, id: $id, type: $type)';
   }
 
   /// Create a copy of AttendanceModel
@@ -159,20 +192,26 @@ class _$AttendanceModelImpl implements _AttendanceModel {
 }
 
 abstract class _AttendanceModel implements AttendanceModel {
-  factory _AttendanceModel({@TimestampSerializer() DateTime? date, String id}) =
-      _$AttendanceModelImpl;
+  factory _AttendanceModel({
+    @TimestampSerializer() DateTime? createdAt,
+    String id,
+    String type,
+  }) = _$AttendanceModelImpl;
 
   factory _AttendanceModel.fromJson(Map<String, dynamic> json) =
       _$AttendanceModelImpl.fromJson;
 
   @override
   @TimestampSerializer()
-  DateTime? get date;
+  DateTime? get createdAt;
   @TimestampSerializer()
-  set date(DateTime? value);
+  set createdAt(DateTime? value);
   @override
   String get id;
   set id(String value);
+  @override
+  String get type;
+  set type(String value);
 
   /// Create a copy of AttendanceModel
   /// with the given fields replaced by the non-null parameter values.

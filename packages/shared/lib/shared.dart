@@ -74,6 +74,7 @@ export 'controllers/map_controller.dart';
 export 'controllers/phone_controller.dart';
 export 'enums/algolia_enums.dart';
 export 'enums/analytics_enums.dart';
+export 'enums/attendance_enum.dart';
 export 'enums/base_enums.dart';
 export 'enums/days_enum.dart';
 export 'enums/filter_selection_enums.dart';

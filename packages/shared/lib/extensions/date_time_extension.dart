@@ -10,9 +10,19 @@ extension DateTimeExtension on DateTime {
 
   String get hourFormat => DateFormat.jm(MySharedPreferences.language).format(this);
 
-  Filter get startFilter =>
-      Filter(MyFields.createdAt, isGreaterThanOrEqualTo: Timestamp.fromDate(this));
-  Filter get endFilter => Filter(MyFields.createdAt, isLessThan: Timestamp.fromDate(this));
+  Filter dateFilter({
+    String field = MyFields.createdAt,
+  }) {
+    final start = Filter(
+      field,
+      isGreaterThanOrEqualTo: Timestamp.fromDate(DateTime(year, month, day)),
+    );
+    final end = Filter(
+      field,
+      isLessThan: Timestamp.fromDate(add(const Duration(days: 1))),
+    );
+    return Filter.and(start, end);
+  }
 }
 
 extension DayTimeExtension on String {
