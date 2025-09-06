@@ -58,15 +58,6 @@ class _SystemSettingsScreenState extends State<SystemSettingsScreen> {
                 SettingsBubble(
                   onTap: () {
                     context.navigate(
-                      (context) => const DeductionSettingsScreen(),
-                    );
-                  },
-                  title: context.appLocalization.deductionRates,
-                  icon: MyIcons.tax,
-                ),
-                SettingsBubble(
-                  onTap: () {
-                    context.navigate(
                       (context) => const DepartmentsScreen(),
                     );
                   },

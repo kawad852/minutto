@@ -31,6 +31,13 @@ mixin _$CompanyModel {
   set name(String value) => throw _privateConstructorUsedError;
   String get code => throw _privateConstructorUsedError;
   set code(String value) => throw _privateConstructorUsedError;
+  LeavePolicyModel? get leavePolicy => throw _privateConstructorUsedError;
+  set leavePolicy(LeavePolicyModel? value) =>
+      throw _privateConstructorUsedError;
+  AttendancePolicyModel? get attendancePolicy =>
+      throw _privateConstructorUsedError;
+  set attendancePolicy(AttendancePolicyModel? value) =>
+      throw _privateConstructorUsedError;
 
   /// Serializes this CompanyModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -54,7 +61,12 @@ abstract class $CompanyModelCopyWith<$Res> {
     String id,
     String name,
     String code,
+    LeavePolicyModel? leavePolicy,
+    AttendancePolicyModel? attendancePolicy,
   });
+
+  $LeavePolicyModelCopyWith<$Res>? get leavePolicy;
+  $AttendancePolicyModelCopyWith<$Res>? get attendancePolicy;
 }
 
 /// @nodoc
@@ -76,6 +88,8 @@ class _$CompanyModelCopyWithImpl<$Res, $Val extends CompanyModel>
     Object? id = null,
     Object? name = null,
     Object? code = null,
+    Object? leavePolicy = freezed,
+    Object? attendancePolicy = freezed,
   }) {
     return _then(
       _value.copyWith(
@@ -95,9 +109,47 @@ class _$CompanyModelCopyWithImpl<$Res, $Val extends CompanyModel>
                 ? _value.code
                 : code // ignore: cast_nullable_to_non_nullable
                       as String,
+            leavePolicy: freezed == leavePolicy
+                ? _value.leavePolicy
+                : leavePolicy // ignore: cast_nullable_to_non_nullable
+                      as LeavePolicyModel?,
+            attendancePolicy: freezed == attendancePolicy
+                ? _value.attendancePolicy
+                : attendancePolicy // ignore: cast_nullable_to_non_nullable
+                      as AttendancePolicyModel?,
           )
           as $Val,
     );
+  }
+
+  /// Create a copy of CompanyModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LeavePolicyModelCopyWith<$Res>? get leavePolicy {
+    if (_value.leavePolicy == null) {
+      return null;
+    }
+
+    return $LeavePolicyModelCopyWith<$Res>(_value.leavePolicy!, (value) {
+      return _then(_value.copyWith(leavePolicy: value) as $Val);
+    });
+  }
+
+  /// Create a copy of CompanyModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AttendancePolicyModelCopyWith<$Res>? get attendancePolicy {
+    if (_value.attendancePolicy == null) {
+      return null;
+    }
+
+    return $AttendancePolicyModelCopyWith<$Res>(_value.attendancePolicy!, (
+      value,
+    ) {
+      return _then(_value.copyWith(attendancePolicy: value) as $Val);
+    });
   }
 }
 
@@ -115,7 +167,14 @@ abstract class _$$CompanyModelImplCopyWith<$Res>
     String id,
     String name,
     String code,
+    LeavePolicyModel? leavePolicy,
+    AttendancePolicyModel? attendancePolicy,
   });
+
+  @override
+  $LeavePolicyModelCopyWith<$Res>? get leavePolicy;
+  @override
+  $AttendancePolicyModelCopyWith<$Res>? get attendancePolicy;
 }
 
 /// @nodoc
@@ -136,6 +195,8 @@ class __$$CompanyModelImplCopyWithImpl<$Res>
     Object? id = null,
     Object? name = null,
     Object? code = null,
+    Object? leavePolicy = freezed,
+    Object? attendancePolicy = freezed,
   }) {
     return _then(
       _$CompanyModelImpl(
@@ -155,19 +216,30 @@ class __$$CompanyModelImplCopyWithImpl<$Res>
             ? _value.code
             : code // ignore: cast_nullable_to_non_nullable
                   as String,
+        leavePolicy: freezed == leavePolicy
+            ? _value.leavePolicy
+            : leavePolicy // ignore: cast_nullable_to_non_nullable
+                  as LeavePolicyModel?,
+        attendancePolicy: freezed == attendancePolicy
+            ? _value.attendancePolicy
+            : attendancePolicy // ignore: cast_nullable_to_non_nullable
+                  as AttendancePolicyModel?,
       ),
     );
   }
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true)
 class _$CompanyModelImpl implements _CompanyModel {
   _$CompanyModelImpl({
     @TimestampSerializer() this.createdAt,
     this.id = '',
     this.name = '',
     this.code = '',
+    this.leavePolicy,
+    this.attendancePolicy,
   });
 
   factory _$CompanyModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -185,10 +257,14 @@ class _$CompanyModelImpl implements _CompanyModel {
   @override
   @JsonKey()
   String code;
+  @override
+  LeavePolicyModel? leavePolicy;
+  @override
+  AttendancePolicyModel? attendancePolicy;
 
   @override
   String toString() {
-    return 'CompanyModel(createdAt: $createdAt, id: $id, name: $name, code: $code)';
+    return 'CompanyModel(createdAt: $createdAt, id: $id, name: $name, code: $code, leavePolicy: $leavePolicy, attendancePolicy: $attendancePolicy)';
   }
 
   /// Create a copy of CompanyModel
@@ -211,6 +287,8 @@ abstract class _CompanyModel implements CompanyModel {
     String id,
     String name,
     String code,
+    LeavePolicyModel? leavePolicy,
+    AttendancePolicyModel? attendancePolicy,
   }) = _$CompanyModelImpl;
 
   factory _CompanyModel.fromJson(Map<String, dynamic> json) =
@@ -230,6 +308,12 @@ abstract class _CompanyModel implements CompanyModel {
   @override
   String get code;
   set code(String value);
+  @override
+  LeavePolicyModel? get leavePolicy;
+  set leavePolicy(LeavePolicyModel? value);
+  @override
+  AttendancePolicyModel? get attendancePolicy;
+  set attendancePolicy(AttendancePolicyModel? value);
 
   /// Create a copy of CompanyModel
   /// with the given fields replaced by the non-null parameter values.
@@ -239,61 +323,72 @@ abstract class _CompanyModel implements CompanyModel {
       throw _privateConstructorUsedError;
 }
 
-Subscription _$SubscriptionFromJson(Map<String, dynamic> json) {
-  return _Subscription.fromJson(json);
+LeavePolicyModel _$LeavePolicyModelFromJson(Map<String, dynamic> json) {
+  return _LeavePolicyModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Subscription {
-  String? get id => throw _privateConstructorUsedError;
-  @TimestampSerializer()
-  DateTime? get createdAt => throw _privateConstructorUsedError;
+mixin _$LeavePolicyModel {
+  int get maxDaysPerRequest => throw _privateConstructorUsedError;
+  set maxDaysPerRequest(int value) => throw _privateConstructorUsedError;
+  bool get allowCarryOver => throw _privateConstructorUsedError;
+  set allowCarryOver(bool value) => throw _privateConstructorUsedError;
+  int get maxCarryOverDays => throw _privateConstructorUsedError;
+  set maxCarryOverDays(int value) => throw _privateConstructorUsedError;
 
-  /// Serializes this Subscription to a JSON map.
+  /// Serializes this LeavePolicyModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of Subscription
+  /// Create a copy of LeavePolicyModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $SubscriptionCopyWith<Subscription> get copyWith =>
+  $LeavePolicyModelCopyWith<LeavePolicyModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SubscriptionCopyWith<$Res> {
-  factory $SubscriptionCopyWith(
-    Subscription value,
-    $Res Function(Subscription) then,
-  ) = _$SubscriptionCopyWithImpl<$Res, Subscription>;
+abstract class $LeavePolicyModelCopyWith<$Res> {
+  factory $LeavePolicyModelCopyWith(
+    LeavePolicyModel value,
+    $Res Function(LeavePolicyModel) then,
+  ) = _$LeavePolicyModelCopyWithImpl<$Res, LeavePolicyModel>;
   @useResult
-  $Res call({String? id, @TimestampSerializer() DateTime? createdAt});
+  $Res call({int maxDaysPerRequest, bool allowCarryOver, int maxCarryOverDays});
 }
 
 /// @nodoc
-class _$SubscriptionCopyWithImpl<$Res, $Val extends Subscription>
-    implements $SubscriptionCopyWith<$Res> {
-  _$SubscriptionCopyWithImpl(this._value, this._then);
+class _$LeavePolicyModelCopyWithImpl<$Res, $Val extends LeavePolicyModel>
+    implements $LeavePolicyModelCopyWith<$Res> {
+  _$LeavePolicyModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of Subscription
+  /// Create a copy of LeavePolicyModel
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? id = freezed, Object? createdAt = freezed}) {
+  $Res call({
+    Object? maxDaysPerRequest = null,
+    Object? allowCarryOver = null,
+    Object? maxCarryOverDays = null,
+  }) {
     return _then(
       _value.copyWith(
-            id: freezed == id
-                ? _value.id
-                : id // ignore: cast_nullable_to_non_nullable
-                      as String?,
-            createdAt: freezed == createdAt
-                ? _value.createdAt
-                : createdAt // ignore: cast_nullable_to_non_nullable
-                      as DateTime?,
+            maxDaysPerRequest: null == maxDaysPerRequest
+                ? _value.maxDaysPerRequest
+                : maxDaysPerRequest // ignore: cast_nullable_to_non_nullable
+                      as int,
+            allowCarryOver: null == allowCarryOver
+                ? _value.allowCarryOver
+                : allowCarryOver // ignore: cast_nullable_to_non_nullable
+                      as bool,
+            maxCarryOverDays: null == maxCarryOverDays
+                ? _value.maxCarryOverDays
+                : maxCarryOverDays // ignore: cast_nullable_to_non_nullable
+                      as int,
           )
           as $Val,
     );
@@ -301,185 +396,204 @@ class _$SubscriptionCopyWithImpl<$Res, $Val extends Subscription>
 }
 
 /// @nodoc
-abstract class _$$SubscriptionImplCopyWith<$Res>
-    implements $SubscriptionCopyWith<$Res> {
-  factory _$$SubscriptionImplCopyWith(
-    _$SubscriptionImpl value,
-    $Res Function(_$SubscriptionImpl) then,
-  ) = __$$SubscriptionImplCopyWithImpl<$Res>;
+abstract class _$$LeavePolicyModelImplCopyWith<$Res>
+    implements $LeavePolicyModelCopyWith<$Res> {
+  factory _$$LeavePolicyModelImplCopyWith(
+    _$LeavePolicyModelImpl value,
+    $Res Function(_$LeavePolicyModelImpl) then,
+  ) = __$$LeavePolicyModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? id, @TimestampSerializer() DateTime? createdAt});
+  $Res call({int maxDaysPerRequest, bool allowCarryOver, int maxCarryOverDays});
 }
 
 /// @nodoc
-class __$$SubscriptionImplCopyWithImpl<$Res>
-    extends _$SubscriptionCopyWithImpl<$Res, _$SubscriptionImpl>
-    implements _$$SubscriptionImplCopyWith<$Res> {
-  __$$SubscriptionImplCopyWithImpl(
-    _$SubscriptionImpl _value,
-    $Res Function(_$SubscriptionImpl) _then,
+class __$$LeavePolicyModelImplCopyWithImpl<$Res>
+    extends _$LeavePolicyModelCopyWithImpl<$Res, _$LeavePolicyModelImpl>
+    implements _$$LeavePolicyModelImplCopyWith<$Res> {
+  __$$LeavePolicyModelImplCopyWithImpl(
+    _$LeavePolicyModelImpl _value,
+    $Res Function(_$LeavePolicyModelImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of Subscription
+  /// Create a copy of LeavePolicyModel
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? id = freezed, Object? createdAt = freezed}) {
+  $Res call({
+    Object? maxDaysPerRequest = null,
+    Object? allowCarryOver = null,
+    Object? maxCarryOverDays = null,
+  }) {
     return _then(
-      _$SubscriptionImpl(
-        id: freezed == id
-            ? _value.id
-            : id // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        createdAt: freezed == createdAt
-            ? _value.createdAt
-            : createdAt // ignore: cast_nullable_to_non_nullable
-                  as DateTime?,
+      _$LeavePolicyModelImpl(
+        maxDaysPerRequest: null == maxDaysPerRequest
+            ? _value.maxDaysPerRequest
+            : maxDaysPerRequest // ignore: cast_nullable_to_non_nullable
+                  as int,
+        allowCarryOver: null == allowCarryOver
+            ? _value.allowCarryOver
+            : allowCarryOver // ignore: cast_nullable_to_non_nullable
+                  as bool,
+        maxCarryOverDays: null == maxCarryOverDays
+            ? _value.maxCarryOverDays
+            : maxCarryOverDays // ignore: cast_nullable_to_non_nullable
+                  as int,
       ),
     );
   }
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$SubscriptionImpl implements _Subscription {
-  _$SubscriptionImpl({this.id, @TimestampSerializer() this.createdAt});
 
-  factory _$SubscriptionImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SubscriptionImplFromJson(json);
+@JsonSerializable(explicitToJson: true)
+class _$LeavePolicyModelImpl implements _LeavePolicyModel {
+  _$LeavePolicyModelImpl({
+    this.maxDaysPerRequest = 0,
+    this.allowCarryOver = false,
+    this.maxCarryOverDays = 0,
+  });
+
+  factory _$LeavePolicyModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LeavePolicyModelImplFromJson(json);
 
   @override
-  final String? id;
+  @JsonKey()
+  int maxDaysPerRequest;
   @override
-  @TimestampSerializer()
-  final DateTime? createdAt;
+  @JsonKey()
+  bool allowCarryOver;
+  @override
+  @JsonKey()
+  int maxCarryOverDays;
 
   @override
   String toString() {
-    return 'Subscription(id: $id, createdAt: $createdAt)';
+    return 'LeavePolicyModel(maxDaysPerRequest: $maxDaysPerRequest, allowCarryOver: $allowCarryOver, maxCarryOverDays: $maxCarryOverDays)';
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SubscriptionImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, createdAt);
-
-  /// Create a copy of Subscription
+  /// Create a copy of LeavePolicyModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SubscriptionImplCopyWith<_$SubscriptionImpl> get copyWith =>
-      __$$SubscriptionImplCopyWithImpl<_$SubscriptionImpl>(this, _$identity);
+  _$$LeavePolicyModelImplCopyWith<_$LeavePolicyModelImpl> get copyWith =>
+      __$$LeavePolicyModelImplCopyWithImpl<_$LeavePolicyModelImpl>(
+        this,
+        _$identity,
+      );
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SubscriptionImplToJson(this);
+    return _$$LeavePolicyModelImplToJson(this);
   }
 }
 
-abstract class _Subscription implements Subscription {
-  factory _Subscription({
-    final String? id,
-    @TimestampSerializer() final DateTime? createdAt,
-  }) = _$SubscriptionImpl;
+abstract class _LeavePolicyModel implements LeavePolicyModel {
+  factory _LeavePolicyModel({
+    int maxDaysPerRequest,
+    bool allowCarryOver,
+    int maxCarryOverDays,
+  }) = _$LeavePolicyModelImpl;
 
-  factory _Subscription.fromJson(Map<String, dynamic> json) =
-      _$SubscriptionImpl.fromJson;
+  factory _LeavePolicyModel.fromJson(Map<String, dynamic> json) =
+      _$LeavePolicyModelImpl.fromJson;
 
   @override
-  String? get id;
+  int get maxDaysPerRequest;
+  set maxDaysPerRequest(int value);
   @override
-  @TimestampSerializer()
-  DateTime? get createdAt;
+  bool get allowCarryOver;
+  set allowCarryOver(bool value);
+  @override
+  int get maxCarryOverDays;
+  set maxCarryOverDays(int value);
 
-  /// Create a copy of Subscription
+  /// Create a copy of LeavePolicyModel
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SubscriptionImplCopyWith<_$SubscriptionImpl> get copyWith =>
+  _$$LeavePolicyModelImplCopyWith<_$LeavePolicyModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-ServiceData _$ServiceDataFromJson(Map<String, dynamic> json) {
-  return _ServiceData.fromJson(json);
+AttendancePolicyModel _$AttendancePolicyModelFromJson(
+  Map<String, dynamic> json,
+) {
+  return _AttendancePolicyModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ServiceData {
-  String? get id => throw _privateConstructorUsedError;
-  String? get db => throw _privateConstructorUsedError;
-  String? get login => throw _privateConstructorUsedError;
-  String? get password => throw _privateConstructorUsedError;
+mixin _$AttendancePolicyModel {
+  int get shiftGraceMinutes => throw _privateConstructorUsedError;
+  set shiftGraceMinutes(int value) => throw _privateConstructorUsedError;
+  bool get lateAfterGrace => throw _privateConstructorUsedError;
+  set lateAfterGrace(bool value) => throw _privateConstructorUsedError;
+  List<LateDeductionRuleModel> get lateDeductionRules =>
+      throw _privateConstructorUsedError;
+  set lateDeductionRules(List<LateDeductionRuleModel> value) =>
+      throw _privateConstructorUsedError;
 
-  /// Serializes this ServiceData to a JSON map.
+  /// Serializes this AttendancePolicyModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of ServiceData
+  /// Create a copy of AttendancePolicyModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ServiceDataCopyWith<ServiceData> get copyWith =>
+  $AttendancePolicyModelCopyWith<AttendancePolicyModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ServiceDataCopyWith<$Res> {
-  factory $ServiceDataCopyWith(
-    ServiceData value,
-    $Res Function(ServiceData) then,
-  ) = _$ServiceDataCopyWithImpl<$Res, ServiceData>;
+abstract class $AttendancePolicyModelCopyWith<$Res> {
+  factory $AttendancePolicyModelCopyWith(
+    AttendancePolicyModel value,
+    $Res Function(AttendancePolicyModel) then,
+  ) = _$AttendancePolicyModelCopyWithImpl<$Res, AttendancePolicyModel>;
   @useResult
-  $Res call({String? id, String? db, String? login, String? password});
+  $Res call({
+    int shiftGraceMinutes,
+    bool lateAfterGrace,
+    List<LateDeductionRuleModel> lateDeductionRules,
+  });
 }
 
 /// @nodoc
-class _$ServiceDataCopyWithImpl<$Res, $Val extends ServiceData>
-    implements $ServiceDataCopyWith<$Res> {
-  _$ServiceDataCopyWithImpl(this._value, this._then);
+class _$AttendancePolicyModelCopyWithImpl<
+  $Res,
+  $Val extends AttendancePolicyModel
+>
+    implements $AttendancePolicyModelCopyWith<$Res> {
+  _$AttendancePolicyModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ServiceData
+  /// Create a copy of AttendancePolicyModel
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? db = freezed,
-    Object? login = freezed,
-    Object? password = freezed,
+    Object? shiftGraceMinutes = null,
+    Object? lateAfterGrace = null,
+    Object? lateDeductionRules = null,
   }) {
     return _then(
       _value.copyWith(
-            id: freezed == id
-                ? _value.id
-                : id // ignore: cast_nullable_to_non_nullable
-                      as String?,
-            db: freezed == db
-                ? _value.db
-                : db // ignore: cast_nullable_to_non_nullable
-                      as String?,
-            login: freezed == login
-                ? _value.login
-                : login // ignore: cast_nullable_to_non_nullable
-                      as String?,
-            password: freezed == password
-                ? _value.password
-                : password // ignore: cast_nullable_to_non_nullable
-                      as String?,
+            shiftGraceMinutes: null == shiftGraceMinutes
+                ? _value.shiftGraceMinutes
+                : shiftGraceMinutes // ignore: cast_nullable_to_non_nullable
+                      as int,
+            lateAfterGrace: null == lateAfterGrace
+                ? _value.lateAfterGrace
+                : lateAfterGrace // ignore: cast_nullable_to_non_nullable
+                      as bool,
+            lateDeductionRules: null == lateDeductionRules
+                ? _value.lateDeductionRules
+                : lateDeductionRules // ignore: cast_nullable_to_non_nullable
+                      as List<LateDeductionRuleModel>,
           )
           as $Val,
     );
@@ -487,135 +601,326 @@ class _$ServiceDataCopyWithImpl<$Res, $Val extends ServiceData>
 }
 
 /// @nodoc
-abstract class _$$ServiceDataImplCopyWith<$Res>
-    implements $ServiceDataCopyWith<$Res> {
-  factory _$$ServiceDataImplCopyWith(
-    _$ServiceDataImpl value,
-    $Res Function(_$ServiceDataImpl) then,
-  ) = __$$ServiceDataImplCopyWithImpl<$Res>;
+abstract class _$$AttendancePolicyModelImplCopyWith<$Res>
+    implements $AttendancePolicyModelCopyWith<$Res> {
+  factory _$$AttendancePolicyModelImplCopyWith(
+    _$AttendancePolicyModelImpl value,
+    $Res Function(_$AttendancePolicyModelImpl) then,
+  ) = __$$AttendancePolicyModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? id, String? db, String? login, String? password});
+  $Res call({
+    int shiftGraceMinutes,
+    bool lateAfterGrace,
+    List<LateDeductionRuleModel> lateDeductionRules,
+  });
 }
 
 /// @nodoc
-class __$$ServiceDataImplCopyWithImpl<$Res>
-    extends _$ServiceDataCopyWithImpl<$Res, _$ServiceDataImpl>
-    implements _$$ServiceDataImplCopyWith<$Res> {
-  __$$ServiceDataImplCopyWithImpl(
-    _$ServiceDataImpl _value,
-    $Res Function(_$ServiceDataImpl) _then,
+class __$$AttendancePolicyModelImplCopyWithImpl<$Res>
+    extends
+        _$AttendancePolicyModelCopyWithImpl<$Res, _$AttendancePolicyModelImpl>
+    implements _$$AttendancePolicyModelImplCopyWith<$Res> {
+  __$$AttendancePolicyModelImplCopyWithImpl(
+    _$AttendancePolicyModelImpl _value,
+    $Res Function(_$AttendancePolicyModelImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of ServiceData
+  /// Create a copy of AttendancePolicyModel
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? db = freezed,
-    Object? login = freezed,
-    Object? password = freezed,
+    Object? shiftGraceMinutes = null,
+    Object? lateAfterGrace = null,
+    Object? lateDeductionRules = null,
   }) {
     return _then(
-      _$ServiceDataImpl(
-        id: freezed == id
-            ? _value.id
-            : id // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        db: freezed == db
-            ? _value.db
-            : db // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        login: freezed == login
-            ? _value.login
-            : login // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        password: freezed == password
-            ? _value.password
-            : password // ignore: cast_nullable_to_non_nullable
-                  as String?,
+      _$AttendancePolicyModelImpl(
+        shiftGraceMinutes: null == shiftGraceMinutes
+            ? _value.shiftGraceMinutes
+            : shiftGraceMinutes // ignore: cast_nullable_to_non_nullable
+                  as int,
+        lateAfterGrace: null == lateAfterGrace
+            ? _value.lateAfterGrace
+            : lateAfterGrace // ignore: cast_nullable_to_non_nullable
+                  as bool,
+        lateDeductionRules: null == lateDeductionRules
+            ? _value.lateDeductionRules
+            : lateDeductionRules // ignore: cast_nullable_to_non_nullable
+                  as List<LateDeductionRuleModel>,
       ),
     );
   }
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$ServiceDataImpl implements _ServiceData {
-  _$ServiceDataImpl({this.id, this.db, this.login, this.password});
 
-  factory _$ServiceDataImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ServiceDataImplFromJson(json);
+@JsonSerializable(explicitToJson: true)
+class _$AttendancePolicyModelImpl implements _AttendancePolicyModel {
+  _$AttendancePolicyModelImpl({
+    this.shiftGraceMinutes = 0,
+    this.lateAfterGrace = true,
+    required this.lateDeductionRules,
+  });
+
+  factory _$AttendancePolicyModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AttendancePolicyModelImplFromJson(json);
 
   @override
-  final String? id;
+  @JsonKey()
+  int shiftGraceMinutes;
   @override
-  final String? db;
+  @JsonKey()
+  bool lateAfterGrace;
   @override
-  final String? login;
-  @override
-  final String? password;
+  List<LateDeductionRuleModel> lateDeductionRules;
 
   @override
   String toString() {
-    return 'ServiceData(id: $id, db: $db, login: $login, password: $password)';
+    return 'AttendancePolicyModel(shiftGraceMinutes: $shiftGraceMinutes, lateAfterGrace: $lateAfterGrace, lateDeductionRules: $lateDeductionRules)';
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ServiceDataImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.db, db) || other.db == db) &&
-            (identical(other.login, login) || other.login == login) &&
-            (identical(other.password, password) ||
-                other.password == password));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, db, login, password);
-
-  /// Create a copy of ServiceData
+  /// Create a copy of AttendancePolicyModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ServiceDataImplCopyWith<_$ServiceDataImpl> get copyWith =>
-      __$$ServiceDataImplCopyWithImpl<_$ServiceDataImpl>(this, _$identity);
+  _$$AttendancePolicyModelImplCopyWith<_$AttendancePolicyModelImpl>
+  get copyWith =>
+      __$$AttendancePolicyModelImplCopyWithImpl<_$AttendancePolicyModelImpl>(
+        this,
+        _$identity,
+      );
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ServiceDataImplToJson(this);
+    return _$$AttendancePolicyModelImplToJson(this);
   }
 }
 
-abstract class _ServiceData implements ServiceData {
-  factory _ServiceData({
-    final String? id,
-    final String? db,
-    final String? login,
-    final String? password,
-  }) = _$ServiceDataImpl;
+abstract class _AttendancePolicyModel implements AttendancePolicyModel {
+  factory _AttendancePolicyModel({
+    int shiftGraceMinutes,
+    bool lateAfterGrace,
+    required List<LateDeductionRuleModel> lateDeductionRules,
+  }) = _$AttendancePolicyModelImpl;
 
-  factory _ServiceData.fromJson(Map<String, dynamic> json) =
-      _$ServiceDataImpl.fromJson;
+  factory _AttendancePolicyModel.fromJson(Map<String, dynamic> json) =
+      _$AttendancePolicyModelImpl.fromJson;
 
   @override
-  String? get id;
+  int get shiftGraceMinutes;
+  set shiftGraceMinutes(int value);
   @override
-  String? get db;
+  bool get lateAfterGrace;
+  set lateAfterGrace(bool value);
   @override
-  String? get login;
-  @override
-  String? get password;
+  List<LateDeductionRuleModel> get lateDeductionRules;
+  set lateDeductionRules(List<LateDeductionRuleModel> value);
 
-  /// Create a copy of ServiceData
+  /// Create a copy of AttendancePolicyModel
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ServiceDataImplCopyWith<_$ServiceDataImpl> get copyWith =>
+  _$$AttendancePolicyModelImplCopyWith<_$AttendancePolicyModelImpl>
+  get copyWith => throw _privateConstructorUsedError;
+}
+
+LateDeductionRuleModel _$LateDeductionRuleModelFromJson(
+  Map<String, dynamic> json,
+) {
+  return _LateDeductionRuleModel.fromJson(json);
+}
+
+/// @nodoc
+mixin _$LateDeductionRuleModel {
+  int get fromMinutes => throw _privateConstructorUsedError;
+  set fromMinutes(int value) => throw _privateConstructorUsedError;
+  int get toMinutes => throw _privateConstructorUsedError;
+  set toMinutes(int value) => throw _privateConstructorUsedError;
+  int get value => throw _privateConstructorUsedError;
+  set value(int value) => throw _privateConstructorUsedError;
+
+  /// Serializes this LateDeductionRuleModel to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of LateDeductionRuleModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $LateDeductionRuleModelCopyWith<LateDeductionRuleModel> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LateDeductionRuleModelCopyWith<$Res> {
+  factory $LateDeductionRuleModelCopyWith(
+    LateDeductionRuleModel value,
+    $Res Function(LateDeductionRuleModel) then,
+  ) = _$LateDeductionRuleModelCopyWithImpl<$Res, LateDeductionRuleModel>;
+  @useResult
+  $Res call({int fromMinutes, int toMinutes, int value});
+}
+
+/// @nodoc
+class _$LateDeductionRuleModelCopyWithImpl<
+  $Res,
+  $Val extends LateDeductionRuleModel
+>
+    implements $LateDeductionRuleModelCopyWith<$Res> {
+  _$LateDeductionRuleModelCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of LateDeductionRuleModel
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? fromMinutes = null,
+    Object? toMinutes = null,
+    Object? value = null,
+  }) {
+    return _then(
+      _value.copyWith(
+            fromMinutes: null == fromMinutes
+                ? _value.fromMinutes
+                : fromMinutes // ignore: cast_nullable_to_non_nullable
+                      as int,
+            toMinutes: null == toMinutes
+                ? _value.toMinutes
+                : toMinutes // ignore: cast_nullable_to_non_nullable
+                      as int,
+            value: null == value
+                ? _value.value
+                : value // ignore: cast_nullable_to_non_nullable
+                      as int,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$LateDeductionRuleModelImplCopyWith<$Res>
+    implements $LateDeductionRuleModelCopyWith<$Res> {
+  factory _$$LateDeductionRuleModelImplCopyWith(
+    _$LateDeductionRuleModelImpl value,
+    $Res Function(_$LateDeductionRuleModelImpl) then,
+  ) = __$$LateDeductionRuleModelImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int fromMinutes, int toMinutes, int value});
+}
+
+/// @nodoc
+class __$$LateDeductionRuleModelImplCopyWithImpl<$Res>
+    extends
+        _$LateDeductionRuleModelCopyWithImpl<$Res, _$LateDeductionRuleModelImpl>
+    implements _$$LateDeductionRuleModelImplCopyWith<$Res> {
+  __$$LateDeductionRuleModelImplCopyWithImpl(
+    _$LateDeductionRuleModelImpl _value,
+    $Res Function(_$LateDeductionRuleModelImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of LateDeductionRuleModel
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? fromMinutes = null,
+    Object? toMinutes = null,
+    Object? value = null,
+  }) {
+    return _then(
+      _$LateDeductionRuleModelImpl(
+        fromMinutes: null == fromMinutes
+            ? _value.fromMinutes
+            : fromMinutes // ignore: cast_nullable_to_non_nullable
+                  as int,
+        toMinutes: null == toMinutes
+            ? _value.toMinutes
+            : toMinutes // ignore: cast_nullable_to_non_nullable
+                  as int,
+        value: null == value
+            ? _value.value
+            : value // ignore: cast_nullable_to_non_nullable
+                  as int,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(explicitToJson: true)
+class _$LateDeductionRuleModelImpl implements _LateDeductionRuleModel {
+  _$LateDeductionRuleModelImpl({
+    this.fromMinutes = 0,
+    this.toMinutes = 0,
+    this.value = 0,
+  });
+
+  factory _$LateDeductionRuleModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LateDeductionRuleModelImplFromJson(json);
+
+  @override
+  @JsonKey()
+  int fromMinutes;
+  @override
+  @JsonKey()
+  int toMinutes;
+  @override
+  @JsonKey()
+  int value;
+
+  @override
+  String toString() {
+    return 'LateDeductionRuleModel(fromMinutes: $fromMinutes, toMinutes: $toMinutes, value: $value)';
+  }
+
+  /// Create a copy of LateDeductionRuleModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LateDeductionRuleModelImplCopyWith<_$LateDeductionRuleModelImpl>
+  get copyWith =>
+      __$$LateDeductionRuleModelImplCopyWithImpl<_$LateDeductionRuleModelImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LateDeductionRuleModelImplToJson(this);
+  }
+}
+
+abstract class _LateDeductionRuleModel implements LateDeductionRuleModel {
+  factory _LateDeductionRuleModel({int fromMinutes, int toMinutes, int value}) =
+      _$LateDeductionRuleModelImpl;
+
+  factory _LateDeductionRuleModel.fromJson(Map<String, dynamic> json) =
+      _$LateDeductionRuleModelImpl.fromJson;
+
+  @override
+  int get fromMinutes;
+  set fromMinutes(int value);
+  @override
+  int get toMinutes;
+  set toMinutes(int value);
+  @override
+  int get value;
+  set value(int value);
+
+  /// Create a copy of LateDeductionRuleModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LateDeductionRuleModelImplCopyWith<_$LateDeductionRuleModelImpl>
+  get copyWith => throw _privateConstructorUsedError;
 }

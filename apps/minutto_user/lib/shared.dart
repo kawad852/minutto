@@ -140,7 +140,6 @@ export 'screens/staff_management/staff_management_screen.dart';
 export 'screens/staff_management/widgets/staff_card.dart';
 export 'screens/staff_management/widgets/staff_dialog.dart';
 export 'screens/system_settings/attendance_settings_screen.dart';
-export 'screens/system_settings/deduction_settings_screen.dart';
 export 'screens/system_settings/leaves_settings_screen.dart';
 //System settings
 export 'screens/system_settings/system_settings_screen.dart';

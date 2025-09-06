@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:shared/extensions/base_extension.dart';
-import 'package:shared/helper/translation_extension.dart';
+import '../shared.dart';
 
 class LanguageEnum {
   static const String english = 'en';

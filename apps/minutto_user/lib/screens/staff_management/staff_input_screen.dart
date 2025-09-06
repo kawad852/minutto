@@ -93,17 +93,17 @@ class _StaffInputScreenState extends State<StaffInputScreen> {
           ),
           bottomNavigationBar: BottomButton(
             onPressed: () {
-              if (_formKey.currentState!.validate()) {
-                context.unFocusKeyboard();
-                if (_currentIndex != 2) {
-                  _pageController.nextPage(
-                    duration: const Duration(milliseconds: 200),
-                    curve: Curves.linear,
-                  );
-                } else {
-                  _onSubmit(context);
-                }
+              // if (_formKey.currentState!.validate()) {
+              context.unFocusKeyboard();
+              if (_currentIndex != 2) {
+                _pageController.nextPage(
+                  duration: const Duration(milliseconds: 200),
+                  curve: Curves.linear,
+                );
+              } else {
+                _onSubmit(context);
               }
+              // }
             },
             title: _currentIndex == 2
                 ? context.appLocalization.confirmAddition
@@ -297,6 +297,18 @@ class _StaffInputScreenState extends State<StaffInputScreen> {
                                   initialValue: _user.nationalId,
                                   onChanged: (value) => _user.nationalId = value!,
                                 ),
+                              ),
+                              WidgetTitle(
+                                title: context.appLocalization.socialSecurityDeductionSalary,
+                                child: CustomTextField.double(onChanged: (value) {}),
+                              ),
+                              WidgetTitle(
+                                title: context.appLocalization.numberAnnualLeaveDays,
+                                child: CustomTextField.double(onChanged: (value) {}),
+                              ),
+                              WidgetTitle(
+                                title: context.appLocalization.numberSickLeaveDays,
+                                child: CustomTextField.double(onChanged: (value) {}),
                               ),
                             ],
                           ),

@@ -13,12 +13,6 @@ extension FormHelper on GlobalKey<FormState> {
         callBack: () async {
           final user = MySharedPreferences.user!;
           await onCall(user);
-          // if (_isAdd) {
-          //   _department.id = docRef.id;
-          //   _department.companyId = user.companyId;
-          //   _department.createdAt = kNowDate;
-          // }
-          // await docRef.set(_department);
           if (context.mounted) {
             context.showSnackBar(
               isAdd

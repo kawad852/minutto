@@ -26,21 +26,16 @@ class _LeavesSettingsScreenState extends State<LeavesSettingsScreen> {
           spacing: 20,
           children: [
             WidgetTitle(
-              title: context.appLocalization.numberAnnualLeaveDays,
-              child: CustomTextField.double(onChanged: (value) {}),
-            ),
-            WidgetTitle(
-              title: context.appLocalization.numberSickLeaveDays,
-              child: CustomTextField.double(onChanged: (value) {}),
-            ),
-            WidgetTitle(
               title: context.appLocalization.maxDaysRequestedOnetime,
               child: CustomTextField.double(onChanged: (value) {}),
             ),
             Row(
               spacing: 12,
               children: [
-                CustomSwitch(onChanged: (value) {}),
+                CustomSwitch(
+                  onChanged: (value) {},
+                  value: true,
+                ),
                 Expanded(
                   child: Text(
                     context.appLocalization.possibilityCarryingDays,

@@ -5,34 +5,53 @@ part 'company_model.g.dart';
 
 @unfreezed
 class CompanyModel with _$CompanyModel {
+  @JsonSerializable(explicitToJson: true)
   factory CompanyModel({
     @TimestampSerializer() DateTime? createdAt,
     @Default('') String id,
     @Default('') String name,
     @Default('') String code,
+    LeavePolicyModel? leavePolicy,
+    AttendancePolicyModel? attendancePolicy,
   }) = _CompanyModel;
 
   factory CompanyModel.fromJson(Map<String, dynamic> json) => _$CompanyModelFromJson(json);
 }
 
-@freezed
-class Subscription with _$Subscription {
-  factory Subscription({
-    String? id,
-    @TimestampSerializer() DateTime? createdAt,
-  }) = _Subscription;
+@unfreezed
+class LeavePolicyModel with _$LeavePolicyModel {
+  @JsonSerializable(explicitToJson: true)
+  factory LeavePolicyModel({
+    @Default(0) int maxDaysPerRequest,
+    @Default(false) bool allowCarryOver,
+    @Default(0) int maxCarryOverDays,
+  }) = _LeavePolicyModel;
 
-  factory Subscription.fromJson(Map<String, dynamic> json) => _$SubscriptionFromJson(json);
+  factory LeavePolicyModel.fromJson(Map<String, dynamic> json) => _$LeavePolicyModelFromJson(json);
 }
 
-@freezed
-class ServiceData with _$ServiceData {
-  factory ServiceData({
-    String? id,
-    String? db,
-    String? login,
-    String? password,
-  }) = _ServiceData;
+@unfreezed
+class AttendancePolicyModel with _$AttendancePolicyModel {
+  @JsonSerializable(explicitToJson: true)
+  factory AttendancePolicyModel({
+    @Default(0) int shiftGraceMinutes,
+    @Default(true) bool lateAfterGrace,
+    required List<LateDeductionRuleModel> lateDeductionRules,
+  }) = _AttendancePolicyModel;
 
-  factory ServiceData.fromJson(Map<String, dynamic> json) => _$ServiceDataFromJson(json);
+  factory AttendancePolicyModel.fromJson(Map<String, dynamic> json) =>
+      _$AttendancePolicyModelFromJson(json);
+}
+
+@unfreezed
+class LateDeductionRuleModel with _$LateDeductionRuleModel {
+  @JsonSerializable(explicitToJson: true)
+  factory LateDeductionRuleModel({
+    @Default(0) int fromMinutes,
+    @Default(0) int toMinutes,
+    @Default(0) int value,
+  }) = _LateDeductionRuleModel;
+
+  factory LateDeductionRuleModel.fromJson(Map<String, dynamic> json) =>
+      _$LateDeductionRuleModelFromJson(json);
 }
