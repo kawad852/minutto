@@ -18,30 +18,39 @@ class CheckDialog extends StatelessWidget {
             userLocation.longitude,
           );
           debugPrint("Distance:: $distance");
-          if (context.mounted && distance < 20) {
-            context.showSnackBar(context.appLocalization.attendanceSuccessMsg);
-          } else if (context.mounted) {
-            context.showSnackBar(
-              "",
-              contentWidget: ListTile(
-                titleTextStyle: TextStyle(
-                  color: context.colorScheme.onPrimary,
-                  fontFamily: MyTheme.fontFamily,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                ),
-                subtitleTextStyle: TextStyle(
-                  color: context.colorScheme.surface,
-                  fontFamily: MyTheme.fontFamily,
-                ),
-                title: Text(context.appLocalization.attendanceFailedTitle),
-                subtitle: Text(context.appLocalization.attendanceFailedBody),
-              ),
-            );
+          if (context.mounted) {
+            _verify(context: context, distance: distance);
           }
         }
       },
     );
+  }
+
+  void _verify({
+    required BuildContext context,
+    required double distance,
+  }) {
+    if (context.mounted && distance < 20) {
+      context.showSnackBar(context.appLocalization.attendanceSuccessMsg);
+    } else if (context.mounted) {
+      context.showSnackBar(
+        "",
+        contentWidget: ListTile(
+          titleTextStyle: TextStyle(
+            color: context.colorScheme.onPrimary,
+            fontFamily: MyTheme.fontFamily,
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+          ),
+          subtitleTextStyle: TextStyle(
+            color: context.colorScheme.surface,
+            fontFamily: MyTheme.fontFamily,
+          ),
+          title: Text(context.appLocalization.attendanceFailedTitle),
+          subtitle: Text(context.appLocalization.attendanceFailedBody),
+        ),
+      );
+    }
   }
 
   @override
