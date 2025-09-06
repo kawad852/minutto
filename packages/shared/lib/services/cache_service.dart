@@ -97,14 +97,18 @@ class CacheService {
   void fetchCompany() {
     final user = MySharedPreferences.user;
     _firebaseFirestore.companies.doc(user!.companyId).get().then((value) {
-      MySharedPreferences.company = value.data();
+      final data = value.data()!;
+      data.createdAt = null;
+      MySharedPreferences.company = data;
     });
   }
 
   void fetchShift() {
     final user = MySharedPreferences.user;
     _firebaseFirestore.shifts.doc(user!.shiftId).get().then((value) {
-      MySharedPreferences.shift = value.data();
+      final data = value.data()!;
+      data.createdAt = null;
+      MySharedPreferences.shift = data;
     });
   }
 }
