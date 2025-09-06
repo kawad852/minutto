@@ -4,10 +4,12 @@ import 'package:shared/shared.dart';
 
 class PhoneVerifyScreen extends StatefulWidget {
   final UserModel user;
+  final CompanyModel company;
 
   const PhoneVerifyScreen({
     super.key,
     required this.user,
+    required this.company,
   });
 
   @override
@@ -25,8 +27,8 @@ class _PhoneVerifyScreenState extends State<PhoneVerifyScreen> {
       countryCode: _user.phoneNumberCountryCode,
       phoneNumber: _user.phoneNumber,
       otp: _code!,
-      onSuccess: () {
-        context.userProvider.register(
+      onSuccess: () async {
+        await context.userProvider.register(
           context,
           user: _user,
           onSuccess: () {

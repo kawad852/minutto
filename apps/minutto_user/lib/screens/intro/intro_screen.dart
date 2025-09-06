@@ -30,6 +30,13 @@ class _IntroScreenState extends State<IntroScreen> {
     ];
   }
 
+  void _navigate(BuildContext context) {
+    MySharedPreferences.passedIntro = true;
+    context.navigateAndRemoveUntil(
+      (context) => const LoginScreen(),
+    );
+  }
+
   @override
   void initState() {
     super.initState();
@@ -53,9 +60,7 @@ class _IntroScreenState extends State<IntroScreen> {
         actions: [
           IconButton(
             onPressed: () {
-              context.navigateAndRemoveUntil(
-                (context) => const LoginScreen(),
-              );
+              _navigate(context);
             },
             icon: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -73,9 +78,7 @@ class _IntroScreenState extends State<IntroScreen> {
       floatingActionButton: InkWell(
         onTap: () {
           if (_pageController.page == 2) {
-            context.navigateAndRemoveUntil(
-              (context) => const LoginScreen(),
-            );
+            _navigate(context);
           } else {
             _pageController.nextPage(
               duration: const Duration(milliseconds: 400),

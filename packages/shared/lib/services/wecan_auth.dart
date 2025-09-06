@@ -49,7 +49,7 @@ class WeCanAuth {
     required String countryCode,
     required String phoneNumber,
     required String otp,
-    required VoidCallback onSuccess,
+    required Future Function() onSuccess,
   }) async {
     ApiService.fetch(
       context,
@@ -73,7 +73,7 @@ class WeCanAuth {
         final body = OtpModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
         if (response.statusCode == 200 && context.mounted) {
           if (context.mounted) {
-            onSuccess();
+            await onSuccess();
           }
         } else if (context.mounted) {
           context.showSnackBar(body.message ?? context.appLocalization.generalError);

@@ -30,9 +30,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
           if (context.mounted &&
               companyDoc.docs.isNotEmpty &&
               companyDoc.docs.first.data().code == _companyCode) {
+            final company = companyDoc.docs.first.data();
+            _user.companyId = company.id;
             context.navigate((context) {
               return PhoneVerifyScreen(
                 user: _user,
+                company: company,
               );
             });
           } else if (context.mounted) {

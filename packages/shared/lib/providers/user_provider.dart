@@ -3,7 +3,7 @@ import '../../shared.dart';
 class UserProvider extends ChangeNotifier {
   UserModel? get user => MySharedPreferences.user;
   String? get userUid => MySharedPreferences.user?.id;
-  bool get isAuthenticated => userUid != null;
+  bool get isAuthenticated => userUid != null && userUid!.isNotEmpty;
 
   FirebaseAuth get _firebaseAuth => FirebaseAuth.instance;
   FirebaseFirestore get _firebaseFirestore => FirebaseFirestore.instance;
@@ -46,6 +46,7 @@ class UserProvider extends ChangeNotifier {
     final results = await callable.call(<String, dynamic>{
       'uid': uid,
     });
+    user.id = uid;
     final customToken = results.data as String;
     await FirebaseAuth.instance.signInWithCustomToken(customToken);
 
@@ -58,12 +59,9 @@ class UserProvider extends ChangeNotifier {
       }
       MySharedPreferences.user = userDocument.data()!;
     } else {
+      user.createdAt = DateTime.now();
       MySharedPreferences.user = user;
-      final json = {
-        ...user.toJson(),
-        MyFields.createdAt: FieldValue.serverTimestamp(),
-      };
-      await FirebaseFirestore.instance.collection(MyCollections.users).doc(user.id).set(json);
+      await FirebaseFirestore.instance.users.doc(user.id).set(user);
     }
 
     notifyListeners();

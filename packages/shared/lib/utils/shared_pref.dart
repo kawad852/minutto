@@ -13,6 +13,7 @@ class MySharedPreferences {
     user = null;
     location = null;
     userToken = "";
+    company = null;
   }
 
   static UserModel? get user {
@@ -129,5 +130,18 @@ class MySharedPreferences {
 
   static set versions(VersionModel? value) {
     _sharedPreferences.setString('versions', jsonEncode(value?.toJson()));
+  }
+
+  static CompanyModel? get company {
+    String? value = _sharedPreferences.getString('company');
+    CompanyModel? model;
+    if (value != null && value.isNotEmpty && value != 'null') {
+      model = CompanyModel.fromJson(jsonDecode(value));
+    }
+    return model;
+  }
+
+  static set company(CompanyModel? value) {
+    _sharedPreferences.setString('company', jsonEncode(value?.toJson()));
   }
 }

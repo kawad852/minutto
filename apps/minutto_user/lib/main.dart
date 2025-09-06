@@ -16,9 +16,10 @@ void main() async {
     builder: (bool isAuthenticated) {
       if (isAuthenticated) {
         return AppNavBar();
+      } else if (MySharedPreferences.passedIntro) {
+        return LoginScreen();
       } else {
         return IntroScreen();
-        //LoginScreen();
       }
     },
     logoutBuilder: kLogoutBuilder,
