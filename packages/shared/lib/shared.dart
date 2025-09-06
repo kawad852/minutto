@@ -258,6 +258,7 @@ export 'widgets/label_chips/best_seller_chip.dart';
 export 'widgets/label_chips/item_chips_flex.dart';
 export 'widgets/label_chips/label_chip.dart';
 export 'widgets/label_chips/trending_chip.dart';
+export 'widgets/live_clock.dart';
 export 'widgets/map_bubble.dart';
 export 'widgets/navigate_arrow.dart';
 export 'widgets/order/basket_card.dart';

@@ -6,6 +6,8 @@ extension DateTimeExtension on DateTime {
   String get defaultFormat => DateFormat('d.MM.yyyy').format(this);
   String get yMMMMd => DateFormat.yMMMd('en_US').format(this);
 
+  String get dayName => DateFormat('EEEE', MySharedPreferences.language).format(this);
+
   String get hourFormat => DateFormat.jm(MySharedPreferences.language).format(this);
 
   Filter get startFilter =>

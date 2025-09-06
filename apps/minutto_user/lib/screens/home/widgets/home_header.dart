@@ -7,6 +7,9 @@ class HomeHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final now = DateTime.now();
+    final user = MySharedPreferences.user!;
+    // final dayName = WeekDayEnum.values.firstWhere((e) => e.value == now.weekday).label();
     return Container(
       height: 355,
       margin: const EdgeInsets.only(bottom: 15),
@@ -54,7 +57,7 @@ class HomeHeader extends StatelessWidget {
               child: Row(
                 children: [
                   BaseNetworkImage(
-                    "",
+                    user.profileImage,
                     width: 60,
                     height: 60,
                     shape: BoxShape.circle,
@@ -65,7 +68,7 @@ class HomeHeader extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "صهيب البكار",
+                          user.name,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             color: context.colorPalette.black,
@@ -75,7 +78,7 @@ class HomeHeader extends StatelessWidget {
                         ),
                         const SizedBox(height: 5),
                         Text(
-                          "مصمم جرافيك",
+                          user.jobTitle,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             color: context.colorPalette.black,
@@ -130,7 +133,7 @@ class HomeHeader extends StatelessWidget {
                           child: Row(
                             children: [
                               Text(
-                                "الثلاثاء ",
+                                "${now.dayName} ",
                                 style: TextStyle(
                                   color: context.colorPalette.blueB2D,
                                   fontSize: 16,
@@ -139,7 +142,7 @@ class HomeHeader extends StatelessWidget {
                               ),
                               Expanded(
                                 child: Text(
-                                  "2023.04.03",
+                                  now.defaultFormat,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
                                     color: context.colorPalette.white,
@@ -162,15 +165,7 @@ class HomeHeader extends StatelessWidget {
                               ),
                             ),
                             Expanded(
-                              child: Text(
-                                "AM 08:31:23",
-                                overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                  color: context.colorPalette.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
+                              child: LiveClock(),
                             ),
                           ],
                         ),
