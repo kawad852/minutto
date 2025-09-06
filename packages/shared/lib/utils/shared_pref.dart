@@ -144,4 +144,17 @@ class MySharedPreferences {
   static set company(CompanyModel? value) {
     _sharedPreferences.setString('company', jsonEncode(value?.toJson()));
   }
+
+  static ShiftModel? get shift {
+    String? value = _sharedPreferences.getString('shift');
+    ShiftModel? model;
+    if (value != null && value.isNotEmpty && value != 'null') {
+      model = ShiftModel.fromJson(jsonDecode(value));
+    }
+    return model;
+  }
+
+  static set shift(ShiftModel? value) {
+    _sharedPreferences.setString('shift', jsonEncode(value?.toJson()));
+  }
 }

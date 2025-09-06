@@ -40,6 +40,8 @@ class _AppNavBarState extends State<AppNavBar> {
     _cloudMessagingService = CloudMessagingService(rootNavigatorKey.currentContext!);
     _cloudMessagingService.requestPermission(context);
     _pageController = PageController(initialPage: _currentIndex);
+    CacheService.instance.fetchCompany();
+    CacheService.instance.fetchShift();
   }
 
   @override
