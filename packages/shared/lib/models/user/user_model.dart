@@ -10,6 +10,7 @@ class UserModel with _$UserModel {
     @Default('') String id,
     String? roleId,
     @Default('') String companyId,
+    @Default('') String shiftId,
     @TimestampSerializer() DateTime? createdAt,
     @TimestampSerializer() DateTime? workStartDate,
     @TimestampSerializer() DateTime? contractEndDate,

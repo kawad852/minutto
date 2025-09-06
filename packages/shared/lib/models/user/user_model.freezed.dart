@@ -27,6 +27,8 @@ mixin _$UserModel {
   set roleId(String? value) => throw _privateConstructorUsedError;
   String get companyId => throw _privateConstructorUsedError;
   set companyId(String value) => throw _privateConstructorUsedError;
+  String get shiftId => throw _privateConstructorUsedError;
+  set shiftId(String value) => throw _privateConstructorUsedError;
   @TimestampSerializer()
   DateTime? get createdAt => throw _privateConstructorUsedError;
   @TimestampSerializer()
@@ -98,6 +100,7 @@ abstract class $UserModelCopyWith<$Res> {
     String id,
     String? roleId,
     String companyId,
+    String shiftId,
     @TimestampSerializer() DateTime? createdAt,
     @TimestampSerializer() DateTime? workStartDate,
     @TimestampSerializer() DateTime? contractEndDate,
@@ -142,6 +145,7 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? id = null,
     Object? roleId = freezed,
     Object? companyId = null,
+    Object? shiftId = null,
     Object? createdAt = freezed,
     Object? workStartDate = freezed,
     Object? contractEndDate = freezed,
@@ -177,6 +181,10 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
             companyId: null == companyId
                 ? _value.companyId
                 : companyId // ignore: cast_nullable_to_non_nullable
+                      as String,
+            shiftId: null == shiftId
+                ? _value.shiftId
+                : shiftId // ignore: cast_nullable_to_non_nullable
                       as String,
             createdAt: freezed == createdAt
                 ? _value.createdAt
@@ -295,6 +303,7 @@ abstract class _$$UserModelImplCopyWith<$Res>
     String id,
     String? roleId,
     String companyId,
+    String shiftId,
     @TimestampSerializer() DateTime? createdAt,
     @TimestampSerializer() DateTime? workStartDate,
     @TimestampSerializer() DateTime? contractEndDate,
@@ -339,6 +348,7 @@ class __$$UserModelImplCopyWithImpl<$Res>
     Object? id = null,
     Object? roleId = freezed,
     Object? companyId = null,
+    Object? shiftId = null,
     Object? createdAt = freezed,
     Object? workStartDate = freezed,
     Object? contractEndDate = freezed,
@@ -374,6 +384,10 @@ class __$$UserModelImplCopyWithImpl<$Res>
         companyId: null == companyId
             ? _value.companyId
             : companyId // ignore: cast_nullable_to_non_nullable
+                  as String,
+        shiftId: null == shiftId
+            ? _value.shiftId
+            : shiftId // ignore: cast_nullable_to_non_nullable
                   as String,
         createdAt: freezed == createdAt
             ? _value.createdAt
@@ -472,6 +486,7 @@ class _$UserModelImpl extends _UserModel {
     this.id = '',
     this.roleId,
     this.companyId = '',
+    this.shiftId = '',
     @TimestampSerializer() this.createdAt,
     @TimestampSerializer() this.workStartDate,
     @TimestampSerializer() this.contractEndDate,
@@ -506,6 +521,9 @@ class _$UserModelImpl extends _UserModel {
   @override
   @JsonKey()
   String companyId;
+  @override
+  @JsonKey()
+  String shiftId;
   @override
   @TimestampSerializer()
   DateTime? createdAt;
@@ -571,7 +589,7 @@ class _$UserModelImpl extends _UserModel {
 
   @override
   String toString() {
-    return 'UserModel(id: $id, roleId: $roleId, companyId: $companyId, createdAt: $createdAt, workStartDate: $workStartDate, contractEndDate: $contractEndDate, name: $name, profileImage: $profileImage, phoneNumberCountryCode: $phoneNumberCountryCode, phoneNumber: $phoneNumber, email: $email, birthDate: $birthDate, gender: $gender, maritalStatus: $maritalStatus, departmentId: $departmentId, branchId: $branchId, jobTitle: $jobTitle, basicSalary: $basicSalary, contractDurationMonths: $contractDurationMonths, nationalId: $nationalId, bank: $bank, active: $active, archived: $archived, deviceTokens: $deviceTokens)';
+    return 'UserModel(id: $id, roleId: $roleId, companyId: $companyId, shiftId: $shiftId, createdAt: $createdAt, workStartDate: $workStartDate, contractEndDate: $contractEndDate, name: $name, profileImage: $profileImage, phoneNumberCountryCode: $phoneNumberCountryCode, phoneNumber: $phoneNumber, email: $email, birthDate: $birthDate, gender: $gender, maritalStatus: $maritalStatus, departmentId: $departmentId, branchId: $branchId, jobTitle: $jobTitle, basicSalary: $basicSalary, contractDurationMonths: $contractDurationMonths, nationalId: $nationalId, bank: $bank, active: $active, archived: $archived, deviceTokens: $deviceTokens)';
   }
 
   /// Create a copy of UserModel
@@ -593,6 +611,7 @@ abstract class _UserModel extends UserModel {
     String id,
     String? roleId,
     String companyId,
+    String shiftId,
     @TimestampSerializer() DateTime? createdAt,
     @TimestampSerializer() DateTime? workStartDate,
     @TimestampSerializer() DateTime? contractEndDate,
@@ -629,6 +648,9 @@ abstract class _UserModel extends UserModel {
   @override
   String get companyId;
   set companyId(String value);
+  @override
+  String get shiftId;
+  set shiftId(String value);
   @override
   @TimestampSerializer()
   DateTime? get createdAt;
