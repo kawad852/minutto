@@ -4,6 +4,8 @@ import 'package:shared/shared.dart';
 class CheckDialog extends StatelessWidget {
   const CheckDialog({super.key});
 
+  FirebaseFirestore get _firebaseFirestore => FirebaseFirestore.instance;
+
   void _checkLocation(BuildContext context) async {
     ApiService.fetch(
       context,
@@ -32,6 +34,12 @@ class CheckDialog extends StatelessWidget {
   }) {
     if (context.mounted && distance < 20) {
       context.showSnackBar(context.appLocalization.attendanceSuccessMsg);
+      final docRef = _firebaseFirestore.userAttendance.doc();
+      final attendance = AttendanceModel(
+        id: docRef.id,
+        checkIn: DateTime.now(),
+      );
+      docRef.set(attendance);
     } else if (context.mounted) {
       context.showSnackBar(
         "",

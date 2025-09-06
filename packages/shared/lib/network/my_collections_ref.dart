@@ -69,4 +69,11 @@ extension CollectionReferenceExtension on FirebaseFirestore {
   CollectionReference<ShiftModel> get shifts => collection(MyCollections.shifts).shiftConvertor;
   CollectionReference<HolidayModel> get holidays =>
       collection(MyCollections.holidays).holidayConvertor;
+
+  // CollectionReference<AttendanceModel> get attendances =>
+  //     collectionGroup(MyCollections.attendances).attendanceConvertor;
+  CollectionReference<AttendanceModel> get userAttendance => users
+      .doc(MySharedPreferences.user!.id)
+      .collection(MyCollections.attendances)
+      .attendanceConvertor;
 }

@@ -123,4 +123,9 @@ extension FireConvertors on CollectionReference {
     fromFirestore: (snapshot, _) => HolidayModel.fromJson(snapshot.data()!),
     toFirestore: (snapshot, _) => snapshot.toJson(),
   );
+
+  CollectionReference<AttendanceModel> get attendanceConvertor => withConverter<AttendanceModel>(
+    fromFirestore: (snapshot, _) => AttendanceModel.fromJson(snapshot.data()!),
+    toFirestore: (snapshot, _) => snapshot.toJson(),
+  );
 }

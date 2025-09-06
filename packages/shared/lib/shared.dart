@@ -118,6 +118,7 @@ export 'helper/validation_helper.dart';
 export 'models/address/address_model.dart';
 export 'models/analytics/analytics_model.dart';
 export 'models/attachment/attachment_model.dart';
+export 'models/attendance/attendance_model.dart';
 export 'models/basket/basket_model.dart';
 export 'models/branch/branch_model.dart';
 export 'models/cancel/cancel_model.dart';
