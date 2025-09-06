@@ -1881,4 +1881,14 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get codeResent => 'تم إعادة إرسال الرمز';
+
+  @override
+  String get attendanceSuccessMsg => 'تم التحقق بنجاح';
+
+  @override
+  String get attendanceFailedTitle => 'فشل التحقق';
+
+  @override
+  String get attendanceFailedBody =>
+      'يرجى التواجد داخل مقر العمل والمحاولة مجدداً او جرب استخدام إحدى الوسائل الأخرى';
 }

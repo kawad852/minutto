@@ -38,6 +38,9 @@ mixin _$CompanyModel {
       throw _privateConstructorUsedError;
   set attendancePolicy(AttendancePolicyModel? value) =>
       throw _privateConstructorUsedError;
+  GeoLocationModel? get geoLocation => throw _privateConstructorUsedError;
+  set geoLocation(GeoLocationModel? value) =>
+      throw _privateConstructorUsedError;
 
   /// Serializes this CompanyModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -63,10 +66,12 @@ abstract class $CompanyModelCopyWith<$Res> {
     String code,
     LeavePolicyModel? leavePolicy,
     AttendancePolicyModel? attendancePolicy,
+    GeoLocationModel? geoLocation,
   });
 
   $LeavePolicyModelCopyWith<$Res>? get leavePolicy;
   $AttendancePolicyModelCopyWith<$Res>? get attendancePolicy;
+  $GeoLocationModelCopyWith<$Res>? get geoLocation;
 }
 
 /// @nodoc
@@ -90,6 +95,7 @@ class _$CompanyModelCopyWithImpl<$Res, $Val extends CompanyModel>
     Object? code = null,
     Object? leavePolicy = freezed,
     Object? attendancePolicy = freezed,
+    Object? geoLocation = freezed,
   }) {
     return _then(
       _value.copyWith(
@@ -117,6 +123,10 @@ class _$CompanyModelCopyWithImpl<$Res, $Val extends CompanyModel>
                 ? _value.attendancePolicy
                 : attendancePolicy // ignore: cast_nullable_to_non_nullable
                       as AttendancePolicyModel?,
+            geoLocation: freezed == geoLocation
+                ? _value.geoLocation
+                : geoLocation // ignore: cast_nullable_to_non_nullable
+                      as GeoLocationModel?,
           )
           as $Val,
     );
@@ -151,6 +161,20 @@ class _$CompanyModelCopyWithImpl<$Res, $Val extends CompanyModel>
       return _then(_value.copyWith(attendancePolicy: value) as $Val);
     });
   }
+
+  /// Create a copy of CompanyModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GeoLocationModelCopyWith<$Res>? get geoLocation {
+    if (_value.geoLocation == null) {
+      return null;
+    }
+
+    return $GeoLocationModelCopyWith<$Res>(_value.geoLocation!, (value) {
+      return _then(_value.copyWith(geoLocation: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -169,12 +193,15 @@ abstract class _$$CompanyModelImplCopyWith<$Res>
     String code,
     LeavePolicyModel? leavePolicy,
     AttendancePolicyModel? attendancePolicy,
+    GeoLocationModel? geoLocation,
   });
 
   @override
   $LeavePolicyModelCopyWith<$Res>? get leavePolicy;
   @override
   $AttendancePolicyModelCopyWith<$Res>? get attendancePolicy;
+  @override
+  $GeoLocationModelCopyWith<$Res>? get geoLocation;
 }
 
 /// @nodoc
@@ -197,6 +224,7 @@ class __$$CompanyModelImplCopyWithImpl<$Res>
     Object? code = null,
     Object? leavePolicy = freezed,
     Object? attendancePolicy = freezed,
+    Object? geoLocation = freezed,
   }) {
     return _then(
       _$CompanyModelImpl(
@@ -224,6 +252,10 @@ class __$$CompanyModelImplCopyWithImpl<$Res>
             ? _value.attendancePolicy
             : attendancePolicy // ignore: cast_nullable_to_non_nullable
                   as AttendancePolicyModel?,
+        geoLocation: freezed == geoLocation
+            ? _value.geoLocation
+            : geoLocation // ignore: cast_nullable_to_non_nullable
+                  as GeoLocationModel?,
       ),
     );
   }
@@ -240,6 +272,7 @@ class _$CompanyModelImpl implements _CompanyModel {
     this.code = '',
     this.leavePolicy,
     this.attendancePolicy,
+    this.geoLocation,
   });
 
   factory _$CompanyModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -261,10 +294,12 @@ class _$CompanyModelImpl implements _CompanyModel {
   LeavePolicyModel? leavePolicy;
   @override
   AttendancePolicyModel? attendancePolicy;
+  @override
+  GeoLocationModel? geoLocation;
 
   @override
   String toString() {
-    return 'CompanyModel(createdAt: $createdAt, id: $id, name: $name, code: $code, leavePolicy: $leavePolicy, attendancePolicy: $attendancePolicy)';
+    return 'CompanyModel(createdAt: $createdAt, id: $id, name: $name, code: $code, leavePolicy: $leavePolicy, attendancePolicy: $attendancePolicy, geoLocation: $geoLocation)';
   }
 
   /// Create a copy of CompanyModel
@@ -289,6 +324,7 @@ abstract class _CompanyModel implements CompanyModel {
     String code,
     LeavePolicyModel? leavePolicy,
     AttendancePolicyModel? attendancePolicy,
+    GeoLocationModel? geoLocation,
   }) = _$CompanyModelImpl;
 
   factory _CompanyModel.fromJson(Map<String, dynamic> json) =
@@ -314,6 +350,9 @@ abstract class _CompanyModel implements CompanyModel {
   @override
   AttendancePolicyModel? get attendancePolicy;
   set attendancePolicy(AttendancePolicyModel? value);
+  @override
+  GeoLocationModel? get geoLocation;
+  set geoLocation(GeoLocationModel? value);
 
   /// Create a copy of CompanyModel
   /// with the given fields replaced by the non-null parameter values.
@@ -923,4 +962,167 @@ abstract class _LateDeductionRuleModel implements LateDeductionRuleModel {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LateDeductionRuleModelImplCopyWith<_$LateDeductionRuleModelImpl>
   get copyWith => throw _privateConstructorUsedError;
+}
+
+GeoLocationModel _$GeoLocationModelFromJson(Map<String, dynamic> json) {
+  return _GeoLocationModel.fromJson(json);
+}
+
+/// @nodoc
+mixin _$GeoLocationModel {
+  double get latitude => throw _privateConstructorUsedError;
+  set latitude(double value) => throw _privateConstructorUsedError;
+  double get longitude => throw _privateConstructorUsedError;
+  set longitude(double value) => throw _privateConstructorUsedError;
+
+  /// Serializes this GeoLocationModel to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of GeoLocationModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GeoLocationModelCopyWith<GeoLocationModel> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GeoLocationModelCopyWith<$Res> {
+  factory $GeoLocationModelCopyWith(
+    GeoLocationModel value,
+    $Res Function(GeoLocationModel) then,
+  ) = _$GeoLocationModelCopyWithImpl<$Res, GeoLocationModel>;
+  @useResult
+  $Res call({double latitude, double longitude});
+}
+
+/// @nodoc
+class _$GeoLocationModelCopyWithImpl<$Res, $Val extends GeoLocationModel>
+    implements $GeoLocationModelCopyWith<$Res> {
+  _$GeoLocationModelCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of GeoLocationModel
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? latitude = null, Object? longitude = null}) {
+    return _then(
+      _value.copyWith(
+            latitude: null == latitude
+                ? _value.latitude
+                : latitude // ignore: cast_nullable_to_non_nullable
+                      as double,
+            longitude: null == longitude
+                ? _value.longitude
+                : longitude // ignore: cast_nullable_to_non_nullable
+                      as double,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$GeoLocationModelImplCopyWith<$Res>
+    implements $GeoLocationModelCopyWith<$Res> {
+  factory _$$GeoLocationModelImplCopyWith(
+    _$GeoLocationModelImpl value,
+    $Res Function(_$GeoLocationModelImpl) then,
+  ) = __$$GeoLocationModelImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({double latitude, double longitude});
+}
+
+/// @nodoc
+class __$$GeoLocationModelImplCopyWithImpl<$Res>
+    extends _$GeoLocationModelCopyWithImpl<$Res, _$GeoLocationModelImpl>
+    implements _$$GeoLocationModelImplCopyWith<$Res> {
+  __$$GeoLocationModelImplCopyWithImpl(
+    _$GeoLocationModelImpl _value,
+    $Res Function(_$GeoLocationModelImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of GeoLocationModel
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? latitude = null, Object? longitude = null}) {
+    return _then(
+      _$GeoLocationModelImpl(
+        latitude: null == latitude
+            ? _value.latitude
+            : latitude // ignore: cast_nullable_to_non_nullable
+                  as double,
+        longitude: null == longitude
+            ? _value.longitude
+            : longitude // ignore: cast_nullable_to_non_nullable
+                  as double,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(explicitToJson: true)
+class _$GeoLocationModelImpl implements _GeoLocationModel {
+  _$GeoLocationModelImpl({this.latitude = 0.0, this.longitude = 0.0});
+
+  factory _$GeoLocationModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GeoLocationModelImplFromJson(json);
+
+  @override
+  @JsonKey()
+  double latitude;
+  @override
+  @JsonKey()
+  double longitude;
+
+  @override
+  String toString() {
+    return 'GeoLocationModel(latitude: $latitude, longitude: $longitude)';
+  }
+
+  /// Create a copy of GeoLocationModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GeoLocationModelImplCopyWith<_$GeoLocationModelImpl> get copyWith =>
+      __$$GeoLocationModelImplCopyWithImpl<_$GeoLocationModelImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GeoLocationModelImplToJson(this);
+  }
+}
+
+abstract class _GeoLocationModel implements GeoLocationModel {
+  factory _GeoLocationModel({double latitude, double longitude}) =
+      _$GeoLocationModelImpl;
+
+  factory _GeoLocationModel.fromJson(Map<String, dynamic> json) =
+      _$GeoLocationModelImpl.fromJson;
+
+  @override
+  double get latitude;
+  set latitude(double value);
+  @override
+  double get longitude;
+  set longitude(double value);
+
+  /// Create a copy of GeoLocationModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GeoLocationModelImplCopyWith<_$GeoLocationModelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

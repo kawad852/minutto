@@ -3721,6 +3721,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Code has been resent.'**
   String get codeResent;
+
+  /// No description provided for @attendanceSuccessMsg.
+  ///
+  /// In en, this message translates to:
+  /// **'Verification Success'**
+  String get attendanceSuccessMsg;
+
+  /// No description provided for @attendanceFailedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Verification Failed'**
+  String get attendanceFailedTitle;
+
+  /// No description provided for @attendanceFailedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Please be present at the workplace and try again, or try using one of the other methods'**
+  String get attendanceFailedBody;
 }
 
 class _AppLocalizationsDelegate

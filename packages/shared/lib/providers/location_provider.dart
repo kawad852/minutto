@@ -1,15 +1,14 @@
 import 'package:flutter/foundation.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import '../../shared.dart';
 
 class LocationProvider extends ChangeNotifier {
-  var latitude = MySharedPreferences.location?.latitude;
-  var longitude = MySharedPreferences.location?.longitude;
+  double? latitude;
+  double? longitude;
 
   bool get isLocationGranted => latitude != null && longitude != null;
 
-  Future<void> determinePosition(
+  Future<GeoLocationModel?> determinePosition(
     BuildContext context, {
     Function()? onPermissionGranted,
     bool showSnackBar = false,
@@ -26,7 +25,7 @@ class LocationProvider extends ChangeNotifier {
       serviceEnabled = await Geolocator.isLocationServiceEnabled();
       if (!serviceEnabled && context.mounted && showSnackBar) {
         _showLocationErrorBanner(context);
-        return;
+        return null;
       }
 
       permission = await Geolocator.checkPermission();
@@ -36,7 +35,7 @@ class LocationProvider extends ChangeNotifier {
           if (context.mounted && showSnackBar) {
             _showLocationErrorBanner(context);
           }
-          return;
+          return null;
         }
       }
 
@@ -44,21 +43,25 @@ class LocationProvider extends ChangeNotifier {
         if (context.mounted && showSnackBar) {
           _showLocationErrorBanner(context);
         }
-        return;
+        return null;
       }
 
       // ignore: deprecated_member_use
       final position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.best);
       latitude = position.latitude;
       longitude = position.longitude;
-      MySharedPreferences.location = LatLng(latitude!, longitude!);
       notifyListeners();
       debugPrint("Position:: Latitude:: $latitude Longitude:: $longitude");
       if (onPermissionGranted != null) {
         onPermissionGranted();
       }
+      return GeoLocationModel(
+        latitude: latitude!,
+        longitude: longitude!,
+      );
     } catch (e) {
       debugPrint("PositionError:: $e");
+      return null;
     } finally {
       if (withOverLayLoader) {
         AppOverlayLoader.hide();

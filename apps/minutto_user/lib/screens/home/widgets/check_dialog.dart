@@ -4,6 +4,46 @@ import 'package:shared/shared.dart';
 class CheckDialog extends StatelessWidget {
   const CheckDialog({super.key});
 
+  void _checkLocation(BuildContext context) async {
+    ApiService.fetch(
+      context,
+      callBack: () async {
+        final companyLocation = MySharedPreferences.company!.geoLocation!;
+        final userLocation = await context.locationProvider.determinePosition(context);
+        if (userLocation != null) {
+          final distance = Geolocator.distanceBetween(
+            companyLocation.latitude,
+            companyLocation.longitude,
+            userLocation.latitude,
+            userLocation.longitude,
+          );
+          debugPrint("Distance:: $distance");
+          if (context.mounted && distance < 20) {
+            context.showSnackBar(context.appLocalization.attendanceSuccessMsg);
+          } else if (context.mounted) {
+            context.showSnackBar(
+              "",
+              contentWidget: ListTile(
+                titleTextStyle: TextStyle(
+                  color: context.colorScheme.onPrimary,
+                  fontFamily: MyTheme.fontFamily,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
+                subtitleTextStyle: TextStyle(
+                  color: context.colorScheme.surface,
+                  fontFamily: MyTheme.fontFamily,
+                ),
+                title: Text(context.appLocalization.attendanceFailedTitle),
+                subtitle: Text(context.appLocalization.attendanceFailedBody),
+              ),
+            );
+          }
+        }
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -48,7 +88,8 @@ class CheckDialog extends StatelessWidget {
                   const SizedBox(width: 10),
                   DialogBubble(
                     onTap: () {
-                      context.navigate((context) => const CheckingScreen());
+                      Navigator.pop(context);
+                      _checkLocation(context);
                     },
                     icon: MyIcons.check,
                     title: context.appLocalization.confirmLocation,

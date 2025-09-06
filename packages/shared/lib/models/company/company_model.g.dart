@@ -6,23 +6,25 @@ part of 'company_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CompanyModelImpl _$$CompanyModelImplFromJson(Map<String, dynamic> json) =>
-    _$CompanyModelImpl(
-      createdAt: const TimestampSerializer().fromJson(json['createdAt']),
-      id: json['id'] as String? ?? '',
-      name: json['name'] as String? ?? '',
-      code: json['code'] as String? ?? '',
-      leavePolicy: json['leavePolicy'] == null
-          ? null
-          : LeavePolicyModel.fromJson(
-              json['leavePolicy'] as Map<String, dynamic>,
-            ),
-      attendancePolicy: json['attendancePolicy'] == null
-          ? null
-          : AttendancePolicyModel.fromJson(
-              json['attendancePolicy'] as Map<String, dynamic>,
-            ),
-    );
+_$CompanyModelImpl _$$CompanyModelImplFromJson(
+  Map<String, dynamic> json,
+) => _$CompanyModelImpl(
+  createdAt: const TimestampSerializer().fromJson(json['createdAt']),
+  id: json['id'] as String? ?? '',
+  name: json['name'] as String? ?? '',
+  code: json['code'] as String? ?? '',
+  leavePolicy: json['leavePolicy'] == null
+      ? null
+      : LeavePolicyModel.fromJson(json['leavePolicy'] as Map<String, dynamic>),
+  attendancePolicy: json['attendancePolicy'] == null
+      ? null
+      : AttendancePolicyModel.fromJson(
+          json['attendancePolicy'] as Map<String, dynamic>,
+        ),
+  geoLocation: json['geoLocation'] == null
+      ? null
+      : GeoLocationModel.fromJson(json['geoLocation'] as Map<String, dynamic>),
+);
 
 Map<String, dynamic> _$$CompanyModelImplToJson(_$CompanyModelImpl instance) =>
     <String, dynamic>{
@@ -32,6 +34,7 @@ Map<String, dynamic> _$$CompanyModelImplToJson(_$CompanyModelImpl instance) =>
       'code': instance.code,
       'leavePolicy': instance.leavePolicy?.toJson(),
       'attendancePolicy': instance.attendancePolicy?.toJson(),
+      'geoLocation': instance.geoLocation?.toJson(),
     };
 
 _$LeavePolicyModelImpl _$$LeavePolicyModelImplFromJson(
@@ -84,4 +87,18 @@ Map<String, dynamic> _$$LateDeductionRuleModelImplToJson(
   'fromMinutes': instance.fromMinutes,
   'toMinutes': instance.toMinutes,
   'value': instance.value,
+};
+
+_$GeoLocationModelImpl _$$GeoLocationModelImplFromJson(
+  Map<String, dynamic> json,
+) => _$GeoLocationModelImpl(
+  latitude: (json['latitude'] as num?)?.toDouble() ?? 0.0,
+  longitude: (json['longitude'] as num?)?.toDouble() ?? 0.0,
+);
+
+Map<String, dynamic> _$$GeoLocationModelImplToJson(
+  _$GeoLocationModelImpl instance,
+) => <String, dynamic>{
+  'latitude': instance.latitude,
+  'longitude': instance.longitude,
 };

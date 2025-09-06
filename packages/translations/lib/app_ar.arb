@@ -511,5 +511,8 @@
   "otpResendMsg": "تم إعادة إرسال الرمز",
   "didntReceiveCode":"لم تستلم الرمز ؟ يمكنك اعادة ارسال الرمز مجدداً بعد ",
   "resend": "إعادة إرسال",
-  "codeResent": "تم إعادة إرسال الرمز"
+  "codeResent": "تم إعادة إرسال الرمز",
+  "attendanceSuccessMsg": "تم التحقق بنجاح",
+  "attendanceFailedTitle": "فشل التحقق",
+  "attendanceFailedBody": "يرجى التواجد داخل مقر العمل والمحاولة مجدداً او جرب استخدام إحدى الوسائل الأخرى"
 }

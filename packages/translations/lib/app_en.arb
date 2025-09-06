@@ -695,5 +695,9 @@
   "otpResendMsg": "OTP code has been resent",
   "didntReceiveCode":"Didn't receive the code? You can resend the code again after ",
   "resend": "Resend",
-  "codeResent": "Code has been resent."
+  "codeResent": "Code has been resent.",
+  "attendanceSuccessMsg": "Verification Success",
+  "attendanceFailedTitle": "Verification Failed",
+  "attendanceFailedBody": "Please be present at the workplace and try again, or try using one of the other methods"
+
 }

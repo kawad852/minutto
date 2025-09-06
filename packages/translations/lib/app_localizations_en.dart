@@ -1890,4 +1890,14 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get codeResent => 'Code has been resent.';
+
+  @override
+  String get attendanceSuccessMsg => 'Verification Success';
+
+  @override
+  String get attendanceFailedTitle => 'Verification Failed';
+
+  @override
+  String get attendanceFailedBody =>
+      'Please be present at the workplace and try again, or try using one of the other methods';
 }

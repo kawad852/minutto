@@ -13,6 +13,7 @@ class CompanyModel with _$CompanyModel {
     @Default('') String code,
     LeavePolicyModel? leavePolicy,
     AttendancePolicyModel? attendancePolicy,
+    GeoLocationModel? geoLocation,
   }) = _CompanyModel;
 
   factory CompanyModel.fromJson(Map<String, dynamic> json) => _$CompanyModelFromJson(json);
@@ -54,4 +55,15 @@ class LateDeductionRuleModel with _$LateDeductionRuleModel {
 
   factory LateDeductionRuleModel.fromJson(Map<String, dynamic> json) =>
       _$LateDeductionRuleModelFromJson(json);
+}
+
+@unfreezed
+class GeoLocationModel with _$GeoLocationModel {
+  @JsonSerializable(explicitToJson: true)
+  factory GeoLocationModel({
+    @Default(0.0) double latitude,
+    @Default(0.0) double longitude,
+  }) = _GeoLocationModel;
+
+  factory GeoLocationModel.fromJson(Map<String, dynamic> json) => _$GeoLocationModelFromJson(json);
 }

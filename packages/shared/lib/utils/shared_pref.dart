@@ -1,5 +1,3 @@
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-
 import '../../shared.dart';
 
 class MySharedPreferences {
@@ -11,7 +9,6 @@ class MySharedPreferences {
 
   static void clearStorage() {
     user = null;
-    location = null;
     userToken = "";
     company = null;
   }
@@ -75,19 +72,6 @@ class MySharedPreferences {
   static String get countryCode =>
       _sharedPreferences.getString('countryCode') ?? kFallBackCountryCode;
   static set countryCode(String value) => _sharedPreferences.setString('countryCode', value);
-
-  static LatLng? get location {
-    String? value = _sharedPreferences.getString('location');
-    LatLng? latLng;
-    if (value != null && value.isNotEmpty && value != 'null') {
-      latLng = LatLng.fromJson(jsonDecode(value));
-    }
-    return latLng;
-  }
-
-  static set location(LatLng? value) {
-    _sharedPreferences.setString('location', jsonEncode(value?.toJson()));
-  }
 
   static RoleModel? get role {
     String? value = _sharedPreferences.getString('role');
