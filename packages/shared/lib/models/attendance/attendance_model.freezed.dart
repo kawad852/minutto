@@ -22,13 +22,9 @@ AttendanceModel _$AttendanceModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AttendanceModel {
   @TimestampSerializer()
-  DateTime? get checkIn => throw _privateConstructorUsedError;
+  DateTime? get date => throw _privateConstructorUsedError;
   @TimestampSerializer()
-  set checkIn(DateTime? value) => throw _privateConstructorUsedError;
-  @TimestampSerializer()
-  DateTime? get checkOut => throw _privateConstructorUsedError;
-  @TimestampSerializer()
-  set checkOut(DateTime? value) => throw _privateConstructorUsedError;
+  set date(DateTime? value) => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   set id(String value) => throw _privateConstructorUsedError;
 
@@ -49,11 +45,7 @@ abstract class $AttendanceModelCopyWith<$Res> {
     $Res Function(AttendanceModel) then,
   ) = _$AttendanceModelCopyWithImpl<$Res, AttendanceModel>;
   @useResult
-  $Res call({
-    @TimestampSerializer() DateTime? checkIn,
-    @TimestampSerializer() DateTime? checkOut,
-    String id,
-  });
+  $Res call({@TimestampSerializer() DateTime? date, String id});
 }
 
 /// @nodoc
@@ -70,20 +62,12 @@ class _$AttendanceModelCopyWithImpl<$Res, $Val extends AttendanceModel>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? checkIn = freezed,
-    Object? checkOut = freezed,
-    Object? id = null,
-  }) {
+  $Res call({Object? date = freezed, Object? id = null}) {
     return _then(
       _value.copyWith(
-            checkIn: freezed == checkIn
-                ? _value.checkIn
-                : checkIn // ignore: cast_nullable_to_non_nullable
-                      as DateTime?,
-            checkOut: freezed == checkOut
-                ? _value.checkOut
-                : checkOut // ignore: cast_nullable_to_non_nullable
+            date: freezed == date
+                ? _value.date
+                : date // ignore: cast_nullable_to_non_nullable
                       as DateTime?,
             id: null == id
                 ? _value.id
@@ -104,11 +88,7 @@ abstract class _$$AttendanceModelImplCopyWith<$Res>
   ) = __$$AttendanceModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({
-    @TimestampSerializer() DateTime? checkIn,
-    @TimestampSerializer() DateTime? checkOut,
-    String id,
-  });
+  $Res call({@TimestampSerializer() DateTime? date, String id});
 }
 
 /// @nodoc
@@ -124,20 +104,12 @@ class __$$AttendanceModelImplCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? checkIn = freezed,
-    Object? checkOut = freezed,
-    Object? id = null,
-  }) {
+  $Res call({Object? date = freezed, Object? id = null}) {
     return _then(
       _$AttendanceModelImpl(
-        checkIn: freezed == checkIn
-            ? _value.checkIn
-            : checkIn // ignore: cast_nullable_to_non_nullable
-                  as DateTime?,
-        checkOut: freezed == checkOut
-            ? _value.checkOut
-            : checkOut // ignore: cast_nullable_to_non_nullable
+        date: freezed == date
+            ? _value.date
+            : date // ignore: cast_nullable_to_non_nullable
                   as DateTime?,
         id: null == id
             ? _value.id
@@ -152,28 +124,21 @@ class __$$AttendanceModelImplCopyWithImpl<$Res>
 
 @JsonSerializable(explicitToJson: true)
 class _$AttendanceModelImpl implements _AttendanceModel {
-  _$AttendanceModelImpl({
-    @TimestampSerializer() this.checkIn,
-    @TimestampSerializer() this.checkOut,
-    this.id = '',
-  });
+  _$AttendanceModelImpl({@TimestampSerializer() this.date, this.id = ''});
 
   factory _$AttendanceModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$AttendanceModelImplFromJson(json);
 
   @override
   @TimestampSerializer()
-  DateTime? checkIn;
-  @override
-  @TimestampSerializer()
-  DateTime? checkOut;
+  DateTime? date;
   @override
   @JsonKey()
   String id;
 
   @override
   String toString() {
-    return 'AttendanceModel(checkIn: $checkIn, checkOut: $checkOut, id: $id)';
+    return 'AttendanceModel(date: $date, id: $id)';
   }
 
   /// Create a copy of AttendanceModel
@@ -194,25 +159,17 @@ class _$AttendanceModelImpl implements _AttendanceModel {
 }
 
 abstract class _AttendanceModel implements AttendanceModel {
-  factory _AttendanceModel({
-    @TimestampSerializer() DateTime? checkIn,
-    @TimestampSerializer() DateTime? checkOut,
-    String id,
-  }) = _$AttendanceModelImpl;
+  factory _AttendanceModel({@TimestampSerializer() DateTime? date, String id}) =
+      _$AttendanceModelImpl;
 
   factory _AttendanceModel.fromJson(Map<String, dynamic> json) =
       _$AttendanceModelImpl.fromJson;
 
   @override
   @TimestampSerializer()
-  DateTime? get checkIn;
+  DateTime? get date;
   @TimestampSerializer()
-  set checkIn(DateTime? value);
-  @override
-  @TimestampSerializer()
-  DateTime? get checkOut;
-  @TimestampSerializer()
-  set checkOut(DateTime? value);
+  set date(DateTime? value);
   @override
   String get id;
   set id(String value);

@@ -37,7 +37,7 @@ class CheckDialog extends StatelessWidget {
       final docRef = _firebaseFirestore.userAttendance.doc();
       final attendance = AttendanceModel(
         id: docRef.id,
-        checkIn: DateTime.now(),
+        date: DateTime.now(),
       );
       docRef.set(attendance);
     } else if (context.mounted) {

@@ -7,8 +7,7 @@ part 'attendance_model.g.dart';
 class AttendanceModel with _$AttendanceModel {
   @JsonSerializable(explicitToJson: true)
   factory AttendanceModel({
-    @TimestampSerializer() DateTime? checkIn,
-    @TimestampSerializer() DateTime? checkOut,
+    @TimestampSerializer() DateTime? date,
     @Default('') String id,
   }) = _AttendanceModel;
 
