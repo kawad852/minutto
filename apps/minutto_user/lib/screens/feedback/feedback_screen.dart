@@ -1,4 +1,4 @@
-import 'package:minutto_user/shared.dart';
+import 'package:minutto_user/minutto_user.dart';
 import 'package:shared/shared.dart';
 
 class FeedbackScreen extends StatefulWidget {
@@ -22,11 +22,11 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
       ),
       bottomNavigationBar: widget.feedBackType == FeedBackType.rewards
           ? BottomButton(
-             onPressed: () {
-              context.navigate((context) => const FeedbackInputScreen());
-            },
-            title: context.appLocalization.requestForExpenseAllowance,
-          )
+              onPressed: () {
+                context.navigate((context) => const FeedbackInputScreen());
+              },
+              title: context.appLocalization.requestForExpenseAllowance,
+            )
           : null,
       body: ListView.separated(
         separatorBuilder: (context, index) => const SizedBox(height: 15),

@@ -175,7 +175,7 @@ async function notifyAdminsOnCreate(collection, docData) {
       const tokens = adminData.deviceTokens || [];
 
       await sendToTokens(tokens, title, body, {
-        type: collection.toUpperCase(),
+        type: collection,
         id: String(requestId || ""),
         companyId: String(companyId || ""),
         role: "admin",

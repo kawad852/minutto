@@ -1,16 +1,14 @@
-import 'package:minutto_user/shared.dart';
+import 'package:minutto_user/minutto_user.dart';
 import 'package:shared/shared.dart';
 
 class RequestManagementDetailsScreen extends StatefulWidget {
   const RequestManagementDetailsScreen({super.key});
 
   @override
-  State<RequestManagementDetailsScreen> createState() =>
-      _RequestManagementDetailsScreenState();
+  State<RequestManagementDetailsScreen> createState() => _RequestManagementDetailsScreenState();
 }
 
-class _RequestManagementDetailsScreenState
-    extends State<RequestManagementDetailsScreen> {
+class _RequestManagementDetailsScreenState extends State<RequestManagementDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

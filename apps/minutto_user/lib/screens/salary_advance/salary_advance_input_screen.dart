@@ -1,4 +1,4 @@
-import 'package:minutto_user/shared.dart';
+import 'package:minutto_user/minutto_user.dart';
 import 'package:shared/shared.dart';
 
 class SalaryAdvanceInputScreen extends StatefulWidget {
@@ -63,7 +63,7 @@ class _SalaryAdvanceInputScreenState extends State<SalaryAdvanceInputScreen> {
           _onSubmit(context);
         },
         title: context.appLocalization.send,
-      ), 
+      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: Form(

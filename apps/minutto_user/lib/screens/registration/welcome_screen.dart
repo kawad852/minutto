@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:minutto_user/shared.dart';
+import 'package:minutto_user/minutto_user.dart';
 import 'package:shared/shared.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -37,18 +37,18 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   PageRouteBuilder(
                     pageBuilder: (context, animation, secondaryAnimation) => const LoginScreen(),
                     transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                          const begin = Offset.zero;
-                          const end = Offset(0.0, 0.0);
-                          const curve = Curves.ease;
-                          var tween = Tween(
-                            begin: begin,
-                            end: end,
-                          ).chain(CurveTween(curve: curve));
-                          return SlideTransition(
-                            position: animation.drive(tween),
-                            child: child,
-                          );
-                        },
+                      const begin = Offset.zero;
+                      const end = Offset(0.0, 0.0);
+                      const curve = Curves.ease;
+                      var tween = Tween(
+                        begin: begin,
+                        end: end,
+                      ).chain(CurveTween(curve: curve));
+                      return SlideTransition(
+                        position: animation.drive(tween),
+                        child: child,
+                      );
+                    },
                   ),
                   (route) => false,
                 );

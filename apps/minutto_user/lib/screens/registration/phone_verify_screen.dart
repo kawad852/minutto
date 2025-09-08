@@ -1,5 +1,5 @@
+import 'package:minutto_user/minutto_user.dart';
 import 'package:minutto_user/screens/registration/widgets/otp_timer.dart';
-import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
 class PhoneVerifyScreen extends StatefulWidget {

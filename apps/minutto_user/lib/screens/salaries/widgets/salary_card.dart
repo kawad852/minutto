@@ -1,4 +1,4 @@
-import 'package:minutto_user/shared.dart';
+import 'package:minutto_user/minutto_user.dart';
 import 'package:shared/shared.dart';
 
 class SalaryCard extends StatelessWidget {

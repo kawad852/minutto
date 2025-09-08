@@ -1,4 +1,4 @@
-import 'package:minutto_user/shared.dart';
+import 'package:minutto_user/minutto_user.dart';
 import 'package:shared/shared.dart';
 
 class EmploymentContractsScreen extends StatefulWidget {
@@ -72,7 +72,8 @@ class _EmploymentContractsScreenState extends State<EmploymentContractsScreen> {
                   ),
                 ),
                 ListView.separated(
-                  separatorBuilder: (context, index) => Divider(color: context.colorPalette.greyEAE),
+                  separatorBuilder: (context, index) =>
+                      Divider(color: context.colorPalette.greyEAE),
                   itemCount: 20,
                   physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,

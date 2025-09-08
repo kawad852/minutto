@@ -3,14 +3,15 @@ import 'dart:io' show Platform;
 
 import 'package:shared/shared.dart';
 
-import 'notification_route_handler.dart';
-
 class CloudMessagingService {
   final BuildContext context;
 
   CloudMessagingService(this.context);
 
-  void requestPermission(BuildContext context) async {
+  void requestPermission(
+    BuildContext context, {
+    required Function(BuildContext context, Map<dynamic, dynamic>?) onCall,
+  }) async {
     await FirebaseMessaging.instance
         .requestPermission()
         .then((value) async {
@@ -20,13 +21,16 @@ class CloudMessagingService {
         })
         .then((onValue) {
           if (context.mounted) {
-            _init(context);
+            _init(context, onCall: onCall);
           }
         });
   }
 
-  Future<void> _init(BuildContext context) async {
-    await LocalNotificationsService(context).initialize();
+  Future<void> _init(
+    BuildContext context, {
+    required Function(BuildContext context, Map<dynamic, dynamic>?) onCall,
+  }) async {
+    await LocalNotificationsService(context).initialize(onCall: onCall);
 
     if (context.mounted) {
       context.userProvider.updateDeviceToken(context);
@@ -41,10 +45,12 @@ class CloudMessagingService {
     RemoteMessage? initialMessage = await FirebaseMessaging.instance.getInitialMessage();
 
     if (initialMessage != null) {
-      _handleBackgroundMessage(initialMessage);
+      _handleBackgroundMessage(initialMessage, onCall: onCall);
     }
 
-    FirebaseMessaging.onMessageOpenedApp.listen(_handleBackgroundMessage);
+    FirebaseMessaging.onMessageOpenedApp.listen((m) {
+      _handleBackgroundMessage(m, onCall: onCall);
+    });
   }
 
   void _handleLocalMessage(BuildContext context, RemoteMessage? message) {
@@ -55,15 +61,16 @@ class CloudMessagingService {
     LocalNotificationsService(context).display(context, message!);
   }
 
-  void _handleBackgroundMessage(RemoteMessage message) {
+  void _handleBackgroundMessage(
+    RemoteMessage message, {
+    required Function(BuildContext context, Map<dynamic, dynamic>?) onCall,
+  }) {
     final data = message.notification;
     debugPrint(
       "ReceivedNotification::\nType:: Background\nTitle:: ${data?.title}\nBody:: ${data?.body}\nData:: ${message.data}",
     );
     final dataJson = message.data;
-    final id = dataJson["id"];
-    final type = dataJson["type"];
-    NotificationRouteHandler.toggle(context, id: id, type: type);
+    onCall(rootNavigatorKey.currentContext!, dataJson);
   }
 
   void subscribeToTopic(String value) {

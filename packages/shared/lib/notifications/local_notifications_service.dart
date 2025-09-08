@@ -3,8 +3,6 @@ import 'dart:developer';
 import 'package:http/http.dart' as http;
 import 'package:shared/shared.dart';
 
-import 'notification_route_handler.dart';
-
 class LocalNotificationsService {
   final BuildContext context;
 
@@ -13,7 +11,9 @@ class LocalNotificationsService {
   final FlutterLocalNotificationsPlugin _flutterLocalNotificationsPlugin =
       FlutterLocalNotificationsPlugin();
 
-  Future<void> initialize() async {
+  Future<void> initialize({
+    required Function(BuildContext context, Map<dynamic, dynamic>?) onCall,
+  }) async {
     const initializationSettings = InitializationSettings(
       android: AndroidInitializationSettings('@drawable/ic_launcher'),
       iOS: DarwinInitializationSettings(
@@ -27,9 +27,7 @@ class LocalNotificationsService {
       onDidReceiveNotificationResponse: (message) {
         if (message.payload != null && message.payload!.isNotEmpty) {
           Map<String, dynamic> data = json.decode(message.payload!);
-          final id = data["id"];
-          final type = data["type"];
-          NotificationRouteHandler.toggle(context, id: id, type: type);
+          onCall(context, data);
         }
       },
     );

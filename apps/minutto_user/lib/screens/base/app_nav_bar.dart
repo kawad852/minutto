@@ -1,5 +1,7 @@
-import 'package:minutto_user/shared.dart';
+import 'package:minutto_user/minutto_user.dart';
 import 'package:shared/shared.dart';
+
+import '../../helper/notification_route_handler.dart';
 
 class AppNavBar extends StatefulWidget {
   const AppNavBar({super.key});
@@ -38,7 +40,12 @@ class _AppNavBarState extends State<AppNavBar> {
   void initState() {
     super.initState();
     _cloudMessagingService = CloudMessagingService(rootNavigatorKey.currentContext!);
-    _cloudMessagingService.requestPermission(context);
+    _cloudMessagingService.requestPermission(
+      context,
+      onCall: (BuildContext context, Map<dynamic, dynamic>? extra) {
+        NotificationRouteHandler.toggle(context, extra: extra);
+      },
+    );
     _pageController = PageController(initialPage: _currentIndex);
     CacheService.instance.fetchCompany();
     CacheService.instance.fetchShift();

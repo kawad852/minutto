@@ -128,4 +128,10 @@ extension FireConvertors on CollectionReference {
     fromFirestore: (snapshot, _) => AttendanceModel.fromJson(snapshot.data()!),
     toFirestore: (snapshot, _) => snapshot.toJson(),
   );
+
+  CollectionReference<NotificationModel> get notificationConvertor =>
+      withConverter<NotificationModel>(
+        fromFirestore: (snapshot, _) => NotificationModel.fromJson(snapshot.data()!),
+        toFirestore: (snapshot, _) => snapshot.toJson(),
+      );
 }

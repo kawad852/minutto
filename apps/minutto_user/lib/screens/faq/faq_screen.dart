@@ -1,5 +1,5 @@
 import 'package:flutter_svg_provider/flutter_svg_provider.dart' as sv;
-import 'package:minutto_user/shared.dart';
+import 'package:minutto_user/minutto_user.dart';
 import 'package:shared/shared.dart';
 
 class FAQScreen extends StatefulWidget {

@@ -1,4 +1,4 @@
-import 'package:minutto_user/shared.dart';
+import 'package:minutto_user/minutto_user.dart';
 import 'package:shared/shared.dart';
 
 class LeavesCard extends StatelessWidget {
@@ -28,9 +28,7 @@ class LeavesCard extends StatelessWidget {
             title: context.appLocalization.total,
             value: total,
             color: context.colorPalette.green47A,
-            unit: isMonthly
-                ? context.appLocalization.hour
-                : context.appLocalization.day,
+            unit: isMonthly ? context.appLocalization.hour : context.appLocalization.day,
           ),
           SizedBox(
             height: 55,
@@ -44,9 +42,7 @@ class LeavesCard extends StatelessWidget {
           ReportTile(
             title: context.appLocalization.taken,
             value: taken,
-            unit: isMonthly
-                ? context.appLocalization.hour
-                : context.appLocalization.day,
+            unit: isMonthly ? context.appLocalization.hour : context.appLocalization.day,
           ),
           SizedBox(
             height: 55,
@@ -60,9 +56,7 @@ class LeavesCard extends StatelessWidget {
           ReportTile(
             title: context.appLocalization.residual,
             value: rest,
-            unit: isMonthly
-                ? context.appLocalization.hour
-                : context.appLocalization.day,
+            unit: isMonthly ? context.appLocalization.hour : context.appLocalization.day,
           ),
         ],
       ),

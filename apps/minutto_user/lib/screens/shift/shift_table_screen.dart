@@ -1,5 +1,5 @@
+import 'package:minutto_user/minutto_user.dart';
 import 'package:minutto_user/screens/shift/widgets/shift_card.dart';
-import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
 class ShiftTableScreen extends StatefulWidget {

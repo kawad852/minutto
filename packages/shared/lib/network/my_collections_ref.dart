@@ -78,4 +78,9 @@ extension CollectionReferenceExtension on FirebaseFirestore {
       .doc(id ?? MySharedPreferences.user!.id)
       .collection(MyCollections.attendances)
       .attendanceConvertor;
+
+  CollectionReference<NotificationModel> get userNotifications => users
+      .doc(MySharedPreferences.user!.id)
+      .collection(MyCollections.notifications)
+      .notificationConvertor;
 }

@@ -1,5 +1,5 @@
+import 'package:minutto_user/minutto_user.dart';
 import 'package:minutto_user/screens/attendance/widgets/attendance_expansion.dart';
-import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
 class EmployeeAttendanceCard extends StatelessWidget {
