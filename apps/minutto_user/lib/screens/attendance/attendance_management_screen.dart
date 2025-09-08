@@ -75,7 +75,7 @@ class _AttendanceManagementScreenState extends State<AttendanceManagementScreen>
                 itemBuilder: (context, index) {
                   final user = users[index];
                   return EmployeeAttendanceCard(
-                    // key: ValueKey("$_selectedDate$_selectedBranchId"),
+                    key: ValueKey(user.id),
                     user: user,
                     date: _selectedDate,
                   );

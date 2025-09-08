@@ -73,6 +73,18 @@ class _AttendanceExpansionState extends State<AttendanceExpansion> {
   }
 
   @override
+  void didUpdateWidget(covariant AttendanceExpansion oldWidget) {
+    if (oldWidget.date.day != widget.date.day ||
+        oldWidget.date.month != widget.date.month ||
+        oldWidget.date.year != widget.date.year) {
+      setState(() {
+        _initialize();
+      });
+    }
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
   Widget build(BuildContext context) {
     final style = TextStyle(
       color: context.colorPalette.blue475,
