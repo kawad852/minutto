@@ -31,7 +31,9 @@ class _HomeHeaderState extends State<HomeHeader> {
                     onTap: () {
                       Navigator.pop(context, e);
                     },
-                    title: Text(e == AttendanceEnum.breakIn ? "Break" : "Checkout"),
+                    title: Text(
+                      e == AttendanceEnum.breakIn ? "Break" : "Checkout",
+                    ),
                   );
                 }).toList(),
               ),
