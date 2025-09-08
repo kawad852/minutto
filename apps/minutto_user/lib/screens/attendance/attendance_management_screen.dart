@@ -56,7 +56,7 @@ class _AttendanceManagementScreenState extends State<AttendanceManagementScreen>
               },
             ),
             CustomCalender(
-              key: ValueKey(_selectedDate),
+              key: ValueKey("${_selectedDate.month}${_selectedDate.year}"),
               date: _selectedDate,
               warpContainer: true,
               onChanged: (value) {

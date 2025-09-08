@@ -18,6 +18,7 @@ class CustomCalender extends StatefulWidget {
 
 class _CustomCalenderState extends State<CustomCalender> {
   late DateTime _selectedDate;
+  late ScrollController _scrollController;
 
   List<DateTime> get _days {
     final firstDay = DateTime(widget.date.year, widget.date.month, 1);
@@ -35,6 +36,32 @@ class _CustomCalenderState extends State<CustomCalender> {
   void initState() {
     super.initState();
     _selectedDate = widget.date;
+    _scrollController = ScrollController();
+    Future.microtask(() {
+      _jumpToToday();
+    });
+  }
+
+  void _jumpToToday() {
+    final i = _selectedDate.day - 1;
+    const itemW = 50.0;
+    const sepW = 13.0;
+    const padL = 0.0;
+
+    final offset = padL + i * (itemW + sepW);
+
+    _scrollController.jumpTo(
+      offset.clamp(
+        _scrollController.position.minScrollExtent,
+        _scrollController.position.maxScrollExtent,
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
 
   @override
@@ -45,6 +72,7 @@ class _CustomCalenderState extends State<CustomCalender> {
         color: widget.warpContainer ? context.colorPalette.greyF9F : Colors.transparent,
       ),
       child: ListView.separated(
+        controller: _scrollController,
         separatorBuilder: (context, index) => const SizedBox(width: 13),
         itemCount: _days.length,
         scrollDirection: Axis.horizontal,
@@ -52,6 +80,7 @@ class _CustomCalenderState extends State<CustomCalender> {
           final date = _days[index];
           final selected = _selectedDate.day == date.day;
           return GestureDetector(
+            // key: _globalKeys[index],
             onTap: () {
               setState(() {
                 _selectedDate = date;
