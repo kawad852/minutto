@@ -21,7 +21,10 @@ class _AttendanceManagementScreenState extends State<AttendanceManagementScreen>
 
   @override
   Widget build(BuildContext context) {
-    final users = MyStorage.users.where((e) => e.branchId == _selectedBranchId).toList();
+    final users = MyStorage.users.where((e) {
+      if (_selectedBranchId == null) return true;
+      return e.branchId == _selectedBranchId;
+    }).toList();
     return Scaffold(
       appBar: AppBar(
         surfaceTintColor: Colors.transparent,
@@ -65,21 +68,20 @@ class _AttendanceManagementScreenState extends State<AttendanceManagementScreen>
                 });
               },
             ),
-            if (_selectedBranchId != null)
-              Expanded(
-                child: ListView.separated(
-                  separatorBuilder: (context, index) => const SizedBox(height: 12),
-                  itemCount: users.length,
-                  itemBuilder: (context, index) {
-                    final user = users[index];
-                    return EmployeeAttendanceCard(
-                      // key: ValueKey("$_selectedDate$_selectedBranchId"),
-                      user: user,
-                      date: _selectedDate,
-                    );
-                  },
-                ),
+            Expanded(
+              child: ListView.separated(
+                separatorBuilder: (context, index) => const SizedBox(height: 12),
+                itemCount: users.length,
+                itemBuilder: (context, index) {
+                  final user = users[index];
+                  return EmployeeAttendanceCard(
+                    // key: ValueKey("$_selectedDate$_selectedBranchId"),
+                    user: user,
+                    date: _selectedDate,
+                  );
+                },
               ),
+            ),
           ],
         ),
       ),
