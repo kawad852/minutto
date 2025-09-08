@@ -13,6 +13,7 @@ class VersionModel with _$VersionModel {
     @Default(0) int departmentsVersion,
     @Default(0) int usersVersion,
     @Default(0) int citiesVersion,
+    @Default(0) int shiftsVersion,
   }) = _VersionModel;
 
   factory VersionModel.fromJson(Map<String, dynamic> json) => _$VersionModelFromJson(json);

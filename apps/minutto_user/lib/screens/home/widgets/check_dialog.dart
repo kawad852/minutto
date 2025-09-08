@@ -38,8 +38,7 @@ class CheckDialog extends StatelessWidget {
     required DateTime checkIn,
   }) {
     final policy = MySharedPreferences.company!.attendancePolicy!;
-    final user = MySharedPreferences.user!;
-    final shift = MyStorage.shifts.firstWhere((e) => e.id == user.shiftId);
+    final shift = MySharedPreferences.shift!;
 
     // if shift has specific days assigned, skip if today is not included
     if (shift.days.isNotEmpty && !shift.days.contains(checkIn.weekday)) {

@@ -29,6 +29,8 @@ mixin _$VersionModel {
   set usersVersion(int value) => throw _privateConstructorUsedError;
   int get citiesVersion => throw _privateConstructorUsedError;
   set citiesVersion(int value) => throw _privateConstructorUsedError;
+  int get shiftsVersion => throw _privateConstructorUsedError;
+  set shiftsVersion(int value) => throw _privateConstructorUsedError;
 
   /// Serializes this VersionModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -52,6 +54,7 @@ abstract class $VersionModelCopyWith<$Res> {
     int departmentsVersion,
     int usersVersion,
     int citiesVersion,
+    int shiftsVersion,
   });
 }
 
@@ -74,6 +77,7 @@ class _$VersionModelCopyWithImpl<$Res, $Val extends VersionModel>
     Object? departmentsVersion = null,
     Object? usersVersion = null,
     Object? citiesVersion = null,
+    Object? shiftsVersion = null,
   }) {
     return _then(
       _value.copyWith(
@@ -92,6 +96,10 @@ class _$VersionModelCopyWithImpl<$Res, $Val extends VersionModel>
             citiesVersion: null == citiesVersion
                 ? _value.citiesVersion
                 : citiesVersion // ignore: cast_nullable_to_non_nullable
+                      as int,
+            shiftsVersion: null == shiftsVersion
+                ? _value.shiftsVersion
+                : shiftsVersion // ignore: cast_nullable_to_non_nullable
                       as int,
           )
           as $Val,
@@ -113,6 +121,7 @@ abstract class _$$VersionModelImplCopyWith<$Res>
     int departmentsVersion,
     int usersVersion,
     int citiesVersion,
+    int shiftsVersion,
   });
 }
 
@@ -134,6 +143,7 @@ class __$$VersionModelImplCopyWithImpl<$Res>
     Object? departmentsVersion = null,
     Object? usersVersion = null,
     Object? citiesVersion = null,
+    Object? shiftsVersion = null,
   }) {
     return _then(
       _$VersionModelImpl(
@@ -153,6 +163,10 @@ class __$$VersionModelImplCopyWithImpl<$Res>
             ? _value.citiesVersion
             : citiesVersion // ignore: cast_nullable_to_non_nullable
                   as int,
+        shiftsVersion: null == shiftsVersion
+            ? _value.shiftsVersion
+            : shiftsVersion // ignore: cast_nullable_to_non_nullable
+                  as int,
       ),
     );
   }
@@ -167,6 +181,7 @@ class _$VersionModelImpl implements _VersionModel {
     this.departmentsVersion = 0,
     this.usersVersion = 0,
     this.citiesVersion = 0,
+    this.shiftsVersion = 0,
   });
 
   factory _$VersionModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -184,10 +199,13 @@ class _$VersionModelImpl implements _VersionModel {
   @override
   @JsonKey()
   int citiesVersion;
+  @override
+  @JsonKey()
+  int shiftsVersion;
 
   @override
   String toString() {
-    return 'VersionModel(branchesVersion: $branchesVersion, departmentsVersion: $departmentsVersion, usersVersion: $usersVersion, citiesVersion: $citiesVersion)';
+    return 'VersionModel(branchesVersion: $branchesVersion, departmentsVersion: $departmentsVersion, usersVersion: $usersVersion, citiesVersion: $citiesVersion, shiftsVersion: $shiftsVersion)';
   }
 
   /// Create a copy of VersionModel
@@ -210,6 +228,7 @@ abstract class _VersionModel implements VersionModel {
     int departmentsVersion,
     int usersVersion,
     int citiesVersion,
+    int shiftsVersion,
   }) = _$VersionModelImpl;
 
   factory _VersionModel.fromJson(Map<String, dynamic> json) =
@@ -227,6 +246,9 @@ abstract class _VersionModel implements VersionModel {
   @override
   int get citiesVersion;
   set citiesVersion(int value);
+  @override
+  int get shiftsVersion;
+  set shiftsVersion(int value);
 
   /// Create a copy of VersionModel
   /// with the given fields replaced by the non-null parameter values.

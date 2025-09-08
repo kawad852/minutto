@@ -12,6 +12,7 @@ _$VersionModelImpl _$$VersionModelImplFromJson(Map<String, dynamic> json) =>
       departmentsVersion: (json['departmentsVersion'] as num?)?.toInt() ?? 0,
       usersVersion: (json['usersVersion'] as num?)?.toInt() ?? 0,
       citiesVersion: (json['citiesVersion'] as num?)?.toInt() ?? 0,
+      shiftsVersion: (json['shiftsVersion'] as num?)?.toInt() ?? 0,
     );
 
 Map<String, dynamic> _$$VersionModelImplToJson(_$VersionModelImpl instance) =>
@@ -20,4 +21,5 @@ Map<String, dynamic> _$$VersionModelImplToJson(_$VersionModelImpl instance) =>
       'departmentsVersion': instance.departmentsVersion,
       'usersVersion': instance.usersVersion,
       'citiesVersion': instance.citiesVersion,
+      'shiftsVersion': instance.shiftsVersion,
     };
