@@ -42,11 +42,12 @@ class _SalaryManagementScreenState extends State<SalaryManagementScreen> {
                 value: null,
               ),
             ),
-            ReportDate(),
+            ReportDate(
+              onChanged: (value) {},
+            ),
             Expanded(
               child: ListView.separated(
-                separatorBuilder: (context, index) =>
-                    const SizedBox(height: 10),
+                separatorBuilder: (context, index) => const SizedBox(height: 10),
                 itemCount: 3,
                 itemBuilder: (context, index) {
                   return EmployeeCard();

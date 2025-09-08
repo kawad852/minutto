@@ -239,6 +239,10 @@ class _StaffInputScreenState extends State<StaffInputScreen> {
                                   value: _user.departmentId.isEmpty ? null : _user.departmentId,
                                 ),
                               ),
+                              BranchEditor(
+                                value: _user.branchId,
+                                onChanged: (value) => _user.branchId = value!,
+                              ),
                               WidgetTitle(
                                 title: context.appLocalization.branch,
                                 child: DropDownEditor<String>(

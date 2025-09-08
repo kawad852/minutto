@@ -1,7 +1,40 @@
 import 'package:shared/shared.dart';
 
-class ReportDate extends StatelessWidget {
-  const ReportDate({super.key});
+class ReportDate extends StatefulWidget {
+  final ValueChanged<DateTime> onChanged;
+
+  const ReportDate({
+    super.key,
+    required this.onChanged,
+  });
+
+  @override
+  State<ReportDate> createState() => _ReportDateState();
+}
+
+class _ReportDateState extends State<ReportDate> {
+  late DateTime _selectedDate;
+  final now = DateTime.now();
+
+  DateTime get _getDate {
+    return _selectedDate.copyWith(
+      microsecond: 0,
+      millisecond: 0,
+      second: 0,
+      minute: 0,
+      hour: 0,
+      day: 1,
+    );
+  }
+
+  void _onChanged() => widget.onChanged(_selectedDate);
+
+  @override
+  void initState() {
+    super.initState();
+    _selectedDate = now;
+    _selectedDate = _getDate;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +51,14 @@ class ReportDate extends StatelessWidget {
           child: Row(
             children: [
               IconButton(
-                onPressed: () {},
+                onPressed: _selectedDate.month < 12 && now.month != _selectedDate.month
+                    ? () {
+                        setState(() {
+                          _selectedDate = _getDate.copyWith(month: _getDate.month + 1);
+                        });
+                        _onChanged();
+                      }
+                    : null,
                 icon: Icon(
                   Icons.arrow_back_ios_new_rounded,
                   size: 20,
@@ -26,7 +66,7 @@ class ReportDate extends StatelessWidget {
               ),
               Expanded(
                 child: Text(
-                  "إبريل 2023",
+                  _selectedDate.mmmD,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -37,7 +77,12 @@ class ReportDate extends StatelessWidget {
                 ),
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  setState(() {
+                    _selectedDate = _getDate.copyWith(month: _getDate.month - 1);
+                  });
+                  _onChanged();
+                },
                 icon: Icon(
                   Icons.arrow_forward_ios_rounded,
                   size: 20,

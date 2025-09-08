@@ -237,6 +237,7 @@ export 'widgets/custom_switch.dart';
 export 'widgets/custom_text_field.dart';
 export 'widgets/date_range_card.dart';
 export 'widgets/editors/base_editor.dart';
+export 'widgets/editors/branch_editor.dart';
 export 'widgets/editors/branches_editor.dart';
 export 'widgets/editors/date_editor.dart';
 export 'widgets/editors/day_time_editor.dart';

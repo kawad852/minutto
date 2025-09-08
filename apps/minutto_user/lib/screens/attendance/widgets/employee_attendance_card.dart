@@ -4,10 +4,12 @@ import 'package:shared/shared.dart';
 
 class EmployeeAttendanceCard extends StatelessWidget {
   final UserModel user;
+  final DateTime date;
 
   const EmployeeAttendanceCard({
     super.key,
     required this.user,
+    required this.date,
   });
 
   @override
@@ -33,6 +35,7 @@ class EmployeeAttendanceCard extends StatelessWidget {
             ),
             AttendanceExpansion(
               userId: user.id,
+              date: date,
             ),
           ],
         ),

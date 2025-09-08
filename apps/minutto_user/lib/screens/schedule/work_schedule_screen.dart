@@ -22,7 +22,11 @@ class _WorkScheduleScreenState extends State<WorkScheduleScreen> {
           spacing: 15,
           children: [
             DateRangeCard(),
-            CustomCalender(warpContainer: true),
+            CustomCalender(
+              warpContainer: true,
+              date: DateTime.now(),
+              onChanged: (value) {},
+            ),
             Expanded(
               child: ListView.separated(
                 separatorBuilder: (context, index) => const SizedBox(height: 12),

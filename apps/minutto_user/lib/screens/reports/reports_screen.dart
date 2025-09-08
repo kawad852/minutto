@@ -16,7 +16,9 @@ class _ReportsScreenState extends State<ReportsScreen> {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         children: [
-          ReportDate(),
+          ReportDate(
+            onChanged: (value) {},
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),
             child: Row(

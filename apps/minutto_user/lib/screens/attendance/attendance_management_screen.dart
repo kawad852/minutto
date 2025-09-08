@@ -9,10 +9,19 @@ class AttendanceManagementScreen extends StatefulWidget {
 }
 
 class _AttendanceManagementScreenState extends State<AttendanceManagementScreen> {
-  String? _branchId, _date;
+  String? _selectedBranchId;
+  late DateTime _selectedDate;
+
+  @override
+  void initState() {
+    super.initState();
+    final now = DateTime.now();
+    _selectedDate = now;
+  }
 
   @override
   Widget build(BuildContext context) {
+    final users = MyStorage.users.where((e) => e.branchId == _selectedBranchId).toList();
     return Scaffold(
       appBar: AppBar(
         surfaceTintColor: Colors.transparent,
@@ -31,32 +40,46 @@ class _AttendanceManagementScreenState extends State<AttendanceManagementScreen>
           spacing: 20,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            WidgetTitle(
-              title: context.appLocalization.branch,
-              child: DropDownEditor<String>(
-                items: [
-                  DropdownMenuItem(value: 'سوريا', child: Text('سوريا')),
-                  DropdownMenuItem(value: 'الاردن', child: Text('الاردن')),
-                ],
-                onChanged: (value) {},
-                title: context.appLocalization.choose,
-                value: null,
-              ),
+            BranchEditor(
+              value: _selectedBranchId,
+              onChanged: (value) {
+                setState(() {
+                  _selectedBranchId = value;
+                });
+              },
             ),
-            ReportDate(),
-            CustomCalender(),
-            Expanded(
-              child: ListView.separated(
-                separatorBuilder: (context, index) => const SizedBox(height: 12),
-                itemCount: MyStorage.users.length,
-                itemBuilder: (context, index) {
-                  final user = MyStorage.users[index];
-                  return EmployeeAttendanceCard(
-                    user: user,
-                  );
-                },
-              ),
+            ReportDate(
+              onChanged: (value) {
+                setState(() {
+                  _selectedDate = value;
+                });
+              },
             ),
+            CustomCalender(
+              key: ValueKey(_selectedDate),
+              date: _selectedDate,
+              warpContainer: true,
+              onChanged: (value) {
+                setState(() {
+                  _selectedDate = value;
+                });
+              },
+            ),
+            if (_selectedBranchId != null)
+              Expanded(
+                child: ListView.separated(
+                  separatorBuilder: (context, index) => const SizedBox(height: 12),
+                  itemCount: users.length,
+                  itemBuilder: (context, index) {
+                    final user = users[index];
+                    return EmployeeAttendanceCard(
+                      // key: ValueKey("$_selectedDate$_selectedBranchId"),
+                      user: user,
+                      date: _selectedDate,
+                    );
+                  },
+                ),
+              ),
           ],
         ),
       ),

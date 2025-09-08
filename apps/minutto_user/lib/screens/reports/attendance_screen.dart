@@ -18,7 +18,9 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         children: [
-          ReportDate(),
+          ReportDate(
+            onChanged: (value) {},
+          ),
           ListView.separated(
             separatorBuilder: (context, index) => const SizedBox(height: 13),
             itemCount: 6,

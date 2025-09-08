@@ -28,7 +28,9 @@ class _EmployeeAttendanceScreenState extends State<EmployeeAttendanceScreen> {
           spacing: 20,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ReportDate(),
+            ReportDate(
+              onChanged: (value) {},
+            ),
             Expanded(
               child: ListView.separated(
                 separatorBuilder: (context, index) => const SizedBox(height: 13),
