@@ -10,6 +10,7 @@ class AttendanceModel with _$AttendanceModel {
     @TimestampSerializer() DateTime? createdAt,
     @Default('') String id,
     @Default('') String type,
+    @Default(0) int deductionHours,
   }) = _AttendanceModel;
 
   factory AttendanceModel.fromJson(Map<String, dynamic> json) => _$AttendanceModelFromJson(json);

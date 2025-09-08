@@ -12,6 +12,7 @@ _$AttendanceModelImpl _$$AttendanceModelImplFromJson(
   createdAt: const TimestampSerializer().fromJson(json['createdAt']),
   id: json['id'] as String? ?? '',
   type: json['type'] as String? ?? '',
+  deductionHours: (json['deductionHours'] as num?)?.toInt() ?? 0,
 );
 
 Map<String, dynamic> _$$AttendanceModelImplToJson(
@@ -20,6 +21,7 @@ Map<String, dynamic> _$$AttendanceModelImplToJson(
   'createdAt': const TimestampSerializer().toJson(instance.createdAt),
   'id': instance.id,
   'type': instance.type,
+  'deductionHours': instance.deductionHours,
 };
 
 _$AttendanceSessionImpl _$$AttendanceSessionImplFromJson(

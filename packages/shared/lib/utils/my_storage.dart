@@ -78,4 +78,21 @@ class MyStorage {
     }
     _box.write('branches', jsonEncode(value));
   }
+
+  // === shifts ===
+  static List<ShiftModel> get shifts {
+    final data = _box.read('shifts');
+    if (data != null) {
+      final List<Map<String, dynamic>> list = List<Map<String, dynamic>>.from(jsonDecode(data));
+      return list.map((e) => ShiftModel.fromJson(e)).toList();
+    }
+    return [];
+  }
+
+  static set shifts(List<ShiftModel> value) {
+    for (var e in value) {
+      e.createdAt = null;
+    }
+    _box.write('shifts', jsonEncode(value));
+  }
 }

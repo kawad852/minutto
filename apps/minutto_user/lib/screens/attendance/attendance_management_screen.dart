@@ -30,12 +30,12 @@ class _AttendanceManagementScreenState extends State<AttendanceManagementScreen>
         surfaceTintColor: Colors.transparent,
         centerTitle: false,
         title: Text(context.appLocalization.attendanceAndDepartureReport),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const CustomSvg(MyIcons.searchIcon),
-          ),
-        ],
+        // actions: [
+        //   IconButton(
+        //     onPressed: () {},
+        //     icon: const CustomSvg(MyIcons.searchIcon),
+        //   ),
+        // ],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),

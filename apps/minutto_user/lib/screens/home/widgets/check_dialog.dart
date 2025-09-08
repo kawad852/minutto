@@ -1,4 +1,5 @@
 import 'package:minutto_user/shared.dart';
+import 'package:shared/exports/algolia_exports.dart';
 import 'package:shared/shared.dart';
 
 class CheckDialog extends StatelessWidget {
@@ -33,6 +34,59 @@ class CheckDialog extends StatelessWidget {
     );
   }
 
+  int _calculateLateDeductionHours({
+    required DateTime checkIn,
+  }) {
+    final policy = MySharedPreferences.company!.attendancePolicy!;
+    final user = MySharedPreferences.user!;
+    final shift = MyStorage.shifts.firstWhere((e) => e.id == user.shiftId);
+
+    // if shift has specific days assigned, skip if today is not included
+    if (shift.days.isNotEmpty && !shift.days.contains(checkIn.weekday)) {
+      return 0;
+    }
+
+    // Parse startHour string like "10:10 AM"
+    final timeFormat = DateFormat('hh:mm a');
+    final parsed = timeFormat.parse(shift.startHour);
+
+    // Combine today's date with shift start time
+    final shiftStart = DateTime(
+      checkIn.year,
+      checkIn.month,
+      checkIn.day,
+      parsed.hour,
+      parsed.minute,
+      parsed.second,
+    );
+
+    // Not late or early
+    if (!checkIn.isAfter(shiftStart)) return 0;
+
+    final minutesLate = checkIn.difference(shiftStart).inMinutes;
+    final effectiveLate = policy.lateAfterGrace
+        ? (minutesLate - policy.shiftGraceMinutes).clamp(0, 1 << 30)
+        : minutesLate;
+
+    if (effectiveLate <= 0) return 0;
+
+    // Sort rules by fromMinutes
+    final rules = [...policy.lateDeductionRules]
+      ..sort((a, b) => a.fromMinutes.compareTo(b.fromMinutes));
+
+    // Find first matching rule
+    LateDeductionRuleModel? match;
+    for (final r in rules) {
+      final to = r.toMinutes == 0 ? 1 << 30 : r.toMinutes; // treat 0 as "no upper bound"
+      if (effectiveLate >= r.fromMinutes && effectiveLate <= to) {
+        match = r;
+        break;
+      }
+    }
+
+    return (match?.value ?? 0);
+  }
+
   void _verify({
     required BuildContext context,
     required double distance,
@@ -40,10 +94,12 @@ class CheckDialog extends StatelessWidget {
     if (context.mounted && distance < 20) {
       context.showSnackBar(context.appLocalization.attendanceSuccessMsg);
       final docRef = _firebaseFirestore.userAttendance().doc();
+      final nowDate = DateTime.now();
       final attendance = AttendanceModel(
         id: docRef.id,
-        createdAt: DateTime.now(),
+        createdAt: nowDate,
         type: type,
+        deductionHours: _calculateLateDeductionHours(checkIn: nowDate),
       );
       docRef.set(attendance);
     } else if (context.mounted) {
