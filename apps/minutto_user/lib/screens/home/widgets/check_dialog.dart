@@ -2,13 +2,11 @@ import 'package:minutto_user/shared.dart';
 import 'package:shared/shared.dart';
 
 class CheckDialog extends StatelessWidget {
-  final AttendanceModel? latestAttendance;
-  final bool isBreak;
+  final String type;
 
   const CheckDialog({
     super.key,
-    required this.latestAttendance,
-    required this.isBreak,
+    required this.type,
   });
 
   FirebaseFirestore get _firebaseFirestore => FirebaseFirestore.instance;
@@ -35,15 +33,6 @@ class CheckDialog extends StatelessWidget {
     );
   }
 
-  String get _getAttendanceType {
-    final type = latestAttendance?.type;
-    if (type == AttendanceEnum.breakIn.value) {
-      return AttendanceEnum.breakOut.value;
-    } else {
-      return AttendanceEnum.checkIn.value;
-    }
-  }
-
   void _verify({
     required BuildContext context,
     required double distance,
@@ -54,6 +43,7 @@ class CheckDialog extends StatelessWidget {
       final attendance = AttendanceModel(
         id: docRef.id,
         createdAt: DateTime.now(),
+        type: type,
       );
       docRef.set(attendance);
     } else if (context.mounted) {

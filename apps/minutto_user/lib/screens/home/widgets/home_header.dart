@@ -19,6 +19,28 @@ class _HomeHeaderState extends State<HomeHeader> {
         .snapshots();
   }
 
+  Future<AttendanceEnum?> _showSheet(BuildContext context) {
+    return context
+        .showBottomSheet(
+          builder: (context) {
+            return SafeArea(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [AttendanceEnum.breakIn, AttendanceEnum.checkOut].map((e) {
+                  return ListTile(
+                    onTap: () {
+                      Navigator.pop(context, e);
+                    },
+                    title: Text(e == AttendanceEnum.breakIn ? "Break" : "Checkout"),
+                  );
+                }).toList(),
+              ),
+            );
+          },
+        )
+        .then((value) => value);
+  }
+
   @override
   void initState() {
     super.initState();
@@ -33,7 +55,7 @@ class _HomeHeaderState extends State<HomeHeader> {
     return BlitzBuilder.stream(
       stream: _todayAttendancesStream,
       onComplete: (context, snapshot) {
-        final docs = snapshot.data?.docs;
+        final docs = snapshot.data?.docs ?? [];
         return Container(
           height: 355,
           margin: const EdgeInsets.only(bottom: 15),
@@ -197,18 +219,32 @@ class _HomeHeaderState extends State<HomeHeader> {
                         ),
                       ),
                       InkWell(
-                        onTap: () {
-                          showDialog(
-                            context: context,
-                            builder: (context) {
-                              return CheckDialog(
-                                isBreak: ,
-                                latestAttendance: (docs?.isNotEmpty ?? false)
-                                    ? docs?.first.data()
-                                    : null,
-                              );
-                            },
-                          );
+                        onTap: () async {
+                          late AttendanceEnum attendanceType;
+                          final latestAttendance = docs.isNotEmpty ? docs.first.data() : null;
+                          final type = latestAttendance?.type;
+                          if (type == AttendanceEnum.checkIn.value ||
+                              type == AttendanceEnum.breakOut.value) {
+                            final att = await _showSheet(context);
+                            if (att == null) {
+                              return;
+                            }
+                            attendanceType = att;
+                          } else if (type == AttendanceEnum.breakIn.value) {
+                            attendanceType = AttendanceEnum.breakOut;
+                          } else {
+                            attendanceType = AttendanceEnum.checkIn;
+                          }
+                          if (context.mounted) {
+                            showDialog(
+                              context: context,
+                              builder: (context) {
+                                return CheckDialog(
+                                  type: attendanceType.value,
+                                );
+                              },
+                            );
+                          }
                         },
                         child: CustomSvg(MyIcons.fingerprintScanner),
                       ),
