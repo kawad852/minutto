@@ -72,8 +72,10 @@ extension CollectionReferenceExtension on FirebaseFirestore {
 
   // CollectionReference<AttendanceModel> get attendances =>
   //     collectionGroup(MyCollections.attendances).attendanceConvertor;
-  CollectionReference<AttendanceModel> get userAttendance => users
-      .doc(MySharedPreferences.user!.id)
+  CollectionReference<AttendanceModel> userAttendance({
+    String? id,
+  }) => users
+      .doc(id ?? MySharedPreferences.user!.id)
       .collection(MyCollections.attendances)
       .attendanceConvertor;
 }

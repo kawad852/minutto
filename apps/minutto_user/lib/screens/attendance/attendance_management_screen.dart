@@ -8,8 +8,9 @@ class AttendanceManagementScreen extends StatefulWidget {
   State<AttendanceManagementScreen> createState() => _AttendanceManagementScreenState();
 }
 
-class _AttendanceManagementScreenState
-    extends State<AttendanceManagementScreen> {
+class _AttendanceManagementScreenState extends State<AttendanceManagementScreen> {
+  String? _branchId, _date;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,9 +48,12 @@ class _AttendanceManagementScreenState
             Expanded(
               child: ListView.separated(
                 separatorBuilder: (context, index) => const SizedBox(height: 12),
-                itemCount: 5,
+                itemCount: MyStorage.users.length,
                 itemBuilder: (context, index) {
-                  return EmployeeAttendanceCard();
+                  final user = MyStorage.users[index];
+                  return EmployeeAttendanceCard(
+                    user: user,
+                  );
                 },
               ),
             ),

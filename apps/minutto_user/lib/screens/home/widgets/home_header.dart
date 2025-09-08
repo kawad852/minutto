@@ -14,7 +14,9 @@ class _HomeHeaderState extends State<HomeHeader> {
   late Stream<QuerySnapshot<AttendanceModel>> _todayAttendancesStream;
 
   void _initialize() {
-    _todayAttendancesStream = FirebaseFirestore.instance.userAttendance.orderByCreatedAtDesc
+    _todayAttendancesStream = FirebaseFirestore.instance
+        .userAttendance()
+        .orderByCreatedAtDesc
         .where(DateTime.now().dateFilter())
         .snapshots();
   }

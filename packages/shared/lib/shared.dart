@@ -289,4 +289,5 @@ export 'widgets/selectors/user_and_basket_consumer.dart';
 export 'widgets/selectors/user_selector.dart';
 export 'widgets/shared_container.dart';
 export 'widgets/stretch_button.dart';
+export 'widgets/user_tile.dart';
 export 'widgets/widget_title.dart';

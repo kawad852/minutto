@@ -220,3 +220,214 @@ abstract class _AttendanceModel implements AttendanceModel {
   _$$AttendanceModelImplCopyWith<_$AttendanceModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+AttendanceSession _$AttendanceSessionFromJson(Map<String, dynamic> json) {
+  return _AttendanceSession.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AttendanceSession {
+  String get kind => throw _privateConstructorUsedError;
+  set kind(String value) =>
+      throw _privateConstructorUsedError; // 'work' or 'break'
+  @TimestampSerializer()
+  DateTime get start => throw _privateConstructorUsedError; // 'work' or 'break'
+  @TimestampSerializer()
+  set start(DateTime value) => throw _privateConstructorUsedError;
+  @TimestampSerializer()
+  DateTime? get end => throw _privateConstructorUsedError;
+  @TimestampSerializer()
+  set end(DateTime? value) => throw _privateConstructorUsedError;
+
+  /// Serializes this AttendanceSession to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of AttendanceSession
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $AttendanceSessionCopyWith<AttendanceSession> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AttendanceSessionCopyWith<$Res> {
+  factory $AttendanceSessionCopyWith(
+    AttendanceSession value,
+    $Res Function(AttendanceSession) then,
+  ) = _$AttendanceSessionCopyWithImpl<$Res, AttendanceSession>;
+  @useResult
+  $Res call({
+    String kind,
+    @TimestampSerializer() DateTime start,
+    @TimestampSerializer() DateTime? end,
+  });
+}
+
+/// @nodoc
+class _$AttendanceSessionCopyWithImpl<$Res, $Val extends AttendanceSession>
+    implements $AttendanceSessionCopyWith<$Res> {
+  _$AttendanceSessionCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of AttendanceSession
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? kind = null,
+    Object? start = null,
+    Object? end = freezed,
+  }) {
+    return _then(
+      _value.copyWith(
+            kind: null == kind
+                ? _value.kind
+                : kind // ignore: cast_nullable_to_non_nullable
+                      as String,
+            start: null == start
+                ? _value.start
+                : start // ignore: cast_nullable_to_non_nullable
+                      as DateTime,
+            end: freezed == end
+                ? _value.end
+                : end // ignore: cast_nullable_to_non_nullable
+                      as DateTime?,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$AttendanceSessionImplCopyWith<$Res>
+    implements $AttendanceSessionCopyWith<$Res> {
+  factory _$$AttendanceSessionImplCopyWith(
+    _$AttendanceSessionImpl value,
+    $Res Function(_$AttendanceSessionImpl) then,
+  ) = __$$AttendanceSessionImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    String kind,
+    @TimestampSerializer() DateTime start,
+    @TimestampSerializer() DateTime? end,
+  });
+}
+
+/// @nodoc
+class __$$AttendanceSessionImplCopyWithImpl<$Res>
+    extends _$AttendanceSessionCopyWithImpl<$Res, _$AttendanceSessionImpl>
+    implements _$$AttendanceSessionImplCopyWith<$Res> {
+  __$$AttendanceSessionImplCopyWithImpl(
+    _$AttendanceSessionImpl _value,
+    $Res Function(_$AttendanceSessionImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of AttendanceSession
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? kind = null,
+    Object? start = null,
+    Object? end = freezed,
+  }) {
+    return _then(
+      _$AttendanceSessionImpl(
+        kind: null == kind
+            ? _value.kind
+            : kind // ignore: cast_nullable_to_non_nullable
+                  as String,
+        start: null == start
+            ? _value.start
+            : start // ignore: cast_nullable_to_non_nullable
+                  as DateTime,
+        end: freezed == end
+            ? _value.end
+            : end // ignore: cast_nullable_to_non_nullable
+                  as DateTime?,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$AttendanceSessionImpl implements _AttendanceSession {
+  _$AttendanceSessionImpl({
+    this.kind = '',
+    @TimestampSerializer() required this.start,
+    @TimestampSerializer() this.end,
+  });
+
+  factory _$AttendanceSessionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AttendanceSessionImplFromJson(json);
+
+  @override
+  @JsonKey()
+  String kind;
+  // 'work' or 'break'
+  @override
+  @TimestampSerializer()
+  DateTime start;
+  @override
+  @TimestampSerializer()
+  DateTime? end;
+
+  @override
+  String toString() {
+    return 'AttendanceSession(kind: $kind, start: $start, end: $end)';
+  }
+
+  /// Create a copy of AttendanceSession
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AttendanceSessionImplCopyWith<_$AttendanceSessionImpl> get copyWith =>
+      __$$AttendanceSessionImplCopyWithImpl<_$AttendanceSessionImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AttendanceSessionImplToJson(this);
+  }
+}
+
+abstract class _AttendanceSession implements AttendanceSession {
+  factory _AttendanceSession({
+    String kind,
+    @TimestampSerializer() required DateTime start,
+    @TimestampSerializer() DateTime? end,
+  }) = _$AttendanceSessionImpl;
+
+  factory _AttendanceSession.fromJson(Map<String, dynamic> json) =
+      _$AttendanceSessionImpl.fromJson;
+
+  @override
+  String get kind;
+  set kind(String value); // 'work' or 'break'
+  @override
+  @TimestampSerializer()
+  DateTime get start; // 'work' or 'break'
+  @TimestampSerializer()
+  set start(DateTime value);
+  @override
+  @TimestampSerializer()
+  DateTime? get end;
+  @TimestampSerializer()
+  set end(DateTime? value);
+
+  /// Create a copy of AttendanceSession
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AttendanceSessionImplCopyWith<_$AttendanceSessionImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
