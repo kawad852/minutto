@@ -7,7 +7,7 @@ part 'request_model.g.dart';
 class RequestModel with _$RequestModel {
   @JsonSerializable(explicitToJson: true)
   factory RequestModel({
-    @TimestampSerializer() required DateTime createdAt,
+    @TimestampSerializer() DateTime? createdAt,
     @TimestampSerializer() DateTime? statusChangedAt,
     @TimestampSerializer() DateTime? fromDate,
     @TimestampSerializer() DateTime? toDate,

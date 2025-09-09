@@ -24,11 +24,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     RequestBubble(
                       title: context.appLocalization.leaving,
-                      value: "1/4 ",
+                      value: "4",
                     ),
                     RequestBubble(
                       title: context.appLocalization.leaveAbsence,
-                      value: "0/2 ",
+                      value: "2",
                     ),
                   ],
                 ),

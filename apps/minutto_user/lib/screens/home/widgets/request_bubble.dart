@@ -3,6 +3,7 @@ import 'package:shared/shared.dart';
 class RequestBubble extends StatelessWidget {
   final String title, value;
   final bool isProfle;
+
   const RequestBubble({
     super.key,
     required this.title,
@@ -28,9 +29,7 @@ class RequestBubble extends StatelessWidget {
           spacing: 8,
           children: [
             Text(
-              isProfle
-                  ? title
-                  : "${context.appLocalization.submitRequest} $title",
+              isProfle ? title : "${context.appLocalization.submitRequest} $title",
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 color: context.colorPalette.black2D2,
@@ -39,21 +38,26 @@ class RequestBubble extends StatelessWidget {
             ),
             Row(
               children: [
-                Text(
-                  value,
-                  style: TextStyle(
-                    color: context.colorPalette.blue091,
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  ),
+                CountBuilder(
+                  collection: MyCollections.vacations,
+                  child: (context, count) {
+                    return Text(
+                      "$count/$value",
+                      style: TextStyle(
+                        color: context.colorPalette.blue091,
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    );
+                  },
                 ),
-                Text(
-                  context.appLocalization.inMonth,
-                  style: TextStyle(
-                    color: context.colorPalette.grey8F8,
-                    fontSize: 12,
-                  ),
-                ),
+                // Text(
+                //   context.appLocalization.inMonth,
+                //   style: TextStyle(
+                //     color: context.colorPalette.grey8F8,
+                //     fontSize: 12,
+                //   ),
+                // ),
               ],
             ),
           ],

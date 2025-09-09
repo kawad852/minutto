@@ -111,7 +111,7 @@ class _OldRequestDetailsScreenState extends State<OldRequestDetailsScreen> {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  "${context.appLocalization.dateAndTimeRequest} : ${_request.createdAt.defaultFormat} - ${_request.createdAt.hourFormat}",
+                  "${context.appLocalization.dateAndTimeRequest} : ${_request.createdAt!.defaultFormat} - ${_request.createdAt!.hourFormat}",
                   overflow: TextOverflow.ellipsis,
                   style: style,
                 ),

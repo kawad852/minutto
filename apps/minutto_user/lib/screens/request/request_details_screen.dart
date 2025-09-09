@@ -75,7 +75,7 @@ class _RequestDetailsScreenState extends State<RequestDetailsScreen> {
                       const CustomSvg(MyIcons.note),
                       Expanded(
                         child: Text(
-                          "${context.appLocalization.requestDate}: ${request.createdAt.defaultFormat}",
+                          "${context.appLocalization.requestDate}: ${request.createdAt!.defaultFormat}",
                           style: TextStyle(
                             color: context.colorPalette.black,
                             fontSize: 14,

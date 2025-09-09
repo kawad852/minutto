@@ -22,9 +22,9 @@ RequestModel _$RequestModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$RequestModel {
   @TimestampSerializer()
-  DateTime get createdAt => throw _privateConstructorUsedError;
+  DateTime? get createdAt => throw _privateConstructorUsedError;
   @TimestampSerializer()
-  set createdAt(DateTime value) => throw _privateConstructorUsedError;
+  set createdAt(DateTime? value) => throw _privateConstructorUsedError;
   @TimestampSerializer()
   DateTime? get statusChangedAt => throw _privateConstructorUsedError;
   @TimestampSerializer()
@@ -89,7 +89,7 @@ abstract class $RequestModelCopyWith<$Res> {
   ) = _$RequestModelCopyWithImpl<$Res, RequestModel>;
   @useResult
   $Res call({
-    @TimestampSerializer() DateTime createdAt,
+    @TimestampSerializer() DateTime? createdAt,
     @TimestampSerializer() DateTime? statusChangedAt,
     @TimestampSerializer() DateTime? fromDate,
     @TimestampSerializer() DateTime? toDate,
@@ -127,7 +127,7 @@ class _$RequestModelCopyWithImpl<$Res, $Val extends RequestModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = null,
+    Object? createdAt = freezed,
     Object? statusChangedAt = freezed,
     Object? fromDate = freezed,
     Object? toDate = freezed,
@@ -148,10 +148,10 @@ class _$RequestModelCopyWithImpl<$Res, $Val extends RequestModel>
   }) {
     return _then(
       _value.copyWith(
-            createdAt: null == createdAt
+            createdAt: freezed == createdAt
                 ? _value.createdAt
                 : createdAt // ignore: cast_nullable_to_non_nullable
-                      as DateTime,
+                      as DateTime?,
             statusChangedAt: freezed == statusChangedAt
                 ? _value.statusChangedAt
                 : statusChangedAt // ignore: cast_nullable_to_non_nullable
@@ -250,7 +250,7 @@ abstract class _$$RequestModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call({
-    @TimestampSerializer() DateTime createdAt,
+    @TimestampSerializer() DateTime? createdAt,
     @TimestampSerializer() DateTime? statusChangedAt,
     @TimestampSerializer() DateTime? fromDate,
     @TimestampSerializer() DateTime? toDate,
@@ -288,7 +288,7 @@ class __$$RequestModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = null,
+    Object? createdAt = freezed,
     Object? statusChangedAt = freezed,
     Object? fromDate = freezed,
     Object? toDate = freezed,
@@ -309,10 +309,10 @@ class __$$RequestModelImplCopyWithImpl<$Res>
   }) {
     return _then(
       _$RequestModelImpl(
-        createdAt: null == createdAt
+        createdAt: freezed == createdAt
             ? _value.createdAt
             : createdAt // ignore: cast_nullable_to_non_nullable
-                  as DateTime,
+                  as DateTime?,
         statusChangedAt: freezed == statusChangedAt
             ? _value.statusChangedAt
             : statusChangedAt // ignore: cast_nullable_to_non_nullable
@@ -391,7 +391,7 @@ class __$$RequestModelImplCopyWithImpl<$Res>
 @JsonSerializable(explicitToJson: true)
 class _$RequestModelImpl extends _RequestModel {
   _$RequestModelImpl({
-    @TimestampSerializer() required this.createdAt,
+    @TimestampSerializer() this.createdAt,
     @TimestampSerializer() this.statusChangedAt,
     @TimestampSerializer() this.fromDate,
     @TimestampSerializer() this.toDate,
@@ -416,7 +416,7 @@ class _$RequestModelImpl extends _RequestModel {
 
   @override
   @TimestampSerializer()
-  DateTime createdAt;
+  DateTime? createdAt;
   @override
   @TimestampSerializer()
   DateTime? statusChangedAt;
@@ -485,7 +485,7 @@ class _$RequestModelImpl extends _RequestModel {
 
 abstract class _RequestModel extends RequestModel {
   factory _RequestModel({
-    @TimestampSerializer() required DateTime createdAt,
+    @TimestampSerializer() DateTime? createdAt,
     @TimestampSerializer() DateTime? statusChangedAt,
     @TimestampSerializer() DateTime? fromDate,
     @TimestampSerializer() DateTime? toDate,
@@ -511,9 +511,9 @@ abstract class _RequestModel extends RequestModel {
 
   @override
   @TimestampSerializer()
-  DateTime get createdAt;
+  DateTime? get createdAt;
   @TimestampSerializer()
-  set createdAt(DateTime value);
+  set createdAt(DateTime? value);
   @override
   @TimestampSerializer()
   DateTime? get statusChangedAt;

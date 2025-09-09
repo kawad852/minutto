@@ -48,6 +48,7 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
           _collection,
           _files,
         );
+        print('date:: ${_request.createdAt.runtimeType}');
         await docRef.set(_request);
       },
     );
@@ -57,10 +58,7 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
   void initState() {
     super.initState();
     _request = RequestModel.fromJson(
-      widget.request?.toJson() ??
-          RequestModel(
-            createdAt: kNowDate,
-          ).toJson(),
+      widget.request?.toJson() ?? RequestModel().toJson(),
     );
   }
 

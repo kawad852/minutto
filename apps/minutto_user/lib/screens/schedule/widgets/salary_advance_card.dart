@@ -51,7 +51,7 @@ class SalaryAdvanceCard extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "${context.appLocalization.orderDate}: ${request.createdAt.defaultFormat}",
+                  "${context.appLocalization.orderDate}: ${request.createdAt!.defaultFormat}",
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: context.colorPalette.blue475,

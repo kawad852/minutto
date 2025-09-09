@@ -99,7 +99,7 @@ class RequestCard extends StatelessWidget {
                 const SizedBox(width: 7),
                 Expanded(
                   child: Text(
-                    "${context.appLocalization.requestDate}: ${request.createdAt.defaultFormat}",
+                    "${context.appLocalization.requestDate}: ${request.createdAt!.defaultFormat}",
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       color: context.colorPalette.blue091,
