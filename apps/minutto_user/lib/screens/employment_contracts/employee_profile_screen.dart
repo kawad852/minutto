@@ -44,21 +44,7 @@ class _EmployeeProfileScreenState extends State<EmployeeProfileScreen> {
             ],
           ),
           const SizedBox(height: 15),
-          Row(
-            spacing: 10,
-            children: [
-              RequestBubble(
-                title: context.appLocalization.leaveRequests,
-                value: "1/4 ",
-                isProfle: true,
-              ),
-              RequestBubble(
-                title: context.appLocalization.leaveAbsence,
-                value: "0/2 ",
-                isProfle: true,
-              ),
-            ],
-          ),
+          RequestBubblesRow(),
           Row(
             spacing: 10,
             children: [

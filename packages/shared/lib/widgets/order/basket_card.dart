@@ -216,7 +216,7 @@ class BasketCardState extends State<BasketCard> {
           ),
         );
       },
-      onError: (error) => const SizedBox.shrink(),
+      // onError: (error) => const SizedBox.shrink(),
     );
   }
 }

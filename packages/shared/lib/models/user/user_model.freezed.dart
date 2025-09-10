@@ -70,6 +70,14 @@ mixin _$UserModel {
   set basicSalary(double value) => throw _privateConstructorUsedError;
   int get contractDurationMonths => throw _privateConstructorUsedError;
   set contractDurationMonths(int value) => throw _privateConstructorUsedError;
+  int get maxYearlyVacationsDays => throw _privateConstructorUsedError;
+  set maxYearlyVacationsDays(int value) => throw _privateConstructorUsedError;
+  int get maxYearlyLeavesDays => throw _privateConstructorUsedError;
+  set maxYearlyLeavesDays(int value) => throw _privateConstructorUsedError;
+  int get maxSickLeaveDays => throw _privateConstructorUsedError;
+  set maxSickLeaveDays(int value) => throw _privateConstructorUsedError;
+  int get maxBreakHoursPerYear => throw _privateConstructorUsedError;
+  set maxBreakHoursPerYear(int value) => throw _privateConstructorUsedError;
   String get nationalId => throw _privateConstructorUsedError;
   set nationalId(String value) => throw _privateConstructorUsedError;
   BankModel? get bank => throw _privateConstructorUsedError;
@@ -117,6 +125,10 @@ abstract class $UserModelCopyWith<$Res> {
     String jobTitle,
     double basicSalary,
     int contractDurationMonths,
+    int maxYearlyVacationsDays,
+    int maxYearlyLeavesDays,
+    int maxSickLeaveDays,
+    int maxBreakHoursPerYear,
     String nationalId,
     BankModel? bank,
     bool active,
@@ -162,6 +174,10 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? jobTitle = null,
     Object? basicSalary = null,
     Object? contractDurationMonths = null,
+    Object? maxYearlyVacationsDays = null,
+    Object? maxYearlyLeavesDays = null,
+    Object? maxSickLeaveDays = null,
+    Object? maxBreakHoursPerYear = null,
     Object? nationalId = null,
     Object? bank = freezed,
     Object? active = null,
@@ -250,6 +266,22 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
                 ? _value.contractDurationMonths
                 : contractDurationMonths // ignore: cast_nullable_to_non_nullable
                       as int,
+            maxYearlyVacationsDays: null == maxYearlyVacationsDays
+                ? _value.maxYearlyVacationsDays
+                : maxYearlyVacationsDays // ignore: cast_nullable_to_non_nullable
+                      as int,
+            maxYearlyLeavesDays: null == maxYearlyLeavesDays
+                ? _value.maxYearlyLeavesDays
+                : maxYearlyLeavesDays // ignore: cast_nullable_to_non_nullable
+                      as int,
+            maxSickLeaveDays: null == maxSickLeaveDays
+                ? _value.maxSickLeaveDays
+                : maxSickLeaveDays // ignore: cast_nullable_to_non_nullable
+                      as int,
+            maxBreakHoursPerYear: null == maxBreakHoursPerYear
+                ? _value.maxBreakHoursPerYear
+                : maxBreakHoursPerYear // ignore: cast_nullable_to_non_nullable
+                      as int,
             nationalId: null == nationalId
                 ? _value.nationalId
                 : nationalId // ignore: cast_nullable_to_non_nullable
@@ -320,6 +352,10 @@ abstract class _$$UserModelImplCopyWith<$Res>
     String jobTitle,
     double basicSalary,
     int contractDurationMonths,
+    int maxYearlyVacationsDays,
+    int maxYearlyLeavesDays,
+    int maxSickLeaveDays,
+    int maxBreakHoursPerYear,
     String nationalId,
     BankModel? bank,
     bool active,
@@ -365,6 +401,10 @@ class __$$UserModelImplCopyWithImpl<$Res>
     Object? jobTitle = null,
     Object? basicSalary = null,
     Object? contractDurationMonths = null,
+    Object? maxYearlyVacationsDays = null,
+    Object? maxYearlyLeavesDays = null,
+    Object? maxSickLeaveDays = null,
+    Object? maxBreakHoursPerYear = null,
     Object? nationalId = null,
     Object? bank = freezed,
     Object? active = null,
@@ -453,6 +493,22 @@ class __$$UserModelImplCopyWithImpl<$Res>
             ? _value.contractDurationMonths
             : contractDurationMonths // ignore: cast_nullable_to_non_nullable
                   as int,
+        maxYearlyVacationsDays: null == maxYearlyVacationsDays
+            ? _value.maxYearlyVacationsDays
+            : maxYearlyVacationsDays // ignore: cast_nullable_to_non_nullable
+                  as int,
+        maxYearlyLeavesDays: null == maxYearlyLeavesDays
+            ? _value.maxYearlyLeavesDays
+            : maxYearlyLeavesDays // ignore: cast_nullable_to_non_nullable
+                  as int,
+        maxSickLeaveDays: null == maxSickLeaveDays
+            ? _value.maxSickLeaveDays
+            : maxSickLeaveDays // ignore: cast_nullable_to_non_nullable
+                  as int,
+        maxBreakHoursPerYear: null == maxBreakHoursPerYear
+            ? _value.maxBreakHoursPerYear
+            : maxBreakHoursPerYear // ignore: cast_nullable_to_non_nullable
+                  as int,
         nationalId: null == nationalId
             ? _value.nationalId
             : nationalId // ignore: cast_nullable_to_non_nullable
@@ -503,6 +559,10 @@ class _$UserModelImpl extends _UserModel {
     this.jobTitle = '',
     this.basicSalary = 0.0,
     this.contractDurationMonths = 0,
+    this.maxYearlyVacationsDays = 0,
+    this.maxYearlyLeavesDays = 0,
+    this.maxSickLeaveDays = 0,
+    this.maxBreakHoursPerYear = 0,
     this.nationalId = '',
     this.bank,
     this.active = true,
@@ -574,6 +634,18 @@ class _$UserModelImpl extends _UserModel {
   int contractDurationMonths;
   @override
   @JsonKey()
+  int maxYearlyVacationsDays;
+  @override
+  @JsonKey()
+  int maxYearlyLeavesDays;
+  @override
+  @JsonKey()
+  int maxSickLeaveDays;
+  @override
+  @JsonKey()
+  int maxBreakHoursPerYear;
+  @override
+  @JsonKey()
   String nationalId;
   @override
   BankModel? bank;
@@ -589,7 +661,7 @@ class _$UserModelImpl extends _UserModel {
 
   @override
   String toString() {
-    return 'UserModel(id: $id, roleId: $roleId, companyId: $companyId, shiftId: $shiftId, createdAt: $createdAt, workStartDate: $workStartDate, contractEndDate: $contractEndDate, name: $name, profileImage: $profileImage, phoneNumberCountryCode: $phoneNumberCountryCode, phoneNumber: $phoneNumber, email: $email, birthDate: $birthDate, gender: $gender, maritalStatus: $maritalStatus, departmentId: $departmentId, branchId: $branchId, jobTitle: $jobTitle, basicSalary: $basicSalary, contractDurationMonths: $contractDurationMonths, nationalId: $nationalId, bank: $bank, active: $active, archived: $archived, deviceTokens: $deviceTokens)';
+    return 'UserModel(id: $id, roleId: $roleId, companyId: $companyId, shiftId: $shiftId, createdAt: $createdAt, workStartDate: $workStartDate, contractEndDate: $contractEndDate, name: $name, profileImage: $profileImage, phoneNumberCountryCode: $phoneNumberCountryCode, phoneNumber: $phoneNumber, email: $email, birthDate: $birthDate, gender: $gender, maritalStatus: $maritalStatus, departmentId: $departmentId, branchId: $branchId, jobTitle: $jobTitle, basicSalary: $basicSalary, contractDurationMonths: $contractDurationMonths, maxYearlyVacationsDays: $maxYearlyVacationsDays, maxYearlyLeavesDays: $maxYearlyLeavesDays, maxSickLeaveDays: $maxSickLeaveDays, maxBreakHoursPerYear: $maxBreakHoursPerYear, nationalId: $nationalId, bank: $bank, active: $active, archived: $archived, deviceTokens: $deviceTokens)';
   }
 
   /// Create a copy of UserModel
@@ -628,6 +700,10 @@ abstract class _UserModel extends UserModel {
     String jobTitle,
     double basicSalary,
     int contractDurationMonths,
+    int maxYearlyVacationsDays,
+    int maxYearlyLeavesDays,
+    int maxSickLeaveDays,
+    int maxBreakHoursPerYear,
     String nationalId,
     BankModel? bank,
     bool active,
@@ -707,6 +783,18 @@ abstract class _UserModel extends UserModel {
   @override
   int get contractDurationMonths;
   set contractDurationMonths(int value);
+  @override
+  int get maxYearlyVacationsDays;
+  set maxYearlyVacationsDays(int value);
+  @override
+  int get maxYearlyLeavesDays;
+  set maxYearlyLeavesDays(int value);
+  @override
+  int get maxSickLeaveDays;
+  set maxSickLeaveDays(int value);
+  @override
+  int get maxBreakHoursPerYear;
+  set maxBreakHoursPerYear(int value);
   @override
   String get nationalId;
   set nationalId(String value);

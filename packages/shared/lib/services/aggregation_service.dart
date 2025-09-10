@@ -16,17 +16,25 @@ class AggregationService {
       hour: 0,
       microsecond: 0,
     );
-    final filter = Filter(
+    final userIdFilter = Filter(
+      MyFields.userId,
+      isEqualTo: MySharedPreferences.user!.id,
+    );
+    final dateFilter = Filter(
       MyFields.createdAt,
       isGreaterThanOrEqualTo: Timestamp.fromDate(nowDate),
     );
-    print("filter:: ${filter.toJson()}");
-    return _firebaseFirestore
-        .collection(collection)
-        .requestConvertor
-        .where(filter)
-        .count()
-        .get()
-        .then((value) => value.count ?? 0);
+    final filter = Filter.and(userIdFilter, dateFilter);
+    return ApiService.build(
+      callBack: () async {
+        return _firebaseFirestore
+            .collection(collection)
+            .requestConvertor
+            .where(filter)
+            .count()
+            .get()
+            .then((value) => value.count ?? 0);
+      },
+    );
   }
 }

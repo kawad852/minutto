@@ -49,7 +49,9 @@ export 'screens/home/widgets/check_dialog.dart';
 export 'screens/home/widgets/dialog_bubble.dart';
 export 'screens/home/widgets/home_bubble.dart';
 export 'screens/home/widgets/home_header.dart';
+export 'screens/home/widgets/leaves_request_bubble.dart';
 export 'screens/home/widgets/request_bubble.dart';
+export 'screens/home/widgets/request_bubble_row.dart';
 //intro
 export 'screens/intro/intro_screen.dart';
 export 'screens/notification/notification_management_screen.dart';

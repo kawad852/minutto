@@ -1,14 +1,15 @@
 import 'package:shared/shared.dart';
 
 class RequestBubble extends StatelessWidget {
-  final String title, value;
-  final bool isProfle;
+  final String title;
+  final int value;
+  final String collection;
 
   const RequestBubble({
     super.key,
     required this.title,
     required this.value,
-    this.isProfle = false,
+    required this.collection,
   });
 
   @override
@@ -29,7 +30,7 @@ class RequestBubble extends StatelessWidget {
           spacing: 8,
           children: [
             Text(
-              isProfle ? title : "${context.appLocalization.submitRequest} $title",
+              title,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 color: context.colorPalette.black2D2,
@@ -39,7 +40,7 @@ class RequestBubble extends StatelessWidget {
             Row(
               children: [
                 CountBuilder(
-                  collection: MyCollections.vacations,
+                  collection: collection,
                   child: (context, count) {
                     return Text(
                       "$count/$value",

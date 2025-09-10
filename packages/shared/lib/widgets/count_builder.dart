@@ -31,6 +31,7 @@ class _CountBuilderState extends State<CountBuilder> {
   Widget build(BuildContext context) {
     return BlitzBuilder.future(
       future: _future,
+      initialData: 0,
       onComplete: (context, snapshot) {
         final count = snapshot.data ?? 0;
         return widget.child(context, count);

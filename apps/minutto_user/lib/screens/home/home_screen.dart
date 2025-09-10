@@ -19,19 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
-                Row(
-                  spacing: 10,
-                  children: [
-                    RequestBubble(
-                      title: context.appLocalization.leaving,
-                      value: "4",
-                    ),
-                    RequestBubble(
-                      title: context.appLocalization.leaveAbsence,
-                      value: "2",
-                    ),
-                  ],
-                ),
+                RequestBubblesRow(),
                 HomeBubble(
                   onTap: () {},
                   icon: MyIcons.fingerprintIcon,
