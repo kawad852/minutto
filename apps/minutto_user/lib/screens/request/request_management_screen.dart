@@ -34,7 +34,7 @@ class _RequestManagementScreenState extends State<RequestManagementScreen> {
                     );
                   },
                   title: context.appLocalization.leaveRequests,
-                  value: "7",
+                  collection: MyCollections.leaves,
                 ),
                 RequestManageInfo(
                   onTap: () {
@@ -46,7 +46,7 @@ class _RequestManagementScreenState extends State<RequestManagementScreen> {
                     );
                   },
                   title: context.appLocalization.vacationRequests,
-                  value: "7",
+                  collection: MyCollections.vacations,
                 ),
               ],
             ),
@@ -63,7 +63,7 @@ class _RequestManagementScreenState extends State<RequestManagementScreen> {
                     );
                   },
                   title: context.appLocalization.advances,
-                  value: "7",
+                  collection: MyCollections.salaryAdvances,
                 ),
                 RequestManageInfo(
                   onTap: () {
@@ -75,7 +75,7 @@ class _RequestManagementScreenState extends State<RequestManagementScreen> {
                     );
                   },
                   title: context.appLocalization.breakRequests,
-                  value: "7",
+                  collection: MyCollections.breaks,
                 ),
               ],
             ),
@@ -92,7 +92,7 @@ class _RequestManagementScreenState extends State<RequestManagementScreen> {
                     );
                   },
                   title: context.appLocalization.incentiveRequests,
-                  value: "7",
+                  collection: MyCollections.incentives,
                 ),
                 RequestManageInfo(
                   onTap: () {
@@ -104,7 +104,7 @@ class _RequestManagementScreenState extends State<RequestManagementScreen> {
                     );
                   },
                   title: context.appLocalization.overtimeRequests,
-                  value: "7",
+                  collection: MyCollections.overtimes,
                 ),
               ],
             ),

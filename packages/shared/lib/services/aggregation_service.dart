@@ -6,7 +6,10 @@ class AggregationService {
 
   FirebaseFirestore get _firebaseFirestore => getIt<FirebaseFirestore>();
 
-  Future<int> getRequestsCount(String collection) {
+  Future<int> getRequestsCount(
+    String collection, {
+    Filter? f,
+  }) {
     final nowDate = DateTime.now().copyWith(
       month: 1,
       day: 1,
@@ -16,15 +19,20 @@ class AggregationService {
       hour: 0,
       microsecond: 0,
     );
-    final userIdFilter = Filter(
-      MyFields.userId,
-      isEqualTo: MySharedPreferences.user!.id,
-    );
-    final dateFilter = Filter(
-      MyFields.createdAt,
-      isGreaterThanOrEqualTo: Timestamp.fromDate(nowDate),
-    );
-    final filter = Filter.and(userIdFilter, dateFilter);
+    late Filter filter;
+    if (f != null) {
+      filter = f;
+    } else {
+      final userIdFilter = Filter(
+        MyFields.userId,
+        isEqualTo: MySharedPreferences.user!.id,
+      );
+      final dateFilter = Filter(
+        MyFields.createdAt,
+        isGreaterThanOrEqualTo: Timestamp.fromDate(nowDate),
+      );
+      filter = Filter.and(userIdFilter, dateFilter);
+    }
     return ApiService.build(
       callBack: () async {
         return _firebaseFirestore

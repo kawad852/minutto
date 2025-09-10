@@ -2,12 +2,14 @@ import 'package:shared/shared.dart';
 
 class CountBuilder extends StatefulWidget {
   final String collection;
+  final Filter? filter;
   final Widget Function(BuildContext context, int count) child;
 
   const CountBuilder({
     super.key,
     required this.collection,
     required this.child,
+    this.filter,
   });
 
   @override
@@ -18,7 +20,10 @@ class _CountBuilderState extends State<CountBuilder> {
   late Future<int> _future;
 
   void _initialize() {
-    _future = AggregationService.instance.getRequestsCount(widget.collection);
+    _future = AggregationService.instance.getRequestsCount(
+      widget.collection,
+      f: widget.filter,
+    );
   }
 
   @override

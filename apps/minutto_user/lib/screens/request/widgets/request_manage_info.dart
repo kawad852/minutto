@@ -2,12 +2,14 @@ import 'package:shared/shared.dart';
 
 class RequestManageInfo extends StatelessWidget {
   final void Function() onTap;
-  final String title, value;
+  final String title;
+  final String collection;
+
   const RequestManageInfo({
     super.key,
     required this.onTap,
     required this.title,
-    required this.value,
+    required this.collection,
   });
 
   @override
@@ -28,13 +30,19 @@ class RequestManageInfo extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                value,
-                style: TextStyle(
-                  color: context.colorPalette.black,
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                ),
+              CountBuilder(
+                collection: collection,
+                filter: Filter(MyFields.status, isEqualTo: StatusEnum.pending.value),
+                child: (context, c) {
+                  return Text(
+                    "$c",
+                    style: TextStyle(
+                      color: context.colorPalette.black,
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  );
+                },
               ),
               Row(
                 children: [

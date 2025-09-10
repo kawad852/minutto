@@ -86,6 +86,8 @@ export 'screens/reports/widgets/leaves_card.dart';
 export 'screens/reports/widgets/report_tile.dart';
 export 'screens/request/request_details_screen.dart';
 export 'screens/request/request_input_screen.dart';
+//request_management
+export 'screens/request/request_management_screen.dart';
 //request
 export 'screens/request/requests_screen.dart';
 export 'screens/request/widgets/details_card.dart';
@@ -94,11 +96,10 @@ export 'screens/request/widgets/info_bubble.dart';
 export 'screens/request/widgets/request_card.dart';
 export 'screens/request/widgets/request_head.dart';
 export 'screens/request/widgets/request_info.dart';
+export 'screens/request/widgets/request_manage_info.dart';
 export 'screens/request/widgets/request_tab_bar.dart';
 export 'screens/request_management/advances_management_screen.dart';
 export 'screens/request_management/request_management_details_screen.dart';
-//request_management
-export 'screens/request_management/request_management_screen.dart';
 export 'screens/request_management/requests_list_screen.dart';
 export 'screens/request_management/widgets/advance_container.dart';
 export 'screens/request_management/widgets/advance_details.dart';
@@ -107,7 +108,6 @@ export 'screens/request_management/widgets/reply_dialog.dart';
 export 'screens/request_management/widgets/request_button.dart';
 export 'screens/request_management/widgets/request_manage_card.dart';
 export 'screens/request_management/widgets/request_manage_details.dart';
-export 'screens/request_management/widgets/request_manage_info.dart';
 //salaries
 export 'screens/salaries/salaries_screen.dart';
 export 'screens/salaries/widgets/salary_card.dart';
