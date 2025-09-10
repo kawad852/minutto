@@ -8,6 +8,14 @@ class NotificationManagementScreen extends StatefulWidget {
 }
 
 class _NotificationManagementScreenState extends State<NotificationManagementScreen> {
+  final _formKey = GlobalKey<FormState>();
+
+  void _onSubmit(BuildContext context) {
+    if (_formKey.currentState!.validate()) {
+      context.unFocusKeyboard();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,73 +28,29 @@ class _NotificationManagementScreenState extends State<NotificationManagementScr
         textColor: context.colorPalette.white,
         title: context.appLocalization.send,
       ),
-      body: ListView(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-        children: [
-          WidgetTitle(
-            title: context.appLocalization.notificationTitle,
-            child: CustomTextField.text(onChanged: (value) {}),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 15),
-            child: WidgetTitle(
-              title: context.appLocalization.notificationText,
-              child: CustomTextField.text(
-                onChanged: (value) {},
-                maxLines: 5,
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              WidgetTitle(
+                title: context.appLocalization.notificationTitle,
+                child: CustomTextField.text(onChanged: (value) {}),
               ),
-            ),
-          ),
-          WidgetTitle(
-            title: context.appLocalization.branch,
-            child: DropDownEditor<String>(
-              items: [
-                DropdownMenuItem(value: 'سوريا', child: Text('سوريا')),
-                DropdownMenuItem(value: 'الاردن', child: Text('الاردن')),
-              ],
-              onChanged: (value) {},
-              title: context.appLocalization.choose,
-              value: null,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 15),
-            child: WidgetTitle(
-              title: context.appLocalization.department,
-              child: DropDownEditor<String>(
-                items: [
-                  DropdownMenuItem(value: 'سوريا', child: Text('سوريا')),
-                  DropdownMenuItem(value: 'الاردن', child: Text('الاردن')),
-                ],
-                onChanged: (value) {},
-                title: context.appLocalization.choose,
-                value: null,
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15),
+                child: WidgetTitle(
+                  title: context.appLocalization.notificationText,
+                  child: CustomTextField.text(
+                    onChanged: (value) {},
+                    maxLines: 5,
+                  ),
+                ),
               ),
-            ),
+            ],
           ),
-          WidgetTitle(
-            title: context.appLocalization.employees,
-            child: DropDownEditor<String>(
-              items: [
-                DropdownMenuItem(value: 'سوريا', child: Text('سوريا')),
-                DropdownMenuItem(value: 'الاردن', child: Text('الاردن')),
-              ],
-              onChanged: (value) {},
-              title: context.appLocalization.choose,
-              value: null,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 15),
-            child: WidgetTitle(
-              title: context.appLocalization.sendingDate,
-              child: DateEditor(
-                value: DateTime.now(),
-                onChanged: (value) {},
-              ),
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
