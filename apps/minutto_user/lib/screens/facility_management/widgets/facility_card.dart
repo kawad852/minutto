@@ -1,18 +1,20 @@
 import 'package:shared/shared.dart';
 
 class FacilityCard extends StatelessWidget {
-  final String title, value, rank, icon;
+  final String title, icon;
+  final String? collection;
   final Color? textColor;
   final Color backgroundColor;
   final void Function()? onTap;
+
   const FacilityCard({
     super.key,
     required this.title,
-    required this.value,
-    required this.rank,
     required this.icon,
     required this.backgroundColor,
-    this.textColor, this.onTap,
+    this.textColor,
+    this.onTap,
+    this.collection,
   });
 
   @override
@@ -46,44 +48,18 @@ class FacilityCard extends StatelessWidget {
                   CustomSvg(icon),
                 ],
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    width: 50,
-                    height: 24,
-                    decoration: BoxDecoration(
-                      color: context.colorPalette.white20,
-                      borderRadius: BorderRadius.circular(100),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "$rank%",
-                          style: TextStyle(
-                            color: textColor ?? context.colorPalette.blue091,
-                            fontSize: 12,
-                          ),
-                        ),
-                        Icon(
-                          Icons.arrow_drop_up,
-                          size: 15,
-                          color: textColor ?? context.colorPalette.blue091,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Text(
-                    value,
+              if (collection != null)
+                Align(
+                  alignment: AlignmentDirectional.centerStart,
+                  child: Text(
+                    '${MyStorage.users.length}',
                     style: TextStyle(
                       color: textColor ?? context.colorPalette.blue091,
                       fontSize: 24,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                ],
-              ),
+                ),
             ],
           ),
         ),

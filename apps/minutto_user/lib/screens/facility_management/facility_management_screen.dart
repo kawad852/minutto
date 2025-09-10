@@ -20,44 +20,21 @@ class _FacilityManagementScreenState extends State<FacilityManagementScreen> {
             spacing: 10,
             children: [
               FacilityCard(
-                title: context.appLocalization.employeesNumber,
-                value: "200",
-                rank: "12",
-                icon: MyIcons.staffIcon,
-                backgroundColor: context.colorPalette.black,
-                textColor: context.colorPalette.white,
-              ),
-              FacilityCard(
-                title: context.appLocalization.attendanceAndDeparture,
-                value: "200",
-                rank: "12",
-                icon: MyIcons.bagIcon,
-                backgroundColor: context.colorPalette.greyF2F,
-              ),
-            ],
-          ),
-          const SizedBox(height: 20),
-          Row(
-            spacing: 10,
-            children: [
-              FacilityCard(
                 onTap: () {
                   context.navigate(
                     (context) => const RequestManagementScreen(),
                   );
                 },
                 title: context.appLocalization.requests,
-                value: "200",
-                rank: "12",
                 icon: MyIcons.bookIcon,
                 backgroundColor: context.colorPalette.blue73B,
               ),
               FacilityCard(
-                title: context.appLocalization.salaries,
-                value: "200",
-                rank: "12",
-                icon: MyIcons.rankIcon,
-                backgroundColor: context.colorPalette.blueB2D,
+                title: context.appLocalization.employeesNumber,
+                collection: MyCollections.users,
+                icon: MyIcons.staffIcon,
+                backgroundColor: context.colorPalette.black,
+                textColor: context.colorPalette.white,
               ),
             ],
           ),
