@@ -5,18 +5,24 @@ import 'package:shared/shared.dart';
 class EmployeeAttendanceCard extends StatelessWidget {
   final UserModel user;
   final DateTime date;
+  final DateTime? endDate;
 
   const EmployeeAttendanceCard({
     super.key,
     required this.user,
     required this.date,
+    this.endDate,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.navigate((context) => EmployeeAttendanceScreen());
+        context.navigate(
+          (context) => UserAttendancesScreen(
+            user: user,
+          ),
+        );
       },
       child: Container(
         width: double.infinity,
@@ -36,6 +42,7 @@ class EmployeeAttendanceCard extends StatelessWidget {
             AttendanceExpansion(
               userId: user.id,
               date: date,
+              endDate: endDate,
             ),
           ],
         ),

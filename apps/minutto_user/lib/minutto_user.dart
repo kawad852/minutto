@@ -6,7 +6,7 @@ export 'package:minutto_user/screens/city/cities_screen.dart';
 export 'package:minutto_user/screens/city/city_input_screen.dart';
 
 export 'screens/attendance/attendance_management_screen.dart';
-export 'screens/attendance/employee_attendance_screen.dart';
+export 'screens/attendance/user_attendances_screen.dart';
 export 'screens/attendance/widgets/employee_attendance_card.dart';
 export 'screens/base/app_nav_bar.dart';
 export 'screens/base/widgets/nav_bar_item.dart';

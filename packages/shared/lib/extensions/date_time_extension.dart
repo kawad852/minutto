@@ -13,6 +13,7 @@ extension DateTimeExtension on DateTime {
 
   Filter dateFilter({
     String field = MyFields.createdAt,
+    DateTime? endDate,
   }) {
     final start = Filter(
       field,
@@ -20,7 +21,7 @@ extension DateTimeExtension on DateTime {
     );
     final end = Filter(
       field,
-      isLessThan: Timestamp.fromDate(add(const Duration(days: 1))),
+      isLessThan: Timestamp.fromDate(endDate ?? add(const Duration(days: 1))),
     );
     return Filter.and(start, end);
   }

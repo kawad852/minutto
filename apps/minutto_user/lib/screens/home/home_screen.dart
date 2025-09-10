@@ -21,7 +21,11 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 RequestBubblesRow(),
                 HomeBubble(
-                  onTap: () {},
+                  onTap: () {
+                    context.navigate(
+                      (context) => UserAttendancesScreen(user: MySharedPreferences.user!),
+                    );
+                  },
                   icon: MyIcons.fingerprintIcon,
                   title: context.appLocalization.attendanceAndDepartureReport,
                 ),

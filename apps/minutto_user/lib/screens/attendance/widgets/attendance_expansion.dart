@@ -3,11 +3,13 @@ import 'package:shared/shared.dart';
 class AttendanceExpansion extends StatefulWidget {
   final String userId;
   final DateTime date;
+  final DateTime? endDate;
 
   const AttendanceExpansion({
     super.key,
     required this.userId,
     required this.date,
+    required this.endDate,
   });
 
   @override
@@ -20,7 +22,7 @@ class _AttendanceExpansionState extends State<AttendanceExpansion> {
   void _initialize() {
     _attendanceStream = FirebaseFirestore.instance
         .userAttendance(id: widget.userId)
-        .where(widget.date.dateFilter())
+        .where(widget.date.dateFilter(endDate: widget.endDate))
         .snapshots()
         .map((e) => e.docs.map((e) => e.data()).toList());
   }
