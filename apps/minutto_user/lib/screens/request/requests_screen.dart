@@ -72,7 +72,10 @@ class _RequestsScreenState extends State<RequestsScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         child: Column(
           children: [
-            RequestHead(),
+            if (_collection == MyCollections.vacations || _collection == MyCollections.leaves)
+              RequestHead(
+                collection: _collection,
+              ),
             RequestTabBar(
               queries: _countQueries,
               status: _status,

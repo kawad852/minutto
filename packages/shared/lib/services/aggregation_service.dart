@@ -31,7 +31,8 @@ class AggregationService {
         MyFields.createdAt,
         isGreaterThanOrEqualTo: Timestamp.fromDate(nowDate),
       );
-      filter = Filter.and(userIdFilter, dateFilter);
+      final statusFilter = Filter(MyFields.status, isEqualTo: StatusEnum.accepted.value);
+      filter = Filter.and(userIdFilter, dateFilter, statusFilter);
     }
     return ApiService.build(
       callBack: () async {
