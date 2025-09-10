@@ -21,7 +21,7 @@ class _UserAttendancesScreenState extends State<UserAttendancesScreen> {
   @override
   void initState() {
     super.initState();
-    _selectedDate = DateTime.now();
+    _selectedDate = DateTime.now().copyWith(day: 1);
   }
 
   @override
