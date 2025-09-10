@@ -51,7 +51,7 @@ class _ReportDateState extends State<ReportDate> {
           child: Row(
             children: [
               IconButton(
-                onPressed: _selectedDate.month < 12 && now.month != _selectedDate.month
+                onPressed: !(_selectedDate.year == now.year && _selectedDate.month == now.month)
                     ? () {
                         setState(() {
                           _selectedDate = _getDate.copyWith(month: _getDate.month + 1);
