@@ -82,25 +82,38 @@ class _UserShiftCardState extends State<UserShiftCard> {
                           controlAffinity: ListTileControlAffinity.leading,
                           contentPadding: EdgeInsetsDirectional.zero,
                           value: selected,
-                          onChanged: (value) {
-                            final reference = snapshot.data?.reference;
-                            if (value! && assignedShift?.shiftId != shift.id) {
-                              if (assignedShift != null) {
-                                reference?.update({
-                                  MyFields.shiftId: shift.id,
-                                });
+                          onChanged: (checked) async {
+                            final ref = snapshot.data?.reference;
+                            if (ref == null) return;
+
+                            final userShiftId = user.shiftId;
+                            final currentAssignedId = assignedShift?.shiftId;
+                            final tappedId = shift.id;
+
+                            if (checked == true) {
+                              if (tappedId == userShiftId) {
+                                if (assignedShift != null) {
+                                  await ref.delete();
+                                }
                               } else {
-                                final assignedShift = ShiftAssignmentModel(
-                                  shiftId: shift.id,
-                                  id: widget.date.assignedShiftId(widget.user.id),
-                                  createdAt: DateTime.now(),
-                                  userId: MySharedPreferences.user!.id,
-                                );
-                                reference?.set(assignedShift);
+                                if (assignedShift == null) {
+                                  final newAssignment = ShiftAssignmentModel(
+                                    shiftId: tappedId,
+                                    id: widget.date.assignedShiftId(widget.user.id),
+                                    createdAt: DateTime.now(),
+                                    userId: MySharedPreferences.user!.id,
+                                  );
+                                  await ref.set(newAssignment);
+                                } else if (currentAssignedId != tappedId) {
+                                  await ref.update({
+                                    MyFields.shiftId: tappedId,
+                                  });
+                                }
                               }
-                            } else if (assignedShift?.shiftId == shift.id ||
-                                assignedShift?.shiftId == user.shiftId) {
-                              reference?.delete();
+                            } else {
+                              if (currentAssignedId == tappedId) {
+                                await ref.delete();
+                              }
                             }
                           },
                           title: Text(
