@@ -98,7 +98,8 @@ class _UserShiftCardState extends State<UserShiftCard> {
                                 );
                                 reference?.set(assignedShift);
                               }
-                            } else if (assignedShift?.shiftId == shift.id) {
+                            } else if (assignedShift?.shiftId == shift.id ||
+                                assignedShift?.shiftId == user.shiftId) {
                               reference?.delete();
                             }
                           },
