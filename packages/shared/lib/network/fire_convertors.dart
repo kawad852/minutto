@@ -134,4 +134,10 @@ extension FireConvertors on CollectionReference {
         fromFirestore: (snapshot, _) => NotificationModel.fromJson(snapshot.data()!),
         toFirestore: (snapshot, _) => snapshot.toJson(),
       );
+
+  CollectionReference<ShiftAssignmentModel> get shiftAssignmentsConvertor =>
+      withConverter<ShiftAssignmentModel>(
+        fromFirestore: (snapshot, _) => ShiftAssignmentModel.fromJson(snapshot.data()!),
+        toFirestore: (snapshot, _) => snapshot.toJson(),
+      );
 }

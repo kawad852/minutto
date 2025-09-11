@@ -19,6 +19,8 @@ class CacheService {
   }
 
   void _toggle(VersionModel data) {
+    print("version:: ${versions.shiftsVersion}");
+    print("version:: ${data.shiftsVersion}");
     if (versions.usersVersion != data.usersVersion) {
       _fetchUsers();
     }
@@ -31,31 +33,40 @@ class CacheService {
     if (versions.departmentsVersion != data.departmentsVersion) {
       _fetchDepartments();
     }
+    if (versions.shiftsVersion != data.shiftsVersion) {
+      _fetchShifts();
+    }
     versions = data;
     MySharedPreferences.versions = data;
   }
 
   void _fetchUsers() {
-    _firebaseFirestore.users.get().then((value) {
+    _firebaseFirestore.users.whereCompanyId.get().then((value) {
       MyStorage.users = value.docs.map((e) => e.data()).toList();
     });
   }
 
   void _fetchCities() {
-    _firebaseFirestore.cities.get().then((value) {
+    _firebaseFirestore.cities.whereCompanyId.get().then((value) {
       MyStorage.cities = value.docs.map((e) => e.data()).toList();
     });
   }
 
   void _fetchBranches() {
-    _firebaseFirestore.branches.get().then((value) {
+    _firebaseFirestore.branches.whereCompanyId.get().then((value) {
       MyStorage.branches = value.docs.map((e) => e.data()).toList();
     });
   }
 
   void _fetchDepartments() {
-    _firebaseFirestore.departments.get().then((value) {
+    _firebaseFirestore.departments.whereCompanyId.get().then((value) {
       MyStorage.departments = value.docs.map((e) => e.data()).toList();
+    });
+  }
+
+  void _fetchShifts() {
+    _firebaseFirestore.shifts.whereCompanyId.get().then((value) {
+      MyStorage.shifts = value.docs.map((e) => e.data()).toList();
     });
   }
 

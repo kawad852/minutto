@@ -83,4 +83,9 @@ extension CollectionReferenceExtension on FirebaseFirestore {
       .doc(MySharedPreferences.user!.id)
       .collection(MyCollections.notifications)
       .notificationConvertor;
+
+  CollectionReference<ShiftAssignmentModel> get shiftAssignments => companies
+      .doc(MySharedPreferences.company!.id)
+      .collection(MyCollections.shiftAssignments)
+      .shiftAssignmentsConvertor;
 }

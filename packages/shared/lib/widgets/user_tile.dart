@@ -12,6 +12,7 @@ class UserTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       spacing: 10,
+      mainAxisSize: MainAxisSize.min,
       children: [
         BaseNetworkImage(
           user.profileImage,

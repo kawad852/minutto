@@ -43,26 +43,15 @@ class _AttendanceManagementScreenState extends State<AttendanceManagementScreen>
           spacing: 20,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            BranchEditor(
-              value: _selectedBranchId,
-              onChanged: (value) {
+            BranchCalendarWidget(
+              branchId: _selectedBranchId,
+              date: _selectedDate,
+              onBranchChanged: (value) {
                 setState(() {
                   _selectedBranchId = value;
                 });
               },
-            ),
-            ReportDate(
-              onChanged: (value) {
-                setState(() {
-                  _selectedDate = value;
-                });
-              },
-            ),
-            CustomCalender(
-              key: ValueKey("${_selectedDate.month}${_selectedDate.year}"),
-              date: _selectedDate,
-              warpContainer: true,
-              onChanged: (value) {
+              onDateChanged: (value) {
                 setState(() {
                   _selectedDate = value;
                 });

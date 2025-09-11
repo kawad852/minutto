@@ -80,6 +80,7 @@ class BlitzBuilder<T> extends StatelessWidget {
 
   Widget _buildSnapshot(BuildContext context, AsyncSnapshot<T?> snapshot) {
     if (snapshot.hasError) {
+      debugPrint("SnapshotError:: ${snapshot.error}");
       if (onError != null) {
         return onError!(snapshot.error);
       } else {

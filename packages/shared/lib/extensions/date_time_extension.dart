@@ -11,6 +11,8 @@ extension DateTimeExtension on DateTime {
 
   String get hourFormat => DateFormat.jm(MySharedPreferences.language).format(this);
 
+  String assignedShiftId(String userId) => "${userId}_${DateFormat('yyyyMMdd').format(this)}";
+
   Filter dateFilter({
     String field = MyFields.createdAt,
     DateTime? endDate,

@@ -33,4 +33,5 @@ class MyCollections {
   static const String holidays = 'holidays';
   static const String attendances = 'attendances';
   static const String notifications = 'notifications';
+  static const String shiftAssignments = 'shiftAssignments';
 }
