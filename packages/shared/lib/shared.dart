@@ -84,6 +84,7 @@ export 'enums/material_status_enum.dart';
 export 'enums/portal_enums.dart';
 export 'enums/sort_enums.dart';
 export 'enums/stores_enums.dart';
+export 'enums/user_status_enum.dart';
 
 ///Extensions
 export 'extensions/base_extension.dart';

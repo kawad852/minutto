@@ -56,7 +56,8 @@ class _MyAppState extends State<MyApp> {
                 updateShouldNotify: (initialValue, value) {
                   MySharedPreferences.user = value;
                   Future.microtask(() {
-                    if (userProvider.isAuthenticated && (value.id.isEmpty || !value.active)) {
+                    if (userProvider.isAuthenticated &&
+                        (value.id.isEmpty || value.status == UserStatusEnum.inactive.value)) {
                       Fluttertoast.showToast(msg: "Authorization Failed");
                       // ignore: use_build_context_synchronously
                       userProvider.logout(

@@ -30,6 +30,7 @@ _$UserModelImpl _$$UserModelImplFromJson(
   departmentId: json['departmentId'] as String? ?? '',
   branchId: json['branchId'] as String? ?? '',
   jobTitle: json['jobTitle'] as String? ?? '',
+  status: json['status'] as String? ?? UserStatusEnum.defaultValue,
   basicSalary: (json['basicSalary'] as num?)?.toDouble() ?? 0.0,
   contractDurationMonths:
       (json['contractDurationMonths'] as num?)?.toInt() ?? 0,
@@ -42,7 +43,6 @@ _$UserModelImpl _$$UserModelImplFromJson(
   bank: json['bank'] == null
       ? null
       : BankModel.fromJson(json['bank'] as Map<String, dynamic>),
-  active: json['active'] as bool? ?? true,
   archived: json['archived'] as bool? ?? false,
   deviceTokens:
       (json['deviceTokens'] as List<dynamic>?)
@@ -74,6 +74,7 @@ Map<String, dynamic> _$$UserModelImplToJson(
   'departmentId': instance.departmentId,
   'branchId': instance.branchId,
   'jobTitle': instance.jobTitle,
+  'status': instance.status,
   'basicSalary': instance.basicSalary,
   'contractDurationMonths': instance.contractDurationMonths,
   'maxYearlyVacationsDays': instance.maxYearlyVacationsDays,
@@ -82,7 +83,6 @@ Map<String, dynamic> _$$UserModelImplToJson(
   'maxBreakHoursPerYear': instance.maxBreakHoursPerYear,
   'nationalId': instance.nationalId,
   'bank': instance.bank?.toJson(),
-  'active': instance.active,
   'archived': instance.archived,
   'deviceTokens': instance.deviceTokens,
 };

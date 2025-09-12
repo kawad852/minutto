@@ -25,6 +25,7 @@ class UserModel with _$UserModel {
     @Default('') String departmentId,
     @Default('') String branchId,
     @Default('') String jobTitle,
+    @Default(UserStatusEnum.defaultValue) String status,
     @Default(0.0) double basicSalary,
     @Default(0) int contractDurationMonths,
     @Default(0) int maxYearlyVacationsDays,
@@ -33,7 +34,6 @@ class UserModel with _$UserModel {
     @Default(0) int maxBreakHoursPerYear,
     @Default('') String nationalId,
     BankModel? bank,
-    @Default(true) bool active,
     @Default(false) bool archived,
     @Default([]) List<String> deviceTokens,
   }) = _UserModel;

@@ -66,6 +66,8 @@ mixin _$UserModel {
   set branchId(String value) => throw _privateConstructorUsedError;
   String get jobTitle => throw _privateConstructorUsedError;
   set jobTitle(String value) => throw _privateConstructorUsedError;
+  String get status => throw _privateConstructorUsedError;
+  set status(String value) => throw _privateConstructorUsedError;
   double get basicSalary => throw _privateConstructorUsedError;
   set basicSalary(double value) => throw _privateConstructorUsedError;
   int get contractDurationMonths => throw _privateConstructorUsedError;
@@ -82,8 +84,6 @@ mixin _$UserModel {
   set nationalId(String value) => throw _privateConstructorUsedError;
   BankModel? get bank => throw _privateConstructorUsedError;
   set bank(BankModel? value) => throw _privateConstructorUsedError;
-  bool get active => throw _privateConstructorUsedError;
-  set active(bool value) => throw _privateConstructorUsedError;
   bool get archived => throw _privateConstructorUsedError;
   set archived(bool value) => throw _privateConstructorUsedError;
   List<String> get deviceTokens => throw _privateConstructorUsedError;
@@ -123,6 +123,7 @@ abstract class $UserModelCopyWith<$Res> {
     String departmentId,
     String branchId,
     String jobTitle,
+    String status,
     double basicSalary,
     int contractDurationMonths,
     int maxYearlyVacationsDays,
@@ -131,7 +132,6 @@ abstract class $UserModelCopyWith<$Res> {
     int maxBreakHoursPerYear,
     String nationalId,
     BankModel? bank,
-    bool active,
     bool archived,
     List<String> deviceTokens,
   });
@@ -172,6 +172,7 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? departmentId = null,
     Object? branchId = null,
     Object? jobTitle = null,
+    Object? status = null,
     Object? basicSalary = null,
     Object? contractDurationMonths = null,
     Object? maxYearlyVacationsDays = null,
@@ -180,7 +181,6 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? maxBreakHoursPerYear = null,
     Object? nationalId = null,
     Object? bank = freezed,
-    Object? active = null,
     Object? archived = null,
     Object? deviceTokens = null,
   }) {
@@ -258,6 +258,10 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
                 ? _value.jobTitle
                 : jobTitle // ignore: cast_nullable_to_non_nullable
                       as String,
+            status: null == status
+                ? _value.status
+                : status // ignore: cast_nullable_to_non_nullable
+                      as String,
             basicSalary: null == basicSalary
                 ? _value.basicSalary
                 : basicSalary // ignore: cast_nullable_to_non_nullable
@@ -290,10 +294,6 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
                 ? _value.bank
                 : bank // ignore: cast_nullable_to_non_nullable
                       as BankModel?,
-            active: null == active
-                ? _value.active
-                : active // ignore: cast_nullable_to_non_nullable
-                      as bool,
             archived: null == archived
                 ? _value.archived
                 : archived // ignore: cast_nullable_to_non_nullable
@@ -350,6 +350,7 @@ abstract class _$$UserModelImplCopyWith<$Res>
     String departmentId,
     String branchId,
     String jobTitle,
+    String status,
     double basicSalary,
     int contractDurationMonths,
     int maxYearlyVacationsDays,
@@ -358,7 +359,6 @@ abstract class _$$UserModelImplCopyWith<$Res>
     int maxBreakHoursPerYear,
     String nationalId,
     BankModel? bank,
-    bool active,
     bool archived,
     List<String> deviceTokens,
   });
@@ -399,6 +399,7 @@ class __$$UserModelImplCopyWithImpl<$Res>
     Object? departmentId = null,
     Object? branchId = null,
     Object? jobTitle = null,
+    Object? status = null,
     Object? basicSalary = null,
     Object? contractDurationMonths = null,
     Object? maxYearlyVacationsDays = null,
@@ -407,7 +408,6 @@ class __$$UserModelImplCopyWithImpl<$Res>
     Object? maxBreakHoursPerYear = null,
     Object? nationalId = null,
     Object? bank = freezed,
-    Object? active = null,
     Object? archived = null,
     Object? deviceTokens = null,
   }) {
@@ -485,6 +485,10 @@ class __$$UserModelImplCopyWithImpl<$Res>
             ? _value.jobTitle
             : jobTitle // ignore: cast_nullable_to_non_nullable
                   as String,
+        status: null == status
+            ? _value.status
+            : status // ignore: cast_nullable_to_non_nullable
+                  as String,
         basicSalary: null == basicSalary
             ? _value.basicSalary
             : basicSalary // ignore: cast_nullable_to_non_nullable
@@ -517,10 +521,6 @@ class __$$UserModelImplCopyWithImpl<$Res>
             ? _value.bank
             : bank // ignore: cast_nullable_to_non_nullable
                   as BankModel?,
-        active: null == active
-            ? _value.active
-            : active // ignore: cast_nullable_to_non_nullable
-                  as bool,
         archived: null == archived
             ? _value.archived
             : archived // ignore: cast_nullable_to_non_nullable
@@ -557,6 +557,7 @@ class _$UserModelImpl extends _UserModel {
     this.departmentId = '',
     this.branchId = '',
     this.jobTitle = '',
+    this.status = UserStatusEnum.defaultValue,
     this.basicSalary = 0.0,
     this.contractDurationMonths = 0,
     this.maxYearlyVacationsDays = 0,
@@ -565,7 +566,6 @@ class _$UserModelImpl extends _UserModel {
     this.maxBreakHoursPerYear = 0,
     this.nationalId = '',
     this.bank,
-    this.active = true,
     this.archived = false,
     this.deviceTokens = const [],
   }) : super._();
@@ -628,6 +628,9 @@ class _$UserModelImpl extends _UserModel {
   String jobTitle;
   @override
   @JsonKey()
+  String status;
+  @override
+  @JsonKey()
   double basicSalary;
   @override
   @JsonKey()
@@ -651,9 +654,6 @@ class _$UserModelImpl extends _UserModel {
   BankModel? bank;
   @override
   @JsonKey()
-  bool active;
-  @override
-  @JsonKey()
   bool archived;
   @override
   @JsonKey()
@@ -661,7 +661,7 @@ class _$UserModelImpl extends _UserModel {
 
   @override
   String toString() {
-    return 'UserModel(id: $id, roleId: $roleId, companyId: $companyId, shiftId: $shiftId, createdAt: $createdAt, workStartDate: $workStartDate, contractEndDate: $contractEndDate, name: $name, profileImage: $profileImage, phoneNumberCountryCode: $phoneNumberCountryCode, phoneNumber: $phoneNumber, email: $email, birthDate: $birthDate, gender: $gender, maritalStatus: $maritalStatus, departmentId: $departmentId, branchId: $branchId, jobTitle: $jobTitle, basicSalary: $basicSalary, contractDurationMonths: $contractDurationMonths, maxYearlyVacationsDays: $maxYearlyVacationsDays, maxYearlyLeavesDays: $maxYearlyLeavesDays, maxSickLeaveDays: $maxSickLeaveDays, maxBreakHoursPerYear: $maxBreakHoursPerYear, nationalId: $nationalId, bank: $bank, active: $active, archived: $archived, deviceTokens: $deviceTokens)';
+    return 'UserModel(id: $id, roleId: $roleId, companyId: $companyId, shiftId: $shiftId, createdAt: $createdAt, workStartDate: $workStartDate, contractEndDate: $contractEndDate, name: $name, profileImage: $profileImage, phoneNumberCountryCode: $phoneNumberCountryCode, phoneNumber: $phoneNumber, email: $email, birthDate: $birthDate, gender: $gender, maritalStatus: $maritalStatus, departmentId: $departmentId, branchId: $branchId, jobTitle: $jobTitle, status: $status, basicSalary: $basicSalary, contractDurationMonths: $contractDurationMonths, maxYearlyVacationsDays: $maxYearlyVacationsDays, maxYearlyLeavesDays: $maxYearlyLeavesDays, maxSickLeaveDays: $maxSickLeaveDays, maxBreakHoursPerYear: $maxBreakHoursPerYear, nationalId: $nationalId, bank: $bank, archived: $archived, deviceTokens: $deviceTokens)';
   }
 
   /// Create a copy of UserModel
@@ -698,6 +698,7 @@ abstract class _UserModel extends UserModel {
     String departmentId,
     String branchId,
     String jobTitle,
+    String status,
     double basicSalary,
     int contractDurationMonths,
     int maxYearlyVacationsDays,
@@ -706,7 +707,6 @@ abstract class _UserModel extends UserModel {
     int maxBreakHoursPerYear,
     String nationalId,
     BankModel? bank,
-    bool active,
     bool archived,
     List<String> deviceTokens,
   }) = _$UserModelImpl;
@@ -778,6 +778,9 @@ abstract class _UserModel extends UserModel {
   String get jobTitle;
   set jobTitle(String value);
   @override
+  String get status;
+  set status(String value);
+  @override
   double get basicSalary;
   set basicSalary(double value);
   @override
@@ -801,9 +804,6 @@ abstract class _UserModel extends UserModel {
   @override
   BankModel? get bank;
   set bank(BankModel? value);
-  @override
-  bool get active;
-  set active(bool value);
   @override
   bool get archived;
   set archived(bool value);

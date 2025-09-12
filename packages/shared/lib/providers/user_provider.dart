@@ -53,7 +53,7 @@ class UserProvider extends ChangeNotifier {
     final userDocument = await _firebaseFirestore.users.doc(user.id).get();
 
     if (userDocument.exists) {
-      if (context.mounted && !userDocument.data()!.active) {
+      if (context.mounted && userDocument.data()!.status == UserStatusEnum.accepted.value) {
         context.showSnackBar(context.appLocalization.authFailed);
         return;
       }
