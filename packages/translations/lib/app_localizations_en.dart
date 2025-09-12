@@ -1900,4 +1900,11 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get attendanceFailedBody =>
       'Please be present at the workplace and try again, or try using one of the other methods';
+
+  @override
+  String get accountUnderReview => 'Your account is under review';
+
+  @override
+  String get accountUnderReviewDescription =>
+      'Please wait until an administrator approves your account.';
 }

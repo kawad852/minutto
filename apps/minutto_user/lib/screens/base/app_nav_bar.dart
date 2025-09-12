@@ -61,6 +61,41 @@ class _AppNavBarState extends State<AppNavBar> {
   @override
   Widget build(BuildContext context) {
     bool withNotch = MediaQuery.of(context).viewPadding.bottom > 0.0;
+    final status = MySharedPreferences.user!.status;
+    if (status == UserStatusEnum.pending.value) {
+      return Scaffold(
+        appBar: AppBar(),
+        body: Center(
+          child: Card(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 50, horizontal: kScreenMargin),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    Icons.lock_outline,
+                    size: 60,
+                    color: context.colorPalette.yellowF69,
+                  ),
+                  const SizedBox(height: 20),
+                  Text(
+                    context.appLocalization.accountUnderReview,
+                    style: Theme.of(context).textTheme.titleMedium,
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    context.appLocalization.accountUnderReviewDescription,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      );
+    }
     return Scaffold(
       resizeToAvoidBottomInset: false,
       bottomNavigationBar: Container(

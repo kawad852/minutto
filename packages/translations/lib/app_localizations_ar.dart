@@ -1891,4 +1891,11 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get attendanceFailedBody =>
       'يرجى التواجد داخل مقر العمل والمحاولة مجدداً او جرب استخدام إحدى الوسائل الأخرى';
+
+  @override
+  String get accountUnderReview => 'حسابك قيد المراجعة';
+
+  @override
+  String get accountUnderReviewDescription =>
+      'يرجى الانتظار حتى يقوم المسؤول بالموافقة على حسابك.';
 }

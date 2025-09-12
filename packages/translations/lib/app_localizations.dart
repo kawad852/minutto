@@ -3739,6 +3739,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Please be present at the workplace and try again, or try using one of the other methods'**
   String get attendanceFailedBody;
+
+  /// No description provided for @accountUnderReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Your account is under review'**
+  String get accountUnderReview;
+
+  /// No description provided for @accountUnderReviewDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Please wait until an administrator approves your account.'**
+  String get accountUnderReviewDescription;
 }
 
 class _AppLocalizationsDelegate
