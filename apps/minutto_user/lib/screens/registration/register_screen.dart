@@ -35,7 +35,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
             context.navigate((context) {
               return PhoneVerifyScreen(
                 user: _user,
-                company: company,
               );
             });
           } else if (context.mounted) {

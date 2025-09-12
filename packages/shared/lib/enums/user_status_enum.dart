@@ -1,6 +1,6 @@
 enum UserStatusEnum {
   pending(defaultValue),
-  accepted("active"),
+  active("active"),
   inactive("inactive");
 
   static const defaultValue = "pending";

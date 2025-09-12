@@ -18,14 +18,8 @@ class _LoginScreenState extends State<LoginScreen> {
       ApiService.fetch(
         context,
         callBack: () async {
-          await context.userProvider.register(
-            context,
+          return PhoneVerifyScreen(
             user: _user,
-            onSuccess: () {
-              context.navigateAndRemoveUntil((context) {
-                return AppNavBar();
-              });
-            },
           );
         },
       );

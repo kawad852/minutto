@@ -4,12 +4,10 @@ import 'package:shared/shared.dart';
 
 class PhoneVerifyScreen extends StatefulWidget {
   final UserModel user;
-  final CompanyModel company;
 
   const PhoneVerifyScreen({
     super.key,
     required this.user,
-    required this.company,
   });
 
   @override
