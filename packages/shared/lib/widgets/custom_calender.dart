@@ -21,7 +21,6 @@ class _CustomCalenderState extends State<CustomCalender> {
   late ScrollController _scrollController;
 
   List<DateTime> get _days {
-    final firstDay = DateTime(widget.date.year, widget.date.month, 1);
     final lastDay = DateTime(widget.date.year, widget.date.month + 1, 0); // last day of month
 
     List<DateTime> days = [];

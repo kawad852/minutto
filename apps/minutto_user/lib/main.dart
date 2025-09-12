@@ -9,10 +9,6 @@ WidgetBuilder get kLogoutBuilder =>
 void main() async {
   await MyAppHelper().init(
     firebaseOptions: DefaultFirebaseOptions.currentPlatform,
-    onInit: (context) {
-      // GuestHelper.registrationScreen = RegistrationScreen(showGuestButton: false);
-      ScooterMarker.init(context);
-    },
     builder: (bool isAuthenticated) {
       if (isAuthenticated) {
         return AppNavBar();

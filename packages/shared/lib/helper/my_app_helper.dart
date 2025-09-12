@@ -1,5 +1,3 @@
-import 'package:shared/services/typesense_service.dart';
-
 import '../shared.dart';
 
 class MyAppHelper {
@@ -28,7 +26,6 @@ class MyAppHelper {
       androidProvider: AndroidProvider.debug,
       appleProvider: AppleProvider.debug,
     );
-    TypeSenseService.init();
     setLocaleMessages('en', EnMessages());
     setLocaleMessages('ar', ArMessages());
     runApp(

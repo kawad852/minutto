@@ -45,8 +45,8 @@ class _OldRequestInputScreenState extends State<OldRequestInputScreen> {
           final user = MySharedPreferences.user!;
           final docRef = _firebaseFireStore.collection(_collection).requestConvertor.doc();
           _request.id = docRef.id;
-          _request.companyId = user.companyId!;
-          _request.userId = user.id!;
+          _request.companyId = user.companyId;
+          _request.userId = user.id;
           _request.createdAt = kNowDate;
           _request.attachments = await _storageService.uploadFiles(
             _collection,

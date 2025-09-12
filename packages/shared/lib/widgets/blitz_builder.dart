@@ -117,10 +117,6 @@ class BlitzBuilder<T> extends StatelessWidget {
     );
   }
 
-  Widget _buildScaffold({required Widget body}) {
-    return Scaffold(appBar: AppBar(), body: body);
-  }
-
   @override
   Widget build(BuildContext context) {
     if (_stream != null) {

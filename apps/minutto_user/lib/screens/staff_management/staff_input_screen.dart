@@ -161,7 +161,7 @@ class _StaffInputScreenState extends State<StaffInputScreen> {
                                   context,
                                   code: _user.phoneNumberCountryCode,
                                   onChanged: (value) => _user.phoneNumber = value!,
-                                  onCodeSelected: (value) => _user.phoneNumberCountryCode = value!,
+                                  onCodeSelected: (value) => _user.phoneNumberCountryCode = value,
                                   initialValue: _user.phoneNumber,
                                 ),
                               ),

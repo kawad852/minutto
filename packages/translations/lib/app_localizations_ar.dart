@@ -9,26 +9,420 @@ class AppLocalizationsAr extends AppLocalizations {
   AppLocalizationsAr([String locale = 'ar']) : super(locale);
 
   @override
-  String get conWithGoogle => 'Continue with Google';
+  String get login => 'تسجيل الدخول';
 
   @override
-  String get conWithApple => 'Continue with Apple';
+  String get requiredField => 'حقل مطلوب';
 
   @override
-  String get conWithPhone => 'Continue with Phone';
-
-  @override
-  String get regTitle => 'Welcome to Nudoo!';
-
-  @override
-  String get regBody =>
-      'Organize your tasks, boost your productivity, and get things done effortlessly.\nSign up now to start managing your tasks like a pro!';
+  String get networkError => 'خطأ في إتصال الإنترنت';
 
   @override
   String get generalError => 'عذرًا، حدث خطأ ما!';
 
   @override
-  String get networkError => 'خطأ في إتصال الإنترنت';
+  String get authFailed => 'خطأ في عملية التسجيل';
+
+  @override
+  String get simply => 'ببساطـــــــــــة، ';
+
+  @override
+  String get limitless => 'بلا حدود';
+
+  @override
+  String get usernameEmail => 'اسم المستخدم / البريد الألكتروني';
+
+  @override
+  String get password => 'كلمة المرور';
+
+  @override
+  String get forgotPassword => 'هل نسيت كلمة المرور ؟';
+
+  @override
+  String get resetPassword => 'استعادة كلمة المرور';
+
+  @override
+  String get imtithal => 'امتثال';
+
+  @override
+  String get invalidEmail => 'بريد إلكتروني غير صالح';
+
+  @override
+  String get invalidNumber => 'رقم غير صالح';
+
+  @override
+  String get passwordTooShort => 'يجب أن يكون على الأقل 6 أحرف';
+
+  @override
+  String get passwordNotMatch => 'كلمة المرور غير متطابقة';
+
+  @override
+  String get lostYourPassword => 'هل فقدت كلمة المرور ؟ سهلة';
+
+  @override
+  String get youCanRecoverIt => 'يمكنك استعادتها بخطوات بسيطة';
+
+  @override
+  String get enterEmailToRecoverPass =>
+      'يرجى ادخال بريدك الإلكتروني لإستعادة كلمة المرور.';
+
+  @override
+  String get home => 'الصفحة الرئيسية';
+
+  @override
+  String get hello => 'السلام عليكم';
+
+  @override
+  String get facilityCompliance => 'إمتثال المنشأة';
+
+  @override
+  String get todayImtithalSummary => 'ملخص إمتثال اليوم';
+
+  @override
+  String get more => 'المزيد';
+
+  @override
+  String get incomplete => 'غير مكتملة';
+
+  @override
+  String get complete => 'مكتملة';
+
+  @override
+  String get late => 'متأخرة';
+
+  @override
+  String get violation => 'مخالفة';
+
+  @override
+  String get searchTaskEmployee => 'ابحث عن مهمة ، موظف';
+
+  @override
+  String get topTasks => 'ابرز المهام';
+
+  @override
+  String get dailyTask => 'مهمة يومية';
+
+  @override
+  String get calendar => 'التقويم';
+
+  @override
+  String get addNewTask => 'اضافة مهمة جديدة';
+
+  @override
+  String get monitorViolation => 'رصد مخالفة';
+
+  @override
+  String get facilityManagement => 'إدارة المنشأة';
+
+  @override
+  String get addNewEmployee => 'إضافة موظف جديد';
+
+  @override
+  String get addNewCompliance => 'اضافة امتثال جديد';
+
+  @override
+  String get addNewDepartment => 'اضافة قسم جديد';
+
+  @override
+  String get sendNewNotification => 'إرسال إشعار جديد';
+
+  @override
+  String get leavesAndHolidays => 'الإجازات والعطلات';
+
+  @override
+  String get lawsAndRegulations => 'القوانين والأنظمة';
+
+  @override
+  String get violations => 'المخالفات';
+
+  @override
+  String get reports => 'التقارير';
+
+  @override
+  String get searchDepartmentEmployee => 'ابحث عن قسم ، موظف';
+
+  @override
+  String get facilityDepartments => 'اقسام المنشأة';
+
+  @override
+  String get employee => 'الموظف';
+
+  @override
+  String get responsibleManager => 'المدير المسؤول';
+
+  @override
+  String get personalAccount => 'الحساب الشخصي';
+
+  @override
+  String get system => 'النظام';
+
+  @override
+  String get changeLanguage => 'تغيير اللغة';
+
+  @override
+  String get privacyPolicy => 'سياسة الخصوصية';
+
+  @override
+  String get sendComplaintOrReport => 'ارسال شكوى او بلاغ للإدارة';
+
+  @override
+  String get account => 'الحساب';
+
+  @override
+  String get changePassword => 'تغيير كلمة المرور';
+
+  @override
+  String get logOut => 'تسجيل الخروج';
+
+  @override
+  String get send => 'ارسال';
+
+  @override
+  String get notifications => 'الإشعارات';
+
+  @override
+  String get addNewLeave => 'اضافة اجازة جديدة';
+
+  @override
+  String get leaveNote =>
+      'يمكنك ادخال ايام اجازة او عطلات لإعفاء الموظفين جميعاً من مهام الإمتثال خلال ايام الإجازة';
+
+  @override
+  String get leaveNo => 'اجازة رقم';
+
+  @override
+  String get leaveSetFromDate => 'تم تحديد الإجازة من تاريخ';
+
+  @override
+  String get toDate => 'إلى تاريخ';
+
+  @override
+  String get monitoredViolations => 'مخالفات مرصودة';
+
+  @override
+  String get searchViolationEmployee => 'ابحث عن مخالفة ، باسم الموظف';
+
+  @override
+  String get lastResponseBy => 'اخر رد من خلال';
+
+  @override
+  String get leaveTitle => 'عنوان الإجازة';
+
+  @override
+  String get taskTitleToComplyWith => 'عنوان المهمة المطلوب الإمتثال لها';
+
+  @override
+  String get leaveDescription => 'وصف الإجازة';
+
+  @override
+  String get requiredTaskDescription => 'وصف المهمة المطلوبة';
+
+  @override
+  String get fromDate => 'من تاريخ';
+
+  @override
+  String get doYouHaveComplaintReport => 'هل لديك شكوى او بلاغ ؟';
+
+  @override
+  String get complaintNote =>
+      'ارسله للإدارة بكل خصوصية وسرية وسيتم العمل عليه لأجل المصلحة العامة للمنشأة بجدية';
+
+  @override
+  String get yourMessage => 'رسالتك';
+
+  @override
+  String get attachFilesImages => 'إرفاق ملفات ، صور';
+
+  @override
+  String get department => 'القسم';
+
+  @override
+  String get thisMonthComplianceAssessment => 'تقييم الإمتثال هذا الشهر';
+
+  @override
+  String get since => 'منذ';
+
+  @override
+  String get toDay => 'الى اليوم';
+
+  @override
+  String get departmentComplianceAssessment => 'تقييم امتثال القسم';
+
+  @override
+  String get mostCompliantEmployee => 'الموظف الأكثر امتثالاً';
+
+  @override
+  String get leastCompliantEmployee => 'الموظف الأقل امتثالاً';
+
+  @override
+  String get searchForEmployee => 'ابحث عن موظف';
+
+  @override
+  String get departmentEmployees => 'موظفين القسم';
+
+  @override
+  String get complianceAssessment => 'تقييم الإمتثال';
+
+  @override
+  String get employeeNo => 'رقم الموظف';
+
+  @override
+  String get tasks => 'المهام';
+
+  @override
+  String get lateTasks => 'مهام متأخرة';
+
+  @override
+  String get completedTasks => 'مهام مكتملة';
+
+  @override
+  String get incompleteTasks => 'مهام غير مكتملة';
+
+  @override
+  String get taskTitle => 'عنوان المهمة';
+
+  @override
+  String get taskDescription => 'وصف المهمة';
+
+  @override
+  String get deliveryTime => 'وقت التسليم';
+
+  @override
+  String get gracePeriod => 'مدة السماح';
+
+  @override
+  String get taskRepetition => 'تكرار المهمة';
+
+  @override
+  String get daily => 'يومياً';
+
+  @override
+  String get weekly => 'اسبوعياً';
+
+  @override
+  String get monthly => 'شهرياً';
+
+  @override
+  String get noRepetition => 'بدون تكرار';
+
+  @override
+  String get specifyTheDayForTaskRepetition => 'حدد اليوم المخصص لتكرار المهمة';
+
+  @override
+  String get saturday => 'السبت';
+
+  @override
+  String get sunday => 'الأحد';
+
+  @override
+  String get monday => 'الإثنين';
+
+  @override
+  String get tuesday => 'الثلاثاء';
+
+  @override
+  String get wednesday => 'الأربعاء';
+
+  @override
+  String get thursday => 'الخميس';
+
+  @override
+  String get friday => 'الجمعة';
+
+  @override
+  String get notesAboutTheTask => 'ملاحظات حول المهمة';
+
+  @override
+  String get notesAboutTheTaskExecutionMechanism =>
+      'ملاحظات حول الية تنفيذ المهمة';
+
+  @override
+  String get penaltyForNonCompliance => 'عقوبة عدم الإمتثال';
+
+  @override
+  String get descriptionPenaltyForNonCompliance => 'وصف عقوبة عدم الإمتثال';
+
+  @override
+  String get attachFiles => 'إرفاق ملفات';
+
+  @override
+  String get create => 'انشاء';
+
+  @override
+  String get attachedFiles => 'الملفات المرفقة';
+
+  @override
+  String get timeRemainingUntilDeadline => 'الوقت المتبقي على موعد التسليم';
+
+  @override
+  String get second => 'ثانية';
+
+  @override
+  String get minute => 'دقيقة';
+
+  @override
+  String get hour => 'ساعة';
+
+  @override
+  String get day => 'يوم';
+
+  @override
+  String get responsibleParties => 'المسؤولين';
+
+  @override
+  String get deliveryDateTime => 'تاريخ ووقت التسليم';
+
+  @override
+  String get takingActionOnTask => 'اتخاذ اجراء في مهمة';
+
+  @override
+  String get addRemoveEmployee => 'اضافة / ازالة موظف';
+
+  @override
+  String get modifyTask => 'تعديل المهمة';
+
+  @override
+  String get responsibleDepartment => 'القسم المسؤول';
+
+  @override
+  String get responsibleEmployees => 'الموظفين المسؤولين';
+
+  @override
+  String get violationDetectedInTask => 'رصد مخالفة في مهمة';
+
+  @override
+  String get typeOfViolation => 'نوع المخالفة';
+
+  @override
+  String get nonCompliance => 'عدم امتثال';
+
+  @override
+  String get complianceOfficerNotesExplanations =>
+      'ملاحظات وشروحات موظف الأمتثال';
+
+  @override
+  String get violationObservedInTask => 'مخالفة مرصودة في مهمة';
+
+  @override
+  String get theViolationWasDetectedAgainst => 'تم رصد المخالفة بحق';
+
+  @override
+  String get dateAndTimeOfViolation => 'تاريخ ووقت المخالفة';
+
+  @override
+  String get finalAdministrativeDecision => 'القرار الإداري النهائي';
+
+  @override
+  String get addReply => 'اضافة رد';
+
+  @override
+  String get managementDecision => 'قرار الإدارة';
+
+  @override
+  String get cancelPenalty => 'إلغاء العقوبة';
+
+  @override
+  String get confirmPenalty => 'تأكيد العقوبة';
 
   @override
   String get generalErrorTitle => 'حدث خطأ ما';
@@ -45,9 +439,6 @@ class AppLocalizationsAr extends AppLocalizations {
       'تعذر الوصول إلى الخادم. الرجاء التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى.';
 
   @override
-  String get retry => 'إعادة المحاولة';
-
-  @override
   String get serverErrorTitle => 'البيانات غير متاحة';
 
   @override
@@ -55,755 +446,160 @@ class AppLocalizationsAr extends AppLocalizations {
       'نواجه حاليًا صعوبة في استرداد البيانات من الخادم. الرجاء المحاولة مرة أخرى لاحقًا.';
 
   @override
-  String get requiredField => 'حقل مطلوب';
+  String get retry => 'إعادة المحاولة';
 
   @override
-  String get required => 'Required';
+  String get pendingStatus => 'بإنتظار التنفيذ';
 
   @override
-  String get authFailed => 'خطأ في عملية التسجيل';
+  String get inReviewStatus => 'بإنتظار المراجعة';
 
   @override
-  String get guest => 'Guest';
+  String get completedStatus => 'مكتملة';
 
   @override
-  String get login => 'تسجيل الدخول';
-
-  @override
-  String get totalAmount => 'Total Amount';
-
-  @override
-  String get checkout => 'Checkout';
-
-  @override
-  String get addToBasket => 'Add to basket';
-
-  @override
-  String get basketEmptyTitle => 'Your Basket is Empty';
-
-  @override
-  String get basketEmptyBody =>
-      'Start adding items to your basket by exploring our collection. Once you find something you like, simply tap \'Add to Basket\' to begin your shopping journey. Happy shopping!';
-
-  @override
-  String get contShipping => 'Continue shopping';
-
-  @override
-  String get cont => 'Continue';
-
-  @override
-  String get deliveryInfo => 'Delivery arrives in 30-40 minutes.';
-
-  @override
-  String get shoppingBasket => 'Shopping Basket';
-
-  @override
-  String get explore => 'Explore';
-
-  @override
-  String get basket => 'Basket';
-
-  @override
-  String get mealAdded => 'Meal Added';
-
-  @override
-  String get itemNotAvailableMsg => 'Item no longer available';
-
-  @override
-  String get note => 'ملاحظة';
-
-  @override
-  String get confirm => 'Confirm';
-
-  @override
-  String get cancel => 'إلغاء';
-
-  @override
-  String get itemDeleteTitle => 'Delete Item';
-
-  @override
-  String get itemBasketDeleteBody =>
-      'Are you sure you want to delete the item from basket ?';
-
-  @override
-  String get addedSuccessfully => 'تم الإضافة بنجاح';
-
-  @override
-  String get successfullyUpdated => 'تم التحديث بنجاح';
-
-  @override
-  String get deliveryAddress => 'Delivery address';
-
-  @override
-  String get firstName => 'الإسم الأول';
-
-  @override
-  String get lastName => 'الإسم الأخير';
-
-  @override
-  String get email => 'البريد الإلكتروني';
-
-  @override
-  String get fullName => 'الاسم الكامل';
-
-  @override
-  String get contactInfo => 'Contact info';
-
-  @override
-  String get house => 'House';
-
-  @override
-  String get apartment => 'Apartment';
-
-  @override
-  String get office => 'Office';
-
-  @override
-  String get address => 'العنوان';
-
-  @override
-  String get area => 'Area';
-
-  @override
-  String get streetName => 'Street name';
-
-  @override
-  String get city => 'المدينة';
-
-  @override
-  String get floorNo => 'Floor No.';
-
-  @override
-  String get companyName => 'Company name';
-
-  @override
-  String get buildingNo => 'Building No.';
-
-  @override
-  String get additionalDirections => 'Additional directions';
-
-  @override
-  String get apartmentNo => 'Apartment No.';
+  String get task => 'مهمة';
 
   @override
   String get save => 'حفظ';
 
   @override
-  String get countrySearchHint => 'Search for the country name or dial code...';
+  String get savedSuccessfully => 'تم الحفظ';
 
   @override
-  String get locationAccess => 'Location Access';
+  String get generalSafety => 'سلامة عامة';
 
   @override
-  String get locationAccessBody =>
-      'Allow location access so that we can display the stores closest to you';
+  String get deliveryDate => 'تاريخ التسليم';
 
   @override
-  String get allow => 'Allow';
+  String get personalPhotoRequired => 'الصورة الشخصية مطلوبة';
 
   @override
-  String get deleteAddressTitle => 'Delete Address';
+  String get userName => 'اسم المستخدم';
 
   @override
-  String get deleteAddressBody =>
-      'Are you sure you want to delete the address ?';
-
-  @override
-  String get addNewAddress => 'Add New Address';
-
-  @override
-  String get addressesEmptyTitle => 'No Addresses Added Yet';
-
-  @override
-  String get addressesEmptyBody =>
-      'You haven\'t added any delivery addresses yet. Tap the button below to add a new address.';
+  String get addEmployee => 'إضافة للموظف';
 
   @override
   String get add => 'إضافة';
 
   @override
-  String get edit => 'تعديل';
+  String get fullName => 'الاسم الكامل';
 
   @override
-  String get delete => 'حذف';
-
-  @override
-  String get deliveryAddresses => 'Delivery Addresses';
-
-  @override
-  String get placesSearchHint => 'Search for a place..';
-
-  @override
-  String get location => 'Location';
-
-  @override
-  String get help => 'Help';
-
-  @override
-  String get account => 'الحساب';
-
-  @override
-  String get profile => 'الملف الشخصي';
-
-  @override
-  String get deleteAccount => 'Delete account';
-
-  @override
-  String get deleteAccountTitle => 'Delete Account';
-
-  @override
-  String get deleteAccountBody =>
-      'Are you sure you want to delete your account ?\nAll of your data will be erased.';
-
-  @override
-  String get deleteAccountSuccess =>
-      'Your account has been deleted successfully.';
-
-  @override
-  String get logout => 'تسجيل الخروج';
-
-  @override
-  String get categories => 'Categories';
-
-  @override
-  String get promoCodeInfo => 'Please enter your promo code to get discount';
-
-  @override
-  String get apply => 'Apply';
-
-  @override
-  String get promoCode => 'Promo Code';
-
-  @override
-  String get applyPromoCode => 'Apply Promo Code';
-
-  @override
-  String get expiredPromoCodeMsg =>
-      'Promo code expired. Stay tuned for fresh offers coming soon!';
-
-  @override
-  String get invalidPromoCodeMsg =>
-      'Hm, seems like something\'s off with that code. Double-check for typos and try again.';
-
-  @override
-  String get successPromoCodeMsg =>
-      'Congrats! Your promo code is applied. Enjoy your savings!';
-
-  @override
-  String get enterPromoCode => 'Enter Promo Code';
-
-  @override
-  String get paymentMethod => 'Payment Method';
-
-  @override
-  String get cash => 'Cash';
-
-  @override
-  String get items => 'items';
-
-  @override
-  String get orderSummery => 'Order Summery';
-
-  @override
-  String get deliveryFee => 'Delivery Fee';
-
-  @override
-  String get discount => 'Discount';
-
-  @override
-  String get orderTotal => 'Order Total';
-
-  @override
-  String get basketTotal => 'Basket Total';
-
-  @override
-  String get review => 'Review';
-
-  @override
-  String get comment => 'Comment';
-
-  @override
-  String reviewQuestion(Object appName) {
-    return 'How was your order from $appName ?';
-  }
-
-  @override
-  String get reviewSubmittedMsg =>
-      'Your review has been submitted successfully';
-
-  @override
-  String get reviews => 'Reviews';
-
-  @override
-  String get submit => 'تقديم';
-
-  @override
-  String get appName => 'iBear';
-
-  @override
-  String get delivery => 'Delivery';
-
-  @override
-  String get pickUp => 'Pick Up';
-
-  @override
-  String minOrderMsg(Object value) {
-    return 'Minimum basket total must be more than $value';
-  }
-
-  @override
-  String storeClosedMsg(Object end, Object start) {
-    return 'We are currently closed. Please check back during our operating hours from $start to $end.';
-  }
-
-  @override
-  String get orders => 'Orders';
-
-  @override
-  String get emptyNotificationsTitle => 'You\'re all caught up!';
-
-  @override
-  String get emptyNotificationsBody =>
-      'We haven\'t sent any notifications yet, but stay tuned!';
-
-  @override
-  String get emptyOrdersTitle => 'No Orders Yet!';
-
-  @override
-  String get emptyOrdersBody =>
-      'Browse our selection and place your first order.';
-
-  @override
-  String get statusPlaced => 'Placed';
-
-  @override
-  String get statusPreparing => 'Preparing';
-
-  @override
-  String get statusOutForDelivery => 'Out For Delivery';
-
-  @override
-  String get statusDelivered => 'Delivered';
-
-  @override
-  String get statusCanceled => 'Canceled';
-
-  @override
-  String get statusRefunded => 'Refunded';
-
-  @override
-  String get statusRejected => 'Rejected';
-
-  @override
-  String get statusCompleted => 'Completed';
-
-  @override
-  String get readyForPickup => 'Ready For Pickup';
-
-  @override
-  String get orderDetails => 'Order details';
-
-  @override
-  String get orderStatus => 'Order status';
-
-  @override
-  String get outOfStockTitle => 'Out Of Stock';
-
-  @override
-  String get outOfStockBody =>
-      'This item is no longer available. Please remove it from your basket or check back later.';
-
-  @override
-  String get stockAvailabilityTitle => 'Oops! Limited Stock Available';
-
-  @override
-  String stockAvailabilitySubTitle(Object stockQuantity) {
-    return 'There are only $stockQuantity left in stock. Please update your basket to proceed.';
-  }
-
-  @override
-  String get privacyPolicy => 'سياسة الخصوصية';
-
-  @override
-  String get termsOfUse => 'Terms of use';
-
-  @override
-  String get about => 'About';
-
-  @override
-  String get whatAreYouLookingForHint => 'What are you looking for?';
-
-  @override
-  String get products => 'Products';
-
-  @override
-  String get food => 'Food';
-
-  @override
-  String get fixBasketIssueMsg =>
-      'Please fix the issues in your basket before continuing.';
-
-  @override
-  String get rating => 'Rating';
-
-  @override
-  String get priceLowToHigh => 'Price (Low > High)';
-
-  @override
-  String get priceHighToLow => 'Price (High > Low)';
-
-  @override
-  String get recommended => 'Recommended';
-
-  @override
-  String get sortBy => 'Sort By';
-
-  @override
-  String get moreForYou => 'More For You';
-
-  @override
-  String get coupon => 'Coupon';
-
-  @override
-  String get rewards => 'Rewards';
-
-  @override
-  String get points => 'Points';
-
-  @override
-  String get rewardsInfoText =>
-      'Reward points are earned from your purchases and can be redeemed for discounts when buying items from the app.';
-
-  @override
-  String get copied => 'Copied';
-
-  @override
-  String get topRestaurantsNearYou => 'Top rated restaurants near you';
-
-  @override
-  String get redeemAndSave => 'Redeem And Save';
-
-  @override
-  String get notifications => 'الإشعارات';
-
-  @override
-  String get khaled => 'Khaled';
-
-  @override
-  String get ok => 'Ok';
-
-  @override
-  String get invalidCredentials => 'Invalid credentials';
-
-  @override
-  String get invalidEmail => 'بريد إلكتروني غير صالح';
-
-  @override
-  String get favorites => 'Favorites';
-
-  @override
-  String get invalidPhoneNum => 'Invalid phone number';
-
-  @override
-  String get second => 'ثانية';
-
-  @override
-  String get addresses => 'Addresses';
-
-  @override
-  String get settings => 'اعدادات';
-
-  @override
-  String get preferences => 'Preferences';
-
-  @override
-  String get language => 'Language';
-
-  @override
-  String get country => 'الدولة';
-
-  @override
-  String get support => 'Support';
-
-  @override
-  String get message => 'Message';
-
-  @override
-  String get name => 'الإسم';
-
-  @override
-  String get displayName => 'الاسم الظاهر';
-
-  @override
-  String get search => 'البحث';
-
-  @override
-  String get all => 'All';
-
-  @override
-  String get phoneNum => 'رقم الهاتف';
-
-  @override
-  String emptyOrdersByStatus(Object status) {
-    return 'No Orders are $status yet!';
-  }
-
-  @override
-  String get password => 'كلمة المرور';
-
-  @override
-  String get newOrder => 'طلب جديد';
-
-  @override
-  String get accept => 'قبول';
-
-  @override
-  String get reject => 'رفض';
-
-  @override
-  String get buildingType => 'Building Type';
-
-  @override
-  String get addressDetails => 'Address Details';
-
-  @override
-  String get ready => 'Ready';
-
-  @override
-  String get noAvailableRidersMsg => 'No riders are available at this moment.';
-
-  @override
-  String get changeRider => 'Change rider';
-
-  @override
-  String get rider => 'Rider';
-
-  @override
-  String get close => 'Close';
-
-  @override
-  String get selectRider => 'Select A Rider';
-
-  @override
-  String get makeReady => 'Make Ready';
-
-  @override
-  String get acceptAndPrint => 'Accept And Print';
-
-  @override
-  String get cancelOrder => 'Cancel Order';
-
-  @override
-  String get reason => 'Reason';
-
-  @override
-  String get send => 'ارسال';
-
-  @override
-  String get extraNote => 'Extra Note';
-
-  @override
-  String get canceledSuccess => 'Canceled Successfully';
-
-  @override
-  String get unavailable => 'Unavailable Item(s).';
-
-  @override
-  String get orderTakingTooLong =>
-      'Restaurant is taking too long to prepare the order.';
-
-  @override
-  String get lackOfIngredients => 'Lack of ingredients.';
-
-  @override
-  String get customerRequest => 'Customer request.';
-
-  @override
-  String get technicalIssue => 'Technical issues.';
-
-  @override
-  String get highOrderVolume => 'Too many orders at the same time.';
-
-  @override
-  String get other => 'Other';
+  String get jobTitle => 'المسمى الوظيفي';
 
   @override
   String get branch => 'الفرع';
 
   @override
-  String get orderConfirmedTitle => 'Confirm Order';
+  String get nationalIDNumber => 'الرقم الوطني';
 
   @override
-  String get orderConfirmedBody =>
-      'Are you sure you want to confirm this order ?';
+  String get phoneNumber => 'رقم الهاتف';
 
   @override
-  String get completed => 'completed';
+  String get phoneNum => 'رقم الهاتف';
 
   @override
-  String get canceledOrders => 'Canceled Orders';
+  String get salary => 'الأجر';
 
   @override
-  String get completedOrders => 'Completed Orders';
+  String get startDate => 'تاريخ البداية';
 
   @override
-  String get noResults => 'No Results';
+  String get address => 'العنوان';
 
   @override
-  String get createOrder => 'Create Order';
+  String get role => 'الدور';
 
   @override
-  String get preparingDelivery => 'Preparing Delivery';
+  String get admin => 'آدمن';
 
   @override
-  String get preparingPickup => 'Preparing Pickup';
+  String get manager => 'مدير';
 
   @override
-  String get outForDeliveryOrders => 'Out for delivery orders';
+  String get emtithalManager => 'مدير إمتثال';
 
   @override
-  String get changeToPreparing => 'Change to Preparing';
-
-  @override
-  String get editStatusTitle => 'Confirm Status Change';
-
-  @override
-  String get editStatusBody =>
-      'Are you sure you want to change the order status to \'Preparing\'?';
-
-  @override
-  String get deliveryOrders => 'Delivery Orders';
-
-  @override
-  String get pickupOrders => 'Pickup Orders';
-
-  @override
-  String get addedToBasketMsg => 'Product added to basket';
-
-  @override
-  String get noteHint => 'Note..';
-
-  @override
-  String get customerInfo => 'Customer Info';
-
-  @override
-  String get totalPrice => 'Total price';
-
-  @override
-  String get credit => 'Credit';
-
-  @override
-  String get contOrder => 'Continue Current Order';
-
-  @override
-  String get determineOrderType =>
-      'Must determine whether the order is delivery or pickup.';
-
-  @override
-  String get determineCustomerArea => 'Must determine customer address';
-
-  @override
-  String get determineDeliveryFee => 'Determine delivery fee';
-
-  @override
-  String get orderPlacedMsg => 'Order Placed Successfully';
+  String get departmentManager => 'مدير القسم(إن وجد)';
 
   @override
   String get searchCountryOrCode => 'إبحث عن اسم البلد او الرمز';
 
   @override
-  String get warning => 'Warning';
+  String get name => 'الإسم';
 
   @override
-  String get leavingPageWillRemoveBasketMsg =>
-      'Leaving the page will delete your items from the basket. continue anyway ?';
+  String get addedSuccessfully => 'تم الإضافة بنجاح';
 
   @override
-  String get non => 'Non';
+  String get employees => 'الموظفين';
 
   @override
-  String get passwordTooShort => 'يجب أن يكون على الأقل 6 أحرف';
+  String get departments => 'الأقسام';
 
   @override
-  String get paymentSummary => 'Payment Summary';
+  String get excellent => 'ممتاز';
 
   @override
-  String get card => 'Card';
+  String get veryGood => 'جيد جدا';
 
   @override
-  String get change => 'Change';
+  String get good => 'جيد';
 
   @override
-  String get ads => 'Ads';
+  String get weak => 'ضعيف';
 
   @override
-  String get shop => 'Shop';
+  String get sinceComplianceAssessment => 'تقييم الإمتثال منذ';
 
   @override
-  String get itemDeleteBody =>
-      'Are you sure you want to delete the item from favorites?';
+  String get selectEmployees => 'إختر الموظفين';
 
   @override
-  String pointsDiscountLabel(Object currency, Object points, Object value) {
-    return 'You have earned $points points, redeem to get $value $currency discount.';
-  }
+  String get generalViolation => 'رصد مخالفة عامة';
 
   @override
-  String get redeem => 'Redeem';
+  String get confirmed => 'تم التأكيد';
 
   @override
-  String get rewardsDiscount => 'Rewards Discount';
+  String get canceled => 'تم الإلغاء';
 
   @override
-  String get promoCodeDiscount => 'Promo Code Discount';
+  String get displayName => 'الاسم الظاهر';
 
   @override
-  String get filter => 'Filter';
+  String get build => 'البناء';
 
   @override
-  String get view => 'View';
+  String get manage => 'إدارة';
 
   @override
-  String get clear => 'Clear';
-
-  @override
-  String get locationAccessMsg =>
-      'Location access is required to show nearby stores, restaurants, and local offers. Please enable location permissions in your settings to enjoy the full experience.';
-
-  @override
-  String get deliverTo => 'Deliver To';
-
-  @override
-  String get enterPhoneNumber => 'Enter Phone Number';
-
-  @override
-  String get invalidOTP => 'Invalid OTP';
-
-  @override
-  String get enterPhoneCode => 'Enter Verification Code';
-
-  @override
-  String get inputPhoneTitle => 'Enter Your Phone Number';
-
-  @override
-  String get inputPhoneBody =>
-      'To proceed, please enter your phone number below. We will send a verification code to this number for authentication.';
-
-  @override
-  String get verifyPhoneTitle => 'Verify Your Phone';
-
-  @override
-  String get verifyPhoneBody =>
-      'Enter the PIN code sent to your phone number to complete the verification process.';
-
-  @override
-  String get users => 'المستخدمون';
+  String get roles => 'الأدوار';
 
   @override
   String get admins => 'المسؤولون';
 
   @override
-  String get policies => 'السياسات';
+  String get companies => 'الشركات';
+
+  @override
+  String get invalidCredential => 'بيانات الاعتماد غير صالحة';
+
+  @override
+  String get update => 'تحديث';
+
+  @override
+  String get createdAt => 'تاريخ الإنشاء';
+
+  @override
+  String get logout => 'تسجيل الخروج';
+
+  @override
+  String get adminLogin => 'تسجيل دخول المسؤول';
 
   @override
   String get noAccessTitle => 'تم رفض الوصول';
@@ -813,25 +609,19 @@ class AppLocalizationsAr extends AppLocalizations {
       'ليس لديك صلاحية لعرض هذه الصفحة. يرجى التواصل مع المسؤول.';
 
   @override
-  String get titleEn => 'العنوان باللغة الإنجليزية';
-
-  @override
-  String get titleAr => 'العنوان باللغة العربية';
+  String get policies => 'السياسات';
 
   @override
   String get title => 'العنوان';
 
   @override
-  String get role => 'الدور';
+  String get body => 'المحتوى';
 
   @override
-  String get roles => 'الأدوار';
+  String get titleEn => 'العنوان باللغة الإنجليزية';
 
   @override
-  String get show => 'عرض';
-
-  @override
-  String get manage => 'إدارة';
+  String get titleAr => 'العنوان باللغة العربية';
 
   @override
   String get nameEn => 'الاسم باللغة الإنجليزية';
@@ -846,159 +636,25 @@ class AppLocalizationsAr extends AppLocalizations {
   String get initialLocation => 'الموقع الابتدائي';
 
   @override
+  String get show => 'عرض';
+
+  @override
+  String get edit => 'تعديل';
+
+  @override
+  String get delete => 'حذف';
+
+  @override
+  String get users => 'المستخدمون';
+
+  @override
+  String get successfullyUpdated => 'تم التحديث بنجاح';
+
+  @override
   String get configure => 'تهيئة';
 
   @override
-  String get orderSentSuccessfully => 'Order sent successfully';
-
-  @override
-  String get startNewBasket => 'Start new basket';
-
-  @override
-  String get startNewBasketTitle => 'Start a New Basket?';
-
-  @override
-  String get startNewBasketBody =>
-      'Your current basket contains items from a different store or category. To add this item, you\'ll need to start a new basket.';
-
-  @override
-  String get pointsEarned => 'Points Earned!';
-
-  @override
-  String get pointsEarnedText =>
-      'Redeem them on your faves to save extra on your next order.';
-
-  @override
-  String get estimatedArrival => 'Estimated Arrival';
-
-  @override
-  String driverOrderStatement(Object storeName) {
-    return 'At $storeName and ready to grab your order.';
-  }
-
-  @override
-  String get last7DaysPerformance => 'Last 7 Days Performance';
-
-  @override
-  String get custom => 'Custom';
-
-  @override
-  String get today => 'Today';
-
-  @override
-  String get yesterday => 'Yesterday';
-
-  @override
-  String get thisWeek => 'This Week';
-
-  @override
-  String get lastWeek => 'Last Week';
-
-  @override
-  String get last7Days => 'Last 7 Days';
-
-  @override
-  String get last30Days => 'Last 30 Days';
-
-  @override
-  String get last90Days => 'Last 90 Days';
-
-  @override
-  String get last12Months => 'Last 12 Months';
-
-  @override
-  String get thisYear => 'This Year';
-
-  @override
-  String get insights => 'Insights';
-
-  @override
-  String get views => 'Views';
-
-  @override
-  String get delivering => 'Delivering';
-
-  @override
-  String get rate => 'Rate';
-
-  @override
-  String get disappointing => 'Disappointing';
-
-  @override
-  String get notSoGood => 'Not so good';
-
-  @override
-  String get alright => 'Alright';
-
-  @override
-  String get prettyGood => 'Pretty good';
-
-  @override
-  String get awesome => 'Awesome';
-
-  @override
-  String get tellUsALittleMore => 'Tell us a little more';
-
-  @override
-  String get reviewHint => 'Write a review to help others know what\'s good';
-
-  @override
-  String get starRatingMissedMsg =>
-      'Please select a star rating before submitting your review.';
-
-  @override
-  String get rewardPoints => 'Reward Points';
-
-  @override
-  String get build => 'البناء';
-
-  @override
-  String get engage => 'Engage';
-
-  @override
-  String get price => 'Price';
-
-  @override
-  String get basePrice => 'Base Price';
-
-  @override
-  String get discountPrice => 'Discount Price';
-
-  @override
-  String get quantity => 'Quantity';
-
-  @override
-  String get thumbnail => 'Thumbnail';
-
-  @override
-  String get tags => 'Tags';
-
-  @override
-  String get createdAt => 'تاريخ الإنشاء';
-
-  @override
-  String get id => 'ID';
-
-  @override
-  String get status => 'Status';
-
-  @override
-  String get store => 'Store';
-
-  @override
-  String get type => 'Type';
-
-  @override
-  String get user => 'User';
-
-  @override
-  String get newKey => 'New';
-
-  @override
-  String get trending => 'Trending';
-
-  @override
-  String get bestSeller => 'Best Seller';
+  String get company => 'الشركة';
 
   @override
   String get helloAndWelcome => 'أهلا ومرحبا بك';
@@ -1020,6 +676,18 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get followYourInfo => 'لإنشاء حساب يرجى تعبئة المعلومات التالية';
+
+  @override
+  String get firstName => 'الإسم الأول';
+
+  @override
+  String get lastName => 'الإسم الأخير';
+
+  @override
+  String get email => 'البريد الإلكتروني';
+
+  @override
+  String get country => 'الدولة';
 
   @override
   String get companyCodeWorkFor => 'رمز الشركة التي تعمل بها';
@@ -1125,10 +793,13 @@ class AppLocalizationsAr extends AppLocalizations {
       'يجري التحقق من مكان تواجدك لتسجيل وقت الوصول إلى العمل ، يرجى الإنتظار';
 
   @override
-  String get applicationSettings => 'اعدادات التطبيق';
+  String get cancel => 'إلغاء';
 
   @override
-  String get changeLanguage => 'تغيير اللغة';
+  String get profile => 'الملف الشخصي';
+
+  @override
+  String get applicationSettings => 'اعدادات التطبيق';
 
   @override
   String get nightMode => 'الوضع الليلي';
@@ -1152,13 +823,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get whoAreWe => 'من نحن؟';
 
   @override
-  String get logOut => 'تسجيل الخروج';
-
-  @override
   String get employeeData => 'بيانات الموظف';
-
-  @override
-  String get jobTitle => 'المسمى الوظيفي';
 
   @override
   String get basicSalary => 'الراتب الأساسي';
@@ -1215,6 +880,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get attachFile => 'ارفاق ملف';
 
   @override
+  String get newOrder => 'طلب جديد';
+
+  @override
   String get workHistory => 'تاريخ العمل';
 
   @override
@@ -1234,12 +902,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get requestType => 'نوع الطلب';
-
-  @override
-  String get fromDate => 'من تاريخ';
-
-  @override
-  String get toDate => 'إلى تاريخ';
 
   @override
   String get leaveRequest => 'طلب مغادرة';
@@ -1270,9 +932,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get ceiling => 'السقف';
-
-  @override
-  String get monthly => 'شهرياً';
 
   @override
   String get fromTheBasicSalary => 'من الراتب الأساسي';
@@ -1353,9 +1012,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get sentSuccessfully => 'تم الإرسال بنجاح';
 
   @override
-  String get reports => 'التقارير';
-
-  @override
   String get attendance => 'الحضور';
 
   @override
@@ -1363,12 +1019,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get absence => 'الغياب';
-
-  @override
-  String get hour => 'ساعة';
-
-  @override
-  String get day => 'يوم';
 
   @override
   String get annualLeaves => 'الإجازات السنوية';
@@ -1412,9 +1062,6 @@ class AppLocalizationsAr extends AppLocalizations {
       'تم ارسال توضيح وشروحات لقسم الموارد البشرية عن سبب الغياب او التأخير ، بأنتظار رد المسؤول';
 
   @override
-  String get facilityManagement => 'إدارة المنشأة';
-
-  @override
   String get branchManagement => 'إدارة الفروع';
 
   @override
@@ -1452,6 +1099,9 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get shiftName => 'اسم الشيفت';
+
+  @override
+  String get search => 'البحث';
 
   @override
   String get introTitle0 => 'نظام حظور وانصراف الموظفين';
@@ -1496,13 +1146,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get shift => 'الشيفت';
 
   @override
-  String get employee => 'الموظف';
+  String get note => 'ملاحظة';
 
   @override
   String get writeNote => 'كتابة ملاحظة';
-
-  @override
-  String get addEmployee => 'إضافة للموظف';
 
   @override
   String get totalVacations => 'مجموع الاجازات';
@@ -1523,9 +1170,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get waiting => 'بالانتظار';
 
   @override
-  String get startDate => 'تاريخ البداية';
-
-  @override
   String get endDate => 'تاريخ الانتهاء';
 
   @override
@@ -1541,7 +1185,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get addBranch => 'إضافة فرع';
 
   @override
-  String get responsibleManager => 'المدير المسؤول';
+  String get city => 'المدينة';
 
   @override
   String get workingHours => 'أوقات العمل';
@@ -1550,16 +1194,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get determineLocationOnMap => ' تحديد الموقع على الخريطة';
 
   @override
-  String get departments => 'الأقسام';
-
-  @override
   String get addDepartment => 'إضافة قسم';
 
   @override
   String get departmentName => 'اسم القسم';
-
-  @override
-  String get departmentManager => 'مدير القسم(إن وجد)';
 
   @override
   String get condition => 'الحالة';
@@ -1592,9 +1230,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get time => 'الوقت';
 
   @override
-  String get department => 'القسم';
-
-  @override
   String get employeesNumber => 'عدد الموظفين';
 
   @override
@@ -1604,16 +1239,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get workTabel => 'جدول الدوام';
 
   @override
-  String get employees => 'الموظفين';
-
-  @override
   String get socialSecurity => 'ضمان إجتماعي';
 
   @override
   String get rest => 'الاستراحة';
-
-  @override
-  String get sendNewNotification => 'إرسال إشعار جديد';
 
   @override
   String get notificationTitle => 'عنوان الاشعار';
@@ -1626,9 +1255,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get employmentContracts => 'عقود العمل';
-
-  @override
-  String get addNewEmployee => 'إضافة موظف جديد';
 
   @override
   String get addStaff => 'إضافة موظف';
@@ -1694,6 +1320,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get remainingBalanceAdvance => 'الرصيد المتبقى من السلف';
 
   @override
+  String get accept => 'قبول';
+
+  @override
+  String get reject => 'رفض';
+
+  @override
   String get sureAcceptFile => 'هل أنت متأكد من قبول الملف؟';
 
   @override
@@ -1718,25 +1350,22 @@ class AppLocalizationsAr extends AppLocalizations {
   String get requestDetails => 'تفاصيل الطلب';
 
   @override
-  String get saturday => 'السبت';
+  String get male => 'ذكر';
 
   @override
-  String get sunday => 'الأحد';
+  String get female => 'أنثى';
 
   @override
-  String get monday => 'الإثنين';
+  String get single => 'أعزب';
 
   @override
-  String get tuesday => 'الثلاثاء';
+  String get married => 'متزوج';
 
   @override
-  String get wednesday => 'الأربعاء';
+  String get divorced => 'مطلق';
 
   @override
-  String get thursday => 'الخميس';
-
-  @override
-  String get friday => 'الجمعة';
+  String get widowed => 'أرمل';
 
   @override
   String get acceptanceDate => 'تاريخ القبول';
@@ -1749,6 +1378,9 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get numberDaysRemaining => 'عدد الايام المتبقية';
+
+  @override
+  String get settings => 'اعدادات';
 
   @override
   String get vacationsAndLeaves => 'الإجازات والمغادرات';
@@ -1818,24 +1450,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get answer => 'الاجابة';
 
   @override
-  String get male => 'ذكر';
-
-  @override
-  String get female => 'أنثى';
-
-  @override
-  String get single => 'أعزب';
-
-  @override
-  String get married => 'متزوج';
-
-  @override
-  String get divorced => 'مطلق';
-
-  @override
-  String get widowed => 'أرمل';
-
-  @override
   String get citiesManagement => 'إدارة المدن';
 
   @override
@@ -1855,6 +1469,9 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get amount => 'المبلغ';
+
+  @override
+  String get submit => 'تقديم';
 
   @override
   String get breaks => 'الإستراحات';
@@ -1898,4 +1515,19 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get enable => 'تفعيل';
+
+  @override
+  String get invalidPhoneNum => 'رقم غير صالح';
+
+  @override
+  String get engage => 'شارك';
+
+  @override
+  String get confirm => 'تأكيد';
+
+  @override
+  String get countrySearchHint => 'ابحث عن اسم الدولة أو رمز الاتصال...';
+
+  @override
+  String get noResults => 'لا توجد نتائج';
 }

@@ -27,28 +27,6 @@ class MySharedPreferences {
     _sharedPreferences.setString('user', jsonEncode(value?.toJson()));
   }
 
-  static List<BasketModel> get basket {
-    var value = _sharedPreferences.getString('basket');
-    List<BasketModel>? basket = [];
-    if (value != null && value.isNotEmpty && value != 'null') {
-      List<dynamic> result = jsonDecode(value);
-      basket = result.toList().map((element) => BasketModel.fromJson(element)).toList();
-      return basket;
-    } else {
-      return [];
-    }
-  }
-
-  static set basket(List<BasketModel>? value) {
-    if (value != null) {
-      for (var element in value) {
-        element.createdAt = null;
-        element.product?.createdAt = null;
-      }
-    }
-    _sharedPreferences.setString('basket', jsonEncode(value));
-  }
-
   static bool get passedIntro => _sharedPreferences.getBool('passedIntro') ?? false;
   static set passedIntro(bool value) => _sharedPreferences.setBool('passedIntro', value);
 
@@ -85,22 +63,6 @@ class MySharedPreferences {
   static set role(RoleModel? value) {
     value?.createdAt = null;
     _sharedPreferences.setString('role', jsonEncode(value?.toJson()));
-  }
-
-  static FoodStoreModel get foodStore {
-    String? value = _sharedPreferences.getString('foodStore');
-    late FoodStoreModel store;
-    if (value != null && value.isNotEmpty && value != 'null') {
-      store = FoodStoreModel.fromJson(jsonDecode(value));
-    } else {
-      store = FoodStoreModel(geoLoc: GeoLocModel());
-    }
-    return store;
-  }
-
-  static set foodStore(FoodStoreModel value) {
-    value.createdAt = null;
-    _sharedPreferences.setString('foodStore', jsonEncode(value.toJson()));
   }
 
   static VersionModel? get versions {

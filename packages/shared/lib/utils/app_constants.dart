@@ -23,5 +23,3 @@ const kProviderRoleId = '234235';
 const kAppName = 'super';
 const kSuperAdminRoleId = '34fbd0909d4011eeb24e170bd46df764';
 const kVersionsDocId = '6FpxtsNEhh7Fie394WOr';
-CategoryModel get kShoppingCategory =>
-    CategoryModel(id: kShoppingId, nameEn: "shopping", nameAr: "تسوق");

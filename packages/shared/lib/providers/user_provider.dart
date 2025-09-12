@@ -9,28 +9,6 @@ class UserProvider extends ChangeNotifier {
   FirebaseFirestore get _firebaseFirestore => FirebaseFirestore.instance;
   DocumentReference<UserModel> get userDocRef => _firebaseFirestore.users.doc(userUid);
   Stream<DocumentSnapshot<UserModel>> get userStream => userDocRef.snapshots();
-  CollectionReference<BasketModel> get userBasketCollectionRef => userDocRef
-      .collection(MyCollections.basket)
-      .withConverter<BasketModel>(
-        fromFirestore: (snapshot, _) => BasketModel.fromJson(snapshot.data()!),
-        toFirestore: (snapshot, _) => snapshot.toJson(),
-      );
-  DocumentReference<FoodStoreModel> get storeDocRef => _firebaseFirestore.foodStores.doc(user?.id);
-  Stream<QuerySnapshot<BasketModel>> get userBasketStream => userBasketCollectionRef.snapshots();
-  CollectionReference<Map<String, dynamic>> get addressesCollectionRef =>
-      userDocRef.collection(MyCollections.addresses);
-  CollectionReference<AddressModel> get addressesCollectionRefConverted => userDocRef
-      .collection(MyCollections.addresses)
-      .withConverter<AddressModel>(
-        fromFirestore: (snapshot, _) => AddressModel.fromJson(snapshot.data()!),
-        toFirestore: (snapshot, _) {
-          final data = snapshot.toJson();
-          if (snapshot.createdAt == null) {
-            data['createdAt'] = FieldValue.serverTimestamp();
-          }
-          return data;
-        },
-      );
 
   String getToken(String code, String phone) => "minutto-$code-$phone";
 
@@ -112,52 +90,5 @@ class UserProvider extends ChangeNotifier {
         }
       },
     );
-  }
-
-  Future<void> deleteAccount(BuildContext context) async {
-    ApiService.fetch(
-      context,
-      callBack: () async {
-        // await user?.delete();
-        if (context.mounted) {
-          // logout(context);
-          context.showSnackBar(context.appLocalization.deleteAccountSuccess);
-        }
-      },
-    );
-  }
-
-  void toggleFavorite(
-    BuildContext context,
-    bool inFav, {
-    required String id,
-    required String type,
-    bool fromFavorites = false,
-  }) async {
-    final favorite = FavoriteModel(id: id, type: type, createdAt: kNowDate);
-    final favDocRef = userDocRef.collection(MyCollections.favorites).favoriteConvertor.doc(id);
-    final batch = getIt<FirebaseFirestore>().batch();
-    if (fromFavorites) {
-      final results = await context.showDialog(
-        titleText: context.appLocalization.itemDeleteTitle,
-        bodyText: context.appLocalization.itemDeleteBody,
-        warning: true,
-      );
-      if (!results) {
-        return;
-      }
-    }
-    if (inFav) {
-      batch.delete(favDocRef);
-      batch.update(userDocRef, {
-        MyFields.favoriteIds: FieldValue.arrayRemove([id]),
-      });
-    } else {
-      batch.set(favDocRef, favorite);
-      batch.update(userDocRef, {
-        MyFields.favoriteIds: FieldValue.arrayUnion([id]),
-      });
-    }
-    batch.commit();
   }
 }

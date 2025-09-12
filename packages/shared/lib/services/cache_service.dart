@@ -19,8 +19,6 @@ class CacheService {
   }
 
   void _toggle(VersionModel data) {
-    print("version:: ${versions.shiftsVersion}");
-    print("version:: ${data.shiftsVersion}");
     if (versions.usersVersion != data.usersVersion) {
       _fetchUsers();
     }

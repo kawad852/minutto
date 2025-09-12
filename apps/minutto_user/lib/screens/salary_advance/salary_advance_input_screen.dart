@@ -24,8 +24,8 @@ class _SalaryAdvanceInputScreenState extends State<SalaryAdvanceInputScreen> {
           final user = MySharedPreferences.user!;
           final docRef = _firebaseFirestore.salaryAdvances.doc();
           _salaryAdvance.id = docRef.id;
-          _salaryAdvance.companyId = user.companyId!;
-          _salaryAdvance.userId = user.id!;
+          _salaryAdvance.companyId = user.companyId;
+          _salaryAdvance.userId = user.id;
           _salaryAdvance.createdAt = kNowDate;
           _salaryAdvance.attachments = await StorageService().uploadFiles(
             MyCollections.salaryAdvances,

@@ -48,7 +48,6 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
           _collection,
           _files,
         );
-        print('date:: ${_request.createdAt.runtimeType}');
         await docRef.set(_request);
       },
     );

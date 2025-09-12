@@ -13,10 +13,6 @@ class PortalProvider extends ChangeNotifier {
 
   bool hasTablePermission(BuildContext context, TableMenuOption option) {
     final user = Provider.of<UserModel>(context, listen: false);
-
-    if (user.id == null) {
-      return false;
-    }
     if (user.roleId == kSuperAdminRoleId) {
       return true;
     }

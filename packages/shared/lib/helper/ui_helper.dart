@@ -24,22 +24,4 @@ class UiHelper {
     }
     return "${context.getDialCode(code)}$phoneNum";
   }
-
-  static String getDisplayName(String? firstName, String? lastName) {
-    if (firstName == null) return '';
-    if (lastName == null || lastName.trim().isEmpty) return firstName;
-    return '$firstName $lastName';
-  }
-
-  static IconData getBuildingIcon(String value) {
-    final type = BuildingType.values.firstWhere((e) => e.value == value);
-    switch (type) {
-      case BuildingType.apartment:
-        return FontAwesomeIcons.apartment;
-      case BuildingType.office:
-        return FontAwesomeIcons.chairOffice;
-      default:
-        return FontAwesomeIcons.house;
-    }
-  }
 }

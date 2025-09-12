@@ -12,6 +12,8 @@ dependencies:
     sdk: flutter
   shared:
     path: ../shared
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
