@@ -516,5 +516,7 @@
   "attendanceFailedTitle": "فشل التحقق",
   "attendanceFailedBody": "يرجى التواجد داخل مقر العمل والمحاولة مجدداً او جرب استخدام إحدى الوسائل الأخرى",
   "accountUnderReview": "حسابك قيد المراجعة",
-  "accountUnderReviewDescription": "يرجى الانتظار حتى يقوم المسؤول بالموافقة على حسابك."
+  "accountUnderReviewDescription": "يرجى الانتظار حتى يقوم المسؤول بالموافقة على حسابك.",
+  "locationServiceDisabledMsg": "خدمة تحديد الموقع غير مفعلة في جهازك",
+  "enable": "تفعيل"
 }

@@ -53,6 +53,8 @@ class LocationProvider extends ChangeNotifier {
       notifyListeners();
       debugPrint("Position:: Latitude:: $latitude Longitude:: $longitude");
       if (onPermissionGranted != null) {
+        print("9823y1r9813yr");
+
         onPermissionGranted();
       }
       return GeoLocationModel(

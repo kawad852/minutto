@@ -79,13 +79,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get addToBasket => 'Add to basket';
 
   @override
-  String get locationServiceDisabledMsg =>
-      'Location services are disabled in your device';
-
-  @override
-  String get enable => 'Enable';
-
-  @override
   String get basketEmptyTitle => 'Your Basket is Empty';
 
   @override
@@ -1907,4 +1900,11 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get accountUnderReviewDescription =>
       'Please wait until an administrator approves your account.';
+
+  @override
+  String get locationServiceDisabledMsg =>
+      'Location services are disabled in your device';
+
+  @override
+  String get enable => 'Enable';
 }

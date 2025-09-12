@@ -10,7 +10,6 @@ class HomeHeader extends StatefulWidget {
 }
 
 class _HomeHeaderState extends State<HomeHeader> {
-  var _isBreak = false;
   late Stream<QuerySnapshot<AttendanceModel>> _todayAttendancesStream;
 
   void _initialize() {

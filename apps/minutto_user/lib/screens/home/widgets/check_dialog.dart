@@ -17,7 +17,11 @@ class CheckDialog extends StatelessWidget {
       context,
       callBack: () async {
         final companyLocation = MySharedPreferences.company!.geoLocation!;
-        final userLocation = await context.locationProvider.determinePosition(context);
+        final userLocation = await context.locationProvider.determinePosition(
+          context,
+          showSnackBar: true,
+        );
+
         if (userLocation != null) {
           final distance = Geolocator.distanceBetween(
             companyLocation.latitude,

@@ -21,8 +21,6 @@
   "totalAmount": "Total Amount",
   "checkout": "Checkout",
   "addToBasket": "Add to basket",
-  "locationServiceDisabledMsg": "Location services are disabled in your device",
-  "enable": "Enable",
   "basketEmptyTitle": "Your Basket is Empty",
   "basketEmptyBody": "Start adding items to your basket by exploring our collection. Once you find something you like, simply tap 'Add to Basket' to begin your shopping journey. Happy shopping!",
   "contShipping": "Continue shopping",
@@ -700,6 +698,7 @@
   "attendanceFailedTitle": "Verification Failed",
   "attendanceFailedBody": "Please be present at the workplace and try again, or try using one of the other methods",
   "accountUnderReview": "Your account is under review",
-  "accountUnderReviewDescription": "Please wait until an administrator approves your account."
-
+  "accountUnderReviewDescription": "Please wait until an administrator approves your account.",
+  "locationServiceDisabledMsg": "Location services are disabled in your device",
+  "enable": "Enable"
 }

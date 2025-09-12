@@ -79,13 +79,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get addToBasket => 'Add to basket';
 
   @override
-  String get locationServiceDisabledMsg =>
-      'Location services are disabled in your device';
-
-  @override
-  String get enable => 'Enable';
-
-  @override
   String get basketEmptyTitle => 'Your Basket is Empty';
 
   @override
@@ -1898,4 +1891,11 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get accountUnderReviewDescription =>
       'يرجى الانتظار حتى يقوم المسؤول بالموافقة على حسابك.';
+
+  @override
+  String get locationServiceDisabledMsg =>
+      'خدمة تحديد الموقع غير مفعلة في جهازك';
+
+  @override
+  String get enable => 'تفعيل';
 }

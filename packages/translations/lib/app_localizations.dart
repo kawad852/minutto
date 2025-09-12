@@ -230,18 +230,6 @@ abstract class AppLocalizations {
   /// **'Add to basket'**
   String get addToBasket;
 
-  /// No description provided for @locationServiceDisabledMsg.
-  ///
-  /// In en, this message translates to:
-  /// **'Location services are disabled in your device'**
-  String get locationServiceDisabledMsg;
-
-  /// No description provided for @enable.
-  ///
-  /// In en, this message translates to:
-  /// **'Enable'**
-  String get enable;
-
   /// No description provided for @basketEmptyTitle.
   ///
   /// In en, this message translates to:
@@ -3751,6 +3739,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Please wait until an administrator approves your account.'**
   String get accountUnderReviewDescription;
+
+  /// No description provided for @locationServiceDisabledMsg.
+  ///
+  /// In en, this message translates to:
+  /// **'Location services are disabled in your device'**
+  String get locationServiceDisabledMsg;
+
+  /// No description provided for @enable.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable'**
+  String get enable;
 }
 
 class _AppLocalizationsDelegate
