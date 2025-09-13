@@ -8,10 +8,11 @@ class AttendanceHelper {
   final FirebaseFirestore _firebaseFirestore = getIt<FirebaseFirestore>();
   final _timeFormat = DateFormat('hh:mm a');
 
-  // === Public API ===
+  /// Call like:
+  /// `AttendanceHelper.instance.check(context: context, type: AttendanceEnum.checkIn.value);`
   Future<void> check({
     required BuildContext context,
-    required String type,
+    required String type, // e.g. AttendanceEnum.checkIn.value
   }) async {
     ApiService.fetch(
       context,
@@ -43,84 +44,83 @@ class AttendanceHelper {
           userLocation.latitude,
           userLocation.longitude,
         );
+        if (!context.mounted) return;
 
-        if (context.mounted) {
-          _verify(
-            context: context,
-            distance: distance,
-            type: type,
-            shift: shift,
-            userBasicSalary: user.basicSalary.toDouble() ?? 0.0,
+        if (distance >= 20) {
+          context.showSnackBar(
+            "",
+            contentWidget: ListTile(
+              titleTextStyle: TextStyle(
+                color: context.colorScheme.onPrimary,
+                fontFamily: MyTheme.fontFamily,
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              ),
+              subtitleTextStyle: TextStyle(
+                color: context.colorScheme.surface,
+                fontFamily: MyTheme.fontFamily,
+              ),
+              title: Text(context.appLocalization.attendanceFailedTitle),
+              subtitle: Text(context.appLocalization.attendanceFailedBody),
+            ),
           );
+          return;
         }
+
+        // 3) Early check-in rule: block if earlier than 15 minutes before shift start
+        final nowDate = DateTime.now();
+        DateTime effectiveCheckIn = nowDate;
+        if (type == AttendanceEnum.checkIn.value) {
+          final se = _shiftStartEnd(nowDate, shift);
+          final shiftStart = se.start;
+
+          if (nowDate.isBefore(shiftStart)) {
+            final minutesUntilStart = shiftStart.difference(nowDate).inMinutes;
+            if (minutesUntilStart > 15) {
+              context.showSnackBar(
+                context.appLocalization.tooEarlyCheckInMsg,
+              );
+              return; // do NOT save attendance
+            }
+            // Within last 15 minutes before start → allow and treat as on-time
+            effectiveCheckIn = shiftStart; // avoids negative/“early” math
+          }
+        }
+
+        // 4) Passed gates → save + compute deductions (for check-in only)
+        context.showSnackBar(context.appLocalization.attendanceSuccessMsg);
+
+        final docRef = _firebaseFirestore.userAttendance().doc();
+
+        int deductionHours = 0;
+        double deductionAmount = 0.0;
+
+        if (type == AttendanceEnum.checkIn.value) {
+          final policy = company.attendancePolicy!;
+          final result = _calculateLateDeduction(
+            checkIn: effectiveCheckIn,
+            shift: shift,
+            policy: policy,
+            basicSalary: user.basicSalary?.toDouble() ?? 0.0,
+          );
+          deductionHours = result.deductionHours;
+          deductionAmount = result.deductionAmount;
+        }
+
+        final attendance = AttendanceModel(
+          id: docRef.id,
+          createdAt: nowDate, // real action time
+          type: type,
+          deductionHours: deductionHours,
+          deductionAmount: deductionAmount,
+        );
+
+        await docRef.set(attendance);
       },
     );
   }
 
-  // === Private ===
-  void _verify({
-    required BuildContext context,
-    required double distance,
-    required String type,
-    required ShiftModel shift,
-    required double userBasicSalary,
-  }) {
-    if (distance >= 20) {
-      if (context.mounted) {
-        context.showSnackBar(
-          "",
-          contentWidget: ListTile(
-            titleTextStyle: TextStyle(
-              color: context.colorScheme.onPrimary,
-              fontFamily: MyTheme.fontFamily,
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-            ),
-            subtitleTextStyle: TextStyle(
-              color: context.colorScheme.surface,
-              fontFamily: MyTheme.fontFamily,
-            ),
-            title: Text(context.appLocalization.attendanceFailedTitle),
-            subtitle: Text(context.appLocalization.attendanceFailedBody),
-          ),
-        );
-      }
-      return;
-    }
-
-    // Passed location
-    if (context.mounted) {
-      context.showSnackBar(context.appLocalization.attendanceSuccessMsg);
-    }
-
-    final docRef = _firebaseFirestore.userAttendance().doc();
-    final nowDate = DateTime.now();
-
-    int deductionHours = 0;
-    double deductionAmount = 0.0;
-
-    if (type == AttendanceEnum.checkIn.value) {
-      final policy = MySharedPreferences.company!.attendancePolicy!;
-      final result = _calculateLateDeduction(
-        checkIn: nowDate,
-        shift: shift,
-        policy: policy,
-        basicSalary: userBasicSalary,
-      );
-      deductionHours = result.deductionHours;
-      deductionAmount = result.deductionAmount;
-    }
-
-    final attendance = AttendanceModel(
-      id: docRef.id,
-      createdAt: nowDate,
-      type: type,
-      deductionHours: deductionHours,
-      deductionAmount: deductionAmount,
-    );
-
-    docRef.set(attendance);
-  }
+  // ===== Private helpers =====
 
   bool _isWorkingDay(ShiftModel shift, DateTime date) {
     if (shift.days.isEmpty) return true;
@@ -130,9 +130,8 @@ class AttendanceHelper {
   ({DateTime start, DateTime end}) _shiftStartEnd(DateTime onDate, ShiftModel shift) {
     final start = _combineDateWithTime(onDate, shift.startHour);
     var end = _combineDateWithTime(onDate, shift.endHour);
-
     if (end.isBefore(start)) {
-      end = end.add(const Duration(days: 1));
+      end = end.add(const Duration(days: 1)); // overnight shift
     }
     return (start: start, end: end);
   }
@@ -153,7 +152,7 @@ class AttendanceHelper {
     required double shiftHours,
   }) {
     if (shiftHours <= 0) return 0;
-    final daySalary = basicSalary / 30.0;
+    final daySalary = basicSalary / 30.0; // adjust if your org uses 26/working-hours base
     return daySalary / shiftHours;
   }
 
@@ -166,6 +165,7 @@ class AttendanceHelper {
     final se = _shiftStartEnd(checkIn, shift);
     final shiftStart = se.start;
 
+    // Early/on-time ⇒ no late
     if (!checkIn.isAfter(shiftStart)) {
       return const LateDeductionResult(
         deductionHours: 0,
@@ -177,7 +177,7 @@ class AttendanceHelper {
 
     final minutesLateRaw = checkIn.difference(shiftStart).inMinutes;
     final effectiveLate = policy.lateAfterGrace
-        ? (minutesLateRaw - policy.shiftGraceMinutes)
+        ? (minutesLateRaw - policy.shiftGraceMinutes).clamp(0, 1 << 30)
         : minutesLateRaw;
 
     if (effectiveLate <= 0) {
@@ -208,7 +208,7 @@ class AttendanceHelper {
 
     if (match != null) {
       final hours = match.value;
-      final amount = (hours * rate);
+      final amount = hours * rate;
       return LateDeductionResult(
         deductionHours: hours,
         deductionAmount: double.parse(amount.toStringAsFixed(2)),
@@ -217,8 +217,9 @@ class AttendanceHelper {
       );
     }
 
+    // Exceeded all bands → deduct full day
     final fullDayHours = shiftHours.round();
-    final fullDayAmount = (shiftHours * rate);
+    final fullDayAmount = shiftHours * rate;
     return LateDeductionResult(
       deductionHours: fullDayHours,
       deductionAmount: double.parse(fullDayAmount.toStringAsFixed(2)),
@@ -228,13 +229,12 @@ class AttendanceHelper {
   }
 }
 
-// === Result Holder ===
+// Holder for calculation output
 class LateDeductionResult {
   final int deductionHours;
   final double deductionAmount;
   final int minutesLate;
   final bool exceededMaxBand;
-
   const LateDeductionResult({
     required this.deductionHours,
     required this.deductionAmount,

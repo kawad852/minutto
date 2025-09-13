@@ -3097,6 +3097,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Today is your day off'**
   String get thisIsDayOffMsg;
+
+  /// No description provided for @tooEarlyCheckInMsg.
+  ///
+  /// In en, this message translates to:
+  /// **'You can check in only within 15 minutes before your shift starts.'**
+  String get tooEarlyCheckInMsg;
 }
 
 class _AppLocalizationsDelegate

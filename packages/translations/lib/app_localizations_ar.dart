@@ -1533,4 +1533,8 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get thisIsDayOffMsg => 'اليوم هو يوم عطلتك';
+
+  @override
+  String get tooEarlyCheckInMsg =>
+      'يمكنك تسجيل الحضور فقط خلال 15 دقيقة قبل بداية دوامك.';
 }

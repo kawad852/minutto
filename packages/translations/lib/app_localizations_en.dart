@@ -1542,4 +1542,8 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get thisIsDayOffMsg => 'Today is your day off';
+
+  @override
+  String get tooEarlyCheckInMsg =>
+      'You can check in only within 15 minutes before your shift starts.';
 }

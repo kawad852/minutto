@@ -114,11 +114,12 @@ class _ShiftInputScreenState extends State<ShiftInputScreen> {
                   spacing: 5,
                   children: WeekDayEnum.values.map((e) {
                     final value = e.value;
-                    final label = e.label();
+                    final label = e.label(context);
                     return FilterChip(
                       label: Text(label),
                       selected: _shift.days.contains(value),
                       onSelected: (selected) {
+                        print("value:: ${value}");
                         setState(() {
                           if (selected) {
                             _shift.days.add(value);

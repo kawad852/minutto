@@ -498,5 +498,6 @@
   "confirm": "Confirm",
   "countrySearchHint": "Search for the country name or dial code...",
   "noResults": "No Results",
-  "thisIsDayOffMsg": "Today is your day off"
+  "thisIsDayOffMsg": "Today is your day off",
+  "tooEarlyCheckInMsg": "You can check in only within 15 minutes before your shift starts."
 }
