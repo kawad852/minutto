@@ -6,23 +6,25 @@ class AggregationService {
 
   FirebaseFirestore get _firebaseFirestore => getIt<FirebaseFirestore>();
 
-  Future<int> getRequestsCount(
+  Future<AggregateQuerySnapshot> getRequestsCount(
     String collection, {
     Filter? f,
+    AggregateField? aggregateField1,
+    AggregateField? aggregateField2,
   }) {
-    final nowDate = DateTime.now().copyWith(
-      month: 1,
-      day: 1,
-      minute: 0,
-      second: 0,
-      millisecond: 0,
-      hour: 0,
-      microsecond: 0,
-    );
     late Filter filter;
     if (f != null) {
       filter = f;
     } else {
+      final nowDate = DateTime.now().copyWith(
+        month: 1,
+        day: 1,
+        minute: 0,
+        second: 0,
+        millisecond: 0,
+        hour: 0,
+        microsecond: 0,
+      );
       final userIdFilter = Filter(
         MyFields.userId,
         isEqualTo: MySharedPreferences.user!.id,
@@ -40,9 +42,9 @@ class AggregationService {
             .collection(collection)
             .requestConvertor
             .where(filter)
-            .count()
+            .aggregate(aggregateField1 ?? count(), aggregateField2)
             .get()
-            .then((value) => value.count ?? 0);
+            .then((value) => value);
       },
     );
   }

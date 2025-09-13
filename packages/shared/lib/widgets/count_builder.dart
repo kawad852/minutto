@@ -20,10 +20,12 @@ class _CountBuilderState extends State<CountBuilder> {
   late Future<int> _future;
 
   void _initialize() {
-    _future = AggregationService.instance.getRequestsCount(
-      widget.collection,
-      f: widget.filter,
-    );
+    _future = AggregationService.instance
+        .getRequestsCount(
+          widget.collection,
+          f: widget.filter,
+        )
+        .then((value) => value.count ?? 0);
   }
 
   @override
