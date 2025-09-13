@@ -9,6 +9,20 @@ class CacheService {
 
   FirebaseFirestore get _firebaseFirestore => getIt<FirebaseFirestore>();
 
+  ShiftModel get todayShift {
+    final shift = MySharedPreferences.shift!;
+    final assignedShift = MySharedPreferences.assignedShift;
+    try {
+      if (assignedShift != null) {
+        final shift = MyStorage.shifts.firstWhere((e) => e.id == assignedShift.shiftId);
+        return shift;
+      }
+      return shift;
+    } catch (e) {
+      return shift;
+    }
+  }
+
   void fetchVersions() {
     _firebaseFirestore.versionsDoc.get().then((value) {
       final data = value.data();
@@ -118,6 +132,16 @@ class CacheService {
       final data = value.data()!;
       data.createdAt = null;
       MySharedPreferences.shift = data;
+    });
+  }
+
+  void fetchAssignedShift() {
+    final user = MySharedPreferences.user;
+    final docId = DateTime.now().assignedShiftId(user!.id);
+    _firebaseFirestore.shiftAssignments.doc(docId).get().then((value) {
+      final data = value.data();
+      data?.createdAt = null;
+      MySharedPreferences.assignedShift = data;
     });
   }
 }

@@ -103,4 +103,17 @@ class MySharedPreferences {
   static set shift(ShiftModel? value) {
     _sharedPreferences.setString('shift', jsonEncode(value?.toJson()));
   }
+
+  static ShiftAssignmentModel? get assignedShift {
+    String? value = _sharedPreferences.getString('assignedShift');
+    ShiftAssignmentModel? model;
+    if (value != null && value.isNotEmpty && value != 'null') {
+      model = ShiftAssignmentModel.fromJson(jsonDecode(value));
+    }
+    return model;
+  }
+
+  static set assignedShift(ShiftAssignmentModel? value) {
+    _sharedPreferences.setString('assignedShift', jsonEncode(value?.toJson()));
+  }
 }

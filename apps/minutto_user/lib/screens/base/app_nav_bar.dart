@@ -49,6 +49,7 @@ class _AppNavBarState extends State<AppNavBar> {
     _pageController = PageController(initialPage: _currentIndex);
     CacheService.instance.fetchCompany();
     CacheService.instance.fetchShift();
+    CacheService.instance.fetchAssignedShift();
     context.locationProvider.determinePosition(context);
   }
 
