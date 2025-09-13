@@ -1,5 +1,7 @@
 import 'package:shared/shared.dart';
 
+import '../../../minutto_user.dart';
+
 class StaffCard extends StatelessWidget {
   final UserModel user;
 
@@ -34,7 +36,6 @@ class StaffCard extends StatelessWidget {
             shape: BoxShape.circle,
           ),
           Expanded(
-            flex: 3,
             child: Column(
               spacing: 4,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,6 +80,13 @@ class StaffCard extends StatelessWidget {
                 ),
               ],
             ),
+          ),
+          EditButton(
+            onPressed: () {
+              context.navigate((context) {
+                return StaffInputScreen(user: user);
+              });
+            },
           ),
         ],
       ),
