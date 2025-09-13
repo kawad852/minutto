@@ -96,6 +96,7 @@ export 'extensions/timeago_extension.dart';
 
 ///Helper
 export 'helper/app_over_loader.dart';
+export 'helper/attendance_helper.dart';
 export 'helper/bill_clipper.dart';
 export 'helper/form_helper.dart';
 export 'helper/guest_helper.dart';

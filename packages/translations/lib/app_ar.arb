@@ -497,5 +497,6 @@
   "engage": "شارك",
   "confirm": "تأكيد",
   "countrySearchHint": "ابحث عن اسم الدولة أو رمز الاتصال...",
-  "noResults": "لا توجد نتائج"
+  "noResults": "لا توجد نتائج",
+  "thisIsDayOffMsg": "اليوم هو يوم عطلتك"
 }

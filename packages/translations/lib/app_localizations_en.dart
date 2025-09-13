@@ -1539,4 +1539,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get noResults => 'No Results';
+
+  @override
+  String get thisIsDayOffMsg => 'Today is your day off';
 }

@@ -1,5 +1,4 @@
 import 'package:minutto_user/minutto_user.dart';
-import 'package:shared/exports/algolia_exports.dart';
 import 'package:shared/shared.dart';
 
 class CheckDialog extends StatelessWidget {
@@ -9,122 +8,6 @@ class CheckDialog extends StatelessWidget {
     super.key,
     required this.type,
   });
-
-  FirebaseFirestore get _firebaseFirestore => FirebaseFirestore.instance;
-
-  void _checkLocation(BuildContext context) async {
-    ApiService.fetch(
-      context,
-      callBack: () async {
-        final companyLocation = MySharedPreferences.company!.geoLocation!;
-        final userLocation = await context.locationProvider.determinePosition(
-          context,
-          showSnackBar: true,
-        );
-
-        if (userLocation != null) {
-          final distance = Geolocator.distanceBetween(
-            companyLocation.latitude,
-            companyLocation.longitude,
-            userLocation.latitude,
-            userLocation.longitude,
-          );
-          debugPrint("Distance:: $distance");
-          if (context.mounted) {
-            _verify(context: context, distance: distance);
-          }
-        }
-      },
-    );
-  }
-
-  int _calculateLateDeductionHours({
-    required DateTime checkIn,
-  }) {
-    final policy = MySharedPreferences.company!.attendancePolicy!;
-    final shift = MySharedPreferences.shift!;
-
-    // if shift has specific days assigned, skip if today is not included
-    if (shift.days.isNotEmpty && !shift.days.contains(checkIn.weekday)) {
-      return 0;
-    }
-
-    // Parse startHour string like "10:10 AM"
-    final timeFormat = DateFormat('hh:mm a');
-    final parsed = timeFormat.parse(shift.startHour);
-
-    // Combine today's date with shift start time
-    final shiftStart = DateTime(
-      checkIn.year,
-      checkIn.month,
-      checkIn.day,
-      parsed.hour,
-      parsed.minute,
-      parsed.second,
-    );
-
-    // Not late or early
-    if (!checkIn.isAfter(shiftStart)) return 0;
-
-    final minutesLate = checkIn.difference(shiftStart).inMinutes;
-    final effectiveLate = policy.lateAfterGrace
-        ? (minutesLate - policy.shiftGraceMinutes).clamp(0, 1 << 30)
-        : minutesLate;
-
-    if (effectiveLate <= 0) return 0;
-
-    // Sort rules by fromMinutes
-    final rules = [...policy.lateDeductionRules]
-      ..sort((a, b) => a.fromMinutes.compareTo(b.fromMinutes));
-
-    // Find first matching rule
-    LateDeductionRuleModel? match;
-    for (final r in rules) {
-      final to = r.toMinutes == 0 ? 1 << 30 : r.toMinutes; // treat 0 as "no upper bound"
-      if (effectiveLate >= r.fromMinutes && effectiveLate <= to) {
-        match = r;
-        break;
-      }
-    }
-
-    return (match?.value ?? 0);
-  }
-
-  void _verify({
-    required BuildContext context,
-    required double distance,
-  }) {
-    if (context.mounted && distance < 20) {
-      context.showSnackBar(context.appLocalization.attendanceSuccessMsg);
-      final docRef = _firebaseFirestore.userAttendance().doc();
-      final nowDate = DateTime.now();
-      final attendance = AttendanceModel(
-        id: docRef.id,
-        createdAt: nowDate,
-        type: type,
-        deductionHours: _calculateLateDeductionHours(checkIn: nowDate),
-      );
-      docRef.set(attendance);
-    } else if (context.mounted) {
-      context.showSnackBar(
-        "",
-        contentWidget: ListTile(
-          titleTextStyle: TextStyle(
-            color: context.colorScheme.onPrimary,
-            fontFamily: MyTheme.fontFamily,
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-          ),
-          subtitleTextStyle: TextStyle(
-            color: context.colorScheme.surface,
-            fontFamily: MyTheme.fontFamily,
-          ),
-          title: Text(context.appLocalization.attendanceFailedTitle),
-          subtitle: Text(context.appLocalization.attendanceFailedBody),
-        ),
-      );
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -171,7 +54,7 @@ class CheckDialog extends StatelessWidget {
                   DialogBubble(
                     onTap: () {
                       Navigator.pop(context);
-                      _checkLocation(context);
+                      AttendanceHelper.instance.check(context: context, type: type);
                     },
                     icon: MyIcons.check,
                     title: context.appLocalization.confirmLocation,

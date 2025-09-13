@@ -1530,4 +1530,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get noResults => 'لا توجد نتائج';
+
+  @override
+  String get thisIsDayOffMsg => 'اليوم هو يوم عطلتك';
 }

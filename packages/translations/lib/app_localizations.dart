@@ -3091,6 +3091,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No Results'**
   String get noResults;
+
+  /// No description provided for @thisIsDayOffMsg.
+  ///
+  /// In en, this message translates to:
+  /// **'Today is your day off'**
+  String get thisIsDayOffMsg;
 }
 
 class _AppLocalizationsDelegate
