@@ -31,6 +31,8 @@ mixin _$AttendanceModel {
   set type(String value) => throw _privateConstructorUsedError;
   int get deductionHours => throw _privateConstructorUsedError;
   set deductionHours(int value) => throw _privateConstructorUsedError;
+  double get deductionAmount => throw _privateConstructorUsedError;
+  set deductionAmount(double value) => throw _privateConstructorUsedError;
 
   /// Serializes this AttendanceModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -54,6 +56,7 @@ abstract class $AttendanceModelCopyWith<$Res> {
     String id,
     String type,
     int deductionHours,
+    double deductionAmount,
   });
 }
 
@@ -76,6 +79,7 @@ class _$AttendanceModelCopyWithImpl<$Res, $Val extends AttendanceModel>
     Object? id = null,
     Object? type = null,
     Object? deductionHours = null,
+    Object? deductionAmount = null,
   }) {
     return _then(
       _value.copyWith(
@@ -95,6 +99,10 @@ class _$AttendanceModelCopyWithImpl<$Res, $Val extends AttendanceModel>
                 ? _value.deductionHours
                 : deductionHours // ignore: cast_nullable_to_non_nullable
                       as int,
+            deductionAmount: null == deductionAmount
+                ? _value.deductionAmount
+                : deductionAmount // ignore: cast_nullable_to_non_nullable
+                      as double,
           )
           as $Val,
     );
@@ -115,6 +123,7 @@ abstract class _$$AttendanceModelImplCopyWith<$Res>
     String id,
     String type,
     int deductionHours,
+    double deductionAmount,
   });
 }
 
@@ -136,6 +145,7 @@ class __$$AttendanceModelImplCopyWithImpl<$Res>
     Object? id = null,
     Object? type = null,
     Object? deductionHours = null,
+    Object? deductionAmount = null,
   }) {
     return _then(
       _$AttendanceModelImpl(
@@ -155,6 +165,10 @@ class __$$AttendanceModelImplCopyWithImpl<$Res>
             ? _value.deductionHours
             : deductionHours // ignore: cast_nullable_to_non_nullable
                   as int,
+        deductionAmount: null == deductionAmount
+            ? _value.deductionAmount
+            : deductionAmount // ignore: cast_nullable_to_non_nullable
+                  as double,
       ),
     );
   }
@@ -169,6 +183,7 @@ class _$AttendanceModelImpl implements _AttendanceModel {
     this.id = '',
     this.type = '',
     this.deductionHours = 0,
+    this.deductionAmount = 0.0,
   });
 
   factory _$AttendanceModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -186,10 +201,13 @@ class _$AttendanceModelImpl implements _AttendanceModel {
   @override
   @JsonKey()
   int deductionHours;
+  @override
+  @JsonKey()
+  double deductionAmount;
 
   @override
   String toString() {
-    return 'AttendanceModel(createdAt: $createdAt, id: $id, type: $type, deductionHours: $deductionHours)';
+    return 'AttendanceModel(createdAt: $createdAt, id: $id, type: $type, deductionHours: $deductionHours, deductionAmount: $deductionAmount)';
   }
 
   /// Create a copy of AttendanceModel
@@ -215,6 +233,7 @@ abstract class _AttendanceModel implements AttendanceModel {
     String id,
     String type,
     int deductionHours,
+    double deductionAmount,
   }) = _$AttendanceModelImpl;
 
   factory _AttendanceModel.fromJson(Map<String, dynamic> json) =
@@ -234,6 +253,9 @@ abstract class _AttendanceModel implements AttendanceModel {
   @override
   int get deductionHours;
   set deductionHours(int value);
+  @override
+  double get deductionAmount;
+  set deductionAmount(double value);
 
   /// Create a copy of AttendanceModel
   /// with the given fields replaced by the non-null parameter values.
