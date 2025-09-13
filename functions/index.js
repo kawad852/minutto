@@ -19,13 +19,14 @@ const REQUEST_COLLECTIONS = [
   "leaves",
 ];
 
-const VERSIONED_COLLECTIONS = ["branches", "departments", "cities"];
+const VERSIONED_COLLECTIONS = ["branches", "departments", "cities", "shifts"];
 
 const VERSION_FIELD_BY_COLLECTION = {
   users: "usersVersion",
   branches: "branchesVersion",
   departments: "departmentsVersion",
   cities: "citiesVersion",
+  shifts: "shiftsVersion"
 };
 
 function localize(collection, action, lang) {
