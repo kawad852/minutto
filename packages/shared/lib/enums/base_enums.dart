@@ -53,3 +53,13 @@ enum StatusEnum {
 enum PrivacyType { policy, app }
 
 enum AdditionsType { alarm, discount, incentive }
+
+enum RoleEnum {
+  employee(defaultValue),
+  admin("admin");
+
+  static const defaultValue = "employee";
+  final String value;
+
+  const RoleEnum(this.value);
+}

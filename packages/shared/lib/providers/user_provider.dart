@@ -18,12 +18,7 @@ class UserProvider extends ChangeNotifier {
     required Function() onSuccess,
   }) async {
     final uid = getToken(user.phoneNumber, user.phoneNumberCountryCode);
-    var callable = FirebaseFunctions.instanceFor(
-      region: "europe-west3",
-    ).httpsCallable('generateCustomToken');
-    final results = await callable.call(<String, dynamic>{
-      'uid': uid,
-    });
+    final results = await createUser(uid);
     user.id = uid;
     final customToken = results.data as String;
     await FirebaseAuth.instance.signInWithCustomToken(customToken);
@@ -90,5 +85,33 @@ class UserProvider extends ChangeNotifier {
         }
       },
     );
+  }
+
+  Future<HttpsCallableResult> createUser(String uid) async {
+    var callable = FirebaseFunctions.instanceFor(
+      region: "europe-west3",
+    ).httpsCallable('generateCustomToken');
+    final results = await callable.call(<String, dynamic>{
+      'uid': uid,
+    });
+    return results;
+  }
+
+  Future<String> createAuthUser(String email, String password, {bool admin = false}) async {
+    try {
+      HttpsCallable callable = FirebaseFunctions.instanceFor(
+        region: "europe-west3",
+      ).httpsCallable('createUser');
+      final results = await callable.call(<String, dynamic>{
+        'email': email,
+        'password': password,
+        "admin": admin,
+      });
+      final data = results.data as Map<String, dynamic>;
+      final uid = data['uid'];
+      return uid;
+    } catch (e) {
+      rethrow;
+    }
   }
 }

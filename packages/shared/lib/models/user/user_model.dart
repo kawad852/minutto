@@ -21,6 +21,7 @@ class UserModel with _$UserModel {
     @Default('') String email,
     @TimestampSerializer() DateTime? birthDate,
     @Default("") String gender,
+    String? role,
     @Default("") String maritalStatus,
     @Default('') String departmentId,
     @Default('') String branchId,

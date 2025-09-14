@@ -32,6 +32,7 @@ class _StaffInputScreenState extends State<StaffInputScreen> {
           _user.id = docRef.id;
           _user.companyId = user.companyId;
           _user.createdAt = kNowDate;
+          _user.role = RoleEnum.employee.value;
         }
         await docRef.set(_user);
         if (context.mounted) {

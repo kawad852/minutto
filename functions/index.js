@@ -370,7 +370,7 @@ exports.createUser = onCall({ region: REGION }, async (request) => {
 
     const user = await admin.auth().createUser({ email, password });
     if (isAdmin) {
-      await admin.auth().setCustomUserClaims(user.uid, { admin: true });
+      await admin.auth().setCustomUserClaims(user.uid, { admin: isAdmin });
     }
     return { uid: user.uid };
   } catch (error) {
