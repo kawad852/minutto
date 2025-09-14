@@ -86,12 +86,12 @@ class _ReportsScreenState extends State<ReportsScreen> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    InkWell(
-                      onTap: () {
-                        context.navigate((context) => const AttendanceScreen());
-                      },
-                      child: CustomSvg(MyIcons.arrowLeft),
-                    ),
+                    // InkWell(
+                    //   onTap: () {
+                    //     context.navigate((context) => const AttendanceScreen());
+                    //   },
+                    //   child: CustomSvg(MyIcons.arrowLeft),
+                    // ),
                   ],
                 ),
               ),
