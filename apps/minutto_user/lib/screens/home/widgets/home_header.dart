@@ -33,7 +33,9 @@ class _HomeHeaderState extends State<HomeHeader> {
                       Navigator.pop(context, e);
                     },
                     title: Text(
-                      e == AttendanceEnum.breakIn ? "Break" : "Checkout",
+                      e == AttendanceEnum.breakIn
+                          ? context.appLocalization.breakLabel
+                          : context.appLocalization.checkOut,
                     ),
                   );
                 }).toList(),

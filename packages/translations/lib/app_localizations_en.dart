@@ -1546,4 +1546,10 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get tooEarlyCheckInMsg =>
       'You can check in only within 15 minutes before your shift starts.';
+
+  @override
+  String get breakLabel => 'Break';
+
+  @override
+  String get checkOut => 'Check out';
 }

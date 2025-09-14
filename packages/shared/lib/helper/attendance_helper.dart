@@ -21,7 +21,6 @@ class AttendanceHelper {
       callBack: () async {
         final company = MySharedPreferences.company!;
         final shift = CacheService.instance.todayShift;
-        print("shift: ${shift.startHour}");
         final user = MySharedPreferences.user!;
         final now = DateTime.now();
 

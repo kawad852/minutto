@@ -3103,6 +3103,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'You can check in only within 15 minutes before your shift starts.'**
   String get tooEarlyCheckInMsg;
+
+  /// No description provided for @breakLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Break'**
+  String get breakLabel;
+
+  /// No description provided for @checkOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Check out'**
+  String get checkOut;
 }
 
 class _AppLocalizationsDelegate

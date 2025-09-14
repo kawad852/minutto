@@ -1537,4 +1537,10 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get tooEarlyCheckInMsg =>
       'يمكنك تسجيل الحضور فقط خلال 15 دقيقة قبل بداية دوامك.';
+
+  @override
+  String get breakLabel => 'إستراحة';
+
+  @override
+  String get checkOut => 'إنصراف';
 }

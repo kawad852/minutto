@@ -499,5 +499,7 @@
   "countrySearchHint": "ابحث عن اسم الدولة أو رمز الاتصال...",
   "noResults": "لا توجد نتائج",
   "thisIsDayOffMsg": "اليوم هو يوم عطلتك",
-  "tooEarlyCheckInMsg": "يمكنك تسجيل الحضور فقط خلال 15 دقيقة قبل بداية دوامك."
+  "tooEarlyCheckInMsg": "يمكنك تسجيل الحضور فقط خلال 15 دقيقة قبل بداية دوامك.",
+  "breakLabel": "إستراحة",
+  "checkOut": "إنصراف"
 }
