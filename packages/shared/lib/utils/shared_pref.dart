@@ -24,6 +24,9 @@ class MySharedPreferences {
 
   static set user(UserModel? value) {
     value?.createdAt = null;
+    value?.workStartDate = null;
+    value?.contractEndDate = null;
+    value?.birthDate = null;
     _sharedPreferences.setString('user', jsonEncode(value?.toJson()));
   }
 
