@@ -59,6 +59,14 @@ class FacilityCard extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
+                )
+              else
+                Align(
+                  alignment: AlignmentDirectional.centerEnd,
+                  child: Icon(
+                    Icons.arrow_forward_ios,
+                    size: 16,
+                  ),
                 ),
             ],
           ),
