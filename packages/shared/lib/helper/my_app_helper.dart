@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 import '../shared.dart';
 
 class MyAppHelper {
@@ -20,12 +22,14 @@ class MyAppHelper {
     setupLocator();
     await MyStorage.init();
     await FlutterBranchSdk.init(enableLogging: true);
-    await FirebaseAppCheck.instance.activate(
-      // androidProvider: AndroidProvider.playIntegrity,
-      // appleProvider: AppleProvider.appAttest,
-      androidProvider: AndroidProvider.debug,
-      appleProvider: AppleProvider.debug,
-    );
+    if (!kIsWeb) {
+      await FirebaseAppCheck.instance.activate(
+        // androidProvider: AndroidProvider.playIntegrity,
+        // appleProvider: AppleProvider.appAttest,
+        androidProvider: AndroidProvider.debug,
+        appleProvider: AppleProvider.debug,
+      );
+    }
     setLocaleMessages('en', EnMessages());
     setLocaleMessages('ar', ArMessages());
     runApp(

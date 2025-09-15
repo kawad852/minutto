@@ -1,5 +1,7 @@
 import 'package:shared/shared.dart';
 
+import '../../database_utils.dart';
+
 class PortalLoginScreen extends StatefulWidget {
   const PortalLoginScreen({super.key});
 
@@ -26,6 +28,11 @@ class _PortalLoginScreenState extends State<PortalLoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          DatabaseUtils().init();
+        },
+      ),
       body: Center(
         child: SingleChildScrollView(
           child: ConstrainedBox(
@@ -73,12 +80,7 @@ class _PortalLoginScreenState extends State<PortalLoginScreen> {
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
                             FocusManager.instance.primaryFocus?.unfocus();
-                            // _userProvider.login(
-                            //   context,
-                            //   email: _email!,
-                            //   password: _password!,
-                            //   portalLogin: true,
-                            // );
+                            _userProvider.login(context, email: _email!, password: _password!);
                           }
                         },
                       ),

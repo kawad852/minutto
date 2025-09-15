@@ -69,6 +69,53 @@ class UserProvider extends ChangeNotifier {
     }
   }
 
+  Future<void> login(
+    BuildContext context, {
+    required String email,
+    required String password,
+  }) async {
+    await ApiService.fetch(
+      context,
+      callBack: () async {
+        // final user = UserModel();
+
+        final auth = await _firebaseAuth.signInWithEmailAndPassword(
+          email: email,
+          password: password,
+        );
+
+        final userDocument = await _firebaseFirestore.users.doc(auth.user!.uid).get();
+        final user = userDocument.data()!;
+
+        if (userDocument.exists) {
+          if (context.mounted && user.status == UserStatusEnum.inactive.value) {
+            context.showSnackBar(context.appLocalization.authFailed);
+            return;
+          }
+
+          MySharedPreferences.user = user;
+        } else {
+          if (context.mounted) {
+            context.showSnackBar(context.appLocalization.authFailed);
+          }
+        }
+
+        if (context.mounted) {
+          if (user.roleId == null) {
+            Fluttertoast.showToast(msg: context.appLocalization.authFailed);
+          } else {
+            await context.portalProvider.initRole(context);
+            if (context.mounted) {
+              notifyListeners();
+              GoRouter.of(context).go(context.portalProvider.role!.initialLocation!);
+            }
+          }
+          return;
+        }
+      },
+    );
+  }
+
   Future<void> logout(BuildContext context, {required WidgetBuilder builder}) async {
     ApiService.fetch(
       context,
