@@ -68,8 +68,16 @@ class _UsersTableState extends State<UsersTable> {
               });
             },
           ),
-          EmailEditor(initialValue: data.email, onChanged: (value) => data.email = value!),
-          PasswordEditor(initialValue: data.password, onChanged: (value) => data.password = value!),
+          CustomTextField.email(
+            context,
+            initialValue: data.email,
+            onChanged: (value) => data.email = value!,
+          ),
+          CustomTextField.password(
+            context,
+            initialValue: data.password,
+            onChanged: (value) => data.password = value!,
+          ),
           BlitzBuilder.stream(
             stream: _companiesStream,
             onComplete: (context, snapshot) {

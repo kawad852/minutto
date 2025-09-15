@@ -139,6 +139,7 @@ class CustomTextField extends StatelessWidget {
     Widget? prefixIcon,
     required ValueChanged<String?> onChanged,
     String? hintText,
+    String? labelText,
     bool required = true,
   }) {
     return CustomTextField._(
@@ -168,7 +169,7 @@ class CustomTextField extends StatelessWidget {
       obscureText: true,
       keyboardType: TextInputType.text,
       maxLines: 1,
-      labelText: context.appLocalization.email,
+      labelText: context.appLocalization.password,
       onChanged: (value) => onChanged(value),
       validator: (context, value) => ValidationHelper.password(context, value, required: required),
     );

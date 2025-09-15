@@ -61,14 +61,14 @@ class _PortalLoginScreenState extends State<PortalLoginScreen> {
                         padding: const EdgeInsets.symmetric(vertical: 10),
                         child: ListBody(
                           children: [
-                            EmailEditor(
+                            CustomTextField.email(
+                              context,
                               initialValue: null,
                               // withErrorIndicator: false,
                               onChanged: (value) => _email = value,
                             ),
-                            PasswordEditor(
-                              initialValue: null,
-                              withErrorIndicator: false,
+                            CustomTextField.password(
+                              context,
                               onChanged: (value) => _password = value,
                             ),
                           ].separator(SizedBox(height: 10)).toList(),
