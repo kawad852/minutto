@@ -52,6 +52,8 @@ mixin _$UserModel {
   set phoneNumber(String value) => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   set email(String value) => throw _privateConstructorUsedError;
+  String? get password => throw _privateConstructorUsedError;
+  set password(String? value) => throw _privateConstructorUsedError;
   @TimestampSerializer()
   DateTime? get birthDate => throw _privateConstructorUsedError;
   @TimestampSerializer()
@@ -119,6 +121,7 @@ abstract class $UserModelCopyWith<$Res> {
     String phoneNumberCountryCode,
     String phoneNumber,
     String email,
+    String? password,
     @TimestampSerializer() DateTime? birthDate,
     String gender,
     String? role,
@@ -169,6 +172,7 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? phoneNumberCountryCode = null,
     Object? phoneNumber = null,
     Object? email = null,
+    Object? password = freezed,
     Object? birthDate = freezed,
     Object? gender = null,
     Object? role = freezed,
@@ -238,6 +242,10 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
                 ? _value.email
                 : email // ignore: cast_nullable_to_non_nullable
                       as String,
+            password: freezed == password
+                ? _value.password
+                : password // ignore: cast_nullable_to_non_nullable
+                      as String?,
             birthDate: freezed == birthDate
                 ? _value.birthDate
                 : birthDate // ignore: cast_nullable_to_non_nullable
@@ -352,6 +360,7 @@ abstract class _$$UserModelImplCopyWith<$Res>
     String phoneNumberCountryCode,
     String phoneNumber,
     String email,
+    String? password,
     @TimestampSerializer() DateTime? birthDate,
     String gender,
     String? role,
@@ -402,6 +411,7 @@ class __$$UserModelImplCopyWithImpl<$Res>
     Object? phoneNumberCountryCode = null,
     Object? phoneNumber = null,
     Object? email = null,
+    Object? password = freezed,
     Object? birthDate = freezed,
     Object? gender = null,
     Object? role = freezed,
@@ -471,6 +481,10 @@ class __$$UserModelImplCopyWithImpl<$Res>
             ? _value.email
             : email // ignore: cast_nullable_to_non_nullable
                   as String,
+        password: freezed == password
+            ? _value.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String?,
         birthDate: freezed == birthDate
             ? _value.birthDate
             : birthDate // ignore: cast_nullable_to_non_nullable
@@ -565,6 +579,7 @@ class _$UserModelImpl extends _UserModel {
     this.phoneNumberCountryCode = kFallBackCountryCode,
     this.phoneNumber = '',
     this.email = '',
+    this.password,
     @TimestampSerializer() this.birthDate,
     this.gender = "",
     this.role,
@@ -624,6 +639,8 @@ class _$UserModelImpl extends _UserModel {
   @JsonKey()
   String email;
   @override
+  String? password;
+  @override
   @TimestampSerializer()
   DateTime? birthDate;
   @override
@@ -678,7 +695,7 @@ class _$UserModelImpl extends _UserModel {
 
   @override
   String toString() {
-    return 'UserModel(id: $id, roleId: $roleId, companyId: $companyId, shiftId: $shiftId, createdAt: $createdAt, workStartDate: $workStartDate, contractEndDate: $contractEndDate, name: $name, profileImage: $profileImage, phoneNumberCountryCode: $phoneNumberCountryCode, phoneNumber: $phoneNumber, email: $email, birthDate: $birthDate, gender: $gender, role: $role, maritalStatus: $maritalStatus, departmentId: $departmentId, branchId: $branchId, jobTitle: $jobTitle, status: $status, basicSalary: $basicSalary, contractDurationMonths: $contractDurationMonths, maxYearlyVacationsDays: $maxYearlyVacationsDays, maxYearlyLeavesDays: $maxYearlyLeavesDays, maxSickLeaveDays: $maxSickLeaveDays, maxBreakHoursPerYear: $maxBreakHoursPerYear, nationalId: $nationalId, bank: $bank, archived: $archived, deviceTokens: $deviceTokens)';
+    return 'UserModel(id: $id, roleId: $roleId, companyId: $companyId, shiftId: $shiftId, createdAt: $createdAt, workStartDate: $workStartDate, contractEndDate: $contractEndDate, name: $name, profileImage: $profileImage, phoneNumberCountryCode: $phoneNumberCountryCode, phoneNumber: $phoneNumber, email: $email, password: $password, birthDate: $birthDate, gender: $gender, role: $role, maritalStatus: $maritalStatus, departmentId: $departmentId, branchId: $branchId, jobTitle: $jobTitle, status: $status, basicSalary: $basicSalary, contractDurationMonths: $contractDurationMonths, maxYearlyVacationsDays: $maxYearlyVacationsDays, maxYearlyLeavesDays: $maxYearlyLeavesDays, maxSickLeaveDays: $maxSickLeaveDays, maxBreakHoursPerYear: $maxBreakHoursPerYear, nationalId: $nationalId, bank: $bank, archived: $archived, deviceTokens: $deviceTokens)';
   }
 
   /// Create a copy of UserModel
@@ -709,6 +726,7 @@ abstract class _UserModel extends UserModel {
     String phoneNumberCountryCode,
     String phoneNumber,
     String email,
+    String? password,
     @TimestampSerializer() DateTime? birthDate,
     String gender,
     String? role,
@@ -775,6 +793,9 @@ abstract class _UserModel extends UserModel {
   @override
   String get email;
   set email(String value);
+  @override
+  String? get password;
+  set password(String? value);
   @override
   @TimestampSerializer()
   DateTime? get birthDate;

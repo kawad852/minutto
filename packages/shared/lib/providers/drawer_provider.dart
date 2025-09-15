@@ -1,6 +1,23 @@
-import 'package:flutter/material.dart';
+import 'package:shared/shared.dart';
 
 class DrawerProvider extends ChangeNotifier {
-  int? expandedIndex;
+  bool manageInitiallyExpanded = false;
+  bool buildInitiallyExpanded = false;
+  bool engageInitiallyExpanded = false;
+  bool configureInitiallyExpanded = false;
+
   double scrollOffset = 0.0;
+
+  void toggleExpansion(int index, value) {
+    switch (index) {
+      case 0:
+        manageInitiallyExpanded = value;
+      case 1:
+        buildInitiallyExpanded = value;
+      case 2:
+        engageInitiallyExpanded = value;
+      case 3:
+        configureInitiallyExpanded = value;
+    }
+  }
 }

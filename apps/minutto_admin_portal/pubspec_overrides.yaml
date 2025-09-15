@@ -1,0 +1,8 @@
+# melos_managed_dependency_overrides: shared,translations,fire_portal
+dependency_overrides:
+  fire_portal:
+    path: ../../packages/fire_portal
+  shared:
+    path: ../../packages/shared
+  translations:
+    path: ../../packages/translations

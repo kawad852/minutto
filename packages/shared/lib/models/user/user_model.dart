@@ -19,6 +19,7 @@ class UserModel with _$UserModel {
     @Default(kFallBackCountryCode) String phoneNumberCountryCode,
     @Default('') String phoneNumber,
     @Default('') String email,
+    String? password,
     @TimestampSerializer() DateTime? birthDate,
     @Default("") String gender,
     String? role,
