@@ -52,6 +52,7 @@ class _UsersTableState extends State<UsersTable> {
             createdAt: kNowDate,
             email: data.email,
             jobTitle: context.appLocalization.admin,
+            role: RoleEnum.admin.value,
           );
         }
         await reference!.set(data);
