@@ -2,14 +2,14 @@ import 'package:flutter_svg_provider/flutter_svg_provider.dart' as sv;
 import 'package:minutto_user/minutto_user.dart';
 import 'package:shared/shared.dart';
 
-class NotificationScreen extends StatefulWidget {
-  const NotificationScreen({super.key});
+class NotificationsScreen extends StatefulWidget {
+  const NotificationsScreen({super.key});
 
   @override
-  State<NotificationScreen> createState() => _NotificationScreenState();
+  State<NotificationsScreen> createState() => _NotificationsScreenState();
 }
 
-class _NotificationScreenState extends State<NotificationScreen> {
+class _NotificationsScreenState extends State<NotificationsScreen> {
   late Query<NotificationModel> _query;
 
   FirebaseFirestore get _firebaseFirestore => FirebaseFirestore.instance;

@@ -53,9 +53,9 @@ export 'screens/home/widgets/request_bubble.dart';
 export 'screens/home/widgets/request_bubble_row.dart';
 //intro
 export 'screens/intro/intro_screen.dart';
-export 'screens/notification/notification_management_screen.dart';
+export 'screens/notification/notification_input_screen.dart';
 //notification
-export 'screens/notification/notification_screen.dart';
+export 'screens/notification/notifications_screen.dart';
 export 'screens/notification/widgets/notification_card.dart';
 //request
 export 'screens/old_request/old_request_details_screen.dart';

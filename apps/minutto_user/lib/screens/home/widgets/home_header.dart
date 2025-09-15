@@ -97,7 +97,7 @@ class _HomeHeaderState extends State<HomeHeader> {
                     ),
                     IconButton(
                       onPressed: () {
-                        context.navigate((context) => const NotificationScreen());
+                        context.navigate((context) => const NotificationsScreen());
                       },
                       icon: CustomSvg(MyIcons.notifaction),
                     ),

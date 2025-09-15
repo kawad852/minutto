@@ -1,13 +1,13 @@
 import 'package:shared/shared.dart';
 
-class NotificationManagementScreen extends StatefulWidget {
-  const NotificationManagementScreen({super.key});
+class NotificationInputScreen extends StatefulWidget {
+  const NotificationInputScreen({super.key});
 
   @override
-  State<NotificationManagementScreen> createState() => _NotificationManagementScreenState();
+  State<NotificationInputScreen> createState() => _NotificationInputScreenState();
 }
 
-class _NotificationManagementScreenState extends State<NotificationManagementScreen> {
+class _NotificationInputScreenState extends State<NotificationInputScreen> {
   final _formKey = GlobalKey<FormState>();
   String? _selectedBranchId;
   final _notification = NotificationModel(
@@ -72,6 +72,10 @@ class _NotificationManagementScreenState extends State<NotificationManagementScr
                     maxLines: 5,
                   ),
                 ),
+              ),
+              BranchEditor(
+                value: _selectedBranchId,
+                onChanged: (value) => _selectedBranchId = value,
               ),
             ],
           ),

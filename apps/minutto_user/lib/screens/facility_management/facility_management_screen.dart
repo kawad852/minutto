@@ -152,7 +152,7 @@ class _FacilityManagementScreenState extends State<FacilityManagementScreen> {
               FacilityBubble(
                 onTap: () {
                   context.navigate(
-                    (context) => const NotificationManagementScreen(),
+                    (context) => const NotificationInputScreen(),
                   );
                 },
                 title: context.appLocalization.notifications,

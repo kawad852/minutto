@@ -24,18 +24,25 @@ class DropDownEditor<T> extends StatelessWidget {
       alignment: AlignmentDirectional.centerStart,
       child: ConstrainedBox(
         constraints: const BoxConstraints(maxWidth: kMaxWidth),
-        child: DropdownButtonFormField(
-          onChanged: onChanged,
-          value: value,
-          autovalidateMode: AutovalidateMode.onUserInteraction,
-          decoration: InputDecoration(hintText: title, label: label != null ? Text(label!) : null),
-          validator: (value) {
-            if (value == null) {
-              return context.appLocalization.requiredField;
-            }
-            return null;
-          },
-          items: items,
+        child: ButtonTheme(
+          alignedDropdown: true,
+          child: DropdownButtonFormField(
+            isExpanded: true,
+            onChanged: onChanged,
+            value: value,
+            autovalidateMode: AutovalidateMode.onUserInteraction,
+            decoration: InputDecoration(
+              hintText: title,
+              label: label != null ? Text(label!) : null,
+            ),
+            validator: (value) {
+              if (value == null) {
+                return context.appLocalization.requiredField;
+              }
+              return null;
+            },
+            items: items,
+          ),
         ),
       ),
     );
