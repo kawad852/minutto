@@ -9,8 +9,18 @@ class WorkScheduleScreen extends StatefulWidget {
 }
 
 class _WorkScheduleScreenState extends State<WorkScheduleScreen> {
+  late (DateTime, DateTime) _dates;
+  final nowDate = DateTime.now();
+
+  @override
+  void initState() {
+    super.initState();
+    _dates = (nowDate, nowDate);
+  }
+
   @override
   Widget build(BuildContext context) {
+    final shifts = MyStorage.shifts;
     return Scaffold(
       appBar: AppBar(
         surfaceTintColor: Colors.transparent,
@@ -21,21 +31,39 @@ class _WorkScheduleScreenState extends State<WorkScheduleScreen> {
         child: Column(
           spacing: 15,
           children: [
-            DateRangeCard(),
+            RangeDateButton(
+              onChanged: (start, end) {
+                _dates = (start, end);
+              },
+              startDate: _dates.$1,
+              endDate: _dates.$2,
+            ),
             CustomCalender(
               warpContainer: true,
-              date: DateTime.now(),
-              onChanged: (value) {},
+              date: nowDate,
+              onChanged: (value) {
+                setState(() {
+                  _dates = (
+                    _dates.$1.copyWith(day: value.weekday),
+                    _dates.$2.copyWith(day: value.weekday),
+                  );
+                });
+              },
             ),
             Expanded(
               child: ListView.separated(
                 separatorBuilder: (context, index) => const SizedBox(height: 12),
-                itemCount: 10,
+                itemCount: shifts.length,
                 itemBuilder: (context, index) {
+                  final shift = shifts[index];
+                  final branches = MyStorage.branches
+                      .where((e) => shift.branchIds.contains(e.id))
+                      .toList();
+                  final branchNames = branches.map((e) => e.name).toList();
                   return ScheduleCard(
-                    title: "شيقت صباحي",
-                    time: "9:00 ص : 03:00 م",
-                    branch: "فرع عمان",
+                    title: shift.name,
+                    time: "${shift.startHour} - ${shift.endHour}",
+                    branch: branchNames.join(', '),
                   );
                 },
               ),

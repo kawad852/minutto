@@ -1,14 +1,9 @@
 import 'package:minutto_user/minutto_user.dart';
 import 'package:shared/shared.dart';
 
-class FacilityManagementScreen extends StatefulWidget {
+class FacilityManagementScreen extends StatelessWidget {
   const FacilityManagementScreen({super.key});
 
-  @override
-  State<FacilityManagementScreen> createState() => _FacilityManagementScreenState();
-}
-
-class _FacilityManagementScreenState extends State<FacilityManagementScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

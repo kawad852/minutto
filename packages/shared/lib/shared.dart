@@ -213,6 +213,7 @@ export 'widgets/fire_animated_search_bar.dart';
 export 'widgets/fp_loading.dart';
 export 'widgets/header_tile.dart';
 export 'widgets/live_clock.dart';
+export 'widgets/range_date_button.dart';
 export 'widgets/report_date.dart';
 export 'widgets/request_details_card.dart';
 export 'widgets/request_form.dart';
