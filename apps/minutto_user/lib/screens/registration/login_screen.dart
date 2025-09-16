@@ -18,8 +18,18 @@ class _LoginScreenState extends State<LoginScreen> {
       ApiService.fetch(
         context,
         callBack: () async {
-          return PhoneVerifyScreen(
-            user: _user,
+          await WeCanAuth.instance.sendPinCode(
+            context,
+            countryCode: _user.phoneNumberCountryCode,
+            phoneNumber: _user.phoneNumber,
+            onSuccess: () async {
+              context.navigate((context) {
+                return PhoneVerifyScreen(
+                  user: _user,
+                  isLogin: true,
+                );
+              });
+            },
           );
         },
       );

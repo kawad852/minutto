@@ -4,10 +4,12 @@ import 'package:shared/shared.dart';
 
 class PhoneVerifyScreen extends StatefulWidget {
   final UserModel user;
+  final bool isLogin;
 
   const PhoneVerifyScreen({
     super.key,
     required this.user,
+    this.isLogin = false,
   });
 
   @override
@@ -29,6 +31,7 @@ class _PhoneVerifyScreenState extends State<PhoneVerifyScreen> {
         await context.userProvider.register(
           context,
           user: _user,
+          isLogin: widget.isLogin,
           onSuccess: () {
             context.navigateAndRemoveUntil((context) => AppNavBar());
           },

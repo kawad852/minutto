@@ -23,17 +23,20 @@ class _StaffInputScreenState extends State<StaffInputScreen> {
   bool get _isAdd => widget.user == null;
 
   void _onSubmit(BuildContext context) {
+    final userProvider = context.userProvider;
     ApiService.fetch(
       context,
       callBack: () async {
         final user = MySharedPreferences.user!;
-        final docRef = _firebaseFirestore.users.doc(_user.id.isNotEmpty ? _user.id : null);
         if (_isAdd) {
-          _user.id = docRef.id;
+          final uid = userProvider.getToken(_user.phoneNumber, _user.phoneNumberCountryCode);
+          await userProvider.generateCustomToken(uid);
+          _user.id = uid;
           _user.companyId = user.companyId;
           _user.createdAt = kNowDate;
           _user.role = RoleEnum.employee.value;
         }
+        final docRef = _firebaseFirestore.users.doc(_user.id);
         await docRef.set(_user);
         if (context.mounted) {
           context.showSnackBar(

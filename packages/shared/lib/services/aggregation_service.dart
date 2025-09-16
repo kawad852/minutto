@@ -25,16 +25,16 @@ class AggregationService {
         hour: 0,
         microsecond: 0,
       );
-      final userIdFilter = Filter(
-        MyFields.userId,
-        isEqualTo: MySharedPreferences.user!.id,
-      );
+      final user = MySharedPreferences.user;
+      final fromFilter = user?.role == RoleEnum.admin.value
+          ? Filter(MyFields.companyId, isEqualTo: MySharedPreferences.company!.id)
+          : Filter(MyFields.userId, isEqualTo: user!.id);
       final dateFilter = Filter(
         MyFields.createdAt,
         isGreaterThanOrEqualTo: Timestamp.fromDate(nowDate),
       );
       final statusFilter = Filter(MyFields.status, isEqualTo: StatusEnum.accepted.value);
-      filter = Filter.and(userIdFilter, dateFilter, statusFilter);
+      filter = Filter.and(fromFilter, dateFilter, statusFilter);
     }
     return ApiService.build(
       callBack: () async {

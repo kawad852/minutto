@@ -27,6 +27,7 @@ class _UsersTableState extends State<UsersTable> {
 
   @override
   Widget build(BuildContext context) {
+    final userProvider = context.userProvider;
     return PortalTable(
       tableTitle: context.appLocalization.users,
       query: _query,
@@ -45,12 +46,15 @@ class _UsersTableState extends State<UsersTable> {
         }
         var reference = ref;
         if (ref == null) {
-          final id = await context.userProvider.createAuthUser(data.email, data.password!);
-          reference = ref ?? _collectionRef.doc(id);
+          final uid = userProvider.getToken(data.phoneNumber, data.phoneNumberCountryCode);
+          final results = await userProvider.generateCustomToken(uid);
+          final customToken = results.data as String;
+          print("id:: $uid");
+          print("customToken:: $customToken");
+          reference = ref ?? _collectionRef.doc(uid);
           data = data.copyWith(
-            id: id,
+            id: uid,
             createdAt: kNowDate,
-            email: data.email,
             jobTitle: context.appLocalization.admin,
             role: RoleEnum.admin.value,
           );
@@ -69,10 +73,12 @@ class _UsersTableState extends State<UsersTable> {
               });
             },
           ),
-          CustomTextField.email(
+          CustomTextField.phone(
             context,
-            initialValue: data.email,
-            onChanged: (value) => data.email = value!,
+            initialValue: data.phoneNumber,
+            code: data.phoneNumberCountryCode,
+            onChanged: (value) => data.phoneNumber = value!,
+            onCodeSelected: (value) => data.phoneNumberCountryCode = value,
           ),
           CustomTextField.password(
             context,
@@ -90,8 +96,8 @@ class _UsersTableState extends State<UsersTable> {
                   });
                 },
                 title: context.appLocalization.company,
-                items: snapshot.data!.docs.map((element) {
-                  return DropdownMenuItem(value: element.id, child: Text(element.data().name!));
+                items: (snapshot.data?.docs ?? []).map((element) {
+                  return DropdownMenuItem(value: element.id, child: Text(element.data().name));
                 }).toList(),
               );
             },

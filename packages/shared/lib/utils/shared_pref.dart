@@ -11,6 +11,9 @@ class MySharedPreferences {
     user = null;
     userToken = "";
     company = null;
+    shift = null;
+    assignedShift = null;
+    versions = null;
   }
 
   static UserModel? get user {

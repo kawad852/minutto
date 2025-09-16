@@ -8,7 +8,6 @@ class BranchInputScreen extends StatefulWidget {
 }
 
 class _BranchInputScreenState extends State<BranchInputScreen> {
-  late Future<List<CityModel>> _citiesFuture;
   late BranchModel _branch;
   final _formKey = GlobalKey<FormState>();
 
@@ -35,137 +34,121 @@ class _BranchInputScreenState extends State<BranchInputScreen> {
     }
   }
 
-  void _initialize() {
-    _citiesFuture = ApiService.build(
-      callBack: () async {
-        return FirebaseFirestore.instance.cities.get().then(
-          (value) => value.docs.map((e) => e.data()).toList(),
-        );
-      },
-    );
-  }
-
   @override
   void initState() {
     super.initState();
     _branch = BranchModel(createdAt: kNowDate);
-    _initialize();
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlitzBuilder.future(
-      future: _citiesFuture,
-      onComplete: (context, snapshot) {
-        final cities = snapshot.data ?? [];
-        return Scaffold(
-          appBar: AppBar(
-            title: Text(context.appLocalization.addBranch),
-          ),
-          bottomNavigationBar: BottomButton(
-            onPressed: () => _onSubmit(context),
-            backgroundColor: context.colorPalette.blue091,
-            textColor: context.colorPalette.white,
-            title: context.appLocalization.add,
-          ),
-          body: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-            child: Form(
-              key: _formKey,
-              child: Column(
+    final cities = MyStorage.cities;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(context.appLocalization.addBranch),
+      ),
+      bottomNavigationBar: BottomButton(
+        onPressed: () => _onSubmit(context),
+        backgroundColor: context.colorPalette.blue091,
+        textColor: context.colorPalette.white,
+        title: context.appLocalization.add,
+      ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              WidgetTitle(
+                title: context.appLocalization.branchName,
+                child: CustomTextField.text(
+                  onChanged: (value) => _branch.name = value!,
+                ),
+              ),
+              const SizedBox(height: 15),
+              WidgetTitle(
+                title: context.appLocalization.email,
+                child: CustomTextField.email(
+                  context,
+                  onChanged: (value) => _branch.email = value!,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15),
+                child: WidgetTitle(
+                  title: context.appLocalization.phoneNum,
+                  child: CustomTextField.phone(
+                    context,
+                    code: _branch.phoneNumberCountryCode,
+                    onChanged: (value) => _branch.phoneNumber = value!,
+                    onCodeSelected: (value) => _branch.phoneNumberCountryCode = value,
+                  ),
+                ),
+              ),
+              // WidgetTitle(
+              //   title: context.appLocalization.responsibleManager,
+              //   child: CustomTextField.text(onChanged: (value) {}),
+              // ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15),
+                child: WidgetTitle(
+                  title: context.appLocalization.city,
+                  child: DropDownEditor<String>(
+                    items: cities.map((e) {
+                      return DropdownMenuItem(
+                        value: e.id,
+                        child: Text(
+                          e.name,
+                        ),
+                      );
+                    }).toList(),
+                    onChanged: (value) => _branch.cityId = value!,
+                    title: context.appLocalization.choose,
+                    value: _branch.cityId.isEmpty ? null : _branch.cityId,
+                  ),
+                ),
+              ),
+              Text(
+                context.appLocalization.workingHours,
+                style: context.textTheme.titleMedium!.copyWith(
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              const SizedBox(height: 7),
+              Row(
+                spacing: 10,
                 children: [
-                  WidgetTitle(
-                    title: context.appLocalization.branchName,
-                    child: CustomTextField.text(
-                      onChanged: (value) => _branch.name = value!,
-                    ),
-                  ),
-                  const SizedBox(height: 15),
-                  WidgetTitle(
-                    title: context.appLocalization.email,
-                    child: CustomTextField.email(
-                      context,
-                      onChanged: (value) => _branch.email = value!,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 15),
+                  Expanded(
                     child: WidgetTitle(
-                      title: context.appLocalization.phoneNum,
-                      child: CustomTextField.phone(
-                        context,
-                        code: _branch.phoneNumberCountryCode,
-                        onChanged: (value) => _branch.phoneNumber = value!,
-                        onCodeSelected: (value) => _branch.phoneNumberCountryCode = value,
+                      title: context.appLocalization.startsFrom,
+                      child: DayTimeEditor(
+                        initialValue: _branch.startWorkingHour,
+                        onChanged: (value) => _branch.startWorkingHour = value,
                       ),
                     ),
                   ),
-                  // WidgetTitle(
-                  //   title: context.appLocalization.responsibleManager,
-                  //   child: CustomTextField.text(onChanged: (value) {}),
-                  // ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 15),
+                  Expanded(
                     child: WidgetTitle(
-                      title: context.appLocalization.city,
-                      child: DropDownEditor<String>(
-                        items: cities.map((e) {
-                          return DropdownMenuItem(
-                            value: e.id,
-                            child: Text(
-                              e.name,
-                            ),
-                          );
-                        }).toList(),
-                        onChanged: (value) => _branch.cityId = value!,
-                        title: context.appLocalization.choose,
-                        value: _branch.cityId.isEmpty ? null : _branch.cityId,
+                      title: context.appLocalization.endsIn,
+                      child: DayTimeEditor(
+                        initialValue: _branch.endWorkingHour,
+                        onChanged: (value) => _branch.endWorkingHour = value,
                       ),
                     ),
                   ),
-                  Text(
-                    context.appLocalization.workingHours,
-                    style: context.textTheme.titleMedium!.copyWith(
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  const SizedBox(height: 7),
-                  Row(
-                    spacing: 10,
-                    children: [
-                      Expanded(
-                        child: WidgetTitle(
-                          title: context.appLocalization.startsFrom,
-                          child: DayTimeEditor(
-                            initialValue: _branch.startWorkingHour,
-                            onChanged: (value) => _branch.startWorkingHour = value,
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: WidgetTitle(
-                          title: context.appLocalization.endsIn,
-                          child: DayTimeEditor(
-                            initialValue: _branch.endWorkingHour,
-                            onChanged: (value) => _branch.endWorkingHour = value,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  // const SizedBox(height: 15),
-                  // Text(
-                  //   context.appLocalization.determineLocationOnMap,
-                  //   style: context.textTheme.titleMedium!.copyWith(
-                  //     fontWeight: FontWeight.w500,
-                  //   ),
-                  // ),
                 ],
               ),
-            ),
+              // const SizedBox(height: 15),
+              // Text(
+              //   context.appLocalization.determineLocationOnMap,
+              //   style: context.textTheme.titleMedium!.copyWith(
+              //     fontWeight: FontWeight.w500,
+              //   ),
+              // ),
+            ],
           ),
-        );
-      },
+        ),
+      ),
     );
   }
 }

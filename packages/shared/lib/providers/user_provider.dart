@@ -16,11 +16,13 @@ class UserProvider extends ChangeNotifier {
     BuildContext context, {
     required UserModel user,
     required Function() onSuccess,
+    bool isLogin = false,
   }) async {
     final uid = getToken(user.phoneNumber, user.phoneNumberCountryCode);
-    final results = await createUser(uid);
+    final results = await generateCustomToken(uid);
     user.id = uid;
     final customToken = results.data as String;
+
     await FirebaseAuth.instance.signInWithCustomToken(customToken);
 
     final userDocument = await _firebaseFirestore.users.doc(user.id).get();
@@ -31,6 +33,9 @@ class UserProvider extends ChangeNotifier {
         return;
       }
       MySharedPreferences.user = userDocument.data()!;
+    } else if (isLogin && !userDocument.exists && context.mounted) {
+      context.showSnackBar(context.appLocalization.authFailed);
+      return;
     } else {
       user.createdAt = DateTime.now();
       MySharedPreferences.user = user;
@@ -134,7 +139,7 @@ class UserProvider extends ChangeNotifier {
     );
   }
 
-  Future<HttpsCallableResult> createUser(String uid) async {
+  Future<HttpsCallableResult> generateCustomToken(String uid) async {
     var callable = FirebaseFunctions.instanceFor(
       region: "europe-west3",
     ).httpsCallable('generateCustomToken');

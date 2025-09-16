@@ -15,18 +15,13 @@ class _AppNavBarState extends State<AppNavBar> {
   late PageController _pageController;
   late CloudMessagingService _cloudMessagingService;
 
-  final items = [
-    MyIcons.home,
-    MyIcons.facility,
-    MyIcons.calander,
-    MyIcons.profile,
-  ];
-
-  final screens = [
-    const HomeScreen(),
-    const FacilityManagementScreen(),
-    const ReportsScreen(),
-    const ProfileScreen(),
+  final info = [
+    (const HomeScreen(), MyIcons.home),
+    if (MySharedPreferences.user?.role == RoleEnum.admin.value)
+      (const FacilityManagementScreen(), MyIcons.facility),
+    if (MySharedPreferences.user?.role == RoleEnum.employee.value)
+      (const ReportsScreen(), MyIcons.calander),
+    (const ProfileScreen(), MyIcons.profile),
   ];
 
   void _onSelect(int index) {
@@ -62,8 +57,9 @@ class _AppNavBarState extends State<AppNavBar> {
   @override
   Widget build(BuildContext context) {
     bool withNotch = MediaQuery.of(context).viewPadding.bottom > 0.0;
-    final status = MySharedPreferences.user!.status;
-    if (status == UserStatusEnum.pending.value) {
+    final user = MySharedPreferences.user;
+    final status = user?.status;
+    if (user?.role == RoleEnum.employee.value && status == UserStatusEnum.pending.value) {
       return Scaffold(
         appBar: AppBar(),
         body: Center(
@@ -108,22 +104,22 @@ class _AppNavBarState extends State<AppNavBar> {
           borderRadius: BorderRadius.circular(20),
         ),
         child: Row(
-          children: screens.map((element) {
-            final index = screens.indexOf(element);
+          children: List.generate(info.length, (index) {
+            final element = info[index];
             return NavBarItem(
               onTap: () {
                 _onSelect(index);
               },
               isSelected: _currentIndex == index,
-              icon: items[index],
+              icon: element.$2,
             );
-          }).toList(),
+          }),
         ),
       ),
       body: PageView(
         controller: _pageController,
         physics: const NeverScrollableScrollPhysics(),
-        children: screens,
+        children: info.map((e) => e.$1).toList(),
       ),
     );
   }
