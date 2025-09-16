@@ -501,5 +501,6 @@
   "thisIsDayOffMsg": "Today is your day off",
   "tooEarlyCheckInMsg": "You can check in only within 15 minutes before your shift starts.",
   "breakLabel": "Break",
-  "checkOut": "Check out"
+  "checkOut": "Check out",
+  "enterOtp": "Enter OTP"
 }

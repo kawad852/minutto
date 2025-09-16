@@ -1543,4 +1543,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get checkOut => 'إنصراف';
+
+  @override
+  String get enterOtp => 'أدخل الرمز';
 }

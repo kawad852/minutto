@@ -42,6 +42,11 @@ class UserProvider extends ChangeNotifier {
       await FirebaseFirestore.instance.users.doc(user.id).set(user);
     }
 
+    await _firebaseFirestore.companies.doc(MySharedPreferences.user!.companyId).get().then(
+      (value) {
+        MySharedPreferences.company = value.data();
+      },
+    );
     notifyListeners();
 
     if (context.mounted) {

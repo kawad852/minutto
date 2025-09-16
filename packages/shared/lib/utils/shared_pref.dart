@@ -94,6 +94,7 @@ class MySharedPreferences {
   }
 
   static set company(CompanyModel? value) {
+    value?.createdAt = null;
     _sharedPreferences.setString('company', jsonEncode(value?.toJson()));
   }
 

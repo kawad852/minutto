@@ -501,5 +501,6 @@
   "thisIsDayOffMsg": "اليوم هو يوم عطلتك",
   "tooEarlyCheckInMsg": "يمكنك تسجيل الحضور فقط خلال 15 دقيقة قبل بداية دوامك.",
   "breakLabel": "إستراحة",
-  "checkOut": "إنصراف"
+  "checkOut": "إنصراف",
+  "enterOtp": "أدخل الرمز"
 }

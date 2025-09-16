@@ -3115,6 +3115,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Check out'**
   String get checkOut;
+
+  /// No description provided for @enterOtp.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter OTP'**
+  String get enterOtp;
 }
 
 class _AppLocalizationsDelegate

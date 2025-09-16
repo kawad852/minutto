@@ -35,6 +35,7 @@ class _StaffInputScreenState extends State<StaffInputScreen> {
           _user.companyId = user.companyId;
           _user.createdAt = kNowDate;
           _user.role = RoleEnum.employee.value;
+          _user.status = UserStatusEnum.active.value;
         }
         final docRef = _firebaseFirestore.users.doc(_user.id);
         await docRef.set(_user);

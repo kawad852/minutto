@@ -1552,4 +1552,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get checkOut => 'Check out';
+
+  @override
+  String get enterOtp => 'Enter OTP';
 }

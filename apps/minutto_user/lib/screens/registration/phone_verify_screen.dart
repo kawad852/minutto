@@ -22,6 +22,10 @@ class _PhoneVerifyScreenState extends State<PhoneVerifyScreen> {
   UserModel get _user => widget.user;
 
   void _onSubmit(BuildContext context) {
+    if (_code == null || _code!.isEmpty) {
+      context.showSnackBar(context.appLocalization.enterOtp);
+      return;
+    }
     WeCanAuth.instance.verifyCode(
       context,
       countryCode: _user.phoneNumberCountryCode,
