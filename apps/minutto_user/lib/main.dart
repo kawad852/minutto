@@ -10,6 +10,7 @@ void main() async {
   await MyAppHelper().init(
     firebaseOptions: DefaultFirebaseOptions.currentPlatform,
     builder: (bool isAuthenticated) {
+      print("isAuthenticated:: $isAuthenticated");
       if (isAuthenticated) {
         return AppNavBar();
       } else if (MySharedPreferences.passedIntro) {
