@@ -66,10 +66,11 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyAmnzo3Dv3WT4knGpx9Kue4wDzYNVroN7I',
-    appId: '1:943748837802:ios:ce8ff8e604919b925d3bd3',
+    appId: '1:943748837802:ios:f6cad717b86d19825d3bd3',
     messagingSenderId: '943748837802',
     projectId: 'minutto-app',
     storageBucket: 'minutto-app.firebasestorage.app',
-    iosBundleId: 'com.example.minuttoUser',
+    iosBundleId: 'com.minutto.wecan',
   );
+
 }
