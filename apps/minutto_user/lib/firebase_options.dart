@@ -58,7 +58,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyATzFWbCodEmjAOCK3MboZ3vUwfyIDUa4Y',
-    appId: '1:943748837802:android:570af91347c2257e5d3bd3',
+    appId: '1:943748837802:android:a05772acc0366aa75d3bd3',
     messagingSenderId: '943748837802',
     projectId: 'minutto-app',
     storageBucket: 'minutto-app.firebasestorage.app',

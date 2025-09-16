@@ -2,6 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>NSCameraUsageDescription</key>
+    <string>Minutto needs camera access to let you take photos for your profile and attach images to orders or support chats.</string>
+        <key>NSPhotoLibraryUsageDescription</key>
+    <string>Minutto needs access to your photos to let you choose images for your profile or attach them to orders and support chats.</string>
+        <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>Minutto needs permission to save photos when you download order receipts or save processed images.</string>
+        <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Minutto uses your location to show nearby stores, estimate delivery times, and deliver to your address.</string>
+        <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Minutto uses your location in the background to improve delivery accuracy and notifications about your order’s status.</string>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>

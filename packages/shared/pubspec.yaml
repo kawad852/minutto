@@ -47,7 +47,6 @@ dependencies:
   collection: ^1.19.1
   flutter_cupertino_datetime_picker: ^3.0.0
   auto_size_text: ^3.0.0
-  flutter_stripe: ^11.5.0
   flutter_dotenv: ^5.2.1
   # share_plus: ^11.0.0
   animated_flip_counter: ^0.3.4
