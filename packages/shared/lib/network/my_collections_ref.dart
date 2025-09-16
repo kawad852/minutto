@@ -51,4 +51,9 @@ extension CollectionReferenceExtension on FirebaseFirestore {
       .doc(MySharedPreferences.company!.id)
       .collection(MyCollections.shiftAssignments)
       .shiftAssignmentsConvertor;
+
+  CollectionReference<PolicyModel> get companyPolicies => companies
+      .doc(MySharedPreferences.user!.companyId)
+      .collection(MyCollections.policies)
+      .policyConvertor;
 }
