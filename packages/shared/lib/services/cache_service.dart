@@ -131,8 +131,8 @@ class CacheService {
     final shift = user!.shiftId;
     if (shift.isNotEmpty) {
       _firebaseFirestore.shifts.doc().get().then((value) {
-        final data = value.data()!;
-        data.createdAt = null;
+        final data = value.data();
+        data?.createdAt = null;
         MySharedPreferences.shift = data;
       });
     }
