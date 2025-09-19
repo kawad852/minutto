@@ -2,13 +2,13 @@ import 'package:minutto_user/minutto_user.dart';
 import 'package:shared/shared.dart';
 
 class LeavesCard extends StatelessWidget {
-  final String total, taken, rest;
+  final num total, taken;
   final bool isMonthly;
+
   const LeavesCard({
     super.key,
     required this.total,
     required this.taken,
-    required this.rest,
     this.isMonthly = false,
   });
 
@@ -26,7 +26,7 @@ class LeavesCard extends StatelessWidget {
         children: [
           ReportTile(
             title: context.appLocalization.total,
-            value: total,
+            value: "$total",
             color: context.colorPalette.green47A,
             unit: isMonthly ? context.appLocalization.hour : context.appLocalization.day,
           ),
@@ -41,7 +41,7 @@ class LeavesCard extends StatelessWidget {
           ),
           ReportTile(
             title: context.appLocalization.taken,
-            value: taken,
+            value: "$taken",
             unit: isMonthly ? context.appLocalization.hour : context.appLocalization.day,
           ),
           SizedBox(
@@ -55,7 +55,7 @@ class LeavesCard extends StatelessWidget {
           ),
           ReportTile(
             title: context.appLocalization.residual,
-            value: rest,
+            value: "${total - taken}",
             unit: isMonthly ? context.appLocalization.hour : context.appLocalization.day,
           ),
         ],

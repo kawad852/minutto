@@ -26,6 +26,7 @@ _$RequestModelImpl _$$RequestModelImplFromJson(Map<String, dynamic> json) =>
       notes: json['notes'] as String?,
       adminNotes: json['adminNotes'] as String?,
       amount: (json['amount'] as num?)?.toDouble() ?? 0.0,
+      totalLeaveHours: (json['totalLeaveHours'] as num?)?.toInt() ?? 0,
       attachments:
           (json['attachments'] as List<dynamic>?)
               ?.map((e) => AttachmentModel.fromJson(e as Map<String, dynamic>))
@@ -53,5 +54,6 @@ Map<String, dynamic> _$$RequestModelImplToJson(_$RequestModelImpl instance) =>
       'notes': instance.notes,
       'adminNotes': instance.adminNotes,
       'amount': instance.amount,
+      'totalLeaveHours': instance.totalLeaveHours,
       'attachments': instance.attachments.map((e) => e.toJson()).toList(),
     };

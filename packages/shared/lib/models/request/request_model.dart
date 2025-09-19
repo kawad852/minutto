@@ -23,6 +23,7 @@ class RequestModel with _$RequestModel {
     String? notes,
     String? adminNotes,
     @Default(0.0) double amount,
+    @Default(0) int totalLeaveHours,
     @Default([]) List<AttachmentModel> attachments,
     @JsonKey(includeFromJson: false, includeToJson: false) UserModel? userModel,
   }) = _RequestModel;

@@ -55,4 +55,5 @@ class MyFields {
   static const String statusChangedAt = 'statusChangedAt';
   static const String shiftId = 'shiftId';
   static const String deductionHours = 'deductionHours';
+  static const String totalLeaveHours = 'totalLeaveHours';
 }

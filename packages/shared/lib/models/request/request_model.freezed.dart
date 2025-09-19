@@ -63,6 +63,8 @@ mixin _$RequestModel {
   set adminNotes(String? value) => throw _privateConstructorUsedError;
   double get amount => throw _privateConstructorUsedError;
   set amount(double value) => throw _privateConstructorUsedError;
+  int get totalLeaveHours => throw _privateConstructorUsedError;
+  set totalLeaveHours(int value) => throw _privateConstructorUsedError;
   List<AttachmentModel> get attachments => throw _privateConstructorUsedError;
   set attachments(List<AttachmentModel> value) =>
       throw _privateConstructorUsedError;
@@ -105,6 +107,7 @@ abstract class $RequestModelCopyWith<$Res> {
     String? notes,
     String? adminNotes,
     double amount,
+    int totalLeaveHours,
     List<AttachmentModel> attachments,
     @JsonKey(includeFromJson: false, includeToJson: false) UserModel? userModel,
   });
@@ -143,6 +146,7 @@ class _$RequestModelCopyWithImpl<$Res, $Val extends RequestModel>
     Object? notes = freezed,
     Object? adminNotes = freezed,
     Object? amount = null,
+    Object? totalLeaveHours = null,
     Object? attachments = null,
     Object? userModel = freezed,
   }) {
@@ -212,6 +216,10 @@ class _$RequestModelCopyWithImpl<$Res, $Val extends RequestModel>
                 ? _value.amount
                 : amount // ignore: cast_nullable_to_non_nullable
                       as double,
+            totalLeaveHours: null == totalLeaveHours
+                ? _value.totalLeaveHours
+                : totalLeaveHours // ignore: cast_nullable_to_non_nullable
+                      as int,
             attachments: null == attachments
                 ? _value.attachments
                 : attachments // ignore: cast_nullable_to_non_nullable
@@ -266,6 +274,7 @@ abstract class _$$RequestModelImplCopyWith<$Res>
     String? notes,
     String? adminNotes,
     double amount,
+    int totalLeaveHours,
     List<AttachmentModel> attachments,
     @JsonKey(includeFromJson: false, includeToJson: false) UserModel? userModel,
   });
@@ -304,6 +313,7 @@ class __$$RequestModelImplCopyWithImpl<$Res>
     Object? notes = freezed,
     Object? adminNotes = freezed,
     Object? amount = null,
+    Object? totalLeaveHours = null,
     Object? attachments = null,
     Object? userModel = freezed,
   }) {
@@ -373,6 +383,10 @@ class __$$RequestModelImplCopyWithImpl<$Res>
             ? _value.amount
             : amount // ignore: cast_nullable_to_non_nullable
                   as double,
+        totalLeaveHours: null == totalLeaveHours
+            ? _value.totalLeaveHours
+            : totalLeaveHours // ignore: cast_nullable_to_non_nullable
+                  as int,
         attachments: null == attachments
             ? _value.attachments
             : attachments // ignore: cast_nullable_to_non_nullable
@@ -407,6 +421,7 @@ class _$RequestModelImpl extends _RequestModel {
     this.notes,
     this.adminNotes,
     this.amount = 0.0,
+    this.totalLeaveHours = 0,
     this.attachments = const [],
     @JsonKey(includeFromJson: false, includeToJson: false) this.userModel,
   }) : super._();
@@ -459,6 +474,9 @@ class _$RequestModelImpl extends _RequestModel {
   double amount;
   @override
   @JsonKey()
+  int totalLeaveHours;
+  @override
+  @JsonKey()
   List<AttachmentModel> attachments;
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -466,7 +484,7 @@ class _$RequestModelImpl extends _RequestModel {
 
   @override
   String toString() {
-    return 'RequestModel(createdAt: $createdAt, statusChangedAt: $statusChangedAt, fromDate: $fromDate, toDate: $toDate, date: $date, id: $id, userId: $userId, type: $type, companyId: $companyId, reason: $reason, fromHour: $fromHour, toHour: $toHour, status: $status, notes: $notes, adminNotes: $adminNotes, amount: $amount, attachments: $attachments, userModel: $userModel)';
+    return 'RequestModel(createdAt: $createdAt, statusChangedAt: $statusChangedAt, fromDate: $fromDate, toDate: $toDate, date: $date, id: $id, userId: $userId, type: $type, companyId: $companyId, reason: $reason, fromHour: $fromHour, toHour: $toHour, status: $status, notes: $notes, adminNotes: $adminNotes, amount: $amount, totalLeaveHours: $totalLeaveHours, attachments: $attachments, userModel: $userModel)';
   }
 
   /// Create a copy of RequestModel
@@ -501,6 +519,7 @@ abstract class _RequestModel extends RequestModel {
     String? notes,
     String? adminNotes,
     double amount,
+    int totalLeaveHours,
     List<AttachmentModel> attachments,
     @JsonKey(includeFromJson: false, includeToJson: false) UserModel? userModel,
   }) = _$RequestModelImpl;
@@ -567,6 +586,9 @@ abstract class _RequestModel extends RequestModel {
   @override
   double get amount;
   set amount(double value);
+  @override
+  int get totalLeaveHours;
+  set totalLeaveHours(int value);
   @override
   List<AttachmentModel> get attachments;
   set attachments(List<AttachmentModel> value);
