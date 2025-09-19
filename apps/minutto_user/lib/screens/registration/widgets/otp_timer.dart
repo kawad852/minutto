@@ -72,7 +72,7 @@ class _OtpTimerState extends State<OtpTimer> {
             ),
             if (!_ended) ...[
               TextSpan(
-                text: _getFormattedTime(),
+                text: " ${_getFormattedTime()}",
                 style: TextStyle(
                   color: context.colorPalette.blueB2D,
                   fontSize: 14,

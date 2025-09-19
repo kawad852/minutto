@@ -4,7 +4,7 @@ class WeCanAuth {
   WeCanAuth._internal();
   static final WeCanAuth instance = WeCanAuth._internal();
 
-  final _testPhoneNumber = "791595055";
+  final _testPhoneNumber = "791595029";
   final _baseURL = "https://api.doverifyit.com";
   final _authKey = "730|v4uGHvUu9Zc956OLiF8HiUDYwbZbbxupAZ6kaQlHIzHmoQx2rZma2EtM3ArY";
   final _apiKey = "8557603931";
