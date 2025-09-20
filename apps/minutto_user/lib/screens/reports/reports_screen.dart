@@ -28,6 +28,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
           f: Filter.and(filters, checkInFilter),
           aggregateField1: count(),
           aggregateField2: sum(MyFields.deductionHours),
+          aggregateField3: sum(MyFields.deductionAmount),
         );
 
         ///Vacations
@@ -85,6 +86,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                 final attendances = (snapshot.data?[0] as AggregateQuerySnapshot?);
                 final attendancesCount = attendances?.count ?? 0;
                 final deductionHoursSum = attendances?.getSum(MyFields.deductionHours) ?? 0;
+                final deductionAmountSum = attendances?.getSum(MyFields.deductionAmount) ?? 0.0;
 
                 /// Vacations
                 final vacations = (snapshot.data?[1] as AggregateQuerySnapshot?);
@@ -178,9 +180,9 @@ class _ReportsScreenState extends State<ReportsScreen> {
                             children: [
                               ReportTile(
                                 title: context.appLocalization.delayDiscount,
-                                value: "15.31",
+                                value: deductionAmountSum.toStringAsFixed(2),
                                 color: context.colorPalette.yellowF69,
-                                unit: "دينار",
+                                unit: context.currency,
                               ),
                               SizedBox(
                                 height: 55,
@@ -195,7 +197,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                 title: context.appLocalization.absenceDiscount,
                                 value: "20.00",
                                 color: context.colorPalette.redDF0,
-                                unit: "دينار",
+                                unit: context.currency,
                               ),
                             ],
                           ),

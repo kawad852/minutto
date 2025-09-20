@@ -12,6 +12,7 @@ class AttendanceModel with _$AttendanceModel {
     @Default('') String type,
     @Default(0) int deductionHours,
     @Default(0.0) double deductionAmount,
+    @Default("") String shiftId,
   }) = _AttendanceModel;
 
   factory AttendanceModel.fromJson(Map<String, dynamic> json) => _$AttendanceModelFromJson(json);

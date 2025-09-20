@@ -14,6 +14,7 @@ _$AttendanceModelImpl _$$AttendanceModelImplFromJson(
   type: json['type'] as String? ?? '',
   deductionHours: (json['deductionHours'] as num?)?.toInt() ?? 0,
   deductionAmount: (json['deductionAmount'] as num?)?.toDouble() ?? 0.0,
+  shiftId: json['shiftId'] as String? ?? "",
 );
 
 Map<String, dynamic> _$$AttendanceModelImplToJson(
@@ -24,6 +25,7 @@ Map<String, dynamic> _$$AttendanceModelImplToJson(
   'type': instance.type,
   'deductionHours': instance.deductionHours,
   'deductionAmount': instance.deductionAmount,
+  'shiftId': instance.shiftId,
 };
 
 _$AttendanceSessionImpl _$$AttendanceSessionImplFromJson(

@@ -102,7 +102,7 @@ class AttendanceHelper {
             checkIn: effectiveCheckIn,
             shift: shift,
             policy: policy,
-            basicSalary: user.basicSalary?.toDouble() ?? 0.0,
+            basicSalary: user.basicSalary.toDouble() ?? 0.0,
           );
           deductionHours = result.deductionHours;
           deductionAmount = result.deductionAmount;
@@ -114,6 +114,7 @@ class AttendanceHelper {
           type: type,
           deductionHours: deductionHours,
           deductionAmount: deductionAmount,
+          shiftId: shift.id,
         );
 
         await docRef.set(attendance);

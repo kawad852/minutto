@@ -11,6 +11,7 @@ class AggregationService {
     Filter? f,
     AggregateField? aggregateField1,
     AggregateField? aggregateField2,
+    AggregateField? aggregateField3,
   }) {
     late Filter filter;
     if (f != null) {
@@ -42,7 +43,7 @@ class AggregationService {
             .collection(collection)
             .requestConvertor
             .where(filter)
-            .aggregate(aggregateField1 ?? count(), aggregateField2)
+            .aggregate(aggregateField1 ?? count(), aggregateField2, aggregateField3)
             .get()
             .then((value) => value);
       },
