@@ -503,6 +503,7 @@
   "breakLabel": "إستراحة",
   "checkOut": "إنصراف",
   "enterOtp": "أدخل الرمز",
-  "salaryReleaseDay": "يوم اصدار الرواتب"
-
+  "salaryReleaseDay": "يوم اصدار الرواتب",
+  "latitude": "خط العرض",
+  "longitude": "خط الطول"
 }

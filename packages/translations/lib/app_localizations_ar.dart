@@ -1549,4 +1549,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get salaryReleaseDay => 'يوم اصدار الرواتب';
+
+  @override
+  String get latitude => 'خط العرض';
+
+  @override
+  String get longitude => 'خط الطول';
 }

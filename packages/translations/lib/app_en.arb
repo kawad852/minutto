@@ -503,5 +503,7 @@
   "breakLabel": "Break",
   "checkOut": "Check out",
   "enterOtp": "Enter OTP",
-  "salaryReleaseDay": "Salary Release Day"
+  "salaryReleaseDay": "Salary Release Day",
+  "latitude": "Latitude",
+  "longitude": "Longitude"
 }

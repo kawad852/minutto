@@ -93,11 +93,13 @@ class CustomTextField extends StatelessWidget {
     Widget? prefixIcon,
     required ValueChanged<double?> onChanged,
     bool required = true,
+    String? labelText,
   }) {
     return CustomTextField._(
       key: key,
       initialValue: initialValue?.toString(),
       prefixIcon: prefixIcon,
+      labelText: labelText,
       keyboardType: const TextInputType.numberWithOptions(decimal: true),
       inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'^\d+\.?\d{0,2}'))],
       onChanged: (value) => onChanged(double.tryParse(value)),

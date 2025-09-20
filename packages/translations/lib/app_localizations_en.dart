@@ -1558,4 +1558,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get salaryReleaseDay => 'Salary Release Day';
+
+  @override
+  String get latitude => 'Latitude';
+
+  @override
+  String get longitude => 'Longitude';
 }

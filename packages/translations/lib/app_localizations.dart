@@ -3127,6 +3127,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Salary Release Day'**
   String get salaryReleaseDay;
+
+  /// No description provided for @latitude.
+  ///
+  /// In en, this message translates to:
+  /// **'Latitude'**
+  String get latitude;
+
+  /// No description provided for @longitude.
+  ///
+  /// In en, this message translates to:
+  /// **'Longitude'**
+  String get longitude;
 }
 
 class _AppLocalizationsDelegate
