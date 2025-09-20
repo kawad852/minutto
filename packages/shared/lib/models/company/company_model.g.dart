@@ -10,6 +10,7 @@ _$CompanyModelImpl _$$CompanyModelImplFromJson(
   Map<String, dynamic> json,
 ) => _$CompanyModelImpl(
   createdAt: const TimestampSerializer().fromJson(json['createdAt']),
+  salaryReleaseDay: (json['salaryReleaseDay'] as num?)?.toInt() ?? 30,
   id: json['id'] as String? ?? '',
   name: json['name'] as String? ?? '',
   code: json['code'] as String? ?? '',
@@ -29,6 +30,7 @@ _$CompanyModelImpl _$$CompanyModelImplFromJson(
 Map<String, dynamic> _$$CompanyModelImplToJson(_$CompanyModelImpl instance) =>
     <String, dynamic>{
       'createdAt': const TimestampSerializer().toJson(instance.createdAt),
+      'salaryReleaseDay': instance.salaryReleaseDay,
       'id': instance.id,
       'name': instance.name,
       'code': instance.code,

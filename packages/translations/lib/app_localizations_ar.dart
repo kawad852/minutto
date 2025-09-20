@@ -1546,4 +1546,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get enterOtp => 'أدخل الرمز';
+
+  @override
+  String get salaryReleaseDay => 'يوم اصدار الرواتب';
 }

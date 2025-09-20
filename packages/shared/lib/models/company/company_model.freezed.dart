@@ -25,6 +25,8 @@ mixin _$CompanyModel {
   DateTime? get createdAt => throw _privateConstructorUsedError;
   @TimestampSerializer()
   set createdAt(DateTime? value) => throw _privateConstructorUsedError;
+  int get salaryReleaseDay => throw _privateConstructorUsedError;
+  set salaryReleaseDay(int value) => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   set id(String value) => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
@@ -61,6 +63,7 @@ abstract class $CompanyModelCopyWith<$Res> {
   @useResult
   $Res call({
     @TimestampSerializer() DateTime? createdAt,
+    int salaryReleaseDay,
     String id,
     String name,
     String code,
@@ -90,6 +93,7 @@ class _$CompanyModelCopyWithImpl<$Res, $Val extends CompanyModel>
   @override
   $Res call({
     Object? createdAt = freezed,
+    Object? salaryReleaseDay = null,
     Object? id = null,
     Object? name = null,
     Object? code = null,
@@ -103,6 +107,10 @@ class _$CompanyModelCopyWithImpl<$Res, $Val extends CompanyModel>
                 ? _value.createdAt
                 : createdAt // ignore: cast_nullable_to_non_nullable
                       as DateTime?,
+            salaryReleaseDay: null == salaryReleaseDay
+                ? _value.salaryReleaseDay
+                : salaryReleaseDay // ignore: cast_nullable_to_non_nullable
+                      as int,
             id: null == id
                 ? _value.id
                 : id // ignore: cast_nullable_to_non_nullable
@@ -188,6 +196,7 @@ abstract class _$$CompanyModelImplCopyWith<$Res>
   @useResult
   $Res call({
     @TimestampSerializer() DateTime? createdAt,
+    int salaryReleaseDay,
     String id,
     String name,
     String code,
@@ -219,6 +228,7 @@ class __$$CompanyModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? createdAt = freezed,
+    Object? salaryReleaseDay = null,
     Object? id = null,
     Object? name = null,
     Object? code = null,
@@ -232,6 +242,10 @@ class __$$CompanyModelImplCopyWithImpl<$Res>
             ? _value.createdAt
             : createdAt // ignore: cast_nullable_to_non_nullable
                   as DateTime?,
+        salaryReleaseDay: null == salaryReleaseDay
+            ? _value.salaryReleaseDay
+            : salaryReleaseDay // ignore: cast_nullable_to_non_nullable
+                  as int,
         id: null == id
             ? _value.id
             : id // ignore: cast_nullable_to_non_nullable
@@ -267,6 +281,7 @@ class __$$CompanyModelImplCopyWithImpl<$Res>
 class _$CompanyModelImpl implements _CompanyModel {
   _$CompanyModelImpl({
     @TimestampSerializer() this.createdAt,
+    this.salaryReleaseDay = 30,
     this.id = '',
     this.name = '',
     this.code = '',
@@ -281,6 +296,9 @@ class _$CompanyModelImpl implements _CompanyModel {
   @override
   @TimestampSerializer()
   DateTime? createdAt;
+  @override
+  @JsonKey()
+  int salaryReleaseDay;
   @override
   @JsonKey()
   String id;
@@ -299,7 +317,7 @@ class _$CompanyModelImpl implements _CompanyModel {
 
   @override
   String toString() {
-    return 'CompanyModel(createdAt: $createdAt, id: $id, name: $name, code: $code, leavePolicy: $leavePolicy, attendancePolicy: $attendancePolicy, geoLocation: $geoLocation)';
+    return 'CompanyModel(createdAt: $createdAt, salaryReleaseDay: $salaryReleaseDay, id: $id, name: $name, code: $code, leavePolicy: $leavePolicy, attendancePolicy: $attendancePolicy, geoLocation: $geoLocation)';
   }
 
   /// Create a copy of CompanyModel
@@ -319,6 +337,7 @@ class _$CompanyModelImpl implements _CompanyModel {
 abstract class _CompanyModel implements CompanyModel {
   factory _CompanyModel({
     @TimestampSerializer() DateTime? createdAt,
+    int salaryReleaseDay,
     String id,
     String name,
     String code,
@@ -335,6 +354,9 @@ abstract class _CompanyModel implements CompanyModel {
   DateTime? get createdAt;
   @TimestampSerializer()
   set createdAt(DateTime? value);
+  @override
+  int get salaryReleaseDay;
+  set salaryReleaseDay(int value);
   @override
   String get id;
   set id(String value);

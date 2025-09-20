@@ -8,6 +8,7 @@ class CompanyModel with _$CompanyModel {
   @JsonSerializable(explicitToJson: true)
   factory CompanyModel({
     @TimestampSerializer() DateTime? createdAt,
+    @Default(30) int salaryReleaseDay,
     @Default('') String id,
     @Default('') String name,
     @Default('') String code,

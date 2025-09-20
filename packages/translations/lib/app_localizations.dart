@@ -3121,6 +3121,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Enter OTP'**
   String get enterOtp;
+
+  /// No description provided for @salaryReleaseDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Salary Release Day'**
+  String get salaryReleaseDay;
 }
 
 class _AppLocalizationsDelegate

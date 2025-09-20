@@ -502,5 +502,6 @@
   "tooEarlyCheckInMsg": "You can check in only within 15 minutes before your shift starts.",
   "breakLabel": "Break",
   "checkOut": "Check out",
-  "enterOtp": "Enter OTP"
+  "enterOtp": "Enter OTP",
+  "salaryReleaseDay": "Salary Release Day"
 }

@@ -502,5 +502,7 @@
   "tooEarlyCheckInMsg": "يمكنك تسجيل الحضور فقط خلال 15 دقيقة قبل بداية دوامك.",
   "breakLabel": "إستراحة",
   "checkOut": "إنصراف",
-  "enterOtp": "أدخل الرمز"
+  "enterOtp": "أدخل الرمز",
+  "salaryReleaseDay": "يوم اصدار الرواتب"
+
 }
