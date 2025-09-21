@@ -87,14 +87,14 @@ dependencies:
   googleapis_auth: ^2.0.0
 
   #firebase
-  firebase_core: ^4.0.0
-  cloud_firestore: ^6.0.0
-  firebase_auth: ^6.0.1
-  firebase_messaging: ^16.0.0
-  firebase_analytics: ^12.0.0
+  firebase_core: ^4.1.0
+  cloud_firestore: ^6.0.1
+  firebase_auth: ^6.0.2
+  firebase_messaging: ^16.0.1
+  firebase_analytics: ^12.0.1
   firebase_ui_firestore: ^2.0.0
-  firebase_storage: ^13.0.0
-  cloud_functions: ^6.0.0
+  firebase_storage: ^13.0.1
+  cloud_functions: ^6.0.1
 
   #Algolia
   algolia_client_recommend: ^1.32.0
