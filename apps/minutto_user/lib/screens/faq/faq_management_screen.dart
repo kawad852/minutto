@@ -9,6 +9,18 @@ class FAQManagementScreen extends StatefulWidget {
 }
 
 class _FAQManagementScreenState extends State<FAQManagementScreen> {
+  late Query<FAQModel> _query;
+
+  void _initialize() {
+    _query = FirebaseFirestore.instance.companyFAQ.orderByCreatedAtDesc;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _initialize();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,12 +47,20 @@ class _FAQManagementScreenState extends State<FAQManagementScreen> {
           ),
         ),
       ),
-      body: ListView.separated(
-        separatorBuilder: (context, index) => const SizedBox(height: 12),
-        itemCount: 5,
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-        itemBuilder: (context, index) {
-          return FAQManageCard();
+      body: BlitzBuilder.query(
+        query: _query,
+        onComplete: (context, snapshot, _) {
+          return ListView.separated(
+            separatorBuilder: (context, index) => const SizedBox(height: 12),
+            itemCount: snapshot.docs.length,
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+            itemBuilder: (context, index) {
+              final faq = snapshot.docs[index].data();
+              return FAQManageCard(
+                faq: faq,
+              );
+            },
+          );
         },
       ),
     );

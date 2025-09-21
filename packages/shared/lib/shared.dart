@@ -120,6 +120,7 @@ export 'models/company/company_model.dart';
 export 'models/country/country_model.dart';
 export 'models/country_code_model.dart';
 export 'models/department/department_model.dart';
+export 'models/faq/faq_model.dart';
 export 'models/holiday/holiday_model.dart';
 export 'models/notification/notification_model.dart';
 export 'models/otp_model.dart';

@@ -56,4 +56,9 @@ extension CollectionReferenceExtension on FirebaseFirestore {
       .doc(MySharedPreferences.user!.companyId)
       .collection(MyCollections.policies)
       .policyConvertor;
+
+  CollectionReference<FAQModel> get companyFAQ => companies
+      .doc(MySharedPreferences.user!.companyId)
+      .collection(MyCollections.frequentAskedQuestions)
+      .faqConvertor;
 }

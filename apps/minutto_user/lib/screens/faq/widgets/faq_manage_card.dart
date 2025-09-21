@@ -1,7 +1,13 @@
+import 'package:minutto_user/minutto_user.dart';
 import 'package:shared/shared.dart';
 
 class FAQManageCard extends StatelessWidget {
-  const FAQManageCard({super.key});
+  final FAQModel faq;
+
+  const FAQManageCard({
+    super.key,
+    required this.faq,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +26,7 @@ class FAQManageCard extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(
-                  "كيف يمكن تقديم طلب إجازة؟",
+                  faq.question,
                   style: TextStyle(
                     color: context.colorPalette.blue091,
                     fontSize: 16,
@@ -28,7 +34,15 @@ class FAQManageCard extends StatelessWidget {
                   ),
                 ),
               ),
-              CustomMenu(),
+              CustomMenu(
+                onEdit: () {
+                  context.navigate((context) {
+                    return FAQInputScreen(
+                      faq: faq,
+                    );
+                  });
+                },
+              ),
             ],
           ),
           Container(
@@ -43,7 +57,7 @@ class FAQManageCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
             ),
             child: Text(
-              "يساعد تطبيق مينيتو الشركات الحديثة في إدارة شؤون الموظفين و الموارد البشرية بطريقة سلسة و سهلة، كما أنه يساعد في ادارة الحضور و حساب الإجازات ...",
+              faq.answer,
               style: TextStyle(
                 color: context.colorPalette.blue344,
                 fontSize: 12,
