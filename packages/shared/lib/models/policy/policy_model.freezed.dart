@@ -21,16 +21,20 @@ PolicyModel _$PolicyModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PolicyModel {
-  String get id => throw _privateConstructorUsedError;
-  set id(String value) => throw _privateConstructorUsedError;
-  String get contentEn => throw _privateConstructorUsedError;
-  set contentEn(String value) => throw _privateConstructorUsedError;
-  String get contentAr => throw _privateConstructorUsedError;
-  set contentAr(String value) => throw _privateConstructorUsedError;
-  String get titleEn => throw _privateConstructorUsedError;
-  set titleEn(String value) => throw _privateConstructorUsedError;
-  String get titleAr => throw _privateConstructorUsedError;
-  set titleAr(String value) => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
+  set id(String? value) => throw _privateConstructorUsedError;
+  String? get content => throw _privateConstructorUsedError;
+  set content(String? value) => throw _privateConstructorUsedError;
+  String? get title => throw _privateConstructorUsedError;
+  set title(String? value) => throw _privateConstructorUsedError;
+  String? get contentEn => throw _privateConstructorUsedError;
+  set contentEn(String? value) => throw _privateConstructorUsedError;
+  String? get contentAr => throw _privateConstructorUsedError;
+  set contentAr(String? value) => throw _privateConstructorUsedError;
+  String? get titleEn => throw _privateConstructorUsedError;
+  set titleEn(String? value) => throw _privateConstructorUsedError;
+  String? get titleAr => throw _privateConstructorUsedError;
+  set titleAr(String? value) => throw _privateConstructorUsedError;
 
   /// Serializes this PolicyModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -50,11 +54,13 @@ abstract class $PolicyModelCopyWith<$Res> {
   ) = _$PolicyModelCopyWithImpl<$Res, PolicyModel>;
   @useResult
   $Res call({
-    String id,
-    String contentEn,
-    String contentAr,
-    String titleEn,
-    String titleAr,
+    String? id,
+    String? content,
+    String? title,
+    String? contentEn,
+    String? contentAr,
+    String? titleEn,
+    String? titleAr,
   });
 }
 
@@ -73,34 +79,44 @@ class _$PolicyModelCopyWithImpl<$Res, $Val extends PolicyModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? contentEn = null,
-    Object? contentAr = null,
-    Object? titleEn = null,
-    Object? titleAr = null,
+    Object? id = freezed,
+    Object? content = freezed,
+    Object? title = freezed,
+    Object? contentEn = freezed,
+    Object? contentAr = freezed,
+    Object? titleEn = freezed,
+    Object? titleAr = freezed,
   }) {
     return _then(
       _value.copyWith(
-            id: null == id
+            id: freezed == id
                 ? _value.id
                 : id // ignore: cast_nullable_to_non_nullable
-                      as String,
-            contentEn: null == contentEn
+                      as String?,
+            content: freezed == content
+                ? _value.content
+                : content // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            title: freezed == title
+                ? _value.title
+                : title // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            contentEn: freezed == contentEn
                 ? _value.contentEn
                 : contentEn // ignore: cast_nullable_to_non_nullable
-                      as String,
-            contentAr: null == contentAr
+                      as String?,
+            contentAr: freezed == contentAr
                 ? _value.contentAr
                 : contentAr // ignore: cast_nullable_to_non_nullable
-                      as String,
-            titleEn: null == titleEn
+                      as String?,
+            titleEn: freezed == titleEn
                 ? _value.titleEn
                 : titleEn // ignore: cast_nullable_to_non_nullable
-                      as String,
-            titleAr: null == titleAr
+                      as String?,
+            titleAr: freezed == titleAr
                 ? _value.titleAr
                 : titleAr // ignore: cast_nullable_to_non_nullable
-                      as String,
+                      as String?,
           )
           as $Val,
     );
@@ -117,11 +133,13 @@ abstract class _$$PolicyModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call({
-    String id,
-    String contentEn,
-    String contentAr,
-    String titleEn,
-    String titleAr,
+    String? id,
+    String? content,
+    String? title,
+    String? contentEn,
+    String? contentAr,
+    String? titleEn,
+    String? titleAr,
   });
 }
 
@@ -139,34 +157,44 @@ class __$$PolicyModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? contentEn = null,
-    Object? contentAr = null,
-    Object? titleEn = null,
-    Object? titleAr = null,
+    Object? id = freezed,
+    Object? content = freezed,
+    Object? title = freezed,
+    Object? contentEn = freezed,
+    Object? contentAr = freezed,
+    Object? titleEn = freezed,
+    Object? titleAr = freezed,
   }) {
     return _then(
       _$PolicyModelImpl(
-        id: null == id
+        id: freezed == id
             ? _value.id
             : id // ignore: cast_nullable_to_non_nullable
-                  as String,
-        contentEn: null == contentEn
+                  as String?,
+        content: freezed == content
+            ? _value.content
+            : content // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        title: freezed == title
+            ? _value.title
+            : title // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        contentEn: freezed == contentEn
             ? _value.contentEn
             : contentEn // ignore: cast_nullable_to_non_nullable
-                  as String,
-        contentAr: null == contentAr
+                  as String?,
+        contentAr: freezed == contentAr
             ? _value.contentAr
             : contentAr // ignore: cast_nullable_to_non_nullable
-                  as String,
-        titleEn: null == titleEn
+                  as String?,
+        titleEn: freezed == titleEn
             ? _value.titleEn
             : titleEn // ignore: cast_nullable_to_non_nullable
-                  as String,
-        titleAr: null == titleAr
+                  as String?,
+        titleAr: freezed == titleAr
             ? _value.titleAr
             : titleAr // ignore: cast_nullable_to_non_nullable
-                  as String,
+                  as String?,
       ),
     );
   }
@@ -174,37 +202,38 @@ class __$$PolicyModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PolicyModelImpl extends _PolicyModel {
+class _$PolicyModelImpl implements _PolicyModel {
   _$PolicyModelImpl({
-    this.id = '',
-    this.contentEn = '',
-    this.contentAr = '',
-    this.titleEn = '',
-    this.titleAr = '',
-  }) : super._();
+    this.id,
+    this.content,
+    this.title,
+    this.contentEn,
+    this.contentAr,
+    this.titleEn,
+    this.titleAr,
+  });
 
   factory _$PolicyModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$PolicyModelImplFromJson(json);
 
   @override
-  @JsonKey()
-  String id;
+  String? id;
   @override
-  @JsonKey()
-  String contentEn;
+  String? content;
   @override
-  @JsonKey()
-  String contentAr;
+  String? title;
   @override
-  @JsonKey()
-  String titleEn;
+  String? contentEn;
   @override
-  @JsonKey()
-  String titleAr;
+  String? contentAr;
+  @override
+  String? titleEn;
+  @override
+  String? titleAr;
 
   @override
   String toString() {
-    return 'PolicyModel(id: $id, contentEn: $contentEn, contentAr: $contentAr, titleEn: $titleEn, titleAr: $titleAr)';
+    return 'PolicyModel(id: $id, content: $content, title: $title, contentEn: $contentEn, contentAr: $contentAr, titleEn: $titleEn, titleAr: $titleAr)';
   }
 
   /// Create a copy of PolicyModel
@@ -221,34 +250,41 @@ class _$PolicyModelImpl extends _PolicyModel {
   }
 }
 
-abstract class _PolicyModel extends PolicyModel {
+abstract class _PolicyModel implements PolicyModel {
   factory _PolicyModel({
-    String id,
-    String contentEn,
-    String contentAr,
-    String titleEn,
-    String titleAr,
+    String? id,
+    String? content,
+    String? title,
+    String? contentEn,
+    String? contentAr,
+    String? titleEn,
+    String? titleAr,
   }) = _$PolicyModelImpl;
-  _PolicyModel._() : super._();
 
   factory _PolicyModel.fromJson(Map<String, dynamic> json) =
       _$PolicyModelImpl.fromJson;
 
   @override
-  String get id;
-  set id(String value);
+  String? get id;
+  set id(String? value);
   @override
-  String get contentEn;
-  set contentEn(String value);
+  String? get content;
+  set content(String? value);
   @override
-  String get contentAr;
-  set contentAr(String value);
+  String? get title;
+  set title(String? value);
   @override
-  String get titleEn;
-  set titleEn(String value);
+  String? get contentEn;
+  set contentEn(String? value);
   @override
-  String get titleAr;
-  set titleAr(String value);
+  String? get contentAr;
+  set contentAr(String? value);
+  @override
+  String? get titleEn;
+  set titleEn(String? value);
+  @override
+  String? get titleAr;
+  set titleAr(String? value);
 
   /// Create a copy of PolicyModel
   /// with the given fields replaced by the non-null parameter values.

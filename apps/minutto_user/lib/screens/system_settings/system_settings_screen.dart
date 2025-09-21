@@ -1,4 +1,5 @@
 import 'package:minutto_user/minutto_user.dart';
+import 'package:minutto_user/screens/policy/policy_screen.dart';
 import 'package:shared/shared.dart';
 
 class SystemSettingsScreen extends StatefulWidget {
@@ -77,7 +78,14 @@ class _SystemSettingsScreenState extends State<SystemSettingsScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SettingsBubble(
-                  onTap: () {},
+                  onTap: () {
+                    context.navigate((context) {
+                      return PolicyScreen(
+                        title: context.appLocalization.bylaws,
+                        docId: PolicyEnum.internalRegulations.value,
+                      );
+                    });
+                  },
                   title: context.appLocalization.bylaws,
                   icon: MyIcons.bookSharp,
                 ),
@@ -91,7 +99,14 @@ class _SystemSettingsScreenState extends State<SystemSettingsScreen> {
                   icon: MyIcons.faqSharp,
                 ),
                 SettingsBubble(
-                  onTap: () {},
+                  onTap: () {
+                    context.navigate((context) {
+                      return PolicyScreen(
+                        title: context.appLocalization.privacyPolicy,
+                        docId: PolicyEnum.privacyPolicy.value,
+                      );
+                    });
+                  },
                   title: context.appLocalization.privacyPolicy,
                   icon: MyIcons.policySharp,
                 ),

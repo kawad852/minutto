@@ -7,7 +7,6 @@ export 'package:minutto_admin_portal/screens/drawer/widgets/rail_expansion_tile.
 export 'package:minutto_admin_portal/screens/drawer/widgets/user_menu_anchor.dart';
 export 'package:minutto_admin_portal/screens/login/portal_login_screen.dart';
 export 'package:minutto_admin_portal/screens/policies/policies_table.dart';
-export 'package:minutto_admin_portal/screens/policies/widgets/policy_builder.dart';
 export 'package:minutto_admin_portal/screens/roles/roles_table.dart';
 export 'package:minutto_admin_portal/screens/roles/widgets/permissions_builder.dart';
 export 'package:minutto_admin_portal/screens/users/users_table.dart';

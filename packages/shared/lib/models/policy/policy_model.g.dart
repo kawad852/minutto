@@ -8,16 +8,20 @@ part of 'policy_model.dart';
 
 _$PolicyModelImpl _$$PolicyModelImplFromJson(Map<String, dynamic> json) =>
     _$PolicyModelImpl(
-      id: json['id'] as String? ?? '',
-      contentEn: json['contentEn'] as String? ?? '',
-      contentAr: json['contentAr'] as String? ?? '',
-      titleEn: json['titleEn'] as String? ?? '',
-      titleAr: json['titleAr'] as String? ?? '',
+      id: json['id'] as String?,
+      content: json['content'] as String?,
+      title: json['title'] as String?,
+      contentEn: json['contentEn'] as String?,
+      contentAr: json['contentAr'] as String?,
+      titleEn: json['titleEn'] as String?,
+      titleAr: json['titleAr'] as String?,
     );
 
 Map<String, dynamic> _$$PolicyModelImplToJson(_$PolicyModelImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'content': instance.content,
+      'title': instance.title,
       'contentEn': instance.contentEn,
       'contentAr': instance.contentAr,
       'titleEn': instance.titleEn,

@@ -1,8 +1,6 @@
 import 'package:fire_portal/portal_table.dart';
 import 'package:shared/shared.dart';
 
-import '../../minutto_admin_portal.dart';
-
 class PoliciesTable extends StatefulWidget {
   const PoliciesTable({super.key});
 
@@ -37,7 +35,7 @@ class _PoliciesTableState extends State<PoliciesTable> {
       cellsBuilder: (index, snapshot) {
         final queryDocSnapshot = snapshot.docs[index];
         final data = queryDocSnapshot.data();
-        return [DataCell(Text(data.title))];
+        return [DataCell(Text(data.title ?? "-"))];
       },
       onSave: (ref, data) async {
         final reference = ref ?? _collectionRef.doc();

@@ -96,7 +96,10 @@ class _MyAppState extends State<MyApp> {
                   navigatorKey: rootNavigatorKey,
                   builder: EasyLoading.init(),
                   debugShowCheckedModeBanner: false,
-                  localizationsDelegates: AppLocalizations.localizationsDelegates,
+                  localizationsDelegates: [
+                    ...AppLocalizations.localizationsDelegates,
+                    FlutterQuillLocalizations.delegate,
+                  ],
                   supportedLocales: AppLocalizations.supportedLocales,
                   locale: appProvider.appLocale,
                   theme: theme,
