@@ -71,6 +71,7 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final firstDate = DateTime.now().subtract(Duration(days: 365));
     final info = _collection.info(context);
     return Scaffold(
       appBar: AppBar(
@@ -120,6 +121,7 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                   title: context.appLocalization.date,
                   child: DateEditor(
                     value: _request.date,
+                    fistDate: firstDate,
                     onChanged: (value) => _request.date = value,
                   ),
                 ),
@@ -183,6 +185,7 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                         title: context.appLocalization.startDate,
                         child: DateEditor(
                           onChanged: (value) => _request.fromDate = value,
+                          fistDate: firstDate,
                           value: _request.fromDate,
                         ),
                       ),
@@ -192,6 +195,7 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                         title: context.appLocalization.endDate,
                         child: DateEditor(
                           onChanged: (value) => _request.toDate = value,
+                          fistDate: firstDate,
                           value: _request.toDate,
                         ),
                       ),
