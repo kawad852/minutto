@@ -3163,6 +3163,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'You cannot request more than the remaining allowed advance amount.'**
   String get maxRemainingSalaryAdvancedAmountMsg;
+
+  /// No description provided for @goodEvening.
+  ///
+  /// In en, this message translates to:
+  /// **'Good Evening'**
+  String get goodEvening;
 }
 
 class _AppLocalizationsDelegate

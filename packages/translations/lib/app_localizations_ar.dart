@@ -1572,4 +1572,7 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get maxRemainingSalaryAdvancedAmountMsg =>
       'لا يمكنك طلب مبلغ أكبر من السلفة المسموحة المتبقية.';
+
+  @override
+  String get goodEvening => 'مساء الخير';
 }

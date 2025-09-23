@@ -8,6 +8,7 @@ class MyIcons {
   static const String home = '${_path}home.svg';
   static const String profile = '${_path}profile.svg';
   static const String homeBackground = '${_path}home_background.svg';
+  static const String homeBackgroundDark = '${_path}home_background_dark.svg';
   static const String notifaction = '${_path}notifaction.svg';
   static const String clockIcon = '${_path}clock_icon.svg';
   static const String money = '${_path}money.svg';

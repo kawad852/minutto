@@ -55,6 +55,7 @@ class _HomeHeaderState extends State<HomeHeader> {
   @override
   Widget build(BuildContext context) {
     final now = DateTime.now();
+    final isAM = now.hour < 12;
     final user = MySharedPreferences.user!;
     // final dayName = WeekDayEnum.values.firstWhere((e) => e.value == now.weekday).label();
     return BlitzBuilder.stream(
@@ -66,7 +67,7 @@ class _HomeHeaderState extends State<HomeHeader> {
           margin: const EdgeInsets.only(bottom: 15),
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: sv.Svg(MyIcons.homeBackground),
+              image: sv.Svg(isAM ? MyIcons.homeBackground : MyIcons.homeBackgroundDark),
               fit: BoxFit.cover,
             ),
           ),
@@ -86,7 +87,9 @@ class _HomeHeaderState extends State<HomeHeader> {
                   children: [
                     Expanded(
                       child: Text(
-                        context.appLocalization.goodMorning,
+                        isAM
+                            ? context.appLocalization.goodMorning
+                            : context.appLocalization.goodEvening,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           color: context.colorPalette.blue091,

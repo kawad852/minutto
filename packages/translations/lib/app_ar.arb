@@ -509,6 +509,6 @@
   "location": "الموقع",
   "allowedAdvanceMessage": "القيمة المسموحة لك كسلفة شهرياً 30٪ من الراتب الأساسي وقيمتها {value} {currency}.",
   "remainingAmountLabel": "المبلغ المتبقي: {amount} {currency}",
-  "maxRemainingSalaryAdvancedAmountMsg": "لا يمكنك طلب مبلغ أكبر من السلفة المسموحة المتبقية."
-
+  "maxRemainingSalaryAdvancedAmountMsg": "لا يمكنك طلب مبلغ أكبر من السلفة المسموحة المتبقية.",
+  "goodEvening": "مساء الخير"
 }

@@ -1581,4 +1581,7 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get maxRemainingSalaryAdvancedAmountMsg =>
       'You cannot request more than the remaining allowed advance amount.';
+
+  @override
+  String get goodEvening => 'Good Evening';
 }
