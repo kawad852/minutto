@@ -81,8 +81,7 @@ class _BranchInputScreenState extends State<BranchInputScreen> {
                 padding: const EdgeInsets.symmetric(vertical: 15),
                 child: WidgetTitle(
                   title: context.appLocalization.phoneNum,
-                  child: CustomTextField.phone(
-                    context,
+                  child: PhoneEditor(
                     code: _branch.phoneNumberCountryCode,
                     onChanged: (value) => _branch.phoneNumber = value!,
                     onCodeSelected: (value) => _branch.phoneNumberCountryCode = value,

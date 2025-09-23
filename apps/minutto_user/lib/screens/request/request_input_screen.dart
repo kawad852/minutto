@@ -184,7 +184,16 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                       child: WidgetTitle(
                         title: context.appLocalization.startDate,
                         child: DateEditor(
-                          onChanged: (value) => _request.fromDate = value,
+                          key: ValueKey(_request.fromDate),
+                          onChanged: (value) {
+                            setState(() {
+                              _request.fromDate = value;
+                              if (_request.fromDate != null &&
+                                  (_request.toDate?.isBefore(_request.fromDate!) ?? false)) {
+                                _request.toDate = null;
+                              }
+                            });
+                          },
                           fistDate: firstDate,
                           value: _request.fromDate,
                         ),
@@ -194,8 +203,11 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                       child: WidgetTitle(
                         title: context.appLocalization.endDate,
                         child: DateEditor(
+                          key: ValueKey(
+                            "${_request.fromDate?.toIso8601String()}${_request.toDate?.toIso8601String()}",
+                          ),
                           onChanged: (value) => _request.toDate = value,
-                          fistDate: firstDate,
+                          fistDate: _request.fromDate ?? firstDate,
                           value: _request.toDate,
                         ),
                       ),

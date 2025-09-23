@@ -161,8 +161,7 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 15),
-                  child: CustomTextField.phone(
-                    context,
+                  child: PhoneEditor(
                     code: null,
                     onChanged: (value) {},
                     onCodeSelected: (value) {},

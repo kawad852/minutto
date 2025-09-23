@@ -78,8 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 15),
-                    child: CustomTextField.phone(
-                      context,
+                    child: PhoneEditor(
                       onChanged: (value) => _user.phoneNumber = value!,
                       code: null,
                       onCodeSelected: (value) => _user.phoneNumberCountryCode = value,

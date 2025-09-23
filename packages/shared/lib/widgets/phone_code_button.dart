@@ -41,7 +41,10 @@ class _PhoneCodeButtonState extends State<PhoneCodeButton> {
           }
         });
       },
-      child: Text(context.getDialCode(_code)),
+      child: Text(
+        context.getDialCode(_code),
+        textDirection: TextDirection.ltr,
+      ),
     );
   }
 }

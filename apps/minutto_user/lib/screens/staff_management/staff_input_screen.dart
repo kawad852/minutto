@@ -143,8 +143,7 @@ class _StaffInputScreenState extends State<StaffInputScreen> {
                           ),
                           WidgetTitle(
                             title: context.appLocalization.phoneNum,
-                            child: CustomTextField.phone(
-                              context,
+                            child: PhoneEditor(
                               code: _user.phoneNumberCountryCode,
                               onChanged: (value) => _user.phoneNumber = value!,
                               onCodeSelected: (value) => _user.phoneNumberCountryCode = value,

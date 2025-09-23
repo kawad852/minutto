@@ -163,8 +163,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   //     value: null,
                   //   ),
                   // ),
-                  CustomTextField.phone(
-                    context,
+                  PhoneEditor(
                     code: _user.phoneNumberCountryCode,
                     onChanged: (value) => _user.phoneNumber = value!,
                     onCodeSelected: (value) => _user.phoneNumberCountryCode = value,

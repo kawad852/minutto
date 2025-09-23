@@ -207,6 +207,7 @@ export 'widgets/editors/branches_editor.dart';
 export 'widgets/editors/date_editor.dart';
 export 'widgets/editors/day_time_editor.dart';
 export 'widgets/editors/drop_down_editor.dart';
+export 'widgets/editors/phone_editor.dart';
 export 'widgets/editors/text_editor.dart';
 export 'widgets/empty_widget.dart';
 export 'widgets/errors/app_error_widget.dart';

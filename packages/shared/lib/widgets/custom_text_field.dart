@@ -1,6 +1,5 @@
 import 'package:flutter/services.dart';
 import 'package:shared/shared.dart';
-import 'package:shared/widgets/phone_code_button.dart';
 
 class CustomTextField extends StatelessWidget {
   final String? initialValue;
@@ -18,7 +17,7 @@ class CustomTextField extends StatelessWidget {
   final int? maxLines;
   final TextAlign? textAlign;
 
-  const CustomTextField._({
+  const CustomTextField({
     super.key,
     this.initialValue,
     this.prefixIcon,
@@ -50,7 +49,7 @@ class CustomTextField extends StatelessWidget {
     int? maxLines,
     TextAlign? textAlign,
   }) {
-    return CustomTextField._(
+    return CustomTextField(
       key: key,
       initialValue: initialValue,
       prefixIcon: prefixIcon,
@@ -74,7 +73,7 @@ class CustomTextField extends StatelessWidget {
     bool required = true,
     String? labelText,
   }) {
-    return CustomTextField._(
+    return CustomTextField(
       key: key,
       initialValue: initialValue == 0 ? null : initialValue?.toString(),
       prefixIcon: prefixIcon,
@@ -95,7 +94,7 @@ class CustomTextField extends StatelessWidget {
     bool required = true,
     String? labelText,
   }) {
-    return CustomTextField._(
+    return CustomTextField(
       key: key,
       initialValue: initialValue?.toString(),
       prefixIcon: prefixIcon,
@@ -104,33 +103,6 @@ class CustomTextField extends StatelessWidget {
       inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'^\d+\.?\d{0,2}'))],
       onChanged: (value) => onChanged(double.tryParse(value)),
       validator: (context, value) => required ? ValidationHelper.required(context, value) : null,
-    );
-  }
-
-  factory CustomTextField.phone(
-    BuildContext context, {
-    Key? key,
-    String? initialValue,
-    required String? code,
-    required ValueChanged<String?> onChanged,
-    required final Function(String code) onCodeSelected,
-    bool required = true,
-  }) {
-    return CustomTextField._(
-      key: key,
-      initialValue: initialValue,
-      hintText: context.appLocalization.phoneNum,
-      prefixIcon: PhoneCodeButton(
-        code: code ?? kFallBackCountryCode,
-        onCodeSelected: onCodeSelected,
-      ),
-      keyboardType: TextInputType.phone,
-      inputFormatters: [
-        FilteringTextInputFormatter.digitsOnly,
-        LengthLimitingTextInputFormatter(11),
-      ],
-      onChanged: (value) => onChanged(value),
-      validator: (context, value) => required ? ValidationHelper.phone(context, value) : null,
     );
   }
 
@@ -144,7 +116,7 @@ class CustomTextField extends StatelessWidget {
     String? labelText,
     bool required = true,
   }) {
-    return CustomTextField._(
+    return CustomTextField(
       key: key,
       initialValue: initialValue,
       prefixIcon: prefixIcon,
@@ -164,7 +136,7 @@ class CustomTextField extends StatelessWidget {
     required ValueChanged<String?> onChanged,
     bool required = true,
   }) {
-    return CustomTextField._(
+    return CustomTextField(
       key: key,
       initialValue: initialValue,
       prefixIcon: prefixIcon,
@@ -187,7 +159,7 @@ class CustomTextField extends StatelessWidget {
     bool required = true,
     String? Function(BuildContext, String?)? validator,
   }) {
-    return CustomTextField._(
+    return CustomTextField(
       key: key,
       initialValue: initialValue,
       prefixIcon: prefixIcon,
@@ -217,6 +189,7 @@ class CustomTextField extends StatelessWidget {
         suffixText: suffixText,
         suffixIcon: Center(child: suffixIcon),
         suffixIconConstraints: BoxConstraints(maxWidth: 40),
+        // prefixIconConstraints: BoxConstraints(maxWidth: 80),
         hintText: hintText,
         labelText: labelText,
         alignLabelWithHint: true,

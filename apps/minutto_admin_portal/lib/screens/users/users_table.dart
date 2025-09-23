@@ -73,8 +73,7 @@ class _UsersTableState extends State<UsersTable> {
               });
             },
           ),
-          CustomTextField.phone(
-            context,
+          PhoneEditor(
             initialValue: data.phoneNumber,
             code: data.phoneNumberCountryCode,
             onChanged: (value) => data.phoneNumber = value!,
