@@ -3,8 +3,14 @@ import 'package:shared/shared.dart';
 class AttachmentEditor extends StatefulWidget {
   final void Function(List<XFile> files) onChanged;
   final List<Object> files;
+  final WidgetBuilder? child;
 
-  const AttachmentEditor({super.key, required this.onChanged, required this.files});
+  const AttachmentEditor({
+    super.key,
+    required this.onChanged,
+    required this.files,
+    this.child,
+  });
 
   @override
   State<AttachmentEditor> createState() => _AttachmentEditorState();
@@ -42,20 +48,30 @@ class _AttachmentEditorState extends State<AttachmentEditor> {
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
       spacing: 10,
       children: [
-        CustomTextField.clickable(
-          key: ValueKey(_files.length),
-          onTap: () => _pickFiles(context),
-          labelText: context.appLocalization.attachFile,
-          suffixIcon: CustomSvg(MyIcons.add),
-          validator: (context, value) {
-            if (_files.isEmpty) {
-              return context.appLocalization.requiredField;
-            }
-            return null;
-          },
-        ),
+        if (widget.child != null)
+          GestureDetector(
+            onTap: () {
+              _pickFiles(context);
+            },
+            child: widget.child!(context),
+          )
+        else
+          CustomTextField.clickable(
+            key: ValueKey(_files.length),
+            onTap: () => _pickFiles(context),
+            labelText: context.appLocalization.attachFile,
+            suffixIcon: CustomSvg(MyIcons.add),
+            required: false,
+            validator: (context, value) {
+              if (_files.isEmpty) {
+                return context.appLocalization.requiredField;
+              }
+              return null;
+            },
+          ),
         SingleChildScrollView(
           child: Row(
             spacing: 5,
