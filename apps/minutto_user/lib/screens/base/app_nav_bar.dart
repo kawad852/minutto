@@ -19,8 +19,7 @@ class _AppNavBarState extends State<AppNavBar> {
     (const HomeScreen(), MyIcons.home),
     if (MySharedPreferences.user?.role == RoleEnum.admin.value)
       (const FacilityManagementScreen(), MyIcons.facility),
-    if (MySharedPreferences.user?.role == RoleEnum.employee.value)
-      (const ReportsScreen(), MyIcons.calander),
+    (const ReportsScreen(), MyIcons.calander),
     (const ProfileScreen(), MyIcons.profile),
   ];
 
