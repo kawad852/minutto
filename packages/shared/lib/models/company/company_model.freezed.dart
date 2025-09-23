@@ -40,9 +40,6 @@ mixin _$CompanyModel {
       throw _privateConstructorUsedError;
   set attendancePolicy(AttendancePolicyModel? value) =>
       throw _privateConstructorUsedError;
-  GeoLocationModel? get geoLocation => throw _privateConstructorUsedError;
-  set geoLocation(GeoLocationModel? value) =>
-      throw _privateConstructorUsedError;
 
   /// Serializes this CompanyModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -69,12 +66,10 @@ abstract class $CompanyModelCopyWith<$Res> {
     String code,
     LeavePolicyModel? leavePolicy,
     AttendancePolicyModel? attendancePolicy,
-    GeoLocationModel? geoLocation,
   });
 
   $LeavePolicyModelCopyWith<$Res>? get leavePolicy;
   $AttendancePolicyModelCopyWith<$Res>? get attendancePolicy;
-  $GeoLocationModelCopyWith<$Res>? get geoLocation;
 }
 
 /// @nodoc
@@ -99,7 +94,6 @@ class _$CompanyModelCopyWithImpl<$Res, $Val extends CompanyModel>
     Object? code = null,
     Object? leavePolicy = freezed,
     Object? attendancePolicy = freezed,
-    Object? geoLocation = freezed,
   }) {
     return _then(
       _value.copyWith(
@@ -131,10 +125,6 @@ class _$CompanyModelCopyWithImpl<$Res, $Val extends CompanyModel>
                 ? _value.attendancePolicy
                 : attendancePolicy // ignore: cast_nullable_to_non_nullable
                       as AttendancePolicyModel?,
-            geoLocation: freezed == geoLocation
-                ? _value.geoLocation
-                : geoLocation // ignore: cast_nullable_to_non_nullable
-                      as GeoLocationModel?,
           )
           as $Val,
     );
@@ -169,20 +159,6 @@ class _$CompanyModelCopyWithImpl<$Res, $Val extends CompanyModel>
       return _then(_value.copyWith(attendancePolicy: value) as $Val);
     });
   }
-
-  /// Create a copy of CompanyModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $GeoLocationModelCopyWith<$Res>? get geoLocation {
-    if (_value.geoLocation == null) {
-      return null;
-    }
-
-    return $GeoLocationModelCopyWith<$Res>(_value.geoLocation!, (value) {
-      return _then(_value.copyWith(geoLocation: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -202,15 +178,12 @@ abstract class _$$CompanyModelImplCopyWith<$Res>
     String code,
     LeavePolicyModel? leavePolicy,
     AttendancePolicyModel? attendancePolicy,
-    GeoLocationModel? geoLocation,
   });
 
   @override
   $LeavePolicyModelCopyWith<$Res>? get leavePolicy;
   @override
   $AttendancePolicyModelCopyWith<$Res>? get attendancePolicy;
-  @override
-  $GeoLocationModelCopyWith<$Res>? get geoLocation;
 }
 
 /// @nodoc
@@ -234,7 +207,6 @@ class __$$CompanyModelImplCopyWithImpl<$Res>
     Object? code = null,
     Object? leavePolicy = freezed,
     Object? attendancePolicy = freezed,
-    Object? geoLocation = freezed,
   }) {
     return _then(
       _$CompanyModelImpl(
@@ -266,10 +238,6 @@ class __$$CompanyModelImplCopyWithImpl<$Res>
             ? _value.attendancePolicy
             : attendancePolicy // ignore: cast_nullable_to_non_nullable
                   as AttendancePolicyModel?,
-        geoLocation: freezed == geoLocation
-            ? _value.geoLocation
-            : geoLocation // ignore: cast_nullable_to_non_nullable
-                  as GeoLocationModel?,
       ),
     );
   }
@@ -287,7 +255,6 @@ class _$CompanyModelImpl implements _CompanyModel {
     this.code = '',
     this.leavePolicy,
     this.attendancePolicy,
-    this.geoLocation,
   });
 
   factory _$CompanyModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -312,12 +279,10 @@ class _$CompanyModelImpl implements _CompanyModel {
   LeavePolicyModel? leavePolicy;
   @override
   AttendancePolicyModel? attendancePolicy;
-  @override
-  GeoLocationModel? geoLocation;
 
   @override
   String toString() {
-    return 'CompanyModel(createdAt: $createdAt, salaryReleaseDay: $salaryReleaseDay, id: $id, name: $name, code: $code, leavePolicy: $leavePolicy, attendancePolicy: $attendancePolicy, geoLocation: $geoLocation)';
+    return 'CompanyModel(createdAt: $createdAt, salaryReleaseDay: $salaryReleaseDay, id: $id, name: $name, code: $code, leavePolicy: $leavePolicy, attendancePolicy: $attendancePolicy)';
   }
 
   /// Create a copy of CompanyModel
@@ -343,7 +308,6 @@ abstract class _CompanyModel implements CompanyModel {
     String code,
     LeavePolicyModel? leavePolicy,
     AttendancePolicyModel? attendancePolicy,
-    GeoLocationModel? geoLocation,
   }) = _$CompanyModelImpl;
 
   factory _CompanyModel.fromJson(Map<String, dynamic> json) =
@@ -372,9 +336,6 @@ abstract class _CompanyModel implements CompanyModel {
   @override
   AttendancePolicyModel? get attendancePolicy;
   set attendancePolicy(AttendancePolicyModel? value);
-  @override
-  GeoLocationModel? get geoLocation;
-  set geoLocation(GeoLocationModel? value);
 
   /// Create a copy of CompanyModel
   /// with the given fields replaced by the non-null parameter values.

@@ -1555,4 +1555,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get longitude => 'خط الطول';
+
+  @override
+  String get location => 'الموقع';
 }

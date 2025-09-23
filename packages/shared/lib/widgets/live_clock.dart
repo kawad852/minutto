@@ -1,7 +1,12 @@
 import '../shared.dart';
 
 class LiveClock extends StatefulWidget {
-  const LiveClock({super.key});
+  final Widget Function(String value) child;
+
+  const LiveClock({
+    super.key,
+    required this.child,
+  });
 
   @override
   State<LiveClock> createState() => _LiveClockState();
@@ -37,14 +42,8 @@ class _LiveClockState extends State<LiveClock> {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
+    return widget.child(
       _now.hourFormat,
-      overflow: TextOverflow.ellipsis,
-      style: TextStyle(
-        color: context.colorPalette.white,
-        fontSize: 16,
-        fontWeight: FontWeight.w500,
-      ),
     );
   }
 }

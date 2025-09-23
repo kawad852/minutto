@@ -37,7 +37,10 @@ class _BranchInputScreenState extends State<BranchInputScreen> {
   @override
   void initState() {
     super.initState();
-    _branch = BranchModel(createdAt: kNowDate);
+    _branch = BranchModel(
+      createdAt: kNowDate,
+      geoLocation: GeoLocationModel(),
+    );
   }
 
   @override
@@ -58,6 +61,7 @@ class _BranchInputScreenState extends State<BranchInputScreen> {
         child: Form(
           key: _formKey,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               WidgetTitle(
                 title: context.appLocalization.branchName,
@@ -138,6 +142,37 @@ class _BranchInputScreenState extends State<BranchInputScreen> {
                   ),
                 ],
               ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15),
+                child: WidgetTitle(
+                  title: context.appLocalization.location,
+                  padding: EdgeInsetsGeometry.only(bottom: 10),
+                  child: Row(
+                    spacing: 10,
+                    children: [
+                      Expanded(
+                        child: CustomTextField.double(
+                          initialValue: _branch.geoLocation!.latitude == 0
+                              ? null
+                              : _branch.geoLocation!.latitude,
+                          onChanged: (value) => _branch.geoLocation!.latitude = value!,
+                          labelText: context.appLocalization.latitude,
+                        ),
+                      ),
+                      Expanded(
+                        child: CustomTextField.double(
+                          initialValue: _branch.geoLocation!.latitude == 0
+                              ? null
+                              : _branch.geoLocation!.latitude,
+                          onChanged: (value) => _branch.geoLocation!.latitude = value!,
+                          labelText: context.appLocalization.longitude,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
               // const SizedBox(height: 15),
               // Text(
               //   context.appLocalization.determineLocationOnMap,

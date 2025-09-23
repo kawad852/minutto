@@ -44,6 +44,9 @@ mixin _$BranchModel {
   set startWorkingHour(String value) => throw _privateConstructorUsedError;
   String get endWorkingHour => throw _privateConstructorUsedError;
   set endWorkingHour(String value) => throw _privateConstructorUsedError;
+  GeoLocationModel? get geoLocation => throw _privateConstructorUsedError;
+  set geoLocation(GeoLocationModel? value) =>
+      throw _privateConstructorUsedError;
 
   /// Serializes this BranchModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -73,7 +76,10 @@ abstract class $BranchModelCopyWith<$Res> {
     String phoneNumber,
     String startWorkingHour,
     String endWorkingHour,
+    GeoLocationModel? geoLocation,
   });
+
+  $GeoLocationModelCopyWith<$Res>? get geoLocation;
 }
 
 /// @nodoc
@@ -101,6 +107,7 @@ class _$BranchModelCopyWithImpl<$Res, $Val extends BranchModel>
     Object? phoneNumber = null,
     Object? startWorkingHour = null,
     Object? endWorkingHour = null,
+    Object? geoLocation = freezed,
   }) {
     return _then(
       _value.copyWith(
@@ -144,9 +151,27 @@ class _$BranchModelCopyWithImpl<$Res, $Val extends BranchModel>
                 ? _value.endWorkingHour
                 : endWorkingHour // ignore: cast_nullable_to_non_nullable
                       as String,
+            geoLocation: freezed == geoLocation
+                ? _value.geoLocation
+                : geoLocation // ignore: cast_nullable_to_non_nullable
+                      as GeoLocationModel?,
           )
           as $Val,
     );
+  }
+
+  /// Create a copy of BranchModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GeoLocationModelCopyWith<$Res>? get geoLocation {
+    if (_value.geoLocation == null) {
+      return null;
+    }
+
+    return $GeoLocationModelCopyWith<$Res>(_value.geoLocation!, (value) {
+      return _then(_value.copyWith(geoLocation: value) as $Val);
+    });
   }
 }
 
@@ -170,7 +195,11 @@ abstract class _$$BranchModelImplCopyWith<$Res>
     String phoneNumber,
     String startWorkingHour,
     String endWorkingHour,
+    GeoLocationModel? geoLocation,
   });
+
+  @override
+  $GeoLocationModelCopyWith<$Res>? get geoLocation;
 }
 
 /// @nodoc
@@ -197,6 +226,7 @@ class __$$BranchModelImplCopyWithImpl<$Res>
     Object? phoneNumber = null,
     Object? startWorkingHour = null,
     Object? endWorkingHour = null,
+    Object? geoLocation = freezed,
   }) {
     return _then(
       _$BranchModelImpl(
@@ -240,6 +270,10 @@ class __$$BranchModelImplCopyWithImpl<$Res>
             ? _value.endWorkingHour
             : endWorkingHour // ignore: cast_nullable_to_non_nullable
                   as String,
+        geoLocation: freezed == geoLocation
+            ? _value.geoLocation
+            : geoLocation // ignore: cast_nullable_to_non_nullable
+                  as GeoLocationModel?,
       ),
     );
   }
@@ -260,6 +294,7 @@ class _$BranchModelImpl extends _BranchModel {
     this.phoneNumber = '',
     this.startWorkingHour = '',
     this.endWorkingHour = '',
+    this.geoLocation,
   }) : super._();
 
   factory _$BranchModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -295,10 +330,12 @@ class _$BranchModelImpl extends _BranchModel {
   @override
   @JsonKey()
   String endWorkingHour;
+  @override
+  GeoLocationModel? geoLocation;
 
   @override
   String toString() {
-    return 'BranchModel(createdAt: $createdAt, id: $id, name: $name, companyId: $companyId, email: $email, cityId: $cityId, phoneNumberCountryCode: $phoneNumberCountryCode, phoneNumber: $phoneNumber, startWorkingHour: $startWorkingHour, endWorkingHour: $endWorkingHour)';
+    return 'BranchModel(createdAt: $createdAt, id: $id, name: $name, companyId: $companyId, email: $email, cityId: $cityId, phoneNumberCountryCode: $phoneNumberCountryCode, phoneNumber: $phoneNumber, startWorkingHour: $startWorkingHour, endWorkingHour: $endWorkingHour, geoLocation: $geoLocation)';
   }
 
   /// Create a copy of BranchModel
@@ -327,6 +364,7 @@ abstract class _BranchModel extends BranchModel {
     String phoneNumber,
     String startWorkingHour,
     String endWorkingHour,
+    GeoLocationModel? geoLocation,
   }) = _$BranchModelImpl;
   _BranchModel._() : super._();
 
@@ -365,6 +403,9 @@ abstract class _BranchModel extends BranchModel {
   @override
   String get endWorkingHour;
   set endWorkingHour(String value);
+  @override
+  GeoLocationModel? get geoLocation;
+  set geoLocation(GeoLocationModel? value);
 
   /// Create a copy of BranchModel
   /// with the given fields replaced by the non-null parameter values.

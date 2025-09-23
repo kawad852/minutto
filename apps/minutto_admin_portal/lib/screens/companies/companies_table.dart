@@ -52,7 +52,6 @@ class _CompaniesTableState extends State<CompaniesTable> {
       },
       inputBuilder: (snapshot) {
         final data = snapshot;
-        data.geoLocation ??= GeoLocationModel();
         return [
           TextEditor(
             labelText: context.appLocalization.name,
@@ -62,16 +61,6 @@ class _CompaniesTableState extends State<CompaniesTable> {
                 data.name = value!;
               });
             },
-          ),
-          CustomTextField.double(
-            initialValue: data.geoLocation!.latitude == 0 ? null : data.geoLocation!.latitude,
-            onChanged: (value) => data.geoLocation!.latitude = value!,
-            labelText: context.appLocalization.latitude,
-          ),
-          CustomTextField.double(
-            initialValue: data.geoLocation!.latitude == 0 ? null : data.geoLocation!.latitude,
-            onChanged: (value) => data.geoLocation!.latitude = value!,
-            labelText: context.appLocalization.longitude,
           ),
         ];
       },

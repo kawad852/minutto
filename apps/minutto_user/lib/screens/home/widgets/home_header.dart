@@ -216,7 +216,19 @@ class _HomeHeaderState extends State<HomeHeader> {
                                   ),
                                 ),
                                 Expanded(
-                                  child: LiveClock(),
+                                  child: LiveClock(
+                                    child: (value) {
+                                      return Text(
+                                        value,
+                                        overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(
+                                          color: context.colorPalette.white,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      );
+                                    },
+                                  ),
                                 ),
                               ],
                             ),

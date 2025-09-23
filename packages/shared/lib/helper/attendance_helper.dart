@@ -33,7 +33,9 @@ class AttendanceHelper {
         }
 
         // 2) Location gate
-        final companyLocation = company.geoLocation!;
+        final companyLocation = MyStorage.branches
+            .firstWhere((e) => e.id == user.branchId)
+            .geoLocation!;
         final userLocation = await context.locationProvider.determinePosition(
           context,
           showSnackBar: true,

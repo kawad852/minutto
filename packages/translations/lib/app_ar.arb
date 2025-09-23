@@ -505,5 +505,6 @@
   "enterOtp": "أدخل الرمز",
   "salaryReleaseDay": "يوم اصدار الرواتب",
   "latitude": "خط العرض",
-  "longitude": "خط الطول"
+  "longitude": "خط الطول",
+  "location": "الموقع"
 }

@@ -6,26 +6,24 @@ part of 'company_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CompanyModelImpl _$$CompanyModelImplFromJson(
-  Map<String, dynamic> json,
-) => _$CompanyModelImpl(
-  createdAt: const TimestampSerializer().fromJson(json['createdAt']),
-  salaryReleaseDay: (json['salaryReleaseDay'] as num?)?.toInt() ?? 30,
-  id: json['id'] as String? ?? '',
-  name: json['name'] as String? ?? '',
-  code: json['code'] as String? ?? '',
-  leavePolicy: json['leavePolicy'] == null
-      ? null
-      : LeavePolicyModel.fromJson(json['leavePolicy'] as Map<String, dynamic>),
-  attendancePolicy: json['attendancePolicy'] == null
-      ? null
-      : AttendancePolicyModel.fromJson(
-          json['attendancePolicy'] as Map<String, dynamic>,
-        ),
-  geoLocation: json['geoLocation'] == null
-      ? null
-      : GeoLocationModel.fromJson(json['geoLocation'] as Map<String, dynamic>),
-);
+_$CompanyModelImpl _$$CompanyModelImplFromJson(Map<String, dynamic> json) =>
+    _$CompanyModelImpl(
+      createdAt: const TimestampSerializer().fromJson(json['createdAt']),
+      salaryReleaseDay: (json['salaryReleaseDay'] as num?)?.toInt() ?? 30,
+      id: json['id'] as String? ?? '',
+      name: json['name'] as String? ?? '',
+      code: json['code'] as String? ?? '',
+      leavePolicy: json['leavePolicy'] == null
+          ? null
+          : LeavePolicyModel.fromJson(
+              json['leavePolicy'] as Map<String, dynamic>,
+            ),
+      attendancePolicy: json['attendancePolicy'] == null
+          ? null
+          : AttendancePolicyModel.fromJson(
+              json['attendancePolicy'] as Map<String, dynamic>,
+            ),
+    );
 
 Map<String, dynamic> _$$CompanyModelImplToJson(_$CompanyModelImpl instance) =>
     <String, dynamic>{
@@ -36,7 +34,6 @@ Map<String, dynamic> _$$CompanyModelImplToJson(_$CompanyModelImpl instance) =>
       'code': instance.code,
       'leavePolicy': instance.leavePolicy?.toJson(),
       'attendancePolicy': instance.attendancePolicy?.toJson(),
-      'geoLocation': instance.geoLocation?.toJson(),
     };
 
 _$LeavePolicyModelImpl _$$LeavePolicyModelImplFromJson(

@@ -1564,4 +1564,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get longitude => 'Longitude';
+
+  @override
+  String get location => 'Location';
 }

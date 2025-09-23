@@ -17,6 +17,7 @@ class BranchModel with _$BranchModel {
     @Default('') String phoneNumber,
     @Default('') String startWorkingHour,
     @Default('') String endWorkingHour,
+    GeoLocationModel? geoLocation,
   }) = _BranchModel;
 
   factory BranchModel.fromJson(Map<String, dynamic> json) => _$BranchModelFromJson(json);

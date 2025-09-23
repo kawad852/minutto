@@ -14,7 +14,6 @@ class CompanyModel with _$CompanyModel {
     @Default('') String code,
     LeavePolicyModel? leavePolicy,
     AttendancePolicyModel? attendancePolicy,
-    GeoLocationModel? geoLocation,
   }) = _CompanyModel;
 
   factory CompanyModel.fromJson(Map<String, dynamic> json) => _$CompanyModelFromJson(json);

@@ -19,6 +19,11 @@ _$BranchModelImpl _$$BranchModelImplFromJson(Map<String, dynamic> json) =>
       phoneNumber: json['phoneNumber'] as String? ?? '',
       startWorkingHour: json['startWorkingHour'] as String? ?? '',
       endWorkingHour: json['endWorkingHour'] as String? ?? '',
+      geoLocation: json['geoLocation'] == null
+          ? null
+          : GeoLocationModel.fromJson(
+              json['geoLocation'] as Map<String, dynamic>,
+            ),
     );
 
 Map<String, dynamic> _$$BranchModelImplToJson(_$BranchModelImpl instance) =>
@@ -33,4 +38,5 @@ Map<String, dynamic> _$$BranchModelImplToJson(_$BranchModelImpl instance) =>
       'phoneNumber': instance.phoneNumber,
       'startWorkingHour': instance.startWorkingHour,
       'endWorkingHour': instance.endWorkingHour,
+      'geoLocation': instance.geoLocation?.toJson(),
     };

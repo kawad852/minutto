@@ -81,13 +81,17 @@ class CheckDialog extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                Text(
-                  "AM 08:31:23",
-                  style: TextStyle(
-                    color: context.colorPalette.redD42,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                  ),
+                LiveClock(
+                  child: (value) {
+                    return Text(
+                      value,
+                      style: TextStyle(
+                        color: context.colorPalette.redD42,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    );
+                  },
                 ),
               ],
             ),

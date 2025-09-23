@@ -505,5 +505,6 @@
   "enterOtp": "Enter OTP",
   "salaryReleaseDay": "Salary Release Day",
   "latitude": "Latitude",
-  "longitude": "Longitude"
+  "longitude": "Longitude",
+  "location": "Location"
 }
