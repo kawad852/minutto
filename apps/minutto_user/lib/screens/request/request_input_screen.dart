@@ -215,7 +215,13 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
                 WidgetTitle(
                   title: context.appLocalization.attachDocument,
                   miniTitle: " (${context.appLocalization.attachDoucOrPdf})",
-                  child: AttachCard(),
+                  child: AttachmentEditor(
+                    onChanged: (value) => _files.addAll(value),
+                    files: _files,
+                    child: (context) {
+                      return AttachCard();
+                    },
+                  ),
                 ),
             ],
           ),
