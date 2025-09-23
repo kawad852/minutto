@@ -510,7 +510,8 @@
   "allowedAdvanceMessage": "The allowed monthly advance is 30% of the basic salary with a value of {value} {currency}.",
   "remainingAmountLabel": "Remaining amount: {amount} {currency}",
   "maxRemainingSalaryAdvancedAmountMsg": "You cannot request more than the remaining allowed advance amount.",
-  "goodEvening": "Good Evening"
+  "goodEvening": "Good Evening",
+  "code": "Code"
 
 
 }

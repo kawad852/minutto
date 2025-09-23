@@ -62,6 +62,15 @@ class _CompaniesTableState extends State<CompaniesTable> {
               });
             },
           ),
+          TextEditor(
+            labelText: context.appLocalization.code,
+            initialValue: data.code,
+            onChanged: (value) {
+              setState(() {
+                data.code = value!;
+              });
+            },
+          ),
         ];
       },
     );

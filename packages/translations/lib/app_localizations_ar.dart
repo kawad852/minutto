@@ -1575,4 +1575,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get goodEvening => 'مساء الخير';
+
+  @override
+  String get code => 'الرمز';
 }
