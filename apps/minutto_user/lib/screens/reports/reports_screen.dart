@@ -117,6 +117,12 @@ class _ReportsScreenState extends State<ReportsScreen> {
     );
   }
 
+  int daysInMonth(DateTime date) {
+    final firstDayThisMonth = DateTime(date.year, date.month, 1);
+    final firstDayNextMonth = DateTime(date.year, date.month + 1, 1);
+    return firstDayNextMonth.difference(firstDayThisMonth).inDays;
+  }
+
   void _initialize() {
     _futures = _fetch();
   }
@@ -177,11 +183,10 @@ class _ReportsScreenState extends State<ReportsScreen> {
                     : absenceDaysDouble.toStringAsFixed(1);
 
                 // Absence deduction = per-day salary * absence days
-                final basicSalary = _user.basicSalary.toDouble() ?? 0.0;
-                final perDaySalary = basicSalary / 30.0; // adjust if you use 26 days policy
-                final absenceAmount = double.parse(
-                  (perDaySalary * absenceDaysDouble).toStringAsFixed(2),
-                );
+                final basicSalary = _user.basicSalary;
+                final daysCount = daysInMonth(_selectedDate);
+                final perDaySalary = basicSalary / daysCount;
+                final absenceAmount = perDaySalary * absenceDaysDouble;
                 // ----------------------------------------
 
                 return ListView(
