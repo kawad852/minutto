@@ -1558,4 +1558,18 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get location => 'الموقع';
+
+  @override
+  String allowedAdvanceMessage(Object currency, Object value) {
+    return 'القيمة المسموحة لك كسلفة شهرياً 30٪ من الراتب الأساسي وقيمتها $value $currency.';
+  }
+
+  @override
+  String remainingAmountLabel(Object amount, Object currency) {
+    return 'المبلغ المتبقي: $amount $currency';
+  }
+
+  @override
+  String get maxRemainingSalaryAdvancedAmountMsg =>
+      'لا يمكنك طلب مبلغ أكبر من السلفة المسموحة المتبقية.';
 }

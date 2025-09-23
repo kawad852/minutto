@@ -506,5 +506,9 @@
   "salaryReleaseDay": "يوم اصدار الرواتب",
   "latitude": "خط العرض",
   "longitude": "خط الطول",
-  "location": "الموقع"
+  "location": "الموقع",
+  "allowedAdvanceMessage": "القيمة المسموحة لك كسلفة شهرياً 30٪ من الراتب الأساسي وقيمتها {value} {currency}.",
+  "remainingAmountLabel": "المبلغ المتبقي: {amount} {currency}",
+  "maxRemainingSalaryAdvancedAmountMsg": "لا يمكنك طلب مبلغ أكبر من السلفة المسموحة المتبقية."
+
 }

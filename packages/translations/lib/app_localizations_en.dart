@@ -1567,4 +1567,18 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get location => 'Location';
+
+  @override
+  String allowedAdvanceMessage(Object currency, Object value) {
+    return 'The allowed monthly advance is 30% of the basic salary with a value of $value $currency.';
+  }
+
+  @override
+  String remainingAmountLabel(Object amount, Object currency) {
+    return 'Remaining amount: $amount $currency';
+  }
+
+  @override
+  String get maxRemainingSalaryAdvancedAmountMsg =>
+      'You cannot request more than the remaining allowed advance amount.';
 }

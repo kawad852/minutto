@@ -57,4 +57,5 @@ class MyFields {
   static const String deductionHours = 'deductionHours';
   static const String totalLeaveHours = 'totalLeaveHours';
   static const String deductionAmount = 'deductionAmount';
+  static const String amount = 'amount';
 }

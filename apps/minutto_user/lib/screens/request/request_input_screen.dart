@@ -36,6 +36,14 @@ class _RequestInputScreenState extends State<RequestInputScreen> {
       context,
       isAdd: _isAdd,
       onCall: (user) async {
+        if (_isSalaryAdvances) {
+          final data = await SalaryAdvanceHelper.instance.getTakenAmountThisMonth();
+          final remainingAmount = data.$4;
+          if (remainingAmount < _request.amount && context.mounted) {
+            context.showSnackBar(context.appLocalization.maxRemainingSalaryAdvancedAmountMsg);
+            return;
+          }
+        }
         final docRef = _firebaseFireStore
             .collection(_collection)
             .requestConvertor

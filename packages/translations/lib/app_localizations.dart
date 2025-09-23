@@ -3145,6 +3145,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Location'**
   String get location;
+
+  /// No description provided for @allowedAdvanceMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'The allowed monthly advance is 30% of the basic salary with a value of {value} {currency}.'**
+  String allowedAdvanceMessage(Object currency, Object value);
+
+  /// No description provided for @remainingAmountLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Remaining amount: {amount} {currency}'**
+  String remainingAmountLabel(Object amount, Object currency);
+
+  /// No description provided for @maxRemainingSalaryAdvancedAmountMsg.
+  ///
+  /// In en, this message translates to:
+  /// **'You cannot request more than the remaining allowed advance amount.'**
+  String get maxRemainingSalaryAdvancedAmountMsg;
 }
 
 class _AppLocalizationsDelegate

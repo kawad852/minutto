@@ -1,4 +1,5 @@
 import 'package:minutto_user/minutto_user.dart';
+import 'package:minutto_user/screens/request/widgets/salary_advance_amount_builder.dart';
 import 'package:shared/shared.dart';
 
 class RequestsScreen extends StatefulWidget {
@@ -72,6 +73,8 @@ class _RequestsScreenState extends State<RequestsScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         child: Column(
           children: [
+            if (_collection == MyCollections.salaryAdvances) SalaryAdvanceAmountBuilder(),
+
             if (_collection == MyCollections.vacations || _collection == MyCollections.leaves)
               RequestHead(
                 collection: _collection,
